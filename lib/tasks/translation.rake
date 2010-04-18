@@ -1,14 +1,17 @@
 namespace :spree do
   namespace :i18n do
     #Define locales root
-    language_root = File.dirname(__FILE__) + "/../../config/locales/"
+    language_root = File.dirname(__FILE__) + "/../../config/locales"
 
-    desc "Syncronize translation files with latest en-US"
-    task :sync => :environment do
+    task :refresh do
       puts "Fetching latest Spree locale file to #{language_root}"
       exec %(
-        curl -Lo '#{language_root}/en-US_spree.yml' http://github.com/railsdog/spree/tree/master/config/locales/en-US_spree.yml?raw=true
-      )
+        curl -Lo '#{language_root}/en-US_spree.yml' http://github.com/railsdog/spree/tree/separate_translations/config/locales/en-US_spree.yml?raw=true
+      )      
+    end
+    
+    desc "Syncronize translation files with latest en-US"
+    task :sync => :environment do                                    
       puts "Starting syncronization..."
       words = get_translation_keys(language_root)
       Dir["#{language_root}*.yml"].each do |filename|
@@ -23,10 +26,6 @@ namespace :spree do
 
     desc "Create a new translation file based on en-US"
     task :new => :environment do
-      puts "Fetching latest Spree locale file to #{language_root}"
-      exec %(
-        curl -Lo '#{language_root}/en-US_spree.yml' http://github.com/railsdog/spree/tree/master/config/locales/en-US_spree.yml?raw=true
-      )
       if !ENV['LOCALE'] || ENV['LOCALE'] == ''
         print "You must provide a valid LOCALE value, for example:\nrake spree:i18:new LOCALE=pt-PT\n"
         exit
@@ -36,17 +35,17 @@ namespace :spree do
     end
     
     desc "Show translation status for all supported languages, except dialects of English."
-    task :stats => :environment do
+    task :stats => :environment do                  
       words = get_translation_keys(language_root)
       results = ActiveSupport::OrderedHash.new
       locale = ENV['LOCALE'] || ''
-      Dir["#{language_root}*.yml"].each do |filename|
+      Dir["#{language_root}/*.yml"].each do |filename|    
         next unless filename.match('_spree')
         basename = File.basename(filename, '_spree.yml')
         next if basename.starts_with?('en')
         (comments, other) = read_file(filename, basename)
         words.each { |k,v| other[k] ||= words[k] } #Initializing hash variable as empty if it does not exist
-        other.delete_if { |k,v| !words[k] } #Remove if not defined in en-US.yml
+        other.delete_if { |k,v| !words[k] } #Remove if not defined in en-US_spree.yml
         
         untranslated_values = (other.values & words.values).delete_if {|v| !v.match(/\w+/)}
         translation_status = 100*(1 - untranslated_values.size / words.values.size.to_f)
@@ -67,13 +66,13 @@ namespace :spree do
 end
 
 #Retrieve US word set
-def get_translation_keys(language_root)
-  (dummy_comments, words) = read_file("#{language_root}en-US_spree.yml", 'en-US')
+def get_translation_keys(language_root)             
+  (dummy_comments, words) = read_file("#{language_root}/en-US_spree.yml", 'en-US')
   words
 end
 
 #Retrieve comments, translation data in hash form
-def read_file(filename, basename)
+def read_file(filename, basename)      
   (comments, data) = IO.read(filename).split(/\n#{basename}:\s*\n/)   #Add error checking for failed file read?
   return comments, create_hash(data, basename)
 end
