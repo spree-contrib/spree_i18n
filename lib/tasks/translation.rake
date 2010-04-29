@@ -6,11 +6,11 @@ namespace :spree do
     task :refresh do
       puts "Fetching latest Spree locale file to #{language_root}"
       exec %(
-        curl -Lo '#{language_root}/en-US_spree.yml' http://github.com/railsdog/spree/tree/master/config/locales/en-US_spree.yml?raw=true
+        curl -Lo '#{language_root}/en_spree.yml' http://github.com/railsdog/spree/tree/master/config/locales/en_spree.yml?raw=true
       )      
     end
     
-    desc "Syncronize translation files with latest en-US"
+    desc "Syncronize translation files with latest en"
     task :sync => :environment do                                    
       puts "Starting syncronization..."
       words = get_translation_keys(language_root)
@@ -19,12 +19,12 @@ namespace :spree do
         basename = File.basename(filename, '_spree.yml')
         (comments, other) = read_file(filename, basename)
         words.each { |k,v| other[k] ||= words[k] }                     #Initializing hash variable as empty if it does not exist
-        other.delete_if { |k,v| !words[k] }                            #Remove if not defined in en-US.yml
+        other.delete_if { |k,v| !words[k] }                            #Remove if not defined in en.yml
         write_file(filename, basename, comments, other)
       end
     end
 
-    desc "Create a new translation file based on en-US"
+    desc "Create a new translation file based on en"
     task :new => :environment do
       if !ENV['LOCALE'] || ENV['LOCALE'] == ''
         print "You must provide a valid LOCALE value, for example:\nrake spree:i18:new LOCALE=pt-PT\n"
@@ -45,7 +45,7 @@ namespace :spree do
         next if basename.starts_with?('en')
         (comments, other) = read_file(filename, basename)
         words.each { |k,v| other[k] ||= words[k] } #Initializing hash variable as empty if it does not exist
-        other.delete_if { |k,v| !words[k] } #Remove if not defined in en-US_spree.yml
+        other.delete_if { |k,v| !words[k] } #Remove if not defined in en_spree.yml
         
         untranslated_values = (other.values & words.values).delete_if {|v| !v.match(/\w+/)}
         translation_status = 100*(1 - untranslated_values.size / words.values.size.to_f)
@@ -67,7 +67,7 @@ end
 
 #Retrieve US word set
 def get_translation_keys(language_root)             
-  (dummy_comments, words) = read_file("#{language_root}/en-US_spree.yml", 'en-US')
+  (dummy_comments, words) = read_file("#{language_root}/en_spree.yml", 'en')
   words
 end
 
