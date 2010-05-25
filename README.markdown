@@ -5,6 +5,10 @@ This extension is translations pack for Spree Core.
 
 ### Usage
 
+**To fetch latest Spree locale file:**
+
+* `rake spree:i18n:refresh`
+
 **To update translation to your language:**
 
 * `rake spree:i18n:sync`
