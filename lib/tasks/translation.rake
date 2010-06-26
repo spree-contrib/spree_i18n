@@ -14,8 +14,7 @@ namespace :spree do
     task :sync => :environment do                                    
       puts "Starting syncronization..."
       words = get_translation_keys(language_root)
-      Dir["#{language_root}*.yml"].each do |filename|
-        next unless filename.match('_spree')
+      Dir["#{language_root}/*_spree.yml"].each do |filename|
         basename = File.basename(filename, '_spree.yml')
         (comments, other) = read_file(filename, basename)
         words.each { |k,v| other[k] ||= words[k] }                     #Initializing hash variable as empty if it does not exist
