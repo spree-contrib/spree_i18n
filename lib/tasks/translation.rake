@@ -6,7 +6,7 @@ namespace :spree do
     task :refresh do
       puts "Fetching latest Spree locale file to #{language_root}"
       exec %(
-        curl -Lo '#{language_root}/en_spree.yml' http://github.com/railsdog/spree/tree/master/config/locales/en_spree.yml?raw=true
+        curl -Lo '#{language_root}/en_spree.yml' http://github.com/railsdog/spree/raw/master/config/locales/en_spree.yml
       )      
     end
     
