@@ -1,0 +1,927 @@
+---
+et: 
+  'no': "Ei"
+  'yes': "Jah"
+  5_biggest_spenders: 5 suurimat ostjat
+  a_copy_of_all_mail_will_be_sent_to_the_following_addresses: Koopia kõikidest postitustest saadetakse järgmisele aadressile
+  abbreviation: Lühend
+  access_denied: Juurdepääs keelatud
+  account: Konto
+  account_updated: Konto uuendatud
+  action: Toiming
+  actions:
+    cancel: tühista
+    create: Loo uus
+    destroy: Kustuta
+    list: Loetelu
+    listing: Loetelu
+    new: Uus
+    update: Uuendus
+  active: Aktiivne
+  activerecord:
+    attributes:
+      address:
+        address1: Aadress1
+        address2: Aadress2
+        city: Linn
+        country: Riik
+        first_name: Eesnimi
+        last_name: Perekonnanimi
+        phone: Telefon
+        state: Maakond
+        zipcode: Postiindeks
+      checkout:
+        bill_address:
+          address1: Tänav
+          city: Linn
+          firstname: Eesnimi
+          lastname: Perekonnanimi
+          phone: Telefon
+          state: Maakond
+          zipcode: Postiindeks
+        ship_address:
+          address1: Tänav
+          city: Linn
+          firstname: Eesnimi
+          lastname: Perekonnanimi
+          phone: Telefon
+          state: Maakond
+          zipcode: Postiindeks
+      country:
+        iso: ISO (Rahvusvaheline Standardiseerimisorganisatsioon)
+        iso3: ISO3
+        iso_name: ISO nimi
+        name: Nimi
+        numcode: Iso-kood
+      creditcard:
+        cc_type: Krediitkaardi liik
+        month: Kuu
+        number: Number
+        verification_value: Turvakood
+        year: Aasta
+      inventory_unit:
+        state: Maakond
+      line_item:
+        price: Hind
+        quantity: Kogus
+      order:
+        checkout_complete: Tellimus edastatud!
+        ip_address: IP aadress
+        item_total: Kogus
+        number: Number
+        special_instructions: Erijuhised
+        state: Maakond
+        total: Kokku
+      product:
+        available_on: Saadaval alates
+        cost_price: jaemüügihind
+        description: Kirjeldus
+        master_price: Hind
+        name: Nimi
+        on_hand: 1) käepärast 2) kätte toimetatud TODO
+        shipping_category: kohaletoimetamise kategooria
+        tax_category: Maksukategooria
+      product_group:
+        name: Nimi
+        product_count: Kokku tooteid
+        product_scopes: 1) toote kasutusalad 2) toote käsitlusalad 3) tooteulatus
+        products: Tooted
+        url: Internetiaadress
+      product_scope:
+        arguments: Argumendid
+        description: Kirjeldus
+      property:
+        name: Nimi
+        presentation: presentatsioon
+      prototype:
+        name: Nimi
+      return_authorization:
+        amount: Kogus
+      role:
+        name: Nimi
+      state:
+        abbreviation: Lühend
+        name: Nimi
+      tax_category:
+        description: Kirjeldus
+        name: Nimi
+      tax_rate:
+        amount: Määr
+      taxon:
+        name: Nimi
+        permalink: Püsilink
+        position: Positsioon
+      taxonomy:
+        name: Nimi
+      user:
+        email: E-mail
+      variant:
+        cost_price: jaemüügihind
+        depth: Sügavus
+        height: Kõrgus
+        price: Hind
+        sku: SKU
+        weight: Kaal
+        width: Laius
+      zone:
+        description: Kirjeldus
+        name: Nimi
+    models:
+      address:
+        one: Aadress
+        other: Aadressid
+      cheque_payment:
+        one: Tasumine tšekiga
+        other: Tasumised tšekkidega
+      country:
+        one: Riik
+        other: Riigid
+      creditcard:
+        one: Krediitkaart
+        other: Krediitkaardid
+      creditcard_payment:
+        one: Krediitkaardimakse
+        other: Krediitkaardimaksed
+      creditcard_txn:
+        one: Krediitkaarditehing
+        other: Krediitkaarditehingud
+      inventory_unit:
+        one: Lao seis
+        other: Lao seisud
+      line_item:
+        one: Ese
+        other:  Esemed
+      order:
+        one: Rellimus
+        other: Rellimused
+      payment:
+        one: Makse
+        other: Maksed
+      product:
+        one: Toode
+        other: Tooted
+      product_group:
+        one: Tootekategooria
+        other: Tootekategooriad
+      property:
+        one: Omadus
+        other: Omadused
+      prototype:
+        one: Prototüüp
+        other: Prototüübid
+      return_authorization:
+        one: Return Authorization tagasta toode TODO
+        other: Return Authorizations tagasta tooted
+      role:
+        one: Rollid
+        other: Rollid
+      shipment:
+        one: Tarne
+        other: Tarned
+      shipping_category:
+        one: Transpordi kategooria
+        other: Transpordi kategooriad
+      state:
+        one: Maakond
+        other: Maakonnad
+      tax_category:
+        one: Maksukategooria
+        other: Maksukategooriad
+      tax_rate:
+        one: Maksumäär
+        other: Maksumäärad
+      taxon:
+        one: Taxon liik TODO
+        other: Taxons liigid
+      taxonomy:
+        one: Taksonoomia
+        other: Taksonoomiad
+      user:
+        one: Kasutaja
+        other: Kasutajad
+      variant:
+        one: Variant
+        other: Variandid
+      zone:
+        one: Tsoon
+        other: Tsoonid
+  add: Lisa
+  add_category: Lisa kategooria
+  add_country: Lisa riik
+  add_option_type: Lisa variatsioonitüüp
+  add_option_types: Lisa variatsioonitüüpe
+  add_option_value: Lisa variatsionitüübi variante
+  add_product: Lisa toode
+  add_product_properties: Lisa toote omadusi
+  add_scope: Add a scope lisa käsitlusala /ulatus
+  add_state: Lisa maakond/osariik
+  add_to_cart: Lisa korvi
+  add_zone: Lisa tsoon
+  additional_item: Iga järgneva toote summa
+  address: Address aadress
+  address_information: Address Information aadressi informatsioon
+  adjustment: Kohandus
+  adjustments: Kohandused
+  administration: Administreerimisliides
+  all: All kõik
+  all_departments: All departments 1) kõik osakonnad 2) kõik erialad TODO
+  allow_backorders: Allow Backorders  pikem tarneaeg lubatud/võimalik  *(ma ei leia, et eesti keeles oleks otsest vastet „backorderile“, suures osas kasutatakse sel puhul erineva pikkusega tarneaega)
+  allow_ssl_to_be_used_when_in_developement_and_test_modes: Allow SSL to be used when in development and test modes Võimalda SSL’i (turvasoklite kihi) kasutamist arendus- ja testrežiimil
+  allow_ssl_to_be_used_when_in_production_mode: Allow SSL to be used in production mode Võimalda SSL’i (turvasoklite kihi) kasutamist tootmisrežiimil
+  allowed_ssl_in_production_mode: SSL will {{not}} be used in production SSL’i (turvasoklite kihi) kasutamine tootmisel (mitte) võimaldatud/võimalik
+  already_registered: Already Registered? Juba registreeritud? Või registreerisid juba?
+  alternative_phone: Alternative Phone teine telefoninumber
+  amount: Summa
+  analytics_trackers: Analytics Trackers analüütiliste arvestuste jälgija /analüütika jälgija
+  are_you_sure: Kas oled kindel?
+  are_you_sure_category: Kas oled kindel, et soovid seda kategooriat kustutada?
+  are_you_sure_delete: Kas oled kindel, et soovid seda kirjet kustutada?
+  are_you_sure_delete_image: Kas oled kindel, et soovid seda pilti kustutada?
+  are_you_sure_option_type: Kas oled kindel, et soovid seda valikut kustutada?
+  are_you_sure_you_want_to_capture: Kas oled kindel, et soovid makset lõpetada?
+  assign_taxon: Määra taksonoomia
+  assign_taxons: Määra taksonoomiad
+  authorization_failure: Tõrge autoriseerimisel
+  authorized: Autoriseeritud
+  available_on: Saadaval alates
+  available_taxons: Võimalikud taksonoomiad
+  awaiting_return: Tagastamist ootav
+  back: Tagasi
+  back_to_store: Mine tagasi poodi
+  backordered: Tagasitellitud
+  backordering_is_allowed: Tagasitellimine {{ei ole}} lubatud
+  balance_due: Tasuda jäänud
+  best_selling_products: Suurima läbimüügiga tooted
+  best_selling_taxons: Suurima läbimüügiga tootegrupid
+  bill_address: Arve saaja aadress
+  billing: Arve esitamine
+  billing_address: Arve saaja aadress
+  by_day: vastavalt
+  calculator: Kalkulaator
+  calculator_settings_warning: Kalkulaatoritüübi ja -seadete muutmiseks pead kõigepealt salvestama.
+  cancel: Tühista
+  canceled: Tühistatud
+  cannot_create_returns: Tellimust ei saa tagastada, kuna seda pole veel väljastatud.
+  capture: Lõpeta makse
+  card_code: Kaardikood
+  card_details: Kaardi detailid
+  card_number: Kaardi number
+  card_type_is: Kaarditüüp on
+  cart: Ostukorv
+  categories: Katergooriad
+  category: Kategooria
+  change: Muuda
+  change_language: Muuda keelt
+  change_my_password: Muuda salasõna
+  charge_total: Kogusumma
+  charged: Kaardilt võetud
+  charges: Tasud
+  checkout: Vormista tellimus
+  checkout_steps:
+    # keys correspond to Checkout state names:
+    address: Addressid
+    complete: Lõpeta
+    confirm: Kinnitamine
+    delivery: Kohaletoimetamine
+    payment: Tasumine
+  cheque: Tšekk
+  city: Linn
+  clone: Võta aluseks
+  code: Kood
+  combine: Kombineeritud
+  comp_order: Comp Order võrdle tellimust või jälgi tellimust
+  comp_order_confirmation: Customer will not be charged.  Are you sure you want to comp this order? Klienti ei maksustata. Kas oled kindel, et soovid seda tellimust jälgida? või kas oled kindel, et soovid seda tellimust jälgida? Kliendile tasuta.
+  complete: complete valmis või lõpetatud
+  complete_list: Complete List kogu nimekiri või lõpeta nimekiri või täienda nimekirja
+  configuration: Konfiguratsioon
+  configuration_options: Configuration Options konfiguratsiooni valikud
+  configurations: Configurations konfiguratsioonid või paigaldused
+  configured: Configured konfigureeritud või paigaldatud
+  confirm: Kinnita
+  confirm_delete: Kinnita kustutamine
+  confirm_password: Password Confirmation kinnita salasõna
+  continue: Jätka
+  continue_shopping: Jätka ostlemist
+  copy_all_mails_to: Koopia kõikidest meilidest aadressile
+  cost_price: Omahind
+  count: Kogus
+  count_of_reduced_by: count of '{{name}}' reduced by {{count}} loenda… vähendatud…
+  country: Riik
+  country_based: Riigipõhine
+  coupon: Sooduskupong
+  coupon_code: Sooduskupongi kood
+  coupons: Sooduskupongid
+  coupons_description: Halda sooduskuponge
+  create: Loo kasutajakonto
+  create_a_new_account: Loo uus konto
+  create_user_account: Loo kasutajakonto
+  created_successfully: Kasutajakonto loodud
+  credit: Krediit
+  credit_card: Krediitkaart
+  credit_card_capture_complete: Krediitkaardi makse lõpetatud
+  credit_card_payment:  Krediitkaardimakse
+  credit_owed:  Krediit võlgu
+  credit_total: Krediit kokku
+  creditcard: krediitkaart
+  creditcards: krediitkaardid
+  credits: 1) krediidid 2) punktid
+  current: 1) praegune 2) käibiv
+  customer: Klient
+  customer_details: Kliendi andmed
+  customer_search: Kliendi otsing
+  date_created: Loomise kuupäev
+  date_range: Vali vahemik
+  debit: Deebet
+  delete: Kustuta
+  depth: Sügavus
+  description: Kirjeldus
+  destroy: Kustuta
+  display: Kuvatav väärtus
+  edit: Muuda
+  editing_billing_integration: redigeeri arve esitamise mugandamist
+  editing_category: Redigeeri kategooriat
+  editing_coupon: Redigeeri kupongi
+  editing_option_type: Redigeeri variatsioonitüüpi
+  editing_option_types: Redigeeri variatsioonitüüpe
+  editing_payment_method: Redigeeri maksmisviisi
+  editing_product: Redigeeri toodet
+  editing_product_group: Redigeeri tootegruppi
+  editing_property: Redigeeri omadusi
+  editing_prototype: Redigeeri prototüüpi
+  editing_shipping_category: redigeeri kohaletoimetamise kategooriat
+  editing_shipping_method:  redigeeri kohaletoimetamise meetodit
+  editing_shipping_rate: 1) redigeeri kohaletoimetamise hinda 2) redigeeri kohaletoimetamise tariifi
+  editing_state: Redigeeri maakonda/osariiki
+  editing_tax_category: redigeeri maksukategooriat
+  editing_tax_rate: redigeeri maksumäära
+  editing_tracker: redigeeri jälgijat
+  editing_user: Muuda kasutajakonto andmeid
+  editing_zone: redigeeri tsooni
+  email: E-mail
+  email_address: E-mail
+  email_server_settings_description: Set email server settings. Seadista meiliserveri sätteid
+  empty_cart: Tühjenda ostukorv
+  enable_login_via_login_password: Kasuta sisselogimiseks e-maili ja salasõna
+  enable_login_via_openid: Logi sisse OpenID-d kasutades
+  enable_mail_delivery: 1) luba e-maili saatmist 2) luba postituste saatmist
+  enable_mail_queue: võimalda viivitust e-maili saatmisel
+  enter_exactly_as_shown_on_card: Please enter exactly as shown on the card palun sisestage täpselt nii, nagu kaardil näidatud
+  environment: Keskkond
+  error: Viga
+  event: Sündmus
+  existing_customer: Olemasolev klient
+  expiration: Aegub
+  expiration_month: Aegumise kuu
+  expiration_year: Aegumise aasta
+  extension: Laiendus
+  extensions: Laiendused
+  filename: Faili nimi
+  final_confirmation: Lõplik kinnitus
+  finalize: Lõpeta
+  finalized_payments: Tehtud maksed
+  first_item: Esimese toote summa
+  first_name: Eesnimi
+  flat_percent: Fikseeritud protsent
+  flat_rate_amount: Fikseeritud summa
+  flat_rate_per_item: Fikseeritud summa eseme kohta
+  flat_rate_per_order: Fikseeritud summa tellimuse kohta
+  flexible_rate: Paindlik summa
+  forgot_password: Unustasid salasõna?
+  full_name: Pärisnimi
+  gateway: juurdepääs
+  gateway_configuration: 1) konfigureeri juurdepääsu
+  gateway_error: 1) vigane juurdepääs 2) viga juurdepääsul
+  gateway_setting_description: Select a payment gateway and configure its settings. Vali juurdepääs maksmisele ja konfigureeri sätteid.
+  gateway_settings_warning: If you are changing the gateway type, you must save first before you can edit the gateway settings Juurdepääsu tüübi ja -seadete muutmiseks pead kõigepealt salvestama. Salvesta enne juurdepääsu tüübi ja –seadete muutmist.
+  general: Üldine
+  general_settings: Üldised sätted
+  general_settings_description: Configure general Spree settings. Konfigureeri üldiseid Spree sätteid. *(ma ei leia, et spree tähendaks midagi ja selle otseset vasted – hoog, joomatuur ja tujudele järeleandmine ei sobi nagu mitte mingit pidi)
+  google_analytics: Google Analytics 1) otsi Google’ist analüütikat 2) Googelda analüütikat
+  google_analytics_active: Active aktiveeritud
+  google_analytics_create: Create New Google Analytics Account Loo uus Google’i analüütiku konto
+  google_analytics_id: Analytics ID Analüütiku ID
+  google_analytics_new: New Google Analytics Account Uus Google’i analüütiku konto
+  google_analytics_setting_description: Manage Google Analytics ID Halda Google’i analüütika ID-d
+  guest_user_account: Vormista ost külalisena
+  has_no_shipped_units: Postitatud esemed puuduvad
+  height: Kõrgus
+  hello_user: Tere, kasutaja!
+  history: Ajalugu
+  home: Avaleht
+  icons_by: Ikoonid
+  image: pilt
+  images: Pildid
+  images_for: pildid … (milleks, millele)
+  in_progress: Töös
+  include_in_shipment: Lisa tarnele
+  included_in_other_shipment: Lisatud teisele tarnele
+  included_in_this_shipment: Lisatud sellele tarnele
+  instructions_to_reset_password: Täida allolev vorm. Juhised salasõna uuesti seadistamiseks saadetakse Teile e-maili teel.
+  integration_settings_warning: If you are changing the billing integration, you must save first before you can edit the integration settings Arve esitamise mugandamiseks ja -seadete muutmiseks pead kõigepealt salvestama. Salvesta enne arve esitamise mugandamist ja –seadete muutmist.
+  invalid_search: Invalid search criteria. vigane otsingukriteerium
+  inventory: varustus
+  inventory_adjustment:  1) varustuse kohandamine 2) varustuse sobitamine
+  inventory_setting_description: Inventory Configuration, Backordering, Zero-Stock Display Varustuse sätete kirjeldus; varustuse konfigureerimine, pikem tarneaeg, kuva laojääki
+  inventory_settings: varustuse sätted
+  is_not_available_to_shipment_address:  Pole tarneaadressile saadaval
+  issue_number: väljalaske number
+  item: Toode
+  item_description: Toote kirjeldus
+  item_total: Tooted kokku
+  items: Tooted
+  last_14_days: Viimased 14 päeva
+  last_5_orders: Viimased 5 tellimust
+  last_7_days: Viimased 7 päeva
+  last_month: Eelmine kuu
+  last_name: Perekonnanimi
+  last_year: Eelmine aasta
+  list: Loetelu
+  listing_categories: Loetelu kategooriad
+  listing_option_types: Valikute loetelu
+  listing_orders: Tellimuste loetelu
+  listing_product_groups: Tootegruppide loetelu
+  listing_reports: Aruannete loetelu
+  listing_tax_categories: Maksekategooriate loetelu
+  listing_users: Kasutajate loetelu
+  live: otse- (ülekanne)
+  loading: Laen...
+  locale_changed: Keel vahetatud
+  log_in: Logi sisse
+  logged_in_as: "Sisse logitud kasutajana:"
+  logged_in_succesfully: Sisselogimine õnnestus!
+  logged_out: Oled välja logitud!
+  login_as_existing: Logi sisse
+  login_failed: Sisselogimine ebaõnnestus. Palun kontrolli sisestatud andmeid.
+  login_name: Kasutajanimi
+  logout: Logi välja
+  look_for_similar_items: Teised sarnased tooted
+  maestro_or_solo_cards: Maestro või Solo kaardid
+  mail_delivery_enabled: 1) posti saatmine lubatud 2) e-posti saatmine lubatud
+  mail_delivery_not_enabled: 1) posti saatmine keelatud 2) e-posti saatmine keelatud
+  mail_queue_enabled: Mail queue is enabled - 1) võimalda viivitust  e-maili saatmisel
+  mail_queue_not_enabled: Mail queue is not enabled (emails are delivered immediately) - 1) viivitus e-maili saatmisel keelatud (meilid saadetakse kohe)
+  mail_server_preferences: meiliserveri eelistused
+  mail_server_settings: Meiliserveri sätted
+  make_refund: Teosta tagasimakse
+  mark_shipped: Märgi saadetuks
+  master_price: Hind
+  max_items: Maksimaalne toodete arv
+  meta_description: Kirjeldus
+  meta_keywords: Märksõnad
+  metadata: Metaandmed
+  missing_required_information: 1) puuduolev vajalik informatsioon 2) puudub nõutav informatsioon
+  month: Kuu
+  my_account: Minu konto
+  my_orders: Minu tellimused
+  name: Nimi
+  new: Uus
+  new_adjustment: Uus kohandus
+  new_billing_integration: 1) muganda uus arve 2) uue arve mugandamine
+  new_category: Uus kategooria
+  new_coupon: Uus kupong
+  new_customer: Registreeru
+  new_image: Uus pilt
+  new_option_type: Uus valik
+  new_option_value: Uus valikuväärtus
+  new_order: Uus tellimus
+  new_payment: Uus makse
+  new_payment_method: Uus maksemeetod
+  new_product: Uus toode
+  new_product_group: Uus tootegrupp
+  new_property: Uus omadus
+  new_prototype: Uus prototüüp
+  new_return_authorization: Uue toote tagastamine
+  new_shipment: Uus tarne
+  new_shipping_category: Uus tarnekategooria
+  new_shipping_method: Uus tarnemeetod
+  new_shipping_rate: Uus tarnetasu
+  new_state: Uus maakond/osariik
+  new_tax_category: Uus maksukategooria
+  new_tax_rate: Uus maksumäär
+  new_taxon: Uus liik
+  new_taxonomy: Uus liigitus
+  new_tracker: Uus jälgija
+  new_user: Uus kasutaja
+  new_variant: Uus variant
+  new_zone: Uus tsoon
+  next: Järgmine
+  no_items_in_cart: Ostukorv on tühi
+  no_match_found: vastet ei leitud
+  no_payment_methods_available: Can't check out, no payment methods are configured for this environment Väljastamine ei õnnestunud. Antud keskkonnas ei võimalda seda ükski maksevõimalustest.
+  no_products_found: tooteid ei leitud
+  no_shipping_methods_available: Puuduvad võimalused kohaletoimetamiseks. Palun muutke aadressi ja proovige uuesti.
+  no_user_found: No user was found with that email address sellise e-maili aadressiga kasutajat ei leitud.
+  none: Puuduvad
+  none_available: Puuduvad
+  not: mitte
+  note: Märkus
+  notice_messages:
+    option_type_removed: Succesfully removed option type. Valik edukalt eemaldatud
+    product_cloned:  toode on kloonitud
+    product_deleted: toode on kustutatud
+    product_not_cloned: toote kloonimine ei õnnestunud
+    product_not_deleted: tootme kustutamine ei õnnestunud
+    track_me_in_GA: (ma ei tea, mida GA antud juhul tähendab, kuna siin enne esines termin google analytics, siis eeldan, et see on lühend) 1) tee märge Google’i analüütikasse 2) jälgi Google’i analüütikat
+    variant_deleted: variant kustutatud
+    variant_not_deleted: variandi kustutamine ebaõnnestus
+  on_hand: Laoseis
+  operation: Operatsioon
+  option_Values: valiku väärtused
+  option_types: Variatsioonid
+  option_values: valiku väärtused
+  options: Variatsioonid
+  or: või
+  ord_qty: Tellimuse kogus
+  ord_total: Tellimus kokku
+  order: Tellimus
+  order_confirmation_note: Märge kinnitatud tellimusest
+  order_date: Tellimuse kuupäev
+  order_details: Tellimuse info
+  order_email_resent: e-mail tellimuse kohta uuesti saadetud
+  order_not_in_system: That order number is not valid on this site. 1) Tellimuse number ei kehti sellel saidil 2) tellimuse numbrit ei leitud sellelt saidilt
+  order_number: Tellimuse number
+  order_operation_authorize: tellimuse teostamine autoriseeritud
+  order_processed_but_following_items_are_out_of_stock: Teie tellimus on läbi vaadatud, kuid järgmisi esemeid ei ole hetkel laos.
+  order_processed_successfully: Tellimus edastatud
+  order_summary: Tellimuse kokkuvõte
+  order_sure_want_to: Kas olete kindel, et soovite {{event}} seda tellimust?
+  order_total: Tellimus kokku
+  order_total_message: Teie kaardilt maha laetav summa on
+  order_updated: Tellimus uuendatud
+  orders: Tellimused
+  other_payment_options: 1) teised maksevõimalused 2) teised makseviisid
+  out_of_stock: Laost lõppenud
+  out_of_stock_products: Laost lõppenud tooted
+  over_paid: Ülemakstud
+  overview: Ülevaade
+  overview_welcome: Welcome to your store overview, currently we do not have enough data to display the Overiew Dashboard.<br/><br/> The dashboard will display automatically once the system has sufficent orders to allow generation of the statistics. Tere tulemast tutvuma ülevaatega laost. Hetkel ei ole meil piisavalt andmeid kuvamaks täielikku ülevaadet. Ülevaade kuvatakse automaatselt kohe, kui süsteemis on piisavalt tellimusi, mis võimaldavad statistika genereerimist.
+  page_only_viewable_when_logged_in: You attempted to visit a page which can only be viewed when you are logged in. Soovitud lehekülje külastamine võimalik vaid sisse logides.
+  page_only_viewable_when_logged_out: You attempted to visit a page which can only be viewed when you are logged out. Soovitud lehekülje külastamine võimalik vaid välja logides.
+  paid: Makstud
+  parent_category: Peakategooria
+  password: Salasõna
+  password_reset_instructions: juhised salasõna uuesti seadistamiseks
+  password_reset_instructions_are_mailed: Instructions to reset your password have been emailed to you. Please check your email. Juhised salasõna uuesti seadistamiseks saadetakse Teile e-maili teel. Palun lugege oma e-posti.
+  password_reset_token_not_found: We're sorry, but we could not locate your account. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process. Kahjuks ei leitud Teie kontot. Probleemide korral kopeerige ja kleepige e-mailist internetiaadress brauseriaknasse või alustage salasõna algseadistamist uuesti.
+  password_updated: Password successfully updated salasõna edukalt uuendatud
+  path: rada
+  pay: 1) maksma 2) maksa
+  payment: makse
+  payment_gateway: juurdepääs tasumisele
+  payment_information: Makse informatsioon
+  payment_method: Makseviis
+  payment_methods: Makseviisid
+  payment_methods_setting_description: konfigureeri kliendi maksevõimalusi
+  payment_updated: Makse uuendatud
+  payments: Maksed
+  pending_payments: Ootel olevad maksed
+  permalink: Püsiviide
+  phone: Telefon
+  place_order: Esita tellimus
+  please_create_user: Palun loo kasutajakonto
+  powered_by: Toetab
+  presentation: Kuvatav väärtus
+  preview: Eelvaade
+  previous: Eelmine
+  price: Hind
+  price_with_vat_included:  hind koos käibemaksuga
+  problem_authorizing_card: probleem krediitkaardi autoriseesimisel
+  problem_capturing_card: probleem krediiktaardi detailide talletamisel
+  problems_processing_order: Teie tellimuse töötlemisel esines probleeme
+  proceed_as_guest: Tänan, ei! Jätka külalisena
+  process: 1) töötle 2) vaata läbi
+  product: toode
+  product_details: Tooteinfo
+  product_group: tootegrupp
+  product_group_invalid: Product Group has invalid scopes tootegrupil kehtetu käsitlusala
+  product_groups: tootegrupid
+  product_has_no_description: sellel tootel puudub kirjeldus
+  product_properties: toote omadused
+  product_scopes:
+    groups:
+      price:
+        description: Scopes for selecting products based on Price valitud toodete käsitlusala hinnast lähtuvalt
+        name: hind
+      search:
+        description: Scopes for selecting products based on name, keywords and description of product valitud toodete käsitlusala nimest, märksõnadest ja kirjeldusest lähtuvalt
+        name: Text search teksti otsing
+      taxon:
+        description: Scopes for selecting products based on Taxons valitud toodete käsitlusala liikidest lähtuvalt
+        name: liik
+      values:
+        description: Scopes for selecting products based on option and property values valitud toodete käsitlusala valikutest ja omaduse väärtusest lähtuvalt
+        name: väärtused
+    scopes:
+      ascend_by_master_price:
+        name: Ascend by product master price kõrgemast toote lõpphinnast lähtuvalt
+      ascend_by_name:
+        name: Ascend by product kasvavalt toote nimest lähtuvalt
+      ascend_by_updated_at:
+        name: Ascend by actualization date kasvavalt aktualiseerimise kuupäevast lähtuvalt
+      descend_by_master_price:
+        name: Descend by product master price madalamast toote lõpphinnast lähtuvalt
+      descend_by_name:
+        name: Descend by product name kahanevalt toote nimest lähtuvalt
+      descend_by_popularity:
+        name: Sorteeri ostetavusest lähtuvalt (alusta ostetumaist)
+      descend_by_updated_at:
+        name: Descend by actualization date kahanevalt aktualiseerimise kuupäevast lähtuvalt
+      in_name:
+        args:
+          words: sõnad
+        description: eraldatud tühiku või komaga
+        name: Toote nimes sisaldub järgmine
+        sentence: Toote nimi sisaldab <em>%s</em>
+      in_name_or_description:
+        args:
+          words: sõnad
+        description: (eraldatud tühiku või komaga)
+        name: "Toote nimes või kirjelduses sisaldub järgmine:"
+        sentence: nimi või kirjeldus sisaldab <em>%s</em>
+      in_name_or_keywords:
+        args:
+          words: sõnad
+        description: (separated by space or comma) eraldatud tühiku või komaga
+        name: Product name or meta keywords have following toote nimi või metamärksõnad sisaldavad järgnevat
+        sentence: name or keywords contain <em>%s</em> nimi või märksõna sisaldab
+      in_taxons:
+        args:
+          taxon_names: liigi nimes
+        description: Taxon names have to be separated by comma or space(eg. adidas,shoes) liikide nimed peavad olema koma või tühiku abil eraldatud (näiteks adidas,kingad)
+        name: In taxons and all their descendants liikides ja kõikides järglastes
+        sentence: in <em>%s</em> and all their descendants … ja kõikdies järglastes
+      master_price_gte:
+        args:
+          amount: Kogus
+        description: Kirjeldus
+        name: Hind suurem või võrdne
+        sentence: hind suurem või võrdne kui <em>%.2f</em>
+      master_price_lte:
+        args:
+          amount: Kogus
+        description: Kirjeldus
+        name: Hind väiksem või võrdne
+        sentence: hind väiksem või võrdne kui <em>%.2f</em>
+      price_between:
+        args:
+          high: Kõrge
+          low: Madal
+        description: Kirjeldus
+        name: Hind vahemikus
+        sentence: hind vahemikus <em>%.2f</em> kuni <em>%.2f</em>
+      taxons_name_eq:
+        args:
+          taxon_name: liiginimi
+        description: In specific taxon - without descendants kindlas liigis – ilma järglasteta
+        name: In Taxon(without descendants) liigis ilma järglasteta
+        sentence: in <em>%s</em> …?
+      with:
+        args:
+          value: väärtus
+        description: Valib kõik tooted, milles vähemalt üks vaste kattub valiku või omaduse väärtuses kindlaksmääratuga.
+        name: Väärtusega
+        sentence: väärtusega <em>%s</em>
+      with_option:
+        args:
+          option: valik
+        description: Valib kõik tooted, millel on täpselt määratud väärtus (näiteks värv)
+        name: Valikuga
+        sentence: valikuga <em>%s</em>
+      with_option_value:
+        args:
+          option: valik
+          value: väärtus
+        description: "Valib kõik tooted, milles vähemalt üks vaste kattub täpselt määratud valiku ja väärtusega (näiteks värv- punane)"
+        name: Valiku ja väärtusega
+        sentence: valiku <em>%s</em> ja väärtusega <em>%s</em>
+      with_property:
+        args:
+          property: omadus
+        description: Valib kõik tooted, millel on täpselt määratud omadus (näiteks. kaal)
+        name: Omadusega
+        sentence: omadusega <em>%s</em>
+      with_property_value:
+        args:
+          property: Omadus
+          value: Väärtus
+        description: Valib kõik tooted, milles vähemalt üks vaste kattub täpselt määratud omaduse ja väärtusega (näiteks kaal- 10kg)
+        name: Omaduse väärtusega
+        sentence: omaduse <em>%s</em> ja väärtusega <em>%s</em>
+  products: Tooted
+  products_with_zero_inventory_display: Products with a zero inventory will {{not}} be displayed
+  properties: Omadused
+  property: Omadus
+  prototype: Prototüüp
+  prototypes: Prototüübid
+  provider: Varustaja
+  provider_settings_warning: Varustaja sätete muutmiseks peab eelnevalt varustaja salvestama
+  qty: Kogus
+  quantity_shipped: Postitatud kogus
+  range: Ulatus
+  rate: Hind
+  reason: põhjus
+  recalculate_order_total: Arvuta tellimuse kogus uuesti
+  receive: Võta vastu
+  received: Vastu võetud
+  refund: Tagasimakse
+  register: Register as a New User registreeri uue kasutajana
+  register_or_guest: Vormist ost külalisena
+  registration: Registreeru või vormista ost külalisena
+  remember_me: Mäleta mind
+  remove: Eemalda
+  reports: Aruanded
+  required_for_solo_and_maestro: Nõutav Solo ja Maestro kaartide puhul
+  resend: Saada uuesti
+  reset_password: Lähtesta salasõna
+  resource_controller:
+    member_object_not_found: Objekti ei leitud
+    successfully_created: Edukalt loodud!
+    successfully_removed: Edukalt eemaldatud!
+    successfully_updated: Edukalt uuendatud!
+  response_code: Vastuse kood
+  resume: Jätka
+  resumed: Jätkatud
+  return: Tagastama
+  return_authorization: Tagasta toode
+  return_authorization_updated: Toote tagastamine uuendatud
+  return_authorizations: Tagasta tooted
+  return_quantity: Tagastatav kogus
+  returned: Tagastatud
+  rma_number: Tagastatud toote number
+  rma_value: Tagastatud toote väärtus
+  roles: Rollid
+  sales_tax: Käibemaks
+  sales_total: Kogumüük
+  sales_total_for_all_orders: Tellimuste tulu kokku
+  sales_totals: Müük kokku
+  sales_totals_description: Kõikide tellimuste tulu kokku
+  save_and_continue: Salvesta ja jätka
+  save_preferences: Salvesta eelistused
+  scope: Käsitlusala
+  scopes: Käsitlusalad
+  search: Otsing
+  search_results: Otsingu '{{keywords}}' tulemused
+  secure_connection_type: Turvalise ühenduse tüüp
+  secure_creditcard: Kinnita krediitkaardiga
+  select: Vali
+  select_from_prototype: Vali prototüüpide hulgast
+  select_preferred_shipping_option: Vali eelistatud saatmismeetod
+  send_copy_of_all_mails_to: Saada koopia kõikidest e-mailidest
+  send_copy_of_orders_mails_to: Saada koopia tellimuse e-mailidest
+  send_mails_as: Saada e-mailid kui
+  send_order_mails_as: Saada tellimuse e-mailid kui
+  server: Server
+  server_error: Serveris esines viga
+  settings: Sätted
+  ship: Saada
+  ship_address: Kättetoimetamise aadress
+  shipment: Saadetis
+  shipment_details: Saadetise detailid
+  shipment_number: Saadetise number
+  shipment_updated: Saadetis uuendatud
+  shipments: Saadetised
+  shipped: Saadetud
+  shipping: Transport
+  shipping_address: Kättetoimetamise aadress
+  shipping_categories: Saatmiskategooriad
+  shipping_categories_description: Halda tarnekategooriaid selgitamaks välja erinevate toodete kohaletoimetusviise
+  shipping_category: Saatmiskategooria
+  shipping_cost: Maksumus
+  shipping_error: Saatmise viga
+  shipping_instructions: tarneinstruktsioonid
+  shipping_method: Saatmisviis
+  shipping_methods: Saatmisviisid
+  shipping_methods_description: Halda saatmisviise
+  shipping_rates: Saadetiste hinnad
+  shipping_rates_description: Halda saadetiste hindu
+  shipping_total: Saadetised kokku
+  shop_by_taxonomy: "{{taxonomy}}:"
+  shopping_cart: Ostukorv
+  show: Näita
+  show_deleted: Näita kustutatuid
+  show_incomplete_orders: Näita täitmata tellimusi
+  show_only_complete_orders: Näita ainult täidetud tellimusi
+  show_out_of_stock_products: Näita laost lõppenud tooteid
+  show_price_inc_vat: Näita käibemaksu sisaldavat hinda
+  showing_first_n: näita esmalt…
+  sign_up: Liitu
+  site_name: Poe nimi
+  site_url: Poe aadress
+  sku: SKU
+  smtp: SMTP
+  smtp_authentication_type: SMTP autentimise tüüp
+  smtp_domain: SMTP domeen
+  smtp_mail_host: SMTP meili host
+  smtp_password: SMTP salasõna
+  smtp_port: SMTP port
+  smtp_send_all_emails_as_from_following_address: Saada kõik e-mailid järgnevalt aadressilt
+  smtp_send_copy_of_orders_to_this_addresses: Saada kõikide tellimuste koopia järgnevale aadressile. Rohkem kui ühe adressaadi puhul eralda aadressid komaga.
+  smtp_send_copy_to_this_addresses: Saada kõikide väljuvate e-mailide koopia järgnevale aadressile. Rohkem kui ühe adressaadi puhul eralda aadressid komaga.
+  smtp_send_order_mails_as_from_following_address: Saada tellimused järgnevalt e-maili aadressilt
+  smtp_username: SMTP kasutajanimi
+  sold: Müüdud
+  sort_ordering: Sorteerimise järjestus
+  spree:
+    date: Kuupäev
+    time: Aeg
+  ssl_will_be_used_in_development_and_test_modes: SSL’i kasutatakse vajadusel arendus- ja testrežiimil
+  ssl_will_be_used_in_production_mode: SSL’i kasutatakse tooterežiimil
+  ssl_will_not_be_used_in_development_and_test_modes: SSL’i ei kasutata vajadusel arendus- ja testrežiimil
+  ssl_will_not_be_used_in_production_mode: SSL’i ei kasutata tooterežiimil
+  start: Alates
+  start_date: Kehtiv alates
+  state: Maakond
+  state_based: Maakonnapõhine
+  state_setting_description: Halda iga riigiga seotud maakondi
+  states: Maakonnad
+  status: Staatus
+  stop: Kuni
+  store: Pood
+  street_address: Tänav
+  street_address_2: "&nbsp;"
+  subtotal: Vahesumma
+  subtract: Lahuta
+  system: Süsteem
+  tax: Maksud
+  tax_categories: Maksukategooriad
+  tax_categories_setting_description: Loo maksukategooriad tuvastamaks, millised tooted peaksid olema maksustatavad
+  tax_category: Maksukategooria
+  tax_rates: Maksumäärad
+  tax_rates_description: Maksumäärade seaded ja konfiguratsioon
+  tax_settings: Maksuseaded
+  tax_settings_description: Maksuseadete kirjeldus
+  tax_total: Maks kokku
+  tax_type: Maksetüüp
+  taxon: Taksonoomia
+  taxon_edit: Redigeeri taksonoomiaid
+  taxonomies: Taksonoomia
+  taxonomies_setting_description: Loo ja halda taksonoomiaid
+  taxonomy_edit: Redigeeri taksonoomiaid
+  taxonomy_tree_error: Soovitud muutuse tegemine ebaõnnestus ja puu muudeti tagasi endisele kujule. Palun proovige uuesti.
+  taxonomy_tree_instruction: * Elementide lisamiseks, muutmisek ja kustutamiseks kliki hiire parema nupuga mõnel puu elemendil
+  taxons: Taksonoomiad
+  test: Test
+  test_mode: Testrežiim
+  thank_you_for_your_order: Täname teid tellimuse eest
+  this_file_language: Inglise keel (US)
+  this_month: Käesolev kuu
+  this_year: Käesolev aasta
+  thumbnail: Pisipilt
+  to_add_variants_you_must_first_define: variantide lisamiseks pead esmalt defineerima TODO
+  top_grossing_products: Suurima käibega tooted
+  total: Kokku
+  tracking: Jälgimisnumber
+  transaction: Tehing
+  transactions: Tehingud
+  tree: Puu
+  try_again: Proovi uuesti
+  type: Tüüp
+  unable_ship_method: Tarneviiside loomine ebaõnnestus serveri vea tõttu.
+  unable_to_authorize_credit_card: Krediitkaardi autoriseerimine ebaõnnestus.
+  unable_to_capture_credit_card: Krediitkaardi makse lõpetamine ebaõnnestus.
+  unable_to_connect_to_gateway: Juurdepääs ebaõnnestus.
+  unable_to_save_order: Tellimuse salvestamine ebaõnnestus
+  under_paid: Alamakstud
+  unrecognized_card_type: Tundmatu kaarditüüp
+  update: Uuenda
+  update_password: Uuenda mu salasõna ja logi mind sisse
+  updated_successfully: Edukalt uuendatud
+  updating: Uuendan
+  usage_limit: Kasutuslimiit
+  use_as_shipping_address: Kasuta tarneaadressina
+  use_billing_address: Kasuta arve saaja aadressi
+  use_different_shipping_address: Kasuta teist postiaadressi
+  use_new_cc: Kasuta uut kaarti
+  user: Kasutaja
+  user_account: Kasutajakonto
+  user_created_successfully: Kasutajakonto loomine õnnestus
+  user_details: Kasutajakonto detailid
+  users: Kasutajad
+  validation:
+    is_too_large: on liiga suur – laos puudub soovitud kogus!
+    must_be_int: peab olema täisarv
+    must_be_non_negative: peab olema positiivne arv
+  value: Väärtus
+  variants: Variandid
+  vat: Käibemaks
+  version: Versioon
+  view_shipping_options: Vaata tarnevõimalusi
+  void: Muuda kehtetuks
+  website: Veebileht
+  weight: Kaal
+  welcome_to_sample_store: Tere tulemast näidispoodi!
+  what_is_a_cvv: Mis on krediitkaardi turvakood (CVV)?
+  what_is_this:  Mis see on?
+  whats_this:  Mis see on?
+  width: Laius
+  year: Aasta
+  you_have_been_logged_out: Olete välja logitud
+  your_cart_is_empty: Ostukorv on tühi
+  zip: Postiindeks
+  zone: Tsoon
+  zone_based: Tsoonipõhine
+  zone_setting_description: Kasuta erinevates arvutustes riikide, maakondade/osariikide ja teiste tsoonide kogumeid.
+  zones: Tsoonid
+  first_name_begins_with: Eesnimi algab
+  last_name_begins_with: Perekonnanimi algab
+  guest_checkout: Sooritas ostu külalisena
