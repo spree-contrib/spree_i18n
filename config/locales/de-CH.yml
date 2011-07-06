@@ -32,23 +32,6 @@ de-CH:
         phone: Telefonnummer
         state: "State"
         zipcode: PLZ
-      checkout: 
-        bill_address: 
-          address1: "Billing address street"
-          city: "Billing address city"
-          firstname: "Billing address first name"
-          lastname: "Billing address last name"
-          phone: "Billing address phone"
-          state: "Billing address state"
-          zipcode: "Billing address zipcode"
-        ship_address: 
-          address1: "Shipping address street"
-          city: "Shipping address city"
-          firstname: "Shipping address first name"
-          lastname: "Shipping address last name"
-          phone: "Shipping address phone"
-          state: "Shipping address state"
-          zipcode: "Shipping address zipcode"
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ de-CH:
       line_item: 
         price: Preis
         quantity: Menge
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Bestellung abgeschlossen"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "IP-Adresse"
         item_total: "Artikel gesamt"
         number: Bestellnummer
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Spezielle Anmerkungen"
         state: Kanton
         total: Gesamt
+      payment_method: 
+        name: Name
       product: 
         available_on: "Erhältlich ab"
         cost_price: "Einkaufspreis"
@@ -126,6 +130,8 @@ de-CH:
         name: Name
       user: 
         email: E-Mail
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Cost Price"
         depth: Tiefe
@@ -217,6 +223,7 @@ de-CH:
         one: Zone
         other: Zonen
   add: "Hinzufügen"
+  add_action_of_type: Add action of type
   add_category: "Kategorie hinzufügen"
   add_country: "Land hinzufügen"
   add_option_type: "Option hinzufügen"
@@ -236,11 +243,12 @@ de-CH:
   adjustment_total: Adjustment Total
   adjustments: Adjustments
   administration: Verwaltung
+  advertise: Advertise
   all: "Alles"
   all_departments: "Alle Bereiche"
   allow_backorders: "Lieferrückstand erlauben"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: "SSL in den Modi 'development' und 'test' erlauben"
-  allow_ssl_to_be_used_when_in_production_mode: "SSL im Modus 'production' erlauben"
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "SSL will %{not} be used in production"
   already_registered: "Bereits registriert?"
   alt_text: Alternative Text
@@ -357,6 +365,9 @@ de-CH:
   date_range: "Datum (von/bis)"
   debit: Debit
   default: Default
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Löschen
   delivery: Delivery
   depth: Tiefe
@@ -408,6 +419,17 @@ de-CH:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: Ereignis
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Vorhandener Kunde"
   expiration: "Gültigkeitsdauer"
   expiration_month: "Gültig bis (Monat)"
@@ -482,6 +504,8 @@ de-CH:
       gt: greater than
       gte: greater than or equal to
   items: "Items"
+  landing_page_rule: 
+    path: Path
   last_14_days: "Last 14 Days"
   last_5_orders: "Last 5 Orders"
   last_7_days: "Last 7 Days"
@@ -520,7 +544,6 @@ de-CH:
   mark_shipped: "Als versandt kennzeichnen"
   master_price: Grundpreis
   max_items: Max Items
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: "Meta-Beschreibung"
   meta_keywords: "Meta-Schlüsselwörter"
   metadata: "Metadaten"
@@ -817,6 +840,17 @@ de-CH:
   products: Produkte
   products_with_zero_inventory_display: "Produkte mit einem Lagerbestand von Null werden %{not} angezeigt"
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Match any of these rules
@@ -828,6 +862,9 @@ de-CH:
     item_total: 
       description: Order total meets these criteria
       name: Item total
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: Order includes specified product(s)
       name: Product(s)
@@ -1003,6 +1040,7 @@ de-CH:
   taxonomy_edit: "Taxonomie bearbeiten"
   taxonomy_tree_error: "Die angeforderte Änderung wurde nicht akzeptiert, und der Baum wurde in seinen vorherigen Zustand versetzt, bitte noch einmal versuchen!"
   taxonomy_tree_instruction: "* Rechtsklick auf ein Kind im Baum öffnet das Menü zum Hinzufügen, Löschen oder Sortieren."
+  taxonomу: Taxonomу
   taxons: "Klassifizierungen"
   test: "Test"
   test_mode: "Test-Modus"

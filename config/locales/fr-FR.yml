@@ -32,23 +32,6 @@ fr-FR:
         phone: Téléphone
         state: "Etat"
         zipcode: "Code Postal"
-      checkout: 
-        bill_address: 
-          address1: "Adresse de facturation"
-          city: "Ville de facturation"
-          firstname: "Prénom de facturation"
-          lastname: "Nom du facturation"
-          phone: "Téléphone de facturation"
-          state: "Etat de facturation"
-          zipcode: "Code postal de facturation"
-        ship_address: 
-          address1: "Adresse de livraison"
-          city: "Ville de livraison"
-          firstname: "Prénom de livraison"
-          lastname: "Nom de livraison"
-          phone: "Téléphone de livraison"
-          state: "Etat de livraison"
-          zipcode: "Code postal de livraison"
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ fr-FR:
       line_item: 
         price: Prix
         quantity: Quantité
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Paiement complet"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "Adresse IP"
         item_total: "Total d'articles"
         number: Nombre
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Instructions spéciales"
         state: Région
         total: Total
+      payment_method: 
+        name: Name
       product: 
         available_on: "Disponible sur"
         cost_price: "Prix de revient"
@@ -126,6 +130,8 @@ fr-FR:
         name: Nom
       user: 
         email: Email
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Prix de revient"
         depth: Profondeur
@@ -217,6 +223,7 @@ fr-FR:
         one: Zone
         other: Zones
   add: Ajouter
+  add_action_of_type: Add action of type
   add_category: "Ajouter une catégorie"
   add_country: "Ajouter un pays"
   add_option_type: "Ajouter un type d'option"
@@ -236,11 +243,12 @@ fr-FR:
   adjustment_total: Adjustment Total
   adjustments: Ajustements
   administration: Administration
+  advertise: Advertise
   all: "Tous"
   all_departments: Tous les rayons
   allow_backorders: "Permettre la rupture de stock"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: Permettre l'utilisation du SSL lors des modes développement et test
-  allow_ssl_to_be_used_when_in_production_mode: Permettre l'utilisation du SSL lors du mode production
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "le SSL sera %{not} utilisé en production"
   already_registered: "Déjà inscrit?"
   alt_text: Texte Alternative
@@ -357,6 +365,9 @@ fr-FR:
   date_range: "Sélection de dates"
   debit: Débit
   default: Default
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Supprimer
   delivery: Livraison
   depth: Profondeur
@@ -408,6 +419,17 @@ fr-FR:
     one: "1 erreur empêche l'enregistrement de cette entrée"
     other: "%{count} erreurs empêchent l'enregistrement de cette entrée"
   event: Événements
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Client existant"
   expiration: Expiration
   expiration_month: "Mois d'expiration"
@@ -482,6 +504,8 @@ fr-FR:
       gt: plus grand que
       gte: plus grand ou égal à
   items: "Articles"
+  landing_page_rule: 
+    path: Path
   last_14_days: "Les 14 derniers jours"
   last_5_orders: "Les 5 dernières commandes"
   last_7_days: "Les 7 derniers jours"
@@ -520,7 +544,6 @@ fr-FR:
   mark_shipped: "Marqué en tant que livré"
   master_price: "Prix de départ"
   max_items: "Nombre maximum d'objets"
-  may_be_combined_with_other_promotions: Peut être cumulée avec d'autres promotions
   meta_description: "Meta Description"
   meta_keywords: "Meta Keywords"
   metadata: "Metadata"
@@ -817,6 +840,17 @@ fr-FR:
   products: Produits
   products_with_zero_inventory_display: "Les produits en rupture de stock seront %{not} affichés"
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Réponds à toutes ses règles
@@ -828,6 +862,9 @@ fr-FR:
     item_total: 
       description: Le total de la commande réponds aux critaires suivants
       name: total de la commande
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: La commande comprends le ou les produit(s) spécifié(s)
       name: Produit(s)
@@ -1003,6 +1040,7 @@ fr-FR:
   taxonomy_edit: "Modifier la taxonomie"
   taxonomy_tree_error: "La modification demandée n'a pas été acceptée et l'arbre a été retourné à son état antérieur, s'il vous plaît essayer de nouveau."
   taxonomy_tree_instruction: "Cliquer dans l'arbre avec le bouton droit pour accéder au menu pour ajouter, supprimer et trier une feuille."
+  taxonomу: Taxonomу
   taxons: Arborescence
   test: "Test"
   test_mode: Test Mode

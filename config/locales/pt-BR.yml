@@ -32,23 +32,6 @@ pt-BR:
         phone: Telefone
         state: Estado
         zipcode: CEP
-      checkout: 
-        bill_address: 
-          address1: Endereço
-          city: Cidade
-          firstname: Nome
-          lastname: Sobrenome
-          phone: Telefone
-          state: Estado
-          zipcode: CEP
-        ship_address: 
-          address1: Endereço
-          city: Cidade
-          firstname: Nome
-          lastname: Sobrenome
-          phone: Telefone
-          state: Estado
-          zipcode: CEP
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ pt-BR:
       line_item: 
         price: Preço
         quantity: Quantidade
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Compra finalizada"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "Endereço IP"
         item_total: "Total"
         number: Número
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Informações especiais"
         state: Estado
         total: Total
+      payment_method: 
+        name: Name
       product: 
         available_on: "Disponível em"
         cost_price: "Preço de custo"
@@ -126,6 +130,8 @@ pt-BR:
         name: Nome
       user: 
         email: Email
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Preço de custo"
         depth: Espessura
@@ -217,6 +223,7 @@ pt-BR:
         one: Zona
         other: Zonas
   add: Adicionar
+  add_action_of_type: Add action of type
   add_category: "Adicionar categoria"
   add_country: "Adicionar país"
   add_option_type: "Adicionar opção"
@@ -236,11 +243,12 @@ pt-BR:
   adjustment_total: "Total de ajustes"
   adjustments: Ajustes
   administration: Administração
+  advertise: Advertise
   all: "Todos"
   all_departments: "Todos departamentos"
   allow_backorders: "Permitir adiamentos"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: "Ativar SSL em mode de desenvolvimento e teste"
-  allow_ssl_to_be_used_when_in_production_mode: "Ativar SSL em produção"
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "SSL %{not} será usado em produção"
   already_registered: "Já possuí registro?"
   alt_text: "Texto alternativo"
@@ -357,6 +365,9 @@ pt-BR:
   date_range: "Entre as Datas"
   debit: Débito
   default: Padrão
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Apagar
   delivery: Delivery
   depth: Espessura
@@ -408,6 +419,17 @@ pt-BR:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: Evento
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Cliente Existente"
   expiration: "Expiração"
   expiration_month: "Mês de Expiração"
@@ -482,6 +504,8 @@ pt-BR:
       gt: "maior que"
       gte: "maior ou igual que"
   items: "Artigos"
+  landing_page_rule: 
+    path: Path
   last_14_days: "Últimos 14 Dias"
   last_5_orders: "Últimos 5 Pedidos"
   last_7_days: "Últimos 7 Dias"
@@ -520,7 +544,6 @@ pt-BR:
   mark_shipped: "Marcar como enviado"
   master_price: "Preço Principal"
   max_items: "Artigos máximos"
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: "Descrição"
   meta_keywords: "Palavras-Chave"
   metadata: "Metadados"
@@ -817,6 +840,17 @@ pt-BR:
   products: Produtos
   products_with_zero_inventory_display: "Produtos sem inventário %{not} serão exibidos"
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Combinar todas regras
@@ -828,6 +862,9 @@ pt-BR:
     item_total: 
       description: "Total do pedio fecha com estes critérios"
       name: "Total do item"
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: "Pedido inclui produto(s) específico(s)"
       name: Produto(s)
@@ -1003,6 +1040,7 @@ pt-BR:
   taxonomy_edit: "Editar taxonomia"
   taxonomy_tree_error: "A modificação não foi aceita e a árvore retornou ao seu estado anterior, por favor tente novamente."
   taxonomy_tree_instruction: "* Clique com o botão direito sobre um nó da árvore para ver o menu."
+  taxonomу: Taxonomу
   taxons: Taxons
   test: "Teste"
   test_mode: "Modo de Teste"

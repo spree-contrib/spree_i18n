@@ -32,23 +32,6 @@ vn:
         phone: Điện thoại
         state: "Bang"
         zipcode: "Mã bưu điện"
-      checkout: 
-        bill_address: 
-          address1: "Địa chỉ thanh toán"
-          city: "Thành phố"
-          firstname: "Tên"
-          lastname: "Họ"
-          phone: "Điện thoại"
-          state: "Bang"
-          zipcode: "Mã bưu điện"
-        ship_address: 
-          address1: "Địa chỉ"
-          city: "Thành phố"
-          firstname: "Tên"
-          lastname: "Họ"
-          phone: "Điện thoại"
-          state: "Bang"
-          zipcode: "Mã bưu điện"
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ vn:
       line_item: 
         price: Giá
         quantity: Số lượng
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Hoàn tất thủ tục mua hàng"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "Địa chỉ IP"
         item_total: "Tổng số lượng"
         number: Số
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Chỉ dẫn đặc biệt"
         state: Bang
         total: Tổng
+      payment_method: 
+        name: Name
       product: 
         available_on: "Có hàng vào"
         cost_price: "Giá"
@@ -126,6 +130,8 @@ vn:
         name: Tên
       user: 
         email: Email
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Giá"
         depth: Sâu
@@ -217,6 +223,7 @@ vn:
         one: Vùng
         other: Vùng
   add: Thêm
+  add_action_of_type: Add action of type
   add_category: "Thêm loại mặt hàng"
   add_country: "Thêm quốc gia"
   add_option_type: "Thêm kiểu tùy chọn"
@@ -236,11 +243,12 @@ vn:
   adjustment_total: Adjustment Total
   adjustments: Điều chỉnh
   administration: Quản trị
+  advertise: Advertise
   all: "Tất cả"
   all_departments: Tất cả các mục
   allow_backorders: "Cho phép đặt hàng trước"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: Cho phép sử dụng SSL dưới môi trường phát triển và kiểm tra
-  allow_ssl_to_be_used_when_in_production_mode: Cho phép sử dụng SSL dưới môi trường sản xuất
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "SSL sẽ %{not} được dùng trong sản xuất"
   already_registered: Đã đăng kí?
   alt_text: Chú thích khác
@@ -357,6 +365,9 @@ vn:
   date_range: "Giới hạn ngày"
   debit: Nợ
   default: Default
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Xóa
   delivery: Delivery
   depth: Sâu
@@ -408,6 +419,17 @@ vn:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: Sự kiện
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Khách hàng hiện hữu"
   expiration: "Mãn hạn"
   expiration_month: "Hết hạn tháng"
@@ -482,6 +504,8 @@ vn:
       gt: greater than
       gte: greater than or equal to
   items: "Số lượng"
+  landing_page_rule: 
+    path: Path
   last_14_days: "14 ngày trước"
   last_5_orders: "5 đơn hàng gần đây nhất"
   last_7_days: "7 ngày trước"
@@ -520,7 +544,6 @@ vn:
   mark_shipped: "Chứng hàng đã chuyển"
   master_price: "Giá chủ"
   max_items: Số hàng tối đa
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: "Meta miểu tả"
   meta_keywords: "Meta danh sách từ khóa"
   metadata: "Metadata"
@@ -817,6 +840,17 @@ vn:
   products: Sản phẩm
   products_with_zero_inventory_display: "Sản phẩm không có hàng tồn sẽ %{not} được hiển thị"
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Match any of these rules
@@ -828,6 +862,9 @@ vn:
     item_total: 
       description: Order total meets these criteria
       name: Item total
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: Order includes specified product(s)
       name: Product(s)
@@ -1003,6 +1040,7 @@ vn:
   taxonomy_edit: "Sửa đổi phân loại"
   taxonomy_tree_error: "Thay đồi theo yêu cầu không được chấp nhận và hệ cây đã quay trở về trạng thái như trước, xin hay thử lại lần nữa."
   taxonomy_tree_instruction: "* Nhấp chuột phải vào 1 phần tử con trong hệ cây để truy cập thực đơn để thêm, xóa và sắp xếp một phần tử con."
+  taxonomу: Taxonomу
   taxons: Đơn vị phân loại
   test: "Kiểm tra"
   test_mode: Chế độ kiểm tra

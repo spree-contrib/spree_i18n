@@ -32,23 +32,6 @@ zh-CN:
         phone: "电话"
         state: "省份"
         zipcode: "邮政编码"
-      checkout: 
-        bill_address: 
-          address1: "账单寄送地址"
-          city: "账单寄送城市"
-          firstname: "账单收件人名"
-          lastname: "账单收件人姓"
-          phone: "账单寄送联系电话"
-          state: "账单寄送省份"
-          zipcode: "账单寄送地址的邮政编码"
-        ship_address: 
-          address1: "收货地址"
-          city: "收货所在城市"
-          firstname: "收货名"
-          lastname: "收货人姓"
-          phone: "收货人联系电话"
-          state: "收货所在省份"
-          zipcode: "收货地址邮政编码"
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ zh-CN:
       line_item: 
         price: "价格"
         quantity: "数量"
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "已结账"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "IP地址"
         item_total: "产品小记"
         number: "数量"
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "特别指南"
         state: "状态"
         total: "总计"
+      payment_method: 
+        name: Name
       product: 
         available_on: "可购买"
         cost_price: "进货价"
@@ -126,6 +130,8 @@ zh-CN:
         name: "名称"
       user: 
         email: "电子邮件"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "进货价"
         depth: "长"
@@ -217,6 +223,7 @@ zh-CN:
         one: "区域"
         other: "其他区域"
   add: "添加"
+  add_action_of_type: Add action of type
   add_category: "添加分类"
   add_country: "添加国家"
   add_option_type: "添加选项类型"
@@ -236,11 +243,12 @@ zh-CN:
   adjustment_total: Adjustment Total
   adjustments: "其他调整"
   administration: "管理"
+  advertise: Advertise
   all: "全部"
   all_departments: "所有部门"
   allow_backorders: "允许预定"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: "允许在开发和测试环境下使用SSL"
-  allow_ssl_to_be_used_when_in_production_mode: "允许在生产环境下使用SSL"
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "生产环境下将%{not}会使用SSL"
   already_registered: "已经注册过了？"
   alt_text: "其他文本"
@@ -357,6 +365,9 @@ zh-CN:
   date_range: "时间范围"
   debit: "借方??"
   default: "默认"
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: "删除"
   delivery: Delivery
   depth: "长"
@@ -408,6 +419,17 @@ zh-CN:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: "事件"
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "现有顾客"
   expiration: "过期"
   expiration_month: "过期月份"
@@ -482,6 +504,8 @@ zh-CN:
       gt: greater than
       gte: greater than or equal to
   items: "商品项"
+  landing_page_rule: 
+    path: Path
   last_14_days: "过去14天"
   last_5_orders: "最近的5个订单"
   last_7_days: "过去7天"
@@ -520,7 +544,6 @@ zh-CN:
   mark_shipped: "标记为已配送"
   master_price: "默认价格"
   max_items: "最大商品项??"
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: "元描述"
   meta_keywords: "关键字"
   metadata: "元数据"
@@ -817,6 +840,17 @@ zh-CN:
   products: "产品"
   products_with_zero_inventory_display: "没有库存的产品是%{not}会被显示的"
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Match any of these rules
@@ -828,6 +862,9 @@ zh-CN:
     item_total: 
       description: Order total meets these criteria
       name: Item total
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: Order includes specified product(s)
       name: Product(s)
@@ -1003,6 +1040,7 @@ zh-CN:
   taxonomy_edit: "编辑分类层级"
   taxonomy_tree_error: "请求的变更没有被接受，树会恢复到之前的状态，请重新尝试."
   taxonomy_tree_instruction: "* 右键单击一个树的子结点以访问添加、删除或者排序字节点的菜单."
+  taxonomу: Taxonomу
   taxons: "分类"
   test: "测试"
   test_mode: "测试模式"

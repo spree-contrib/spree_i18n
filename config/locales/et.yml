@@ -32,23 +32,6 @@ et:
         phone: Telefon
         state: Maakond
         zipcode: Postiindeks
-      checkout: 
-        bill_address: 
-          address1: Tänav
-          city: Linn
-          firstname: Eesnimi
-          lastname: Perekonnanimi
-          phone: Telefon
-          state: Maakond
-          zipcode: Postiindeks
-        ship_address: 
-          address1: Tänav
-          city: Linn
-          firstname: Eesnimi
-          lastname: Perekonnanimi
-          phone: Telefon
-          state: Maakond
-          zipcode: Postiindeks
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ et:
       line_item: 
         price: Hind
         quantity: Kogus
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: Tellimus edastatud!
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: IP aadress
         item_total: Kogus
         number: Number
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: Erijuhised
         state: Maakond
         total: Kokku
+      payment_method: 
+        name: Name
       product: 
         available_on: Saadaval alates
         cost_price: Omahind
@@ -126,6 +130,8 @@ et:
         name: Nimi
       user: 
         email: E-mail
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: Omahind
         depth: Sügavus
@@ -217,6 +223,7 @@ et:
         one: Tsoon
         other: Tsoonid
   add: Lisa
+  add_action_of_type: Add action of type
   add_category: Lisa kategooria
   add_country: Lisa riik
   add_option_type: Lisa variatsioonitüüp
@@ -236,11 +243,12 @@ et:
   adjustment_total: Adjustment Total
   adjustments: Kohandused
   administration: Administreerimisliides
+  advertise: Advertise
   all: Kõik
   all_departments: Kõik osakonnad
   allow_backorders: Backorderid lubatud
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: Võimalda SSL’i arendus- ja testrežiimil
-  allow_ssl_to_be_used_when_in_production_mode: Võimalda SSL’i tootmisrežiimil
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: SSL will %{not} be used in production
   already_registered: Juba registreeritud?
   alt_text: Alternatiivne tekst
@@ -357,6 +365,9 @@ et:
   date_range: Vali vahemik
   debit: Deebet
   default: Default
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Kustuta
   delivery: Delivery
   depth: Sügavus
@@ -408,6 +419,17 @@ et:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: Sündmus
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: Olemasolev klient
   expiration: Aegub
   expiration_month: Aegumise kuu
@@ -482,6 +504,8 @@ et:
       gt: greater than
       gte: greater than or equal to
   items: Tooted
+  landing_page_rule: 
+    path: Path
   last_14_days: Viimased 14 päeva
   last_5_orders: Viimased 5 tellimust
   last_7_days: Viimased 7 päeva
@@ -520,7 +544,6 @@ et:
   mark_shipped: Märgi saadetuks
   master_price: Hind
   max_items: Maksimaalne toodete arv
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: Kirjeldus
   meta_keywords: Märksõnad
   metadata: Metaandmed
@@ -817,6 +840,17 @@ et:
   products: Tooted
   products_with_zero_inventory_display: Products with a zero inventory will %{not} be displayed  TODO
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Match any of these rules
@@ -828,6 +862,9 @@ et:
     item_total: 
       description: Order total meets these criteria
       name: Item total
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: Order includes specified product(s)
       name: Product(s)
@@ -1003,6 +1040,7 @@ et:
   taxonomy_edit: Redigeeri taksonoomiaid
   taxonomy_tree_error: Soovitud muutuse tegemine ebaõnnestus ja puu muudeti tagasi endisele kujule. Palun proovige uuesti.
   taxonomy_tree_instruction: "* Elementide lisamiseks, muutmisek ja kustutamiseks kliki hiire parema nupuga mõnel puu elemendil"
+  taxonomу: Taxonomу
   taxons: Taksonid
   test: Test
   test_mode: Testrežiim

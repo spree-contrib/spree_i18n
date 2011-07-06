@@ -32,23 +32,6 @@ nl-BE:
         phone: Telefoon
         state: "Staat"
         zipcode: Postcode
-      checkout: 
-        bill_address: 
-          address1: "Facturatie-adres straat"
-          city: "Facturatie-adres stad"
-          firstname: "Facturatie-adres voornaam"
-          lastname: "Facturatie-adres familienaam"
-          phone: "Facturatie-adres telefoon"
-          state: "Facturatie-adres staat"
-          zipcode: "Facturatie-adres postcode"
-        ship_address: 
-          address1: "Leverings-adres straat"
-          city: "Leverings-adres stad"
-          firstname: "Leverings-adres voornaam"
-          lastname: "Leverings-adres familienaam"
-          phone: "Leverings-adres telefoon"
-          state: "Leverings-adres staat"
-          zipcode: "Leverings-adres postcode"
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ nl-BE:
       line_item: 
         price: Prijs
         quantity: Aantal
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Bestelling afgerond"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "IP Adres"
         item_total: "Product Totaal"
         number: Nummer
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Bijkomende opmerkingen"
         state: Provincie
         total: Totaal
+      payment_method: 
+        name: Name
       product: 
         available_on: "Beschikbaar Op"
         cost_price: "Kostprijs"
@@ -126,6 +130,8 @@ nl-BE:
         name: Naam
       user: 
         email: E-mail
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Kostprijs"
         depth: Diepte
@@ -217,6 +223,7 @@ nl-BE:
         one: Zone
         other: Zones
   add: Toevoegen
+  add_action_of_type: Add action of type
   add_category: "Categorie Toevoegen"
   add_country: "Land Toevoegen"
   add_option_type: "Optie Type Toevoegen"
@@ -236,11 +243,12 @@ nl-BE:
   adjustment_total: Adjustment Total
   adjustments: Aanpassingen
   administration: Administratie
+  advertise: Advertise
   all: "Alle"
   all_departments: Alle departmenten
   allow_backorders: "Nabestellingen toelaten"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: "SSL gebruik toestaan in ontwikkel- en testomgevingen"
-  allow_ssl_to_be_used_when_in_production_mode: "SSL gebruik toestaan in productie-omgeving"
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "SSL zal %{niet} gebruikt worden in productie-omgeving"
   already_registered: Reeds geregistreerd?
   alt_text: Alternatieve tekst
@@ -357,6 +365,9 @@ nl-BE:
   date_range: "Datum Bereik"
   debit: Debit
   default: Standaard
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Verwijder
   delivery: Delivery
   depth: Diepte
@@ -408,6 +419,17 @@ nl-BE:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: Gebeurtenis
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Bestaande Klant"
   expiration: Verval
   expiration_month: "Vervalmaand"
@@ -482,6 +504,8 @@ nl-BE:
       gt: greater than
       gte: greater than or equal to
   items: "Items"
+  landing_page_rule: 
+    path: Path
   last_14_days: "Laatste 14 dagen"
   last_5_orders: "Laatste 5 bestellingen"
   last_7_days: "Laatste 7 dagen"
@@ -520,7 +544,6 @@ nl-BE:
   mark_shipped: "Markeren als verstuurd"
   master_price: "Prijs"
   max_items: Max Items
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: "Meta Description"
   meta_keywords: "Meta Keywords"
   metadata: "Metadata"
@@ -817,6 +840,17 @@ nl-BE:
   products: Producten
   products_with_zero_inventory_display: "Producten die niet meer in voorraad zijn zullen %{niet} getoond worden."
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Match any of these rules
@@ -828,6 +862,9 @@ nl-BE:
     item_total: 
       description: Order total meets these criteria
       name: Item total
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: Order includes specified product(s)
       name: Product(s)
@@ -1003,6 +1040,7 @@ nl-BE:
   taxonomy_edit: "Edit taxonomy"
   taxonomy_tree_error: "The requested change has not been accepted and the tree has been returned to its previous state, please try again."
   taxonomy_tree_instruction: "* Right click a child in the tree to access the menu for adding, deleting or sorting a child."
+  taxonomу: Taxonomу
   taxons: Taxons
   test: "Test"
   test_mode: Test Mode

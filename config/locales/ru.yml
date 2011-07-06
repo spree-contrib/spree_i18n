@@ -49,38 +49,37 @@ ru:
       line_item: 
         price: "Цена"
         quantity: "Количество"
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
         bill_address: 
-          address1: "Платёжный адрес. Адрес"
-          city: "Платёжный адрес. Город"
-          firstname: "Платёжный адрес. Имя"
-          lastname: "Платёжный адрес. Фамилия"
-          phone: "Платёжный адрес. Телефон"
-          state: "Платёжный адрес. Регион/Область"
-          zipcode: "Платёжный адрес. Индекс"
-        ship_address: 
-          address1: "Адрес доставки. Адрес"
-          city: "Адрес доставки. Город"
-          firstname: "Адрес доставки. Имя"
-          lastname: "Адрес доставки. Фамилия"
-          phone: "Адрес доставки. Телефон"
-          state: "Адрес доставки. Регион/Область"
-          zipcode: "Адрес доставки. Индекс"
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Заказ завершен"
         completed_at: "Дата завершения"
         coupon_code: "Код купона"
         ip_address: "IP адрес"
         item_total: "Всего товаров"
-        line_items: "Список товаров"
         number: "Номер"
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Дополнительные инструкции"
         state: "Статус"
         total: "Итого"
-      option_type:
-        name: "Наименование"
-        presentation: "Отображать как"
-      payment_method:
-        name: "Наименование"
+      payment_method: 
+        name: Name
       product: 
         available_on: "Доступно с"
         cost_price: "Себестоимость"
@@ -131,8 +130,8 @@ ru:
         name: "Наименование"
       user: 
         email: "Email"
-        password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Себестоимость"
         depth: "Глубина"
@@ -224,6 +223,7 @@ ru:
         one: "Зона"
         other: "Зоны"
   add: "Добавить"
+  add_action_of_type: Add action of type
   add_category: "Добавить категорию"
   add_country: "Добавить страну"
   add_option_type: "Добавить опцию"
@@ -243,11 +243,12 @@ ru:
   adjustment_total: "Итого (надбавки)"
   adjustments: "Надбавки"
   administration: "Администрирование"
+  advertise: Advertise
   all: "все"
   all_departments: "Все разделы"
   allow_backorders: "Разрешить предварительные заказы"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: "Использовать SSL в development и test режимах"
-  allow_ssl_to_be_used_when_in_production_mode: "Использовать SSL в production"
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "SSL %{not} будет использован в режиме production"
   already_registered: "Уже зарегистрированы"
   alt_text: "Альтернативный текст"
@@ -364,7 +365,9 @@ ru:
   date_range: "Период времени"
   debit: "Дебет"
   default: "По умолчанию"
-  default_seo_title: "SEO-заголовок по умолчанию"
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: "Удалить"
   delivery: "Доставка"
   depth: "Глубина"
@@ -416,6 +419,17 @@ ru:
     one: "1 ошибка не позволяет сохранить запись в базе"
     other: "%{count} ошибок не позволяют сохранить запись в базе"
   event: "Событие"
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Для зарегистрированных пользователей"
   expiration: "Окончание действия"
   expiration_month: "Месяц окончания действия"
@@ -490,6 +504,8 @@ ru:
       gt: "больше"
       gte: "больше или равно"
   items: "Наимено<wbr />вания"
+  landing_page_rule: 
+    path: Path
   last_14_days: "Предыдущие 14 дней"
   last_5_orders: "Последние 5 заказов"
   last_7_days: "Предыдущие 7 дней"
@@ -528,7 +544,6 @@ ru:
   mark_shipped: "Отметить как отправленный"
   master_price: "Основная цена"
   max_items: "Максимальное число наименований по начальной ставке"
-  may_be_combined_with_other_promotions: "Может быть совмещена с другими рекламными акциями"
   meta_description: "Описание"
   meta_keywords: "Ключевые слова"
   metadata: "Метаданные"
@@ -825,11 +840,21 @@ ru:
   products: "Товары"
   products_with_zero_inventory_display: "Отсутсвующие товары %{not} будут отображаться"
   promotion: "Промо-акция"
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: "Соответствует всем этим правилам"
       any: "Соответствует хотя бы одному правилу"
-  promotion_rule: "Правило"
   promotion_rule_types: 
     first_order: 
       description: "Должен быть первым заказом покупателя"
@@ -837,6 +862,9 @@ ru:
     item_total: 
       description: "Сумма заказа соответствует следующим критериям"
       name: "Сумма заказа"
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: "Заказ включает указанные товары"
       name: "Товары"
@@ -1012,6 +1040,7 @@ ru:
   taxonomy_edit: "Редактирование таксономии"
   taxonomy_tree_error: "Запрашиваемое изменение не было осуществленно и дерево возвращено в предыдущее состояние. Пожалуйста, попытайтесь снова."
   taxonomy_tree_instruction: "* Щёлкните правой кнопкой мыши на элеменете дерева для добавления, удаления или сортировки таксонов."
+  taxonomу: Taxonomу
   taxons: "Таксоны"
   test: "Test"
   test_mode: "Тестовый режим"

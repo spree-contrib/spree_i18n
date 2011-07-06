@@ -32,23 +32,6 @@ sk:
         phone: Telefón
         state: "State"
         zipcode: "PSČ"
-      checkout: 
-        bill_address: 
-          address1: "Billing address street"
-          city: "Billing address city"
-          firstname: "Billing address first name"
-          lastname: "Billing address last name"
-          phone: "Billing address phone"
-          state: "Billing address state"
-          zipcode: "Billing address zipcode"
-        ship_address: 
-          address1: "Shipping address street"
-          city: "Shipping address city"
-          firstname: "Shipping address first name"
-          lastname: "Shipping address last name"
-          phone: "Shipping address phone"
-          state: "Shipping address state"
-          zipcode: "Shipping address zipcode"
       country: 
         iso: ISO
         iso3: ISO3
@@ -66,16 +49,37 @@ sk:
       line_item: 
         price: Cena
         quantity: Množstvo
+      option_type: 
+        name: Name
+        presentation: Presentation
       order: 
+        bill_address: 
+          address1: "Billing address street"
+          city: "Billing address city"
+          firstname: "Billing address first name"
+          lastname: "Billing address last name"
+          phone: "Billing address phone"
+          state: "Billing address state"
+          zipcode: "Billing address zipcode"
         checkout_complete: "Potvrdenie"
         completed_at: "Completed At"
         coupon_code: "Coupon Code"
         ip_address: "IP Adresa"
         item_total: "Položky celkom"
         number: Číslo
+        ship_address: 
+          address1: "Shipping address street"
+          city: "Shipping address city"
+          firstname: "Shipping address first name"
+          lastname: "Shipping address last name"
+          phone: "Shipping address phone"
+          state: "Shipping address state"
+          zipcode: "Shipping address zipcode"
         special_instructions: "Špeciálne inštrukcie"
         state: Štát
         total: Celkom
+      payment_method: 
+        name: Name
       product: 
         available_on: "Na sklade dňa"
         cost_price: "Cost Price"
@@ -126,6 +130,8 @@ sk:
         name: Názov
       user: 
         email: Email
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       variant: 
         cost_price: "Cost Price"
         depth: Hĺbka
@@ -217,6 +223,7 @@ sk:
         one: Zona
         other: Zóny
   add: Pridaj
+  add_action_of_type: Add action of type
   add_category: "Pridaj kategóriu"
   add_country: "Pridaj krajinu"
   add_option_type: "Pridaj typ opcie"
@@ -236,11 +243,12 @@ sk:
   adjustment_total: Adjustment Total
   adjustments: Adjustments
   administration: Administrácia
+  advertise: Advertise
   all: "Všetky"
   all_departments: "Oddelenia"
   allow_backorders: "Povoliť pohľadávky"
-  allow_ssl_to_be_used_when_in_developement_and_test_modes: Povoliť používanie SSL vo vývojovom a testovacom móde
-  allow_ssl_to_be_used_when_in_production_mode: Povoliť používanie SSL v produkčnom móde
+  allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
+  allow_ssl_in_production: Allow SSL to be used in production mode
   allowed_ssl_in_production_mode: "používanie SSL v produkčnom móde: %{not}"
   already_registered: Už registrovaný?
   alt_text: Alternative Text
@@ -357,6 +365,9 @@ sk:
   date_range: "Obdodie"
   debit: Debit
   default: Default
+  default_meta_description: Default Meta Description
+  default_meta_keywords: Default Meta Keywords
+  default_seo_title: Default Seo Title
   delete: Vymaž
   delivery: Delivery
   depth: Hĺbka
@@ -408,6 +419,17 @@ sk:
     one: "1 error prohibited this record from being saved"
     other: "%{count} errors prohibited this record from being saved"
   event: Udalosť
+  events: 
+    spree: 
+      cart: 
+        add: 'Add to cart'
+      checkout: 
+        coupon_code_added: "Coupon code added"
+      order: 
+        contents_changed: "Order contents changed"
+      page_view: "Static page viewed"
+      user: 
+        signup: 'User signup'
   existing_customer: "Registrovaný zákazník"
   expiration: "Expirácia"
   expiration_month: "Mesiac expirácie"
@@ -482,6 +504,8 @@ sk:
       gt: greater than
       gte: greater than or equal to
   items: "Items"
+  landing_page_rule: 
+    path: Path
   last_14_days: "Last 14 Days"
   last_5_orders: "Last 5 Orders"
   last_7_days: "Last 7 Days"
@@ -520,7 +544,6 @@ sk:
   mark_shipped: "Znak bol doručený"
   master_price: "Hlavná cena"
   max_items: Maximálny počet položiek
-  may_be_combined_with_other_promotions: May be combined with other promotions
   meta_description: "Meta-popis"
   meta_keywords: "Meta-kľúčové slová"
   metadata: "Metaúdaje"
@@ -817,6 +840,17 @@ sk:
   products: Produkty
   products_with_zero_inventory_display: "Produkty ktoré nie sú skladované %{not} sú zobrazené."
   promotion: Promotion
+  promotion_action_types: 
+    create_adjustment: 
+      description: Creates a promotion credit adjustment on the order
+      name: Create adjustment
+    create_line_items: 
+      description: Populates the cart with the specified variants and quantities
+      name: Create line items
+    give_store_credit: 
+      description: Gives the user store credit of the amount specified
+      name: Give store credit
+  promotion_actions: Actions
   promotion_form: 
     match_policies: 
       all: Match any of these rules
@@ -828,6 +862,9 @@ sk:
     item_total: 
       description: Order total meets these criteria
       name: Item total
+    landing_page: 
+      description: Customer must have visited the specified page
+      name: Landing Page
     product: 
       description: Order includes specified product(s)
       name: Product(s)
@@ -1003,6 +1040,7 @@ sk:
   taxonomy_edit: "Zmeň taxonómiu"
   taxonomy_tree_error: "Požadovaná zmena nebola akceptovaná a strom bol zmenený do predchádzajúceho stavu, prosím skúste znova."
   taxonomy_tree_instruction: "* Pravým klikom na potomok v strome pristúpite k menu na pridávanie, mazanie a triedenie potomkov."
+  taxonomу: Taxonomу
   taxons: Taxóny
   test: "Test"
   test_mode: Test Mode
