@@ -5,13 +5,24 @@ namespace :spree_i18n do
   desc "Update by retrieving the latest Spree locale fils"
   task :update_default do
     puts "Fetching latest Spree locale file to #{locales_dir}"
-    exec %(
-      curl -Lo '#{default_dir}/spree_api.yml' http://github.com/spree/spree/raw/master/api/config/locales/en.yml
-      curl -Lo '#{default_dir}/spree_core.yml' http://github.com/spree/spree/raw/master/core/config/locales/en.yml
-      curl -Lo '#{default_dir}/spree_promo.yml' http://github.com/spree/spree/raw/master/promo/config/locales/en.yml
-      curl -Lo '#{default_dir}/spree_auth.yml' http://github.com/spree/spree/raw/master/auth/config/locales/en.yml
-      curl -Lo '#{default_dir}/spree_dash.yml' http://github.com/spree/spree/raw/master/dash/config/locales/en.yml
-    )
+    require "uri"; require "net/https"
+    [ 'api', 'core', 'auth', 'dash', 'promo' ].each do |mod|
+      location = "https://github.com/spree/spree/raw/master/#{mod}/config/locales/en.yml"
+      begin
+        uri = URI.parse(location)
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        puts "fetching #{uri}"
+        request = Net::HTTP::Get.new(uri.request_uri)
+        case response = http.request(request)
+          when Net::HTTPRedirection then location = response['location']
+          when Net::HTTPClientError, Net::HTTPServerError then response.error!
+        end
+      end until Net::HTTPSuccess === response
+      
+      File.open("#{default_dir}/spree_#{mod}.yml", 'w') { |file| file << response.body }
+    end
   end
 
   desc "Syncronize translation files with latest en (adds comments with fallback en value)"
