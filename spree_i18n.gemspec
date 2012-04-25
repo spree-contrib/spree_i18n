@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency('spree_core',  '>=0.30.0')
+  s.add_development_dependency "i18n-spec", ">= 0.2"
 end
