@@ -10,7 +10,7 @@ namespace :spree_i18n do
     puts "Fetching latest Spree locale file to #{locales_dir}"
     require "uri"; require "net/https"
     SPREE_MODULES.each do |mod|
-      location = "https://github.com/spree/spree/raw/master/#{mod}/config/locales/en.yml"
+      location = "https://raw.github.com/spree/spree/1-0-stable/#{mod}/config/locales/en.yml"
       begin
         uri = URI.parse(location)
         http = Net::HTTP.new(uri.host, uri.port)
@@ -80,7 +80,7 @@ namespace :spree_i18n do
   end
 
   # Returns a composite hash of all relevant translation keys from each of the gems
-  def composite_keys 
+  def composite_keys
     Hash.new.tap do |hash|
       SPREE_MODULES.each do |mod|
         hash.merge! get_translation_keys("spree_#{mod}")
