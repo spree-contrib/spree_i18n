@@ -3,14 +3,14 @@ require 'spree/i18n_utils'
 
 namespace :spree_i18n do
 
-  SPREE_MODULES = [ 'api', 'core', 'auth', 'dash', 'promo' ].freeze
+  SPREE_MODULES = [ 'api', 'core', 'dash', 'promo' ].freeze
 
   desc "Update by retrieving the latest Spree locale files"
   task :update_default do
     puts "Fetching latest Spree locale file to #{locales_dir}"
     require "uri"; require "net/https"
     SPREE_MODULES.each do |mod|
-      location = "https://github.com/spree/spree/raw/master/#{mod}/config/locales/en.yml"
+      location = "https://raw.github.com/spree/spree/master/#{mod}/config/locales/en.yml"
       begin
         uri = URI.parse(location)
         http = Net::HTTP.new(uri.host, uri.port)
