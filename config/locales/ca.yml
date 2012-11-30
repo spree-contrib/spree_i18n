@@ -1,5 +1,6 @@
 ---
 # Thanks to apertium.org for their api and softcatala.org for the online service wich help us to have the base translation and fix issues. 
+
 ca: 
   a_copy_of_all_mail_will_be_sent_to_the_following_addresses: Una còpia de tots els correus serà enviada a les següents adreces
   abbreviation: Abreviatura
@@ -49,23 +50,23 @@ ca:
       spree/option_type: 
         name: Name
         presentation: Presentation
-      spree/order/bill_address:
-          address1: "Billing address street"
-          city: "Billing address city"
-          firstname: "Billing address first name"
-          lastname: "Billing address last name"
-          phone: "Billing address phone"
-          state: "Billing address state"
-          zipcode: "Billing address zipcode"
-      spree/order/ship_address:
-          address1: "Shipping address street"
-          city: "Shipping address city"
-          firstname: "Shipping address first name"
-          lastname: "Shipping address last name"
-          phone: "Shipping address phone"
-          state: "Shipping address state"
-          zipcode: "Shipping address zipcode"
-      spree/order:
+      spree/order: 
+      spree/order/bill_address: 
+        address1: "Billing address street"
+        city: "Billing address city"
+        firstname: "Billing address first name"
+        lastname: "Billing address last name"
+        phone: "Billing address phone"
+        state: "Billing address state"
+        zipcode: "Billing address zipcode"
+      spree/order/ship_address: 
+        address1: "Shipping address street"
+        city: "Shipping address city"
+        firstname: "Shipping address first name"
+        lastname: "Shipping address last name"
+        phone: "Shipping address phone"
+        state: "Shipping address state"
+        zipcode: "Shipping address zipcode"
         checkout_complete: "Comanda completada"
         completed_at: "Completat el"
         created_at: Order Date
@@ -82,6 +83,7 @@ ca:
         name: Name
       spree/product: 
         available_on: "Disponible en"
+        cost_currency: "Cost Currency"
         cost_price: "Preu de cost"
         description: Descripció
         master_price: "Preu principal"
@@ -130,6 +132,7 @@ ca:
         password: "Password"
         password_confirmation: "Password Confirmation"
       spree/variant: 
+        cost_currency: "Cost Currency"
         cost_price: "Preu de cost"
         depth: Profunditat
         height: Altura
@@ -246,6 +249,8 @@ ca:
         delivery_success: 'Testmail sent successfully'
         error: 'Testmail error: %{e}'
   administration: Administració
+  agree_to_privacy_policy: Agree to Privacy Policy
+  agree_to_terms_of_service: Agree to Terms of Service
   all: "Tots"
   all_departments: Tots els departaments
   allow_backorders: "Permetre devolucions"
@@ -254,9 +259,16 @@ ca:
   allow_ssl_in_staging: Allow SSL to be used in staging mode
   allowed_ssl_in_production_mode: "SSL %{not} s'utilitzarà en producció"
   already_registered: Ja està registrat?
+  already_signed_up_for_analytics: You have already signed up for Spree Analytics
   alt_text: Text alternatiu
   alternative_phone: Telèfon alternatiu
   amount: Quantia
+  analytics_desc_header_1: Spree Analytics
+  analytics_desc_header_2: Live analytics integrated into your Spree dashboard
+  analytics_desc_list_1: Get live sales information as it happens
+  analytics_desc_list_2: Requires only a free Spree account to activate
+  analytics_desc_list_3: Absolutely no code to install
+  analytics_desc_list_4: It's completely free!
   analytics_trackers: Trackers de Google Analytics
   and: and
   apply: "Aplicar"
@@ -283,7 +295,7 @@ ca:
   back_to_adjustments_list: "Back To Adjustments List"
   back_to_images_list: "Back To Images List"
   back_to_mail_methods_list: "Back To Mail Methods List"
-  back_to_option_tyles_list: "Back To Option Types List"
+  back_to_option_types_list: "Back To Option Types List"
   back_to_payment_methods_list: "Back To Payment Methods List"
   back_to_payments_list: "Back To Payments List"
   back_to_products_list: "Back To Products List"
@@ -348,13 +360,20 @@ ca:
   continue: Continuar
   continue_shopping: "Seguir comprant"
   copy_all_mails_to: Copiar tots els correus a
+  cost_currency: "Cost Currency"
   cost_price: "Preu del Cost"
   count_of_reduced_by: "quantitat de '%{name}' reduïda en %{count}"
   country: País
   country_based: "País basi"
   coupon: Cupó
   coupon_code: Codi de cupó
+  coupon_code_already_applied: The coupon code has already been applied to this order
   coupon_code_applied: The coupon code was successfully applied to your order.
+  coupon_code_better_exists: The previously applied coupon code results in a better deal
+  coupon_code_expired: The coupon code is expired
+  coupon_code_max_usage: Coupon code usage limit exceeded
+  coupon_code_not_eligible: This coupon code is not eligible for this order
+  coupon_code_not_found: The coupon code you entered doesn't exist. Please try again.
   create: Crear
   create_a_new_account: "Crear un nou compte"
   create_user_account: Crear compte d'usuari
@@ -371,6 +390,7 @@ ca:
   currency_settings: "Currency Settings"
   currency_symbol_position: "Put currency symbol before or after dollar amount?"
   current: Actual
+  current_promotion_usage: 'Current Usage: %{count}'
   customer: Client
   customer_details: "Detalls del client"
   customer_details_updated: "The customer's details have been updated."
@@ -502,6 +522,7 @@ ca:
   has_no_shipped_units: no té unitats enviades
   height: Altura
   hello_user: "Hola usuari"
+  hide_cents: "Hide cents"
   history: Història
   home: "Inici"
   icon: "Icona"
@@ -909,7 +930,6 @@ ca:
     match_policies: 
       all: Coincideix amb alguna de les següents regles
       any: Coincideix amb totes les següents regles
-  promotion_not_found: The coupon code you entered doesn't exist. Please try again.
   promotion_rule: Promotion Rule
   promotion_rule_types: 
     first_order: 
@@ -1078,10 +1098,41 @@ ca:
   spree: 
   spree/order: 
     coupon_code: Coupon Code
-    date: Data
+    api: 
+      access: "API Access"
+      clear_key: "Clear key"
+      credit_over_limit: "This payment can only be credited up to %{limit}. Please specify an amount less than or equal to this number."
+      gateway_error: "There was a problem with the payment gateway: %{text}"
+      generate_key: "Generate API key"
+      invalid_api_key: "Invalid API key (%{key}) specified."
+      invalid_resource: "Invalid resource. Please fix errors and try again."
+      key: "Key"
+      key_cleared: "Key cleared"
+      key_generated: "Key generated"
+      must_specify_api_key: "You must specify an API key."
+      no_key: "No key"
+      order: 
+        could_not_transition: "The order could not be transitioned. Please fix the errors and try again."
+        invalid_shipping_method: "Invalid shipping method specified."
+      regenerate_key: "Regenerate Key"
+      resource_not_found: "The resource you were looking for could not be found."
+      shipment: 
+        cannot_ready: "Cannot ready shipment."
+      unauthorized: "You are not authorized to perform that action."
+    dash: 
+      jirafe: 
+        app_id: App ID
+        app_token: App Token
+        explanation: The fields below may already be populated if you chose to register with Jirafe from the admin dashboard.
+        header: Jirafe Analytics Settings
+        site_id: Site ID
+        token: Token
+      jirafe_settings_updated: Jirafe Settings have been updated.
+    date: Date
     date_picker: 
-      format: 'yy/mm/dd'
-    time: Hora
+      format: ! '%Y/%m/%d'
+      js_format: 'yy/mm/dd'
+    time: Time
   spree_alert_checking: "Check for Spree security and release alerts"
   spree_alert_not_checking: "Not checking for Spree security and release alerts"
   spree_gateway_error_flash_for_checkout: "va haver-hi un problema amb la seva informació de pagament. Per favor, revisi-la i intenti-ho de nou."
@@ -1107,6 +1158,7 @@ ca:
   subtract: Restar
   successfully_created: "%{resource} ha estat creat amb èxit"
   successfully_removed: "%{resource} ha estat esborrat amb èxit"
+  successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
   successfully_updated: "%{resource} ha estat actualitzat amb èxit"
   system: sistema
   tax: Imposats
