@@ -1,7 +1,12 @@
 module SpreeI18n
-  class Railtie < ::Rails::Railtie #:nodoc:
+  class Engine < ::Rails::Engine
+
+    engine_name 'spree_i18n'
+
+    config.autoload_paths += %W(#{config.root}/lib)
+
     initializer 'spree-i18n' do |app|
-      SpreeI18n::Railtie.instance_eval do
+      SpreeI18n::Engine.instance_eval do
         pattern = pattern_from app.config.i18n.available_locales
 
         add("config/locales/#{pattern}/*.{rb,yml}")
@@ -20,5 +25,6 @@ module SpreeI18n
       array = Array(args || [])
       array.blank? ? '*' : "{#{array.join ','}}"
     end
+
   end
 end
