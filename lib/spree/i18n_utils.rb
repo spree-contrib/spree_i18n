@@ -20,7 +20,9 @@ module Spree
         next if w.strip.blank? || w.strip[0]=='#'
         (key, value) = w.split(':', 2)
         value ||= ''
-        shift = (key =~ /\w/)/2 - parent.size                             #Determine level of current key in comparison to parent array
+        position = key =~ /\w/
+        next unless position
+        shift = (position)/2 - parent.size                             #Determine level of current key in comparison to parent array
         key = key.sub(/^\s+/,'')
         parent << previous_key if shift > 0                               #If key is child of previous key, add previous key as parent
         (shift*-1).times { parent.pop } if shift < 0                      #If key is not related to previous key, remove parent keys
