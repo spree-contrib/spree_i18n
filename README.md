@@ -1,4 +1,4 @@
-#Spree Internationalization
+# Spree Internationalization
 
 This is the Internationalization project for [Spree Commerce](http://spreecommerce.com/)
 
@@ -13,7 +13,46 @@ To install, simply add the Gem to your Gemfile:
 
 2. Run `bundle install`
 
-## Running the tests 
+## Contribute
+
+There are still many partial translated locales that we need help with, they might be partial now due to changes since version 1.3:
+
+- de-CH (German - Switzerland)
+- de (German)
+- es-MX (Spainsh - Mexico)
+- es (Spanish)
+- et (Estonian)
+- fa (Farsi)
+- fi (Finnish)
+- fr (French)
+- id (Indonesian)
+- ko (Korean)
+- lt (Lithuanian)
+- lv (Latvian)
+- nb-NO (Norweigian, Bokmål)
+- nl-BE (Dutch - Belgium)
+- pl (Polish)
+- pt-PT (Portuguese - Portugal)
+- ro (Romanian)
+- sk (Slovaki)
+- sl-SI (Slovenian)
+- sv-SE (Swedish)
+- th (Thai)
+- uk (Ukrainian)
+- vi (Vietnamese)
+- zh-CN (Chinese)
+- zh-TW (Chinese - Taiwan (Traditional Chinese))
+
+Missing locales:
+
+If you contribute with a missing locale start by copy the structure from config/locales/en.yml
+
+- ar (Arabic)
+- nn (Norwegian - Nynorsk)
+- ms (Malay)
+- and more..
+
+## Running the tests
 
 If you would like to run the tests of this project, follow these steps:
 
