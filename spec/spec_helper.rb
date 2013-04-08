@@ -1,4 +1,4 @@
-ENV["RAILS_ENV"] = "test"
+ENV["RAILS_ENV"] = 'test'
 
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
@@ -8,4 +8,5 @@ require 'support/be_a_thorough_translation_of_matcher'
 
 RSpec.configure do |config|
   config.mock_with :rspec
+  config.color = true
 end
