@@ -14,7 +14,7 @@ module SpreeI18n
       end
     end
 
-    protected
+  protected
 
     def self.add(pattern)
       files = Dir[File.join(File.dirname(__FILE__), '../..', pattern)]
@@ -25,6 +25,5 @@ module SpreeI18n
       array = Array(args || [])
       array.blank? ? '*' : "{#{array.join ','}}"
     end
-
   end
 end

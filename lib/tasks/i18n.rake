@@ -80,7 +80,7 @@ namespace :spree_i18n do
   end
 
   # Returns a composite hash of all relevant translation keys from each of the gems
-  def composite_keys 
+  def composite_keys
     Hash.new.tap do |hash|
       SPREE_MODULES.each do |mod|
         hash.merge! get_translation_keys("spree_#{mod}")
