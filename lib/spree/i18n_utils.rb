@@ -31,7 +31,7 @@ module Spree
         parent << previous_key if shift > 0                               #If key is child of previous key, add previous key as parent
         (shift*-1).times { parent.pop } if shift < 0                      #If key is not related to previous key, remove parent keys
         previous_key = key                                                #Track key in case next key is child of this key
-        words[parent.join(':')+':'+key] = value.strip
+        words[parent.join(':')+':'+key] = value
       end
       words
     end
