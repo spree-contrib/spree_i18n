@@ -7,6 +7,10 @@ module Spree
     def read_file(filename, basename)
       (comments, data) = IO.read(filename).split(/\n#{basename}:\s*\n/)   #Add error checking for failed file read?
       return comments, create_hash(data)
+    rescue Exception => e
+      puts "Failed to read and parse file #{filename}"
+      puts e.message
+      return '', {}
     end
     module_function :read_file
 
