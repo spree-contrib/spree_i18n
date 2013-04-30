@@ -11,6 +11,7 @@ namespace :spree_i18n do
     require "uri"; require "net/https"
     SPREE_MODULES.each do |mod|
       location = "https://raw.github.com/spree/spree/master/#{mod}/config/locales/en.yml"
+      response = nil
       begin
         uri = URI.parse(location)
         http = Net::HTTP.new(uri.host, uri.port)
@@ -18,13 +19,25 @@ namespace :spree_i18n do
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         puts "Getting from #{uri}"
         request = Net::HTTP::Get.new(uri.request_uri)
-        case response = http.request(request)
-          when Net::HTTPRedirection then location = response['location']
-          when Net::HTTPClientError, Net::HTTPServerError then response.error!
+        response = http.request(request)
+        case response
+          when Net::HTTPRedirection
+            location = response['location']
+          when Net::HTTPNotFound
+            response = nil
+            break
+          when Net::HTTPClientError, Net::HTTPServerError
+            response.error!
         end
       end until Net::HTTPSuccess === response
 
-      File.open("#{default_dir}/spree_#{mod}.yml", 'w') { |file| file << response.body }
+      filename = "#{default_dir}/spree_#{mod}.yml"
+      if response.nil?
+        puts "Received 404 Not Found for #{uri}\nDeleting local default file #{filename}"
+        File.delete(filename) rescue false
+      else
+        File.open(filename, 'w') { |file| file << response.body }
+      end
     end
   end
 
