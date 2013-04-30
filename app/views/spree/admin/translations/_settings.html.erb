@@ -1,0 +1,30 @@
+<fieldset class="no-border-bottom">
+  <legend><%= t(:settings) %></legend>
+
+  <div class="alpha six columns field">
+    <label for="show-only"><%= t(:show_only) %>: </label>
+    <ul>
+      <li><input type="radio" name="show-only" value="all" checked> <label><%= t(:all_translations) %></label></li>
+      <li><input type="radio" name="show-only" value="incomplete"> <label><%= t(:only_incomplete) %></label></li>
+      <li><input type="radio" name="show-only"value="complete"> <label><%= t(:only_complete) %></label></li>
+    </ul>
+  </div>
+
+  <div class="omega six columns">
+    <label for="locale"><%= t(:select_locale) %>: </label>
+    <%= select_available_locales_fields %>
+  </div>
+</fieldset>
+
+<fieldset class="alpha four columns no-border-bottom">
+  <legend><%= t(:fields) %></legend>
+  <nav class="menu">
+    <ul id="attr_list">
+      <% @resource.class.translates.each_with_index do |attr, i| %>
+        <li class="<%= 'active' if i == 0 %>">
+          <a data-attr="<%= attr %>" href="#"><%= t(attr) %></a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</fieldset>
