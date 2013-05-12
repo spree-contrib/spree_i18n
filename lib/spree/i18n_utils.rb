@@ -6,7 +6,7 @@ module Spree
     # Retrieve comments, translation data in hash form
     def read_file(dir, basename, locale=basename)
       filename = File.join(dir, basename + '.yml')
-      (comments, data) = IO.read(filename).split(/\n?#{locale}:\s*\n/)   #Add error checking for failed file read?
+      (comments, data) = IO.read(filename).split(/\n?#{locale}:\s*\n/, 2)   #Add error checking for failed file read?
       return comments, create_hash(data)
     rescue Exception => e
       puts "Failed to read and parse file #{filename}"
