@@ -13,7 +13,7 @@ group :test do
   gem 'selenium-webdriver', '~> 2.32.0'
 end
 
-gem 'spree', github: 'spree/spree', branch: 'master'
+gem 'spree', github: 'spree/spree', branch: '2-0-stable'
 gem 'globalize3', '~> 0.3.0'
 
 gemspec
