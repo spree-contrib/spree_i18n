@@ -83,6 +83,13 @@ describe "Translations" do
       visit spree.admin_promotions_path
       page.should have_content("Salve salve")
     end
+
+    it "render edit route properly" do
+      visit spree.admin_promotions_path
+      find('.icon-flag').click
+      find('.icon-remove').click
+      page.should has_selector?('.page-title')
+    end
   end
 
   context "taxonomies", js: true do
