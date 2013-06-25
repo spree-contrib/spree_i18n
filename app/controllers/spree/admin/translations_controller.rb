@@ -35,7 +35,12 @@ module Spree
       end
 
       def collection_url
-        send "admin_#{resource_name}_url", @resource
+        begin
+          ActionController::Routing::Routes.recognize_path("admin_#{resource_name}_url", @resource)
+          send "admin_#{resource_name}_url", @resource
+        rescue
+          send "edit_admin_#{resource_name}_url", @resource
+        end
       end
 
       def slugged_models
