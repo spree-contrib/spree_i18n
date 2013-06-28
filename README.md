@@ -8,7 +8,7 @@ To install, simply add the Gem to your Gemfile:
 
 Add the following to your Gemfile
 
-    gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :branch => '3-0-stable'
+    gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :branch => '2-0-stable'
 
 Run `bundle install`
 
