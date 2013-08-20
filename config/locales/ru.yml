@@ -15,9 +15,10 @@ ru:
         iso: ISO
         iso3: ISO3
         iso_name: ISO-имя
-        name: Name
+        name: Название
         numcode: ISO-код
       spree/credit_card:
+        base: 
         cc_type: Тип
         month: Месяц
         number: Номер
@@ -34,7 +35,7 @@ ru:
       spree/order:
         checkout_complete: Оформление заказа завершено
         completed_at: Завершено
-        coupon_code: 
+        coupon_code: Код купона
         created_at: Дата заказа
         email: E-mail покупателя
         ip_address: IP-адрес
@@ -62,7 +63,7 @@ ru:
         state: Область/Регион
         zipcode: Почтовый индекс
       spree/payment:
-        amount: 
+        amount: Количество
       spree/payment_method:
         name: Название
       spree/product:
@@ -126,8 +127,16 @@ ru:
       spree/zone:
         description: Описание
         name: Название
+    errors:
+      models:
+        spree/credit_card:
+          attributes:
+            base:
+              card_expired: 
     models:
       spree/address:
+        few: Адреса
+        many: Адреса
         one: Адрес
         other: Адреса
       spree/country:
@@ -195,12 +204,12 @@ ru:
         other: Зоны
   devise:
     confirmations:
-      confirmed: 
-      send_instructions: 
+      confirmed: Ваш аккаунт успешно активирован. Теперь вы авторизованы.
+      send_instructions: Вы получите письмо с инструкциями о том как активировать ваш аккаунт в течении нескольких минут.
     failure:
-      inactive: 
-      invalid: 
-      invalid_token: 
+      inactive: Ваш аккаунт еще не был активирован.
+      invalid: Неверный логин или пароль.
+      invalid_token: Неверный токен аутентификации.
       locked: Учетная запись заблокирована.
       timeout: Ваша сессия истекла. Войдите заново, чтобы продолжить.
       unauthenticated: Вам требуется войти или зарегистрироваться перед тем, как продолжить.
@@ -213,30 +222,32 @@ ru:
       unlock_instructions:
         subject: Инструкции по разблокированию
     oauth_callbacks:
-      failure: 
-      success: 
+      failure: Не смогли войти с %{kind} потому что "%{reason}".
+      success: Успешно вошли с  %{kind} аккаунта.
     unlocks:
-      send_instructions: 
-      unlocked: 
+      send_instructions: Вы получите письмо с инструкциями о том как разблокировать ваш аккаунт в течении нескольких минут.
+      unlocked: Ваш аккаунт был успешно разблокирован. Сейчас вы вошли в систему.
     user_passwords:
       user:
         cannot_be_blank: Пароль не может быть пустым.
-        send_instructions: 
-        updated: 
+        send_instructions: Вы получите письмо с инструкциями о том, как изменить ваш пароль в течении нескольких минут.
+        updated: Ваш пароль был успешно изменен. Сейчас вы в системе.
     user_registrations:
-      destroyed: 
-      inactive_signed_up: 
-      signed_up: 
-      updated: 
+      destroyed: До встречи! Ваш аккаунт был успешно удален. Надеемся увидеть вас в скором будущем.
+      inactive_signed_up: Вы успешно зарегистрировались. К сожалению, вы не смогли войти, потому что ваш аккаунт %{reason}.
+      signed_up: Приветствуем! Вы успешно зарегистрировались.
+      updated: Ваш аккаунт был успешно обновлен.
     user_sessions:
-      signed_in: 
-      signed_out: 
+      signed_in: Вы успешно вошли.
+      signed_out: Вы успешно вышли.
   errors:
     messages:
-      already_confirmed: 
-      not_found: 
-      not_locked: 
-      not_saved: 
+      already_confirmed: уже был подтвержден
+      not_found: не найден
+      not_locked: не был заблокирован
+      not_saved:
+        one: ! '1 ошибка препятствует сохранению %{resource}:'
+        other: ! '%{count} ошибок препятствуют сохранению %{resource}:'
   spree:
     abbreviation: Аббревиатура
     account: Учетная запись
@@ -260,21 +271,21 @@ ru:
     add_country: Добавить страну
     add_new_header: Добавить новый заголовок
     add_new_style: Добавить новый стиль
-    add_one: 
+    add_one: Добавить
     add_option_value: Добавить значение опции
     add_product: Добавить товар
     add_product_properties: Добавить свойства товара
     add_rule_of_type: Добавить правило типа
     add_state: Добавить регион/область
-    add_stock: 
-    add_stock_management: 
+    add_stock: Добавить Склад
+    add_stock_management: Добавить Управление запасами
     add_to_cart: Добавить в корзину
     add_variant: Добавить вариант
     additional_item: Ставка для дополнительных наименований
     address1: Адрес
     address2: Адрес (продолжение)
     adjustment: Надбавка
-    adjustment_amount: 
+    adjustment_amount: Количество
     adjustment_successfully_closed: Корректировка была успешно закрыта!
     adjustment_successfully_opened: Корректировка была успешно открыта!
     adjustment_total: Итого (надбавки)
@@ -287,15 +298,16 @@ ru:
           delivery_success: Тестовое письмо успешно отправлено
           error: ! 'Ошибка отправки тестового письма: %{e}'
       tab:
-        configuration: 
-        orders: 
-        overview: 
-        products: 
-        promotions: 
-        reports: 
+        configuration: Конфигурация
+        orders: Заказы
+        overview: Обзор
+        products: Товары
+        promotions: Акции
+        reports: Отчёты
+        users: 
     administration: Администрирование
-    agree_to_privacy_policy: 
-    agree_to_terms_of_service: 
+    agree_to_privacy_policy: Согласиться с Политикой Конфиденциальности
+    agree_to_terms_of_service: Согласиться с Уловиями обслуживания
     all: все
     all_adjustments_closed: All adjustments successfully closed!
     all_adjustments_opened: All adjustments successfully opened!
@@ -303,21 +315,21 @@ ru:
     allow_ssl_in_development_and_test: Разрешить SSL для development и test режимов
     allow_ssl_in_production: Разрешить SSL для production режима
     allow_ssl_in_staging: Разрешить SSL для staging режима
-    already_signed_up_for_analytics: 
+    already_signed_up_for_analytics: Вы уже зарегистировались в Spree Analytics
     alt_text: Альтернативный текст
     alternative_phone: Дополнительный телефон
     amount: Сумма
     analytics_desc_header_1: Аналитика Spree
-    analytics_desc_header_2: 
-    analytics_desc_list_1: 
-    analytics_desc_list_2: 
-    analytics_desc_list_3: 
-    analytics_desc_list_4: 
+    analytics_desc_header_2: Аналитика в прямом эфире добавлена на Spree dashboard
+    analytics_desc_list_1: Получать информацию о продажах в реальном времени
+    analytics_desc_list_2: Только бесплатный аккаунт Spree требуется для активации
+    analytics_desc_list_3: Отсутствует код для установки
+    analytics_desc_list_4: Полностью бесплатный!
     analytics_trackers: Трекеры веб-аналитики
     and: and
     are_you_sure: Вы уверены
     are_you_sure_delete: Вы уверены, что хотите удалить эту запись?
-    associated_adjustment_closed: 
+    associated_adjustment_closed: Связанная корректировка закрыта, и не будет пересчитана. Хотите ли вы открыть её?
     attachment_default_style: Стандартный стиль прикреплённого файла
     attachment_default_url: Стандартный url прикреплённого файла
     attachment_path: Путь к прикреплённому файлу
@@ -330,7 +342,7 @@ ru:
     back_to_adjustments_list: Вернуться к списку корректировок
     back_to_images_list: Вернуться к списку изображений
     back_to_option_types_list: Вернуться к списку товарных опций
-    back_to_orders_list: 
+    back_to_orders_list: Назад к Списку заказов
     back_to_payment_methods_list: Вернуться к списку методов оплаты
     back_to_payments_list: Вернуться к списку способов оплаты
     back_to_products_list: Вернуться к списку товаров
@@ -341,16 +353,17 @@ ru:
     back_to_shipping_categories: Вернуться к списку категорий доставки
     back_to_shipping_methods_list: Вернуться к списку методов доставки
     back_to_states_list: Вернуться к списку регионов/областей
-    back_to_stock_locations_list: 
-    back_to_stock_movements_list: 
-    back_to_stock_transfers_list: 
+    back_to_stock_locations_list: Назад к Списку складов
+    back_to_stock_movements_list: Назад к Перемещениям товаров
+    back_to_stock_transfers_list: Назад к Перемещениям между складами
     back_to_store: Назад к списку
     back_to_tax_categories_list: Вернуться к списку категорий налогов
     back_to_taxonomies_list: Вернуться к списку таксономий
     back_to_trackers_list: Вернуться к списку трекеров веб-аналитики
-    back_to_users_list: 
+    back_to_users_list: Назад к Списку пользователей
     back_to_zones_list: Вернуться к списку торговых зон
-    backorderable: 
+    backorderable: Возможен предзаказ
+    backorders_allowed: 
     balance_due: Дебетовое сальдо
     bill_address: Платёжный адрес
     billing: Биллинг
@@ -362,7 +375,7 @@ ru:
     cannot_create_payment_without_payment_methods: Нельзя создать платеж для заказа, если не настроен ни один из способов оплаты.
     cannot_create_returns: Невозможно оформить возврат, т.к. этот заказ ещё не отправлен.
     cannot_perform_operation: Невозможно выполнить требуемую операцию
-    cannot_set_shipping_method_without_address: 
+    cannot_set_shipping_method_without_address: Невозможно выбрать способ доставки, пока данные пользователя не указаны.
     capture: Провести платёж
     card_code: Код карты
     card_number: Номер карты
@@ -370,11 +383,11 @@ ru:
     cart: Корзина
     categories: Категории
     category: Категория
-    check_for_spree_alerts: 
+    check_for_spree_alerts: Проверить Оповещения Spree
     checkout: Оформление заказа
     choose_a_customer: Выберите клиента
     choose_currency: Выбрать валюту
-    choose_dashboard_locale: 
+    choose_dashboard_locale: Выбрать язык отображения Dashboard
     city: Город
     clone: Клонировать
     close: Закрыть
@@ -392,9 +405,9 @@ ru:
     continue_shopping: Продолжить покупки
     cost_currency: Валюта
     cost_price: Себестоимость
-    could_not_connect_to_jirafe: 
-    could_not_create_stock_movement: 
-    count_on_hand: 
+    could_not_connect_to_jirafe: Невозможно синхоринизороваться с Jirafe. Попытка будет повторена позже.
+    could_not_create_stock_movement: Возникла проблема при сохранении перемещения запасов. Пожалуйста, попытайтесь снова.
+    count_on_hand: Наличие
     countries: Страны
     country: Страна
     country_based: Страна
@@ -421,10 +434,10 @@ ru:
     credit_cards: Кредитные карты
     credit_owed: Кредитная задолженность
     currency: Валюта
-    currency_decimal_mark: 
+    currency_decimal_mark: Децимальный знак валюты
     currency_settings: Настройки валюты
     currency_symbol_position: Положение символа валюты относительно суммы
-    currency_thousands_separator: 
+    currency_thousands_separator: Разделитель тысяч валюты
     current: Текущий
     current_promotion_usage: ! 'Использовано: %{count}'
     customer: Клиент
@@ -434,19 +447,20 @@ ru:
     cut: Cut
     dash:
       jirafe:
-        app_id: 
-        app_token: 
-        currently_unavailable: 
-        explanation: 
-        header: 
-        site_id: 
-        token: 
-      jirafe_settings_updated: 
-    date: 
+        app_id: ID приложения
+        app_token: Token приложения
+        currently_unavailable: Jirafe недоступен. Spree автоматически подключится к Jirafe снова, когда он будет доступен.
+        explanation: Эти поля могут быть заполнены, если вы зарегистрируетесь в Jirafe из панели администрирования.
+        header: Настройки Аналитики Jirafe
+        site_id: ID сайта
+        token: Токен
+      jirafe_settings_updated: Настройки Jirafe обновлены.
+    date: Дата
     date_completed: Дата завершения
     date_picker:
-      format: 
-      js_format: 
+      first_day: 
+      format: ! '%d.%m.%Y'
+      js_format: dd.mm.yyyy
     date_range: Период времени
     default: По умолчанию
     default_meta_description: Meta-описание по умолчанию
@@ -458,7 +472,7 @@ ru:
     delivery: Доставка
     depth: Глубина
     description: Описание
-    destination: 
+    destination: Назначение
     destroy: Удалить
     discount_amount: Сумма скидки
     dismiss_banner: Нет, спасибо! Я не заинтересован. Не показывайте мне больше это сообщение.
@@ -474,7 +488,7 @@ ru:
     editing_shipping_category: Редактирование категории доставки
     editing_shipping_method: Редактирование способа доставки
     editing_state: Редактирование региона/области
-    editing_stock_location: 
+    editing_stock_location: Редактирование Расположения Склада
     editing_stock_movement: 
     editing_tax_category: Редактирование категории налога
     editing_tax_rate: Редактирование налоговой ставки
@@ -512,12 +526,12 @@ ru:
         user:
           signup: Новый пользователь
     exceptions:
-      count_on_hand_setter: 
+      count_on_hand_setter: Невозможно установить значение count_on_hand вручную, т.к. оно устанавливается автоматически с помощью recalculate_count_on_hand callback'а. Вместо этого, используйте `update_column(:count_on_hand, value)`, пожалуйста
     expiration: Окончание действия
     extension: Расширение
     filename: Имя файла
-    fill_in_customer_info: 
-    filter_results: 
+    fill_in_customer_info: Заполните информацию о клиенте
+    filter_results: Результаты фильтрации
     finalize: Завершить
     first_item: Начальная ставка
     first_name: Имя
@@ -543,17 +557,17 @@ ru:
     hide_cents: Hide cents
     home: Домой
     i18n:
-      available_locales: 
-      fields: 
-      language: 
-      localization_settings: 
-      only_complete: 
-      only_incomplete: 
-      select_locale: 
-      show_only: 
-      supported_locales: 
+      available_locales: Доступные переводы
+      fields: Поля
+      language: Язык
+      localization_settings: Настройки локализации
+      only_complete: Только завершённые
+      only_incomplete: Только незавершённые
+      select_locale: Выберите локализацию
+      show_only: Показывать только
+      supported_locales: Поддерживаемые языки
       this_file_language: Russian
-      translations: 
+      translations: Переводы
     icon: Иконка
     image: Изображение
     image_settings: Настройки изображений
@@ -566,12 +580,13 @@ ru:
     insufficient_stock: Недостаточно единиц товара, только %{on_hand} есть в наличии
     intercept_email_address: Перехват писем
     intercept_email_instructions: Заменить email получателя на этот адрес.
-    invalid_payment_provider: 
+    internal_name: 
+    invalid_payment_provider: Неверно указан способ оплаты
     invalid_promotion_action: 
-    invalid_promotion_rule: 
+    invalid_promotion_rule: Неверно указан принцип рекламной кампании
     inventory: Товарная номенклатура
     inventory_adjustment: Надбавки
-    inventory_error_flash_for_insufficient_quantity: 
+    inventory_error_flash_for_insufficient_quantity: Один из товаров вашей корзины стал недоступен.
     is_not_available_to_shipment_address: не может быть применён к указанному адресу доставки
     iso_name: Имя согласно ISO
     item: Наименование
@@ -581,7 +596,8 @@ ru:
       operators:
         gt: больше
         gte: больше или равно
-    jirafe: 
+    items_cannot_be_shipped: К сожалению мы не можем доставить ваш товар на указанный адрес. Пожалуйста введите другой адрес.
+    jirafe: Jirafe
     landing_page_rule:
       path: Путь
     last_name: Фамилия
@@ -622,7 +638,7 @@ ru:
     minimal_amount: Минимальная сумма
     month: Месяц
     more: Больше
-    move_stock_between_locations: 
+    move_stock_between_locations: Перемещение товаров между складами
     my_account: Моя учетная запись
     my_orders: Мои заказы
     name: Наименование
@@ -644,9 +660,9 @@ ru:
     new_shipping_category: Новая категория доставки
     new_shipping_method: Новый способ доставки
     new_state: Новый регион/область
-    new_stock_location: 
+    new_stock_location: Добавить новый склад
     new_stock_movement: 
-    new_stock_transfer: 
+    new_stock_transfer: Новое перемещение по складу
     new_tax_category: Новая категория налогов
     new_tax_rate: Новая ставка налога
     new_taxon: Новый таксон
@@ -656,15 +672,17 @@ ru:
     new_variant: Новый вариант
     new_zone: Новая зона
     next: след.
-    no_actions_added: 
-    no_orders_found: 
-    no_payment_methods_found: 
+    no_actions_added: Нет действий
+    no_orders_found: Нет заказов
+    no_payment_methods_found: Нет способов платежей
+    no_pending_payments: Нет незавершённых платежей
     no_products_found: Не найдено ни одного товара
-    no_promotions_found: 
+    no_promotions_found: Нет акций
     no_results: Ничего не найдено
     no_rules_added: Ни одного правила не задано
-    no_shipping_methods_found: 
-    no_trackers_found: 
+    no_shipping_methods_found: Нет способов отправки
+    no_stock_locations_found: Складов не найдено
+    no_trackers_found: Треккеров не найдено
     no_tracking_present: 
     none: Ни одного
     normal_amount: Обычная сумма
@@ -683,13 +701,14 @@ ru:
     open: Открыть
     open_all_adjustments: Open All Adjustments
     option_type: Товарная опция
+    option_type_placeholder: 
     option_types: Товарные опции
     option_value: Возможное значение опции
     option_values: Возможные значения опции
-    optional: 
+    optional: Не обязательно
     options: Опции
     or: или
-    or_over_price: 
+    or_over_price: более чем %{price}
     order: Заказ
     order_adjustments: Корректировки заказа
     order_details: Детали заказа
@@ -714,8 +733,8 @@ ru:
     order_not_found: Мы не смогли найти Ваш заказ. Попробуйте еще раз.
     order_number: Заказ
     order_populator:
-      out_of_stock: 
-      please_enter_reasonable_quantity: 
+      out_of_stock: ! 'На складе не хватает товара: %{item}.'
+      please_enter_reasonable_quantity: ! 'Введите, пожалуйста, правильное количество товара. '
     order_processed_successfully: Ваш заказ был успешно обработан
     order_state:
       address: Адрес
@@ -739,7 +758,7 @@ ru:
     pagination:
       next_page: следующая страница &raquo;
       previous_page: ! '&laquo; предидущая страница'
-      truncate: 
+      truncate: ! '&hellip;'
     password: Пароль
     paste: Paste
     path: Путь
@@ -877,7 +896,7 @@ ru:
     s3_secret: Секретный ключ
     sales_total: Итого (продажи)
     sales_total_description: Общий объём продаж по всем заказам
-    sales_totals: 
+    sales_totals: Всего продано
     save_and_continue: Сохранить и продолжить
     say_no: Нет
     say_yes: 'Yes'
@@ -889,7 +908,7 @@ ru:
     security_settings: Настройки безопасности
     select: Выбрать
     select_from_prototype: Выбрать из прототипов
-    select_stock: 
+    select_stock: Выбрать склад
     send_copy_of_all_mails_to: Отсылать копии всех писем на
     send_mails_as: Отсылать почту как
     server: Сервер
@@ -897,7 +916,7 @@ ru:
     settings: Настройки
     ship: доставка
     ship_address: Адрес доставки
-    ship_total: 
+    ship_total: Всего к доставке
     shipment: Отправка
     shipment_inc_vat: Сумма включает НДС
     shipment_mailer:
@@ -908,7 +927,7 @@ ru:
         subject: Уведомление о доставке
         thanks: Спасибо, что выбрали нас.
         track_information: ! 'Детали отслеживания доставки: %{tracking}'
-        track_link: 
+        track_link: ! 'Адрес трекинга: %{url}'
     shipment_state: Статус отправки
     shipment_states:
       backorder: задерживается
@@ -935,7 +954,7 @@ ru:
     show_active: Показать активные
     show_deleted: Показать удаленные
     show_only_complete_orders: Показывать только завершённые заказы
-    show_rate_in_label: 
+    show_rate_in_label: Показывать процент в названии
     site_name: Название магазина
     site_url: Адрес магазина URL
     sku: Артикул
@@ -950,7 +969,7 @@ ru:
     smtp_username: Пользователь
     source: 
     special_instructions: Дополнительные инструкции
-    split: 
+    split: Разделить
     spree/order:
       coupon_code: Код купона
     spree_gateway_error_flash_for_checkout: Возникли проблемы с Вашими реквизитами. Пожалуйста, проверьте их и попробуйте ещё раз.
@@ -961,13 +980,14 @@ ru:
     states: Регионы/Области
     states_required: 
     status: Статус
-    stock_location: 
+    stock_location: Расположение склада
     stock_location_info: 
-    stock_locations: 
+    stock_locations: Адреса складов
     stock_management: 
-    stock_movements: 
-    stock_movements_for_stock_location: 
-    stock_successfully_transferred: 
+    stock_management_requires_a_stock_location: Добавьте расположение склада для управления запасами, пожалуйста.
+    stock_movements: Перемещения товаров
+    stock_movements_for_stock_location: Перемещения товаров для %{stock_location_name}
+    stock_successfully_transferred: Товары успешно перемещены с одного склада на другой.
     stock_transfer: 
     stock_transfers: 
     stop: Конец
@@ -978,7 +998,7 @@ ru:
     subtract: Вычет
     successfully_created: ! '%{resource} был успешно создан!'
     successfully_removed: ! '%{resource} был успешно удален!'
-    successfully_signed_up_for_analytics: 
+    successfully_signed_up_for_analytics: Успешно авторизованы в Spree Analytics
     successfully_updated: ! '%{resource} был успешно обновлен!'
     tax: Налог
     tax_categories: Категории налогов
@@ -1004,26 +1024,27 @@ ru:
         subject: Тестовое сообщение
     test_mode: Тестовый режим
     thank_you_for_your_order: Спасибо за покупку!
+    there_are_no_items_for_this_order: В этом заказе нет товаров. Добавьте товары, чтобы продолжить, пожалуйста.
     there_were_problems_with_the_following_fields: Возникли некоторые проблемы со следующими полями
     thumbnail: Миниатюра
     time: Время
     to_add_variants_you_must_first_define: Перед добавлением вариантов, вы должны определить
     total: Итого
     tracking: Отслеживание
-    tracking_number: 
-    tracking_url: 
-    tracking_url_placeholder: 
+    tracking_number: Трекинговый номер
+    tracking_url: Трекинговый URL
+    tracking_url_placeholder: например, http://quickship.com/package?num=:tracking
     transfer_from_location: 
     transfer_stock: 
-    transfer_to_location: 
+    transfer_to_location: Перевести на
     tree: Дерево
     type: Тип
     type_to_search: Начните печатать чтобы активировать поиск
     unable_to_connect_to_gateway: Не удалось подключиться к платёжному шлюзу.
-    under_price: 
+    under_price: Дешевле %{price}
     unlock: Разблокировать
     unrecognized_card_type: Неизвестный тип карты
-    unshippable_items: 
+    unshippable_items: Неотправляемые Товары
     update: Изменить
     updating: Обновление
     usage_limit: Максимальное количество использований
@@ -1043,6 +1064,7 @@ ru:
       must_be_non_negative: должно быть неотрицательным числом
     value: Значение
     variant: Вариант
+    variant_placeholder: Выберите вариант
     variants: Варианты
     version: Версия
     void: Анулировать
@@ -1053,7 +1075,7 @@ ru:
     year: Год
     you_have_no_orders_yet: У Вас ещё нет заказов.
     your_cart_is_empty: Ваша корзина пуста
-    your_order_is_empty_add_product: 
+    your_order_is_empty_add_product: Ваша корзина пуста, найдите и добавьте продукты, пожалуйста
     zip: Индекс
     zipcode: Почтовый индекс
     zone: Торговая зона
