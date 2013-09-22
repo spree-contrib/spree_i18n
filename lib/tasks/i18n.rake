@@ -11,6 +11,7 @@ namespace :spree_i18n do
     require "uri"; require "net/https"
     SPREE_MODULES.each do |mod|
       location = "https://raw.github.com/spree/spree/master/#{mod}/config/locales/en.yml"
+      response = nil
       begin
         uri = URI.parse(location)
         http = Net::HTTP.new(uri.host, uri.port)
@@ -18,26 +19,62 @@ namespace :spree_i18n do
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         puts "Getting from #{uri}"
         request = Net::HTTP::Get.new(uri.request_uri)
-        case response = http.request(request)
-          when Net::HTTPRedirection then location = response['location']
-          when Net::HTTPClientError, Net::HTTPServerError then response.error!
+        response = http.request(request)
+        case response
+          when Net::HTTPRedirection
+            location = response['location']
+          when Net::HTTPNotFound
+            response = nil
+            break
+          when Net::HTTPClientError, Net::HTTPServerError
+            response.error!
         end
       end until Net::HTTPSuccess === response
 
-      File.open("#{default_dir}/spree_#{mod}.yml", 'w') { |file| file << response.body }
+      filename = "#{default_dir}/spree_#{mod}.yml"
+      if response.nil?
+        puts "Received 404 Not Found for #{uri}\nDeleting local default file #{filename}"
+        File.delete(filename) rescue false
+      else
+        File.open(filename, 'w') { |file| file << response.body }
+      end
     end
   end
 
-  desc "Syncronize translation files with latest en (adds comments with fallback en value)"
+  desc "Synchronize translation files with latest default files"
   task :sync do
-    puts "Starting syncronization..."
-    words = composite_keys
+    puts "Starting synchronization..."
+    defaults = composite_keys
+
+    langs = Set.new
+    langs_w_territory = Set.new
     Dir["#{locales_dir}/*.yml"].each do |filename|
       basename = File.basename(filename, '.yml')
-      (comments, other) = Spree::I18nUtils.read_file(filename, basename)
-      words.each { |k,v| other[k] ||= "#{words[k]}" }  #Initializing hash variable as en fallback if it does not exist
-      other.delete_if { |k,v| !words[k] } #Remove if not defined in en locale
-      Spree::I18nUtils.write_file(filename, basename, comments, other, false)
+      if basename.include?('-')
+        langs_w_territory << basename
+      else
+        langs << basename
+      end
+    end
+
+    # Process languages files without territory suffix first
+    langs.each do |lang|
+      (comments, translations) = Spree::I18nUtils.read_file(locales_dir, lang)
+      Spree::I18nUtils.write_translated_file(locales_dir, lang, comments, defaults, translations)
+    end
+
+    # Now process language files with territory suffix,
+    # filling in defaults from language without territory suffix
+    langs_w_territory.each do |lang|
+      lang_wo_territory = lang.split('-').first
+      if langs.include?(lang_wo_territory)
+        (_, lang_defaults) = Spree::I18nUtils.read_file(locales_dir, lang_wo_territory)
+      else
+        lang_defaults = defaults
+      end
+
+      (comments, translations) = Spree::I18nUtils.read_file(locales_dir, lang)
+      Spree::I18nUtils.write_translated_file(locales_dir, lang, comments, lang_defaults, translations)
     end
   end
 
@@ -48,7 +85,7 @@ namespace :spree_i18n do
       exit
     end
 
-    Spree::I18nUtils.write_file "#{locales_dir}/#{locale}.yml", "#{locale}", '---', composite_keys
+    Spree::I18nUtils.write_translated_file(locales_dir, locale, '---', composite_keys, {})
     print "New locale generated.\n"
     print "Don't forget to also download the rails translation from: http://github.com/svenfuchs/rails-i18n/tree/master/rails/locale\n"
   end
@@ -65,7 +102,7 @@ namespace :spree_i18n do
       basename = File.basename(filename, '.yml')
 
       # next if basename.starts_with?('en')
-      (comments, other) = Spree::I18nUtils.read_file(filename, basename)
+      (_, other) = Spree::I18nUtils.read_file(locales_dir, basename)
       other.delete_if { |k,v| !words[k] } #Remove if not defined in en.yml
       other.delete_if { |k,v| !v.match(/\w+/) or v.match(/#/) }
 
@@ -89,16 +126,16 @@ namespace :spree_i18n do
   end
 
   def get_translation_keys(gem_name)
-    (dummy_comments, words) = Spree::I18nUtils.read_file(File.dirname(__FILE__) + "/../../default/#{gem_name}.yml", "en")
-      words
+    (_, words) = Spree::I18nUtils.read_file(File.join(File.dirname(__FILE__), '..', '..', 'default'), gem_name, 'en')
+    words
   end
 
   def locales_dir
-    File.join File.dirname(__FILE__), "/../../config/locales"
+    File.join(File.dirname(__FILE__), '..', '..', 'config', 'locales')
   end
 
   def default_dir
-    File.join File.dirname(__FILE__), "/../../default"
+    File.join(File.dirname(__FILE__), '..', '..', 'default')
   end
 
   def env_locale
