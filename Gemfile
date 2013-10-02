@@ -5,15 +5,17 @@ group :assets do
   gem 'sass-rails', '~> 4.0.0'
 end
 
+gem 'pg'
+
 group :test do
   gem 'rspec'
   gem 'i18n-spec', '~> 0.4.0'
   gem 'factory_girl_rails', '~> 4.2.1'
   gem 'capybara', '~> 2.1.0'
-  gem 'selenium-webdriver', '~> 2.34.0'
+  gem 'selenium-webdriver', '~> 2.34'
 end
 
-gem 'spree', github: 'spree/spree', branch: 'master'
+gem 'spree', github: 'spree/spree', branch: '2-1-stable'
 gem 'globalize3', github: 'svenfuchs/globalize3', branch: 'rails4'
 gem 'paper_trail', github: 'airblade/paper_trail'
 
