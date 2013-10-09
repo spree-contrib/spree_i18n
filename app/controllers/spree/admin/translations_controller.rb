@@ -19,7 +19,6 @@ module Spree
       end
 
       def set_resource_ivar(resource)
-        debugger
         instance_variable_set("@#{resource_name}", resource)
       end
 

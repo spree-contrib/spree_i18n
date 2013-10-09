@@ -24,7 +24,6 @@ module Spree
         end
 
         def ProductFilters.brand_filter 
-          debugger 
           brand_id = Spree::Property::Translation.find_by(name: 'brand')
           brand_id = brand_id.spree_taxon_id if brand_id
           brand_property = brand_id ? Spree::Property.find(brand_id) : nil
