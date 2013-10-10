@@ -16,7 +16,7 @@ group :test do
 end
 
 gem 'spree', github: 'spree/spree', branch: '2-1-stable'
-gem 'globalize3', github: 'svenfuchs/globalize3', branch: 'rails4'
+gem 'globalize', github: 'svenfuchs/globalize', branch: 'rails4'
 gem 'paper_trail', github: 'airblade/paper_trail'
 
 gemspec
