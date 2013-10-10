@@ -19,7 +19,7 @@ Pull requests for any fixes on how the application works are still very welcome 
 Add the following to your `Gemfile`. 
 
 ```ruby
-gem 'spree_i18n', github: 'spree/spree_i18n'
+gem 'spree_i18n', github: 'spree/spree_i18n', branch: '2-1-stable'
 gem 'globalize', github: 'globalize/globalize branch: 'rails4'
 gem 'paper_trail', github: 'airblade/paper_trail'
 ```
