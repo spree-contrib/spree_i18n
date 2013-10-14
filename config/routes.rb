@@ -4,4 +4,5 @@ Spree::Core::Engine.routes.draw do
   namespace :admin do
     get '/:resource/:resource_id/translations' => 'translations#index', as: :translations
   end
+  
 end
