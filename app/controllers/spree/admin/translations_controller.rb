@@ -28,7 +28,9 @@ module Spree
 
       def resource
         @resource ||= if slugged_models.include? klass.class_name
-          klass.find_by_permalink(params[:resource_id])
+          # klass.find(klass::Translation.find_by(:permalink => params[:resource_id]).send("spree_#{resource_name}_id"))
+          klass.find(klass::Translation.find_by(:permalink => params[:resource_id]).send("spree_#{resource_name}_id"))
+          # klass.find_by(:permalink => params[:resource_id])
         else
           klass.find(params[:resource_id])
         end
