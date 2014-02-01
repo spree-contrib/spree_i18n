@@ -45,6 +45,18 @@ describe "Translations" do
         visit spree.admin_option_types_path
         page.should have_content("tamanho")
       end
+
+      # Regression test for issue #354
+      it "successfully creates an option type and go to its edit page" do
+        visit spree.admin_option_types_path
+        click_link "New Option Type"
+        fill_in "Name", with: "Shirt Size"
+        fill_in "Presentation", with: "Sizes"
+        click_button "Create"
+
+        page.should have_content "Option type \"Shirt Size\" has been successfully created"
+        page.should have_content "OPTION VALUES"
+      end
     end
 
     context "option values" do
@@ -181,9 +193,9 @@ describe "Translations" do
 
       visit spree.admin_product_path(product)
       click_on "Translations"
-      click_on "Permalink"
-      within("#attr_fields .permalink.en.odd") { fill_in_name "en_link" }
-      within("#attr_fields .permalink.de.odd") { fill_in_name "de_link" }
+      click_on "Slug"
+      within("#attr_fields .slug.en.odd") { fill_in_name "en_link" }
+      within("#attr_fields .slug.de.odd") { fill_in_name "de_link" }
       click_on "Update"
 
       visit spree.product_path 'en_link'
