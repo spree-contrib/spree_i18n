@@ -47,20 +47,20 @@ ua:
         state: Регіон/Область
         total: Загалом
       spree/order/bill_address:
-        address1: Billing address street
-        city: Платіжний адресу. Місто
-        firstname: Платіжний адресу. Ім'я
-        lastname: Платіжний адресу. Прізвище
-        phone: Платіжний адресу. Телефон
-        state: Платіжний адресу. Регіон/Область
-        zipcode: Платіжний адресу. Індекс
+        address1: Платіжна адреса. Вулиця
+        city: Платіжна адреса. Місто
+        firstname: Платіжна адреса. Ім'я
+        lastname: Платіжна адреса. Прізвище
+        phone: Платіжна адреса. Телефон
+        state: Платіжна адреса. Регіон/Область
+        zipcode: Платіжна адреса. Індекс
       spree/order/ship_address:
-        address1: Billing address street
+        address1: Адреса доставки. Вулиця
         city: Адреса доставки. Місто
         firstname: Адреса доставки. Ім'я
         lastname: Адреса доставки. Прізвище
         phone: Адреса доставки. Телефон
-        state: Статус
+        state: Адреса доставки. Регіон/Область
         zipcode: Адреса доставки. Індекс
       spree/payment:
         amount: Сума
@@ -133,7 +133,7 @@ ua:
         spree/credit_card:
           attributes:
             base:
-              card_expired: 
+              card_expired: Термін дії картки закінчився
     models:
       spree/address:
         one: Адреса
@@ -142,8 +142,8 @@ ua:
         one: Країна
         other: Країни
       spree/credit_card:
-        one: Credit Card
-        other: Credit Cards
+        one: Кредитна картка
+        other: Кредитні картки
       spree/inventory_unit:
         one: Одиниця обліку
         other: Одиниці обліку
@@ -235,7 +235,7 @@ ua:
     user_passwords:
       user:
         cannot_be_blank: Ваш пароль не може бути пустим.
-        send_instructions: 
+        send_instructions: Ви отримаєте електронного листа з інструкціямипо скиданню вашого пароля через декілька хвилин.
         updated: Ваш пароль змінено. Ви успішно увійшли до системи.
     user_registrations:
       destroyed: До побачення! Ваш акаунт знищено, але ми сподіваємося побачити вас знову найближчим часом.
@@ -249,8 +249,10 @@ ua:
     messages:
       already_confirmed: вже було підтверджено
       not_found: не знайдено
-      not_locked: було разблоковано
+      not_locked: не було заблоковано
       not_saved: 
+        one: ! '1 помилка перешкоджають збереженню %{resource}:'
+        other: ! '%{count} помилок перешкоджають збереженню %{resource}:'
   spree:
     abbreviation: Абревіатура
     account: Обліковий запис
@@ -308,17 +310,17 @@ ua:
         promotions: Акції
         reports: Звіти
         users: Користувачі
-    administration: Администрирование
-    agree_to_privacy_policy: 
-    agree_to_terms_of_service: 
-    all: все
-    all_adjustments_closed: 
-    all_adjustments_opened: 
+    administration: Адміністрування
+    agree_to_privacy_policy: Погоджуюсь з політикою конфіденційності
+    agree_to_terms_of_service: Погоджуюсь з умовами обслуговування
+    all: всі
+    all_adjustments_closed: Всі налаштування успішно закриті!
+    all_adjustments_opened: Всі налаштування успішно відкриті!
     all_departments: Всі розділи
     allow_ssl_in_development_and_test: Використовувати SSL в development та test режимах
     allow_ssl_in_production: Використовувати SSL в production
     allow_ssl_in_staging: Використовувати SSL в staging
-    already_signed_up_for_analytics: 
+    already_signed_up_for_analytics: Ви вже підписані на Spree Analytics
     alt_text: Альтернативний текст
     alternative_phone: Додатковий телефон
     amount: Сума
@@ -332,12 +334,12 @@ ua:
     and: і
     are_you_sure: Ви впевнені
     are_you_sure_delete: Ви впевнені, що хочете видалити цей запис?
-    associated_adjustment_closed: 
+    associated_adjustment_closed: Пов’язане коригування закрито, і не буде перераховано. Чи бажаєте відкрити її?
     attachment_default_style: Стандартний стиль прикріпленого файла
     attachment_default_url: Стандартний url прикріпленого файла
     attachment_path: Шлях до прикріпленого файлу
     attachment_styles: Стилі paperclip
-    attachment_url: 
+    attachment_url: URL прикріпленого файлу
     authorization_failure: Помилка авторизації
     available_on: Доступно з
     back: Назад
@@ -356,29 +358,29 @@ ua:
     back_to_shipping_categories: Повернутися до списку категорій доставки
     back_to_shipping_methods_list: Повернутися до списку методів доставки
     back_to_states_list: Повернутися до списку областей
-    back_to_stock_locations_list: 
-    back_to_stock_movements_list: 
-    back_to_stock_transfers_list: 
+    back_to_stock_locations_list: Повернутись до списку складів
+    back_to_stock_movements_list: Повернутись до переміщень товарів
+    back_to_stock_transfers_list: Повернутись до переміщень між складами
     back_to_store: Повернутися до магазину
     back_to_tax_categories_list: Повернутися до списку категорій
     back_to_taxonomies_list: Повернутися до списку таксономій
     back_to_trackers_list: Повернутися до списку трекерів
     back_to_users_list: Назад досписку користувачів
     back_to_zones_list: Повернутися до списку зон
-    backorderable: 
-    backorders_allowed: 
+    backorderable: Можливе передзамовлення
+    backorders_allowed: Передзамовлення дозволене
     balance_due: Дебетове сальдо
     bill_address: Платіжний адресу
     billing: Біллінг
-    billing_address: Платіжний адресу
+    billing_address: Платіжна адреса
     both: скрізь
     calculator: Калькулятор
     calculator_settings_warning: При зміні типу калькулятора, ви повинні зберегти цю зміну, перш ніж ви зможете змінити налаштування калькулятора.
     cancel: Відміна
-    cannot_create_payment_without_payment_methods: Ненможливо створити оплату без визначення методів оплати.
+    cannot_create_payment_without_payment_methods: Неможливо створити оплату без визначення методів оплати.
     cannot_create_returns: Неможливо оформити повернення, тому що це замовлення ще не відправлено.
     cannot_perform_operation: Неможливо виконати необхідну операцію
-    cannot_set_shipping_method_without_address: 
+    cannot_set_shipping_method_without_address: Неможливо обрати спосіб доставки, поки дані користувача не вказані.
     capture: Провести платіж
     card_code: Код карти
     card_number: Номер карти
@@ -386,15 +388,15 @@ ua:
     cart: Кошик
     categories: Категорії
     category: Категорія
-    check_for_spree_alerts: 
+    check_for_spree_alerts: Перевірити сповіщення Spree
     checkout: Оформлення замовлення
     choose_a_customer: Виберіть кліента
     choose_currency: Виберіть валюту
-    choose_dashboard_locale: 
+    choose_dashboard_locale: Вибрати мову панелі управління
     city: Місто
     clone: Клонувати
     close: Закрити
-    close_all_adjustments: 
+    close_all_adjustments: Закрити всі коригування
     code: Кодове слово
     company: Компанія
     complete: Завершено
