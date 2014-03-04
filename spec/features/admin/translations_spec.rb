@@ -54,7 +54,7 @@ describe "Translations" do
         fill_in "Presentation", with: "Sizes"
         click_button "Create"
 
-        page.should have_content "Option type \"Shirt Size\" has been successfully created"
+        page.should have_content "Option Type \"Shirt Size\" has been successfully created"
         page.should have_content "OPTION VALUES"
       end
     end
