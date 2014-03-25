@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'rails-i18n', '~> 0.7.3'
+  s.add_dependency 'rails-i18n', '>= 0.7.3'
   s.add_dependency 'spree_core', '~> 2.1.0'
   s.add_dependency 'globalize', '~> 4.0.0'
 
