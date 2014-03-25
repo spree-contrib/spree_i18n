@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'spree_core', '~> 2.1.0'
   s.add_dependency 'globalize', '~> 4.0.0'
 
+  s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-rails', '~> 2.13'
   s.add_development_dependency 'sqlite3', '~> 1.3.7'
   s.add_development_dependency 'pry'
