@@ -7,6 +7,12 @@ module SpreeI18n
     included do
       before_filter :set_user_language
       before_filter :globalize_fallbacks
+      helper_method :checkout_state_path
+
+      def checkout_state_path(state)
+        state = Spree.t("checkout_steps.slugs.#{state}", default: state)
+        spree.checkout_state_path state
+      end
 
       private
         # Overrides the Spree::Core::ControllerHelpers::Common logic so that only
