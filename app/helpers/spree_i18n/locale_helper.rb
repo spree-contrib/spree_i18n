@@ -34,7 +34,7 @@ module SpreeI18n
       end
 
       def common_options
-        { :class => 'fullwidth' , :multiple => 'true' }
+        { :class => 'fullwidth select2' , :multiple => 'true' }
       end
   end
 end
