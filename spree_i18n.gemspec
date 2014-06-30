@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-i18n', '~> 4.0.0'
   s.add_dependency 'spree_core', '~> 2.2.0'
   s.add_dependency 'globalize', '~> 4.0.0'
-  s.add_dependency 'i18n_data', '~> 0.4.1'
+  s.add_dependency 'i18n_data', '~> 0.5.1'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-rails', '~> 2.13'
