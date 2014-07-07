@@ -14,7 +14,7 @@ Happy translating!
 Add the following to your `Gemfile`:
 
 ```ruby
-gem 'spree_i18n', github: 'spree/spree_i18n', branch: 'master'
+gem 'spree_i18n', github: 'spree/spree_i18n', branch: '2-3-stable'
 ```
 
 Run `bundle install`
