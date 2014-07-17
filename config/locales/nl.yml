@@ -159,9 +159,7 @@ nl:
       spree/product:
         one: Product
         other: Producten
-      spree/promotion:
-        one: Promotie
-        other: Promoties
+      spree/promotion: 
       spree/property:
         one: Eigenschap
         other: Eigenschappen
@@ -169,8 +167,8 @@ nl:
         one: Prototype
         other: Prototypes
       spree/return_authorization:
-        one: Retour
-        other: Retouren
+        one: Geef goedkeuring
+        other: Geef goedkeuringen
       spree/role:
         one: Rol
         other: Rollen
@@ -254,15 +252,6 @@ nl:
       not_saved:
         one: ! '1 fout voorkwam dat deze %{resource} werd opgeslagen:'
         other: ! '%{count} fouten voorkwamen dat deze %{resource} werd opgeslagen:'
-  helpers:
-    page_entries_info:
-      one_page:
-        display_entries:
-          zero: "Geen %{entry_name} gevonden"
-          one: "Bekijk <b>1</b> %{entry_name}"
-          other: "Bekijk <b>%{count}</b> %{entry_name}"
-      more_pages:
-        display_entries: "Overzicht van %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> van <b>%{total}</b>"
   spree:
     abbreviation: Afkorting
     account: Account
@@ -344,8 +333,6 @@ nl:
     analytics_desc_list_4: Het is volledig gratis
     analytics_trackers: Analytics trackers
     and: en
-    approved_at: Goedgekeurd op
-    approver: Door
     are_you_sure: Weet je het zeker
     are_you_sure_delete: Wilt je dit record echt verwijderen?
     associated_adjustment_closed: De bijbehorende aanpassing is gesloten, en wordt niet herberekend. Wil je de aanpassing openen?
@@ -383,7 +370,6 @@ nl:
     back_to_zones_list: Terug naar zones lijst
     backorderable: Nabestelbaar
     backorders_allowed: Nabestellingen toegestaan
-    backordered: Nabestelling
     balance_due: Te betalen
     bill_address: Factuuradres
     billing: Factuur
@@ -406,10 +392,8 @@ nl:
     check_for_spree_alerts: Controleer op Spree Alerts
     checkout: Afrekenen
     choose_a_customer: Kies een klant
-    choose_a_taxon_to_sort_products_for: Kies een taxon om de producten voor te sorteren
     choose_currency: Kies een valuta
     choose_dashboard_locale: Kies dashboard regio-instelling
-    choose_location: Kies locatie
     city: Stad
     clone: Dupliceren
     close: Sluiten
@@ -434,6 +418,11 @@ nl:
     country: Land
     country_based: Gebaseerd op land
     country_name: Naam
+    country_names:
+      CA: Canada
+      FRA: Frankrijk
+      ITA: Italië
+      US: Verenigde Staten
     coupon: Kortingscode
     coupon_code: Kortingscode
     coupon_code_already_applied: Deze kortingscode is al toegepast op deze bestelling
@@ -544,14 +533,12 @@ nl:
           signup: Gebruiker registratie
     exceptions:
       count_on_hand_setter: ! 'Kan count_on_hand niet handmatig instellen, omdat het automatisch wordt ingesteld door de recalculate_count_on_hand callback. Gebruik  `update_column (: count_on_hand, waarde)` in plaats hier van.'
-    existing_shipments: Bestaande verzendingen
     expiration: Verval
     extension: Extensie
     filename: Bestandsnaam
     fill_in_customer_info: Vul klant informatie in aub.
     filter_results: Filter resultaten
     finalize: Afronden
-    find_a_taxon: Zoek een taxon
     first_item: Kosten eerste item
     first_name: Voornaam
     first_name_begins_with: Voornaam begint met
@@ -622,7 +609,6 @@ nl:
     last_name: Achternaam
     last_name_begins_with: Achternaam begint met
     learn_more: Lees meer
-    line_item_adjustments: Regel-aanpassingen
     list: Lijst
     listing_countries: Landen lijst
     listing_orders: Lijst bestellingen
@@ -665,7 +651,6 @@ nl:
     name_or_sku: Naam of SKU
     new: Nieuw
     new_adjustment: Nieuwe toevoeging
-    new_country: Land toevoegen
     new_customer: Nieuwe klant
     new_image: Nieuwe afbeelding
     new_option_type: Nieuw optietype
@@ -678,7 +663,6 @@ nl:
     new_property: Nieuwe eigenschap
     new_prototype: Nieuw prototype
     new_return_authorization: Nieuwe retour-autorisatie
-    new_shipment_at_location: Nieuwe verzending vanaf locatie
     new_shipping_category: Nieuwe verzend categorie
     new_shipping_method: Nieuwe verzendwijze
     new_state: Nieuwe staat/provincie
@@ -890,7 +874,6 @@ nl:
     receive_stock: Ontvang voorraad
     received: Ontvangen
     reference: Verwijzing
-    reference_cont: Aanpassing aantal
     refund: Terugbetaling
     register: Registreer als een nieuwe gebruiker
     registration: Registratie
@@ -904,10 +887,10 @@ nl:
     resume: Hervatten
     resumed: Hervat
     return: Terugzenden
-    return_authorization: Retour
-    return_authorization_updated: Retour bijgewerkt
-    return_authorizations: Retouren
-    return_quantity: Retour aantal
+    return_authorization: Goedkeuring
+    return_authorization_updated: Goedkeuring bijgewerkt
+    return_authorizations: Goedkeuringen
+    return_quantity: Terugkerende aantallen
     returned: Teruggezonden
     review: Beoordeel
     risk: Risico
@@ -947,7 +930,6 @@ nl:
     ship_address: Afleveradres
     ship_total: Verzend totaal
     shipment: Verzending
-    shipment_adjustments: Verzending aanpassingen
     shipment_inc_vat: Verzending inclusief BTW
     shipment_mailer:
       shipped_email:
@@ -978,7 +960,6 @@ nl:
     shipping_method: Verzendwijze
     shipping_methods: Verzendwijzen
     shipping_price_sack: Prijsvork
-    shop: Winkel
     shop_by_taxonomy: Winkelen per %{taxonomy}
     shopping_cart: Winkelwagen
     show: Toon
@@ -989,7 +970,6 @@ nl:
     site_name: Site naam
     site_url: Site URL
     sku: Sku
-    slug: Verkorte URL
     smtp: SMTP
     smtp_authentication_type: SMTP autorisatie type
     smtp_domain: SMTP domein
@@ -1033,13 +1013,12 @@ nl:
     successfully_signed_up_for_analytics: Succesvol aangemeld voor Spree Analytics
     successfully_updated: ! '%{resource} is succesvol bijgewerkt!'
     tax: Belasting
-    tax_categories: Belastingcategorieën
-    tax_category: Belastingcategorie
-    tax_included: Inclusief belasting
-    tax_rate_amount_explanation: ! 'Belastingtarieven zijn een decimaal getal. (bijvoorbeeld: als het tarief 21% is vul je 0.21 in)'
-    tax_rates: Belastingtarieven
-    tax_settings: Belastinginstellingen
-    tax_total: Belastingtotaal
+    tax_categories: Belastingscategorieën
+    tax_category: Belastingscategorie
+    tax_rate_amount_explanation: ! 'Belastingstarieven zijn een decimaal getal. (bijvoorbeeld: als het tarief 21% is vul je 0.21 in)'
+    tax_rates: Belastingstarieven
+    tax_settings: Belastingsinstellingen
+    tax_total: Belastingstotaal
     taxon: Taxon
     taxon_edit: Bewerk taxon
     taxon_placeholder: Taxonomie toevoegen
@@ -1095,7 +1074,7 @@ nl:
       exceeds_available_stock: overschrijdt beschikbare voorraad. Zorg dat je een juiste hoeveelheid hebt ingevuld per bestelregel.
       is_too_large: is te veel - voorraad kan de aanvraag niet aan!
       must_be_int: moet een getal zijn
-      must_be_non_negative: moet een positief getal zijn
+      must_be_non_negative: moet een niet-negatief getal zijn
     value: Waarde
     variant: Variant
     variant_placeholder: Kies een variant
@@ -1114,10 +1093,3 @@ nl:
     zipcode: Postcode
     zone: Gebied
     zones: Gebieden
-  views:
-    pagination:
-      first: "&laquo; Eerste"
-      last: "Laatste &raquo;"
-      previous: "&lsaquo; Vorige"
-      next: "Volgende &rsaquo;"
-      truncate: "&hellip;"
