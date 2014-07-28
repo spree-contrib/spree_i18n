@@ -191,8 +191,8 @@ zh-CN:
         one: 税率
         other: 税率
       spree/taxon:
-        one: 分类
-        other: 分类
+        one: 分类群
+        other: 分类群
       spree/taxonomy:
         one: 分类
         other: 分类
@@ -286,6 +286,7 @@ zh-CN:
     additional_item: 额外项目花费
     address1: 地址
     address2: 地址（继续）
+    adjustable: 可调整
     adjustment: 调整
     adjustment_amount: 金额
     adjustment_successfully_closed: 价格调整已被禁用！
@@ -301,12 +302,18 @@ zh-CN:
           error: ! '测试邮件错误: %{e}'
       tab:
         configuration: 配置
+        option_types: 选项类别 
         orders: 订单
         overview: 概览
         products: 产品
         promotions: 促销
+        properties: 属性
+        prototypes: 原型
         reports: 报告
+        taxonomies: 分类 
+        taxons: 分类群        
         users: 用户
+        
     administration: 管理
     agree_to_privacy_policy: 同意隐私政策
     agree_to_terms_of_service: 同意服务条款
@@ -365,7 +372,8 @@ zh-CN:
     back_to_users_list: 回到用户列表
     back_to_zones_list: 回到区域列表
     backorderable: 可预订
-    backorders_allowed: 
+    backordered: 预订
+    backorders_allowed: 准许预订
     balance_due: 尚欠款
     bill_address: 账单地址
     billing: 账单
@@ -414,6 +422,274 @@ zh-CN:
     country: 国家
     country_based: 根据国家
     country_name: 名称
+    country_names:
+      AC: "阿森松岛"
+      AD: "安道尔"
+      AE: "阿拉伯联合酋长国"
+      AF: "阿富汗"
+      AG: "安提瓜和巴布达"
+      AI: "安圭拉"
+      AL: "阿尔巴尼亚"
+      AM: "亚美尼亚"
+      AN: "荷属安的列斯群岛"
+      AO: "安哥拉"
+      AQ: "南极洲"
+      AR: "阿根廷"
+      AS: "美属萨摩亚"
+      AT: "奥地利"
+      AU: "澳大利亚"
+      AW: "阿鲁巴"
+      AX: "奥兰群岛"
+      AZ: "阿塞拜疆"
+      BA: "波斯尼亚和黑塞哥维那"
+      BB: "巴巴多斯"
+      BD: "孟加拉国"
+      BE: "比利时"
+      BF: "布基纳法索"
+      BG: "保加利亚"
+      BH: "巴林"
+      BI: "布隆迪"
+      BJ: "贝宁"
+      BL: "圣巴泰勒米"
+      BM: "百慕大"
+      BN: "文莱"
+      BO: "玻利维亚"
+      BQ: "荷兰加勒比"
+      BR: "巴西"
+      BS: "巴哈马"
+      BT: "不丹"
+      BV: "布维特岛"
+      BW: "博茨瓦纳"
+      BY: "白俄罗斯"
+      BZ: "伯利兹"
+      CA: "加拿大"
+      CC: "科科斯群岛"
+      CD: "刚果（金）"
+      CD: "刚果民主共和国"
+      CF: "中非共和国"
+      CG: "刚果（布）"
+      CG: "刚果共和国"
+      CH: "瑞士"
+      CI: "科特迪瓦"
+      CI: "象牙海岸"
+      CK: "库克群岛"
+      CL: "智利"
+      CM: "喀麦隆"
+      CN: "中国"
+      CO: "哥伦比亚"
+      CP: "克利珀顿岛"
+      CR: "哥斯达黎加"
+      CU: "古巴"
+      CV: "佛得角"
+      CW: "库拉索"
+      CX: "圣诞岛"
+      CY: "塞浦路斯"
+      CZ: "捷克共和国"
+      DE: "德国"
+      DG: "迪戈加西亚岛"
+      DJ: "吉布提"
+      DK: "丹麦"
+      DM: "多米尼加"
+      DO: "多米尼加共和国"
+      DZ: "阿尔及利亚"
+      EA: "休达及梅利利亚"
+      EC: "厄瓜多尔"
+      EE: "爱沙尼亚"
+      EG: "埃及"
+      EH: "西撒哈拉"
+      ER: "厄立特里亚"
+      ES: "西班牙"
+      ET: "埃塞俄比亚"
+      EU: "欧盟"
+      FI: "芬兰"
+      FJ: "斐济"
+      FK: "福克兰群岛"
+      FK: "福克兰群岛（马尔维纳斯群岛）"
+      FM: "密克罗尼西亚联邦"
+      FO: "法罗群岛"
+      FR: "法国"
+      GA: "加蓬"
+      GB: "英国"
+      GD: "格林纳达"
+      GE: "格鲁吉亚"
+      GF: "法属圭亚那"
+      GG: "根西岛"
+      GH: "加纳"
+      GI: "直布罗陀"
+      GL: "格陵兰"
+      GM: "冈比亚"
+      GN: "几内亚"
+      GP: "瓜德罗普岛"
+      GQ: "赤道几内亚"
+      GR: "希腊"
+      GS: "南乔治亚岛和南桑威齐群岛"
+      GT: "危地马拉"
+      GU: "关岛"
+      GW: "几内亚比绍"
+      GY: "圭亚那"
+      HK: "中国香港特别行政区"
+      HK: "香港"
+      HM: "赫德与麦克唐纳群岛"
+      HN: "洪都拉斯"
+      HR: "克罗地亚"
+      HT: "海地"
+      HU: "匈牙利"
+      IC: "加纳利群岛"
+      ID: "印度尼西亚"
+      IE: "爱尔兰"
+      IL: "以色列"
+      IM: "曼岛"
+      IN: "印度"
+      IO: "英属印度洋领地"
+      IQ: "伊拉克"
+      IR: "伊朗"
+      IS: "冰岛"
+      IT: "意大利"
+      JE: "泽西岛"
+      JM: "牙买加"
+      JO: "约旦"
+      JP: "日本"
+      KE: "肯尼亚"
+      KG: "吉尔吉斯斯坦"
+      KH: "柬埔寨"
+      KI: "基里巴斯"
+      KM: "科摩罗"
+      KN: "圣基茨和尼维斯"
+      KP: "朝鲜"
+      KR: "韩国"
+      KW: "科威特"
+      KY: "开曼群岛"
+      KZ: "哈萨克斯坦"
+      LA: "老挝"
+      LB: "黎巴嫩"
+      LC: "圣卢西亚"
+      LI: "列支敦士登"
+      LK: "斯里兰卡"
+      LR: "利比里亚"
+      LS: "莱索托"
+      LT: "立陶宛"
+      LU: "卢森堡"
+      LV: "拉脱维亚"
+      LY: "利比亚"
+      MA: "摩洛哥"
+      MC: "摩纳哥"
+      MD: "摩尔多瓦"
+      ME: "黑山共和国"
+      MF: "法属圣马丁"
+      MG: "马达加斯加"
+      MH: "马绍尔群岛"
+      MK: "马其顿"
+      MK: "马其顿（前南斯拉夫的马其顿共和国）"
+      ML: "马里"
+      MM: "缅甸"
+      MN: "蒙古"
+      MO: "中国澳门特别行政区"
+      MO: "澳门"
+      MP: "北马里亚纳群岛"
+      MQ: "马提尼克"
+      MR: "毛里塔尼亚"
+      MS: "蒙塞拉特"
+      MT: "马耳他"
+      MU: "毛里求斯"
+      MV: "马尔代夫"
+      MW: "马拉维"
+      MX: "墨西哥"
+      MY: "马来西亚"
+      MZ: "莫桑比克"
+      NA: "纳米比亚"
+      NC: "新喀里多尼亚"
+      NE: "尼日尔"
+      NF: "诺福克岛"
+      NG: "尼日利亚"
+      NI: "尼加拉瓜"
+      NL: "荷兰"
+      'NO': "挪威"
+      NP: "尼泊尔"
+      NR: "瑙鲁"
+      NU: "纽埃"
+      NZ: "新西兰"
+      OM: "阿曼"
+      PA: "巴拿马"
+      PE: "秘鲁"
+      PF: "法属波利尼西亚"
+      PG: "巴布亚新几内亚"
+      PH: "菲律宾"
+      PK: "巴基斯坦"
+      PL: "波兰"
+      PM: "圣皮埃尔和密克隆群岛"
+      PN: "皮特凯恩群岛"
+      PR: "波多黎各"
+      PS: "巴勒斯坦领土"
+      PT: "葡萄牙"
+      PW: "帕劳"
+      PY: "巴拉圭"
+      QA: "卡塔尔"
+      QO: "大洋洲边远群岛"
+      RE: "留尼汪"
+      RO: "罗马尼亚"
+      RS: "塞尔维亚"
+      RU: "俄罗斯"
+      RW: "卢旺达"
+      SA: "沙特阿拉伯"
+      SB: "所罗门群岛"
+      SC: "塞舌尔"
+      SD: "苏丹"
+      SE: "瑞典"
+      SG: "新加坡"
+      SH: "圣赫勒拿"
+      SI: "斯洛文尼亚"
+      SJ: "斯瓦尔巴特和扬马延"
+      SK: "斯洛伐克"
+      SL: "塞拉利昂"
+      SM: "圣马力诺"
+      SN: "塞内加尔"
+      SO: "索马里"
+      SR: "苏里南"
+      SS: "南苏丹"
+      ST: "圣多美和普林西比"
+      SV: "萨尔瓦多"
+      SX: "荷属圣马丁"
+      SY: "叙利亚"
+      SZ: "斯威士兰"
+      TA: "特里斯坦-达库尼亚群岛"
+      TC: "特克斯和凯科斯群岛"
+      TD: "乍得"
+      TF: "法属南部领土"
+      TG: "多哥"
+      TH: "泰国"
+      TJ: "塔吉克斯坦"
+      TK: "托克劳"
+      TL: "东帝汶"
+      TL: "东帝汶"
+      TM: "土库曼斯坦"
+      TN: "突尼斯"
+      TO: "汤加"
+      TR: "土耳其"
+      TT: "特立尼达和多巴哥"
+      TV: "图瓦卢"
+      TW: "台湾"
+      TZ: "坦桑尼亚"
+      UA: "乌克兰"
+      UG: "乌干达"
+      UM: "美国边远小岛"
+      US: "美国"
+      UY: "乌拉圭"
+      UZ: "乌兹别克斯坦"
+      VA: "梵蒂冈"
+      VC: "圣文森特和格林纳丁斯"
+      VE: "委内瑞拉"
+      VG: "英属维京群岛"
+      VI: "美属维京群岛"
+      VN: "越南"
+      VU: "瓦努阿图"
+      WF: "瓦利斯和富图纳"
+      WS: "萨摩亚"
+      YE: "也门"
+      YT: "马约特"
+      ZA: "南非"
+      ZM: "赞比亚"
+      ZW: "津巴布韦"
+      ZZ: "未知地区"
     coupon: 优惠券
     coupon_code: 优惠券号码
     coupon_code_already_applied: 优惠券号码已在本订单中使用
@@ -502,7 +778,7 @@ zh-CN:
     error: 错误
     errors:
       messages:
-        could_not_create_taxon: 无法添加分类
+        could_not_create_taxon: 无法添加分类群
         no_payment_methods_available: 当前运行环境下没有配置好支付方式
         no_shipping_methods_available: 选中的地址没有适合的运送方式，请修改您的地址后再次尝试
     errors_prohibited_this_record_from_being_saved:
@@ -662,9 +938,9 @@ zh-CN:
     new_stock_transfer: 
     new_tax_category: 新建缴税类型
     new_tax_rate: 新建税率
-    new_taxon: 新建分类
-    new_taxonomy: 新建分类层级
-    new_tracker: New Tracker
+    new_taxon: 新建分类群
+    new_taxonomy: 新建分类
+    new_tracker: 新建追踪者
     new_user: 新建用户
     new_variant: 新建具体型号
     new_zone: 新建区域
@@ -672,16 +948,16 @@ zh-CN:
     no_actions_added: 未添加动作
     no_orders_found: 找不到任何订单
     no_payment_methods_found: 找不到任何支付方式
-    no_pending_payments: 
+    no_pending_payments: 找不到搁置付款
     no_products_found: 找不到产品
     no_promotions_found: 找不到任何促销活动
-    no_resource_found: 
+    no_resource_found: 找不到項目
     no_results: 无任何结果
     no_rules_added: 未添加规则
     no_shipping_methods_found: 找不到任何配送方式
     no_stock_locations_found: 
     no_trackers_found: 找不到任何追踪器
-    no_tracking_present: 未提供跟踪细节。
+    no_tracking_present: 未提供追踪器细节。
     none: 没有
     normal_amount: Normal Amount
     not: false
@@ -696,19 +972,20 @@ zh-CN:
       variant_deleted: 具体型号已经被删除
       variant_not_deleted: 具体型号不能被删除
     on_hand: 库存
-    open: 打开
+    open: 开启
     open_all_adjustments: 启用所有价格调整
     option_type: 选项类型
     option_type_placeholder: 选项类型默认值
     option_types: 选项类型
     option_value: 选项值
     option_values: 选项值
-    optional: 可选的
+    optional: 非必需
     options: 选项
     or: 或
     or_over_price: ! '%{price}或以上'
     order: 订单
     order_adjustments: 订单调整
+    order_approved: 已批准订单
     order_details: 订单详情
     order_email_resent: 重新发出了订单邮件
     order_information: 订单信息
@@ -897,6 +1174,7 @@ zh-CN:
     sales_total_description: 所有订单总销量
     sales_totals: 总销量
     save_and_continue: 保存并继续
+    save_my_address: 保存我的地址
     say_no: 不
     say_yes: 是的
     scope: 范围
@@ -947,6 +1225,7 @@ zh-CN:
     shipping_method: 配送方式
     shipping_methods: 配送方式
     shipping_price_sack: 
+    shipping_total: 配送总计
     shop_by_taxonomy: 根据%{taxonomy}购物
     shopping_cart: 购物车
     show: 显示
@@ -968,7 +1247,7 @@ zh-CN:
     smtp_username: SMTP用户名
     source: 
     special_instructions: 特别说明
-    split: 
+    split: 拆单
     spree/order:
       coupon_code: 优惠券号码
     spree_gateway_error_flash_for_checkout: 您的支付信息存在错误。请检查您的信息后再次尝试。
@@ -979,16 +1258,16 @@ zh-CN:
     states: 省份
     states_required: 
     status: 状态
-    stock_location: 
-    stock_location_info: 
-    stock_locations: 
-    stock_management: 
-    stock_management_requires_a_stock_location: 
-    stock_movements: 
-    stock_movements_for_stock_location: 
-    stock_successfully_transferred: 
-    stock_transfer: 
-    stock_transfers: 
+    stock_location: 物件位置
+    stock_location_info: 库存位置资讯 
+    stock_locations: 库存位置
+    stock_management: 库存管理
+    stock_management_requires_a_stock_location: 如欲管理库存，请先建立一个库存位置。 
+    stock_movements: 库存移动
+    stock_movements_for_stock_location:  "%{stock_location_name}的相关移动"
+    stock_successfully_transferred: 库存已成功移至相关位置。
+    stock_transfer: 库存迁移 
+    stock_transfers: 库存迁移 
     stop: 结束
     store: 商城
     street_address: 地址
@@ -1006,12 +1285,12 @@ zh-CN:
     tax_rates: 税率
     tax_settings: 缴税设置
     tax_total: 税款总额
-    taxon: 分类
+    taxon: 分类群
     taxon_edit: 编辑分类
-    taxon_placeholder: 添加分类
-    taxonomies: 分类层级
-    taxonomy: 分类层级
-    taxonomy_edit: 编辑分类层级
+    taxon_placeholder: 添加分类群
+    taxonomies: 分类
+    taxonomy: 分类
+    taxonomy_edit: 编辑分类
     taxonomy_tree_error: 请求的变更没有被接受，分类树会恢复到之前的状态，请重新尝试.
     taxonomy_tree_instruction: ! '* 右键单击一个树的子结点以访问添加、删除或者排序字节点的菜单.'
     taxons: 分类
@@ -1047,6 +1326,7 @@ zh-CN:
     update: 更新
     updating: 更新中
     usage_limit: 使用限制
+    use_app_default: 使用应用程序的预设
     use_billing_address: 使用账单地址
     use_new_cc: 使用一张新卡
     use_s3: 使用Amazon S3存储图片
