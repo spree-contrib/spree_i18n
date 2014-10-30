@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
