@@ -115,6 +115,13 @@ feature "Translations", js: true do
       visit spree.admin_promotions_path
       expect(page).to have_content("Salve salve")
     end
+
+    it "render edit route properly" do
+      visit spree.admin_promotions_path
+      find('.fa-flag').click
+      find('.fa-remove').click
+      expect(page).to have_css('.page-title')
+    end
   end
 
   context "taxonomies" do
