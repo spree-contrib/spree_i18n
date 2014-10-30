@@ -19,6 +19,8 @@ require 'spree/testing_support/capybara_ext'
 require 'spree/testing_support/authorization_helpers'
 
 RSpec.configure do |config|
+  config.color = true
+  config.infer_spec_type_from_file_location!
   config.mock_with :rspec
 
   config.use_transactional_fixtures = true
