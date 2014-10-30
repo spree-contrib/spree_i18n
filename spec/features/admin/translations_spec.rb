@@ -112,6 +112,13 @@ RSpec.feature "Translations", :js do
       visit spree.admin_promotions_path
       expect(page).to have_text_like 'Salve salve'
     end
+
+    it "render edit route properly" do
+      visit spree.admin_promotions_path
+      find('.icon-flag').click
+      find('.icon-remove').click
+      page.should has_selector?('.page-title')
+    end
   end
 
   context "taxonomies" do
