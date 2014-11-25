@@ -1,4 +1,15 @@
 RSpec.feature "Translations" do
+  context 'page' do
+    context 'switches locale from the dropdown' do
+      scenario 'selected translation is applied', js: true do
+        visit '/'
+        select('Português (BR)', :from => 'Language')
+
+        expect(page).to have_content('INÍCIO')
+      end
+    end
+  end
+
   context 'product' do
     let!(:product) do
       create(:product, name: 'Antimatter',
@@ -24,7 +35,7 @@ RSpec.feature "Translations" do
     end
 
     scenario 'displays translated products list' do
-      visit "/products"
+      visit '/products'
       expect(page).to have_content('Antimatéria')
     end
   end
