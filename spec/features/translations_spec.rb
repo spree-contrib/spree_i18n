@@ -1,3 +1,4 @@
+# encoding: utf-8
 RSpec.feature "Translations", :js do
   given(:language) { Spree.t(:'i18n.this_file_language', locale: 'pt-BR') }
 
@@ -11,7 +12,7 @@ RSpec.feature "Translations", :js do
     context 'switches locale from the dropdown' do
       scenario 'selected translation is applied' do
         visit '/'
-        find('#locale-select select option[value="pt-BR"]').select_option
+        select('Português (BR)', :from => 'Language')
         expect(page).to have_content('INÍCIO')
       end
     end
