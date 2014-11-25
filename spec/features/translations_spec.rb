@@ -4,7 +4,6 @@ RSpec.feature "Translations" do
       scenario 'selected translation is applied', js: true do
         visit '/'
         select('Português (BR)', :from => 'Language')
-
         expect(page).to have_content('INÍCIO')
       end
     end
