@@ -14,12 +14,16 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'rails-i18n', '~> 4.0.0'
+  s.has_rdoc = false
+
+  s.add_dependency 'friendly_id-globalize'
+  s.add_dependency 'globalize', '~> 4.0.3'
+  s.add_dependency 'i18n_data', '~> 0.5.1'
+  s.add_dependency 'rails-i18n', '~> 4.0.1'
   s.add_dependency 'spree_core', '~> 2.2.0'
   s.add_dependency 'globalize', '~> 4.0.2'
   s.add_dependency 'i18n_data', '~> 0.5.1'
 
-  s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-rails', '~> 2.13'
   s.add_development_dependency 'sqlite3', '~> 1.3.7'
   s.add_development_dependency 'pry'
