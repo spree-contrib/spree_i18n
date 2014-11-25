@@ -1,4 +1,4 @@
-RSpec.feature "Translations" do
+RSpec.describe "Translations" do
   context 'product' do
     let!(:product) do
       create(:product, name: 'Antimatter',
@@ -18,12 +18,12 @@ RSpec.feature "Translations" do
       Spree::Frontend::Config[:locale] = :en
     end
 
-    scenario 'displays translated product page' do
+    it 'displays translated product page' do
       visit '/products/antimatter'
       expect(page.title).to have_content('Antimatéria')
     end
 
-    scenario 'displays translated products list' do
+    it 'displays translated products list' do
       visit "/products"
       expect(page).to have_content('Antimatéria')
     end
