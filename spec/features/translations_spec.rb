@@ -1,7 +1,15 @@
-RSpec.feature "Translations" do
+RSpec.feature "Translations", :js do
+  given(:language) { Spree.t(:'i18n.this_file_language', locale: 'pt-BR') }
+
+  background do
+    reset_spree_preferences
+    SpreeI18n::Config.available_locales = [:en, :'pt-BR']
+    SpreeI18n::Config.supported_locales = [:en, :'pt-BR']
+  end
+
   context 'page' do
     context 'switches locale from the dropdown' do
-      scenario 'selected translation is applied', js: true do
+      scenario 'selected translation is applied' do
         visit '/'
         select('Português (BR)', :from => 'Language')
         expect(page).to have_content('INÍCIO')
