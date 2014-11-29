@@ -8,10 +8,10 @@ Happy translating!
 
 ## Installation
 
-Add the following to your `Gemfile`. 
+Add the following to your `Gemfile`.
 
 ```ruby
-gem 'spree_i18n', github: 'spree/spree_i18n'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '2-2-stable'
 ```
 
 Run `bundle install`
@@ -69,11 +69,9 @@ If you would like to run the tests of this project, follow these steps:
 2. Change into the directory and run `bundle exec rake test_app` to generate a dummy application.
 3. Run `bundle exec rspec spec` to run the tests.
 
-Copyright (c) 2013 Spree Commerce Inc. and other contributors. released under the [New BSD License][6]
+Copyright (c) 2014 [Spree Commerce Inc.][1] and other [contributors][4]. released under the [New BSD License][4]
 
 [1]: http://spreecommerce.com
 [2]: http://guides.spreecommerce.com/i18n.html
-[3]: https://github.com/svenfuchs/globalize3
-[6]: https://github.com/spree/spree_i18n/tree/master/LICENSE
-[7]: https://github.com/globalize/globalize
-[8]: https://github.com/airblade/paper_trail
+[3]: https://github.com/spree-contrib/spree_i18n/graphs/contributors
+[4]: https://github.com/spree-contrib/spree_i18n/tree/master/LICENSE
