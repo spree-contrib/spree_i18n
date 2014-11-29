@@ -8,9 +8,7 @@ Gem::Specification.new do |s|
   s.author      = 'Sean Schofield'
   s.email       = 'sean.schofield@gmail.com'
   s.homepage    = 'http://spreecommerce.com'
-  s.license     = %q{BSD-3}
-
-  s.rubyforge_project = 'spree_i18n'
+  s.license     = 'BSD-3'
 
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- spec/*`.split("\n")
