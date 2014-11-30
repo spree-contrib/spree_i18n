@@ -1,21 +1,21 @@
-require 'spec_helper'
+# coding: utf-8
 
-describe "Translations", js: true do
+RSpec.feature 'Translations', :js do
   stub_authorization!
 
-  let(:language) { Spree.t(:'i18n.this_file_language', locale: 'pt-BR') }
+  given(:language) { Spree.t(:'i18n.this_file_language', locale: 'pt-BR') }
 
-  before do
+  background do
     reset_spree_preferences
     SpreeI18n::Config.available_locales = [:en, :'pt-BR']
     SpreeI18n::Config.supported_locales = [:en, :'pt-BR']
   end
 
   context "products" do
-    let(:product) { create(:product) }
+    given(:product) { create(:product) }
 
     context "fills in translations fields" do
-      it "displays translated name on frontend" do
+      scenario 'displays translated name on frontend' do
         visit spree.admin_product_path(product)
         click_on "Translations"
 
@@ -29,9 +29,9 @@ describe "Translations", js: true do
     end
 
     context "option types" do
-      let!(:option_type) { create(:option_value).option_type }
+      given!(:option_type) { create(:option_value).option_type }
 
-      it "displays translated name on frontend" do
+      scenario "displays translated name on frontend" do
         visit spree.admin_option_types_path
         find('.fa-flag').click
 
@@ -47,22 +47,22 @@ describe "Translations", js: true do
       end
 
       # Regression test for issue #354
-      it "successfully creates an option type and go to its edit page" do
+      scenario 'successfully creates an option type and go to its edit page' do
         visit spree.admin_option_types_path
         click_link "New Option Type"
         fill_in "Name", with: "Shirt Size"
         fill_in "Presentation", with: "Sizes"
         click_button "Create"
 
-        page.should have_content "has been successfully created"
-        page.should have_content "OPTION VALUES"
+        expect(page).to have_text 'has been successfully created'
+        expect(page).to have_text 'OPTION VALUES'
       end
     end
 
     context "option values" do
-      let!(:option_type) { create(:option_value).option_type }
+      given!(:option_type) { create(:option_value).option_type }
 
-      it "displays translated name on frontend" do
+      scenario "displays translated name on frontend" do
         visit spree.edit_admin_option_type_path(option_type)
         find('.fa-flag').click
 
@@ -78,11 +78,10 @@ describe "Translations", js: true do
       end
     end
 
-
     context "properties" do
-      let!(:property) { create(:property) }
+      given!(:property) { create(:property) }
 
-      it "displays translated name on frontend" do
+      scenario 'displays translated name on frontend' do
         visit spree.admin_properties_path
         find('.fa-flag').click
 
@@ -101,9 +100,9 @@ describe "Translations", js: true do
   end
 
   context "promotions" do
-    let!(:promotion) { create(:promotion) }
+    given!(:promotion) { create(:promotion) }
 
-    it "saves translated attributes properly" do
+    scenario 'saves translated attributes properly' do
       visit spree.admin_promotions_path
       find('.fa-flag').click
 
@@ -125,9 +124,9 @@ describe "Translations", js: true do
   end
 
   context "taxonomies" do
-    let!(:taxonomy) { create(:taxonomy) }
+    given!(:taxonomy) { create(:taxonomy) }
 
-    it "display translated name on frontend" do
+    scenario 'display translated name on frontend' do
       visit spree.admin_taxonomies_path
       find('.fa-flag').click
 
@@ -141,15 +140,11 @@ describe "Translations", js: true do
     end
   end
 
-  context "taxons", focus: true do
-    let!(:taxon)    { create(:taxon) }
-    let!(:taxonomy) { taxon.taxonomy }
-    let!(:product) do
-      product = create(:product)
-      product.taxons << taxon
-    end
+  context 'taxons' do
+    given!(:taxonomy) { create(:taxonomy) }
+    given!(:taxon) { create(:taxon, taxonomy: taxonomy, parent_id: taxonomy.root.id) }
 
-    it "display translated name on frontend" do
+    scenario 'display translated name on frontend' do
       visit spree.edit_admin_taxonomy_taxon_path(taxonomy.id, taxon.id)
       find('.fa-flag').click
 
@@ -165,6 +160,9 @@ describe "Translations", js: true do
         click_on "Update"
       }.not_to change { taxon.translations.count }
 
+      # ensure taxon is in root or it will not be visible
+      expect(taxonomy.root.children.count).to be(1)
+
       change_locale
       visit spree.root_path
       expect(page).to have_content('Acusticas')
@@ -172,23 +170,23 @@ describe "Translations", js: true do
   end
 
   context "localization settings" do
-    let(:language) { Spree.t(:'i18n.this_file_language', locale: 'de') }
-    let(:french) { Spree.t(:'i18n.this_file_language', locale: 'fr') }
+    given(:language) { Spree.t(:'i18n.this_file_language', locale: 'de') }
+    given(:french) { Spree.t(:'i18n.this_file_language', locale: 'fr') }
 
-    before do
+    background do
       create(:store)
       SpreeI18n::Config.available_locales = [:en, :'pt-BR', :de]
       visit spree.edit_admin_general_settings_path
     end
 
-    it "adds german to supported locales and pick it on front end" do
+    scenario 'adds german to supported locales and pick it on front end' do
       targetted_select2_search(language, from: '#s2id_supported_locales_')
       click_on 'Update'
       change_locale
       expect(SpreeI18n::Config.supported_locales).to include(:de)
     end
 
-    it "adds spanish to available locales" do
+    scenario 'adds spanish to available locales' do
       targetted_select2_search(french, from: '#s2id_available_locales_')
       click_on 'Update'
       expect(SpreeI18n::Config.available_locales).to include(:fr)
@@ -199,7 +197,7 @@ describe "Translations", js: true do
     let(:language) { Spree.t(:'i18n.this_file_language', locale: 'de') }
     let(:product) { create(:product) }
 
-    it "finds the right product with permalink in a not active language" do
+    scenario 'finds the right product with permalink in a not active language' do
       SpreeI18n::Config.available_locales = [:en, :de]
       SpreeI18n::Config.supported_locales = [:en, :de]
 

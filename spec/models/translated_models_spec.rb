@@ -1,27 +1,23 @@
-require 'spec_helper'
+RSpec.describe Spree::Product, type: :model do
+  include_context 'behaves as translatable'
+end
 
-module Spree
-  describe Product do
-    include_context "behaves as translatable"
-  end
+RSpec.describe Spree::OptionType, type: :model do
+  include_context 'behaves as translatable'
+end
 
-  describe OptionType do
-    include_context "behaves as translatable"
-  end
+RSpec.describe Spree::Taxon, type: :model do
+  include_context 'behaves as translatable'
+end
 
-  describe Taxon do
-    include_context "behaves as translatable"
-  end
+RSpec.describe Spree::Taxonomy, type: :model do
+  include_context 'behaves as translatable'
+end
 
-  describe Taxonomy do
-    include_context "behaves as translatable"
-  end
+RSpec.describe Spree::Promotion, type: :model do
+  include_context 'behaves as translatable'
+end
 
-  describe Promotion do
-    include_context "behaves as translatable"
-  end
-
-  describe Property do
-    include_context "behaves as translatable"
-  end
+RSpec.describe Spree::Property, type: :model do
+  include_context 'behaves as translatable'
 end

@@ -1,4 +1,4 @@
-shared_context "behaves as translatable" do
+RSpec.shared_context 'behaves as translatable' do
   context "when there's a missing translation" do
     before do
       subject.name = "English"

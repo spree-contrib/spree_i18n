@@ -1,3 +1,5 @@
+# coding: utf-8
+
 RSpec.describe "Translations" do
   context 'product' do
     let!(:product) do
