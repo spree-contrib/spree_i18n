@@ -1,10 +1,15 @@
 # Spree Internationalization
 
+[![Build Status](https://travis-ci.org/spree-contrib/spree_i18n.svg?branch=2-2-stable)](https://travis-ci.org/spree-contrib/spree_i18n)
+[![Code Climate](https://codeclimate.com/github/spree/spree_i18n/badges/gpa.svg)](https://codeclimate.com/github/spree/spree_i18n)
+
 This is the Internationalization project for [Spree Commerce][1]
 
 See the [official Internationalization documentation][2] for more details.
 
 Happy translating!
+
+---
 
 ## Installation
 
@@ -23,14 +28,18 @@ your app spree manifest file.
 
 This will insert these lines into your spree manifest files:
 
-    vendor/assets/javascripts/spree/backend/all.js
-    //= require spree/backend/spree_i18n
+```
+vendor/assets/javascripts/spree/backend/all.js
+//= require spree/backend/spree_i18n
 
-    vendor/assets/javascripts/spree/frontend/all.js
-    //= require spree/frontend/spree_i18n
+vendor/assets/javascripts/spree/frontend/all.js
+//= require spree/frontend/spree_i18n
 
-    vendor/assets/stylesheets/spree/frontend/all.css
-    *= require spree/frontend/spree_i18n
+vendor/assets/stylesheets/spree/frontend/all.css
+*= require spree/frontend/spree_i18n
+```
+
+---
 
 ## Model Translations
 
@@ -61,6 +70,8 @@ from your Gemfile, add some records and then add spree_i18n gem back you might g
 errors like ``undefined method for nilClass`` because Globalize will try fetch
 translations that do not exist.*
 
+---
+
 ## Running the tests
 
 If you would like to run the tests of this project, follow these steps:
@@ -68,6 +79,8 @@ If you would like to run the tests of this project, follow these steps:
 1. Clone this repo using `git clone git://github.com/spree/spree_i18n`
 2. Change into the directory and run `bundle exec rake test_app` to generate a dummy application.
 3. Run `bundle exec rspec spec` to run the tests.
+
+---
 
 Copyright (c) 2014 [Spree Commerce Inc.][1] and other [contributors][4]. released under the [New BSD License][4]
 
