@@ -1,52 +1,29 @@
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] ||= 'test'
 
-require File.expand_path('../dummy/config/environment.rb',  __FILE__)
-
-# Requires supporting ruby files with custom matchers and macros, etc,
-# in spec/support/ and its subdirectories.
-Dir[File.join(File.dirname(__FILE__), "/support/**/*.rb")].each {|f| require f}
+begin
+  require File.expand_path('../dummy/config/environment', __FILE__)
+rescue LoadError
+  puts 'Could not load dummy application. Please ensure you have run `bundle exec rake test_app`'
+  exit
+end
 
 require 'pry'
-require 'i18n-spec'
 require 'ffaker'
 require 'rspec/rails'
-require 'support/be_a_thorough_translation_of_matcher'
-
-require 'spree/testing_support/factories'
-require 'spree/testing_support/preferences'
-require 'spree/testing_support/url_helpers'
-require 'spree/testing_support/capybara_ext'
-require 'spree/testing_support/controller_requests'
-require 'spree/testing_support/authorization_helpers'
 
 RSpec.configure do |config|
-  config.color = true
+  config.fail_fast = false
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
+
   config.infer_spec_type_from_file_location!
+  config.raise_errors_for_deprecations!
+  config.use_transactional_fixtures = false
   config.mock_with :rspec
 
-  config.use_transactional_fixtures = true
-
-  config.before(:each) do
-    I18n.locale = I18n.default_locale
-  end
-
-  config.include FactoryGirl::Syntax::Methods
-  config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::Preferences
-  config.include Spree::TestingSupport::ControllerRequests, :type => :controller
-
-  config.extend Spree::TestingSupport::AuthorizationHelpers::Request, type: :feature
-end
-
-class ActiveRecord::Base
-  mattr_accessor :shared_connection
-  @@shared_connection = nil
-
-  def self.connection
-    @@shared_connection || retrieve_connection
+  config.expect_with :rspec do |expectations|
+    expectations.syntax = :expect
   end
 end
 
-# Forces all threads to share the same connection. This works on
-# Capybara because it starts the web server in a thread.
-ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+Dir[File.join(File.dirname(__FILE__), '/support/**/*.rb')].each { |file| require file }

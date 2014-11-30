@@ -1,8 +1,6 @@
 # encoding: utf-8
 
-require 'spec_helper'
-
-describe "Translation" do
+RSpec.describe 'Translation' do
   def translation
     I18n.t("activerecord.attributes.spree/address.zipcode")
   end
@@ -10,7 +8,7 @@ describe "Translation" do
   context "when current locale is en" do
     it "translation is available" do
       I18n.locale = :en
-      translation.should == "Zip Code"
+      expect(translation).to eq 'Zip Code'
     end
   end
 
@@ -18,7 +16,7 @@ describe "Translation" do
   context "when current locale is German" do
     it "translation is available" do
       I18n.locale = :de
-      translation.should == "PLZ"
+      expect(translation).to eq 'PLZ'
     end
   end
 
@@ -26,7 +24,7 @@ describe "Translation" do
   context 'when current locale is Chilean Spanish' do
     it 'translation is available' do
       I18n.locale = :'es-CL'
-      translation.should == 'Código Postal'
+      expect(translation).to eq 'Código Postal'
     end
   end
 end
