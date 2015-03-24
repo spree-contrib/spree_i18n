@@ -22,6 +22,9 @@ module Spree
     it "handle translation in ransack" do
       result = described_class.ransack(name_cont: product.name[0..2]).result
       expect(result.first).to eq product
+
+      result = described_class.search(name_cont: product.name[0..2]).result
+      expect(result.first).to eq product
     end
 
     # Regression tests for #466
