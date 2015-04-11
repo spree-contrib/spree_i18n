@@ -1,9 +1,7 @@
 display_locale_fields = () ->
-  console.log 'display locale fields'
   attr    = $('#attr_list a.active').data('attr')
   locales = $('#locale').val()
   show    = $("select[name='show-only']").val()
-  console.log show
 
   $('#attr_fields .panel').hide()
 

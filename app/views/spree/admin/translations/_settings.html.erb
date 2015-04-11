@@ -1,8 +1,21 @@
-<div class="panel panel-default fields">
-  <div class="panel-heading"><%= Spree.t(:'i18n.fields') %></div>
-  <div class="list-group" id="attr_list">
-    <% @resource.class.translated_attribute_names.each_with_index do |attr, i| %>
-      <a class="list-group-item <%= 'active' if i == 0 %>" data-attr="<%= attr %>" href="#"><%= Spree.t(attr) %></a>
-    <% end %>
-  </div>
+<div class="well well-sm">
+	<div class="row no-padding-bottom">
+	  <div class="col-md-4">
+	  	<div class="form-group no-margin-bottom">
+		  	<label><%= Spree.t(:show) %></label>
+		    <select class="form-control" name="show-only">
+			    <option value="all"><%= Spree.t(:all) %></option>
+			    <option value="incomplete"><%= Spree.t(:'i18n.only_incomplete') %></option>
+			    <option value="complete"><%= Spree.t(:'i18n.only_complete') %></option>
+		    </select>
+	    </div>
+	  </div>
+
+	  <div class="col-md-8">
+	  	<div class="form-group no-margin-bottom">
+	  		<label>Select locale</label>
+		  	<%= select_available_locales_fields %>
+		  </div>
+	  </div>
+	</div>
 </div>
