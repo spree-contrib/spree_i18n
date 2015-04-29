@@ -186,6 +186,38 @@ RSpec.feature "Translations", :js do
     end
   end
 
+  context "shipping methods" do
+    given(:language) { Spree.t(:'i18n.this_file_language', locale: :es) }
+    given(:shipping_category) { create(:shipping_category) }
+    given!(:shipping_method) { create(:shipping_method, shipping_categories:[shipping_category]) }
+
+    background do
+      reset_spree_preferences
+      SpreeI18n::Config.available_locales = [:en, :es]
+      SpreeI18n::Config.supported_locales = [:en, :es]
+    end
+
+    scenario 'saves translated attributes properly' do
+      visit spree.admin_shipping_methods_path
+      find('.fa-flag').click
+
+      within("#attr_fields .name.en.odd") { fill_in_name "Urgent elivery" }
+      within("#attr_fields .name.es.odd") { fill_in_name "Envío urgente" }
+      click_on "Update"
+
+      change_locale
+      visit spree.admin_shipping_methods_path
+      expect(page).to have_content('Envío urgente')
+    end
+
+    it "render edit route properly" do
+      visit spree.admin_shipping_methods_path
+      find('.fa-flag').click
+      find('.fa-remove').click
+      expect(page).to have_css('.page-title')
+    end
+  end
+
   context "localization settings" do
     given(:language) { Spree.t(:'i18n.this_file_language', locale: 'de') }
     given(:french) { Spree.t(:'i18n.this_file_language', locale: 'fr') }

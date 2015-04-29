@@ -26,4 +26,8 @@ module Spree
   RSpec.describe ProductProperty, type: :model do
     include_context "behaves as translatable"
   end
+
+  RSpec.describe Spree::ShippingMethod, type: :model do
+    include_context 'behaves as translatable'
+  end
 end
