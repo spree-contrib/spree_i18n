@@ -1,4 +1,6 @@
+---
 fr:
+  Bazaar: TODO_TRANSLATE
   activerecord:
     attributes:
       spree/address:
@@ -24,7 +26,7 @@ fr:
         name: Nom
         numcode: Code ISO
       spree/credit_card:
-        base:
+        base: TODO_TRANSLATE
         cc_type: Type
         month: Mois
         name: Nom
@@ -72,6 +74,7 @@ fr:
         zipcode: Code postal de l'adresse de livraison
       spree/payment:
         amount: Montant
+        number: TODO_TRANSLATE
       spree/payment_method:
         name: Nom
       spree/product:
@@ -95,6 +98,7 @@ fr:
         starts_at: Débute le
         usage_limit: Limite d'utilisation
       spree/promotion_category:
+        code: TODO_TRANSLATE
         name: Nom
       spree/property:
         name: Nom
@@ -105,13 +109,15 @@ fr:
         amount: Montant
       spree/role:
         name: Nom
+      spree/shipment:
+        number: TODO_TRANSLATE
       spree/state:
         abbr: Abréviation
         name: Nom
       spree/state_change:
         state_changes: Changement d'état
         state_from: de
-        state_to: à
+        state_to: "à"
         timestamp: Horodatage
         type: Type
         updated: Mis à jour le
@@ -157,20 +163,20 @@ fr:
         spree/calculator/tiered_flat_rate:
           attributes:
             base:
-              keys_should_be_positive_number: "Les clés Tier devraient toutes être des nombres plus grand que 0"
+              keys_should_be_positive_number: Les clés Tier devraient toutes être des nombres plus grand que 0
             preferred_tiers:
-              should_be_hash: "devrait être une table de hachage"
+              should_be_hash: devrait être une table de hachage
         spree/calculator/tiered_percent:
           attributes:
             base:
-              keys_should_be_positive_number: "Les clés Tier devraient toutes être des nombres plus grand que 0"
-              values_should_be_percent: "Les valeurs Tier devraient toutes être des percentages compris entre 0% et 100%"
+              keys_should_be_positive_number: Les clés Tier devraient toutes être des nombres plus grand que 0
+              values_should_be_percent: Les valeurs Tier devraient toutes être des percentages compris entre 0% et 100%
             preferred_tiers:
-              should_be_hash: "devrait être une table de hachage"
+              should_be_hash: devrait être une table de hachage
         spree/classification:
           attributes:
             taxon_id:
-              already_linked: "est déjà relié à ce produit"
+              already_linked: est déjà relié à ce produit
         spree/credit_card:
           attributes:
             base:
@@ -190,15 +196,21 @@ fr:
               return_items_order_id_does_not_match: Un ou plusieurs des articles de retour spécifiées n'appartiennent pas à la même commande que du remboursement.
         spree/return_item:
           attributes:
-            reimbursement:
-              cannot_be_associated_unless_accepted: ne peut pas être associé à un article retourné qui n'est pas accepté.
             inventory_unit:
               other_completed_return_item_exists: "%{inventory_unit_id} est déjà pris par un article retourné %{return_item_id}"
+            reimbursement:
+              cannot_be_associated_unless_accepted: ne peut pas être associé à un article retourné qui n'est pas accepté.
         spree/store:
           attributes:
             base:
               cannot_destroy_default_store: Impossible de détruire la boutique par défaut.
     models:
+      reimbursement_perform_failed: TODO_TRANSLATE
+      reimbursement_status: TODO_TRANSLATE
+      reimbursement_type: TODO_TRANSLATE
+      reimbursement_type_override: TODO_TRANSLATE
+      reimbursement_types: TODO_TRANSLATE
+      reimbursements: TODO_TRANSLATE
       spree/address:
         one: Adresse
         other: Adresses
@@ -263,6 +275,8 @@ fr:
         one: Raison du retour d'autorisation
         other: Raisons du retour d'autorisation
       spree/role:
+        few: TODO_TRANSLATE
+        oher: TODO_TRANSLATE
         one: Rôle
         other: Rôles
       spree/shipment:
@@ -313,6 +327,9 @@ fr:
       spree/zone:
         one: Zone
         other: Zones
+  all: TODO_TRANSLATE
+  back_to_resource_list: TODO_TRANSLATE
+  cancel: TODO_TRANSLATE
   devise:
     confirmations:
       confirmed: Votre compte a été confirmé avec succès. Vous êtes maintenant enregistré.
@@ -351,6 +368,7 @@ fr:
     user_sessions:
       signed_in: Vous êtes désormais connecté.
       signed_out: Vous êtes désormais déconnecté.
+  editing_resource: TODO_TRANSLATE
   errors:
     messages:
       already_confirmed: est déjà confirmé
@@ -359,6 +377,24 @@ fr:
       not_saved:
         one: "%{resource} n'a pu etre sauvegardé à cause d' 1 erreur:"
         other: "%{resource} n'a pu etre sauvegardé à cause de %{count} erreurs:"
+  i18n:
+    available_locales: TODO_TRANSLATE
+    fields: TODO_TRANSLATE
+    language: TODO_TRANSLATE
+    locales_displayed_on_frontend_select_box: TODO_TRANSLATE
+    locales_displayed_on_translation_forms: TODO_TRANSLATE
+    localization_settings: TODO_TRANSLATE
+    only_complete: TODO_TRANSLATE
+    only_incomplete: TODO_TRANSLATE
+    supported_locales: TODO_TRANSLATE
+    this_file_language: TODO_TRANSLATE
+    translations: TODO_TRANSLATE
+  number:
+    percentage:
+      format:
+        precision: TODO_TRANSLATE
+  or: TODO_TRANSLATE
+  show: TODO_TRANSLATE
   spree:
     abbreviation: Abréviation
     accept: Accepter
@@ -399,11 +435,16 @@ fr:
     add_to_cart: Ajouter au panier
     add_variant: Ajouter une variante
     additional_item: Coût d'un article supplémentaire
+    address: TODO_TRANSLATE
     address1: Adresse
     address2: Adresse (complément)
     adjustable: Ajustable
     adjustment: Ajustement
     adjustment_amount: Montant
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: TODO_TRANSLATE
+        including_tax: TODO_TRANSLATE
     adjustment_successfully_closed: Ajustement fermé avec succès!
     adjustment_successfully_opened: Ajustement ouvert avec succès!
     adjustment_total: Ajustement Total
@@ -428,7 +469,7 @@ fr:
         items: Articles
         items_purchased: Articles achetés
         order_history: Historique des commandes
-        order_num: "Commande #"
+        order_num: 'Commande #'
         orders: Commandes
         user_information: Informations de l'utilisateur
     administration: Administration
@@ -455,12 +496,24 @@ fr:
     analytics_desc_list_4: C'est totalement gratuit!
     analytics_trackers: Traqueurs analytiques
     and: et
+    api:
+      access: TODO_TRANSLATE
+      clear_key: TODO_TRANSLATE
+      generate_key: TODO_TRANSLATE
+      key: TODO_TRANSLATE
+      no_key: TODO_TRANSLATE
+      regenerate_key: TODO_TRANSLATE
     approve: Approuver
     approved_at: approuver le
     approver: Approbateur
     are_you_sure: En êtes-vous sûr ?
     are_you_sure_delete: "Êtes-vous sûr de vouloir supprimer cet enregistrement ?"
     associated_adjustment_closed: L'ajustement associé est fermé, et ne sera pas recalculé. Voulez-vous l'ouvrir?
+    attachment_default_style: TODO_TRANSLATE
+    attachment_default_url: TODO_TRANSLATE
+    attachment_path: TODO_TRANSLATE
+    attachment_styles: TODO_TRANSLATE
+    attachment_url: TODO_TRANSLATE
     authorization_failure: Vous n'avez pas les droits nécessaires pour afficher cette section
     authorized: Autorisé
     auto_capture: Acceptation automatique
@@ -469,11 +522,33 @@ fr:
     avs_response: Réponse AVS
     back: Retour
     back_end: Gestion
+    back_to_adjustments_list: TODO_TRANSLATE
+    back_to_images_list: TODO_TRANSLATE
+    back_to_option_types_list: TODO_TRANSLATE
+    back_to_orders_list: TODO_TRANSLATE
     back_to_payment: Retour au paiement
-    back_to_resource_list: 'Retour à la liste %{resource}'
+    back_to_payment_methods_list: TODO_TRANSLATE
+    back_to_payments_list: TODO_TRANSLATE
+    back_to_products_list: TODO_TRANSLATE
+    back_to_promotions_list: TODO_TRANSLATE
+    back_to_properties_list: TODO_TRANSLATE
+    back_to_prototypes_list: TODO_TRANSLATE
+    back_to_reports_list: TODO_TRANSLATE
+    back_to_resource_list: Retour à la liste %{resource}
     back_to_rma_reason_list: Retour à la liste des RMA
+    back_to_shipping_categories: TODO_TRANSLATE
+    back_to_shipping_methods_list: TODO_TRANSLATE
+    back_to_states_list: TODO_TRANSLATE
+    back_to_stock_locations_list: TODO_TRANSLATE
+    back_to_stock_movements_list: TODO_TRANSLATE
+    back_to_stock_transfers_list: TODO_TRANSLATE
     back_to_store: Boutique
+    back_to_tax_categories_list: TODO_TRANSLATE
+    back_to_taxonomies_list: TODO_TRANSLATE
+    back_to_trackers_list: TODO_TRANSLATE
     back_to_users_list: Retour à la liste des utilisateurs
+    back_to_zones_list: TODO_TRANSLATE
+    backorder: TODO_TRANSLATE
     backorderable: Peut être acheté même si le stock est vide
     backorderable_default: Peut être acheté même si le stock est vide (défault)
     backordered: En rupture de stock
@@ -497,22 +572,22 @@ fr:
     cannot_perform_operation: Ne peut pas accomplir l'action demandée
     cannot_set_shipping_method_without_address: La méthode d'expédition ne peut être définie tant que les données du client ne sont pas spécifiées
     capture: accepté
-    capture_events: Événements d'acceptation
+    capture_events: "Événements d'acceptation"
     card_code: Code de la carte
     card_number: Numéro de carte
     card_type: Type de cate
     card_type_is: Le type de la carte est
     cart: Panier
     cart_subtotal:
-      one: 'Sous-total (1 article)'
-      other: 'Sous-total (%{count} articles)'
+      one: Sous-total (1 article)
+      other: Sous-total (%{count} articles)
     categories: Catégories
     category: Categorie
     charged: Chargé
     check_for_spree_alerts: Recevoir les alertes de Spree
     checkout: Passer la commande
     choose_a_customer: Choisissez un client
-    choose_a_taxon_to_sort_products_for: "Choisir une taxon pour organiser les produits pour"
+    choose_a_taxon_to_sort_products_for: Choisir une taxon pour organiser les produits pour
     choose_currency: Choisir la devise
     choose_dashboard_locale: Choisir la langue du tableau de bord
     choose_location: Choisir la localisation
@@ -520,7 +595,7 @@ fr:
     clear_cache: Supprimer la cache
     clear_cache_ok: La cache a bien été supprimée
     clear_cache_warning: Supprimer la cache va temporairement réduire les performances de votre boutique.
-    click_and_drag_on_the_products_to_sort_them:  Cliquer et faire glisser les produits pour les organiser.
+    click_and_drag_on_the_products_to_sort_them: Cliquer et faire glisser les produits pour les organiser.
     clone: Cloner
     close: Fermer
     close_all_adjustments: Fermer tous les ajustements
@@ -529,6 +604,7 @@ fr:
     complete: compléter
     configuration: Configuration
     configurations: Configurations
+    configure_s3: TODO_TRANSLATE
     confirm: Confirmation
     confirm_delete: Confirmation de la suppression
     confirm_password: Confirmation du mot de passe
@@ -548,7 +624,7 @@ fr:
       CA: Canada
       FRA: France
       ITA: Italie
-      US: États-Unis d'Amérique
+      US: "États-Unis d'Amérique"
     coupon: Coupon
     coupon_code: Code Promo
     coupon_code_already_applied: Le code promo a déjà été utilisé pour cette commande
@@ -602,10 +678,14 @@ fr:
       js_format: dd/mm/yy
     date_range: Sélection de dates
     default: Défaut
+    default_meta_description: TODO_TRANSLATE
+    default_meta_keywords: TODO_TRANSLATE
     default_refund_amount: Montant de remboursement par défaut
+    default_seo_title: TODO_TRANSLATE
     default_tax: Taxe par défaut
     default_tax_zone: Zone de taxe par défaut
     delete: Supprimer
+    delete_from_taxon: TODO_TRANSLATE
     deleted_variants_present: Certains articles de cette commande ne sont plus disponibles.
     delivery: Livraison
     depth: Profondeur
@@ -617,23 +697,41 @@ fr:
     dismiss_banner: Non Merci ! Ça ne m'intéresse pas, ne pas afficher ce message les prochaines fois
     display: Afficher
     display_currency: Devise d'affichage
-    edit: Éditer
-    editing_option_type: Édition du type d'option
-    editing_payment_method: Édition de la méthode de paiement
-    editing_product: Édition du produit
-    editing_promotion: Édition de la Promotion
-    editing_property: Édition de la propriété
-    editing_prototype: Édition du prototype
-    editing_shipping_category: Édition de la catégorie de livraison
-    editing_shipping_method: Édition de la méthode de livraison
-    editing_state: Édition de la région
-    editing_stock_location: Édition du lieu de Stock
-    editing_stock_movement: Édition du mouvement de Stock
-    editing_tax_category: Édition de la catégorie fiscale
+    doesnt_track_inventory: TODO_TRANSLATE
+    edit: "Éditer"
+    editing_option_type: "Édition du type d'option"
+    editing_payment_method: "Édition de la méthode de paiement"
+    editing_product: "Édition du produit"
+    editing_promotion: "Édition de la Promotion"
+    editing_property: "Édition de la propriété"
+    editing_prototype: "Édition du prototype"
+    editing_resource: TODO_TRANSLATE
+    editing_rma_reason: TODO_TRANSLATE
+    editing_shipping_category: "Édition de la catégorie de livraison"
+    editing_shipping_method: "Édition de la méthode de livraison"
+    editing_state: "Édition de la région"
+    editing_stock_location: "Édition du lieu de Stock"
+    editing_stock_movement: "Édition du mouvement de Stock"
+    editing_tax_category: "Édition de la catégorie fiscale"
     editing_tax_rate: Modification du taux d'imposition
-    editing_tracker: Édition du tracker
-    editing_user: Édition d'un utilisateur
-    editing_zone: Édition d'une zone
+    editing_tracker: "Édition du tracker"
+    editing_user: "Édition d'un utilisateur"
+    editing_zone: "Édition d'une zone"
+    eligibility_errors:
+      messages:
+        has_excluded_product: TODO_TRANSLATE
+        item_total_less_than: TODO_TRANSLATE
+        item_total_less_than_or_equal: TODO_TRANSLATE
+        item_total_more_than: TODO_TRANSLATE
+        item_total_more_than_or_equal: TODO_TRANSLATE
+        limit_once_per_user: TODO_TRANSLATE
+        missing_product: TODO_TRANSLATE
+        missing_taxon: TODO_TRANSLATE
+        no_applicable_products: TODO_TRANSLATE
+        no_matching_taxons: TODO_TRANSLATE
+        no_user_or_email_specified: TODO_TRANSLATE
+        no_user_specified: TODO_TRANSLATE
+        not_first_order: TODO_TRANSLATE
     email: Courriel
     empty: Vide
     empty_cart: Vider le panier
@@ -666,15 +764,16 @@ fr:
           signup: Inscription utilisateur
     exceptions:
       count_on_hand_setter: Impossible de définir count_on_hand manuellement, tel qu'il est défini automatiquement par le rappel de recalculate_count_on_hand. S'il vous plaît utilisez `update_column (:count_on_hand, value)` à la place.
-    exchange_for: Échange pour
+    exchange_for: "Échange pour"
     excl: exclu.
-    existing_shipments:
-    expedited_exchanges_warning:
+    existing_shipments: TODO_TRANSLATE
+    expedited_exchanges_warning: TODO_TRANSLATE
     expiration: Expiration
     extension: Prolongation
     failed_payment_attempts: Tentatives de paiement échouées
     filename: Nom du fichier
     fill_in_customer_info: Merci de remplir les informations client.
+    filter: TODO_TRANSLATE
     filter_results: Filtrer les resultats
     finalize: Finaliser
     finalized: Finaliser
@@ -683,6 +782,7 @@ fr:
     first_name: Prénom
     first_name_begins_with: Prénom commmençant par
     flat_percent: Pourcentage net
+    flat_rate_per_item: TODO_TRANSLATE
     flat_rate_per_order: Taux net par commande
     flexible_rate: Taux flexible
     forgot_password: Mot de passe oublié
@@ -711,15 +811,19 @@ fr:
       only_incomplete: Commandes incomplètes seulement
       select_locale: Sélectionnez vos paramètres régionaux
       show_only: Afficher seulement
+      store_translations: TODO_TRANSLATE
       supported_locales: Paramètres régionaux supportés
       this_file_language: Français (FR)
       translations: Traductions
     icon: Icône
     identifier: Identification
     image: Image
+    image_settings: TODO_TRANSLATE
+    image_settings_updated: TODO_TRANSLATE
+    image_settings_warning: TODO_TRANSLATE
     images: Images
-    implement_eligible_for_return:
-    implement_requires_manual_intervention:
+    implement_eligible_for_return: TODO_TRANSLATE
+    implement_requires_manual_intervention: TODO_TRANSLATE
     inactive: Inactif
     incl: inclus
     included_in_price: Inclus dans le prix
@@ -727,8 +831,8 @@ fr:
     incomplete: Incomplet
     info_number_of_skus_not_shown:
       one: un
-      other: "et %{count} autres"
-    info_product_has_multiple_skus: "Ce produit possède %{count} variantes:"
+      other: et %{count} autres
+    info_product_has_multiple_skus: 'Ce produit possède %{count} variantes:'
     instructions_to_reset_password: 'Remplissez le formulaire ci-dessous et les instructions pour réinitialiser votre mot de passe vous seront envoyées par courriel:'
     insufficient_stock: Stock disponible insuffisant, il n'en reste seulement que %{on_hand}
     insufficient_stock_lines_present: Nous n'avons pas tous les articles de votre commande dans notre inventaire.
@@ -736,14 +840,14 @@ fr:
     intercept_email_instructions: Remplacer l'adresse courriel de destination par cette adresse
     internal_name: Nom interne
     invalid_credit_card: Carte de crédit invalide
-    invalid_exchange_variant:
+    invalid_exchange_variant: TODO_TRANSLATE
     invalid_payment_provider: Fournisseur de paiement invalide.
     invalid_promotion_action: Action de promotion invalide.
     invalid_promotion_rule: Règle de promotion invalide
     inventory: Inventaire
     inventory_adjustment: Ajustement de l'inventaire
     inventory_error_flash_for_insufficient_quantity: Un article de votre panier n'est plus disponible.
-    inventory_state: État de l'inventaire
+    inventory_state: "État de l'inventaire"
     is_not_available_to_shipment_address: n'est pas disponible pour l'adresse de livraison
     iso_name: Nom ISO
     item: Article
@@ -752,13 +856,13 @@ fr:
     item_total_rule:
       operators:
         gt: plus grand que
-        gte: égal ou plus grand que
+        gte: "égal ou plus grand que"
         lt: plus petit que
-        lte: égal ou plus petit que
+        lte: "égal ou plus petit que"
     items_cannot_be_shipped: Il nous est impossible de livrer l'article sélectionné à votre adresse de livraison. Veuillez choisir une autre adresse de livraison.
-    items_in_rmas:
-    items_reimbursed:
-    items_to_be_reimbursed:
+    items_in_rmas: TODO_TRANSLATE
+    items_reimbursed: TODO_TRANSLATE
+    items_to_be_reimbursed: TODO_TRANSLATE
     jirafe: Jirafe
     landing_page_rule:
       path: Chemin
@@ -766,8 +870,14 @@ fr:
     last_name_begins_with: Le nom commmence par
     learn_more: Pour en savoir plus
     lifetime_stats: Statistiques à vie
-    line_item_adjustments:
+    line_item_adjustments: TODO_TRANSLATE
     list: Liste
+    listing_countries: TODO_TRANSLATE
+    listing_orders: TODO_TRANSLATE
+    listing_products: TODO_TRANSLATE
+    listing_reports: TODO_TRANSLATE
+    listing_tax_categories: TODO_TRANSLATE
+    listing_users: TODO_TRANSLATE
     loading: Chargement
     locale_changed: Paramètres régionaux changés
     location: Emplacement
@@ -783,6 +893,9 @@ fr:
     logout: Se déconnecter
     logs: Journal
     look_for_similar_items: Rechercher des articles similaires
+    maestro_or_solo_cards: TODO_TRANSLATE
+    mail_method_settings: TODO_TRANSLATE
+    mail_methods: TODO_TRANSLATE
     make_refund: Effectuer un remboursement
     make_sure_the_above_reimbursement_amount_is_correct: Veuillez vérifier que le montant du remboursement est correct
     manage_promotion_categories: Gérer les catégories de promotions
@@ -812,7 +925,7 @@ fr:
     new_adjustment: Nouvel ajustement
     new_country: Nouveau pays
     new_customer: Nouveau client
-    new_customer_return:
+    new_customer_return: TODO_TRANSLATE
     new_image: Nouvelle image
     new_option_type: Nouveau type d'option
     new_order: Nouvelle commande
@@ -827,7 +940,8 @@ fr:
     new_refund: Nouveau remboursement
     new_refund_reason: Nouvelle raison pour un remboursement
     new_return_authorization: Nouveau retour d'autorisation
-    new_rma_reason:
+    new_rma_reason: TODO_TRANSLATE
+    new_role: TODO_TRANSLATE
     new_shipment_at_location: Nouvel envoi de livrasion
     new_shipping_category: Nouvelle catégorie de livraison
     new_shipping_method: Nouvelle méthode de livraison
@@ -845,15 +959,21 @@ fr:
     new_zone: Nouvelle zone
     next: Suivant
     no_actions_added: Aucune action ajoutée
+    no_orders_found: TODO_TRANSLATE
     no_payment_found: Aucun paiment trouvé
+    no_payment_methods_found: TODO_TRANSLATE
     no_pending_payments: Aucun paiement en attente
     no_products_found: Aucun article trouvé
+    no_promotions_found: TODO_TRANSLATE
     no_resource_found: Aucun ressource trouvée
     no_results: Aucun résultat
     no_returns_found: Aucun retour trouvé
     no_rules_added: Aucune règle ajoutée
     no_shipping_method_selected: Aucune méthode de livraison sélectionnée
+    no_shipping_methods_found: TODO_TRANSLATE
     no_state_changes: Aucun changement de province, de région ou d'état
+    no_stock_locations_found: TODO_TRANSLATE
+    no_trackers_found: TODO_TRANSLATE
     no_tracking_present: Les détails pour le traqueur ne sont pas présents
     none: Aucun
     none_selected: Aucune sélection
@@ -870,7 +990,7 @@ fr:
       product_not_deleted: Le produit n'a pas pu être supprimé
       variant_deleted: La variante a été supprimée
       variant_not_deleted: La variante n'a pas pu être supprimée
-    num_orders:
+    num_orders: TODO_TRANSLATE
     on_hand: Disponible
     open: Ouvrir
     open_all_adjustments: Ouvrir tous les ajustements
@@ -891,14 +1011,15 @@ fr:
     order_details: Détails de la commande
     order_email_resent: Renvoi de la commande par courriel
     order_information: Information sur la commande
+    order_line_items: TODO_TRANSLATE
     order_mailer:
       cancel_email:
         dear_customer: Cher client,\n
         instructions: Votre commande a été ANNULÉE. Veuillez conserver les informations suivantes à propos de votre commande annulée.
         order_summary_canceled: Sommaire de la commande [ANNULÉE]
         subject: Annulation de la commande
-        subtotal: ! 'Sous-total: %{subtotal}'
-        total: ! 'Total de la commande: %{total}'
+        subtotal: 'Sous-total: %{subtotal}'
+        total: 'Total de la commande: %{total}'
       confirm_email:
         dear_customer: Cher client,
         instructions: Veuillez vérifier et sauvegarder les informations suivantes à propos de votre commande.
@@ -906,9 +1027,13 @@ fr:
         subject: Confirmation de commande
         subtotal: Sous-total de la commande
         thanks: Merci d'avoir fait affaire avec nous.
-        total: ! 'Total de la commande: %{total}'
+        total: 'Total de la commande: %{total}'
     order_not_found: Impossible de trouver votre commande. Merci d'essayer à nouveau.
     order_number: Numéro de facture
+    order_populator:
+      out_of_stock: TODO_TRANSLATE
+      please_enter_reasonable_quantity: TODO_TRANSLATE
+      selected_quantity_not_available: TODO_TRANSLATE
     order_processed_successfully: Votre commande a été traitée avec succès
     order_resumed: Résumé de votre commande
     order_state:
@@ -928,12 +1053,14 @@ fr:
     order_total: Total de la commande
     order_updated: Commande mise à jour
     orders: Commandes
-    other_items_in_other:
+    other_items_in_other: TODO_TRANSLATE
     out_of_stock: En rupture de stock
     overview: Vue d'ensemble
     package_from: Paquet de
     pagination:
-      next_page: "page suivante »"
+      first: TODO_TRANSLATE
+      next_page: page suivante »
+      previous: TODO_TRANSLATE
       previous_page: "« page précédente"
       truncate: "…"
     password: Mot de passe
@@ -941,8 +1068,8 @@ fr:
     path: Chemin
     pay: payer
     payment: Paiement
-    payment_could_not_be_created:
-    payment_identifier:
+    payment_could_not_be_created: TODO_TRANSLATE
+    payment_identifier: TODO_TRANSLATE
     payment_information: Information sur le paiement
     payment_method: Méthode de paiement
     payment_method_not_supported: Ce méthode de paiement n'est pas supportée
@@ -963,22 +1090,23 @@ fr:
       void: vide
     payment_updated: Paiement mis à jour
     payments: Paiements
-    pending:
+    pending: TODO_TRANSLATE
     percent: Pourcent
     percent_per_item: Pourcent par article
     permalink: Permalien
     phone: Téléphone
     place_order: Passer la commande
     please_define_payment_methods: S'il vous plaît définissez d'abord certains modes de paiement.
+    please_enter_reasonable_quantity: TODO_TRANSLATE
     populate_get_error: Quelque chose s'est passé mal. Essayez S'il vous plaît d'ajouter l'article de nouveau.
     powered_by: Réalisé avec
-    pre_tax_amount:
-    pre_tax_refund_amount:
-    pre_tax_total:
-    preferred_reimbursement_type:
+    pre_tax_amount: TODO_TRANSLATE
+    pre_tax_refund_amount: TODO_TRANSLATE
+    pre_tax_total: TODO_TRANSLATE
+    preferred_reimbursement_type: TODO_TRANSLATE
     presentation: Présentation
     previous: Précédent
-    previous_state_missing:
+    previous_state_missing: TODO_TRANSLATE
     price: Prix
     price_range: Prix
     price_sack: Prix du sac
@@ -990,10 +1118,10 @@ fr:
     product_properties: Propriété du produit
     product_rule:
       choose_products: Choississez des produits
-      label:
+      label: TODO_TRANSLATE
       match_all: tout
       match_any: au moins un
-      match_none:
+      match_none: TODO_TRANSLATE
       product_source:
         group: Dans les groupes de produits
         manual: Choisir manuellement
@@ -1010,17 +1138,19 @@ fr:
       create_line_items:
         description: Remplit le panier avec la quantité spécifiée de variante
         name: Créez des lignes d'article
-      give_store_credit:
-        description: Accorde à l'utilisateur un avoir de la quantité indiquée
-        name: Accorder un avoir
       free_shipping:
         description: Livraison gratuite pour la commande.
         name: Livraison gratuite
+      give_store_credit:
+        description: Accorde à l'utilisateur un avoir de la quantité indiquée
+        name: Accorder un avoir
     promotion_actions: Actions
+    promotion_category: TODO_TRANSLATE
     promotion_form:
       match_policies:
         all: Répond à toutes ces règles
         any: Répond à une des règles
+    promotion_label: TODO_TRANSLATE
     promotion_rule: Règle de Promotion
     promotion_rule_types:
       first_order:
@@ -1033,27 +1163,27 @@ fr:
         description: Le client doit avoir visité la page spécifiée
         name: Page de destination
       one_use_per_user:
-        description:
-        name:
+        description: TODO_TRANSLATE
+        name: TODO_TRANSLATE
       option_value:
-        description:
-        name:
+        description: TODO_TRANSLATE
+        name: TODO_TRANSLATE
       product:
         description: La commande comprend le ou les produit(s) spécifié(s)
         name: Produit(s)
       taxon:
-        description:
-        name:
+        description: TODO_TRANSLATE
+        name: TODO_TRANSLATE
       user:
         description: Disponible uniquement pour l'utilisateur spécifié
         name: Utilisateur
       user_logged_in:
         description: Disponible seulement aux utilisateurs enregistrés
         name: Utilisateur connecté
-    promotion_uses:
-    promotionable:
+    promotion_uses: TODO_TRANSLATE
+    promotionable: TODO_TRANSLATE
     promotions: Promotions
-    propagate_all_variants:
+    propagate_all_variants: TODO_TRANSLATE
     properties: Propriétés
     property: Propriété
     prototype: Prototype
@@ -1070,41 +1200,43 @@ fr:
     receive: recevoir
     receive_stock: Recevoir le stock
     received: Reçu
-    reception_status:
+    reception_status: TODO_TRANSLATE
     reference: Référence
+    reference_contains: TODO_TRANSLATE
     refund: Remboursement
-    refund_amount_must_be_greater_than_zero:
-    refund_reasons:
-    refunded_amount:
-    refunds:
+    refund_amount_must_be_greater_than_zero: TODO_TRANSLATE
+    refund_reasons: TODO_TRANSLATE
+    refunded_amount: TODO_TRANSLATE
+    refunds: TODO_TRANSLATE
     register: S'inscrire comme nouvel utilisateur
     registration: Enregistrement
-    reimburse:
-    reimbursed:
-    reimbursement:
+    reimburse: TODO_TRANSLATE
+    reimbursed: TODO_TRANSLATE
+    reimbursement: TODO_TRANSLATE
     reimbursement_mailer:
       reimbursement_email:
-        days_to_send:
-        dear_customer:
-        exchange_summary:
-        for:
-        instructions:
-        refund_summary:
-        subject:
-        total_refunded:
-    reimbursement_perform_failed:
-    reimbursement_status:
-    reimbursement_type:
-    reimbursement_type_override:
-    reimbursement_types:
-    reimbursements:
-    reject:
-    rejected:
+        days_to_send: TODO_TRANSLATE
+        dear_customer: TODO_TRANSLATE
+        exchange_summary: TODO_TRANSLATE
+        for: TODO_TRANSLATE
+        instructions: TODO_TRANSLATE
+        refund_summary: TODO_TRANSLATE
+        subject: TODO_TRANSLATE
+        total_refunded: TODO_TRANSLATE
+    reimbursement_perform_failed: TODO_TRANSLATE
+    reimbursement_status: TODO_TRANSLATE
+    reimbursement_type: TODO_TRANSLATE
+    reimbursement_type_override: TODO_TRANSLATE
+    reimbursement_types: TODO_TRANSLATE
+    reimbursements: TODO_TRANSLATE
+    reject: TODO_TRANSLATE
+    rejected: TODO_TRANSLATE
     remember_me: Se souvenir de moi
     remove: Supprimer
     rename: Renommer
-    report:
+    report: TODO_TRANSLATE
     reports: Statistiques
+    resellable: TODO_TRANSLATE
     resend: Renvoyer
     reset_password: Réinitialiser mon mot de passe
     response_code: Code de réponse
@@ -1112,34 +1244,41 @@ fr:
     resumed: repris
     return: retourner
     return_authorization: Retour d'autorisation
-    return_authorization_reasons:
+    return_authorization_reasons: TODO_TRANSLATE
     return_authorization_updated: Retour d'autorisation mis à jour
     return_authorizations: Retour d'autorisations
-    return_item_inventory_unit_ineligible:
-    return_item_inventory_unit_reimbursed:
-    return_item_rma_ineligible:
-    return_item_time_period_ineligible:
-    return_items:
-    return_items_cannot_be_associated_with_multiple_orders:
-    return_number:
+    return_item_inventory_unit_ineligible: TODO_TRANSLATE
+    return_item_inventory_unit_reimbursed: TODO_TRANSLATE
+    return_item_order_not_completed: TODO_TRANSLATE
+    return_item_rma_ineligible: TODO_TRANSLATE
+    return_item_time_period_ineligible: TODO_TRANSLATE
+    return_items: TODO_TRANSLATE
+    return_items_cannot_be_associated_with_multiple_orders: TODO_TRANSLATE
+    return_number: TODO_TRANSLATE
     return_quantity: Quantité de retour
     returned: Retourner
-    returns:
+    returns: TODO_TRANSLATE
     review: Examen
-    risk:
-    risk_analysis:
-    risky:
+    risk: TODO_TRANSLATE
+    risk_analysis: TODO_TRANSLATE
+    risky: TODO_TRANSLATE
     rma_credit: Credit RMA
     rma_number: Numéro RMA
     rma_value: Valeur RMA
+    role_id: TODO_TRANSLATE
     roles: Rôles
     rules: Règles
-    safe:
+    s3_access_key: TODO_TRANSLATE
+    s3_bucket: TODO_TRANSLATE
+    s3_headers: TODO_TRANSLATE
+    s3_protocol: TODO_TRANSLATE
+    s3_secret: TODO_TRANSLATE
+    safe: TODO_TRANSLATE
     sales_total: Total de ventes
     sales_total_description: Vente total pour toutes les commandes
     sales_totals: Ventes totales
     save_and_continue: Continuer
-    save_my_address:
+    save_my_address: TODO_TRANSLATE
     say_no: Non
     say_yes: Oui
     scope: Scope
@@ -1149,10 +1288,11 @@ fr:
     secure_connection_type: Type de connexion sécurisée
     security_settings: Paramètres de sécurité
     select: Sélectionner
-    select_a_return_authorization_reason:
-    select_a_stock_location:
+    select_a_return_authorization_reason: TODO_TRANSLATE
+    select_a_stock_location: TODO_TRANSLATE
     select_from_prototype: Sélectionner d'après le prototype
     select_stock: Sélectionner le stock
+    selected_quantity_not_available: TODO_TRANSLATE
     send_copy_of_all_mails_to: Envoyer une copie de tous les courriels à
     send_mails_as: Envoyer les courriels en tant que
     server: Serveur
@@ -1162,8 +1302,9 @@ fr:
     ship_address: Adresse de livraison
     ship_total: Envois Totales
     shipment: Livraison
-    shipment_adjustments:
-    shipment_details:
+    shipment_adjustments: TODO_TRANSLATE
+    shipment_details: TODO_TRANSLATE
+    shipment_inc_vat: TODO_TRANSLATE
     shipment_mailer:
       shipped_email:
         dear_customer: Cher client,\n
@@ -1176,13 +1317,13 @@ fr:
     shipment_state: "État de livraison"
     shipment_states:
       backorder: rupture de stock
-      canceled:
+      canceled: TODO_TRANSLATE
       partial: partiel
       pending: en attente
       ready: prêt
       shipped: expédié
-    shipment_transfer_error:
-    shipment_transfer_success:
+    shipment_transfer_error: TODO_TRANSLATE
+    shipment_transfer_success: TODO_TRANSLATE
     shipments: Livraisons
     shipped: Livré
     shipping: Frais de livraison
@@ -1196,7 +1337,11 @@ fr:
     shipping_method: Méthode de livraison
     shipping_methods: Méthodes de livraison
     shipping_price_sack: Prix groupé
-    shipping_total:
+    shipping_rates:
+      display_price:
+        excluding_tax: TODO_TRANSLATE
+        including_tax: TODO_TRANSLATE
+    shipping_total: TODO_TRANSLATE
     shop_by_taxonomy: Acheter par %{taxonomy}
     shopping_cart: Panier
     show: Afficher
@@ -1206,57 +1351,69 @@ fr:
     show_only_considered_risky: Afficher seulement les commandes considérées à risque
     show_rate_in_label: Montrer les taux dans les legendes
     sku: Code barre
-    skus:
-    slug:
+    skus: TODO_TRANSLATE
+    slug: TODO_TRANSLATE
+    smtp: TODO_TRANSLATE
+    smtp_authentication_type: TODO_TRANSLATE
+    smtp_domain: TODO_TRANSLATE
+    smtp_mail_host: TODO_TRANSLATE
+    smtp_password: TODO_TRANSLATE
+    smtp_port: TODO_TRANSLATE
+    smtp_send_all_emails_as_from_following_address: TODO_TRANSLATE
+    smtp_send_copy_to_this_addresses: TODO_TRANSLATE
+    smtp_username: TODO_TRANSLATE
     source: Origine
     special_instructions: Instructions spéciales
     split: Diviser
+    spree/order:
+      coupon_code: TODO_TRANSLATE
     spree_gateway_error_flash_for_checkout: Il y a eu un problème avec vos informations de paiement. Merci de bien vouloir les vérifier et de réessayer.
     ssl:
-      change_protocol:
+      change_protocol: TODO_TRANSLATE
     start: Départ
+    start_date: TODO_TRANSLATE
     state: Province / Région / État
     state_based: Basé sur une région
     state_machine_states:
-      accepted:
-      address:
-      authorized:
-      awaiting:
-      awaiting_return:
-      backordered:
-      canceled:
-      cart:
-      checkout:
-      closed:
-      complete:
-      completed:
-      confirm:
-      delivery:
-      errored:
-      failed:
-      given_to_customer:
-      invalid:
-      manual_intervention_required:
-      on_hand:
-      open:
-      order:
-      payment:
-      pending:
-      processing:
-      ready:
-      reimbursed:
-      resumed:
-      returned:
-      shipped:
-      void:
+      accepted: TODO_TRANSLATE
+      address: TODO_TRANSLATE
+      authorized: TODO_TRANSLATE
+      awaiting: TODO_TRANSLATE
+      awaiting_return: TODO_TRANSLATE
+      backordered: TODO_TRANSLATE
+      canceled: TODO_TRANSLATE
+      cart: TODO_TRANSLATE
+      checkout: TODO_TRANSLATE
+      closed: TODO_TRANSLATE
+      complete: TODO_TRANSLATE
+      completed: TODO_TRANSLATE
+      confirm: TODO_TRANSLATE
+      delivery: TODO_TRANSLATE
+      errored: TODO_TRANSLATE
+      failed: TODO_TRANSLATE
+      given_to_customer: TODO_TRANSLATE
+      invalid: TODO_TRANSLATE
+      manual_intervention_required: TODO_TRANSLATE
+      on_hand: TODO_TRANSLATE
+      open: TODO_TRANSLATE
+      order: TODO_TRANSLATE
+      payment: TODO_TRANSLATE
+      pending: TODO_TRANSLATE
+      processing: TODO_TRANSLATE
+      ready: TODO_TRANSLATE
+      reimbursed: TODO_TRANSLATE
+      resumed: TODO_TRANSLATE
+      returned: TODO_TRANSLATE
+      shipped: TODO_TRANSLATE
+      void: TODO_TRANSLATE
     states: Régions
     states_required: Etat / province obligatoire
     status: Statut
-    stock:
+    stock: TODO_TRANSLATE
     stock_location: Emplacement de stock
     stock_location_info: Informations sur l'emplacement de stock
     stock_locations: Emplacements de stock
-    stock_locations_need_a_default_country:
+    stock_locations_need_a_default_country: TODO_TRANSLATE
     stock_management: Gestion de stock
     stock_management_requires_a_stock_location: Veuillez créer un lieu de stockage afin de pouvoir gérer vos stocks
     stock_movements: Mouvements de Stock
@@ -1270,28 +1427,30 @@ fr:
     street_address_2: Adresse (suite)
     subtotal: Sous-total
     subtract: Soustraire
-    success:
+    success: TODO_TRANSLATE
     successfully_created: "%{resource} a été crée avec succès!"
-    successfully_refunded:
+    successfully_refunded: TODO_TRANSLATE
     successfully_removed: "%{resource} a été supprimé avec succès!"
     successfully_signed_up_for_analytics: Vous avez été enregistré avec succès à Spree Analytics.
     successfully_updated: "%{resource} a été modifié avec succès!"
-    summary:
+    summary: TODO_TRANSLATE
     tax: TVA
     tax_categories: Catégories de taxes
     tax_category: Catégorie de taxe
-    tax_code:
-    tax_included:
+    tax_code: TODO_TRANSLATE
+    tax_included: TODO_TRANSLATE
     tax_rate_amount_explanation: Les taux de taxe représentent un nombre décimal pour simplifier les calculs. (i.e. si le taux est  5%, entrer 0.05)
     tax_rates: Taux des taxes
+    tax_settings: TODO_TRANSLATE
+    tax_total: TODO_TRANSLATE
     taxon: Arborescence
     taxon_edit: Modifier l'aborescence
     taxon_placeholder: Ajouter un taxon
     taxon_rule:
-      choose_taxons:
-      label:
-      match_all:
-      match_any:
+      choose_taxons: TODO_TRANSLATE
+      label: TODO_TRANSLATE
+      match_all: TODO_TRANSLATE
+      match_any: TODO_TRANSLATE
     taxonomies: Arborescences
     taxonomy: Taxonomy
     taxonomy_edit: Modifier l'aborescence
@@ -1300,6 +1459,9 @@ fr:
     taxons: Arborescences
     test: Test
     test_mailer:
+      greeting: TODO_TRANSLATE
+      message: TODO_TRANSLATE
+      subject: TODO_TRANSLATE
       test_email:
         greeting: Félicitations !
         message: Si vous avez reçu cet e-mail, vos paramètres de messagerie sont correctes.
@@ -1308,24 +1470,24 @@ fr:
     thank_you_for_your_order: Merci de nous avoir fait confiance. Imprimez cette page de confirmation pour vos archives.
     there_are_no_items_for_this_order: Il n'y a aucun article dans cette commande. Veuillez en ajouter un à la commande pour continuer.
     there_were_problems_with_the_following_fields: Il y a eu des problèmes aves les champs suivants
-    this_order_has_already_received_a_refund:
+    this_order_has_already_received_a_refund: TODO_TRANSLATE
     thumbnail: Vignette
-    tiered_flat_rate:
-    tiered_percent:
-    tiers:
+    tiered_flat_rate: TODO_TRANSLATE
+    tiered_percent: TODO_TRANSLATE
+    tiers: TODO_TRANSLATE
     time: Temps
     to_add_variants_you_must_first_define: Pour ajouter des variantes, vous devez premièrement définir
     total: Total
-    total_per_item:
-    total_pre_tax_refund:
-    total_price:
-    total_sales:
-    track_inventory:
+    total_per_item: TODO_TRANSLATE
+    total_pre_tax_refund: TODO_TRANSLATE
+    total_price: TODO_TRANSLATE
+    total_sales: TODO_TRANSLATE
+    track_inventory: TODO_TRANSLATE
     tracking: Localiser
     tracking_number: Numéro de suivi
     tracking_url: URL du traqueur
     tracking_url_placeholder: i.e. http://quickship.com/package?num=:tracking
-    transaction_id:
+    transaction_id: TODO_TRANSLATE
     transfer_from_location: Transférer de
     transfer_stock: Transférer le Stock
     transfer_to_location: Transférer vers
@@ -1333,7 +1495,7 @@ fr:
     type: Type
     type_to_search: Type à rechercher
     unable_to_connect_to_gateway: N'arrive pas à se connecter à la méthode de paiement.
-    unable_to_create_reimbursements:
+    unable_to_create_reimbursements: TODO_TRANSLATE
     under_price: Moins de %{price}
     unlock: Déverrouiller
     unrecognized_card_type: Le type de la carte n'est pas reconnu
@@ -1341,9 +1503,11 @@ fr:
     update: Mise à jour
     updating: Mise à jour
     usage_limit: Limite d'utilisation
-    use_app_default:
+    use_app_default: TODO_TRANSLATE
     use_billing_address: Utiliser l'adresse de facturation
+    use_existing_cc: TODO_TRANSLATE
     use_new_cc: Utiliser une nouvelle carte
+    use_new_cc_or_payment_method: TODO_TRANSLATE
     use_s3: Utiliser Amazon S3 pour les Images
     user: Utilisateur
     user_rule:
@@ -1351,12 +1515,13 @@ fr:
     users: Utilisateurs
     validation:
       cannot_be_less_than_shipped_units: ne peut pas être inférieur à la quantité livrée.
-      cannot_destroy_line_item_as_inventory_units_have_shipped:
+      cannot_destory_line_item_as_inventory_units_have_shipped: TODO_TRANSLATE
+      cannot_destroy_line_item_as_inventory_units_have_shipped: TODO_TRANSLATE
       exceeds_available_stock: Surpasse le stock disponible. Merci de vous assurer que les quantités sont valides
       is_too_large: est trop importante -- le stock disponible ne peut pas couvrir la quantité demandée !
       must_be_int: doit être un entier
       must_be_non_negative: doit être une valeur positive ou nulle
-      unpaid_amount_not_zero:
+      unpaid_amount_not_zero: TODO_TRANSLATE
     value: Valeur
     variant: Variante
     variant_placeholder: Choisissez une variante
@@ -1375,3 +1540,10 @@ fr:
     zipcode: Code postal
     zone: Zone
     zones: Zones
+  update: TODO_TRANSLATE
+  views:
+    pagination:
+      first: TODO_TRANSLATE
+      last: TODO_TRANSLATE
+      next: TODO_TRANSLATE
+      previous: TODO_TRANSLATE
