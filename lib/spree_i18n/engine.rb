@@ -1,5 +1,6 @@
 require 'globalize'
 require 'friendly_id/globalize'
+require 'kaminari-i18n/engine'
 
 module SpreeI18n
   class Engine < Rails::Engine
