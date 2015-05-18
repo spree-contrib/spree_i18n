@@ -27,6 +27,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'globalize', '~> 5.0.1'
   s.add_runtime_dependency 'i18n_data', '~> 0.5.1'
   s.add_runtime_dependency 'rails-i18n', '~> 4.0.1'
+  s.add_runtime_dependency 'kaminari-i18n', '~> 0.3.2'
+  s.add_runtime_dependency 'routing-filter', '~> 0.5.0'
   s.add_runtime_dependency 'spree_core', '~> 3.1.0.beta'
 
   s.add_development_dependency 'byebug'
@@ -37,7 +39,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker', '>= 1.25.0'
   s.add_development_dependency 'mysql2'
   s.add_development_dependency 'pg'
-  s.add_development_dependency 'poltergeist', '~> 1.5.0'
+  s.add_development_dependency 'poltergeist', '~> 1.5'
   s.add_development_dependency 'pry-rails', '>= 0.3.0'
   s.add_development_dependency 'rubocop', '>= 0.24.1'
   s.add_development_dependency 'rspec-rails', '~> 3.1.0'
@@ -46,4 +48,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'selenium-webdriver', '>= 2.41'
   s.add_development_dependency 'simplecov', '~> 0.9.0'
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
+  s.add_development_dependency 'launchy'
 end

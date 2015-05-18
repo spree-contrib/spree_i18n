@@ -1,5 +1,7 @@
 require 'globalize'
 require 'friendly_id/globalize'
+require 'routing_filter'
+require 'kaminari-i18n/engine'
 
 module SpreeI18n
   class Engine < Rails::Engine
@@ -28,6 +30,9 @@ module SpreeI18n
 
       option_value_attributes = { translations_attributes: [:id, :locale, :name, :presentation] }
       Spree::PermittedAttributes.option_value_attributes << option_value_attributes
+
+      store_attributes = { translations_attributes: [:id, :locale, :name, :meta_description, :meta_keywords, :seo_title] }
+      Spree::PermittedAttributes.store_attributes << store_attributes
     end
 
     def self.activate

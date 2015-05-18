@@ -2,8 +2,10 @@ RSpec.feature "Translations", :js do
   stub_authorization!
 
   given(:language) { Spree.t(:'i18n.this_file_language', locale: 'pt-BR') }
+  given!(:store) { create(:store) }
 
   background do
+    create(:store)
     reset_spree_preferences
     SpreeI18n::Config.available_locales = [:en, :'pt-BR']
     SpreeI18n::Config.supported_locales = [:en, :'pt-BR']
@@ -13,15 +15,15 @@ RSpec.feature "Translations", :js do
     given(:product) { create(:product) }
 
     context "fills in translations fields" do
-      scenario "displays translated name on frontend" do
+      scenario "saves translated attributes properly" do
         visit spree.admin_product_path(product)
         click_on "Translations"
 
-        within("#attr_fields .name.en.odd") { fill_in_name "Pearl Jam" }
-        within("#attr_fields .name.pt-BR.odd") { fill_in_name "Geleia de perola" }
+        within("#attr_fields .name.en") { fill_in_name "Pearl Jam" }
+        within("#attr_fields .name.pt-BR") { fill_in_name "Geleia de perola" }
         click_on "Update"
+        visit spree.admin_product_path(product, locale: 'pt-BR')
 
-        change_locale
         expect(page).to have_text_like 'Geleia de perola'
       end
     end
@@ -29,35 +31,32 @@ RSpec.feature "Translations", :js do
     context "product properties" do
       given!(:product_property) { create(:product_property, value: "red") }
 
-      scenario "displays translated value on frontend" do
+      scenario "saves translated attributes properly" do
         visit spree.admin_product_product_properties_path(product_property.product)
         within_row(1) { click_icon :translate }
 
-        within("#attr_fields .value.pt-BR.odd") { fill_in_name "vermelho" }
+        within("#attr_fields .value.pt-BR") { fill_in_name "vermelho" }
         click_on "Update"
+        visit spree.admin_product_product_properties_path(product_property.product, locale: 'pt-BR')
 
-        change_locale
-        visit spree.admin_product_product_properties_path(product_property.product)
-
-        expect(page).to have_text_like 'vermelho'
+        expect(page).to have_selector("input[value=vermelho]")
       end
     end
 
     context "option types" do
       given!(:option_type) { create(:option_value).option_type }
 
-      scenario "displays translated name on frontend" do
+      scenario "saves translated attributes properly" do
         visit spree.admin_option_types_path
         within_row(1) { click_icon :translate }
 
-        within("#attr_fields .name.en.odd") { fill_in_name "shirt sizes" }
+        within("#attr_fields .name.en") { fill_in_name "shirt sizes" }
         within("#attr_list") { click_on "Presentation" }
-        within("#attr_fields .presentation.en.odd") { fill_in_name "size" }
-        within("#attr_fields .presentation.pt-BR.odd") { fill_in_name "tamanho" }
+        within("#attr_fields .presentation.en") { fill_in_name "size" }
+        within("#attr_fields .presentation.pt-BR") { fill_in_name "tamanho" }
         click_on "Update"
+        visit spree.admin_option_types_path(locale: 'pt-BR')
 
-        change_locale
-        visit spree.admin_option_types_path
         expect(page).to have_text_like 'tamanho'
       end
 
@@ -77,37 +76,34 @@ RSpec.feature "Translations", :js do
     context "option values" do
       given!(:option_type) { create(:option_value).option_type }
 
-      scenario "displays translated name on frontend" do
-        visit spree.edit_admin_option_type_path(option_type)
+      scenario "saves translated attributes properly" do
+        visit spree.admin_option_types_path
         within_row(1) { click_icon :translate }
 
-        within("#attr_fields .name.en.odd") { fill_in_name "big" }
+        within("#attr_fields .name.en") { fill_in_name "big" }
         within("#attr_list") { click_on "Presentation" }
-        within("#attr_fields .presentation.en.odd") { fill_in_name "big" }
-        within("#attr_fields .presentation.pt-BR.odd") { fill_in_name "grande" }
+        within("#attr_fields .presentation.en") { fill_in_name "big" }
+        within("#attr_fields .presentation.pt-BR") { fill_in_name "grande" }
         click_on "Update"
+        visit spree.admin_option_types_path(locale: 'pt-BR')
 
-        change_locale
-        visit spree.edit_admin_option_type_path(option_type)
-        expect(page).to have_selector("input[value=grande]")
+        expect(page).to have_text_like 'grande'
       end
     end
 
     context "properties" do
       given!(:property) { create(:property) }
 
-      scenario "displays translated name on frontend" do
+      scenario "saves translated attributes properly" do
         visit spree.admin_properties_path
         within_row(1) { click_icon :translate }
 
-        within("#attr_fields .name.pt-BR.odd") { fill_in_name "Modelo" }
+        within("#attr_fields .name.pt-BR") { fill_in_name "Modelo" }
         within("#attr_list") { click_on "Presentation" }
-        within("#attr_fields .presentation.en.odd") { fill_in_name "Model" }
-        within("#attr_fields .presentation.pt-BR.odd") { fill_in_name "Modelo" }
+        within("#attr_fields .presentation.en") { fill_in_name "Model" }
+        within("#attr_fields .presentation.pt-BR") { fill_in_name "Modelo" }
         click_on "Update"
-
-        change_locale
-        visit spree.admin_properties_path
+        visit spree.admin_properties_path(locale: 'pt-BR')
 
         expect(page).to have_text_like 'Modelo'
       end
@@ -121,12 +117,11 @@ RSpec.feature "Translations", :js do
       visit spree.admin_promotions_path
       within_row(1) { click_icon :translate }
 
-      within("#attr_fields .name.en.odd") { fill_in_name "All free" }
-      within("#attr_fields .name.pt-BR.odd") { fill_in_name "Salve salve" }
+      within("#attr_fields .name.en") { fill_in_name "All free" }
+      within("#attr_fields .name.pt-BR") { fill_in_name "Salve salve" }
       click_on "Update"
+      visit spree.admin_promotions_path(locale: 'pt-BR')
 
-      change_locale
-      visit spree.admin_promotions_path
       expect(page).to have_text_like 'Salve salve'
     end
 
@@ -134,6 +129,7 @@ RSpec.feature "Translations", :js do
       visit spree.admin_promotions_path
       within_row(1) { click_icon :translate }
       click_on 'Cancel'
+
       expect(page).to have_css('.content-header')
     end
   end
@@ -141,16 +137,15 @@ RSpec.feature "Translations", :js do
   context "taxonomies" do
     given!(:taxonomy) { create(:taxonomy) }
 
-    scenario "display translated name on frontend" do
+    scenario "saves translated attributes properly" do
       visit spree.admin_taxonomies_path
       within_row(1) { click_icon :translate }
 
-      within("#attr_fields .name.en.odd") { fill_in_name "Guitars" }
-      within("#attr_fields .name.pt-BR.odd") { fill_in_name "Guitarras" }
+      within("#attr_fields .name.en") { fill_in_name "Guitars" }
+      within("#attr_fields .name.pt-BR") { fill_in_name "Guitarras" }
       click_on "Update"
+      visit spree.admin_taxonomies_path(locale: 'pt-BR')
 
-      change_locale
-      visit spree.root_path
       expect(page).to have_text_like 'Guitarras'
     end
   end
@@ -159,15 +154,15 @@ RSpec.feature "Translations", :js do
     given!(:taxonomy) { create(:taxonomy) }
     given!(:taxon) { create(:taxon, taxonomy: taxonomy, parent_id: taxonomy.root.id) }
 
-    scenario "display translated name on frontend" do
+    scenario "saves translated attributes properly" do
       visit spree.admin_translations_path('taxons', taxon.id)
 
-      within("#attr_fields .name.en.odd") { fill_in_name "Acoustic" }
-      within("#attr_fields .name.pt-BR.odd") { fill_in_name "Acusticas" }
+      within("#attr_fields .name.en") { fill_in_name "Acoustic" }
+      within("#attr_fields .name.pt-BR") { fill_in_name "Acusticas" }
       click_on "Update"
 
       visit spree.admin_translations_path('taxons', taxon.id)
-      
+
       # ensure we're not duplicating translated records on database
       expect {
         click_on "Update"
@@ -176,9 +171,24 @@ RSpec.feature "Translations", :js do
       # ensure taxon is in root or it will not be visible
       expect(taxonomy.root.children.count).to be(1)
 
-      change_locale
-      visit spree.root_path
-      expect(page).to have_text_like 'Acusticas'
+      visit spree.admin_translations_path('taxons', taxon.id, locale: 'pt-BR')
+
+      expect(page).to have_selector("input[value=Acusticas]")
+    end
+  end
+
+  context "store" do
+    scenario 'saves translated attributes properly' do
+      visit spree.edit_admin_general_settings_path
+      click_link Spree.t(:configurations)
+      click_link "Store Translations"
+
+      within("#attr_fields .name.pt-BR") { fill_in_name "nome store" }
+      click_on "Update"
+
+      visit spree.admin_translations_path('stores', store)
+
+      expect(page).to have_selector("input[value='nome store']")
     end
   end
 
@@ -195,7 +205,6 @@ RSpec.feature "Translations", :js do
     scenario "adds german to supported locales and pick it on front end" do
       targetted_select2_search(language, from: '#s2id_supported_locales_')
       click_on 'Update'
-      change_locale
       expect(SpreeI18n::Config.supported_locales).to include(:de)
     end
 
@@ -217,8 +226,8 @@ RSpec.feature "Translations", :js do
       visit spree.admin_product_path(product)
       click_on "Translations"
       click_on "Slug"
-      within("#attr_fields .slug.en.odd") { fill_in_name "en_link" }
-      within("#attr_fields .slug.de.odd") { fill_in_name "de_link" }
+      within("#attr_fields .slug.en") { fill_in_name "en_link" }
+      within("#attr_fields .slug.de") { fill_in_name "de_link" }
       click_on "Update"
 
       visit spree.product_path 'en_link'
@@ -230,14 +239,6 @@ RSpec.feature "Translations", :js do
   end
 
   private
-
-  # sleep 1 second to make sure the ajax request process properly
-  def change_locale
-    visit spree.root_path
-    within("#locale-select") { select language, from: "locale" }
-    sleep 1
-    visit spree.root_path
-  end
 
   def fill_in_name(value)
     fill_in first("input[type='text']")["name"], with: value
