@@ -18,12 +18,6 @@ module Spree
     end
 
     it 'fetches variant from product via translation table' do
-      product_relation = Product.where(name: "globalize")
-      variant_relation = described_class.joins(:product).merge(product_relation)
-      described_class.includes(:product).ransack(name_cont: 'globalize').result.to_a
-
-      expect(variant_relation.last).to eq variant
-
       variants = described_class.includes(:product).ransack(name_cont: 'globalize').result.to_a
       expect(variants.last).to eq variant
     end
