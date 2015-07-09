@@ -27,6 +27,19 @@ module Spree
       expect(result.first).to eq product
     end
 
+    it "handle old-style translation in ransack" do
+      Spree::Product.where(id: product.id).update_all(name: product.name)
+      product.translations.update_all(name: nil)
+
+      old_style_product = Spree::Product.find(product.id)
+
+      result = described_class.ransack(name_cont: product.name[0..2]).result
+      expect(result.first).to eq product
+
+      result = described_class.search(name_cont: product.name[0..2]).result
+      expect(result.first).to eq product
+    end
+
     # Regression tests for #466
     describe ".like_any" do
       context "allow searching products through their translations" do
