@@ -43,6 +43,14 @@ module Spree
         result = described_class.search(name_cont: product.name[0..2]).result
         expect(result.to_a).to eq [product]
       end
+
+      it "handles translation for an attribute disjunction" do
+        result = described_class.ransack(name_or_description_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+
+        result = described_class.ransack(description_or_name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+      end
     end
 
     # Regression tests for #466
