@@ -19,25 +19,30 @@ module Spree
       expect(product.taxons).to include(taxon)
     end
 
-    it "handle translation in ransack" do
-      result = described_class.ransack(name_cont: product.name[0..2]).result
-      expect(result.first).to eq product
+    describe ".ransack" do
+      let!(:product) { create(:product, name: 'find-me') }
+      let!(:other_product) { create(:product, name: 'no-thanks') }
 
-      result = described_class.search(name_cont: product.name[0..2]).result
-      expect(result.first).to eq product
-    end
+      it "handles translation" do
+        result = described_class.ransack(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
 
-    it "handle old-style translation in ransack" do
-      Spree::Product.where(id: product.id).update_all(name: product.name)
-      product.translations.update_all(name: nil)
+        result = described_class.search(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+      end
 
-      old_style_product = Spree::Product.find(product.id)
+      it "handles old-style translations" do
+        Spree::Product.where(id: product.id).update_all(name: product.name)
+        product.translations.update_all(name: nil)
 
-      result = described_class.ransack(name_cont: product.name[0..2]).result
-      expect(result.first).to eq product
+        old_style_product = Spree::Product.find(product.id)
 
-      result = described_class.search(name_cont: product.name[0..2]).result
-      expect(result.first).to eq product
+        result = described_class.ransack(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+
+        result = described_class.search(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+      end
     end
 
     # Regression tests for #466
