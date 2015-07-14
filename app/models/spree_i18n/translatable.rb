@@ -4,13 +4,6 @@ module SpreeI18n
 
     included do |klass|
       accepts_nested_attributes_for :translations
-
-      translated_attribute_names.each do |t|
-        ransacker t do |parent|
-          Arel.sql("coalesce(#{translations_table_name}.#{t}, #{table_name}.#{t})")
-        end
-      end
-
       klass.class_eval do
         class << self
           alias_method_chain :ransack, :translations
@@ -22,7 +15,18 @@ module SpreeI18n
 
     class_methods do
       def ransack_with_translations(params = {}, options = {})
-        joins(:translations).ransack_without_translations(params, options)
+        params.keys.each do |n|
+          stripped_name = n.to_s.dup
+          Ransack::Predicate.detect_and_strip_from_string!(stripped_name)
+          translated_attribute_names.each do |t|
+            if stripped_name.to_s.starts_with? t.to_s
+              params[:"#{stripped_name}_or_translations_#{n}"] = params[n]
+              params.delete n
+            end
+          end
+        end
+
+        ransack_without_translations(params, options)
       end
     end
   end
