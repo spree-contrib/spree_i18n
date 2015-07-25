@@ -8,7 +8,6 @@ module SpreeI18n
     def translated_params
       params = @params.dup
       ctx = Ransack::Context.for_class(@klass)
-      attrib = Ransack::Nodes::Attribute.new(ctx)
 
       params.keys.each do |key|
         stripped_name = key.to_s.dup
@@ -17,17 +16,7 @@ module SpreeI18n
         names = stripped_name.split /_or_/
 
         translated_names = names.map do |name|
-          ctx.bind(attrib, name)
-
-          klass = ctx.klassify(attrib.parent)
-          attrib_name = attrib.attr_name
-          prefix = name.chomp(attrib_name)
-
-          if (klass.try(:translated_attribute_names) || []).include? attrib_name.to_sym
-            "#{name}_or_#{prefix}translations_#{attrib_name}"
-          else
-            name
-          end
+          translated_name(ctx, name)
         end
 
         translated_key = translated_names.join('_or_')
@@ -41,5 +30,25 @@ module SpreeI18n
 
       params
     end
+
+    private
+
+    def translated_name(ctx, name)
+      attrib = Ransack::Nodes::Attribute.new(ctx)
+      ctx.bind(attrib, name)
+
+      return name unless attrib.parent
+
+      klass = ctx.klassify(attrib.parent)
+      attrib_name = attrib.attr_name
+      prefix = name.chomp(attrib_name)
+
+      if (klass.try(:translated_attribute_names) || []).include? attrib_name.to_sym
+        "#{name}_or_#{prefix}translations_#{attrib_name}"
+      else
+        name
+      end
+    end
+
   end
 end
