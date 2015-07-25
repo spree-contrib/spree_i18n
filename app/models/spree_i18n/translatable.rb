@@ -4,7 +4,7 @@ module SpreeI18n
   module Translatable
     extend ActiveSupport::Concern
 
-    included do |klass|
+    included do
       accepts_nested_attributes_for :translations
     end
 
@@ -15,7 +15,7 @@ module SpreeI18n
         super(translated_params, options)
       end
 
-      alias :search :ransack unless respond_to? :search
+      alias_method :search, :ransack unless respond_to? :search
     end
   end
 end

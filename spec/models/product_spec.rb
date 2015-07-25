@@ -19,11 +19,11 @@ module Spree
       expect(product.taxons).to include(taxon)
     end
 
-    describe ".ransack" do
+    describe '.ransack' do
       let!(:product) { create(:product, name: 'find-me') }
       let!(:other_product) { create(:product, name: 'no-thanks') }
 
-      it "handles translation" do
+      it 'handles translation' do
         result = described_class.ransack(name_cont: product.name[0..2]).result
         expect(result.to_a).to eq [product]
 
@@ -31,12 +31,10 @@ module Spree
         expect(result.to_a).to eq [product]
       end
 
-      it "handles old-style translations" do
+      it 'handles old-style translations' do
         Spree::Product.where(id: product.id).update_all(name: product.name)
         product.translations.update_all(name: nil)
 
-        old_style_product = Spree::Product.find(product.id)
-
         result = described_class.ransack(name_cont: product.name[0..2]).result
         expect(result.to_a).to eq [product]
 
@@ -44,7 +42,7 @@ module Spree
         expect(result.to_a).to eq [product]
       end
 
-      it "handles translation for an attribute disjunction" do
+      it 'handles translation for an attribute disjunction' do
         result = described_class.ransack(name_or_description_cont: product.name[0..2]).result
         expect(result.to_a).to eq [product]
 
