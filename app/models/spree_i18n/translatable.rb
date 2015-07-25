@@ -4,17 +4,10 @@ module SpreeI18n
 
     included do |klass|
       accepts_nested_attributes_for :translations
-      klass.class_eval do
-        class << self
-          alias_method_chain :ransack, :translations
-
-          alias :search :ransack unless respond_to? :search
-        end
-      end
     end
 
     class_methods do
-      def ransack_with_translations(params = {}, options = {})
+      def ransack(params = {}, options = {})
         params.keys.each do |key|
           stripped_name = key.to_s.dup
           pred = Ransack::Predicate.detect_and_strip_from_string!(stripped_name)
@@ -36,8 +29,10 @@ module SpreeI18n
           end
         end
 
-        ransack_without_translations(params, options)
+        super(params, options)
       end
+
+      alias :search :ransack unless respond_to? :search
     end
   end
 end
