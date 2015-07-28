@@ -41,10 +41,10 @@ module SpreeI18n
 
     def translated_name(name)
       model, attrib_name = locate_attribute name
-      prefix = name.chomp(attrib_name)
+      return name unless model
 
       if (model.try(:translated_attribute_names) || []).include? attrib_name.to_sym
-        "#{name}_or_#{prefix}translations_#{attrib_name}"
+        "#{name}_or_#{name.chomp(attrib_name)}translations_#{attrib_name}"
       else
         name
       end

@@ -54,6 +54,11 @@ module Spree
         result = described_class.ransack(s: 'name asc').result
         expect(result.to_a).to match_array [product, other_product]
       end
+
+      it 'handles ransack with an invalid key safely' do
+        result = described_class.ransack(foo: 'blub').result
+        expect(result.to_a).to match_array [product, other_product]
+      end
     end
 
     # Regression tests for #466
