@@ -49,6 +49,11 @@ module Spree
         result = described_class.ransack(description_or_name_cont: product.name[0..2]).result
         expect(result.to_a).to eq [product]
       end
+
+      it 'handles ransack with a sorting parameter safely' do
+        result = described_class.ransack(s: 'name asc').result
+        expect(result.to_a).to match_array [product, other_product]
+      end
     end
 
     # Regression tests for #466

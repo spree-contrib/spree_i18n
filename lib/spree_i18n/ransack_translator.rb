@@ -7,14 +7,19 @@ module SpreeI18n
 
     def translated_params
       @params.each_with_object({}) do |(key, value), result|
-        names, pred = split_key(key)
-        translated_names = translate_names(names)
-        translated_key = join_key translated_names, pred
+        translated_key = key_with_translations(key)
         result[translated_key] = value
       end
     end
 
     private
+
+    def key_with_translations(key)
+      return key if key.to_s == 's'
+      names, pred = split_key key
+      translated_names = translate_names(names)
+      join_key translated_names, pred
+    end
 
     def split_key(key)
       stripped_name = key.to_s.dup
