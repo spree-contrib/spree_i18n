@@ -19,6 +19,48 @@ module Spree
       expect(product.taxons).to include(taxon)
     end
 
+    describe '.ransack' do
+      let!(:product) { create(:product, name: 'find-me') }
+      let!(:other_product) { create(:product, name: 'no-thanks') }
+
+      it 'handles translation' do
+        result = described_class.ransack(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+
+        result = described_class.search(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+      end
+
+      it 'handles old-style translations' do
+        Spree::Product.where(id: product.id).update_all(name: product.name)
+        product.translations.update_all(name: nil)
+
+        result = described_class.ransack(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+
+        result = described_class.search(name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+      end
+
+      it 'handles translation for an attribute disjunction' do
+        result = described_class.ransack(name_or_description_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+
+        result = described_class.ransack(description_or_name_cont: product.name[0..2]).result
+        expect(result.to_a).to eq [product]
+      end
+
+      it 'handles ransack with a sorting parameter safely' do
+        result = described_class.ransack(s: 'name asc').result
+        expect(result.to_a).to match_array [product, other_product]
+      end
+
+      it 'handles ransack with an invalid key safely' do
+        result = described_class.ransack(foo: 'blub').result
+        expect(result.to_a).to match_array [product, other_product]
+      end
+    end
+
     # Regression tests for #466
     describe ".like_any" do
       context "allow searching products through their translations" do
