@@ -40,20 +40,6 @@ es-MX:
         name: Nombre
         presentation: Presentación
       spree/order:
-        checkout_complete: Flujo de Compra Completado
-        completed_at: Completado el
-        considered_risky:
-        coupon_code: Cupón
-        created_at: Fecha de pedido
-        email: E-Mail del cliente
-        ip_address: Dirección IP
-        item_total: Total de artículos
-        number: Número
-        payment_state: Estado de Pagos
-        shipment_state: Estado de Envíos
-        special_instructions: Instrucciones Especiales
-        state: Estado
-        total: Total
       spree/order/bill_address:
         address1: Calle (Dirección de Facturación)
         city: Ciudad (Dirección de Facturación)
@@ -68,10 +54,25 @@ es-MX:
         firstname: Nombre (Dirección de Envíos)
         lastname: Apellidos (Dirección de Envíos)
         phone: Teléfono (Dirección de Envíos)
-        state: Estado / Provincia (Dirección de Envíos)
+        state: State
         zipcode: Código Postal (Dirección de Envíos)
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Monto
+        number: Number
       spree/payment_method:
         name: Nombre
       spree/product:
@@ -105,6 +106,8 @@ es-MX:
         amount: Monto
       spree/role:
         name: Nombre
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Abreviación
         name: Nombre
@@ -209,6 +212,8 @@ es-MX:
         one: Tarjeta de Crédito
         other: Tarjetas de Crédito
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Unidad de Inventario
         other: Unidades de Inventario
@@ -216,7 +221,11 @@ es-MX:
         one: Artículo
         other: Artículos
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Pedido
         other: Pedidos
@@ -224,11 +233,17 @@ es-MX:
         one: Pago
         other: Pagos
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Producto
         other: Productos
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Propiedad
         other: Propiedades
@@ -236,12 +251,20 @@ es-MX:
         one: Prototipo
         other: Prototipos
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Autorización de Devolución
         other: Autorizaciones de Devolución
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Rol
         other: Roles
@@ -252,13 +275,23 @@ es-MX:
         one: Categoría de Envío
         other: Categorías de Envíos
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: Estado
         other: Estados
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Categoría de Impuesto
         other: Categorías de Impuesto
@@ -272,6 +305,8 @@ es-MX:
         one: Taxonomía
         other: Taxonomías
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: Usuario
         other: Usuarios
@@ -363,10 +398,10 @@ es-MX:
     add_rule_of_type: Añadir regla de tipo
     add_state: Añadir Estado / Provincia
     add_stock: Añadir inventario
-    add_stock_management: Añadir gestión de inventario
     add_to_cart: Añadir al carrito
     add_variant: Añadir variante
     additional_item: Costo adicional por elemento
+    address: Address
     address1: Dirección
     address2: Dirección (continuación)
     adjustable:
@@ -383,6 +418,7 @@ es-MX:
         orders: Ordenes
         overview: Visión general
         products: Productos
+        promotion_categories: Promotion Categories
         promotions: Promociones
         properties:
         prototypes:
@@ -408,9 +444,6 @@ es-MX:
     all_adjustments_opened: Todos los ajustes abiertos exitosamente!
     all_departments: Todos los departamentos
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Permitir que SSL sea usado en modos de prueba y desarrollo
-    allow_ssl_in_production: Permitir que SSL sea usado en modo de producción
-    allow_ssl_in_staging: Permitir que SSL sea usado en modo de staging
     already_signed_up_for_analytics: Ya te has registrado para Spree Analytics
     alt_text: Texto alternativo
     alternative_phone: Teléfono alternativo
@@ -473,10 +506,11 @@ es-MX:
     card_type_is: Tipo de tarjeta
     cart: Carrito
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Categorías
     category: Categoría
     charged:
-    check_for_spree_alerts: Verificar alertas de Spree
     checkout: Pagar
     choose_a_customer: Elegir cliente
     choose_a_taxon_to_sort_products_for:
@@ -537,10 +571,7 @@ es-MX:
     credit_owed: Crédito disponible
     credits:
     currency: Moneda
-    currency_decimal_mark: Marca de decimales de moneda
     currency_settings: Configuraciones de moneda
-    currency_symbol_position: "¿Poner el símbolo de moneda antes o después de la cantidad en dólares?"
-    currency_thousands_separator: Separador de miles de moneda
     current: Actual
     current_promotion_usage: 'Uso Actual: %{count}'
     customer: Cliente
@@ -573,6 +604,7 @@ es-MX:
     default_tax: Impuesto por defecto
     default_tax_zone: Zona de impuestos por defecto
     delete: Eliminar
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Envío
     depth: Profundidad
@@ -583,7 +615,6 @@ es-MX:
     discount_amount: Importe del descuento
     dismiss_banner: No. ¡Gracias!. No estoy interesado, no muestres este mensaje de nuevo
     display: Mostrar
-    display_currency: Display currency
     doesnt_track_inventory:
     edit: Editar
     editing_resource:
@@ -610,12 +641,10 @@ es-MX:
     enable_mail_delivery: Habilitar envío por correo
     end: Fin
     ending_in: Ending in
-    environment: Entorno
     error: error
     errors:
       messages:
         could_not_create_taxon: no pudo crearse la categoría
-        no_payment_methods_available: No hay métodos de pago configurados para este entorno
         no_shipping_methods_available: No hay métodos de envío disponibles para la localidad seleccionada. Por favor, cambie la dirección y vuelva a intentarlo.
     errors_prohibited_this_record_from_being_saved:
       one: 1 error impidió que no pudiera guardarse el registro
@@ -645,6 +674,7 @@ es-MX:
     failed_payment_attempts:
     filename: Nombre de archivo
     fill_in_customer_info: Por favor complete la información del cliente
+    filter: Filter
     filter_results: Filtrar resultados
     finalize: Finalizar
     finalized:
@@ -660,7 +690,6 @@ es-MX:
     free_shipping_amount:
     front_end: Sistema Interno
     gateway: Pasarela
-    gateway_config_unavailable: Pasarela no disponible por configuración
     gateway_error: Error en la pasarela
     general: General
     general_settings: Configuración general
@@ -670,7 +699,6 @@ es-MX:
     guest_user_account: Comprar sin registrarse
     has_no_shipped_units: no tiene unidades enviadas
     height: Altura
-    hide_cents: Ocultar centavos
     home: Inicio
     i18n:
       available_locales: Traduciones Disponibles
@@ -685,7 +713,6 @@ es-MX:
       this_file_language:
       translations: Traducciones
     icon: Icono
-    identifier:
     image: Imagen
     images: Imágenes
     implement_eligible_for_return:
@@ -696,6 +723,8 @@ es-MX:
     included_price_validation: No puede ser seleccionado a menos que hayas elegido una zona de impuestos por defecto
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: Ingresa tu correo en el formulario a continuación
     insufficient_stock: No hay inventario suficiente, sólo %{on_hand} disponibles
@@ -737,6 +766,7 @@ es-MX:
     line_item_adjustments:
     list: Lista
     loading: Cargando
+    loading_tree: Loading tree. Please wait…
     locale_changed: Idioma cambiado
     location: Localización
     lock: Bloquear
@@ -768,6 +798,7 @@ es-MX:
     meta_title:
     metadata: Metadatos
     minimal_amount: Cantidad mínima
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Mes
     more: Más
     move_stock_between_locations: Mover existencias entre locaciones
@@ -796,6 +827,7 @@ es-MX:
     new_refund_reason:
     new_return_authorization: Nueva autorización de devolución
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Nueva categoría de envío
     new_shipping_method: Nueva forma de envío
@@ -859,6 +891,7 @@ es-MX:
     order_details: Detalles del pedido
     order_email_resent: Email de pedido reenviado
     order_information: Información del pedido
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Querido cliente,\n
@@ -869,7 +902,6 @@ es-MX:
         total:
       confirm_email:
         dear_customer: |
-          Querido cliente,
         instructions: Por favor revise y mantenga la siguiente información del pedido para sus registros
         order_summary: Resumen del pedido
         subject: Confirmación de pedido
@@ -897,7 +929,6 @@ es-MX:
     order_total: Total del pedido
     order_updated: Pedido actualizado
     orders: Pedidos
-    other_items_in_other:
     out_of_stock: Fuera de Inventario
     overview: General
     package_from: Paquete desde
@@ -911,7 +942,6 @@ es-MX:
     pay: Pagar
     payment: Pago
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Información del pago
     payment_method: Método de pago
     payment_method_not_supported:
@@ -939,6 +969,7 @@ es-MX:
     phone: Teléfono
     place_order: Hacer pedido
     please_define_payment_methods: Por favor primero defina algunos métodos de pago
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Algo salió mal. Por favor intente agregando el artículo de nuevo
     powered_by: Hecho con
     pre_tax_amount:
@@ -983,6 +1014,7 @@ es-MX:
         description:
         name:
     promotion_actions: Acciones
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Coincide con todas las siguientes reglas
@@ -1038,6 +1070,7 @@ es-MX:
     received: Recibido
     reception_status:
     reference: Referencia
+    reference_contains: Reference Contains
     refund: Devolver
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1071,6 +1104,7 @@ es-MX:
     rename: Renombrar
     report:
     reports: Informes
+    resellable: Resellable
     resend: Volver a enviar
     reset_password: Reiniciar mi contraseña
     response_code: Código de respuesta
@@ -1083,6 +1117,7 @@ es-MX:
     return_authorizations: Autorizaciones para devoluciones
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1090,7 +1125,6 @@ es-MX:
     return_number:
     return_quantity: Devolver cantidad
     returned: regresó
-    returns:
     review: Revisar
     risk:
     risk_analysis:
@@ -1098,6 +1132,7 @@ es-MX:
     rma_credit: Crédito RMA
     rma_number: Número RMA
     rma_value: Valor RMA
+    role_id: Role ID
     roles: Funciones
     rules: Reglas
     safe:
@@ -1119,6 +1154,7 @@ es-MX:
     select_a_stock_location:
     select_from_prototype: Seleccionar desde prototipo
     select_stock: Elegir inventario
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Envia una copia de todos los correos a
     send_mails_as: Enviar correos como
     server: Servidor
@@ -1309,7 +1345,9 @@ es-MX:
     usage_limit: Límite de uso
     use_app_default:
     use_billing_address: Usar la dirección de facturación
+    use_existing_cc: Use an existing card on file
     use_new_cc: Usar una tarjeta diferente
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Usar Amazon S3 para imágenes
     user: Usuario
     user_rule:

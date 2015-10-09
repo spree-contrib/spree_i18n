@@ -11,7 +11,6 @@ de:
         phone: Telefonnummer
         state: Bundesland
         zipcode: PLZ
-        company: Firma
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -41,20 +40,6 @@ de:
         name: Name
         presentation: Angezeigter Wert
       spree/order:
-        checkout_complete: Bestellung Erfolgreich
-        completed_at: Abgeschlossen am
-        considered_risky: Riskant
-        coupon_code: Gutscheincode
-        created_at: Bestelldatum
-        email: Kunden E-Mail
-        ip_address: IP Adresse
-        item_total: Artikel gesamt
-        number: Bestellnummer
-        payment_state: Bezahlstatus
-        shipment_state: Versandstatus
-        special_instructions: Zusätzliche Angaben
-        state: Status
-        total: Gesamtsumme
       spree/order/bill_address:
         address1: Rechnungsanschrift Straße
         city: Rechnungsanschrift Ort
@@ -69,10 +54,25 @@ de:
         firstname: Lieferanschrift Vorname
         lastname: Lieferanschrift Nachname
         phone: Lieferanschrift Telefon
-        state: Lieferadresse Bundesland
+        state: State
         zipcode: LIeferadresse Postleitzahl
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Betrag
+        number: Number
       spree/payment_method:
         name: Name
       spree/product:
@@ -106,6 +106,8 @@ de:
         amount: Anzahl
       spree/role:
         name: Name
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Abkürzung
         name: Name
@@ -191,10 +193,10 @@ de:
               return_items_order_id_does_not_match: Ein oder mehrere Artikel stimmen mit der zu Erstattenden Bestellung nicht überein.
         spree/return_item:
           attributes:
-            reimbursement:
-              cannot_be_associated_unless_accepted: Muss vor der Verknüpfung akzeptiert werden.
             inventory_unit:
               other_completed_return_item_exists: "%{inventory_unit_id} wurde bereits von %{return_item_id} eingenommen"
+            reimbursement:
+              cannot_be_associated_unless_accepted: Muss vor der Verknüpfung akzeptiert werden.
         spree/store:
           attributes:
             base:
@@ -281,12 +283,12 @@ de:
       spree/state_change:
         one: Statusänderung
         other: Statusänderungen
-      spree/stock_movement:
-        one: Lagerbewegung
-        other: Lagerbewegungen
       spree/stock_location:
         one: Lagerstätte
         other: Lagerstätten
+      spree/stock_movement:
+        one: Lagerbewegung
+        other: Lagerbewegungen
       spree/stock_transfer:
         one: Umlagerung
         other: Umlagerungen
@@ -361,13 +363,6 @@ de:
         one: 'Ein Fehler hat das Speichern von %{resource} verhindert:'
         other: "%{count} Fehler haben das Speichern von %{resource} verhindert:"
   spree:
-    filter: Filter
-    order_line_items: Bestellposten
-    transaction_id: Transaktion
-    role_id: Rolle
-    new_role: Neue Rolle
-    address: Adresse
-    backorder: Nachlieferung
     abbreviation: Abkürzung
     accept: Akzeptieren
     acceptance_errors: Akzeptanzfehler
@@ -403,10 +398,10 @@ de:
     add_rule_of_type: Regel hinzufügen
     add_state: Bundesland hinzufügen
     add_stock: Lager hinzufügen
-    add_stock_management: Lagerverwaltung hinzufügen
     add_to_cart: In den Warenkorb
     add_variant: Variante hinzufügen
     additional_item: Kosten für weiteren Artikel
+    address: Adresse
     address1: Adresse
     address2: Adresse (Zusatz)
     adjustable: Anpassbar
@@ -423,6 +418,7 @@ de:
         orders: Bestellungen
         overview: Übersicht
         products: Produkte
+        promotion_categories: Promotion Categories
         promotions: Aktion
         properties: Eigenschaften
         prototypes: Prototypen
@@ -448,9 +444,6 @@ de:
     all_adjustments_opened: Alle Anpassung wurden erfolgreich geöffnet!
     all_departments: Alle Bereiche
     all_items_have_been_returned: Alles zurückgegeben
-    allow_ssl_in_development_and_test: Erlaube SSL im Vorproduktions- und Testmodus
-    allow_ssl_in_production: Erlaube SSL im Produktionsmodus
-    allow_ssl_in_staging: Erlaube SSL im Vorproduktionsmodus
     already_signed_up_for_analytics: Sie haben sich bereits für Spree Analytics registriert
     alt_text: Alternativer Text
     alternative_phone: Alternative Telefonnummer
@@ -513,10 +506,11 @@ de:
     card_type_is: Kartentyp ist
     cart: Warenkorb
     cart_subtotal: Zwischensumme Warenkorb
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategorien
     category: Kategorie
     charged: Berechnet
-    check_for_spree_alerts: Auf Warnungen von Spree prüfen
     checkout: Zur Kasse
     choose_a_customer: Kunden auswählen
     choose_a_taxon_to_sort_products_for: Sortierungsklassifizierung wählen
@@ -577,10 +571,7 @@ de:
     credit_owed: Betrag ausstehend
     credits: Gutschrift
     currency: Currency
-    currency_decimal_mark: Dezimaltrennzeichen
     currency_settings: Währungseinstellungen
-    currency_symbol_position: Währungssymbol vor oder nach dem Betrag anzeigen?
-    currency_thousands_separator: Tausendertrennzeichen
     current: Stand
     current_promotion_usage: 'Aktueller Verbrauch: %{count}'
     customer: Kunde
@@ -613,6 +604,7 @@ de:
     default_tax: Standard Steuer
     default_tax_zone: Standard Steuergebiet
     delete: Löschen
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present: In dieser Bestellung sind Artikel enhalten welche nicht länger verfügbar sind.
     delivery: Versand
     depth: Tiefe
@@ -623,7 +615,6 @@ de:
     discount_amount: Skonto
     dismiss_banner: "Nein. Danke! Ich bin nicht interessiert, bitte diese Nachricht nicht erneut anzeigen."
     display: Angezeigter Wert
-    display_currency: Währung anzeigen
     doesnt_track_inventory: Bestandsverfolgung ist deaktiviert
     edit: Bearbeiten
     editing_resource: Eintrag bearbeiten
@@ -650,12 +641,10 @@ de:
     enable_mail_delivery: E-Mail Versand aktivieren
     end: Ende
     ending_in: Ending in
-    environment: Umgebung
     error: Fehler
     errors:
       messages:
         could_not_create_taxon: Konnte die Produktklasse nicht erstellen
-        no_payment_methods_available: Für diese Umgebung wurden keine Zahlungsmethoden definiert
         no_shipping_methods_available: Für diese Region sind keine Versandart verfügbar. Bitte wählen Sie eine anderen Region aus.
     errors_prohibited_this_record_from_being_saved:
       one: 1 Prüfung ist fehlgeschlagen
@@ -685,6 +674,7 @@ de:
     failed_payment_attempts: Fehlgeschlagene Zahlversuche
     filename: Dateiname
     fill_in_customer_info: Bitte geben Sie die Kundendaten ein
+    filter: Filter
     filter_results: Ergebnisse filtern
     finalize: abschließen
     finalized: abgeschlossen
@@ -700,7 +690,6 @@ de:
     free_shipping_amount: Versandkostenfreibetrag
     front_end: Shop-Ansicht
     gateway: Schnittstelle
-    gateway_config_unavailable: Schnittstelle für diese Umgebung nicht erhältlich
     gateway_error: Schnittstellen-Fehler
     general: Allgemein
     general_settings: Allgemeine Einstellungen
@@ -710,7 +699,6 @@ de:
     guest_user_account: Ohne Registrierung bestellen
     has_no_shipped_units: hat keine gelieferten Einheiten
     height: Höhe
-    hide_cents: Centbeträge ausblenden
     home: Home
     i18n:
       available_locales: Verfügbare Locales
@@ -725,7 +713,6 @@ de:
       this_file_language: Deutsch (DE)
       translations: "Übersetzungen"
     icon: Symbol
-    identifier: id
     image: Bild
     images: Bilder
     implement_eligible_for_return: "Für den EligibilityValidator muss #eligible_for_return? implementiert sein."
@@ -779,6 +766,7 @@ de:
     line_item_adjustments: Anpassungen Bestellposten
     list: Liste
     loading: Laden
+    loading_tree: Loading tree. Please wait…
     locale_changed: Sprache geändert
     location: Standort
     lock: Sperren
@@ -810,6 +798,7 @@ de:
     meta_title: Meta-Titel
     metadata: Metadaten
     minimal_amount: Mindestanzahl
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Monat
     more: Mehr
     move_stock_between_locations: Lager zwischen Standorten bewegen
@@ -838,6 +827,7 @@ de:
     new_refund_reason: Rückerstattungsgrund begründen
     new_return_authorization: Neue Rückgabebewilligung
     new_rma_reason: Neue Rücksendungsbegründung
+    new_role: Neue Rolle
     new_shipment_at_location: Neue Lieferung an Adresse
     new_shipping_category: Neue Versandkategorie
     new_shipping_method: Neue Versandart
@@ -901,6 +891,7 @@ de:
     order_details: Details der Bestellung
     order_email_resent: Bestellbestätigung erneut versendet
     order_information: Bestellinformationen
+    order_line_items: Bestellposten
     order_mailer:
       cancel_email:
         dear_customer: "Sehr geehrte Kundin, geehrter Kunde,\n"
@@ -938,7 +929,6 @@ de:
     order_total: Gesamtsumme
     order_updated: Bestellung aktualisiert
     orders: Bestellungen
-    other_items_in_other: Andere Bestellpositionen
     out_of_stock: Ausverkauft
     overview: Überblick
     package_from: Paket von
@@ -952,7 +942,6 @@ de:
     pay: bezahlen
     payment: Zahlung
     payment_could_not_be_created: Zahlung konnte nicht erstellt werden.
-    payment_identifier: ZahlungsID
     payment_information: Zahlungsinformationen
     payment_method: Zahlungsmethode
     payment_method_not_supported: Zahlungsmethode wird nicht unterstützt
@@ -980,6 +969,7 @@ de:
     phone: Telefon
     place_order: Bestellung ausführen
     please_define_payment_methods: Bitte definieren Sie zuerst mindestens eine Zahlungsmethode.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Da ist etwas schief gelaufen. Bitte versuchen sie den Artikel erneut in den Warenkob zu tun.
     powered_by: Unterstützt von
     pre_tax_amount: Vorsteuer Zwischensumme
@@ -1024,6 +1014,7 @@ de:
         description: Die Lieferungen dieser Bestellung von Versandkosten befreien
         name: Versandkostenfrei
     promotion_actions: Aktionen
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Alle Regeln müssen greifen
@@ -1079,6 +1070,7 @@ de:
     received: erhalten
     reception_status: Empfangsstatus
     reference: Referenz
+    reference_contains: Reference Contains
     refund: Rückerstattung beantragen
     refund_amount_must_be_greater_than_zero: Rückerstattung muss größer 0 sein
     refund_reasons: Rückerstattungsbegründungen
@@ -1112,6 +1104,7 @@ de:
     rename: Rename
     report: Bericht
     reports: Berichte
+    resellable: Resellable
     resend: Neu senden
     reset_password: Mein Passwort zurücksetzen
     response_code: Rückgabewert
@@ -1123,7 +1116,8 @@ de:
     return_authorization_updated: Rückgabebewilligung aktualisiert
     return_authorizations: Rückgabebewilligungen
     return_item_inventory_unit_ineligible: Artikelposition des Warenkorbs von der Rückgabe ausgeschlossen
-    return_item_inventory_unit_reimbursed:  Artikelposition des Warenkorbs durch Rücksendung vergütet
+    return_item_inventory_unit_reimbursed: Artikelposition des Warenkorbs durch Rücksendung vergütet
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible: Rückgabe des Artikels ausgeschlossen
     return_item_time_period_ineligible: Rückgabe des Artikels zeitlich ausgeschlossen
     return_items: Rücksendeartikel
@@ -1131,7 +1125,6 @@ de:
     return_number: Rücksendenummer
     return_quantity: Rückgabemenge
     returned: Zurückgegeben
-    returns: Rücksendungen
     review: Überprüfung
     risk: Risiko
     risk_analysis: Risikoanalyse
@@ -1139,6 +1132,7 @@ de:
     rma_credit: Rücksendungskredit
     rma_number: Rücksendungsnummer
     rma_value: Rücksendewert
+    role_id: Rolle
     roles: Rollen
     rules: Regeln
     safe: Sicher
@@ -1160,6 +1154,7 @@ de:
     select_a_stock_location: Lager wählen
     select_from_prototype: Von einem Prototypen
     select_stock: Lager wählen
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Schicke eine Kopie aller E-Mails an
     send_mails_as: Schicke E-Mail als
     server: Server
@@ -1350,7 +1345,9 @@ de:
     usage_limit: Nutzungsbeschränkung
     use_app_default: App-Standard verwenden
     use_billing_address: Rechnungsadresse verwenden
+    use_existing_cc: Use an existing card on file
     use_new_cc: Eine neue Karte verwenden
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Benutze Amazon S3 für Bilder
     user: Benutzer
     user_rule:

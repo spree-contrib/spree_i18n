@@ -40,20 +40,6 @@ lv:
         name: Nosaukums
         presentation: Presentation
       spree/order:
-        checkout_complete:
-        completed_at:
-        considered_risky:
-        coupon_code: Kupona Kods
-        created_at:
-        email:
-        ip_address:
-        item_total:
-        number:
-        payment_state:
-        shipment_state:
-        special_instructions:
-        state:
-        total:
       spree/order/bill_address:
         address1:
         city:
@@ -68,10 +54,25 @@ lv:
         firstname:
         lastname:
         phone:
-        state:
+        state: State
         zipcode:
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount:
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +106,8 @@ lv:
         amount: Summa
       spree/role:
         name: Nosaukums
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Saīsinājums
         name: Nosaukums
@@ -209,6 +212,8 @@ lv:
         one: Credit Card
         other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Krājuma vienība
         other: Krājuma vienības
@@ -216,7 +221,11 @@ lv:
         one: Pozīcijas vienība
         other: Pozīcijas vienības
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Pasūtījums
         other: Pasūtījumi
@@ -224,11 +233,17 @@ lv:
         one: Maksājums
         other: Maksājumi
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Produkts
         other: Produkti
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Property
         other: Properties
@@ -236,12 +251,20 @@ lv:
         one: Prototips
         other: Prototipi
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Atgriešanas autorizācija
         other: Atgriešanas autorizācijas
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Loma
         other: Lomas
@@ -252,13 +275,23 @@ lv:
         one: Piegādes kategorija
         other: Piegādes kategorijas
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: "Štats"
         other: "Štati"
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Nodokļu kategorija
         other: Nodokļu kategorijas
@@ -266,12 +299,20 @@ lv:
         one: Nodokļu likme
         other: Nodokļu likmes
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: Lietotājs
         other: Lietotāji
       spree/variant:
+        one: Variant
+        other: Variants
       spree/zone:
         one: Zona
         other: Zonas
@@ -319,6 +360,8 @@ lv:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Saīsinājums
     accept:
@@ -355,10 +398,10 @@ lv:
     add_rule_of_type: Add rule of type
     add_state: Pievienot rajonu
     add_stock:
-    add_stock_management:
     add_to_cart: Pievienot grozam
     add_variant:
     additional_item: Papildus vienības maksa
+    address: Address
     address1:
     address2:
     adjustable:
@@ -375,6 +418,7 @@ lv:
         orders:
         overview:
         products:
+        promotion_categories: Promotion Categories
         promotions:
         properties:
         prototypes:
@@ -400,9 +444,6 @@ lv:
     all_adjustments_opened:
     all_departments: Visas nodaļas
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test:
-    allow_ssl_in_production:
-    allow_ssl_in_staging:
     already_signed_up_for_analytics:
     alt_text: Cits teksts
     alternative_phone: Cits telefons
@@ -465,10 +506,11 @@ lv:
     card_type_is: Kartes tips ir
     cart: Grozs
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategorijas
     category: Kategorija
     charged:
-    check_for_spree_alerts:
     checkout: Pasūtīt
     choose_a_customer:
     choose_a_taxon_to_sort_products_for:
@@ -529,10 +571,7 @@ lv:
     credit_owed: Kredīta parāds
     credits:
     currency:
-    currency_decimal_mark:
     currency_settings:
-    currency_symbol_position: Put currency symbol before or after dollar amount?
-    currency_thousands_separator:
     current: Tagadējais
     current_promotion_usage:
     customer: Klients
@@ -565,6 +604,7 @@ lv:
     default_tax:
     default_tax_zone:
     delete: Izdzēst
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery:
     depth: Dziļums
@@ -575,7 +615,6 @@ lv:
     discount_amount:
     dismiss_banner:
     display: Rādīt
-    display_currency:
     doesnt_track_inventory:
     edit: Rediģēt
     editing_resource:
@@ -602,12 +641,10 @@ lv:
     enable_mail_delivery: Atļaut pasta sūtīšanu
     end:
     ending_in:
-    environment: Vide
     error: Kļūda
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available:
         no_shipping_methods_available:
     errors_prohibited_this_record_from_being_saved:
       one: Dēļ 1 kļūdas ieraksts netika saglabāts
@@ -637,6 +674,7 @@ lv:
     failed_payment_attempts:
     filename: Faila nosaukums
     fill_in_customer_info:
+    filter: Filter
     filter_results:
     finalize: Pabeigt
     finalized:
@@ -652,7 +690,6 @@ lv:
     free_shipping_amount:
     front_end: Front End
     gateway: Gateway
-    gateway_config_unavailable: Gateway unavailable for environment
     gateway_error: Gateway kļūda
     general: Vispārīgi
     general_settings: Vispārīgi iestatījumi
@@ -662,7 +699,6 @@ lv:
     guest_user_account: Izrakstīties kā ciemiņam
     has_no_shipped_units: Nav nosūtītu vienību
     height: Augstums
-    hide_cents:
     home: Mājas
     i18n:
       available_locales:
@@ -677,7 +713,6 @@ lv:
       this_file_language: Latvijas (LV)
       translations:
     icon: Icon
-    identifier:
     image: Attēls
     images: Attēli
     implement_eligible_for_return:
@@ -688,6 +723,8 @@ lv:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: 'Aizpildiet formu zemāk un uz e-pastu tiks nosūtīta instrukcija kā atjaunot paroli:'
     insufficient_stock: Insufficient stock available, only %{on_hand} remaining
@@ -729,6 +766,7 @@ lv:
     line_item_adjustments:
     list: Saraksts
     loading: Lādējās
+    loading_tree: Loading tree. Please wait…
     locale_changed: Valoda nomainīta
     location:
     lock:
@@ -760,6 +798,7 @@ lv:
     meta_title:
     metadata:
     minimal_amount:
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Mēnesis
     more:
     move_stock_between_locations:
@@ -788,6 +827,7 @@ lv:
     new_refund_reason:
     new_return_authorization: New Return Authorization
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Jauna sūtījuma kategorija
     new_shipping_method: Jauna sūtījuma metode
@@ -851,6 +891,7 @@ lv:
     order_details: Pasūtījuma detaļas
     order_email_resent: Pasūtījuma e-pasts vēlreiz pārsūtīts
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer:
@@ -888,7 +929,6 @@ lv:
     order_total: Kopējais pasūtījums
     order_updated: Pasūtījums atjaunots
     orders: Pasūtījumi
-    other_items_in_other:
     out_of_stock: Izpārdots
     overview: Pārskats
     package_from:
@@ -902,7 +942,6 @@ lv:
     pay: maksā
     payment: Maksājums
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Maksājumu informācija
     payment_method: Maksājuma metode
     payment_method_not_supported:
@@ -930,6 +969,7 @@ lv:
     phone: Telefons
     place_order: Veikt pasūtījumu
     please_define_payment_methods:
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error:
     powered_by:
     pre_tax_amount:
@@ -974,6 +1014,7 @@ lv:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all:
@@ -1029,6 +1070,7 @@ lv:
     received: Saņemts
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund: Atmaksāt
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1062,6 +1104,7 @@ lv:
     rename:
     report:
     reports: Atskaites
+    resellable: Resellable
     resend: Pārsūtīt
     reset_password: Nomainīt manu paroli
     response_code: Reakcijas kods
@@ -1074,6 +1117,7 @@ lv:
     return_authorizations:
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1081,7 +1125,6 @@ lv:
     return_number:
     return_quantity:
     returned: Atgriezts
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1089,6 +1132,7 @@ lv:
     rma_credit: RMA Credit
     rma_number: RMA numurs
     rma_value: RMA vērtība
+    role_id: Role ID
     roles:
     rules:
     safe:
@@ -1110,6 +1154,7 @@ lv:
     select_a_stock_location:
     select_from_prototype: Izvēlēties no prototipiem
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Sūtīt visu vēstuļu kopijas uz
     send_mails_as: Sūtīt vēstules kā
     server: Servers
@@ -1300,7 +1345,9 @@ lv:
     usage_limit: Lietotāja limits
     use_app_default:
     use_billing_address: Lietot rēķina adresi
+    use_existing_cc: Use an existing card on file
     use_new_cc: Izmntot jaunu karti
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3:
     user: Lietotājs
     user_rule:

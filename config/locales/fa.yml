@@ -1,5 +1,4 @@
 fa:
-  Bazaar: بازار
   activerecord:
     attributes:
       spree/address:
@@ -41,21 +40,6 @@ fa:
         name: "نام"
         presentation: "نمایش"
       spree/order:
-        checkout_complete:
-        completed_at: پایان یافته در
-        coupon_code: کد کوپن
-        created_at: ساخته شده در
-        email: ایمیل
-        ip_address: آدرس IP
-        item_total: مجموع ایتم ها
-        number: شماره
-        payment_state: وضعیت پرداخت
-        shipment_state: وضعیت مرسوله
-        special_instructions: دستورالعمل ویژه
-        state: وضعیت
-        total: مجموع
-        considered_risky: ریسکی
-
       spree/order/bill_address:
         address1:
         city:
@@ -70,10 +54,25 @@ fa:
         firstname:
         lastname:
         phone:
-        state:
+        state: State
         zipcode:
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount:
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -107,6 +106,8 @@ fa:
         amount: مقدار
       spree/role:
         name: "نام"
+      spree/shipment:
+        number: Number
       spree/state:
         abbr:
         name: "نام"
@@ -211,10 +212,20 @@ fa:
         one: "کارت اعتباری"
         other: "کارت‌های اعتباری"
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
+        one: Inventory Unit
+        other: Inventory Units
       spree/line_item:
+        one: Line Item
+        other: Line Items
       spree/option_type: نوع گزینه
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: سفارش
         other: سفارشات
@@ -222,11 +233,17 @@ fa:
         one: Payment
         other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: "محصول"
         other: "محصول‌ها"
       spree/promotion: فروش ویژه
+        one: Promotion
+        other: Promotions
       spree/promotion_category: دسته بندی فروش ویژه
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: "خصوصیت"
         other: "خصوصیات"
@@ -234,34 +251,62 @@ fa:
         one: نمونه آزمایشی
         other: نمنونه های آزمایشی
       spree/refund_reason: دلیل استرداد
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement: بازپرداخت
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type: نوع بازپرداخت
-      reimbursement_perform_failed:
-      reimbursement_status: وضعیت بازپرداخت
-      reimbursement_type: نوع بازپرداخت
-      reimbursement_type_override:
-      reimbursement_types: انواع بازپرداخت
-      reimbursements: بازپرداخت‌ها
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization: مجوز بازگشت
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason: دلیل مجوز بازگشت
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role: نقش
+        one: Roles
+        other: Roles
       spree/shipment: نحوه ارسال
+        one: Shipment
+        other: Shipments
       spree/shipping_category:
         one: دسته‌بندی حمل و نقل
         other: دسته‌بندی حمل نقل
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: State
         other: States
+      spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
+      spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate:
+        one: Tax Rate
+        other: Tax Rates
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
         one: Taxonomy
         other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: "کاربر"
         other: "کاربرها"
@@ -315,9 +360,9 @@ fa:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
-    quick_search: جستوجو سریع . . .
-    filter: فیلتر
     abbreviation: "مخفف"
     accept:
     acceptance_errors:
@@ -335,6 +380,7 @@ fa:
       list: لیست
       listing: لیست کردن
       new: جدید
+      refund: Refund
       save:
       update: بروز رسانی
     activate: Activate
@@ -342,6 +388,7 @@ fa:
     add: افزودن
     add_action_of_type: Add action of type
     add_country: افزودن کشور
+    add_coupon_code: Add Coupon Code
     add_new_header: Add New Header
     add_new_style: Add New Style
     add_one:
@@ -351,12 +398,13 @@ fa:
     add_rule_of_type: افزودن قانون نوع
     add_state: افزودن ایالت یا استان
     add_stock:
-    add_stock_management:
     add_to_cart: افزودن به سبد خرید
     add_variant:
     additional_item: قیمت آیتم اضافه شده
+    address: Address
     address1:
     address2:
+    adjustable: Adjustable
     adjustment: تعدیل
     adjustment_amount:
     adjustment_successfully_closed:
@@ -366,27 +414,36 @@ fa:
     admin:
       tab:
         configuration: تنظیمات
+        option_types: انواع اختیارات
         orders: سفارشات
         overview: نمای کلی
         products: محصولات
+        promotion_categories: Promotion Categories
         promotions: فروش ویژه
         properties: ویژگی ها
         prototypes: نمونه های اولیه
         reports: گزارشات
-        users: کاربران
-        option_types: انواع اختیارات
         taxonomies: رده بندی
         taxons: گونه
+        users: کاربران
+      user:
+        account: Account
+        addresses: Addresses
+        items: Items
+        items_purchased: Items Purchased
+        order_history: Order History
+        order_num: "Order #"
+        orders: Orders
+        user_information: User Information
     administration: مدیریت
+    advertise: Advertise
     agree_to_privacy_policy:
     agree_to_terms_of_service:
     all: همه
     all_adjustments_closed:
     all_adjustments_opened:
     all_departments: همه ی دپارتمان ها
-    allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
-    allow_ssl_in_production: Allow SSL to be used in production mode
-    allow_ssl_in_staging: Allow SSL to be used in staging mode
+    all_items_have_been_returned: All items have been returned
     already_signed_up_for_analytics:
     alt_text: متن جایگزین
     alternative_phone: تلفن جایگزین
@@ -399,69 +456,72 @@ fa:
     analytics_desc_list_4:
     analytics_trackers: ردگیرهای تحلیلی
     and: and
+    approve: approve
+    approved_at: Approved at
+    approver: Approver
     are_you_sure: آیا مطمئن هستید؟
     are_you_sure_delete: آیا مطمئن هستید که می خواهید این سطر را پاک کنید؟
     associated_adjustment_closed:
-    attachment_default_style: Attachments Style
-    attachment_default_url: Attachments URL
-    attachment_path: Attachments Path
-    attachment_styles: Paperclip Styles
-    attachment_url:
     at_symbol: '@'
     authorization_failure: خرابی در صدور مجوز
+    authorized: Authorized
+    auto_capture: Auto Capture
     available_on: موجود است در
+    average_order_value: Average Order Value
+    avs_response: AVS Response
     back: برگشت
     back_end: Back End
-    back_to_adjustments_list: Back To Adjustments List
-    back_to_images_list: Back To Images List
-    back_to_option_types_list:
-    back_to_orders_list:
-    back_to_payment_methods_list: Back To Payment Methods List
-    back_to_payments_list: Back To Payments List
-    back_to_products_list: Back To Products List
-    back_to_promotions_list: بازگشت به لیست محصولات
-    back_to_properties_list: Back To Products List
-    back_to_prototypes_list: Back To Prototypes List
-    back_to_reports_list: Back To Reports List
-    back_to_shipping_categories: Back To Shipping Categories
-    back_to_shipping_methods_list: Back To Shipping Methods List
-    back_to_states_list: Back To States List
-    back_to_stock_locations_list:
-    back_to_stock_movements_list:
-    back_to_stock_transfers_list:
+    back_to_payment: Back To Payment
+    back_to_resource_list: 'Back To %{resource} List'
+    back_to_rma_reason_list: Back To RMA Reason List
     back_to_store: بازگشت به فروشگاه
-    back_to_tax_categories_list: Back To Tax Categories List
-    back_to_taxonomies_list: Back To Taxonomies List
-    back_to_trackers_list: Back To Trackers List
     back_to_users_list:
-    back_to_zones_list: Back To Zones List
     backorderable:
+    backorderable_default: Backorderable default
+    backordered: Backordered
     backorders_allowed:
     balance_due: پرداخت نشده
+    base_amount: Base Amount
+    base_percent: Base Percent
     bill_address: آدرس
     billing: پرداخت
     billing_address: آدرس پرداخت
     both: هر دو
+    calculated_reimbursements: Calculated Reimbursements
     calculator: ماشین حساب
     calculator_settings_warning: اگر می خواهید نوع ماشین حساب را تغییر دهید، باید پیش از انجام تغییرات، حالت فعلی را ذخیره کنید
     cancel: لغو
+    canceled_at: Canceled at
+    canceler: Canceler
+    cannot_create_customer_returns: Cannot create customer returns as this order has no shipped units.
     cannot_create_payment_without_payment_methods: You cannot create a payment for an order without any payment methods defined.
     cannot_create_returns: Cannot create returns as this order no shipped units.
     cannot_perform_operation: عملیات درخواستی قابل انجام نیست
     cannot_set_shipping_method_without_address:
     capture: Capture
+    capture_events: Capture events
     card_code: کد کارت
     card_number: شماره کارت
+    card_type: Brand
     card_type_is: نوع کارت
     cart: سبد خرید
+    cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: دسته بندی ها
     category: دسته بندی
-    check_for_spree_alerts:
+    charged: Charged
     checkout: تصفیه حساب
     choose_a_customer:
+    choose_a_taxon_to_sort_products_for: "Choose a taxon to sort products for"
     choose_currency: انتخاب واحد پول
     choose_dashboard_locale:
+    choose_location: Choose location
     city: شهر
+    clear_cache: Clear Cache
+    clear_cache_ok: Cache was flushed
+    clear_cache_warning: Clearing cache will temporarily reduce the performance of your store.
+    click_and_drag_on_the_products_to_sort_them: Click and drag on the products to sort them.
     clone: Clone
     close:
     close_all_adjustments:
@@ -470,7 +530,6 @@ fa:
     complete: تکمیل
     configuration: پیکربندی
     configurations: پیکربندی ها
-    configure_s3: Configure S3
     confirm: تایید
     confirm_delete: تایید حذف
     confirm_password: تکرار رمز عبور
@@ -479,12 +538,18 @@ fa:
     cost_currency: واحد پول
     cost_price: قیمت
     could_not_connect_to_jirafe:
+    could_not_create_customer_return: Could not create customer return
     could_not_create_stock_movement:
     count_on_hand:
     countries: کشورها
     country: کشور
     country_based: بر حسب کشور
     country_name:
+    country_names:
+      CA: Canada
+      FRA: France
+      ITA: Italy
+      US: United States of America
     coupon: کوپن
     coupon_code: کد کوپن
     coupon_code_already_applied:
@@ -494,25 +559,29 @@ fa:
     coupon_code_max_usage:
     coupon_code_not_eligible:
     coupon_code_not_found:
+    coupon_code_unknown_error: This coupon code could not be applied to the cart at this time.
     create: ایجاد
     create_a_new_account: ایجاد یک حساب جدید
+    create_new_order: Create new order
+    create_reimbursement: Create reimbursement
     created_at:
     credit: اعتبار
     credit_card: کارت اعتباری
     credit_cards: Credit Cards
     credit_owed: اعتبار مقروض
+    credits: Credits
     currency: واحد پول
-    currency_decimal_mark:
     currency_settings: Currency Settings
-    currency_symbol_position: Put currency symbol before or after dollar amount?
-    currency_thousands_separator:
     current: جاری
     current_promotion_usage:
     customer: مشتری
     customer_details: جزئیات مشتری
     customer_details_updated: The customer's details have been updated.
+    customer_return: Customer Return
+    customer_returns: Customer Returns
     customer_search: جستجوی مشتری
     cut: Cut
+    cvv_response: CVV Response
     dash:
       jirafe:
         app_id:
@@ -531,52 +600,51 @@ fa:
       js_format:
     date_range: محدوده ی زمانی
     default: پیش فرض
-    default_meta_description: Default Meta Description
-    default_meta_keywords: Default Meta Keywords
-    default_seo_title: Default Seo Title
+    default_refund_amount: Default Refund Amount
     default_tax: Default Tax
     default_tax_zone: Default Tax Zone
     delete: حذف
+    delete_from_taxon: Delete From Taxon
+    deleted_variants_present: Some line items in this order have products that are no longer available.
     delivery: تحویل
     depth: عمق
     description: توضیح
     destination:
     destroy: پاک کردن
+    details: Details
     discount_amount: مقدار تخفیف
     dismiss_banner: No. Thanks! I'm not interested, do not display this message again
     display: نمایش
-    display_currency: Display currency
+    doesnt_track_inventory: It doesn't track inventory
     edit: ویرایش
     editing_resource: ویرایش منابع
     editing_rma_reason: ویرایش دلایل RMA
-    editing_option_type: ویرایش نوع انتخاب
-    editing_payment_method: ویرایش متد پرداخت
-    editing_product: ویرایش محصول
-    editing_promotion: Editing Promotion
-    editing_property: ویرایش اموال
-    editing_prototype: ویرایش نمونه اولیه
-    editing_shipping_category: ویرایش دسته بندی ارسال
-    editing_shipping_method: ویرایش روش ارسال
-    editing_state: ویرایش ایالت یا استان
-    editing_stock_location:
-    editing_stock_movement:
-    editing_tax_category: ویرایش دسته بندی مالیات
-    editing_tax_rate: ویرایش نرخ مالیات
-    editing_tracker: ویرایش ردگیر
     editing_user: ویرایش کاربر
-    editing_zone: ویرایش ناحیه
+    eligibility_errors:
+      messages:
+        has_excluded_product: Your cart contains a product that prevents this coupon code from being applied.
+        item_total_less_than: This coupon code can't be applied to orders less than %{amount}.
+        item_total_less_than_or_equal: This coupon code can't be applied to orders less than or equal to %{amount}.
+        item_total_more_than: This coupon code can't be applied to orders higher than %{amount}.
+        item_total_more_than_or_equal: This coupon code can't be applied to orders higher than or equal to %{amount}.
+        limit_once_per_user: This coupon code can only be used once per user.
+        missing_product: This coupon code can't be applied because you don't have all of the necessary products in your cart.
+        missing_taxon: You need to add a product from all applicable categories before applying this coupon code.
+        no_applicable_products: You need to add an applicable product before applying this coupon code.
+        no_matching_taxons: You need to add a product from an applicable category before applying this coupon code.
+        no_user_or_email_specified: You need to login or provide your email before applying this coupon code.
+        no_user_specified: You need to login before applying this coupon code.
+        not_first_order: This coupon code can only be applied to your first order.
     email: ایمیل
     empty: خالی
     empty_cart: سبد خرید خالی شود
     enable_mail_delivery: فعال سازی تحویل نامه
     end:
     ending_in: Ending in
-    environment: محیط
     error: ایراد
     errors:
       messages:
         could_not_create_taxon: "امکان ایجاد نوع دسته‌بندی وجود ندارد"
-        no_payment_methods_available:
         no_shipping_methods_available: "ارسال برای ناحیه انتخاب شده مقدور نمی‌باشد، لطفا منطقه‌ی دیگری را انتخاب کنید"
     errors_prohibited_this_record_from_being_saved:
       one: "یک ایراد مانع از انجام ذخیره‌سازی است"
@@ -597,24 +665,31 @@ fa:
           signup: "ثبت‌نام کاربر"
     exceptions:
       count_on_hand_setter:
+    exchange_for: Exchange for
+    excl: excl.
+    existing_shipments: Existing shipments
+    expedited_exchanges_warning: "Any specified exchanges will ship to the customer immediately upon saving. The customer will be charged the full amount of the item if they do not return the original item within %{days_window} days."
     expiration: انقضاء
     extension: الحاقی
+    failed_payment_attempts: Failed Payment Attempts
     filename: نام فایل
     fill_in_customer_info:
+    filter: فیلتر
     filter_results: فیلتر کردن نتایج
     finalize: نهایی کردن
+    finalized: Finalized
+    find_a_taxon: Find a Taxon
     first_item: هزینه اولین آیتم
     first_name: نام
     first_name_begins_with: حرف آغازین نام
     flat_percent: Flat Percent
-    flat_rate_per_item: Flat Rate (per item)
     flat_rate_per_order: Flat Rate (per order)
     flexible_rate: Flexible Rate
     forgot_password: آیا رمز عبور را فراموش کرده اید؟
     free_shipping: ارسال رایگان
+    free_shipping_amount: "-"
     front_end: Front End
     gateway: درگاه
-    gateway_config_unavailable: درگاه برای این محیط در دسترس نیست
     gateway_error: ایراد درگاه
     general: عمومی
     general_settings: تنظیمات عمومی
@@ -624,7 +699,6 @@ fa:
     guest_user_account: تصفیه حساب به عنوان کاربر میهمان
     has_no_shipped_units: has no shipped units
     height: ارتفاع
-    hide_cents:
     home: صفحه اصلی
     i18n:
       available_locales:
@@ -640,23 +714,33 @@ fa:
       translations:
     icon: آیکون
     image: تصویر
-    image_settings: Image Settings
-    image_settings_updated: Image Settings successfully updated.
-    image_settings_warning: You will need to regenerate thumbnails if you update the paperclip styles. Use rake paperclip:refresh:thumbnails to do this.
     images: تصاویر
+    implement_eligible_for_return: "Must implement #eligible_for_return? for your EligibilityValidator."
+    implement_requires_manual_intervention: "Must implement #requires_manual_intervention? for your EligibilityValidator."
+    inactive: Inactive
+    incl: incl.
     included_in_price: Included in Price
     included_price_validation: cannot be selected unless you have set a Default Tax Zone
+    incomplete: Incomplete
+    info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
+    info_product_has_multiple_skus: "This product has %{count} variants:"
     instructions_to_reset_password: فرم زیر را کامل کنید، طریقه ایجاد رمز عبور جدید برای شما ایمیل خواهد شد
     insufficient_stock: Insufficient stock available, only %{on_hand} remaining
+    insufficient_stock_lines_present: Some line items in this order have insufficient quantity.
     intercept_email_address: Intercept Email Address
     intercept_email_instructions: Override email recipient and replace with this address.
     internal_name:
+    invalid_credit_card: Invalid credit card.
+    invalid_exchange_variant: Invalid exchange variant.
     invalid_payment_provider:
     invalid_promotion_action:
     invalid_promotion_rule:
     inventory: انبار
     inventory_adjustment: تعدیلات انبار
     inventory_error_flash_for_insufficient_quantity:
+    inventory_state: Inventory State
     is_not_available_to_shipment_address: is not available to shipment address
     iso_name:
     item: آیتم
@@ -666,24 +750,27 @@ fa:
       operators:
         gt: بیشتر از
         gte: بیشتر از یا مساوی با
+        lt: less than
+        lte: less than or equal to
     items_cannot_be_shipped:
+    items_in_rmas: Items in Return Authorizations
+    items_reimbursed: Items reimbursed
+    items_to_be_reimbursed: Items to be reimbursed
     jirafe:
     landing_page_rule:
       path: Path
     last_name: نام خانوادگی
     last_name_begins_with: حرف آغازین نام خانوادگی
     learn_more: Learn More
+    lifetime_stats: Lifetime Stats
+    line_item_adjustments: "Line item adjustments"
     list: لیست
-    listing_countries:
-    listing_orders: لیست کردن سفارش ها
-    listing_products: Listing Products
-    listing_reports: لیست کردن گزارش ها
-    listing_tax_categories: لیست کردن دسته بندی های مالیات
-    listing_users: لیست کردن کاربران
     loading: در حال بارگذاری
+    loading_tree: Loading tree. Please wait…
     locale_changed: (زبان سایت به فارسی تغییر کرد)
     location:
     lock:
+    log_entries: "Log Entries"
     logged_in_as: شما وارد شدید به عنوان
     logged_in_succesfully: ورود موفقیت آمیز بود
     logged_out: شما خارج شدید
@@ -692,30 +779,39 @@ fa:
     login_failed: ورود شما موفقیت آمیز نبود
     login_name: ورود
     logout: خروج
+    logs: "Logs"
     look_for_similar_items: جستجوی اقلام مشابه
-    maestro_or_solo_cards: Maestro/Solo cards
-    mail_method_settings:
-    mail_methods: متدهای نامه
     make_refund: Make refund
+    make_sure_the_above_reimbursement_amount_is_correct: Make sure the above reimbursement amount is correct
+    manage_promotion_categories: Manage Promotion Categories
+    manage_variants: Manage Variants
+    manual_intervention_required: Manual intervention required
     master_price: قیمت اصلی
     match_choices:
       all: همه
       none: هیچی
     max_items: حداکثر اقلام
+    member_since: Member Since
+    memo: Memo
     meta_description: Meta Description
     meta_keywords: Meta Keywords
+    meta_title: Meta Title
     metadata: Metadata
     minimal_amount: حداقل مقدار
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: ماه
     more: بیشتر
     move_stock_between_locations:
     my_account: حساب من
     my_orders: سفارش های من
     name: نام
+    name_on_card: Name on card
     name_or_sku: نام یا کد کالا
     new: جدید
     new_adjustment: تعدیل جدید
+    new_country: New Country
     new_customer: مشتری جدید
+    new_customer_return: New Customer Return
     new_image: تصویر جدید
     new_option_type: نوع جدید
     new_order: سفارش جدید
@@ -727,8 +823,12 @@ fa:
     new_promotion_category: دسته بندی جدید برای فروش ویژه
     new_property: ویژگی جدید
     new_prototype: نمونه اولیه جدید
+    new_refund: New Refund
+    new_refund_reason: New Refund Reason
     new_return_authorization: جدید
     new_rma_reason: ایجاد دلیل برای مجوز بازگشت کالا
+    new_role: New Role
+    new_shipment_at_location: New shipment at location
     new_shipping_category: دسته بندی ارسال جدید
     new_shipping_method: متد ارسال جدید
     new_state: ایالت جدید
@@ -745,24 +845,24 @@ fa:
     new_zone: ناحیه جدید
     next: بعدی
     no_actions_added:
-    no_orders_found:
-    no_payment_methods_found:
+    no_payment_found: No payment found
     no_pending_payments:
     no_products_found: هیچ محصولی یافت نشد
-    no_promotions_found:
     no_resource_found:
     no_results: بدون نتیجه
+    no_returns_found: No returns found
     no_rules_added: هیچ قانونی اضافه نشده
-    no_shipping_methods_found:
-    no_stock_locations_found:
-    no_trackers_found:
+    no_shipping_method_selected: No shipping method selected.
+    no_state_changes: No state changes yet.
     no_tracking_present:
     none: هیچکدام
+    none_selected: None Selected
     normal_amount: مقدار نرمال
     not: not
     not_available: N/A
     not_enough_stock:
     not_found: ! '%{resource} is not found'
+    note: Note
     notice_messages:
       product_cloned: Product has been cloned
       product_deleted: محصول حذف شد
@@ -770,6 +870,7 @@ fa:
       product_not_deleted: نمی توان این محصول را حذف کرد
       variant_deleted: Variant has been deleted
       variant_not_deleted: Variant could not be deleted
+    num_orders: "# Orders"
     on_hand: On Hand
     open:
     open_all_adjustments:
@@ -784,9 +885,13 @@ fa:
     or_over_price: ! '%{price} or over'
     order: سفارش
     order_adjustments: Order adjustments
+    order_already_updated: The order has already been updated.
+    order_approved: Order approved
+    order_canceled: Order canceled
     order_details: جزئیات سفارش
     order_email_resent: Order Email Resent
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: مشتری محترم,
@@ -806,6 +911,7 @@ fa:
     order_not_found:
     order_number: سفارش
     order_processed_successfully: سفارش شما به طور موفقیت‌آمیز ثبت شد.
+    order_resumed: Order resumed
     order_state:
       address: آدرس
       awaiting_return: awaiting return
@@ -813,6 +919,7 @@ fa:
       cart: سبد خرید
       complete: تکمیل
       confirm: تایید
+      considered_risky: considered risky
       delivery: تحویل
       payment: پرداخت
       resumed: ادامه
@@ -834,6 +941,7 @@ fa:
     path: Path
     pay: pay
     payment: پرداخت
+    payment_could_not_be_created: Payment could not be created.
     payment_information: اطلاعات پرداخت
     payment_method: روش پرداخت
     payment_method_not_supported:
@@ -854,16 +962,23 @@ fa:
       void: void
     payment_updated: پرداخت بروز رسانی شد
     payments: پرداخت ها
+    pending: Pending
     percent:
     percent_per_item: Percent Per Item
     permalink: Permalink
     phone: تلفن
     place_order: انجام سفارش
     please_define_payment_methods: Please define some payment methods first.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Something went wrong. Please try adding the item again.
     powered_by: قدرت گرفته شده توسط
+    pre_tax_amount: Pre-Tax Amount
+    pre_tax_refund_amount: Pre-Tax Refund Amount
+    pre_tax_total: Pre-Tax Total
+    preferred_reimbursement_type: Preferred Reimbursement Type
     presentation: ارائه دهده
     previous: قبلی
+    previous_state_missing: "n/a"
     price: قیمت
     price_range: محدوده قیمت
     price_sack: Price Sack
@@ -899,6 +1014,7 @@ fa:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all:
@@ -932,7 +1048,10 @@ fa:
       user_logged_in:
         description: Available only to logged in users
         name: User Logged In
+    promotion_uses: Promotion uses
+    promotionable: Promotable
     promotions: فروش ویژه
+    propagate_all_variants: Propagate all variants
     properties: ویژگی ها
     property: ویژگی
     prototype: نونه آزمایشی
@@ -943,22 +1062,49 @@ fa:
     quantity:
     quantity_returned: Quantity Returned
     quantity_shipped: Quantity Shipped
+    quick_search: جستوجو سریع . . .
     rate: Rate
     reason: Reason
     receive: receive
     receive_stock:
     received: دریافت شد
+    reception_status: Reception Status
     reference: ارجاع
+    reference_contains: Reference Contains
+    refund: استرداد
     refund_amount_must_be_greater_than_zero: مقدار بازپرداخت باید از صفر بیشتر باشد
     refund_reasons: دلیل استرداد
     refunded_amount: مقدار استرداد
-    refund: استرداد
+    refunds: Refunds
     register: به عنوان کاربر جدید ثبت نام کنید
     registration: ثبت نام
+    reimburse: Reimburse
+    reimbursed: Reimbursed
+    reimbursement: Reimbursement
+    reimbursement_mailer:
+      reimbursement_email:
+        days_to_send: ! 'You have %{days} days to send back any items awaiting exchange.'
+        dear_customer: Dear Customer,
+        exchange_summary: Exchange Summary
+        for: for
+        instructions: Your reimbursement has been processed.
+        refund_summary: Refund Summary
+        subject: Reimbursement Notification
+        total_refunded: ! 'Total refunded: %{total}'
+    reimbursement_perform_failed: "Reimbursement could not be performed.  Error: %{error}"
+    reimbursement_status: Reimbursement status
+    reimbursement_type: Reimbursement type
+    reimbursement_type_override: Reimbursement Type Override
+    reimbursement_types: Reimbursement Types
+    reimbursements: Reimbursements
+    reject: Reject
+    rejected: Rejected
     remember_me: من را به یاد بسپار
     remove: حدف
     rename: تغییر نام
+    report: Report
     reports: گزارشات
+    resellable: Resellable
     resend: اخیرا
     reset_password: ریست رمز عبور
     response_code: Response Code
@@ -969,24 +1115,32 @@ fa:
     return_authorization_reasons: دلایل صدور مجوز بازگشت
     return_authorization_updated: Return authorization updated
     return_authorizations: Return Authorizations
+    return_item_inventory_unit_ineligible: Return item's inventory unit must be shipped
+    return_item_inventory_unit_reimbursed: Return item's inventory unit is already reimbursed
+    return_item_order_not_completed: Return item's order must be completed
+    return_item_rma_ineligible: Return item requires an RMA
+    return_item_time_period_ineligible: Return item is outside the eligible time period
+    return_items: Return Items
+    return_items_cannot_be_associated_with_multiple_orders: Return items cannot be associated with multiple orders.
+    return_number: Return Number
     return_quantity: Return Quantity
     returned: برگشت داده شد
     review: بازنگری
+    risk: Risk
+    risk_analysis: Risk Analysis
+    risky: Risky
     rma_credit: RMA Credit
     rma_number: RMA Number
     rma_value: RMA Value
+    role_id: Role ID
     roles: "نقش ها"
     rules: قوانین
     safe: مطمئن
-    s3_access_key: Access Key
-    s3_bucket: Bucket
-    s3_headers: S3 Headers
-    s3_protocol: S3 Protocol
-    s3_secret: Secret Key
     sales_total: کل فروش
     sales_total_description: کل فروش برای همه سفارش ها
     sales_totals: کلیه فروش ها
     save_and_continue: ذخیره و ادامه
+    save_my_address: Save my address
     say_no: 'No'
     say_yes: 'Yes'
     scope: Scope
@@ -996,8 +1150,11 @@ fa:
     secure_connection_type: نوع اتصال امن
     security_settings: تنظیمات امنیتی
     select: انتخاب
+    select_a_return_authorization_reason: Select a reason for the return authorization
+    select_a_stock_location: Select a stock location
     select_from_prototype: از نمونه اولیه انتخاب کن
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Send Copy of All Mails To
     send_mails_as: Send Mails As
     server: سرور
@@ -1007,7 +1164,8 @@ fa:
     ship_address: Ship Address
     ship_total:
     shipment:
-    shipment_inc_vat: Shipment including VAT
+    shipment_adjustments: "Shipment adjustments"
+    shipment_details: "From %{stock_location} via %{shipping_method}"
     shipment_mailer:
       shipped_email:
         dear_customer: Dear Customer,
@@ -1020,10 +1178,13 @@ fa:
     shipment_state: Shipment State
     shipment_states:
       backorder: backorder
+      canceled: canceled
       partial: partial
       pending: معلق
       ready: آماده
       shipped: ارسال شد
+    shipment_transfer_error: 'There was an error transferring variants'
+    shipment_transfer_success: 'Variants successfully transferred'
     shipments: Shipments
     shipped: ارسال شد
     shipping: ارسال
@@ -1037,39 +1198,67 @@ fa:
     shipping_method: روش ارسال
     shipping_methods: روش های ارسال
     shipping_price_sack:
+    shipping_total: Shipping total
     shop_by_taxonomy: خرید بر حسب %{taxonomy}
     shopping_cart: سبد خرید
     show: نمایش
     show_active: Show Active
     show_deleted: Show Deleted
     show_only_complete_orders: نمایش سفارشات تکمیل شده
+    show_only_considered_risky: Only show risky orders
     show_rate_in_label:
     sku: کد کالا
-    smtp: SMTP
-    smtp_authentication_type: SMTP Authentication Type
-    smtp_domain: SMTP Domain
-    smtp_mail_host: SMTP Mail Host
-    smtp_password: SMTP Password
-    smtp_port: SMTP Port
-    smtp_send_all_emails_as_from_following_address: تمام نامه ها را از آدرس ذیل ارسال کن
-    smtp_send_copy_to_this_addresses: Sends a copy of all outgoing mails to this address. For multiple addresses, separate with commas.
-    smtp_username: SMTP Username
+    skus: SKUs
+    slug: Slug
     source:
     special_instructions: ساختارهای خاص
     split:
-    spree/order:
-      coupon_code:
     spree_gateway_error_flash_for_checkout: There was a problem with your payment information. Please check your information and try again.
+    ssl:
+      change_protocol: "Please switch to using HTTP (rather than HTTPS) and retry this request."
     start: شروع
-    start_date: Valid from
     state: ایالت یا استان
     state_based: State Based
+    state_machine_states:
+      accepted: Accepted
+      address: Address
+      authorized: Authorized
+      awaiting: Awaiting
+      awaiting_return: Awaiting return
+      backordered: Back ordered
+      canceled: Canceled
+      cart: Cart
+      checkout: Checkout
+      closed: Closed
+      complete: Complete
+      completed: Completed
+      confirm: Confirm
+      delivery: Delivery
+      errored: Errored
+      failed: Failed
+      given_to_customer: Given to customer
+      invalid: Invalid
+      manual_intervention_required: Manual intervention required
+      on_hand: On hand
+      open: Open
+      order: Order
+      payment: Payment
+      pending: Pending
+      processing: Processing
+      ready: Ready
+      reimbursed: Reimbursed
+      resumed: Resumed
+      returned: Returned
+      shipped: Shipped
+      void: Void
     states: ایالات یا استان ها
     states_required:
     status: وضعیت
+    stock: Stock
     stock_location: مکان انبار
     stock_location_info: توضیحات انبار
     stock_locations: مکان انبارها
+    stock_locations_need_a_default_country: You must create a default country before creating a stock location.
     stock_management: مدیریت انبار
     stock_management_requires_a_stock_location:
     stock_movements:
@@ -1083,20 +1272,28 @@ fa:
     street_address_2: ادامه آدرس
     subtotal: جمع
     subtract: Subtract
+    success: Success
     successfully_created: ! '%{resource} با موفقیت اضافه شد!'
+    successfully_refunded: ! '%{resource} has been successfully refunded!'
     successfully_removed: ! '%{resource} با موفقیت حذف شد!'
     successfully_signed_up_for_analytics:
     successfully_updated: ! '%{resource} با موفقیت به روز رسانی شد!'
+    summary: Summary
     tax: مالیات
     tax_categories: دسته بندی های مالیات
     tax_category: دسته بندی مالیات
+    tax_code: Tax Code
+    tax_included: "Tax (incl.)"
     tax_rate_amount_explanation:
     tax_rates: نرخ مالیات
-    tax_settings: تنظیمات مالیات
-    tax_total: کل مالیات
     taxon: دسته
     taxon_edit: ویرایش دسته
     taxon_placeholder:
+    taxon_rule:
+      choose_taxons: Choose taxons
+      label: Order must contain x amount of these taxons
+      match_all: all
+      match_any: at least one
     taxonomies: رده‌بندی‌ها
     taxonomy: رده‌بندی
     taxonomy_edit: ویرایش طبقه بندی
@@ -1113,14 +1310,24 @@ fa:
     thank_you_for_your_order: با تشکر، لطفا یک کپی از این صفحه برای نگهداری در نزد خود، پرینت کنید
     there_are_no_items_for_this_order:
     there_were_problems_with_the_following_fields: به مشکلاتی در فیلدهای ذیل برخوردیم
+    this_order_has_already_received_a_refund: This order has already received a refund
     thumbnail: Thumbnail
+    tiered_flat_rate: Tiered Flat Rate
+    tiered_percent: Tiered Percent
+    tiers: Tiers
     time:
     to_add_variants_you_must_first_define: To add variants, you must first define
     total: کل
+    total_per_item: Total per item
+    total_pre_tax_refund: Total Pre-Tax Refund
+    total_price: Total price
+    total_sales: Total Sales
+    track_inventory: Track Inventory
     tracking: ردگیری
     tracking_number:
     tracking_url:
     tracking_url_placeholder:
+    transaction_id: Transaction ID
     transfer_from_location:
     transfer_stock:
     transfer_to_location:
@@ -1128,6 +1335,7 @@ fa:
     type: نوع
     type_to_search: Type to search
     unable_to_connect_to_gateway: اتصال به درگاه مقدور نیست
+    unable_to_create_reimbursements: Unable to create reimbursements because there are items pending manual intervention.
     under_price: Under %{price}
     unlock:
     unrecognized_card_type: نوع کارت ناشناخته
@@ -1135,8 +1343,11 @@ fa:
     update: بروز رسانی
     updating: در حال بروز رسانی
     usage_limit: محدودیت استفاده
+    use_app_default: Use App Default
     use_billing_address: همانند آدرس پرداخت
+    use_existing_cc: Use an existing card on file
     use_new_cc: از یک کارت جدید استفاده کن
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Use Amazon S3 For Images
     user: کاربر
     user_rule:
@@ -1144,11 +1355,12 @@ fa:
     users: "کاربرها"
     validation:
       cannot_be_less_than_shipped_units: cannot be less than the number of shipped units.
-      cannot_destory_line_item_as_inventory_units_have_shipped: Cannot destory line item as some inventory units have shipped.
+      cannot_destroy_line_item_as_inventory_units_have_shipped: Cannot destroy line item as some inventory units have shipped.
       exceeds_available_stock:
       is_too_large: is too large -- stock on hand cannot cover requested quantity!
       must_be_int: باید به صورت عدد صحیح وارد شوند
       must_be_non_negative: must be a non-negative value
+      unpaid_amount_not_zero: "Amount was not fully reimbursed. Still due: %{amount}"
     value: مقدار
     variant: Variant
     variant_placeholder:

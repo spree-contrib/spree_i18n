@@ -40,20 +40,6 @@ nb:
         name: Navn
         presentation: Presentasjon
       spree/order:
-        checkout_complete: Ordre fullført
-        completed_at: Fullført
-        considered_risky: Risikabel
-        coupon_code: Rabattkode
-        created_at: Opprettet
-        email: Epost
-        ip_address: IP Adresse
-        item_total: Totalt antall
-        number: Nummer
-        payment_state: Betalingsstatus
-        shipment_state: Forsendelsesstatus
-        special_instructions: Spesielle instrukser
-        state: status
-        total: Total
       spree/order/bill_address:
         address1: Adresse
         city: By/Poststed
@@ -68,10 +54,25 @@ nb:
         firstname: Fornavn
         lastname: Etternavn
         phone: Telefon
-        state: Fylke
+        state: State
         zipcode: Postnummer
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Beløp
+        number: Number
       spree/payment_method:
         name: Navn
       spree/product:
@@ -105,6 +106,8 @@ nb:
         amount: Mengde
       spree/role:
         name: Navn
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Forkortelse
         name: Navn
@@ -209,6 +212,8 @@ nb:
         one: Kredittkort
         other: Kredittkort
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Lagerenhet
         other: Lagerenheter
@@ -216,7 +221,11 @@ nb:
         one: Varelinje
         other: Varelinjer
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Ordre
         other: Ordrer
@@ -224,11 +233,17 @@ nb:
         one: Betaling
         other: Betalinger
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Produkt
         other: Produkter
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Egenskap
         other: Egenskaper
@@ -236,12 +251,20 @@ nb:
         one: Prototype
         other: Prototyper
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Returautorisasjon
         other: Returautorisasjoner
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Rolle
         other: Roller
@@ -252,13 +275,23 @@ nb:
         one: Forsendelseskategori
         other: Forsendelseskategorier
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: Status
         other: Statuser
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location: Lagerlokasjon
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer: Beholdningsendring
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Avgiftskategori
         other: Avgiftskategorier
@@ -272,6 +305,8 @@ nb:
         one: Gruppering
         other: Grupperinger
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: Bruker
         other: Brukere
@@ -325,6 +360,8 @@ nb:
       not_found: Ikke funnet
       not_locked: Ikke låst
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Fortkortelse
     accept:
@@ -361,10 +398,10 @@ nb:
     add_rule_of_type: Legg til regeltype
     add_state: Legg til status
     add_stock: Legg til lagerbeholdning
-    add_stock_management: Legg til lagerstyring
     add_to_cart: Legg i handlekurv
     add_variant: Legg til variant
     additional_item: Tillegskostnad
+    address: Address
     address1: Adresselinje 1
     address2: Adresselinje 2
     adjustable:
@@ -381,6 +418,7 @@ nb:
         orders: Ordrer
         overview: Oversikt
         products: Produkter
+        promotion_categories: Promotion Categories
         promotions: Kampanjer
         properties:
         prototypes:
@@ -406,9 +444,6 @@ nb:
     all_adjustments_opened: Alle justeringer åpne
     all_departments: Alle avdelinger
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Tillat bruk av SSL i utviklings- og testmiljø
-    allow_ssl_in_production: Tillat bruk av SSL i produksjonsmiljø
-    allow_ssl_in_staging: Tillatt bruk av SSL i stagingmiljø
     already_signed_up_for_analytics: Allerede registrert for Analytics
     alt_text: Alternativ tekst
     alternative_phone: Alternativ telefon
@@ -471,10 +506,11 @@ nb:
     card_type_is: Korttype er
     cart: Handlekurv
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategorier
     category: Kategori
     charged:
-    check_for_spree_alerts:
     checkout: Til kassen
     choose_a_customer: Velg kunde
     choose_a_taxon_to_sort_products_for:
@@ -535,10 +571,7 @@ nb:
     credit_owed: Skyldig kreditt
     credits:
     currency: Valuta
-    currency_decimal_mark: Valuta kommaplassering
     currency_settings: Valuttainstillinger
-    currency_symbol_position: Plasser valutasymbol foran eller etter beløp?
-    currency_thousands_separator: Separator for tusenedeler
     current: Nå
     current_promotion_usage:
     customer: Kunde
@@ -571,6 +604,7 @@ nb:
     default_tax: Standardavgift
     default_tax_zone: Standard avgiftsnivå
     delete: Slett
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Levering
     depth: Dybde
@@ -581,7 +615,6 @@ nb:
     discount_amount: Rabattbeløp
     dismiss_banner: Nei takk! Ikke vis dette igjen, takk!
     display: Vis
-    display_currency: Vis valutta
     doesnt_track_inventory:
     edit: Endre
     editing_resource:
@@ -608,12 +641,10 @@ nb:
     enable_mail_delivery: Skru på sending av epost
     end: Avslutt
     ending_in: Ender om
-    environment: Miljø
     error: feil
     errors:
       messages:
         could_not_create_taxon: Kunne ikke opprette gruppe
-        no_payment_methods_available: Ingen betalingsmetoder er satt opp for dette miljøet
         no_shipping_methods_available: Ingen leveringsmåter er tilgjengelige for din plassering, vennligst sjekk adressen og prøv igjen.
     errors_prohibited_this_record_from_being_saved:
       one: 1 feil forhindrer dette fra og kunne lagres
@@ -659,7 +690,6 @@ nb:
     free_shipping_amount:
     front_end: Front end
     gateway: Tjeneste
-    gateway_config_unavailable: Tilganstjenesten utilgjengelig for miljøet
     gateway_error: Feil oppstått i tilgangstjenesten
     general: Generell
     general_settings: Generelle innstillinger
@@ -669,7 +699,6 @@ nb:
     guest_user_account: Fullfør uten konto
     has_no_shipped_units: Har ingen sendte enheter.
     height: Høyde
-    hide_cents: Hele kroner?
     home: Hjem
     i18n:
       available_locales:
@@ -684,7 +713,6 @@ nb:
       this_file_language: Norsk
       translations:
     icon: Ikon
-    identifier:
     image: Bilde
     images: Bilder
     implement_eligible_for_return:
@@ -695,6 +723,8 @@ nb:
     included_price_validation: kan ikke velges med mindre du har definert en standard avgiftsområde
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: 'Fyll ut skjemaet under og du vil motta instruksjoner for hvordan du tilbakestiller passordet ditt per epost:'
     insufficient_stock: Manglende lagerbeholdning, kun %{on_hand} gjenstår
@@ -736,6 +766,7 @@ nb:
     line_item_adjustments:
     list: Liste
     loading: Laster
+    loading_tree: Loading tree. Please wait…
     locale_changed: Endret språk
     location: Lokasjon
     lock: Låst
@@ -767,6 +798,7 @@ nb:
     meta_title:
     metadata: Metadata
     minimal_amount: Minimumsantall
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Måned
     more: Mer
     move_stock_between_locations: Flytt beholdning mellom lokasjoner
@@ -795,6 +827,7 @@ nb:
     new_refund_reason:
     new_return_authorization: Ny returgodkjenning
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Ny fraktkategori
     new_shipping_method: Ny leveransemåte
@@ -858,6 +891,7 @@ nb:
     order_details: Ordredetaljer
     order_email_resent: Ordre-epost sent på nytt
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Kjære kunde,
@@ -876,10 +910,6 @@ nb:
         total: Totalbeløp
     order_not_found: Ordren ble ikke funnet
     order_number: Ordre %{number}
-    order_populator:
-      out_of_stock:
-      please_enter_reasonable_quantity: Vennligst oppgi et fornuftig antall
-      selected_quantity_not_available:
     order_processed_successfully: Din ordre har blitt behandlet
     order_resumed:
     order_state:
@@ -899,7 +929,6 @@ nb:
     order_total: Ordresum
     order_updated: Ordre oppdatert
     orders: Ordrer
-    other_items_in_other:
     out_of_stock: Ikke på lager
     overview: Oversikt
     package_from: Pakke fra
@@ -913,7 +942,6 @@ nb:
     pay: betal
     payment: Betaling
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Betalingsinformasjon
     payment_method: Betalingsform
     payment_method_not_supported: Betalingsformen er ikke støttet
@@ -941,6 +969,7 @@ nb:
     phone: Telefon
     place_order: Bekreft ordre
     please_define_payment_methods: Vennligst legg til betalingsmetode først.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Noe gikk galt. Prøv å legg til igjen.
     powered_by: Bygget på
     pre_tax_amount:
@@ -985,6 +1014,7 @@ nb:
         description:
         name:
     promotion_actions: Handling
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Treff på hvilken som helst av disse reglene
@@ -1040,6 +1070,7 @@ nb:
     received: Motatt
     reception_status:
     reference: Referansje
+    reference_contains: Reference Contains
     refund: Refusjon
     refund_amount_must_be_greater_than_zero:
     refund_reasons: Refusjonsgrunner
@@ -1073,6 +1104,7 @@ nb:
     rename: Gi nytt navn
     report:
     reports: Rapporter
+    resellable: Resellable
     resend: Send på nytt
     reset_password: Nullstill passord
     response_code: Responskode
@@ -1085,6 +1117,7 @@ nb:
     return_authorizations: Returautorisasjoner
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1092,7 +1125,6 @@ nb:
     return_number:
     return_quantity: Returantall
     returned: Returnert
-    returns:
     review: Omtale
     risk: Risko
     risk_analysis: Risikoanalyse
@@ -1100,6 +1132,7 @@ nb:
     rma_credit: RMA Kreditt
     rma_number: RMA Nummer
     rma_value: RMA Verdi
+    role_id: Role ID
     roles: Roller
     rules: Regler
     safe: Sikker
@@ -1121,6 +1154,7 @@ nb:
     select_a_stock_location: Velg lagerlokasjon..
     select_from_prototype: Velg fra prototype
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Send kopi av all epost til
     send_mails_as: Send epost som
     server: Server
@@ -1311,7 +1345,9 @@ nb:
     usage_limit: Bruksgrense
     use_app_default:
     use_billing_address: Bruk fakturaadressen
+    use_existing_cc: Use an existing card on file
     use_new_cc: Use a new card
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Bruk Amazon S3 for bilder
     user: Bruker
     user_rule:

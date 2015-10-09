@@ -40,20 +40,6 @@ ro:
         name: Nume
         presentation: Prezentare
       spree/order:
-        checkout_complete: Comandă finalizată
-        completed_at: Finalizată la
-        considered_risky:
-        coupon_code: Cod Cupon
-        created_at: Data comenzii
-        email: E-Mail Client
-        ip_address: Adresa IP
-        item_total: Total articole
-        number: Număr
-        payment_state: Stare Plată
-        shipment_state: Stare Livrare
-        special_instructions: Instrucțiuni speciale
-        state: Județ / Regiune
-        total: Total
       spree/order/bill_address:
         address1: Strada adresă de facturare
         city: Oraș adresă de facturare
@@ -68,10 +54,25 @@ ro:
         firstname: Prenume adresă de livrare
         lastname: Nume adresă de livrare
         phone: Telefon adresă de livrare
-        state: Județ adresă de livrare
+        state: State
         zipcode: Cod poștal adresă de livrare
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Valoare
+        number: Number
       spree/payment_method:
         name: Nume
       spree/product:
@@ -105,6 +106,8 @@ ro:
         amount: Suma
       spree/role:
         name: Nume
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Prescurtare
         name: Nume
@@ -209,6 +212,8 @@ ro:
         one: Card de credit
         other: Carduri de credit
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Unitatea de inventar
         other: Unități de inventar
@@ -216,7 +221,11 @@ ro:
         one: Element
         other: Elemente
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Comandă
         other: Comenzi
@@ -224,11 +233,17 @@ ro:
         one: Plată
         other: Plăți
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Produs
         other: Produse
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Proprietate
         other: Proprietăți
@@ -236,12 +251,20 @@ ro:
         one: Prototip
         other: Prototipuri
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Autorizație de retur
         other: Autorizații de retur
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Roluri
         other: Roluri
@@ -252,13 +275,23 @@ ro:
         one: Categorie de expediție
         other: Categorii de expediții
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: Județ / Regiune
         other: Județe / Regiuni
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Categorie de taxare
         other: Categorii de taxare
@@ -272,6 +305,8 @@ ro:
         one: Clasificare
         other: Clasificări
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: Utilizator
         other: Utilizatori
@@ -363,10 +398,10 @@ ro:
     add_rule_of_type: Adaugă o regulă de tip
     add_state: Adaugă județ / regiune
     add_stock: Adaugă în stoc
-    add_stock_management: Adaugă gestiune stoc
     add_to_cart: Adaugă în coș
     add_variant: Adaugă variantă
     additional_item: Cost adițional pe articol
+    address: Address
     address1: Adresă
     address2: Adresă (continuare)
     adjustable:
@@ -383,6 +418,7 @@ ro:
         orders: Comenzi
         overview: Prezentare generală
         products: Produse
+        promotion_categories: Promotion Categories
         promotions: Promoții
         properties: Proprietăți
         prototypes: Prototipuri
@@ -408,9 +444,6 @@ ro:
     all_adjustments_opened: Toate ajustările au fost deschise cu succes!
     all_departments: Toate departamentele
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Permite utilizare SSL în modurile de dezvoltare și testare
-    allow_ssl_in_production: Permite utilizare SSL în modul producție
-    allow_ssl_in_staging: Permite utilizare în modul staging
     already_signed_up_for_analytics: V-ați înscris deja pentru Spree Analytics
     alt_text: Text alternativ
     alternative_phone: Telefon alternativ
@@ -473,10 +506,11 @@ ro:
     card_type_is: Tipul cardului este
     cart: Coșul meu
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Categorii
     category: Categorie
     charged:
-    check_for_spree_alerts: Verifică alerte Spree
     checkout: Efectuați plata
     choose_a_customer: Alege un client
     choose_a_taxon_to_sort_products_for:
@@ -537,10 +571,7 @@ ro:
     credit_owed: Credit datorat
     credits:
     currency: Valuta
-    currency_decimal_mark: Separator zecimale
     currency_settings: Setări valută
-    currency_symbol_position: Pune simbolul valutei înainte sau după valoare?
-    currency_thousands_separator: Separator de mii
     current: Curent
     current_promotion_usage: 'Utilizare curentă: %{count}'
     customer: Client
@@ -573,6 +604,7 @@ ro:
     default_tax: Taxă prestabilită
     default_tax_zone: Zonă de taxare prestabilită
     delete: "Șterge"
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Livrare
     depth: Adâncime
@@ -583,7 +615,6 @@ ro:
     discount_amount: Valoare reducere
     dismiss_banner: Nu, mulțumesc! Nu sunt interesat, nu mai afișa acest mesaj din nou.
     display: Arată
-    display_currency: Afișează cod valută
     doesnt_track_inventory:
     edit: Modifică
     editing_resource:
@@ -610,12 +641,10 @@ ro:
     enable_mail_delivery: Activează livrarea mailurilor
     end: Final
     ending_in: Terminat în
-    environment: Mediu
     error: eroare
     errors:
       messages:
         could_not_create_taxon: Nu se poate crea clasa
-        no_payment_methods_available: Nicio metodă de plată nu a fost configurată pentru acest mediu
         no_shipping_methods_available: Nu există nicio modalitate de expediție pentru locația aleasă, te rugăm să schimbi adresa și să mai încerci odată.
     errors_prohibited_this_record_from_being_saved:
       one: 1 eroare nu permite ca această înregistrare să fie salvată
@@ -645,6 +674,7 @@ ro:
     failed_payment_attempts:
     filename: Nume fișier
     fill_in_customer_info: Vă rugăm introduceți informațiile de client
+    filter: Filter
     filter_results: Rezultate filtrare
     finalize: Finalizează
     finalized:
@@ -660,7 +690,6 @@ ro:
     free_shipping_amount:
     front_end: Interfață utilizatori
     gateway: Metodă de plată
-    gateway_config_unavailable: Metodă de plată indisponibilă în acest context
     gateway_error: Eroare metodă de plată
     general: General
     general_settings: Setări generale
@@ -670,7 +699,6 @@ ro:
     guest_user_account: Comandă ca oaspete
     has_no_shipped_units: Nu are unități de expediție
     height: "Înălțime"
-    hide_cents: Ascunde subunități monetare (bani)
     home: Acasă
     i18n:
       available_locales: Localizari disponibile
@@ -685,7 +713,6 @@ ro:
       this_file_language: Romanian (RO)
       translations: Traduceri
     icon: Icoană
-    identifier:
     image: Imagine
     images: Imagini
     implement_eligible_for_return:
@@ -696,6 +723,8 @@ ro:
     included_price_validation: nu poate fi selectat doar dacă ați ales o zonă de taxare prestabilită
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: 'Completează formularul și instrucțiunile de mai jos, ca să resetezi parola, care îți va fi trimisă de email:'
     insufficient_stock: Stoc insuficient, doar %{on_hand} rămase
@@ -737,6 +766,7 @@ ro:
     line_item_adjustments:
     list: Listă
     loading: "Încarcă"
+    loading_tree: Loading tree. Please wait…
     locale_changed: Localizare schimbat
     location: Locație
     lock: Blochează
@@ -768,6 +798,7 @@ ro:
     meta_title:
     metadata: Metadate
     minimal_amount: Suma minimă
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Luna
     more: Mai multe
     move_stock_between_locations: Mută stoc între locații
@@ -796,6 +827,7 @@ ro:
     new_refund_reason:
     new_return_authorization: Autorizație nouă de retur
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Categorie nouă de livrare
     new_shipping_method: Metodă nouă de livrare
@@ -859,6 +891,7 @@ ro:
     order_details: Detaliile comenzii
     order_email_resent: Mail comandă retrimis
     order_information: Informații comandă
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Stimate client,\n
@@ -876,6 +909,7 @@ ro:
         thanks: Vă mulțumim pentru comanda efectuată.
         total:
     order_not_found: Nu am putut găsi comanda dumneavoastră. Vă rugăm încercați din nou.
+    order_number: Order %{number}
     order_processed_successfully: Comanda a fost procesată cu succes
     order_resumed:
     order_state:
@@ -895,7 +929,6 @@ ro:
     order_total: Total comandă
     order_updated: Comandă salvată
     orders: Comenzi
-    other_items_in_other:
     out_of_stock: Nu mai este pe stoc
     overview: Sumar
     package_from: pachet din
@@ -909,7 +942,6 @@ ro:
     pay: plătește
     payment: Plată
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Informații plată
     payment_method: Metodă de plată
     payment_method_not_supported:
@@ -937,6 +969,7 @@ ro:
     phone: Telefon
     place_order: Plasează comanda
     please_define_payment_methods: Vă rugăm, definiție metode de plată prima dată.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Ceva a mers prost. Vă rugăm încercați să adăugați articolul din nou.
     powered_by: Realizat de
     pre_tax_amount:
@@ -981,6 +1014,7 @@ ro:
         description:
         name:
     promotion_actions: Acțiuni
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Să corespundă cu oricare dintre aceste reguli
@@ -1036,306 +1070,312 @@ ro:
     received: Primit
     reception_status:
     reference: Referință
+    reference_contains: Reference Contains
     refund: Restituire
-    refund_amount_must_be_greater_than_zero:
-    refund_reasons:
-    refunded_amount:
-    refunds:
-    register: "Înregistrează-te ca utilizator nou"
-    registration: "Înregistrare"
-    reimburse:
-    reimbursed:
-    reimbursement:
+    refund_amount_must_be_greater_than_zero: Refund amount must be greater than zero
+    refund_reasons: Refund Reasons
+    refunded_amount: Refunded Amount
+    refunds: Refunds
+    register: Register
+    registration: Registration
+    reimburse: Reimburse
+    reimbursed: Reimbursed
+    reimbursement: Reimbursement
     reimbursement_mailer:
       reimbursement_email:
-        days_to_send:
-        dear_customer:
-        exchange_summary:
-        for:
-        instructions:
-        refund_summary:
-        subject:
-        total_refunded:
-    reimbursement_perform_failed:
-    reimbursement_status:
-    reimbursement_type:
-    reimbursement_type_override:
-    reimbursement_types:
-    reimbursements:
-    reject:
-    rejected:
-    remember_me: "Ține-mi minte datele"
-    remove: "Șterge"
-    rename: Redenumește
-    report:
-    reports: Rapoarte
-    resend: Trimite din nou
-    reset_password: Resetează parola
-    response_code: Cod răspuns
-    resume: reia
-    resumed: Reluat
-    return: retur
-    return_authorization: Aviz de retur
-    return_authorization_reasons:
-    return_authorization_updated: Aviz de retur salvată
-    return_authorizations: Aviz de retur
-    return_item_inventory_unit_ineligible:
-    return_item_inventory_unit_reimbursed:
-    return_item_rma_ineligible:
-    return_item_time_period_ineligible:
-    return_items:
-    return_items_cannot_be_associated_with_multiple_orders:
-    return_number:
-    return_quantity: Cantitate retur
-    returned: Returnat
-    returns:
-    review: Revizuie
-    risk:
-    risk_analysis:
-    risky:
-    rma_credit: Credit pentru avizul de retur a mărfii
-    rma_number: Număr pentru avizul de retur a mărfii
-    rma_value: Valoare pentru avizul de retur a mărfii
-    roles: Roluri
-    rules: Reguli
-    safe:
-    sales_total: Total vânzări
-    sales_total_description: Total vânzări pentru toate comenzile
-    sales_totals: Total vânzări
-    save_and_continue: Salvează și continuă
-    save_my_address:
-    say_no: Nu
-    say_yes: Da
-    scope: Gamă
-    search: Caută
-    search_results: Caută rezultate după '%{keywords}'
-    searching: Căutare
-    secure_connection_type: Tip de conexiune securizată
-    security_settings: Setări de siguranță
-    select: Selectează
-    select_a_return_authorization_reason:
-    select_a_stock_location:
-    select_from_prototype: Selectează din prototip
-    select_stock: Selectează stoc
-    send_copy_of_all_mails_to: Trimite o copie a tuturor emailurilor către
-    send_mails_as: Trimite emailuri ca
+        days_to_send: ! 'You have %{days} days to send back any items awaiting exchange.'
+        dear_customer: Dear Customer,
+        exchange_summary: Exchange Summary
+        for: for
+        instructions: Your reimbursement has been processed.
+        refund_summary: Refund Summary
+        subject: Reimbursement Notification
+        total_refunded: ! 'Total refunded: %{total}'
+    reimbursement_perform_failed: "Reimbursement could not be performed.  Error: %{error}"
+    reimbursement_status: Reimbursement status
+    reimbursement_type: Reimbursement type
+    reimbursement_type_override: Reimbursement Type Override
+    reimbursement_types: Reimbursement Types
+    reimbursements: Reimbursements
+    reject: Reject
+    rejected: Rejected
+    remember_me: Remember me
+    remove: Remove
+    rename: Rename
+    report: Report
+    reports: Reports
+    resellable: Resellable
+    resend: Resend
+    reset_password: Reset my password
+    response_code: Response Code
+    resume: resume
+    resumed: Resumed
+    return: return
+    return_authorization: Return Authorization
+    return_authorization_reasons: Return Authorization Reasons
+    return_authorization_updated: Return authorization updated
+    return_authorizations: Return Authorizations
+    return_item_inventory_unit_ineligible: Return item's inventory unit must be shipped
+    return_item_inventory_unit_reimbursed: Return item's inventory unit is already reimbursed
+    return_item_order_not_completed: Return item's order must be completed
+    return_item_rma_ineligible: Return item requires an RMA
+    return_item_time_period_ineligible: Return item is outside the eligible time period
+    return_items: Return Items
+    return_items_cannot_be_associated_with_multiple_orders: Return items cannot be associated with multiple orders.
+    return_number: Return Number
+    return_quantity: Return Quantity
+    returned: Returned
+    review: Review
+    risk: Risk
+    risk_analysis: Risk Analysis
+    risky: Risky
+    rma_credit: RMA Credit
+    rma_number: RMA Number
+    rma_value: RMA Value
+    role_id: Role ID
+    roles: Roles
+    rules: Rules
+    safe: Safe
+    sales_total: Sales Total
+    sales_total_description: Sales Total For All Orders
+    sales_totals: Sales Totals
+    save_and_continue: Save and Continue
+    save_my_address: Save my address
+    say_no: 'No'
+    say_yes: 'Yes'
+    scope: Scope
+    search: Search
+    search_results: Search results for '%{keywords}'
+    searching: Searching
+    secure_connection_type: Secure Connection Type
+    security_settings: Security Settings
+    select: Select
+    select_a_return_authorization_reason: Select a reason for the return authorization
+    select_a_stock_location: Select a stock location
+    select_from_prototype: Select From Prototype
+    select_stock: Select stock
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
+    send_copy_of_all_mails_to: Send Copy of All Mails To
+    send_mails_as: Send Mails As
     server: Server
-    server_error: Eroare de server
-    settings: Setări
-    ship: livrează
-    ship_address: Adresa de livrare
-    ship_total: Total livrare
-    shipment: Livrare
-    shipment_adjustments:
-    shipment_details:
+    server_error: The server returned an error
+    settings: Settings
+    ship: Ship
+    ship_address: Ship Address
+    ship_total: Ship Total
+    shipment: Shipment
+    shipment_adjustments: "Shipment adjustments"
+    shipment_details: "From %{stock_location} via %{shipping_method}"
     shipment_mailer:
       shipped_email:
-        dear_customer: Dragă client,\n
-        instructions: Comanda dumneavoastră a fost livrată
-        shipment_summary: Sumar livrare
-        subject: Notificare livrare
-        thanks: Vă mulțumim pentru afacerea dumneavoastră.
-        track_information: 'Informații de urmărire: %{tracking}'
-        track_link: Link de urmărire %{url}
-    shipment_state: Stare livrare
+        dear_customer: Dear Customer,
+        instructions: Your order has been shipped
+        shipment_summary: Shipment Summary
+        subject: Shipment Notification
+        thanks: Thank you for your business.
+        track_information: ! 'Tracking Information: %{tracking}'
+        track_link: ! 'Tracking Link: %{url}'
+    shipment_state: Shipment State
     shipment_states:
-      backorder: comandă în afara stocului
-      canceled:
-      partial: parțial
-      pending: "în așteptare"
-      ready: pregătit
-      shipped: livrat
-    shipment_transfer_error:
-    shipment_transfer_success:
-    shipments: Livrări
-    shipped: Livrare
-    shipping: Livrare
-    shipping_address: Adresă livrare
-    shipping_categories: Categorii livrare
-    shipping_category: Categorie livrare
-    shipping_flat_rate_per_item: Rată fixă per articol din pachet
-    shipping_flat_rate_per_order: Rată fixă
-    shipping_flexible_rate: Rată flexibilă per articol din pachet
-    shipping_instructions: Instrucțiuni livrare
-    shipping_method: Metodă livrare
-    shipping_methods: Metode livrare
-    shipping_price_sack: Sac de preț
-    shipping_total:
-    shop_by_taxonomy: "%{taxonomy}"
-    shopping_cart: Coș cumpărături
-    show: Afișează
-    show_active: Afișează produsele active
-    show_deleted: Afișează și produsele care au fost șterse
-    show_only_complete_orders: Afișează doar comenzile neprocesate
-    show_only_considered_risky:
-    show_rate_in_label: Afișează rata în etichetă
-    sku: Cod produs
-    skus:
-    slug:
-    source: Sursa
-    special_instructions: Instrucțiuni speciale
-    split: Divide
-    spree_gateway_error_flash_for_checkout: A apărut o problemă legat de informațiile de plată. Te rugăm verifică dacă informațiile sunt corecte și mai încearcă odaată.
+      backorder: backorder
+      canceled: canceled
+      partial: partial
+      pending: pending
+      ready: ready
+      shipped: shipped
+    shipment_transfer_error: 'There was an error transferring variants'
+    shipment_transfer_success: 'Variants successfully transferred'
+    shipments: Shipments
+    shipped: Shipped
+    shipping: Shipping
+    shipping_address: Shipping Address
+    shipping_categories: Shipping Categories
+    shipping_category: Shipping Category
+    shipping_flat_rate_per_item: Flat rate per package item
+    shipping_flat_rate_per_order: Flat rate
+    shipping_flexible_rate: Flexible Rate per package item
+    shipping_instructions: Shipping Instructions
+    shipping_method: Shipping Method
+    shipping_methods: Shipping Methods
+    shipping_price_sack: Price sack
+    shipping_total: Shipping total
+    shop_by_taxonomy: Shop by %{taxonomy}
+    shopping_cart: Shopping Cart
+    show: Show
+    show_active: Show Active
+    show_deleted: Show Deleted
+    show_only_complete_orders: Only show complete orders
+    show_only_considered_risky: Only show risky orders
+    show_rate_in_label: Show rate in label
+    sku: SKU
+    skus: SKUs
+    slug: Slug
+    source: Source
+    special_instructions: Special Instructions
+    split: Split
+    spree_gateway_error_flash_for_checkout: There was a problem with your payment information. Please check your information and try again.
     ssl:
-      change_protocol:
-    start: De la
-    state: Județ / regiune
-    state_based: Bazat pe un județ / regiune
+      change_protocol: "Please switch to using HTTP (rather than HTTPS) and retry this request."
+    start: Start
+    state: State
+    state_based: State Based
     state_machine_states:
-      accepted:
-      address:
-      authorized:
-      awaiting:
-      awaiting_return:
-      backordered:
-      canceled:
-      cart:
-      checkout:
-      closed:
-      complete:
-      completed:
-      confirm:
-      delivery:
-      errored:
-      failed:
-      given_to_customer:
-      invalid:
-      manual_intervention_required:
-      on_hand:
-      open:
-      order:
-      payment:
-      pending:
-      processing:
-      ready:
-      reimbursed:
-      resumed:
-      returned:
-      shipped:
-      void:
-    states: Județe
-    states_required: Județe obligatorii
+      accepted: Accepted
+      address: Address
+      authorized: Authorized
+      awaiting: Awaiting
+      awaiting_return: Awaiting return
+      backordered: Back ordered
+      canceled: Canceled
+      cart: Cart
+      checkout: Checkout
+      closed: Closed
+      complete: Complete
+      completed: Completed
+      confirm: Confirm
+      delivery: Delivery
+      errored: Errored
+      failed: Failed
+      given_to_customer: Given to customer
+      invalid: Invalid
+      manual_intervention_required: Manual intervention required
+      on_hand: On hand
+      open: Open
+      order: Order
+      payment: Payment
+      pending: Pending
+      processing: Processing
+      ready: Ready
+      reimbursed: Reimbursed
+      resumed: Resumed
+      returned: Returned
+      shipped: Shipped
+      void: Void
+    states: States
+    states_required: States Required
     status: Status
-    stock:
-    stock_location: Locație stoc
-    stock_location_info: Informații locație stoc
-    stock_locations: Locații stoc
-    stock_locations_need_a_default_country:
-    stock_management: Gestionare stoc
-    stock_management_requires_a_stock_location:
-    stock_movements: Mișcări stoc
-    stock_movements_for_stock_location: Mișcări stoc pentru %{stock_location_name}
-    stock_successfully_transferred: Stoc transferat cu succes între locații
-    stock_transfer: Transfer stoc
-    stock_transfers: Transferuri stoc
-    stop: Până la
-    store: Magazin
-    street_address: Strada
-    street_address_2: Strada (cont.)
+    stock: Stock
+    stock_location: Stock Location
+    stock_location_info: Stock location info
+    stock_locations: Stock Locations
+    stock_locations_need_a_default_country: You must create a default country before creating a stock location.
+    stock_management: Stock Management
+    stock_management_requires_a_stock_location: Please create a stock location in order to manage stock.
+    stock_movements: Stock Movements
+    stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
+    stock_successfully_transferred: Stock was successfully transferred between locations.
+    stock_transfer: Stock Transfer
+    stock_transfers: Stock Transfers
+    stop: Stop
+    store: Store
+    street_address: Street Address
+    street_address_2: Street Address (cont'd)
     subtotal: Subtotal
-    subtract: Scade
-    success:
-    successfully_created: "%{resource} a fost creată cu succes!"
-    successfully_refunded:
-    successfully_removed: "%{resource} a fost ștearsă cu succes!"
-    successfully_signed_up_for_analytics: Ați fost înregistrat cu success la Spree Analytics
-    successfully_updated: "%{resource} a fost salvată cu succes!"
-    summary:
-    tax: Taxe
-    tax_categories: Categorii taxe
-    tax_category: Categorie Taxe
-    tax_code:
-    tax_included:
-    tax_rate_amount_explanation: Ratele de taxe sunt o valoare decimală folosită pentru ajutorarea calculelor, (ex. dacă rata taxei este 5% atunci introduceți 0.05)
-    tax_rates: Tarif taxe
-    taxon: Clasă
-    taxon_edit: Editare clasă
-    taxon_placeholder: Adaugă un taxon
+    subtract: Subtract
+    success: Success
+    successfully_created: ! '%{resource} has been successfully created!'
+    successfully_refunded: ! '%{resource} has been successfully refunded!'
+    successfully_removed: ! '%{resource} has been successfully removed!'
+    successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
+    successfully_updated: ! '%{resource} has been successfully updated!'
+    summary: Summary
+    tax: Tax
+    tax_categories: Tax Categories
+    tax_category: Tax Category
+    tax_code: Tax Code
+    tax_included: "Tax (incl.)"
+    tax_rate_amount_explanation: Tax rates are a decimal amount to aid in calculations, (i.e. if the tax rate is 5% then enter 0.05)
+    tax_rates: Tax Rates
+    taxon: Taxon
+    taxon_edit: Edit Taxon
+    taxon_placeholder: Add a Taxon
     taxon_rule:
-      choose_taxons:
-      label:
-      match_all:
-      match_any:
-    taxonomies: Clasificări
-    taxonomy: Taxonomie
-    taxonomy_edit: Modifică clasificări
-    taxonomy_tree_error: Schimbarea cerută nu a fost acceptată, iar structura s-a reîntors la starea de dinainte, te rugăm încearcă din nou.
-    taxonomy_tree_instruction: "* Click de dreapta pe una din subcategoriile din structură, pentru a accesa meniul care îți permite să adaugi, să ștergi sau să sortezi sub-categoriile."
-    taxons: Clase
+      choose_taxons: Choose taxons
+      label: Order must contain x amount of these taxons
+      match_all: all
+      match_any: at least one
+    taxonomies: Taxonomies
+    taxonomy: Taxonomy
+    taxonomy_edit: Edit taxonomy
+    taxonomy_tree_error: The requested change has not been accepted and the tree has been returned to its previous state, please try again.
+    taxonomy_tree_instruction: ! '* Right click a child in the tree to access the menu for adding, deleting or sorting a child.'
+    taxons: Taxons
     test: Test
     test_mailer:
       test_email:
-        greeting: Felicitări!
-        message: Dacă ați primit acest email, atunci setările dumneavoastră de email sunt corecte.
-        subject: Email de test
-    test_mode: Mod Testare
-    thank_you_for_your_order: Mulțumim pentru comandă. Te rugăm să tipărești o copie a acestei pagini de confirmare pentru registrele tale.
-    there_are_no_items_for_this_order:
-    there_were_problems_with_the_following_fields: Au apărut probleme la următoarele câmpuri
-    this_order_has_already_received_a_refund:
-    thumbnail: miniatură
-    tiered_flat_rate:
-    tiered_percent:
-    tiers:
-    time: Timp
-    to_add_variants_you_must_first_define: Pentru a adăuga variante, trebuie mai întâi să le definești
+        greeting: Congratulations!
+        message: If you have received this email, then your email settings are correct.
+        subject: Test Mail
+    test_mode: Test Mode
+    thank_you_for_your_order: Thank you for your business.  Please print out a copy of this confirmation page for your records.
+    there_are_no_items_for_this_order: There are no items for this order. Please add an item to the order to continue.
+    there_were_problems_with_the_following_fields: There were problems with the following fields
+    this_order_has_already_received_a_refund: This order has already received a refund
+    thumbnail: Thumbnail
+    tiered_flat_rate: Tiered Flat Rate
+    tiered_percent: Tiered Percent
+    tiers: Tiers
+    time: Time
+    to_add_variants_you_must_first_define: To add variants, you must first define
     total: Total
-    total_per_item:
-    total_pre_tax_refund:
-    total_price:
-    total_sales:
-    track_inventory:
+    total_per_item: Total per item
+    total_pre_tax_refund: Total Pre-Tax Refund
+    total_price: Total price
+    total_sales: Total Sales
+    track_inventory: Track Inventory
     tracking: Tracking
-    tracking_number: Număr de tracking
-    tracking_url: URL de tracking
-    tracking_url_placeholder: ex. http://quickship.com/package?num=:tracking
-    transaction_id:
-    transfer_from_location: Transferă din
-    transfer_stock: Transfer stoc
-    transfer_to_location: Transferă către
-    tree: Arbore
-    type: Tastează
-    type_to_search: Tastează pentru căutare
-    unable_to_connect_to_gateway: Nu se poate conecta la procesator de plăți.
-    unable_to_create_reimbursements:
-    under_price: Sub %{price}
-    unlock: Deblochează
-    unrecognized_card_type: Acest tip de card nu este recunoscut
-    unshippable_items: Articole nelivrabile
-    update: Salvează
-    updating: Se salvează
-    usage_limit: Limită de utilizare
-    use_app_default:
-    use_billing_address: Folosește adresa de facturare
-    use_new_cc: Folosește alt card
-    use_s3: Folosește Amazon S3 pentru imagini
-    user: Utilizator
+    tracking_number: Tracking Number
+    tracking_url: Tracking URL
+    tracking_url_placeholder: e.g. http://quickship.com/package?num=:tracking
+    transaction_id: Transaction ID
+    transfer_from_location: Transfer From
+    transfer_stock: Transfer Stock
+    transfer_to_location: Transfer To
+    tree: Tree
+    type: Type
+    type_to_search: Type to search
+    unable_to_connect_to_gateway: Unable to connect to gateway.
+    unable_to_create_reimbursements: Unable to create reimbursements because there are items pending manual intervention.
+    under_price: Under %{price}
+    unlock: Unlock
+    unrecognized_card_type: Unrecognized card type
+    unshippable_items: Unshippable Items
+    update: Update
+    updating: Updating
+    usage_limit: Usage Limit
+    use_app_default: Use App Default
+    use_billing_address: Use Billing Address
+    use_existing_cc: Use an existing card on file
+    use_new_cc: Use a new card
+    use_new_cc_or_payment_method: Use a new card / payment method
+    use_s3: Use Amazon S3 For Images
+    user: User
     user_rule:
-      choose_users: Alege utilizatori
-    users: Utilizatori
+      choose_users: Choose users
+    users: Users
     validation:
-      cannot_be_less_than_shipped_units: nu poate fi mai mic de numărul de unități livrate.
-      cannot_destroy_line_item_as_inventory_units_have_shipped:
-      exceeds_available_stock: depășește stocul disponibil. Vă rugăm verificați ca liniile comenzii să aibă cantități valide.
-      is_too_large: este prea mare -- stocul actual nu acoperă cantitatea comandată!
-      must_be_int: trebuie să fie indivizibil
-      must_be_non_negative: trebuie să fie o valoare pozitivă sau nulă
-      unpaid_amount_not_zero:
-    value: Valoare
-    variant: Variantă
-    variant_placeholder:
-    variants: Variante
-    version: Versiune
+      cannot_be_less_than_shipped_units: cannot be less than the number of shipped units.
+      cannot_destroy_line_item_as_inventory_units_have_shipped: Cannot destroy line item as some inventory units have shipped.
+      exceeds_available_stock: exceeds available stock. Please ensure line items have a valid quantity.
+      is_too_large: is too large -- stock on hand cannot cover requested quantity!
+      must_be_int: must be an integer
+      must_be_non_negative: must be a non-negative value
+      unpaid_amount_not_zero: "Amount was not fully reimbursed. Still due: %{amount}"
+    value: Value
+    variant: Variant
+    variant_placeholder: Choose a variant
+    variants: Variants
+    version: Version
     void: Void
-    weight: Greutate
-    what_is_a_cvv: Ce înseamnă (CVV) Codul de securitate al cardului de credit?
-    what_is_this: Ce este aceasta?
-    width: Lățime
-    year: An
-    you_have_no_orders_yet: Nu ai încă nicio comandă.
-    your_cart_is_empty: Coș de cumpărături gol
-    your_order_is_empty_add_product: Comanda dumneavoastră este goală, vă rugăm căutați și adăugați produse mai sus
-    zip: Cod poștal
-    zipcode: Cod poștal
-    zone: Zonă
-    zones: Zone
+    weight: Weight
+    what_is_a_cvv: What is a (CVV) Credit Card Code?
+    what_is_this: What's This?
+    width: Width
+    year: Year
+    you_have_no_orders_yet: You have no orders yet
+    your_cart_is_empty: Your cart is empty
+    your_order_is_empty_add_product: Your order is empty, please search for and add a product above
+    zip: Zip
+    zipcode: Zip Code
+    zone: Zone
+    zones: Zones

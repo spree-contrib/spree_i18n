@@ -40,20 +40,6 @@ en-AU:
         name: Name
         presentation: Presentation
       spree/order:
-        checkout_complete: Checkout Complete
-        completed_at: Completed At
-        considered_risky:
-        coupon_code:
-        created_at: Order Date
-        email: Customer E-Mail
-        ip_address: IP Address
-        item_total: Item Total
-        number: Number
-        payment_state: Payment State
-        shipment_state: Shipment State
-        special_instructions: Special Instructions
-        state: State
-        total: Total
       spree/order/bill_address:
         address1: Billing address street
         city: Billing address city
@@ -68,10 +54,25 @@ en-AU:
         firstname: Shipping address first name
         lastname: Shipping address last name
         phone: Shipping address phone
-        state: Shipping address state
+        state: State
         zipcode: Shipping address postcode
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount:
+        number: Number
       spree/payment_method:
         name: Name
       spree/product:
@@ -105,6 +106,8 @@ en-AU:
         amount: Amount
       spree/role:
         name: Name
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Abbreviation
         name: Name
@@ -209,6 +212,8 @@ en-AU:
         one: Credit Card
         other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Inventory Unit
         other: Inventory Units
@@ -216,7 +221,11 @@ en-AU:
         one: Line Item
         other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Order
         other: Orders
@@ -224,11 +233,17 @@ en-AU:
         one: Payment
         other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Product
         other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Property
         other: Properties
@@ -236,12 +251,20 @@ en-AU:
         one: Prototype
         other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Return Authorization
         other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Roles
         other: Roles
@@ -252,13 +275,23 @@ en-AU:
         one: Shipping Category
         other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: State
         other: States
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Tax Category
         other: Tax Categories
@@ -272,6 +305,8 @@ en-AU:
         one: Taxonomy
         other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: User
         other: Users
@@ -325,6 +360,8 @@ en-AU:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Abbreviation
     accept:
@@ -361,10 +398,10 @@ en-AU:
     add_rule_of_type: Add rule of type
     add_state: Add State
     add_stock:
-    add_stock_management:
     add_to_cart: Add To Basket
     add_variant:
     additional_item: Additional Item Cost
+    address: Address
     address1:
     address2:
     adjustable:
@@ -381,6 +418,7 @@ en-AU:
         orders:
         overview:
         products:
+        promotion_categories: Promotion Categories
         promotions:
         properties:
         prototypes:
@@ -406,9 +444,6 @@ en-AU:
     all_adjustments_opened:
     all_departments: All departments
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
-    allow_ssl_in_production: Allow SSL to be used in production mode
-    allow_ssl_in_staging: Allow SSL to be used in staging mode
     already_signed_up_for_analytics:
     alt_text: Alternative Text
     alternative_phone: Alternative Phone
@@ -471,10 +506,11 @@ en-AU:
     card_type_is: Card type is
     cart: Basket
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Categories
     category: Category
     charged:
-    check_for_spree_alerts:
     checkout: Checkout
     choose_a_customer:
     choose_a_taxon_to_sort_products_for:
@@ -535,10 +571,7 @@ en-AU:
     credit_owed: Credit Owed
     credits:
     currency: Currency
-    currency_decimal_mark:
     currency_settings: Currency Settings
-    currency_symbol_position: Put currency symbol before or after dollar amount?
-    currency_thousands_separator:
     current: Current
     current_promotion_usage:
     customer: Customer
@@ -571,6 +604,7 @@ en-AU:
     default_tax: Default Tax
     default_tax_zone: Default Tax Zone
     delete: Delete
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Delivery
     depth: Depth
@@ -581,7 +615,6 @@ en-AU:
     discount_amount: Discount Amount
     dismiss_banner: No. Thanks! I'm not interested, do not display this message again
     display: Display
-    display_currency: Display currency
     doesnt_track_inventory:
     edit: Edit
     editing_resource:
@@ -608,12 +641,10 @@ en-AU:
     enable_mail_delivery: Enable Mail Delivery
     end:
     ending_in: Ending in
-    environment: Environment
     error: error
     errors:
       messages:
         could_not_create_taxon: Could not create taxon
-        no_payment_methods_available: No payment methods are configured for this environment
         no_shipping_methods_available: No shipping methods available for selected location, please change your address and try again.
     errors_prohibited_this_record_from_being_saved:
       one: 1 error prohibited this record from being saved
@@ -643,6 +674,7 @@ en-AU:
     failed_payment_attempts:
     filename: Filename
     fill_in_customer_info:
+    filter: Filter
     filter_results:
     finalize: Finalise
     finalized:
@@ -658,7 +690,6 @@ en-AU:
     free_shipping_amount:
     front_end: Front End
     gateway: Gateway
-    gateway_config_unavailable: Gateway unavailable for environment
     gateway_error: Gateway Error
     general: General
     general_settings: General Settings
@@ -668,7 +699,6 @@ en-AU:
     guest_user_account: Checkout as a Guest
     has_no_shipped_units: has no shipped units
     height: Height
-    hide_cents:
     home: Home
     i18n:
       available_locales:
@@ -683,7 +713,6 @@ en-AU:
       this_file_language: English (Australia)
       translations:
     icon: Icon
-    identifier:
     image: Image
     images: Images
     implement_eligible_for_return:
@@ -694,6 +723,8 @@ en-AU:
     included_price_validation: cannot be selected unless you have set a Default Tax Zone
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: 'Fill out the form below and instructions to reset your password will be emailed to you:'
     insufficient_stock: Insufficient stock available, only %{on_hand} remaining
@@ -735,6 +766,7 @@ en-AU:
     line_item_adjustments:
     list: List
     loading: Loading
+    loading_tree: Loading tree. Please wait…
     locale_changed: Locale Changed
     location:
     lock:
@@ -766,6 +798,7 @@ en-AU:
     meta_title:
     metadata: Metadata
     minimal_amount: Minimal Amount
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Month
     more: More
     move_stock_between_locations:
@@ -794,6 +827,7 @@ en-AU:
     new_refund_reason:
     new_return_authorization: New Return Authorisation
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: New Shipping Category
     new_shipping_method: New Shipping Method
@@ -857,6 +891,7 @@ en-AU:
     order_details: Order Details
     order_email_resent: Order Email Resent
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Dear Customer,\n
@@ -894,7 +929,6 @@ en-AU:
     order_total: Order Total
     order_updated: Order Updated
     orders: Orders
-    other_items_in_other:
     out_of_stock: Out of Stock
     overview: Overview
     package_from:
@@ -908,7 +942,6 @@ en-AU:
     pay: pay
     payment: Payment
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Payment Information
     payment_method: Payment Method
     payment_method_not_supported:
@@ -936,6 +969,7 @@ en-AU:
     phone: Phone
     place_order: Place Order
     please_define_payment_methods: Please define some payment methods first.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Something went wrong. Please try adding the item again.
     powered_by: Powered by
     pre_tax_amount:
@@ -980,6 +1014,7 @@ en-AU:
         description:
         name:
     promotion_actions: Actions
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Match any of these rules
@@ -1035,6 +1070,7 @@ en-AU:
     received: Received
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund: Refund
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1068,6 +1104,7 @@ en-AU:
     rename: Rename
     report:
     reports: Reports
+    resellable: Resellable
     resend: Resend
     reset_password: Reset my password
     response_code: Response Code
@@ -1080,6 +1117,7 @@ en-AU:
     return_authorizations: Return Authorisations
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1087,7 +1125,6 @@ en-AU:
     return_number:
     return_quantity: Return Quantity
     returned: Returned
-    returns:
     review: Review
     risk:
     risk_analysis:
@@ -1095,6 +1132,7 @@ en-AU:
     rma_credit: RMA Credit
     rma_number: RMA Number
     rma_value: RMA Value
+    role_id: Role ID
     roles: Roles
     rules: Rules
     safe:
@@ -1116,6 +1154,7 @@ en-AU:
     select_a_stock_location:
     select_from_prototype: Select From Prototype
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Send Copy of All Mails To
     send_mails_as: Send Mails As
     server: Server
@@ -1306,7 +1345,9 @@ en-AU:
     usage_limit: Usage Limit
     use_app_default:
     use_billing_address: Use Billing Address
+    use_existing_cc: Use an existing card on file
     use_new_cc: Use a new card
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Use Amazon S3 For Images
     user: User
     user_rule:

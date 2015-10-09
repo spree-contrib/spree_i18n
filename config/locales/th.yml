@@ -40,20 +40,6 @@ th:
         name: "ชื่อเรียก"
         presentation: "การแสดงผล"
       spree/order:
-        checkout_complete: "เช็คเอ้าท์เรียบร้อย"
-        completed_at: "รายการสมบูรณ์เมื่อ"
-        considered_risky:
-        coupon_code: "เลขคูปอง"
-        created_at: "วันที่สั่งสินค้า"
-        email: "อีเมลของลูกค้า"
-        ip_address: "หลายเลขไอพี"
-        item_total: "รวม"
-        number: "หมายเลข"
-        payment_state: "จังหวัด"
-        shipment_state: "จังหวัด"
-        special_instructions: "ข้อแนะนำเพิ่มเติม"
-        state: "จังหวัด"
-        total: "รวม"
       spree/order/bill_address:
         address1: "ชื่อถนนในใบเสร็จ"
         city: "ชื่อตำบลในใบเสร็จ"
@@ -68,10 +54,25 @@ th:
         firstname: "ชื่อผู้รับ"
         lastname: "นามสกุลผู้รับ"
         phone: "เบอร์โทรศัพท์ผู้รับ"
-        state: "จังหวัดที่จัดส่ง"
+        state: State
         zipcode: "รหัสไปรษณีย์ผู้รับ"
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: "จำนวน"
+        number: Number
       spree/payment_method:
         name: "ชื่อ"
       spree/product:
@@ -105,6 +106,8 @@ th:
         amount: "จำนวน"
       spree/role:
         name: "ชื่อ"
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: "ตัวย่อ"
         name: "ชื่อ"
@@ -209,6 +212,8 @@ th:
         one: "บัตรเครดิต"
         other: "บัตรเครดิต"
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: "จำนวนในคลัง"
         other: "จำนวนในคลัง"
@@ -216,7 +221,11 @@ th:
         one: Line Item
         other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: "สั่งซื้อ"
         other: "สั่งซื้อ"
@@ -224,11 +233,17 @@ th:
         one: "ชำระ"
         other: "ชำระ"
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: "สินค้า"
         other: "สินค้า"
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: "คุณสมบัติ"
         other: "คุณสมบัติ"
@@ -236,12 +251,20 @@ th:
         one: Prototype
         other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: "รายการคืน"
         other: "รายการคืน"
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: "หน้าที่"
         other: "หน้าที่"
@@ -252,13 +275,23 @@ th:
         one: "ประเภทการจัดส่ง"
         other: "ประเภทการจัดส่ง"
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: "จังหวัด"
         other: "จังหวัด"
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: "ประเภทภาษี"
         other: "ประเภทภาษี"
@@ -266,8 +299,14 @@ th:
         one: "อัตราภาษีTax Rate"
         other: "อัตราภาษี"
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: "ผู้ใช้งาน"
         other: "ผู้ใช้งาน"
@@ -321,6 +360,8 @@ th:
       not_found: "ไม่พบ"
       not_locked: "ไม่ได้ล๊อก"
       not_saved: "พบ %{count} ข้อผิดพลาดที่ทำให้ %{resource} ไม่สามารถบันทึกได้"
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: "คำย่อ"
     accept:
@@ -357,10 +398,10 @@ th:
     add_rule_of_type: "เพิ่มกฏของประเภท"
     add_state: "เพิ่มจังหวัด"
     add_stock: "เพิ่มสต็อก"
-    add_stock_management: "เพิ่มการจัดการสต็อก"
     add_to_cart: "เพิ่มลงตะกร้า"
     add_variant: "เพิ่มตัวแปร"
     additional_item: "ราคาเพิ่มเติม"
+    address: Address
     address1: "ที่อยู่"
     address2: "ที่อยู่ (เพิ่มเติม)"
     adjustable:
@@ -377,6 +418,7 @@ th:
         orders: "สั่งซื้อ"
         overview: "ภาพรวม"
         products: "สินค้า"
+        promotion_categories: Promotion Categories
         promotions: "โปรโมชั่น"
         properties:
         prototypes:
@@ -402,9 +444,6 @@ th:
     all_adjustments_opened: "ทุกรายการแก้ไขนั้้นได้เปิดแล้ว!"
     all_departments: "ทุกแผนก"
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: "อนุญาตให้ใช้ SSL เมื่ออยู่ในโหมดของการพัฒนาและทดสอบ"
-    allow_ssl_in_production: "อนุญาต SSL ให้ทำงานบน Production"
-    allow_ssl_in_staging: "อนุณาต SSL ให้ทำงานบน Stagging"
     already_signed_up_for_analytics: "คุณได้สมัครใช้งาน Spree Analytics"
     alt_text: "ข้อความอื่นๆ"
     alternative_phone: "เบอร์โทรอื่นๆ"
@@ -467,10 +506,11 @@ th:
     card_type_is: "ชนิดของบัตร"
     cart: "ตะกร้าสินค้า"
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: "หมวดหมู่"
     category: "ชนิด"
     charged:
-    check_for_spree_alerts: "ตรวจสอบการแจ้งเตือน Spree"
     checkout: "สั่งซื้อ"
     choose_a_customer: "เลือกลูกค้า"
     choose_a_taxon_to_sort_products_for:
@@ -531,10 +571,7 @@ th:
     credit_owed: "ค้างเครดิตอยู่"
     credits:
     currency: "สกุลเงิน"
-    currency_decimal_mark: "จุดทศนิยมของสกุลเงิน"
     currency_settings: "ตั้งค่าสกุลเงิน"
-    currency_symbol_position: "ใส่เครื่องหมายสกุลเงินก่อนหรือหลังจำนวน?"
-    currency_thousands_separator: "ตัวคั่นทุกหนึ่งพัน"
     current: "ขณะนี้"
     current_promotion_usage: "ใช้อยู่: %{count}"
     customer: "ลูกค้า"
@@ -567,6 +604,7 @@ th:
     default_tax: "ค่าภาษีเริ่มต้น"
     default_tax_zone: "ค่าโซนภาษีเริ่มต้น"
     delete: "ลบ"
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: "จัดส่ง"
     depth: "ลึก"
@@ -577,7 +615,6 @@ th:
     discount_amount: "จำนวนส่วนลด"
     dismiss_banner: "ไม่ ขอบคุณ! ฉันไม่สนใจ และไม่ต้องแสดงข้อความดังกล่าวอีก"
     display: "แสดง"
-    display_currency: "แสดงสกุลเงิน"
     doesnt_track_inventory:
     edit: "แก้ไข"
     editing_resource:
@@ -604,12 +641,10 @@ th:
     enable_mail_delivery: "เปิดระบบส่งเมล"
     end: "จบ"
     ending_in: "จบภายใน"
-    environment: Environment
     error: "ข้อผิดพลาด"
     errors:
       messages:
         could_not_create_taxon: "ไม่สามารถสร้าง Taxon"
-        no_payment_methods_available: "ไม่พบวิธีการชำระเงินใน environment นี้"
         no_shipping_methods_available: "ไม่พบวิธีจัดส่งสินค้าในสถานที่ดังกล่าว กรุณาเปลี่ยนที่อยู่ใหม่"
     errors_prohibited_this_record_from_being_saved:
       one: 1 ข้อผิดพลาดที่ไม่สามารถจัดเก็บข้อมูลได้
@@ -639,6 +674,7 @@ th:
     failed_payment_attempts:
     filename: "ชื่อไฟล์"
     fill_in_customer_info: "กรุณากรอกข้อมูลลูกค้า"
+    filter: Filter
     filter_results: "กรอกผลลัพท์"
     finalize: Finalize
     finalized:
@@ -654,7 +690,6 @@ th:
     free_shipping_amount:
     front_end: "หน้าขายสินค้า"
     gateway: "ช่องทางการชำระเงิน"
-    gateway_config_unavailable: Gateway unavailable for environment
     gateway_error: "เกิดข้อผิดพลาดที่ช่องทางการชำระเงิน"
     general: "เบื้องต้น"
     general_settings: "ข้อมูลเบื้องต้น"
@@ -664,7 +699,6 @@ th:
     guest_user_account: Checkout as a Guest
     has_no_shipped_units: has no shipped units
     height: "สูง"
-    hide_cents: "ซ่อนเซ็น"
     home: "หน้าแรก"
     i18n:
       available_locales: "ภาษาที่รองรับ"
@@ -679,7 +713,6 @@ th:
       this_file_language: "ภาษาไทย (TH)"
       translations: "แปล"
     icon: "ไอค่อน"
-    identifier:
     image: "รูปภาพ"
     images: "รูปภาพ"
     implement_eligible_for_return:
@@ -690,6 +723,8 @@ th:
     included_price_validation: "ไม่สามารถเลือกได้หากคุณยังไม่ได้ตั้งค่าเริ่มต้นของโซนภาษี"
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: "กรุณากรอกอีเมลของคุณในฟอร์มด้านล่าง"
     insufficient_stock: "สินค้าในคลังไม่เพียงพอ เรามีแค่ %{on_hand} อยู่ในขณะนี้"
@@ -731,6 +766,7 @@ th:
     line_item_adjustments:
     list: "รายการ"
     loading: "กำลังโหลด"
+    loading_tree: Loading tree. Please wait…
     locale_changed: "เปลี่ยนภาษา"
     location: "สถานที่"
     lock: "ล๊อก"
@@ -762,6 +798,7 @@ th:
     meta_title:
     metadata: Metadata
     minimal_amount: "จำนวนต่ำสุด"
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: "เดือน"
     more: "เพิ่มเติม"
     move_stock_between_locations: "ย้ายสินค้าข้ามสถานที่"
@@ -790,6 +827,7 @@ th:
     new_refund_reason:
     new_return_authorization: "รายการคืนสินค้าใหม่"
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: "เพิ่มกลุ่มวิธีการจัดส่ง"
     new_shipping_method: "เพิ่มวิธีจัดส่ง"
@@ -853,6 +891,7 @@ th:
     order_details: "รายละเอียดการสั่งซื้อ"
     order_email_resent: "ส่งอีเมลการสั่งซื้อใหม่"
     order_information: "ข้อมูลการสั่งซื้อ"
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: "ถึงคุณลูกค้า,\\n"
@@ -890,7 +929,6 @@ th:
     order_total: "ราคารวม"
     order_updated: "รายการสั่งซื้อได้ถูกปรับปรุงแล้ว"
     orders: "รายการสั่งซื้อ"
-    other_items_in_other:
     out_of_stock: "สินค้าหมด"
     overview: "ภาพรวม"
     package_from: "สินค้าจาก"
@@ -904,7 +942,6 @@ th:
     pay: "ชำระ"
     payment: "ชำระ"
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: "ข้อมูลการชำระเงิน"
     payment_method: "วิธีชำระเงิน"
     payment_method_not_supported:
@@ -932,6 +969,7 @@ th:
     phone: "เบอร์โทรศัพท์"
     place_order: "สั่งซื้อ"
     please_define_payment_methods: "กรุณาเลือกวิธีการชำระก่อน"
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: "เกิดข้อผิดพลาด กรุณาเพิ่มสินค้าใหม่อีกครั้ง"
     powered_by: "สนับสนุนโดย"
     pre_tax_amount:
@@ -976,6 +1014,7 @@ th:
         description:
         name:
     promotion_actions: "ดำเนินการ"
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: "จับคู่ทั้งหมด"
@@ -1031,6 +1070,7 @@ th:
     received: "ได้รับแล้ว"
     reception_status:
     reference: "อ้างอิง"
+    reference_contains: Reference Contains
     refund: "คืนเงิน"
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1064,6 +1104,7 @@ th:
     rename: "เปลี่ยนชื่อ"
     report:
     reports: "รายงาน"
+    resellable: Resellable
     resend: "ส่งใหม่"
     reset_password: "ตั้งรหัสผ่านใหม่"
     response_code: "รหัสที่ได้รับ"
@@ -1076,6 +1117,7 @@ th:
     return_authorizations: "รายการคืนสินค้า"
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1083,7 +1125,6 @@ th:
     return_number:
     return_quantity: "จำนวนที่คืน"
     returned: "คืน"
-    returns:
     review: "ตรวจสอบ"
     risk:
     risk_analysis:
@@ -1091,6 +1132,7 @@ th:
     rma_credit: RMA Credit
     rma_number: RMA Number
     rma_value: RMA Value
+    role_id: Role ID
     roles: "หน้าที่"
     rules: "กฏ"
     safe:
@@ -1112,6 +1154,7 @@ th:
     select_a_stock_location:
     select_from_prototype: "เลือกจาก Prototype"
     select_stock: "เลือกจากคลัง"
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: "ส่งสำเนาไปยัง"
     send_mails_as: "ส่งเมลด้วย"
     server: "เซิร์ฟเวอร์"
@@ -1302,7 +1345,9 @@ th:
     usage_limit: "ลิมิตการใช้"
     use_app_default:
     use_billing_address: "ใช้ที่อยู่ที่ออกใบเสร็จ"
+    use_existing_cc: Use an existing card on file
     use_new_cc: "ใช้บัตรใบใหม่"
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: "ใช้ Amazon S3 สำหรับรูปภาพ"
     user: "ผู้ใช้"
     user_rule:

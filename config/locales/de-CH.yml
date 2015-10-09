@@ -40,20 +40,6 @@ de-CH:
         name:
         presentation:
       spree/order:
-        checkout_complete:
-        completed_at:
-        considered_risky: Riskant
-        coupon_code:
-        created_at:
-        email:
-        ip_address:
-        item_total:
-        number:
-        payment_state:
-        shipment_state:
-        special_instructions:
-        state:
-        total:
       spree/order/bill_address:
         address1:
         city:
@@ -68,10 +54,25 @@ de-CH:
         firstname:
         lastname:
         phone:
-        state:
+        state: State
         zipcode:
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount:
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +106,8 @@ de-CH:
         amount:
       spree/role:
         name:
+      spree/shipment:
+        number: Number
       spree/state:
         abbr:
         name:
@@ -200,43 +203,119 @@ de-CH:
               cannot_destroy_default_store:
     models:
       spree/address:
+        one: Address
+        other: Addresses
       spree/country:
+        one: Country
+        other: Countries
       spree/credit_card:
+        one: Credit Card
+        other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
+        one: Inventory Unit
+        other: Inventory Units
       spree/line_item:
+        one: Line Item
+        other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
+        one: Order
+        other: Orders
       spree/payment:
+        one: Payment
+        other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
+        one: Product
+        other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
+        one: Property
+        other: Properties
       spree/prototype:
+        one: Prototype
+        other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
+        one: Roles
+        other: Roles
       spree/shipment:
+        one: Shipment
+        other: Shipments
       spree/shipping_category:
+        one: Shipping Category
+        other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
+        one: State
+        other: States
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate:
+        one: Tax Rate
+        other: Tax Rates
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
+        one: User
+        other: Users
       spree/variant:
+        one: Variant
+        other: Variants
       spree/zone:
+        one: Zone
+        other: Zones
   devise:
     confirmations:
       confirmed:
@@ -281,6 +360,8 @@ de-CH:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Abkürzung
     accept:
@@ -317,10 +398,10 @@ de-CH:
     add_rule_of_type: Add rule of type
     add_state: Kanton hinzufügen
     add_stock:
-    add_stock_management:
     add_to_cart: In den Warenkorb
     add_variant:
     additional_item: Additional Item Cost
+    address: Address
     address1:
     address2:
     adjustable:
@@ -337,6 +418,7 @@ de-CH:
         orders:
         overview:
         products:
+        promotion_categories: Promotion Categories
         promotions:
         properties:
         prototypes:
@@ -362,9 +444,6 @@ de-CH:
     all_adjustments_opened:
     all_departments: Alle Bereiche
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
-    allow_ssl_in_production: Allow SSL to be used in production mode
-    allow_ssl_in_staging: Allow SSL to be used in staging mode
     already_signed_up_for_analytics:
     alt_text: Alternative Text
     alternative_phone: Alternative Telefonnummer
@@ -427,10 +506,11 @@ de-CH:
     card_type_is: Kartentyp ist
     cart: Warenkorb
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategorien
     category: Kategorie
     charged:
-    check_for_spree_alerts:
     checkout: Zur Kasse
     choose_a_customer:
     choose_a_taxon_to_sort_products_for:
@@ -491,10 +571,7 @@ de-CH:
     credit_owed: Credit Owed
     credits:
     currency:
-    currency_decimal_mark:
     currency_settings:
-    currency_symbol_position:
-    currency_thousands_separator:
     current: Stand
     current_promotion_usage:
     customer: Kunde
@@ -527,6 +604,7 @@ de-CH:
     default_tax:
     default_tax_zone:
     delete: Löschen
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery:
     depth: Tiefe
@@ -537,7 +615,6 @@ de-CH:
     discount_amount:
     dismiss_banner:
     display: Anzeigen
-    display_currency:
     doesnt_track_inventory:
     edit: Bearbeiten
     editing_resource:
@@ -564,14 +641,14 @@ de-CH:
     enable_mail_delivery: Mailversand einschalten
     end:
     ending_in: Ending in
-    environment: Umgebung
     error: Fehler
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available:
         no_shipping_methods_available:
     errors_prohibited_this_record_from_being_saved:
+      one: 1 error prohibited this record from being saved
+      other: ! '%{count} errors prohibited this record from being saved'
     event: Ereignis
     events:
       spree:
@@ -597,6 +674,7 @@ de-CH:
     failed_payment_attempts:
     filename: Dateiname
     fill_in_customer_info:
+    filter: Filter
     filter_results:
     finalize:
     finalized:
@@ -612,7 +690,6 @@ de-CH:
     free_shipping_amount:
     front_end:
     gateway:
-    gateway_config_unavailable:
     gateway_error: Gateway-Fehler
     general:
     general_settings: Allgemeine Einstellungen
@@ -622,7 +699,6 @@ de-CH:
     guest_user_account: Ohne Registrierung bestellen
     has_no_shipped_units:
     height: Höhe
-    hide_cents:
     home:
     i18n:
       available_locales:
@@ -637,7 +713,6 @@ de-CH:
       this_file_language: Deutsch (Schweiz)
       translations:
     icon:
-    identifier:
     image: Bild
     images: Bilder
     implement_eligible_for_return:
@@ -648,6 +723,8 @@ de-CH:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password:
     insufficient_stock:
@@ -689,6 +766,7 @@ de-CH:
     line_item_adjustments:
     list: Liste
     loading: Lade
+    loading_tree: Loading tree. Please wait…
     locale_changed: Sprache geändert
     location:
     lock:
@@ -720,6 +798,7 @@ de-CH:
     meta_title:
     metadata: Metadaten
     minimal_amount:
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Monat
     more:
     move_stock_between_locations:
@@ -748,6 +827,7 @@ de-CH:
     new_refund_reason:
     new_return_authorization:
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Neue Versandkategorie
     new_shipping_method: Neue Versandmethode
@@ -811,6 +891,7 @@ de-CH:
     order_details: Details der Bestellung
     order_email_resent: Bestellbestätigung erneut versendet
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer:
@@ -848,7 +929,6 @@ de-CH:
     order_total: Gesamtsumme
     order_updated: Bestellung aktualisiert
     orders: Bestellungen
-    other_items_in_other:
     out_of_stock: Ausverkauft
     overview: "Übersicht"
     package_from:
@@ -862,7 +942,6 @@ de-CH:
     pay: zahlen
     payment: Zahlung
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Zahlungsinformationen
     payment_method: Zahlungsmethode
     payment_method_not_supported:
@@ -890,6 +969,7 @@ de-CH:
     phone:
     place_order: Bestellung ausführen
     please_define_payment_methods:
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error:
     powered_by:
     pre_tax_amount:
@@ -934,6 +1014,7 @@ de-CH:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all:
@@ -989,6 +1070,7 @@ de-CH:
     received:
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund:
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1022,6 +1104,7 @@ de-CH:
     rename: Rename
     report:
     reports: Berichte
+    resellable: Resellable
     resend: Neu versenden
     reset_password: Mein Passwort zurücksetzen
     response_code: Rückgabewert
@@ -1034,6 +1117,7 @@ de-CH:
     return_authorizations:
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1041,7 +1125,6 @@ de-CH:
     return_number:
     return_quantity:
     returned:
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1049,6 +1132,7 @@ de-CH:
     rma_credit:
     rma_number:
     rma_value:
+    role_id: Role ID
     roles: Rollen
     rules:
     safe:
@@ -1070,6 +1154,7 @@ de-CH:
     select_a_stock_location:
     select_from_prototype: Vom Prototypen auswählen
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Schicke eine Kopie aller E-Mails an
     send_mails_as: Schicke E-Mail als
     server:
@@ -1260,7 +1345,9 @@ de-CH:
     usage_limit: Nutzungsbeschränkung
     use_app_default:
     use_billing_address: Rechnungsadresse verwenden
+    use_existing_cc: Use an existing card on file
     use_new_cc:
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3:
     user: Benutzer
     user_rule:

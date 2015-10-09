@@ -40,20 +40,6 @@ sk:
         name: Názov
         presentation:
       spree/order:
-        checkout_complete: "Dokončiť objednávku"
-        completed_at: "Dokončené"
-        considered_risky:
-        coupon_code: "Kód kupónu"
-        created_at: "Dátum objednania"
-        email: Email zákazníka
-        ip_address: IP adresa
-        item_total:
-        number: "Počet"
-        payment_state: "Stav platby"
-        shipment_state: "Stav doručenia"
-        special_instructions: "Zvláštne pokyny"
-        state:
-        total: "Celkom"
       spree/order/bill_address:
         address1: "Účtovná adresa - Ulica a č.d."
         city: "Účtovná adresa - Mesto/Obec"
@@ -68,10 +54,25 @@ sk:
         firstname: "Doručovacia adresa - Krstné meno"
         lastname: "Doručovacia adresa - Priezvisko"
         phone: "Doručovacia adresa - Telefón"
-        state: "Doručovacia adresa - Kraj"
+        state: State
         zipcode: "Doručovacia adresa - PSČ"
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: "Suma"
+        number: Number
       spree/payment_method:
         name: "Názov"
       spree/product:
@@ -105,6 +106,8 @@ sk:
         amount:
       spree/role:
         name: "Názov"
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: "Skratka"
         name: "Názov"
@@ -201,95 +204,117 @@ sk:
     models:
       spree/address:
         one: Adresa
-        few: Adresy
         other: Adries
       spree/country:
         one: "Štát"
-        few: "Štáty"
         other: "Štátov"
       spree/credit_card:
         one: "Kreditná karta"
-        few: "Kreditné karty"
         other: "Kreditných kariet"
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: "Skladová jednotka"
-        few: "Skladové jednotky"
         other: "Skladových jednotiek"
       spree/line_item:
         one: "Riadková položka"
-        few: "Riadkové položky"
         other: "Riadkových položiek"
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: "Objednávka"
-        few: "Objednávky"
         other: "Objednávok"
       spree/payment:
         one: Platba
-        few: Platby
         other: Platieb
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Produkt
-        few: Produkty
         other: Produktov
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
+        one: Property
+        other: Properties
       spree/prototype:
         one: Prototyp
-        few: Prototypy
         other: Prototypov
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Rola
-        few: Roly
-        oher: "Rôl"
+        other: Roles
       spree/shipment:
         one: "Doručenie"
-        few: "Doručenia"
         other: "Doručení"
       spree/shipping_category:
         one: "Kategória doručenia"
-        few: "Kategórie doručenia"
         other: "Kategórií doručenia"
       spree/shipping_method:
         one: "Spôsob doručenia"
-        few: "Spôsoby doručenia"
         other: "Spôsobov doručenia"
       spree/state:
         one: Kraj
-        few: Kraje
         other: Krajov
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate:
         one: "Sadzba dane"
-        few: "Sadzby dane"
         other: "Sadzieb dane"
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
         one: "Taxonómia"
-        few: "Taxonómie"
         other: "Taxonómií"
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: "Používateľ"
-        few: "Používatelia"
         other: "Používateľov"
       spree/variant:
+        one: Variant
+        other: Variants
       spree/zone:
         one: "Zóna"
-        few: "Zóny"
         other: "Zón"
   devise:
     confirmations:
@@ -335,6 +360,8 @@ sk:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Skratka
     accept:
@@ -371,10 +398,10 @@ sk:
     add_rule_of_type: "Pridať pravidlo typu"
     add_state: "Pridať okres"
     add_stock: "Pridať sklad"
-    add_stock_management: "Pridať správu skladu"
     add_to_cart: "Pridať do košíka"
     add_variant: "Pridať variant"
     additional_item: "Ďaľšie náklady na tovar"
+    address: Address
     address1: Adresa
     address2: Adresa (pokr.)
     adjustable:
@@ -391,7 +418,8 @@ sk:
         orders: "Objednávky"
         overview: "Prahľad"
         products: "Produkty"
-        promotions: 
+        promotion_categories: Promotion Categories
+        promotions:
         properties: "Vlastnosti"
         prototypes: "Prototypy"
         reports: "Výkazy"
@@ -416,9 +444,6 @@ sk:
     all_adjustments_opened:
     all_departments: "Všetky oddelenia"
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test:
-    allow_ssl_in_production:
-    allow_ssl_in_staging:
     already_signed_up_for_analytics:
     alt_text: "Alternatívny text"
     alternative_phone: Iný telefónny kontakt
@@ -439,7 +464,7 @@ sk:
     associated_adjustment_closed:
     at_symbol: '@'
     authorization_failure: "Chyba pri autorizácii"
-    authorized: 
+    authorized:
     auto_capture:
     available_on: Prístupný dňa
     average_order_value: "Priemerná hodnota objednávky"
@@ -481,10 +506,11 @@ sk:
     card_type_is: Typ karty je
     cart: Košík
     cart_subtotal: "Medzisúčet"
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategórie
     category: Kategória
     charged:
-    check_for_spree_alerts:
     checkout: Platba
     choose_a_customer: "Zvoliť zákazníka"
     choose_a_taxon_to_sort_products_for:
@@ -545,10 +571,7 @@ sk:
     credit_owed:
     credits:
     currency: "Mena"
-    currency_decimal_mark: "Znak desatinnej čiarky"
     currency_settings: "Nastavenia meny"
-    currency_symbol_position: "Umiestniť znaku meny pred, alebo za sumu?"
-    currency_thousands_separator: "Oddeľovač tisícov"
     current: "Aktuálny"
     current_promotion_usage:
     customer: "Zákazník"
@@ -578,9 +601,10 @@ sk:
     date_range: "Obdobie"
     default:
     default_refund_amount:
-    default_tax: 
+    default_tax:
     default_tax_zone:
     delete: "Zmazať"
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Doručenie
     depth: "Hĺbka"
@@ -591,7 +615,6 @@ sk:
     discount_amount:
     dismiss_banner:
     display: "Zobraziť"
-    display_currency:
     doesnt_track_inventory:
     edit: "Upraviť"
     editing_resource:
@@ -618,17 +641,14 @@ sk:
     enable_mail_delivery: Povolenie doručenie emailom
     end:
     ending_in:
-    environment:
     error: chyba
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available: "Pre toto prostredie nie sú nastavené žiadne spôsoby platby"
         no_shipping_methods_available: "Pre zvolenú lokalitu nie sú dostupné žiadne spôsoby doručenia, zmeňte prosím vašu adresu"
     errors_prohibited_this_record_from_being_saved:
       one: "1 chyba znemožnila uložiť tento záznam"
-      few: "%{count} chyby znemožnily uložiť tento záznam"
-      other:  "%{count} chýb znemožnilo uložiť tento záznam"
+      other: "%{count} chýb znemožnilo uložiť tento záznam"
     event: "Udalosť"
     events:
       spree:
@@ -654,6 +674,7 @@ sk:
     failed_payment_attempts:
     filename: Názov súboru
     fill_in_customer_info:
+    filter: Filter
     filter_results:
     finalize:
     finalized:
@@ -669,7 +690,6 @@ sk:
     free_shipping_amount:
     front_end:
     gateway: "Platobná brána"
-    gateway_config_unavailable:
     gateway_error: Chyba brány
     general: Všeobecné
     general_settings: Všeobecné nastavenia
@@ -679,7 +699,6 @@ sk:
     guest_user_account: K pokladnici ako hosť
     has_no_shipped_units:
     height: Výška
-    hide_cents: "Skryť centy"
     home: Domov
     i18n:
       available_locales: "Dostupné národné prostredia"
@@ -694,7 +713,6 @@ sk:
       this_file_language: Slovenčina
       translations: "Praklady"
     icon: "Ikona"
-    identifier:
     image: Obrázok
     images: Obrázky
     implement_eligible_for_return:
@@ -705,6 +723,8 @@ sk:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password:
     insufficient_stock:
@@ -746,6 +766,7 @@ sk:
     line_item_adjustments:
     list: Zoznam
     loading: "Načítavanie"
+    loading_tree: Loading tree. Please wait…
     locale_changed: "Národné prostredie zmenené"
     location: "Umiestnenie"
     lock: "Zamknúť"
@@ -777,6 +798,7 @@ sk:
     meta_title:
     metadata: Metaúdaje
     minimal_amount: "Minimálne množstvo"
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Mesiac
     more: Viac
     move_stock_between_locations:
@@ -805,6 +827,7 @@ sk:
     new_refund_reason:
     new_return_authorization:
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Nová kategória doručenia
     new_shipping_method: "Nový spôsob doručenia"
@@ -868,6 +891,7 @@ sk:
     order_details: Detaily objednávky
     order_email_resent: Email objednávky bol opäť poslaný
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer:
@@ -905,7 +929,6 @@ sk:
     order_total: Objednávka celkom
     order_updated: Objednávka zmenená
     orders: Objednávky
-    other_items_in_other:
     out_of_stock: Nie je na sklade
     overview: Prehľad
     package_from:
@@ -919,7 +942,6 @@ sk:
     pay: platba
     payment: Platba
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Informácia o platení
     payment_method:
     payment_method_not_supported:
@@ -947,6 +969,7 @@ sk:
     phone: Telefón
     place_order: Objednávka
     please_define_payment_methods:
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error:
     powered_by: používame
     pre_tax_amount:
@@ -991,6 +1014,7 @@ sk:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all:
@@ -1046,6 +1070,7 @@ sk:
     received:
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund:
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1079,6 +1104,7 @@ sk:
     rename: Rename
     report:
     reports: Reporty
+    resellable: Resellable
     resend: Pošli opäť
     reset_password: Vygeneruj heslo
     response_code: Kód odpovede
@@ -1091,6 +1117,7 @@ sk:
     return_authorizations:
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1098,254 +1125,257 @@ sk:
     return_number:
     return_quantity:
     returned: Vrátené
-    returns:
     review: Review
-    risk:
-    risk_analysis:
-    risky:
+    risk: Risk
+    risk_analysis: Risk Analysis
+    risky: Risky
     rma_credit: RMA Credit
     rma_number: RMA Number
     rma_value: RMA Value
-    roles: Roly
-    rules:
-    safe:
-    sales_total: Tržby spolu
+    role_id: Role ID
+    roles: Roles
+    rules: Rules
+    safe: Safe
+    sales_total: Sales Total
     sales_total_description: Sales Total For All Orders
-    sales_totals:
-    save_and_continue: Ulož a pokračuj
-    save_my_address:
-    say_no:
-    say_yes:
+    sales_totals: Sales Totals
+    save_and_continue: Save and Continue
+    save_my_address: Save my address
+    say_no: 'No'
+    say_yes: 'Yes'
     scope: Scope
-    search: Hľadaj
-    search_results:
+    search: Search
+    search_results: Search results for '%{keywords}'
     searching: Searching
-    secure_connection_type: Bezpečná konekcia
+    secure_connection_type: Secure Connection Type
     security_settings: Security Settings
-    select: Vyber
-    select_a_return_authorization_reason:
-    select_a_stock_location:
-    select_from_prototype: Vyber z prototypov
-    select_stock:
-    send_copy_of_all_mails_to: Pošli kópiu všetkých emailov na
-    send_mails_as: Pošli email ako
+    select: Select
+    select_a_return_authorization_reason: Select a reason for the return authorization
+    select_a_stock_location: Select a stock location
+    select_from_prototype: Select From Prototype
+    select_stock: Select stock
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
+    send_copy_of_all_mails_to: Send Copy of All Mails To
+    send_mails_as: Send Mails As
     server: Server
-    server_error: Server vrátil chybu
-    settings: Nastavenia
-    ship: zašli
-    ship_address: Adresa zásielky
-    ship_total:
-    shipment: Zásielka
-    shipment_adjustments:
-    shipment_details:
+    server_error: The server returned an error
+    settings: Settings
+    ship: Ship
+    ship_address: Ship Address
+    ship_total: Ship Total
+    shipment: Shipment
+    shipment_adjustments: "Shipment adjustments"
+    shipment_details: "From %{stock_location} via %{shipping_method}"
     shipment_mailer:
       shipped_email:
-        dear_customer:
-        instructions:
-        shipment_summary:
-        subject:
-        thanks:
-        track_information:
-        track_link:
-    shipment_state:
+        dear_customer: Dear Customer,
+        instructions: Your order has been shipped
+        shipment_summary: Shipment Summary
+        subject: Shipment Notification
+        thanks: Thank you for your business.
+        track_information: ! 'Tracking Information: %{tracking}'
+        track_link: ! 'Tracking Link: %{url}'
+    shipment_state: Shipment State
     shipment_states:
-      backorder:
-      canceled:
-      partial:
-      pending:
-      ready:
-      shipped:
-    shipment_transfer_error:
-    shipment_transfer_success:
-    shipments:
-    shipped: Zaslané
-    shipping: Doručenie
-    shipping_address: Adresa doručenia
-    shipping_categories: Kategórie doručenia
-    shipping_category: Kategórie doručenia
-    shipping_flat_rate_per_item:
-    shipping_flat_rate_per_order:
-    shipping_flexible_rate:
-    shipping_instructions: Inštrukcie doručenia
-    shipping_method: Metóda doručenia
-    shipping_methods: Metódy doručenia
-    shipping_price_sack:
-    shipping_total:
-    shop_by_taxonomy: "%{taxonomy}"
-    shopping_cart: Nákupný košík
-    show:
-    show_active:
-    show_deleted: Zobraz vymazané
-    show_only_complete_orders: Zobraz iba úplné objednávky
-    show_only_considered_risky:
-    show_rate_in_label:
-    sku:
-    skus:
-    slug:
-    source:
-    special_instructions:
-    split:
-    spree_gateway_error_flash_for_checkout:
+      backorder: backorder
+      canceled: canceled
+      partial: partial
+      pending: pending
+      ready: ready
+      shipped: shipped
+    shipment_transfer_error: 'There was an error transferring variants'
+    shipment_transfer_success: 'Variants successfully transferred'
+    shipments: Shipments
+    shipped: Shipped
+    shipping: Shipping
+    shipping_address: Shipping Address
+    shipping_categories: Shipping Categories
+    shipping_category: Shipping Category
+    shipping_flat_rate_per_item: Flat rate per package item
+    shipping_flat_rate_per_order: Flat rate
+    shipping_flexible_rate: Flexible Rate per package item
+    shipping_instructions: Shipping Instructions
+    shipping_method: Shipping Method
+    shipping_methods: Shipping Methods
+    shipping_price_sack: Price sack
+    shipping_total: Shipping total
+    shop_by_taxonomy: Shop by %{taxonomy}
+    shopping_cart: Shopping Cart
+    show: Show
+    show_active: Show Active
+    show_deleted: Show Deleted
+    show_only_complete_orders: Only show complete orders
+    show_only_considered_risky: Only show risky orders
+    show_rate_in_label: Show rate in label
+    sku: SKU
+    skus: SKUs
+    slug: Slug
+    source: Source
+    special_instructions: Special Instructions
+    split: Split
+    spree_gateway_error_flash_for_checkout: There was a problem with your payment information. Please check your information and try again.
     ssl:
-      change_protocol:
-    start: "Štart"
-    state: "Štát"
-    state_based: "Štát"
+      change_protocol: "Please switch to using HTTP (rather than HTTPS) and retry this request."
+    start: Start
+    state: State
+    state_based: State Based
     state_machine_states:
-      accepted:
-      address:
-      authorized:
-      awaiting:
-      awaiting_return:
-      backordered:
-      canceled:
-      cart:
-      checkout:
-      closed:
-      complete:
-      completed:
-      confirm:
-      delivery:
-      errored:
-      failed:
-      given_to_customer:
-      invalid:
-      manual_intervention_required:
-      on_hand:
-      open:
-      order:
-      payment:
-      pending:
-      processing:
-      ready:
-      reimbursed:
-      resumed:
-      returned:
-      shipped:
-      void:
-    states: "Štáty/Provincie"
-    states_required:
-    status: Stavy
-    stock:
-    stock_location:
-    stock_location_info:
-    stock_locations:
-    stock_locations_need_a_default_country:
-    stock_management:
-    stock_management_requires_a_stock_location:
-    stock_movements:
-    stock_movements_for_stock_location:
-    stock_successfully_transferred:
-    stock_transfer:
-    stock_transfers:
-    stop:
-    store: Obchod
-    street_address: Ulica
-    street_address_2: Ulica (pokr.)
-    subtotal: Medzisúčet
-    subtract: Odrátaj
-    success:
-    successfully_created:
-    successfully_refunded:
-    successfully_removed:
-    successfully_signed_up_for_analytics:
-    successfully_updated:
-    summary:
-    tax: Daň
-    tax_categories: Kategórie daní
-    tax_category: Kategória daní
-    tax_code:
-    tax_included:
-    tax_rate_amount_explanation:
-    tax_rates: Sadzby daní
-    taxon: Taxón
-    taxon_edit:
-    taxon_placeholder:
+      accepted: Accepted
+      address: Address
+      authorized: Authorized
+      awaiting: Awaiting
+      awaiting_return: Awaiting return
+      backordered: Back ordered
+      canceled: Canceled
+      cart: Cart
+      checkout: Checkout
+      closed: Closed
+      complete: Complete
+      completed: Completed
+      confirm: Confirm
+      delivery: Delivery
+      errored: Errored
+      failed: Failed
+      given_to_customer: Given to customer
+      invalid: Invalid
+      manual_intervention_required: Manual intervention required
+      on_hand: On hand
+      open: Open
+      order: Order
+      payment: Payment
+      pending: Pending
+      processing: Processing
+      ready: Ready
+      reimbursed: Reimbursed
+      resumed: Resumed
+      returned: Returned
+      shipped: Shipped
+      void: Void
+    states: States
+    states_required: States Required
+    status: Status
+    stock: Stock
+    stock_location: Stock Location
+    stock_location_info: Stock location info
+    stock_locations: Stock Locations
+    stock_locations_need_a_default_country: You must create a default country before creating a stock location.
+    stock_management: Stock Management
+    stock_management_requires_a_stock_location: Please create a stock location in order to manage stock.
+    stock_movements: Stock Movements
+    stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
+    stock_successfully_transferred: Stock was successfully transferred between locations.
+    stock_transfer: Stock Transfer
+    stock_transfers: Stock Transfers
+    stop: Stop
+    store: Store
+    street_address: Street Address
+    street_address_2: Street Address (cont'd)
+    subtotal: Subtotal
+    subtract: Subtract
+    success: Success
+    successfully_created: ! '%{resource} has been successfully created!'
+    successfully_refunded: ! '%{resource} has been successfully refunded!'
+    successfully_removed: ! '%{resource} has been successfully removed!'
+    successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
+    successfully_updated: ! '%{resource} has been successfully updated!'
+    summary: Summary
+    tax: Tax
+    tax_categories: Tax Categories
+    tax_category: Tax Category
+    tax_code: Tax Code
+    tax_included: "Tax (incl.)"
+    tax_rate_amount_explanation: Tax rates are a decimal amount to aid in calculations, (i.e. if the tax rate is 5% then enter 0.05)
+    tax_rates: Tax Rates
+    taxon: Taxon
+    taxon_edit: Edit Taxon
+    taxon_placeholder: Add a Taxon
     taxon_rule:
-      choose_taxons:
-      label:
-      match_all:
-      match_any:
-    taxonomies: Taxonómie
+      choose_taxons: Choose taxons
+      label: Order must contain x amount of these taxons
+      match_all: all
+      match_any: at least one
+    taxonomies: Taxonomies
     taxonomy: Taxonomy
-    taxonomy_edit: Zmeň taxonómiu
-    taxonomy_tree_error: Požadovaná zmena nebola akceptovaná a strom bol zmenený do predchádzajúceho stavu, prosím skúste znova.
-    taxonomy_tree_instruction: "* Pravým klikom na potomok v strome pristúpite k menu na pridávanie, mazanie a triedenie potomkov."
-    taxons: Taxóny
-    test:
+    taxonomy_edit: Edit taxonomy
+    taxonomy_tree_error: The requested change has not been accepted and the tree has been returned to its previous state, please try again.
+    taxonomy_tree_instruction: ! '* Right click a child in the tree to access the menu for adding, deleting or sorting a child.'
+    taxons: Taxons
+    test: Test
     test_mailer:
       test_email:
-        greeting:
-        message:
-        subject:
-    test_mode:
-    thank_you_for_your_order: "Ďakujeme za Vašu objednávku.  Prosím vytlačte kópiu toto potvrdenie pre Vaše položky objednávky."
-    there_are_no_items_for_this_order:
-    there_were_problems_with_the_following_fields:
-    this_order_has_already_received_a_refund:
-    thumbnail: Miniatúra
-    tiered_flat_rate:
-    tiered_percent:
-    tiers:
-    time:
-    to_add_variants_you_must_first_define: K pridaniu variánt, najprv musíte určiť
-    total: Celkom
-    total_per_item:
-    total_pre_tax_refund:
-    total_price:
-    total_sales:
-    track_inventory:
-    tracking: Sledovanie
-    tracking_number:
-    tracking_url:
-    tracking_url_placeholder:
-    transaction_id:
-    transfer_from_location:
-    transfer_stock:
-    transfer_to_location:
-    tree: Strom
-    type: Typ
-    type_to_search:
-    unable_to_connect_to_gateway:
-    unable_to_create_reimbursements:
-    under_price: Menej ako %{price}
-    unlock:
-    unrecognized_card_type: Neznámy typ kreditnej karty
-    unshippable_items:
-    update: Zmeň
-    updating: Obnovuje sa
-    usage_limit: Limit použitia
-    use_app_default:
-    use_billing_address: Použi ako adresu platby
-    use_new_cc:
-    use_s3:
-    user: Používateľ
+        greeting: Congratulations!
+        message: If you have received this email, then your email settings are correct.
+        subject: Test Mail
+    test_mode: Test Mode
+    thank_you_for_your_order: Thank you for your business.  Please print out a copy of this confirmation page for your records.
+    there_are_no_items_for_this_order: There are no items for this order. Please add an item to the order to continue.
+    there_were_problems_with_the_following_fields: There were problems with the following fields
+    this_order_has_already_received_a_refund: This order has already received a refund
+    thumbnail: Thumbnail
+    tiered_flat_rate: Tiered Flat Rate
+    tiered_percent: Tiered Percent
+    tiers: Tiers
+    time: Time
+    to_add_variants_you_must_first_define: To add variants, you must first define
+    total: Total
+    total_per_item: Total per item
+    total_pre_tax_refund: Total Pre-Tax Refund
+    total_price: Total price
+    total_sales: Total Sales
+    track_inventory: Track Inventory
+    tracking: Tracking
+    tracking_number: Tracking Number
+    tracking_url: Tracking URL
+    tracking_url_placeholder: e.g. http://quickship.com/package?num=:tracking
+    transaction_id: Transaction ID
+    transfer_from_location: Transfer From
+    transfer_stock: Transfer Stock
+    transfer_to_location: Transfer To
+    tree: Tree
+    type: Type
+    type_to_search: Type to search
+    unable_to_connect_to_gateway: Unable to connect to gateway.
+    unable_to_create_reimbursements: Unable to create reimbursements because there are items pending manual intervention.
+    under_price: Under %{price}
+    unlock: Unlock
+    unrecognized_card_type: Unrecognized card type
+    unshippable_items: Unshippable Items
+    update: Update
+    updating: Updating
+    usage_limit: Usage Limit
+    use_app_default: Use App Default
+    use_billing_address: Use Billing Address
+    use_existing_cc: Use an existing card on file
+    use_new_cc: Use a new card
+    use_new_cc_or_payment_method: Use a new card / payment method
+    use_s3: Use Amazon S3 For Images
+    user: User
     user_rule:
-      choose_users:
-    users: Používatelia
+      choose_users: Choose users
+    users: Users
     validation:
-      cannot_be_less_than_shipped_units:
-      cannot_destroy_line_item_as_inventory_units_have_shipped:
-      exceeds_available_stock:
-      is_too_large:
-      must_be_int:
-      must_be_non_negative:
-      unpaid_amount_not_zero:
-    value: Hodnota
+      cannot_be_less_than_shipped_units: cannot be less than the number of shipped units.
+      cannot_destroy_line_item_as_inventory_units_have_shipped: Cannot destroy line item as some inventory units have shipped.
+      exceeds_available_stock: exceeds available stock. Please ensure line items have a valid quantity.
+      is_too_large: is too large -- stock on hand cannot cover requested quantity!
+      must_be_int: must be an integer
+      must_be_non_negative: must be a non-negative value
+      unpaid_amount_not_zero: "Amount was not fully reimbursed. Still due: %{amount}"
+    value: Value
     variant: Variant
-    variant_placeholder:
-    variants: Varianty
-    version: Verzia
+    variant_placeholder: Choose a variant
+    variants: Variants
+    version: Version
     void: Void
-    weight: Váha
-    what_is_a_cvv: Aký je (CVV) kód kreditnej karty?
-    what_is_this: "Čo to je?"
-    width: "Šírka"
-    year: Rok
-    you_have_no_orders_yet:
-    your_cart_is_empty: Váš košík je prázdny
-    your_order_is_empty_add_product:
-    zip: PSČ
-    zipcode:
-    zone: Zóna
-    zones: Zóny
+    weight: Weight
+    what_is_a_cvv: What is a (CVV) Credit Card Code?
+    what_is_this: What's This?
+    width: Width
+    year: Year
+    you_have_no_orders_yet: You have no orders yet
+    your_cart_is_empty: Your cart is empty
+    your_order_is_empty_add_product: Your order is empty, please search for and add a product above
+    zip: Zip
+    zipcode: Zip Code
+    zone: Zone
+    zones: Zones

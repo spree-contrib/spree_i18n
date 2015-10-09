@@ -40,20 +40,6 @@ sv:
         name: Namn
         presentation: Presentation
       spree/order:
-        checkout_complete: Utcheckning genomförd
-        completed_at: Fullständig vid
-        considered_risky: Riskabel
-        coupon_code: Kupongkod
-        created_at: Orderdatum
-        email: Kundens e-post
-        ip_address: IP adress
-        item_total: Totalt antal
-        number: Nummer
-        payment_state: Betalningsstatus
-        shipment_state: Fraktstatus
-        special_instructions: Särskilda instruktioner
-        state: Status
-        total: Totalt
       spree/order/bill_address:
         address1: Faktureringsadress, gata
         city: Faktureringsadress, ort
@@ -68,10 +54,25 @@ sv:
         firstname: Fraktadress, förnamn
         lastname: Fraktadress, efternamn
         phone: Fraktadress, telefon
-        state: Fraktadress, län
+        state: State
         zipcode: Fraktadress, postnr.
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Belopp
+        number: Number
       spree/payment_method:
         name: Namn
       spree/product:
@@ -105,6 +106,8 @@ sv:
         amount: Belopp
       spree/role:
         name: Namn
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Förkortning
         name: Namn
@@ -284,6 +287,8 @@ sv:
         one: Leverans plats
         other: Leverans platser
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
         one: Lageröverföring
         other: Lageröverföringar
@@ -393,10 +398,10 @@ sv:
     add_rule_of_type: Lägg till regel av typ
     add_state: Lägg till län
     add_stock: Lägg till lager
-    add_stock_management: Lägg till lagerhantering
     add_to_cart: Lägg i varukorgen
     add_variant: Lägg till variant
     additional_item: Ytterligare artikelkostnad
+    address: Address
     address1: Adress
     address2: Adress (forts.)
     adjustable: Justerbar
@@ -413,6 +418,7 @@ sv:
         orders: Beställningar
         overview: "Översikt"
         products: Produkter
+        promotion_categories: Promotion Categories
         promotions: Kampanjer
         properties: Egenskaper
         prototypes: Prototyper
@@ -438,9 +444,6 @@ sv:
     all_adjustments_opened: Alla ändringar framgångsrikt öppnade!
     all_departments: Alla kategorier
     all_items_have_been_returned: Alla artiklar har returnerats
-    allow_ssl_in_development_and_test: Tillåt SSL att användas i utvecklar- och test-läge
-    allow_ssl_in_production: Tillåt SSL att användas i produktionsläge
-    allow_ssl_in_staging: Allow SSL to be used in staging mode
     already_signed_up_for_analytics: Du har redan anmält dig till Spree Analytics
     alt_text: Alternativ text
     alternative_phone: Alternativt telefonnummer
@@ -508,7 +511,6 @@ sv:
     categories: Kategorier
     category: Kategori
     charged: Debiterad
-    check_for_spree_alerts: Kontrollera om det finns Spree larm
     checkout: Kassa
     choose_a_customer: Välj en kund
     choose_a_taxon_to_sort_products_for: Välj ett grupp att sortera produkter för
@@ -569,10 +571,7 @@ sv:
     credit_owed: Kreditskulder
     credits: Krediter
     currency: Valuta
-    currency_decimal_mark: Valutans decimaltecken
     currency_settings: Valutainställningar
-    currency_symbol_position: Skriv valutasymbolen före eller efter beloppet?
-    currency_thousands_separator: Valutans tusenseparator
     current: Nuvarande
     current_promotion_usage: 'Aktuellt användande: %{count}'
     customer: Kund
@@ -605,6 +604,7 @@ sv:
     default_tax: Förvald moms
     default_tax_zone: Förvald moms-zon
     delete: Ta bort
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present: Vissa poster i denna beställning har produkter som inte längre finns.
     delivery: Leverera
     depth: Djup
@@ -615,7 +615,6 @@ sv:
     discount_amount: Rabattbelopp
     dismiss_banner: Nej tack. Jag är inte intresserad, och visa inte detta meddelande igen
     display: Visa
-    display_currency: Visa valuta
     doesnt_track_inventory: Det spårar inte inventeringen
     edit: Redigera
     editing_resource: Redigerar %{resource}
@@ -642,12 +641,10 @@ sv:
     enable_mail_delivery: Aktivera sändning av e-post
     end: Slut
     ending_in: Slutar med
-    environment: Miljö
     error: fel
     errors:
       messages:
         could_not_create_taxon: Kunde inte skapa klass
-        no_payment_methods_available: Inga betalningsmetoder är konfigurerade för denna miljö
         no_shipping_methods_available: Inget fraktsätt är tillgängligt för den valda platsen. Var god ändra din adress och försök igen.
     errors_prohibited_this_record_from_being_saved:
       one: 1 fel hindrade detta inlägg att sparas
@@ -677,6 +674,7 @@ sv:
     failed_payment_attempts: Misslyckade betalningsförsök
     filename: Filnamn
     fill_in_customer_info: Fyll i kundens information
+    filter: Filter
     filter_results: Filtrera resultaten
     finalize: Slutför
     finalized: Slutförd
@@ -692,7 +690,6 @@ sv:
     free_shipping_amount: "-"
     front_end: Publik
     gateway: Gateway
-    gateway_config_unavailable: Gateway är inte tillgänglig för miljön
     gateway_error: Gateway-fel
     general: Allmänt
     general_settings: Allmänna inställningar
@@ -702,7 +699,6 @@ sv:
     guest_user_account: Gå till kassan som gäst
     has_no_shipped_units: har inga levererade enheter
     height: Höjd
-    hide_cents: Dölj ören
     home: Hem
     i18n:
       available_locales: Tillgängliga språk
@@ -717,7 +713,6 @@ sv:
       this_file_language: Svenska (SE)
       translations: "Översättningar"
     icon: Ikon
-    identifier: Identifierare
     image: Bild
     images: Bilder
     implement_eligible_for_return: Måste genomföra
@@ -731,8 +726,6 @@ sv:
       one: och en annan
       other: och %{count} andra
     info_product_has_multiple_skus:
-      one: 'Denna produkt har en variant:'
-      other: 'Denna produkt har %{count} varianter:'
     instructions_to_reset_password: Skriv in din e-post i formuläret nedan
     insufficient_stock: Otillräckligt lager tillgängligt, endast %{on_hand} återstår
     insufficient_stock_lines_present: Vissa poster i denna beställning har otillräcklig mängd.
@@ -773,6 +766,7 @@ sv:
     line_item_adjustments:
     list: Lista
     loading: Laddar
+    loading_tree: Loading tree. Please wait…
     locale_changed: Språket har ändrats
     location: Lager
     lock: Lås
@@ -804,6 +798,7 @@ sv:
     meta_title: Rubrik
     metadata: Metadata
     minimal_amount: Minsta belopp
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Månad
     more: Mer
     move_stock_between_locations: Flytta lager mellan platser
@@ -832,6 +827,7 @@ sv:
     new_refund_reason: Nytt återbetalning skäl
     new_return_authorization: Ny returauktorisation
     new_rma_reason: Nytt RMA skäl
+    new_role: New Role
     new_shipment_at_location: Ny leverans på plats
     new_shipping_category: Ny fraktkategori
     new_shipping_method: Ny fraktmetod
@@ -895,6 +891,7 @@ sv:
     order_details: Orderdetaljer
     order_email_resent: Order epost har skickats igen
     order_information: Orderinformation
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Bäste kund,\n
@@ -932,7 +929,6 @@ sv:
     order_total: Summa att betala
     order_updated: Order uppdaterad
     orders: Ordrar
-    other_items_in_other: Andra artiklar i beställningen
     out_of_stock: Ej i lager
     overview: "Översikt"
     package_from: paket från
@@ -946,7 +942,6 @@ sv:
     pay: betala
     payment: Betalning
     payment_could_not_be_created: Bestalningen kunde inte genomföras
-    payment_identifier: Betalningsidentifierare
     payment_information: Betalningsinformation
     payment_method: Betalningsmetod
     payment_method_not_supported: Den betalningsmetoden stöds inte. Vänligen välj en annan.
@@ -974,6 +969,7 @@ sv:
     phone: Telefon
     place_order: Placera order
     please_define_payment_methods: Definiera först någon betalningsmetod
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Något gick fel. Försök att lägga till artikeln igen.
     powered_by: Powered by
     pre_tax_amount:
@@ -1018,6 +1014,7 @@ sv:
         description: Gör alla leveranser för beställningen kostnadsfria
         name: Fri leverans
     promotion_actions: Actions
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Matcha alla dessa regler
@@ -1073,6 +1070,7 @@ sv:
     received: Mottaget
     reception_status:
     reference: Referens
+    reference_contains: Reference Contains
     refund: "Återbetala"
     refund_amount_must_be_greater_than_zero:
     refund_reasons: "Återbetalning anledning"
@@ -1106,6 +1104,7 @@ sv:
     rename: Byt namn
     report: Rapport
     reports: Rapporter
+    resellable: Resellable
     resend: Skicka igen
     reset_password: "Återställ mitt lösenord"
     response_code: Svarskod
@@ -1118,6 +1117,7 @@ sv:
     return_authorizations: Returauktorisation
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items: Retur artklar
@@ -1125,7 +1125,6 @@ sv:
     return_number: Returnummer
     return_quantity: Returantal
     returned: Returnerad
-    returns: Returer
     review: Granska
     risk: Risk
     risk_analysis: Riskanalys
@@ -1133,6 +1132,7 @@ sv:
     rma_credit: RMA-kredit
     rma_number: RMA-nummer
     rma_value: RMA-värde
+    role_id: Role ID
     roles: Uppgifter
     rules: Regler
     safe: Säker
@@ -1154,6 +1154,7 @@ sv:
     select_a_stock_location: Välj lager pats
     select_from_prototype: Välj från prototyp
     select_stock: Välj lager
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Skicka kopia av alla mail till
     send_mails_as: Skicka e-post som
     server: Server
@@ -1344,7 +1345,9 @@ sv:
     usage_limit: Användargräns
     use_app_default: Använd standard applikation
     use_billing_address: Använd faktureringsadress
+    use_existing_cc: Use an existing card on file
     use_new_cc: Använd ett nytt kort
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Använd Amazon S3 för bilder
     user: Användare
     user_rule:

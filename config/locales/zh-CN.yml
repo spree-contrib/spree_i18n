@@ -40,20 +40,6 @@ zh-CN:
         name: "名称"
         presentation: "描述"
       spree/order:
-        checkout_complete: "完成结账"
-        completed_at: "结账日期"
-        considered_risky:
-        coupon_code: "优惠券号码"
-        created_at: "下单日期"
-        email: "电子邮件"
-        ip_address: IP地址
-        item_total: "小记"
-        number: "订单号"
-        payment_state: "支付状态"
-        shipment_state: "物流状态"
-        special_instructions: "特别说明"
-        state: "状态"
-        total: "总计"
       spree/order/bill_address:
         address1: "地址"
         city: "城市"
@@ -70,8 +56,23 @@ zh-CN:
         phone: "电话"
         state: "省份"
         zipcode: "邮政编码"
+        checkout_complete: "完成结账"
+        completed_at: "结账日期"
+        considered_risky:
+        coupon_code: "优惠券号码"
+        created_at: "下单日期"
+        email: "电子邮件"
+        ip_address: IP地址
+        item_total: "小记"
+        number: "订单号"
+        payment_state: "支付状态"
+        shipment_state: "物流状态"
+        special_instructions: "特别说明"
+        state: "状态"
+        total: "总计"
       spree/payment:
         amount: "金额"
+        number: Number
       spree/payment_method:
         name: "名称"
       spree/product:
@@ -105,6 +106,8 @@ zh-CN:
         amount: "金额"
       spree/role:
         name: ming cheng
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: "缩写"
         name: "名称"
@@ -209,6 +212,8 @@ zh-CN:
         one: "信用卡"
         other: "信用卡"
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: "库存单位"
         other: "库存单位"
@@ -216,7 +221,11 @@ zh-CN:
         one: "单项"
         other: "单项"
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: "订单"
         other: "订单"
@@ -224,11 +233,17 @@ zh-CN:
         one: "支付"
         other: "支付"
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: "产品"
         other: "产品"
       spree/promotion: "促销"
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: "属性"
         other: "属性"
@@ -236,12 +251,20 @@ zh-CN:
         one: "原型"
         other: "原型"
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: "返回授权"
         other: "返回授权"
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: "角色"
         other: "角色"
@@ -252,13 +275,23 @@ zh-CN:
         one: "物流分类"
         other: "物流分类"
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: "省份"
         other: "省份"
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: "缴税分类"
         other: "缴税分类"
@@ -272,6 +305,8 @@ zh-CN:
         one: "分类"
         other: "分类"
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: "用户"
         other: "用户"
@@ -325,6 +360,8 @@ zh-CN:
       not_found: "无法找到"
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: "缩写"
     accept:
@@ -361,10 +398,10 @@ zh-CN:
     add_rule_of_type: "添加新的类型规则"
     add_state: "添加一个省份"
     add_stock: "添加库存"
-    add_stock_management: "添加库存管理"
     add_to_cart: "加入购物车"
     add_variant: "添加具体型号"
     additional_item: "额外项目花费"
+    address: Address
     address1: "地址"
     address2: "地址（继续）"
     adjustable:
@@ -381,6 +418,7 @@ zh-CN:
         orders: "订单"
         overview: "概览"
         products: "产品"
+        promotion_categories: Promotion Categories
         promotions: "促销"
         properties:
         prototypes:
@@ -406,9 +444,6 @@ zh-CN:
     all_adjustments_opened: "所有价格调整已被成功启用！"
     all_departments: "所有部门"
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: "允许在开发以及测试模式下使用SSL"
-    allow_ssl_in_production: "允许在生产模式下使用SSL"
-    allow_ssl_in_staging: "允许在演示模式下使用SSL"
     already_signed_up_for_analytics: "您已注册Spree Analytics帐号"
     alt_text: "其他文本"
     alternative_phone: "其他电话"
@@ -471,10 +506,11 @@ zh-CN:
     card_type_is: "卡的类型是"
     cart: "购物车"
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: "分类"
     category: "分类"
     charged:
-    check_for_spree_alerts: "查收Spree的通知"
     checkout: "结账"
     choose_a_customer: "选择用户"
     choose_a_taxon_to_sort_products_for:
@@ -535,10 +571,7 @@ zh-CN:
     credit_owed: "应予退款"
     credits:
     currency: "币种"
-    currency_decimal_mark:
     currency_settings: "当前设置"
-    currency_symbol_position: "在金额之前或者之后放置币种符号？"
-    currency_thousands_separator: "千元分割符"
     current: "现在的"
     current_promotion_usage: "当前已使用：%{count}"
     customer: "顾客"
@@ -571,6 +604,7 @@ zh-CN:
     default_tax: "默认缴税"
     default_tax_zone: "默认缴税区域"
     delete: "删除"
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: "配送"
     depth: "长"
@@ -581,7 +615,6 @@ zh-CN:
     discount_amount: "折扣金额"
     dismiss_banner: "不，谢谢！我对此不感兴趣，请不要再显示此信息。"
     display: "显示"
-    display_currency: "显示货币符号"
     doesnt_track_inventory:
     edit: "编辑"
     editing_resource:
@@ -608,12 +641,10 @@ zh-CN:
     enable_mail_delivery: "开启邮件发送"
     end: "结束"
     ending_in: Ending in
-    environment: "环境"
     error: "错误"
     errors:
       messages:
         could_not_create_taxon: "无法添加分类"
-        no_payment_methods_available: "当前运行环境下没有配置好支付方式"
         no_shipping_methods_available: "选中的地址没有适合的运送方式，请修改您的地址后再次尝试"
     errors_prohibited_this_record_from_being_saved:
       one: 1个错误导致此记录无法保存
@@ -643,6 +674,7 @@ zh-CN:
     failed_payment_attempts:
     filename: "文件名"
     fill_in_customer_info: "请填写顾客信息"
+    filter: Filter
     filter_results: "过滤结果"
     finalize: "完成"
     finalized:
@@ -658,7 +690,6 @@ zh-CN:
     free_shipping_amount:
     front_end: "前端"
     gateway: "网关"
-    gateway_config_unavailable: "当前运行环境下无可用的网关"
     gateway_error: "网关出错"
     general: "一般"
     general_settings: "一般设置"
@@ -668,7 +699,6 @@ zh-CN:
     guest_user_account: "作为一个匿名用户结账"
     has_no_shipped_units: "没有已配送的单元"
     height: "高度"
-    hide_cents: "隐藏分钱"
     home: "首页"
     i18n:
       available_locales: "可用的语言"
@@ -683,7 +713,6 @@ zh-CN:
       this_file_language: "中文(简体)"
       translations:
     icon: "图标"
-    identifier:
     image: "图片"
     images: "图片"
     implement_eligible_for_return:
@@ -694,6 +723,8 @@ zh-CN:
     included_price_validation: "除非您设置了默认的缴税区域，否则无法选择"
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: "请填写如下表格来重置你的密码，重置后的密码会通过电子邮件发送给您"
     insufficient_stock: "库存不足，当前还剩下%{on_hand}件库存"
@@ -735,6 +766,7 @@ zh-CN:
     line_item_adjustments:
     list: "列表"
     loading: "加载"
+    loading_tree: Loading tree. Please wait…
     locale_changed: Locale已变更
     location: "位置"
     lock: "锁住/冻结"
@@ -766,6 +798,7 @@ zh-CN:
     meta_title:
     metadata: "元数据"
     minimal_amount: "少量"
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: "月"
     more: "更多"
     move_stock_between_locations:
@@ -794,6 +827,7 @@ zh-CN:
     new_refund_reason:
     new_return_authorization: "新建退货"
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: "新建配送分类"
     new_shipping_method: "新建配送方式"
@@ -857,6 +891,7 @@ zh-CN:
     order_details: "订单详情"
     order_email_resent: "重新发出了订单邮件"
     order_information: "订单信息"
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: "亲爱的顾客，"
@@ -894,7 +929,6 @@ zh-CN:
     order_total: "订单总计"
     order_updated: "订单已更新"
     orders: "订单"
-    other_items_in_other:
     out_of_stock: "没有库存"
     overview: "首页"
     package_from: "包裹来自"
@@ -908,7 +942,6 @@ zh-CN:
     pay: "支付"
     payment: "支付"
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: "支付信息"
     payment_method: "支付方式"
     payment_method_not_supported:
@@ -936,6 +969,7 @@ zh-CN:
     phone: "电话"
     place_order: "下单"
     please_define_payment_methods: "请先设定支付方式。"
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: "出错了，请重新添加项目。"
     powered_by: "技术支持"
     pre_tax_amount:
@@ -980,6 +1014,7 @@ zh-CN:
         description: "整张订单免费发货"
         name: "免运费"
     promotion_actions: "优惠方式"
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: "匹配任意规则"
@@ -1035,6 +1070,7 @@ zh-CN:
     received: "已收到"
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund: "退款"
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1068,6 +1104,7 @@ zh-CN:
     rename: "重命名"
     report:
     reports: "报表"
+    resellable: Resellable
     resend: "重新发送"
     reset_password: "重置密码"
     response_code: "返回代码"
@@ -1080,6 +1117,7 @@ zh-CN:
     return_authorizations: "退货审批"
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1087,7 +1125,6 @@ zh-CN:
     return_number:
     return_quantity: "退货数量"
     returned: "已退回"
-    returns:
     review: Review
     risk:
     risk_analysis:
@@ -1095,6 +1132,7 @@ zh-CN:
     rma_credit: RMA Credit
     rma_number: "退货单号"
     rma_value: "退货价值"
+    role_id: Role ID
     roles: "角色"
     rules: Rules
     safe:
@@ -1116,6 +1154,7 @@ zh-CN:
     select_a_stock_location:
     select_from_prototype: "从原型中选择"
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: "将所有邮件的副本发送至"
     send_mails_as: "发送邮件作为"
     server: "服务器"
@@ -1306,7 +1345,9 @@ zh-CN:
     usage_limit: "使用限制"
     use_app_default:
     use_billing_address: "使用账单地址"
+    use_existing_cc: Use an existing card on file
     use_new_cc: "使用一张新卡"
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: "使用Amazon S3存储图片"
     user: "用户"
     user_rule:

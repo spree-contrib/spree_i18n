@@ -40,20 +40,6 @@ ru:
         name: "Название"
         presentation: "Представление"
       spree/order:
-        checkout_complete: "Оформление заказа завершено"
-        completed_at: "Завершено"
-        considered_risky: "Статус риска"
-        coupon_code: "Код купона"
-        created_at: "Дата заказа"
-        email: E-mail покупателя
-        ip_address: IP-адрес
-        item_total: "Итого по товарам"
-        number: "Номер"
-        payment_state: "Состояние оплаты"
-        shipment_state: "Состояние доставки"
-        special_instructions: "Специальные инструкции"
-        state: "Состояние"
-        total: "Итого по заказу"
       spree/order/bill_address:
         address1: "Улица"
         city: "Город"
@@ -68,10 +54,25 @@ ru:
         firstname: "Имя"
         lastname: "Фамилия"
         phone: "Телефон"
-        state: "Область/Регион"
+        state: State
         zipcode: "Почтовый индекс"
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: "Количество"
+        number: Number
       spree/payment_method:
         name: "Название"
       spree/product:
@@ -96,7 +97,6 @@ ru:
         usage_limit: "Лимит использования"
       spree/promotion_category:
         name: "Название"
-        code: "Код"
       spree/property:
         name: "Название"
         presentation: "Представление"
@@ -106,6 +106,8 @@ ru:
         amount: "Сумма"
       spree/role:
         name: "Название"
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: "Аббревиатура"
         name: "Название"
@@ -201,143 +203,117 @@ ru:
               cannot_destroy_default_store:
     models:
       spree/address:
-        many: "Адресов"
         one: "Адрес"
         other: "Адреса"
       spree/country:
-        many: "Стран"
         one: "Страна"
         other: "Страны"
       spree/credit_card:
-        many: "Кредитных карт"
         one: "Кредитная карта"
         other: "Кредитные карты"
       spree/customer_return:
-        many: "Возвратов покупателю"
         one: "Возврат покупателю"
         other: "Возвраты покупателю"
       spree/inventory_unit:
-        many: "Единиц"
         one: "Единица"
         other: "Единицы"
       spree/line_item:
-        many: "Позиций"
         one: "Позиция"
         other: "Позиции"
       spree/option_type:
-        many: "Товарных опций"
         one: "Товарная опция"
         other: "Товарные опции"
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
-        many: "Заказов"
         one: "Заказ"
         other: "Заказы"
       spree/payment:
-        many: "Платежей"
         one: "Платёж"
         other: "Платежи"
       spree/payment_method:
-        many: "Способов оплаты"
         one: "Способ оплаты"
         other: "Способы оплаты"
       spree/product:
-        many: "Товаров"
         one: "Товар"
         other: "Товары"
       spree/promotion:
-        many: "Акций"
         one: "Акция"
         other: "Акции"
       spree/promotion_category:
-        many: "Категорий акций"
         one: "Категория акций"
         other: "Категории акций"
       spree/property:
-        many: "Свойств"
         one: "Свойство"
         other: "Свойства"
       spree/prototype:
-        many: "Прототипов"
         one: "Прототип"
         other: "Прототипы"
       spree/refund_reason:
-        many: "Причин возврата"
         one: "Причина возврата"
         other: "Причины возврата"
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
-        many: "Типов возврата"
         one: "Тип возврата"
         other: "Типы возврата"
       spree/return_authorization:
-        many: "Разрешений на возврат"
         one: "Разрешение на возврат"
         other: "Разрешения на возврат"
       spree/return_authorization_reason:
-        many: "Причин разрешения на возврат"
         one: "Причина разрешения на возврат"
         other: "Причины разрешения на возврат"
       spree/role:
-        many: "Ролей"
         one: "Роль"
         other: "Роли"
       spree/shipment:
-        many: "Доставок"
         one: "Доставка"
         other: "Доставки"
       spree/shipping_category:
-        many: "Категорий доставки"
         one: "Категория доставки"
         other: "Категории доставки"
       spree/shipping_method:
-        many: Cпособов доставки
         one: Cпособ доставки
         other: Cпособы доставки
       spree/state:
-        many: "Областей/Регионов"
         one: "Область/Регион"
         other: "Области/Регионы"
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
-        many: "Расположений складов"
         one: "Расположение склада"
         other: "Расположения складов"
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
-        many: "Перемещений по складам"
         one: "Перемещение по складам"
         other: "Перемещения по складам"
       spree/tax_category:
-        many: "Категорий налогов"
         one: "Категория налогов"
         other: "Категории налогов"
       spree/tax_rate:
-        many: "Ставок налога"
         one: "Ставка налога"
         other: "Ставки налога"
       spree/taxon:
-        many: "Таксонов"
         one: "Таксон"
         other: "Таксона"
       spree/taxonomy:
-        many: "Таксономий"
         one: "Таксономия"
         other: "Таксономии"
       spree/tracker:
-        many: "Трекеров"
         one: "Трекер"
         other: "Трекеры"
       spree/user:
-        many: "Пользователей"
         one: "Пользователь"
         other: "Пользователя"
       spree/variant:
-        many: "Вариантов"
         one: "Вариант"
         other: "Варианта"
       spree/zone:
-        many: "Зон"
         one: "Зона"
         other: "Зоны"
   devise:
@@ -384,7 +360,6 @@ ru:
       not_found: "не найден"
       not_locked: "не был заблокирован"
       not_saved:
-        many: "%{count} ошибок препятствуют сохранению %{resource}:"
         one: "Одна ошибка препятствует сохранению %{resource}:"
         other: "%{count} ошибки препятствуют сохранению %{resource}:"
   spree:
@@ -423,10 +398,10 @@ ru:
     add_rule_of_type: "Добавить правило типа"
     add_state: "Добавить регион/область"
     add_stock: "Добавить склад"
-    add_stock_management: "Добавить управление запасами"
     add_to_cart: "Добавить в корзину"
     add_variant: "Добавить вариант"
     additional_item: "Ставка для дополнительных наименований"
+    address: Address
     address1: "Адрес"
     address2: "адрес (продолж.)"
     adjustable: "Корректируемое"
@@ -443,8 +418,8 @@ ru:
         orders: "Заказы"
         overview: "Обзор"
         products: "Товары"
-        promotions: "Акции"
         promotion_categories: "Категории акций"
+        promotions: "Акции"
         properties: "Свойства"
         prototypes: "Прототипы"
         reports: "Отчёты"
@@ -469,9 +444,6 @@ ru:
     all_adjustments_opened: "Все корректировки успешно открыты!"
     all_departments: "Все разделы"
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: "Разрешить SSL для development и test режимов"
-    allow_ssl_in_production: "Разрешить SSL для production режима"
-    allow_ssl_in_staging: "Разрешить SSL для staging режима"
     already_signed_up_for_analytics: "Вы уже зарегистировались в Spree Analytics"
     alt_text: "Альтернативный текст"
     alternative_phone: "Дополнительный телефон"
@@ -534,10 +506,11 @@ ru:
     card_type_is: "Тип карты"
     cart: "Корзина"
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: "Категории"
     category: "Категория"
     charged:
-    check_for_spree_alerts: "Проверить оповещения Spree"
     checkout: "Оформление заказа"
     choose_a_customer: "Выберите клиента"
     choose_a_taxon_to_sort_products_for: "Выберите таксон для сортировки товаров"
@@ -598,10 +571,7 @@ ru:
     credit_owed: "Кредитная задолженность"
     credits:
     currency: "Валюта"
-    currency_decimal_mark: "Десятичный знак валюты"
     currency_settings: "Настройки валюты"
-    currency_symbol_position: "Положение символа валюты относительно суммы"
-    currency_thousands_separator: "Разделитель тысяч валюты"
     current: "Текущий"
     current_promotion_usage: "Использовано: %{count}"
     customer: "Клиент"
@@ -634,6 +604,7 @@ ru:
     default_tax: "Стандартный налог"
     default_tax_zone: "Стандартный налоговый регион"
     delete: "Удалить"
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: "Доставка"
     depth: "Глубина"
@@ -644,7 +615,6 @@ ru:
     discount_amount: "Сумма скидки"
     dismiss_banner: "Нет, спасибо! Я не заинтересован. Не показывайте мне больше это сообщение."
     display: "Показать"
-    display_currency: "Показывать валюту"
     doesnt_track_inventory:
     edit: "Редактировать"
     editing_resource:
@@ -671,16 +641,12 @@ ru:
     enable_mail_delivery: "Включить доставку почты"
     end: "Конец"
     ending_in: "Оканчивается"
-    environment: "Среда окружения"
     error: "ошибка"
     errors:
       messages:
         could_not_create_taxon: "Невозможно создать таксон"
-        no_payment_methods_available: "Для этого окружения не настроено ни одного способа оплаты"
         no_shipping_methods_available: "Для указанного местоположения отсутствуют способы доставки, пожалуйста, смените адрес и попробуйте снова."
     errors_prohibited_this_record_from_being_saved:
-      few: "%{count} ошибки не позволяют сохранить запись в базе"
-      many: "%{count} ошибок не позволяют сохранить запись в базе"
       one: "Одна ошибка не позволяет сохранить запись в базе"
       other: "%{count} ошибки не позволяют сохранить запись в базе"
     event: "Событие"
@@ -724,7 +690,6 @@ ru:
     free_shipping_amount:
     front_end: "в публичном интерфейсе"
     gateway: "Платежный шлюз"
-    gateway_config_unavailable: "Шлюз не доступен для данного окружения"
     gateway_error: "Ошибка платежного шлюза"
     general: "Основные"
     general_settings: "Общие настройки"
@@ -734,7 +699,6 @@ ru:
     guest_user_account: "Оформить покупку как гость"
     has_no_shipped_units: "не имеет отправленных единиц учёта"
     height: "Высота"
-    hide_cents: "Скрыть центы"
     home: "Домой"
     i18n:
       available_locales: "Доступные переводы"
@@ -749,7 +713,6 @@ ru:
       this_file_language: Russian
       translations: "Переводы"
     icon: "Иконка"
-    identifier:
     image: "Изображение"
     images: "Изображения"
     implement_eligible_for_return:
@@ -760,6 +723,8 @@ ru:
     included_price_validation: "не может быть выбрано, если только вы настроили зону налогообложения по умолчанию"
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: "Чтобы сбросить пароль, заполните форму ниже. Новый пароль будет отправлен вам по указанному email"
     insufficient_stock: "Недостаточно единиц товара, только %{on_hand} есть в наличии"
@@ -801,6 +766,7 @@ ru:
     line_item_adjustments: "Корректировки позиций"
     list: "Список"
     loading: "Загружается"
+    loading_tree: Loading tree. Please wait…
     locale_changed: "Язык изменён"
     location: "Местоположение"
     lock: Lock
@@ -832,6 +798,7 @@ ru:
     meta_title:
     metadata: "Метаданные"
     minimal_amount: "Минимальная сумма"
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: "Месяц"
     more: "Больше"
     move_stock_between_locations: "Перемещение товаров между складами"
@@ -860,6 +827,7 @@ ru:
     new_refund_reason: "Новая причина возврата"
     new_return_authorization: "Новое разрешение на возврат"
     new_rma_reason: "Новая причина разрешения на возврат"
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: "Новая категория доставки"
     new_shipping_method: "Новый способ доставки"
@@ -923,6 +891,7 @@ ru:
     order_details: "Реквизиты заказа"
     order_email_resent: "Письмо с описанием заказа выслано повторно"
     order_information: "Информация"
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: "Дорогой покупатель,\n"
@@ -960,7 +929,6 @@ ru:
     order_total: "Итого заказ"
     order_updated: "Заказ обновлен"
     orders: "Заказы"
-    other_items_in_other:
     out_of_stock: "Нет в наличии"
     overview: "Обзор"
     package_from: "Фасовку в"
@@ -974,7 +942,6 @@ ru:
     pay: "оплатить"
     payment: "Платеж"
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: "Информация о платеже"
     payment_method: "Способ оплаты"
     payment_method_not_supported: "Этот способ оплаты не поддерживается"
@@ -1002,6 +969,7 @@ ru:
     phone: "Телефон"
     place_order: "Разместить заказ"
     please_define_payment_methods: "Сначала определите способ оплаты."
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: "Что-то пошло не так. Попробуйте добавить товар еще раз."
     powered_by: "Работает на"
     pre_tax_amount:
@@ -1046,6 +1014,7 @@ ru:
         description:
         name:
     promotion_actions: "Акции"
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: "Соответствует всем этим правилам"
@@ -1101,6 +1070,7 @@ ru:
     received: "Получен"
     reception_status:
     reference: "Ссылка"
+    reference_contains: Reference Contains
     refund: "Возврат"
     refund_amount_must_be_greater_than_zero:
     refund_reasons: "Причины возврата"
@@ -1134,6 +1104,7 @@ ru:
     rename: "Переименовать"
     report:
     reports: "Отчеты"
+    resellable: Resellable
     resend: "Отправить повторно"
     reset_password: "Сбросить мой пароль"
     response_code: "Код ответа"
@@ -1146,6 +1117,7 @@ ru:
     return_authorizations: "Разрешения на возврат"
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1153,7 +1125,6 @@ ru:
     return_number: "Номер возврата"
     return_quantity: "возвращенное количество"
     returned: "Возвращенные"
-    returns: "Разрешения на возврат"
     review: "Проверить"
     risk:
     risk_analysis:
@@ -1161,6 +1132,7 @@ ru:
     rma_credit: RMA Credit
     rma_number: "Номер RMA"
     rma_value: "Сумма RMA"
+    role_id: Role ID
     roles: "Роли"
     rules: "Правила"
     safe: "Безопасный"
@@ -1373,7 +1345,9 @@ ru:
     usage_limit: "Максимальное количество использований"
     use_app_default: "По умолчанию"
     use_billing_address: "Использовать платёжный адрес"
+    use_existing_cc: Use an existing card on file
     use_new_cc: "Использовать новую карту"
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: "Использовать Amazon S3 для хранения изображений"
     user: "Пользователь"
     user_rule:

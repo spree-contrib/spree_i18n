@@ -40,20 +40,6 @@ pl:
         name: Nazwa
         presentation: Prezentacja
       spree/order:
-        checkout_complete: Zamówienie zakończone
-        completed_at: Zakończone o
-        considered_risky: Ryzykowne
-        coupon_code: Kod kuponu
-        created_at: Data zamówienia
-        email: E-mail klienta
-        ip_address: Adres IP
-        item_total: Towar razem
-        number: Ilość
-        payment_state: Stan płatności
-        shipment_state: Stan wysyłki
-        special_instructions: Specjalne instrukcje
-        state: Stan
-        total: Razem
       spree/order/bill_address:
         address1: Ulica na fakturze
         city: Miasto na fakturze
@@ -68,10 +54,25 @@ pl:
         firstname: Imię do wysyłki
         lastname: Nazwisko do wysyłki
         phone: Telefon do wysyłki
-        state: Województwo do wysyłki
+        state: State
         zipcode: Kod pocztowy do wysyłki
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Wartość
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +106,8 @@ pl:
         amount: Ilość
       spree/role:
         name: Nazwa
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Skrót
         name: Nazwa
@@ -209,6 +212,8 @@ pl:
         one: Karta kredytowa
         other: Karty kredytowe
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Jednostka magazynowa
         other: Jednostki magazynowe
@@ -216,7 +221,11 @@ pl:
         one: Jednostka linii
         other: Jednostki linii
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Zamówienie
         other: Zamówienia
@@ -224,6 +233,8 @@ pl:
         one: Płatność
         other: Płatności
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Produkt
         other: Produkty
@@ -231,6 +242,8 @@ pl:
         one: Promocja
         other: Promocje
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Własność
         other: Własności
@@ -238,12 +251,20 @@ pl:
         one: Prototyp
         other: Prototypy
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Autoryzacja zwrotna
         other: Autoryzacje zwrotne
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Rola
         other: Role
@@ -254,15 +275,23 @@ pl:
         one: Kategoria wysyłki
         other: Kategorie wysyłki
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: Stan
         other: Stany
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
         one: Lokalizacja magazynu
         other: Lokalizacje magazynu
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Kategoria podatku
         other: Kategorie podatku
@@ -276,6 +305,8 @@ pl:
         one: Taksonomia
         other: Taksonomie
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: Użytkownik
         other: Użytkownicy
@@ -367,10 +398,10 @@ pl:
     add_rule_of_type: Dodaj regułę typu
     add_state: Dodaj stan
     add_stock: Dodaj magazyn
-    add_stock_management: Dodaj zarządzanie magazynem
     add_to_cart: Dodaj do koszyka
     add_variant: Dodaj odmianę
     additional_item: Dodatkowy koszt jednostki
+    address: Address
     address1: Adres
     address2: Adres (cd.)
     adjustable:
@@ -387,6 +418,7 @@ pl:
         orders: Zamówienia
         overview: Przegląd
         products: Produkty
+        promotion_categories: Promotion Categories
         promotions: Promocje
         properties:
         prototypes:
@@ -412,9 +444,6 @@ pl:
     all_adjustments_opened: Otwarto wszystkie poprawki!
     all_departments: Wszystkie działy
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Wykorzystuj SSL w trybie rozwojowym i testowym
-    allow_ssl_in_production: Wykorzystuj SSL w trybie produkcyjnym
-    allow_ssl_in_staging: Wykorzystuj SSL w trybie postoju
     already_signed_up_for_analytics: Jesteś już zalogowany do Analityki Spree
     alt_text: Tekst alternatywny
     alternative_phone: Telefon alternatywny
@@ -477,10 +506,11 @@ pl:
     card_type_is: Typ karty to
     cart: Koszyk
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategorie
     category: Kategoria
     charged:
-    check_for_spree_alerts: Sprawdź alarmy Spree
     checkout: Złożenie zamówienia
     choose_a_customer: Wybierz klienta
     choose_a_taxon_to_sort_products_for:
@@ -541,10 +571,7 @@ pl:
     credit_owed: Należny kredyt
     credits:
     currency: Waluta
-    currency_decimal_mark: Znak dziesiętny waluty
     currency_settings: Ustawienia waluty
-    currency_symbol_position: Umieścić symbol waluty przed czy po wartości w dolarach?
-    currency_thousands_separator: Separator tysięcy w walucie
     current: Bieżący
     current_promotion_usage: 'Bieżące wykorzystanie: %{count}'
     customer: Klient
@@ -577,6 +604,7 @@ pl:
     default_tax: Domyślny podatek
     default_tax_zone: Domyślna strefa podatkowe
     delete: Usuń
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Dostawa
     depth: Głębokość
@@ -587,7 +615,6 @@ pl:
     discount_amount: Wielkość rabatu
     dismiss_banner: Dziękuję, ale nie! Nie interesuje mnie to i nie wyświetlaj więcej tej wiadomości
     display: Wyświetl
-    display_currency: Wyświetl walutę
     doesnt_track_inventory:
     edit: Edycja
     editing_resource:
@@ -614,12 +641,10 @@ pl:
     enable_mail_delivery: Włącz dostawę pocztą
     end: Koniec
     ending_in: Koniec w
-    environment: "Środowisko"
     error: błąd
     errors:
       messages:
         could_not_create_taxon: Nie można utworzyć taksonu
-        no_payment_methods_available: Dla tego środowiska nie skonfigurowano żadnych metod płatności
         no_shipping_methods_available: Dla wybranej lokalizacji brak dostępnych metod wysyłki, zmień adres i spróbuj ponownie.
     errors_prohibited_this_record_from_being_saved:
       one: 1 błąd uniemożliwił zachowanie tego wpisu
@@ -649,6 +674,7 @@ pl:
     failed_payment_attempts:
     filename: Nazwa pliku
     fill_in_customer_info: Uzupełnij informację o kliencie
+    filter: Filter
     filter_results: Wyniki filtra
     finalize: Zakończ
     finalized:
@@ -664,7 +690,6 @@ pl:
     free_shipping_amount:
     front_end: Przód
     gateway: Brama
-    gateway_config_unavailable: Brak bramy dla środowiska
     gateway_error: Błąd bramy
     general: Ogólne
     general_settings: Ustawienia ogólna
@@ -674,7 +699,6 @@ pl:
     guest_user_account: Złó zamówienie jako gość
     has_no_shipped_units: brak wysłanych elementów
     height: Wysokość
-    hide_cents: Ukryj centy
     home: Strona Główna
     i18n:
       available_locales: Dostępne ustawienia regionalne
@@ -689,7 +713,6 @@ pl:
       this_file_language: Polski (PL)
       translations: Tłumaczenia
     icon: Ikona
-    identifier:
     image: Obraz
     images: Obrazy
     implement_eligible_for_return:
@@ -700,6 +723,8 @@ pl:
     included_price_validation: nie można wybrać dopóki nie ustawiono domyślnej strefy podatkoej
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: Podaj swój e-mail w poniższym formularzu
     insufficient_stock: Zbyt mały stan magazynowy, zostało jedynie %{on_hand}
@@ -741,6 +766,7 @@ pl:
     line_item_adjustments:
     list: Lista
     loading: "Ładuję"
+    loading_tree: Loading tree. Please wait…
     locale_changed: Zmieniono ustawienia regionalne
     location: Lokalizacja
     lock: Zablokuj
@@ -772,6 +798,7 @@ pl:
     meta_title:
     metadata: Metadane
     minimal_amount: Minimalna ilość
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Miesiąc
     more: Więcej
     move_stock_between_locations: Przenieść towar między lokalizacjami
@@ -800,6 +827,7 @@ pl:
     new_refund_reason:
     new_return_authorization: Nowa autoryzacja powrotna
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Nowa kategoria wysyłki
     new_shipping_method: Nowa metoda wysyłki
@@ -863,6 +891,7 @@ pl:
     order_details: Szczegóły zamówienia
     order_email_resent: Wysłano ponownie e-mail z zamówieniem
     order_information: Informacja o zamówieniu
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Szanowny Kliencie,\n
@@ -881,10 +910,6 @@ pl:
         total:
     order_not_found: Nie mogliśmy odnaleźć Twojego zamówienia. Prosimy spróbować ponownie.
     order_number:
-    order_populator:
-      out_of_stock: Brak %{item} w magazynie.
-      please_enter_reasonable_quantity: Podaj rozsądną ilość.
-      selected_quantity_not_available: ! 'wybrana dla %{item} nie jest dostępna.'
     order_processed_successfully: Twoje zamówienie zostało przetworzone
     order_resumed:
     order_state:
@@ -904,7 +929,6 @@ pl:
     order_total: Całkowita wartość zamówienia
     order_updated: Uaktualniono zamówienie
     orders: Zamówienia
-    other_items_in_other:
     out_of_stock: Brak w magazynie
     overview: Przegląd
     package_from: paczka z
@@ -918,7 +942,6 @@ pl:
     pay: zapłać
     payment: Płatność
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Informacja o płatności
     payment_method: Metoda płatności
     payment_method_not_supported:
@@ -946,6 +969,7 @@ pl:
     phone: Telefon
     place_order: Złóż zamówienie
     please_define_payment_methods: Zdefiniuj najpierw jakieś metody płatności.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Coś poszło źle. Spróbuj ponownie dodać pozycję.
     powered_by: Działa dzięki
     pre_tax_amount:
@@ -990,6 +1014,7 @@ pl:
         description:
         name:
     promotion_actions: Działania
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Dopasuj do wszystkich tych reguł
@@ -1045,6 +1070,7 @@ pl:
     received: Odebrane
     reception_status:
     reference: Odnośnik
+    reference_contains: Reference Contains
     refund: Zwrot funduszy
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1078,6 +1104,7 @@ pl:
     rename: Zmień nazwę
     report:
     reports: Raporty
+    resellable: Resellable
     resend: Prześlij ponownie
     reset_password: Ponownie ustaw moje hasło
     response_code: Kod odpowiedzi
@@ -1090,6 +1117,7 @@ pl:
     return_authorizations: Autoryzacje zwrotu
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1097,7 +1125,6 @@ pl:
     return_number:
     return_quantity: Zwracana ilość
     returned: Zwrócono
-    returns: Zwroty
     review: Przegląd
     risk: Ryzyko
     risk_analysis: Analiza ryzyka
@@ -1105,6 +1132,7 @@ pl:
     rma_credit: Kredyt RMA
     rma_number: Numer RMA
     rma_value: Wartość RMA
+    role_id: Role ID
     roles: Role
     rules: Reguły
     safe: Bezpieczne
@@ -1317,7 +1345,9 @@ pl:
     usage_limit: Limit wykorzystania
     use_app_default:
     use_billing_address: Taki sam jak do zapłaty
+    use_existing_cc: Use an existing card on file
     use_new_cc: Wprowadź nową kartę
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Wykorzystaj Amazon S3 do obrazów
     user: Użytkownik
     user_rule:

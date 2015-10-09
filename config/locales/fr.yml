@@ -40,20 +40,6 @@ fr:
         name: Nom
         presentation: Présentation
       spree/order:
-        checkout_complete: Votre commande à été reçu
-        completed_at: Terminé à
-        considered_risky: Considérée à risque
-        coupon_code: Coupon de promotion
-        created_at: Date d'achat
-        email: Courriel du client
-        ip_address: Adresse IP
-        item_total: Nombre total d'articles
-        number: Nombre
-        payment_state: "État du paiement"
-        shipment_state: "État du colis"
-        special_instructions: Instructions spéciales
-        state: Province / Région / État
-        total: Total
       spree/order/bill_address:
         address1: Rue de l'adresse de facturation
         city: Ville de l'adresse de facturation
@@ -68,10 +54,25 @@ fr:
         firstname: Prénom pour l'adresse de livraison
         lastname: Nom pour l'adresse de livraison
         phone: Numéro de téléphone de l'adresse de livraison
-        state: Province / Région / État de l'adresse de livraison
+        state: State
         zipcode: Code postal de l'adresse de livraison
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Montant
+        number: Number
       spree/payment_method:
         name: Nom
       spree/product:
@@ -105,6 +106,8 @@ fr:
         amount: Montant
       spree/role:
         name: Nom
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Abréviation
         name: Nom
@@ -190,10 +193,10 @@ fr:
               return_items_order_id_does_not_match: Un ou plusieurs des articles de retour spécifiées n'appartiennent pas à la même commande que du remboursement.
         spree/return_item:
           attributes:
-            reimbursement:
-              cannot_be_associated_unless_accepted: ne peut pas être associé à un article retourné qui n'est pas accepté.
             inventory_unit:
               other_completed_return_item_exists: "%{inventory_unit_id} est déjà pris par un article retourné %{return_item_id}"
+            reimbursement:
+              cannot_be_associated_unless_accepted: ne peut pas être associé à un article retourné qui n'est pas accepté.
         spree/store:
           attributes:
             base:
@@ -395,10 +398,10 @@ fr:
     add_rule_of_type: Ajouter une règle de type
     add_state: Ajouter une région
     add_stock: Ajouter un stock
-    add_stock_management: Ajouter une gestion de stock
     add_to_cart: Ajouter au panier
     add_variant: Ajouter une variante
     additional_item: Coût d'un article supplémentaire
+    address: Address
     address1: Adresse
     address2: Adresse (complément)
     adjustable: Ajustable
@@ -415,6 +418,7 @@ fr:
         orders: Commandes
         overview: Vue d'ensemble
         products: Produits
+        promotion_categories: Promotion Categories
         promotions: Promotions
         properties: Propriétés
         prototypes: Prototypes
@@ -440,9 +444,6 @@ fr:
     all_adjustments_opened: Tous les ajustements ont été ouvert avec succès!
     all_departments: Tous les départements
     all_items_have_been_returned: Tous les articles ont été retournés
-    allow_ssl_in_development_and_test: Permettre l'utilisation du SSL en mode développement et test
-    allow_ssl_in_production: Permettre l'utilisation du SSL en mode production
-    allow_ssl_in_staging: Permettre l'utilisation du SSL en mode acceptation
     already_signed_up_for_analytics: Vous êtes déjà inscrit à Spree Analytics
     alt_text: Texte alternatif
     alternative_phone: Téléphone secondaire
@@ -510,7 +511,6 @@ fr:
     categories: Catégories
     category: Categorie
     charged: Chargé
-    check_for_spree_alerts: Recevoir les alertes de Spree
     checkout: Passer la commande
     choose_a_customer: Choisissez un client
     choose_a_taxon_to_sort_products_for: "Choisir une taxon pour organiser les produits pour"
@@ -521,7 +521,7 @@ fr:
     clear_cache: Supprimer la cache
     clear_cache_ok: La cache a bien été supprimée
     clear_cache_warning: Supprimer la cache va temporairement réduire les performances de votre boutique.
-    click_and_drag_on_the_products_to_sort_them:  Cliquer et faire glisser les produits pour les organiser.
+    click_and_drag_on_the_products_to_sort_them: Cliquer et faire glisser les produits pour les organiser.
     clone: Cloner
     close: Fermer
     close_all_adjustments: Fermer tous les ajustements
@@ -571,10 +571,7 @@ fr:
     credit_owed: Crédit restant dû
     credits: Crédits
     currency: Devise
-    currency_decimal_mark: 'Devise: séparateur decimale'
     currency_settings: Paramètres de la devise
-    currency_symbol_position: Mettre le symbole monétaire avant ou après le montant ?
-    currency_thousands_separator: 'Devise: séparateur de millième'
     current: Actuellement
     current_promotion_usage: 'Usage actuel: %{count}'
     customer: Client
@@ -607,6 +604,7 @@ fr:
     default_tax: Taxe par défaut
     default_tax_zone: Zone de taxe par défaut
     delete: Supprimer
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present: Certains articles de cette commande ne sont plus disponibles.
     delivery: Livraison
     depth: Profondeur
@@ -617,36 +615,36 @@ fr:
     discount_amount: Montant de la réduction
     dismiss_banner: Non Merci ! Ça ne m'intéresse pas, ne pas afficher ce message les prochaines fois
     display: Afficher
-    display_currency: Devise d'affichage
+    doesnt_track_inventory: It doesn't track inventory
     edit: Éditer
-    editing_option_type: Édition du type d'option
-    editing_payment_method: Édition de la méthode de paiement
-    editing_product: Édition du produit
-    editing_promotion: Édition de la Promotion
-    editing_property: Édition de la propriété
-    editing_prototype: Édition du prototype
-    editing_shipping_category: Édition de la catégorie de livraison
-    editing_shipping_method: Édition de la méthode de livraison
-    editing_state: Édition de la région
-    editing_stock_location: Édition du lieu de Stock
-    editing_stock_movement: Édition du mouvement de Stock
-    editing_tax_category: Édition de la catégorie fiscale
-    editing_tax_rate: Modification du taux d'imposition
-    editing_tracker: Édition du tracker
+    editing_resource: 'Editing %{resource}'
+    editing_rma_reason: Editing RMA Reason
     editing_user: Édition d'un utilisateur
-    editing_zone: Édition d'une zone
+    eligibility_errors:
+      messages:
+        has_excluded_product: Your cart contains a product that prevents this coupon code from being applied.
+        item_total_less_than: This coupon code can't be applied to orders less than %{amount}.
+        item_total_less_than_or_equal: This coupon code can't be applied to orders less than or equal to %{amount}.
+        item_total_more_than: This coupon code can't be applied to orders higher than %{amount}.
+        item_total_more_than_or_equal: This coupon code can't be applied to orders higher than or equal to %{amount}.
+        limit_once_per_user: This coupon code can only be used once per user.
+        missing_product: This coupon code can't be applied because you don't have all of the necessary products in your cart.
+        missing_taxon: You need to add a product from all applicable categories before applying this coupon code.
+        no_applicable_products: You need to add an applicable product before applying this coupon code.
+        no_matching_taxons: You need to add a product from an applicable category before applying this coupon code.
+        no_user_or_email_specified: You need to login or provide your email before applying this coupon code.
+        no_user_specified: You need to login before applying this coupon code.
+        not_first_order: This coupon code can only be applied to your first order.
     email: Courriel
     empty: Vide
     empty_cart: Vider le panier
     enable_mail_delivery: Activation de la distribution des courriels
     end: Fin
     ending_in: Se terminant
-    environment: Environnement
     error: erreur
     errors:
       messages:
         could_not_create_taxon: Impossible de créer une taxon
-        no_payment_methods_available: Aucune méthode de paiement n'est configurée pour cet environnement
         no_shipping_methods_available: Pas de moyen de livraison disponible pour la destination choisie, changez l'adresse et réessayez.
     errors_prohibited_this_record_from_being_saved:
       one: 1 erreur empêche l'enregistrement de cette entrée
@@ -676,6 +674,7 @@ fr:
     failed_payment_attempts: Tentatives de paiement échouées
     filename: Nom du fichier
     fill_in_customer_info: Merci de remplir les informations client.
+    filter: Filter
     filter_results: Filtrer les resultats
     finalize: Finaliser
     finalized: Finaliser
@@ -691,7 +690,6 @@ fr:
     free_shipping_amount: "-"
     front_end: Front End
     gateway: Méthode de paiement
-    gateway_config_unavailable: Méthode de paiement indisponible pour cet environnement
     gateway_error: Erreur de la méthode de paiement
     general: Général
     general_settings: Paramètres généraux
@@ -701,7 +699,6 @@ fr:
     guest_user_account: Invité
     has_no_shipped_units: Aucune unité à été livré
     height: Taille
-    hide_cents: Cacher les centimes
     home: Accueil
     i18n:
       available_locales: Paramètres régionaux disponibles
@@ -716,7 +713,6 @@ fr:
       this_file_language: Français (FR)
       translations: Traductions
     icon: Icône
-    identifier: Identification
     image: Image
     images: Images
     implement_eligible_for_return:
@@ -770,6 +766,7 @@ fr:
     line_item_adjustments:
     list: Liste
     loading: Chargement
+    loading_tree: Loading tree. Please wait…
     locale_changed: Paramètres régionaux changés
     location: Emplacement
     lock: Verrouiller
@@ -801,6 +798,7 @@ fr:
     meta_title: Titre du site
     metadata: Données Meta
     minimal_amount: Montant minimal
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Mois
     more: Plus
     move_stock_between_locations: Déplacer le Stock entre sites
@@ -829,6 +827,7 @@ fr:
     new_refund_reason: Nouvelle raison pour un remboursement
     new_return_authorization: Nouveau retour d'autorisation
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location: Nouvel envoi de livrasion
     new_shipping_category: Nouvelle catégorie de livraison
     new_shipping_method: Nouvelle méthode de livraison
@@ -892,6 +891,7 @@ fr:
     order_details: Détails de la commande
     order_email_resent: Renvoi de la commande par courriel
     order_information: Information sur la commande
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Cher client,\n
@@ -929,7 +929,6 @@ fr:
     order_total: Total de la commande
     order_updated: Commande mise à jour
     orders: Commandes
-    other_items_in_other:
     out_of_stock: En rupture de stock
     overview: Vue d'ensemble
     package_from: Paquet de
@@ -943,7 +942,6 @@ fr:
     pay: payer
     payment: Paiement
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Information sur le paiement
     payment_method: Méthode de paiement
     payment_method_not_supported: Ce méthode de paiement n'est pas supportée
@@ -971,6 +969,7 @@ fr:
     phone: Téléphone
     place_order: Passer la commande
     please_define_payment_methods: S'il vous plaît définissez d'abord certains modes de paiement.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Quelque chose s'est passé mal. Essayez S'il vous plaît d'ajouter l'article de nouveau.
     powered_by: Réalisé avec
     pre_tax_amount:
@@ -1011,13 +1010,11 @@ fr:
       create_line_items:
         description: Remplit le panier avec la quantité spécifiée de variante
         name: Créez des lignes d'article
-      give_store_credit:
-        description: Accorde à l'utilisateur un avoir de la quantité indiquée
-        name: Accorder un avoir
       free_shipping:
         description: Livraison gratuite pour la commande.
         name: Livraison gratuite
     promotion_actions: Actions
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Répond à toutes ces règles
@@ -1073,6 +1070,7 @@ fr:
     received: Reçu
     reception_status:
     reference: Référence
+    reference_contains: Reference Contains
     refund: Remboursement
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1106,6 +1104,7 @@ fr:
     rename: Renommer
     report:
     reports: Statistiques
+    resellable: Resellable
     resend: Renvoyer
     reset_password: Réinitialiser mon mot de passe
     response_code: Code de réponse
@@ -1118,6 +1117,7 @@ fr:
     return_authorizations: Retour d'autorisations
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1125,7 +1125,6 @@ fr:
     return_number:
     return_quantity: Quantité de retour
     returned: Retourner
-    returns:
     review: Examen
     risk:
     risk_analysis:
@@ -1133,6 +1132,7 @@ fr:
     rma_credit: Credit RMA
     rma_number: Numéro RMA
     rma_value: Valeur RMA
+    role_id: Role ID
     roles: Rôles
     rules: Règles
     safe:
@@ -1154,6 +1154,7 @@ fr:
     select_a_stock_location:
     select_from_prototype: Sélectionner d'après le prototype
     select_stock: Sélectionner le stock
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Envoyer une copie de tous les courriels à
     send_mails_as: Envoyer les courriels en tant que
     server: Serveur
@@ -1344,7 +1345,9 @@ fr:
     usage_limit: Limite d'utilisation
     use_app_default:
     use_billing_address: Utiliser l'adresse de facturation
+    use_existing_cc: Use an existing card on file
     use_new_cc: Utiliser une nouvelle carte
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Utiliser Amazon S3 pour les Images
     user: Utilisateur
     user_rule:

@@ -40,20 +40,6 @@ vi:
         name: Tên
         presentation: Thể hiện
       spree/order:
-        checkout_complete: Thanh toán hoàn tất
-        completed_at: Hoàn tất lúc
-        considered_risky:
-        coupon_code:
-        created_at: Ngày đặt hàng
-        email: Email của khách hàng
-        ip_address: "Địa chỉ IP"
-        item_total: Tổng sản phẩm
-        number: Số
-        payment_state: Trạng thái thanh toán
-        shipment_state: Trạng thái giao hàng
-        special_instructions: Chỉ dẫn đặc biệt
-        state: Bang
-        total: Tổng
       spree/order/bill_address:
         address1: "Đỉa chị thanh toán - tên đường"
         city: "Đỉa chị thanh toán - thành phố"
@@ -70,8 +56,23 @@ vi:
         phone: "Đỉa chị giao hàng - ĐT"
         state: "Đỉa chị giao hàng - bang"
         zipcode: "Đỉa chị giao hàng - mã zip"
+        checkout_complete: Thanh toán hoàn tất
+        completed_at: Hoàn tất lúc
+        considered_risky:
+        coupon_code:
+        created_at: Ngày đặt hàng
+        email: Email của khách hàng
+        ip_address: "Địa chỉ IP"
+        item_total: Tổng sản phẩm
+        number: Số
+        payment_state: Trạng thái thanh toán
+        shipment_state: Trạng thái giao hàng
+        special_instructions: Chỉ dẫn đặc biệt
+        state: Bang
+        total: Tổng
       spree/payment:
         amount: Giá trị
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +106,8 @@ vi:
         amount: Giá trị
       spree/role:
         name: Tên
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Viết tắt
         name: Tên
@@ -200,43 +203,119 @@ vi:
               cannot_destroy_default_store:
     models:
       spree/address: "Địa chỉ"
+        one: Address
+        other: Addresses
       spree/country: Quốc gia
+        one: Country
+        other: Countries
       spree/credit_card: Thẻ tín dụng
+        one: Credit Card
+        other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit: "Đơn vị hàng"
+        one: Inventory Unit
+        other: Inventory Units
       spree/line_item:
+        one: Line Item
+        other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order: "Đơn đặt hàng"
+        one: Order
+        other: Orders
       spree/payment: Thanh toán
+        one: Payment
+        other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product: Sản phẩm
+        one: Product
+        other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property: Thuộc tính
+        one: Property
+        other: Properties
       spree/prototype: Mẫu hàng
+        one: Prototype
+        other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
+        one: Roles
+        other: Roles
       spree/shipment:
+        one: Shipment
+        other: Shipments
       spree/shipping_category:
+        one: Shipping Category
+        other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
+        one: State
+        other: States
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate:
+        one: Tax Rate
+        other: Tax Rates
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
+        one: User
+        other: Users
       spree/variant:
+        one: Variant
+        other: Variants
       spree/zone:
+        one: Zone
+        other: Zones
   devise:
     confirmations:
       confirmed: Tài khoản của bạn đã được xác nhận thành công. Bạn đang đăng nhập vào.
@@ -281,6 +360,8 @@ vi:
       not_found: không tìm thấy
       not_locked: không bị khoá
       not_saved: "%{count} lỗi cấm %{resource} này lưu:"
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Từ khóa tắt
     accept:
@@ -317,10 +398,10 @@ vi:
     add_rule_of_type: Tạo luật kiểu
     add_state: Thêm bang
     add_stock: Thêm hàng hoá
-    add_stock_management: Tạo quản lý hàng
     add_to_cart: Cho vào sọt
     add_variant: Tạo biến thể
     additional_item: Giá phải trả thêm
+    address: Address
     address1: "Địa chỉ"
     address2: "Địa chỉ (tiếp)"
     adjustable:
@@ -337,6 +418,7 @@ vi:
         orders:
         overview:
         products:
+        promotion_categories: Promotion Categories
         promotions:
         properties:
         prototypes:
@@ -362,9 +444,6 @@ vi:
     all_adjustments_opened: Tất cả điều chỉnh đã được mở!
     all_departments: Tất cả các mục
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Cho phép dùng SSL trong môi trường development và test
-    allow_ssl_in_production: Cho phép dùng SSL trong môi trường production
-    allow_ssl_in_staging: Cho phép dùng SSL trong môi trường staging
     already_signed_up_for_analytics: Bạn đã đăng kí với Spree Analytics rồi
     alt_text: Chú thích khác
     alternative_phone: "Điện thoại khác"
@@ -427,10 +506,11 @@ vi:
     card_type_is: Loại thẻ là
     cart: Sọt hàng
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Loại mặt hàng
     category: Loại mặt hàng
     charged:
-    check_for_spree_alerts: Kiểm tra thông báo
     checkout: Thủ tục mua hàng
     choose_a_customer: Chọn một khách hàng
     choose_a_taxon_to_sort_products_for:
@@ -491,10 +571,7 @@ vi:
     credit_owed: Nợ tín dụng
     credits:
     currency:
-    currency_decimal_mark: "Điểm phân cách tiền hàng số lẻ"
     currency_settings:
-    currency_symbol_position:
-    currency_thousands_separator: Phân cách số hàng nghìn
     current: Hiện thời
     current_promotion_usage: "Đang dùng: %{count}"
     customer: Khách hàng
@@ -527,6 +604,7 @@ vi:
     default_tax:
     default_tax_zone:
     delete: Xóa
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Delivery
     depth: Sâu
@@ -537,7 +615,6 @@ vi:
     discount_amount:
     dismiss_banner:
     display:
-    display_currency:
     doesnt_track_inventory:
     edit: Sửa đổi
     editing_resource:
@@ -564,12 +641,10 @@ vi:
     enable_mail_delivery: Cho phép vận chuyển thư
     end: Kết thúc
     ending_in: Kết thúc trong
-    environment: Môi trường
     error: lỗi
     errors:
       messages:
         could_not_create_taxon: Không thể tạo phân loại
-        no_payment_methods_available: Không có cách thức thanh toán cho môi trường này
         no_shipping_methods_available: Không có cách thức vận chuyển cho địa điểm chọn, xin thay đổi địa chỉ và thử lại.
     errors_prohibited_this_record_from_being_saved:
       one: 1 lỗi cấm hồ sơ không lưu
@@ -599,6 +674,7 @@ vi:
     failed_payment_attempts:
     filename: Tên tệp tin
     fill_in_customer_info: Xin điền vào thông tin khách hàng
+    filter: Filter
     filter_results: Kết quả lọc
     finalize: Hoành thành
     finalized:
@@ -614,7 +690,6 @@ vi:
     free_shipping_amount:
     front_end: Front End
     gateway: Gateway
-    gateway_config_unavailable: Không có Gateway cho môi trường này
     gateway_error: Lỗi Gateway
     general: Tổng quan
     general_settings: Cấu hình chung
@@ -624,7 +699,6 @@ vi:
     guest_user_account: Hoàn tất thanh toán với tài khoản khách
     has_no_shipped_units: không có hàng nào đã gửi đi
     height: Cao
-    hide_cents: Dẫu đơn vị cent
     home: Trang chủ
     i18n:
       available_locales:
@@ -639,7 +713,6 @@ vi:
       this_file_language: tiếng Việt (VN)
       translations:
     icon: Biểu tượng
-    identifier:
     image: Hình ảnh
     images: Hình ảnh
     implement_eligible_for_return:
@@ -650,6 +723,8 @@ vi:
     included_price_validation: không thể chọn trừ khi bạn đã cài Mã vùng thuế mặc định
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: "Điền vào mẫu phía dưới và hướng dẫn cách thay đổi mật khẩu sẽ được gửi qua email đến bạn:"
     insufficient_stock: Không đủ hàng, chỉ còn lại %{on_hand}
@@ -691,6 +766,7 @@ vi:
     line_item_adjustments:
     list: Liệt kê
     loading: "Đang tải"
+    loading_tree: Loading tree. Please wait…
     locale_changed: Thay đổi địa hóa
     location: "Địa điểm"
     lock: Khoá
@@ -722,6 +798,7 @@ vi:
     meta_title:
     metadata: Metadata
     minimal_amount: Giá trị tối thiểu
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Tháng
     more: Hơn nữa
     move_stock_between_locations: Dời hàng giữa kho
@@ -750,6 +827,7 @@ vi:
     new_refund_reason:
     new_return_authorization: "Ủy quyền trả về mới"
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Loại hình vận chuyển mới
     new_shipping_method: Phương pháp vận chuyển mới
@@ -813,6 +891,7 @@ vi:
     order_details: Chi tiết đơn hàng
     order_email_resent: "Đơn hàng đã được gửi email lại"
     order_information: Thông tin đơn hàng
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Kính chào quý khách,\n
@@ -850,7 +929,6 @@ vi:
     order_total: Tổng giá sau thuế
     order_updated: "Đơn hàng được cập nhật"
     orders: "Đơn hàng"
-    other_items_in_other:
     out_of_stock: Hết hàng
     overview: Tổng kết
     package_from: gói từ
@@ -864,7 +942,6 @@ vi:
     pay: thanh toán
     payment: Thanh toán
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Thông tin thanh toán
     payment_method: Phương thức thanh toán
     payment_method_not_supported:
@@ -892,6 +969,7 @@ vi:
     phone: "Điện thoại"
     place_order: "Đặt hàng"
     please_define_payment_methods:
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error:
     powered_by: Tiếp sức bởi
     pre_tax_amount:
@@ -936,6 +1014,7 @@ vi:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all:
@@ -991,6 +1070,7 @@ vi:
     received: "Đã nhận"
     reception_status:
     reference: Tham khảo
+    reference_contains: Reference Contains
     refund: Thối
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1024,6 +1104,7 @@ vi:
     rename:
     report:
     reports: Báo cáo
+    resellable: Resellable
     resend: Gửi lại
     reset_password: Khởi tạo lại mật khẩu
     response_code: Mã phản hồi
@@ -1036,6 +1117,7 @@ vi:
     return_authorizations: "Ủy Quyền Trả Về"
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1043,7 +1125,6 @@ vi:
     return_number:
     return_quantity: Số lượng trả về
     returned: "Đã trả về"
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1051,6 +1132,7 @@ vi:
     rma_credit:
     rma_number: Số RMA
     rma_value: Giá trị RMA
+    role_id: Role ID
     roles: Vai trò
     rules: Rules
     safe:
@@ -1072,6 +1154,7 @@ vi:
     select_a_stock_location:
     select_from_prototype: Lựa chọn từ nguyên mẫu
     select_stock: Chọn hàng
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Gửi bản sao tất cả thư đến
     send_mails_as: Gửi thư như
     server: Server
@@ -1262,7 +1345,9 @@ vi:
     usage_limit: Giới hạn sử dụng
     use_app_default:
     use_billing_address: Dùng địa chỉ thanh toán
+    use_existing_cc: Use an existing card on file
     use_new_cc: Dùng thẻ mới
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Use Amazon S3 For Images
     user: Người dùng
     user_rule:

@@ -40,20 +40,6 @@ sl-SI:
         name:
         presentation:
       spree/order:
-        checkout_complete:
-        completed_at:
-        considered_risky:
-        coupon_code:
-        created_at:
-        email:
-        ip_address:
-        item_total:
-        number:
-        payment_state:
-        shipment_state:
-        special_instructions:
-        state:
-        total:
       spree/order/bill_address:
         address1:
         city:
@@ -68,10 +54,25 @@ sl-SI:
         firstname:
         lastname:
         phone:
-        state:
+        state: State
         zipcode:
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount:
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +106,8 @@ sl-SI:
         amount:
       spree/role:
         name:
+      spree/shipment:
+        number: Number
       spree/state:
         abbr:
         name:
@@ -200,43 +203,119 @@ sl-SI:
               cannot_destroy_default_store:
     models:
       spree/address:
+        one: Address
+        other: Addresses
       spree/country:
+        one: Country
+        other: Countries
       spree/credit_card:
+        one: Credit Card
+        other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
+        one: Inventory Unit
+        other: Inventory Units
       spree/line_item:
+        one: Line Item
+        other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
+        one: Order
+        other: Orders
       spree/payment:
+        one: Payment
+        other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
+        one: Product
+        other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
+        one: Property
+        other: Properties
       spree/prototype:
+        one: Prototype
+        other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
+        one: Roles
+        other: Roles
       spree/shipment:
+        one: Shipment
+        other: Shipments
       spree/shipping_category:
+        one: Shipping Category
+        other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
+        one: State
+        other: States
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate:
+        one: Tax Rate
+        other: Tax Rates
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
+        one: User
+        other: Users
       spree/variant:
+        one: Variant
+        other: Variants
       spree/zone:
+        one: Zone
+        other: Zones
   devise:
     confirmations:
       confirmed:
@@ -281,6 +360,8 @@ sl-SI:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Okrajšava
     accept:
@@ -317,10 +398,10 @@ sl-SI:
     add_rule_of_type: Dodaj tip pravila
     add_state: Dodaj pokraijno
     add_stock:
-    add_stock_management:
     add_to_cart: Dodaj v košarico
     add_variant:
     additional_item: Additional Item Cost
+    address: Address
     address1:
     address2:
     adjustable:
@@ -337,6 +418,7 @@ sl-SI:
         orders:
         overview:
         products:
+        promotion_categories: Promotion Categories
         promotions:
         properties:
         prototypes:
@@ -362,9 +444,6 @@ sl-SI:
     all_adjustments_opened:
     all_departments: Vsi oddelki
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test:
-    allow_ssl_in_production:
-    allow_ssl_in_staging:
     already_signed_up_for_analytics:
     alt_text: Alternativni tekst
     alternative_phone: Drugi telefon
@@ -427,10 +506,11 @@ sl-SI:
     card_type_is: Tip kartice je
     cart: Košarica
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategorije
     category: Kategorija
     charged:
-    check_for_spree_alerts:
     checkout: Naročilo
     choose_a_customer:
     choose_a_taxon_to_sort_products_for:
@@ -491,10 +571,7 @@ sl-SI:
     credit_owed:
     credits:
     currency:
-    currency_decimal_mark:
     currency_settings:
-    currency_symbol_position:
-    currency_thousands_separator:
     current: Trenutno
     current_promotion_usage:
     customer: Stranka
@@ -527,6 +604,7 @@ sl-SI:
     default_tax:
     default_tax_zone:
     delete: Izbriši
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Delivery
     depth: Globina
@@ -537,7 +615,6 @@ sl-SI:
     discount_amount: Znesek popusta
     dismiss_banner:
     display: Prikaži
-    display_currency: Display currency
     doesnt_track_inventory:
     edit: Uredi
     editing_resource:
@@ -564,14 +641,14 @@ sl-SI:
     enable_mail_delivery: Vklopi pošiljanje emailov
     end:
     ending_in:
-    environment: Okolje
     error: napaka
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available:
         no_shipping_methods_available:
     errors_prohibited_this_record_from_being_saved:
+      one: 1 error prohibited this record from being saved
+      other: ! '%{count} errors prohibited this record from being saved'
     event: Dogodek
     events:
       spree:
@@ -597,6 +674,7 @@ sl-SI:
     failed_payment_attempts:
     filename: Datoteka
     fill_in_customer_info:
+    filter: Filter
     filter_results:
     finalize: Zaključi
     finalized:
@@ -612,7 +690,6 @@ sl-SI:
     free_shipping_amount:
     front_end: Front End
     gateway: Ponudnik
-    gateway_config_unavailable: Gateway unavailable for environment
     gateway_error: Napaka ponudnika
     general: Splošno
     general_settings: Splošne nastavitve
@@ -622,7 +699,6 @@ sl-SI:
     guest_user_account: Naroči kot gost
     has_no_shipped_units: nima prodajnih enot
     height: Višina
-    hide_cents:
     home: Domov
     i18n:
       available_locales:
@@ -637,7 +713,6 @@ sl-SI:
       this_file_language: Slovenščina (SL)
       translations:
     icon: Ikona
-    identifier:
     image: Slika
     images: Slike
     implement_eligible_for_return:
@@ -648,6 +723,8 @@ sl-SI:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: 'Izpolnite spodnji obrazec in navodila za ponastavitev gesla vam bomo poslali na email:'
     insufficient_stock:
@@ -689,6 +766,7 @@ sl-SI:
     line_item_adjustments:
     list: Seznam
     loading: Nalagam
+    loading_tree: Loading tree. Please wait…
     locale_changed: Locale Changed
     location:
     lock:
@@ -720,6 +798,7 @@ sl-SI:
     meta_title:
     metadata: Metadata
     minimal_amount: Minimalni znesek
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Mesec
     more: More
     move_stock_between_locations:
@@ -748,6 +827,7 @@ sl-SI:
     new_refund_reason:
     new_return_authorization: Nova avtorizacija vračila
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Dodaj kategorijo poštnine
     new_shipping_method: Dodaj tip dostave
@@ -811,6 +891,7 @@ sl-SI:
     order_details: Podrobnosti naročila
     order_email_resent: Email z naročilom je bil ponovno poslan.
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer:
@@ -848,7 +929,6 @@ sl-SI:
     order_total: Naročilo skupaj
     order_updated: Naročilo osveženo
     orders: Naročila
-    other_items_in_other:
     out_of_stock: Ni na zalogi
     overview: Pregled
     package_from:
@@ -862,7 +942,6 @@ sl-SI:
     pay: plačaj
     payment: Plačilo
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Podatki o plačilu
     payment_method: Način plačila
     payment_method_not_supported:
@@ -890,6 +969,7 @@ sl-SI:
     phone: Telefon
     place_order: Oddaj naročilo
     please_define_payment_methods:
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error:
     powered_by: Poganja
     pre_tax_amount:
@@ -934,6 +1014,7 @@ sl-SI:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Ujemaj se s katerim koli izmed teh pravil
@@ -989,6 +1070,7 @@ sl-SI:
     received: Prejeto
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund: Povračilo
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1022,6 +1104,7 @@ sl-SI:
     rename:
     report:
     reports: Poročila
+    resellable: Resellable
     resend: Pošlji ponovno
     reset_password: Ponastavi moje geslo
     response_code: Odzivna koda
@@ -1034,6 +1117,7 @@ sl-SI:
     return_authorizations: Avtorizacije vračil
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1041,7 +1125,6 @@ sl-SI:
     return_number:
     return_quantity: Količina za vračilo
     returned: Vrnjeno
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1049,6 +1132,7 @@ sl-SI:
     rma_credit: RMA kredit
     rma_number: RMA šifra
     rma_value: RMA vrednost
+    role_id: Role ID
     roles: Vloge
     rules:
     safe:
@@ -1070,6 +1154,7 @@ sl-SI:
     select_a_stock_location:
     select_from_prototype: Izberi iz prototipa
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Pošlji kopijo vseh emailov na
     send_mails_as: Pošiljatelj izhodnih emailov
     server: Strežnik
@@ -1260,7 +1345,9 @@ sl-SI:
     usage_limit: Omejitev uporabe
     use_app_default:
     use_billing_address: Uporabi naslov za račun
+    use_existing_cc: Use an existing card on file
     use_new_cc: Uporabi drugo kreditno karico
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Use Amazon S3 For Images
     user: Uporabnik
     user_rule:

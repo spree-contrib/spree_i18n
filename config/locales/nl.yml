@@ -40,20 +40,6 @@ nl:
         name: Naam
         presentation: Presentatie
       spree/order:
-        checkout_complete: Bestelling afgerond
-        completed_at: Voltooid op
-        considered_risky:
-        coupon_code: Kortingscode
-        created_at: Besteldatum
-        email: Klant e-mail
-        ip_address: IP adres
-        item_total: Product totaal
-        number: Nummer
-        payment_state: Betaalstatus
-        shipment_state: Verzendstatus
-        special_instructions: Speciale instructies
-        state: Status
-        total: Totaal
       spree/order/bill_address:
         address1: Factuuradres
         city: Woonplaats
@@ -68,10 +54,25 @@ nl:
         firstname: Voornaam
         lastname: Achternaam
         phone: Telefoon
-        state: Provincie
+        state: State
         zipcode: Postcode
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Bedrag
+        number: Number
       spree/payment_method:
         name: Naam
       spree/product:
@@ -105,6 +106,8 @@ nl:
         amount: Aantal
       spree/role:
         name: Naam
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Afkorting
         name: Naam
@@ -209,6 +212,8 @@ nl:
         one: Kredietkaart
         other: Kredietkaarten
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Voorraadeenheid
         other: Voorraadeenheden
@@ -216,7 +221,11 @@ nl:
         one: Regel
         other: Regels
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Bestelling
         other: Bestellingen
@@ -224,6 +233,8 @@ nl:
         one: Betaling
         other: Betalingen
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Product
         other: Producten
@@ -231,6 +242,8 @@ nl:
         one: Promotie
         other: Promoties
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Eigenschap
         other: Eigenschappen
@@ -238,12 +251,20 @@ nl:
         one: Prototype
         other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Retour
         other: Retouren
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
         one: Rol
         other: Rollen
@@ -254,13 +275,23 @@ nl:
         one: Verzendcategorie
         other: Verzendcategorieën
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: Provincie
         other: Provincies
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Belastingscategorie
         other: Belastingscategorieën
@@ -274,6 +305,8 @@ nl:
         one: Taxonomie
         other: Taxonomieën
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: Gebruiker
         other: Gebruikers
@@ -365,10 +398,10 @@ nl:
     add_rule_of_type: Regeltype toevoegen
     add_state: Status toevoegen
     add_stock: Voorraad toevoegen
-    add_stock_management: Voorraadbeheer toevoegen
     add_to_cart: Toevoegen aan winkelwagen
     add_variant: Variant toevoegen
     additional_item: Toegevoegde artikel kosten
+    address: Address
     address1: Adres
     address2: Adres (vervolg)
     adjustable:
@@ -385,6 +418,7 @@ nl:
         orders: Bestellingen
         overview: Overzicht
         products: Producten
+        promotion_categories: Promotion Categories
         promotions: Promoties
         properties: Eigenschappen
         prototypes:
@@ -410,9 +444,6 @@ nl:
     all_adjustments_opened: Alle aanpassingen succesvol geopend
     all_departments: Alle afdelingen
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Sta toe SSL te gebruiken in ontwikkel en test modus
-    allow_ssl_in_production: Sta toe SSL te gebruiken in productie modus
-    allow_ssl_in_staging: Sta toe SSL te gebruikten in staging modus
     already_signed_up_for_analytics: Je bent al geregistreerd voor Spree Analytics
     alt_text: Alternatieve tekst
     alternative_phone: Alternatief telefoonnummer
@@ -475,10 +506,11 @@ nl:
     card_type_is: Kaarttype is
     cart: Winkelwagen
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Categorieën
     category: Categorie
     charged:
-    check_for_spree_alerts: Controleer op Spree Alerts
     checkout: Afrekenen
     choose_a_customer: Kies een klant
     choose_a_taxon_to_sort_products_for: Kies een taxon om de producten voor te sorteren
@@ -539,10 +571,7 @@ nl:
     credit_owed: Credits ontvangen
     credits:
     currency: Valuta
-    currency_decimal_mark: Scheidingsteken voor decimalen
     currency_settings: Valuta instellingen
-    currency_symbol_position: Zet valuta symbool voor of achter het bedrag?
-    currency_thousands_separator: Scheidingsteken voor duizendtallen
     current: Huidige
     current_promotion_usage: 'Huidig gebruik: %{count}'
     customer: Klant
@@ -575,6 +604,7 @@ nl:
     default_tax: Standaardbelasting
     default_tax_zone: Standaardbelastingszone
     delete: Verwijder
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Bezorging
     depth: Diepte
@@ -585,7 +615,6 @@ nl:
     discount_amount: Kortingsbedrag
     dismiss_banner: Nee. Bedankt! Ik heb geen interesse. Laat dit bericht niet meer zien.
     display: Weergeven
-    display_currency: Weergave valuta
     doesnt_track_inventory:
     edit: Wijzig
     editing_resource:
@@ -612,12 +641,10 @@ nl:
     enable_mail_delivery: E-mail aflevering aanzetten
     end: Einde
     ending_in: Eindigend op
-    environment: Omgeving
     error: fout
     errors:
       messages:
         could_not_create_taxon: Niet gelukt om taxon aan te maken
-        no_payment_methods_available: Er zijn geen betaalmethodes geconfigureerd voor deze omgeving
         no_shipping_methods_available: Voor dit adres zijn geen verzendmethodes beschikbaar, verander je adres en probeer het opnieuw.
     errors_prohibited_this_record_from_being_saved:
       one: Corrigeer de fout voordat je het formulier kunt bewaren
@@ -647,6 +674,7 @@ nl:
     failed_payment_attempts:
     filename: Bestandsnaam
     fill_in_customer_info: Vul klant informatie in aub.
+    filter: Filter
     filter_results: Filter resultaten
     finalize: Afronden
     finalized:
@@ -662,7 +690,6 @@ nl:
     free_shipping_amount:
     front_end: Frontend
     gateway: Gateway
-    gateway_config_unavailable: Gateway niet beschikbaar voor configuratie
     gateway_error: Gateway fout
     general: Algemeen
     general_settings: Algemene instellingen
@@ -672,7 +699,6 @@ nl:
     guest_user_account: Afrekenen als gast
     has_no_shipped_units: heeft geen verzonden items
     height: Hoogte
-    hide_cents: Verberg centen
     home: Home
     i18n:
       available_locales: Beschikbare regio-instellingen
@@ -687,7 +713,6 @@ nl:
       this_file_language: Nederlands (NL)
       translations: Vertalingen
     icon: Icoon
-    identifier:
     image: Afbeelding
     images: Afbeeldingen
     implement_eligible_for_return:
@@ -698,6 +723,8 @@ nl:
     included_price_validation: kan niet worden gekozen tenzij je een standaardbelastingszone hebt ingesteld.
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: 'Vul je e-mailadres in. De instructies om je wachtwoord te resetten worden naar je verstuurd:'
     insufficient_stock: Onvoldoende voorraad beschikbaar, enkel %{on_hand} beschikbaar
@@ -739,6 +766,7 @@ nl:
     line_item_adjustments: Regel-aanpassingen
     list: Lijst
     loading: Bezig met laden
+    loading_tree: Loading tree. Please wait…
     locale_changed: Regio-instelling gewijzigd
     location: Locatie
     lock: Vergrendel
@@ -770,6 +798,7 @@ nl:
     meta_title:
     metadata: Metadata
     minimal_amount: Minimum afname
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Maand
     more: Geen
     move_stock_between_locations: Verplaats voorraad tussen locaties
@@ -798,6 +827,7 @@ nl:
     new_refund_reason:
     new_return_authorization: Nieuwe retour-autorisatie
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location: Nieuwe verzending vanaf locatie
     new_shipping_category: Nieuwe verzend categorie
     new_shipping_method: Nieuwe verzendwijze
@@ -861,6 +891,7 @@ nl:
     order_details: Bestellingsdetails
     order_email_resent: Verstuur bevestigings e-mail opnieuw
     order_information: Bestellingsinformatie
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: Beste klant
@@ -898,7 +929,6 @@ nl:
     order_total: Bestelling totaal
     order_updated: Bestelling gewijzigd
     orders: Bestellingen
-    other_items_in_other:
     out_of_stock: Niet op voorraad
     overview: Overzicht
     package_from: pakketje van
@@ -912,7 +942,6 @@ nl:
     pay: Betalen
     payment: Betaling
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Betaalmethode
     payment_method: Betaalmethode
     payment_method_not_supported: Betaalmethode wordt niet ondersteund
@@ -940,6 +969,7 @@ nl:
     phone: Telefoon
     place_order: Bestellen
     please_define_payment_methods: Definieer eerst een betaalmethode.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Er ging iets mis. Probeer het nogmaals.
     powered_by: Mede mogelijk gemaakt door
     pre_tax_amount:
@@ -984,6 +1014,7 @@ nl:
         description:
         name:
     promotion_actions: Acties
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Moet overeenkomen met één van deze regels
@@ -1039,6 +1070,7 @@ nl:
     received: Ontvangen
     reception_status:
     reference: Verwijzing
+    reference_contains: Reference Contains
     refund: Terugbetaling
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1072,6 +1104,7 @@ nl:
     rename: Hernoemen
     report:
     reports: Rapporten
+    resellable: Resellable
     resend: Opnieuw verzenden
     reset_password: Reset mijn wachtwoord
     response_code: Antwoordcode
@@ -1084,6 +1117,7 @@ nl:
     return_authorizations: Retouren
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1091,7 +1125,6 @@ nl:
     return_number:
     return_quantity: Retour aantal
     returned: Teruggezonden
-    returns:
     review: Beoordeel
     risk: Risico
     risk_analysis: Risicoanalyse
@@ -1099,6 +1132,7 @@ nl:
     rma_credit: RMA krediet
     rma_number: RMA nummer
     rma_value: RMA waarde
+    role_id: Role ID
     roles: Rollen
     rules: Regels
     safe:
@@ -1120,6 +1154,7 @@ nl:
     select_a_stock_location:
     select_from_prototype: Selecteer vanuit prototype
     select_stock: Kies voorraad
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Verstuur kopie van alle e-mails naar
     send_mails_as: Verstuur e-mail als
     server: Server
@@ -1310,7 +1345,9 @@ nl:
     usage_limit: Gebruikslimiet
     use_app_default:
     use_billing_address: Gebruik factuuradres
+    use_existing_cc: Use an existing card on file
     use_new_cc: Gebruik een nieuwe kaart
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Gebruik Amazon S3 Voor Afbeeldingen
     user: Gebruiker
     user_rule:

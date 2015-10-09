@@ -40,20 +40,6 @@ ko:
         name:
         presentation:
       spree/order:
-        checkout_complete:
-        completed_at:
-        considered_risky:
-        coupon_code:
-        created_at:
-        email:
-        ip_address:
-        item_total:
-        number:
-        payment_state:
-        shipment_state:
-        special_instructions:
-        state:
-        total:
       spree/order/bill_address:
         address1:
         city:
@@ -68,10 +54,25 @@ ko:
         firstname:
         lastname:
         phone:
-        state:
+        state: State
         zipcode:
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount:
+        number: Number
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +106,8 @@ ko:
         amount:
       spree/role:
         name:
+      spree/shipment:
+        number: Number
       spree/state:
         abbr:
         name:
@@ -200,43 +203,119 @@ ko:
               cannot_destroy_default_store:
     models:
       spree/address:
+        one: Address
+        other: Addresses
       spree/country:
+        one: Country
+        other: Countries
       spree/credit_card:
+        one: Credit Card
+        other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
+        one: Inventory Unit
+        other: Inventory Units
       spree/line_item:
+        one: Line Item
+        other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
+        one: Order
+        other: Orders
       spree/payment:
+        one: Payment
+        other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
+        one: Product
+        other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
+        one: Property
+        other: Properties
       spree/prototype:
+        one: Prototype
+        other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role:
+        one: Roles
+        other: Roles
       spree/shipment:
+        one: Shipment
+        other: Shipments
       spree/shipping_category:
+        one: Shipping Category
+        other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
+        one: State
+        other: States
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate:
+        one: Tax Rate
+        other: Tax Rates
       spree/taxon:
+        one: Taxon
+        other: Taxons
       spree/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
+        one: User
+        other: Users
       spree/variant:
+        one: Variant
+        other: Variants
       spree/zone:
+        one: Zone
+        other: Zones
   devise:
     confirmations:
       confirmed:
@@ -281,6 +360,8 @@ ko:
       not_found:
       not_locked:
       not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: "생략"
     accept:
@@ -317,10 +398,10 @@ ko:
     add_rule_of_type:
     add_state:
     add_stock:
-    add_stock_management:
     add_to_cart: "장바구니에 추가"
     add_variant:
     additional_item: "추가 된 아이템 비용"
+    address: Address
     address1:
     address2:
     adjustable:
@@ -337,6 +418,7 @@ ko:
         orders:
         overview:
         products:
+        promotion_categories: Promotion Categories
         promotions:
         properties:
         prototypes:
@@ -362,9 +444,6 @@ ko:
     all_adjustments_opened:
     all_departments:
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test:
-    allow_ssl_in_production:
-    allow_ssl_in_staging:
     already_signed_up_for_analytics:
     alt_text: "대체 텍스트"
     alternative_phone: "휴대폰 번호"
@@ -427,10 +506,11 @@ ko:
     card_type_is: "카드 종료는 입니다"
     cart: "장바구니"
     cart_subtotal:
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories:
     category:
     charged:
-    check_for_spree_alerts:
     checkout:
     choose_a_customer:
     choose_a_taxon_to_sort_products_for:
@@ -491,10 +571,7 @@ ko:
     credit_owed:
     credits:
     currency:
-    currency_decimal_mark:
     currency_settings:
-    currency_symbol_position:
-    currency_thousands_separator:
     current: "현재"
     current_promotion_usage:
     customer: "고객"
@@ -527,6 +604,7 @@ ko:
     default_tax:
     default_tax_zone:
     delete: "삭제"
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery:
     depth: "높이"
@@ -537,7 +615,6 @@ ko:
     discount_amount: "할인액"
     dismiss_banner:
     display: "표시"
-    display_currency:
     doesnt_track_inventory:
     edit: "편집"
     editing_resource:
@@ -564,12 +641,10 @@ ko:
     enable_mail_delivery:
     end:
     ending_in:
-    environment: "환경"
     error: "에러"
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available:
         no_shipping_methods_available:
     errors_prohibited_this_record_from_being_saved:
       one: "저장하는 중에 문제가 발생했습니다."
@@ -599,6 +674,7 @@ ko:
     failed_payment_attempts:
     filename: "파일이름"
     fill_in_customer_info:
+    filter: Filter
     filter_results:
     finalize:
     finalized:
@@ -614,7 +690,6 @@ ko:
     free_shipping_amount:
     front_end:
     gateway: "게이트웨이"
-    gateway_config_unavailable:
     gateway_error: "게이트웨이 에러"
     general:
     general_settings: "일반 설정"
@@ -624,7 +699,6 @@ ko:
     guest_user_account: "비회원으로 결제"
     has_no_shipped_units:
     height: "세로"
-    hide_cents:
     home: Home
     i18n:
       available_locales:
@@ -639,7 +713,6 @@ ko:
       this_file_language: "한국어 (KO)"
       translations:
     icon: "아이콘"
-    identifier:
     image: "이미지"
     images: "이미지"
     implement_eligible_for_return:
@@ -650,6 +723,8 @@ ko:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password:
     insufficient_stock:
@@ -691,6 +766,7 @@ ko:
     line_item_adjustments:
     list: "목록"
     loading: "로딩"
+    loading_tree: Loading tree. Please wait…
     locale_changed: "지역이 변경됨"
     location:
     lock:
@@ -722,6 +798,7 @@ ko:
     meta_title:
     metadata: "메타데이터"
     minimal_amount: "최소량"
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month:
     more:
     move_stock_between_locations:
@@ -750,6 +827,7 @@ ko:
     new_refund_reason:
     new_return_authorization:
     new_rma_reason:
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category:
     new_shipping_method:
@@ -813,6 +891,7 @@ ko:
     order_details: "주문 상세"
     order_email_resent: "주문 확인 메일 재발송"
     order_information:
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer:
@@ -831,10 +910,6 @@ ko:
         total:
     order_not_found:
     order_number:
-    order_populator:
-      out_of_stock:
-      please_enter_reasonable_quantity:
-      selected_quantity_not_available:
     order_processed_successfully:
     order_resumed:
     order_state:
@@ -854,7 +929,6 @@ ko:
     order_total: "주문 합계"
     order_updated: "주문이 수정됨"
     orders: "주문"
-    other_items_in_other:
     out_of_stock: "품절"
     overview: Overiew
     package_from:
@@ -868,7 +942,6 @@ ko:
     pay:
     payment: "지불"
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: "지불 정보"
     payment_method: "결제 방법"
     payment_method_not_supported:
@@ -896,6 +969,7 @@ ko:
     phone: "전화번호"
     place_order:
     please_define_payment_methods:
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error:
     powered_by:
     pre_tax_amount:
@@ -940,6 +1014,7 @@ ko:
         description:
         name:
     promotion_actions:
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: "이 규칙에 모두 일치"
@@ -995,6 +1070,7 @@ ko:
     received:
     reception_status:
     reference:
+    reference_contains: Reference Contains
     refund:
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1028,6 +1104,7 @@ ko:
     rename:
     report:
     reports: "리포트"
+    resellable: Resellable
     resend: "재발송"
     reset_password: "비밀번호 재설정"
     response_code: "응답 코드"
@@ -1040,6 +1117,7 @@ ko:
     return_authorizations:
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1047,7 +1125,6 @@ ko:
     return_number:
     return_quantity:
     returned:
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1055,6 +1132,7 @@ ko:
     rma_credit:
     rma_number: "RMA 번호"
     rma_value: "RMA 값"
+    role_id: Role ID
     roles:
     rules: "규칙"
     safe:
@@ -1076,6 +1154,7 @@ ko:
     select_a_stock_location:
     select_from_prototype: "견본에서 선택"
     select_stock:
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: "모든 메일 사본을 다음 주소로 보냄"
     send_mails_as:
     server: "서버"
@@ -1266,7 +1345,9 @@ ko:
     usage_limit:
     use_app_default:
     use_billing_address: "배송받으실 분이 주문자와 동일합니다."
+    use_existing_cc: Use an existing card on file
     use_new_cc:
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3:
     user: "사용자"
     user_rule:

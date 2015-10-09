@@ -40,20 +40,6 @@ tr:
         name: Ad
         presentation: Tanıtım
       spree/order:
-        checkout_complete: "Ödeme Tamamlandı"
-        completed_at: Tamamlanma zamanı
-        considered_risky: Riskli Olarak Belirtildi
-        coupon_code: Kupon Kodu
-        created_at: Sipariş Tarihi
-        email: Müşteri E-posta
-        ip_address: IP Adresi
-        item_total: Toplam Miktar
-        number: Numara
-        payment_state: "Ödeme Bölgesi"
-        shipment_state: Kargo Bölgesi
-        special_instructions: "Özel Tanımlar"
-        state: Bölge
-        total: Toplam
       spree/order/bill_address:
         address1: Fatura adresi, cadde
         city: Fatura adresi, şehir
@@ -68,10 +54,25 @@ tr:
         firstname: Kargo adresi, ad
         lastname: Kargo adresi, soyad
         phone: Kargo adresi, telefon
-        state: Kargo adresi, bölge
+        state: State
         zipcode: Kargo adresi, posta kodu
+        checkout_complete: Checkout Complete
+        completed_at: Completed At
+        considered_risky: Risky
+        coupon_code: Coupon Code
+        created_at: Order Date
+        email: Customer E-Mail
+        ip_address: IP Address
+        item_total: Item Total
+        number: Number
+        payment_state: Payment State
+        shipment_state: Shipment State
+        special_instructions: Special Instructions
+        state: State
+        total: Total
       spree/payment:
         amount: Miktar
+        number: Number
       spree/payment_method:
         name: Ad
       spree/product:
@@ -105,6 +106,8 @@ tr:
         amount: Miktar
       spree/role:
         name: Ad
+      spree/shipment:
+        number: Number
       spree/state:
         abbr: Kısaltma
         name: Ad
@@ -200,43 +203,119 @@ tr:
               cannot_destroy_default_store:
     models:
       spree/address: Adresler
+        one: Address
+        other: Addresses
       spree/country: "Ülkeler"
+        one: Country
+        other: Countries
       spree/credit_card: Kredi Kartları
+        one: Credit Card
+        other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit: Stok Birimi
+        one: Inventory Unit
+        other: Inventory Units
       spree/line_item: Kalem
+        one: Line Item
+        other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order: Siparişler
+        one: Order
+        other: Orders
       spree/payment: "Ödemeler"
+        one: Payment
+        other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product: "Ürünler"
+        one: Product
+        other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property: "Özellikler"
+        one: Property
+        other: Properties
       spree/prototype: Prototipler
+        one: Prototype
+        other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization: Geri İade Yetkileri
+        one: Return Authorization
+        other: Return Authorizations
       spree/return_authorization_reason:
+        one: Return Authorization Reason
+        other: Return Authorization Reasons
       spree/role: Roller
+        one: Roles
+        other: Roles
       spree/shipment: Kargolar
+        one: Shipment
+        other: Shipments
       spree/shipping_category: Kargo Kategorileri
+        one: Shipping Category
+        other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state: Bölgeler
+        one: State
+        other: States
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category: Vergi Sınıfları
+        one: Tax Category
+        other: Tax Categories
       spree/tax_rate: Vergi Oranları
+        one: Tax Rate
+        other: Tax Rates
       spree/taxon: Gruplar
+        one: Taxon
+        other: Taxons
       spree/taxonomy: Gruplandırmalar
+        one: Taxonomy
+        other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user: Kullanıcılar
+        one: User
+        other: Users
       spree/variant: "Çeşitler"
+        one: Variant
+        other: Variants
       spree/zone: Bölgeler
+        one: Zone
+        other: Zones
   devise:
     confirmations:
       confirmed: Hesabınız başarıyla etkinleştirildi. Şu anda giriş yaptınız.
@@ -281,6 +360,8 @@ tr:
       not_found: bulunamadı
       not_locked: kilitli değil
       not_saved: "%{resource} kaydedilirken %{count} hata tespit edildi."
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
   spree:
     abbreviation: Kısaltma
     accept:
@@ -317,10 +398,10 @@ tr:
     add_rule_of_type: Yeni kural tipi ekle
     add_state: Bölge ekle
     add_stock: Stok Ekle
-    add_stock_management: Stok Yönetimi Ekle
     add_to_cart: Sepete Ekle
     add_variant: Değişken ekle
     additional_item: Ek parça maliyeti
+    address: Address
     address1: Adres
     address2: Adres(Devamı)
     adjustable:
@@ -337,6 +418,7 @@ tr:
         orders: Siparişler
         overview: "Ön izleme"
         products: "Ürünler"
+        promotion_categories: Promotion Categories
         promotions: Promosyonlar
         properties: "Özellikler"
         prototypes: Prototipler
@@ -362,9 +444,6 @@ tr:
     all_adjustments_opened: Tüm Krediler başarıyla açıldı!
     all_departments: Tüm Birimler
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Geliştirme ve deneme aşamalarında SSL kullanımına izin ver
-    allow_ssl_in_production: Gerçek satış aşamasında SSL kullanımına izin ver
-    allow_ssl_in_staging: Devreye alma aşamasında SSL kullanımına izin ver
     already_signed_up_for_analytics: Spree Analizleri servisinde kaydınız zaten var.
     alt_text: Alternatif Metin
     alternative_phone: Alternatif Telefon
@@ -427,10 +506,11 @@ tr:
     card_type_is: Kart Tipi
     cart: Sepet
     cart_subtotal: Ara Toplam
+      one: 'Subtotal (1 item)'
+      other: 'Subtotal (%{count} items)'
     categories: Kategoriler
     category: Kategori
     charged:
-    check_for_spree_alerts: Spree uyarılarını denetle
     checkout: "Ödeme"
     choose_a_customer: Bir müşteri seç
     choose_a_taxon_to_sort_products_for:
@@ -439,7 +519,7 @@ tr:
     choose_location: Yer Seç
     city: "Şehir"
     clear_cache: Önbelleği Temizle
-    clear_cache_ok: 
+    clear_cache_ok:
     clear_cache_warning:
     click_and_drag_on_the_products_to_sort_them:
     clone: "Çoğalt"
@@ -491,10 +571,7 @@ tr:
     credit_owed: Kredi Borcu
     credits:
     currency: Kur
-    currency_decimal_mark: Ondalık ayırıcı işareti
     currency_settings: Kur Ayarları
-    currency_symbol_position: Kur simgesi fiyattan önce mi sonra mı gösterilsin?
-    currency_thousands_separator: Binlik ayırıcı işareti
     current: Geçerli
     current_promotion_usage: 'Geçerli Kullanım: %{count}'
     customer: Müşteri
@@ -527,6 +604,7 @@ tr:
     default_tax: Varsayılan Vergi
     default_tax_zone: Varsayılan Vergi Bölgesi
     delete: Sil
+    delete_from_taxon: Delete From Taxon
     deleted_variants_present:
     delivery: Ulaştırma
     depth: Derinlik
@@ -537,7 +615,6 @@ tr:
     discount_amount: "İndirim Miktarı"
     dismiss_banner: Hayır. Teşekkürler! İlgilenmiyorum, bu mesajı tekrar gösterme.
     display: Göster
-    display_currency: Kurları göster
     doesnt_track_inventory:
     edit: Düzenle
     editing_resource: Kaynak düzenleniyor
@@ -555,7 +632,7 @@ tr:
         missing_taxon: Sınıflandırma bulunamadı
         no_applicable_products:
         no_matching_taxons: Eşleşen ürün yok
-        no_user_or_email_specified: 
+        no_user_or_email_specified:
         no_user_specified:
         not_first_order: İlk sipariş değil
     email: E-posta
@@ -564,14 +641,14 @@ tr:
     enable_mail_delivery: Posta Gönderimini Etkinleştir
     end: Bitiş
     ending_in: Bitiş Tarihi
-    environment: Ortam
     error: hata
     errors:
       messages:
         could_not_create_taxon: Grup oluşturulamıyor
-        no_payment_methods_available: Bu ortam için hiçbir ödeme yöntemi tanımlı değil.
         no_shipping_methods_available: Seçilen bölge için hiçbir kargo yöntemi bulunamadı, lütfen adresinizi değiştirerek tekrar deneyiniz.
     errors_prohibited_this_record_from_being_saved: "%{count} hata bu girdinin kaydedilmesini engelledi."
+      one: 1 error prohibited this record from being saved
+      other: ! '%{count} errors prohibited this record from being saved'
     event: Olay
     events:
       spree:
@@ -597,6 +674,7 @@ tr:
     failed_payment_attempts:
     filename: Dosya adı
     fill_in_customer_info: Lütfen müşteri bilgilerini giriniz.
+    filter: Filter
     filter_results: Süzgeç Sonuçları
     finalize: Sonlandır
     finalized: Sonlandırldı
@@ -612,7 +690,6 @@ tr:
     free_shipping_amount:
     front_end: "Ön Yüz"
     gateway: Yöntem
-    gateway_config_unavailable: Bu ortam için yöntem geçerli değil
     gateway_error: Yöntem Hatası
     general: Genel
     general_settings: Genel Ayarlar
@@ -622,7 +699,6 @@ tr:
     guest_user_account: Misafir olarak öde
     has_no_shipped_units: kargolanmış birim yok
     height: Yükseklik
-    hide_cents: Virgül sonrasını gizle
     home: Anasayfa
     i18n:
       available_locales: Kullanılabilir Diller
@@ -637,7 +713,6 @@ tr:
       this_file_language: Türkçe (TR)
       translations: "Çeviriler"
     icon: Simge
-    identifier: Belirteç
     image: Resim
     images: Resimler
     implement_eligible_for_return:
@@ -648,6 +723,8 @@ tr:
     included_price_validation: Varsayılan Vergi Bölgesi ayarlanmadan seçilemez
     incomplete: Tamamlanmamış
     info_number_of_skus_not_shown:
+      one: "and one other"
+      other: "and %{count} others"
     info_product_has_multiple_skus:
     instructions_to_reset_password: Lütfen aşağıdaki forma e-posta adresinizi giriniz.
     insufficient_stock: Bu üründen istenilen miktarda bulunmuyor, sadece %{on_hand} adet elde bulunmaktadır.
@@ -689,6 +766,7 @@ tr:
     line_item_adjustments:
     list: Liste
     loading: Yükleniyor
+    loading_tree: Loading tree. Please wait…
     locale_changed: Dil Değiştirildi
     location: Konum
     lock: Kilitle
@@ -720,6 +798,7 @@ tr:
     meta_title:
     metadata: Meta verisi
     minimal_amount: En düşük Miktar
+    missing_return_authorization: ! 'Missing Return Authorization for %{item_name}.'
     month: Ay
     more: Daha
     move_stock_between_locations: Stoğu Konumlar Arası Taşı
@@ -748,6 +827,7 @@ tr:
     new_refund_reason: Yeni Geri Ödeme Sebebi
     new_return_authorization: Yeni İade İzni
     new_rma_reason: Yeni İade Sebebi
+    new_role: New Role
     new_shipment_at_location:
     new_shipping_category: Yeni Kargo Kategorisi
     new_shipping_method: Yeni Kargo Yöntemi
@@ -811,10 +891,10 @@ tr:
     order_details: Sipariş Ayrıntıları
     order_email_resent: Sipariş E-postasını Tekrar Gönder
     order_information: Sipariş Bilgisi
+    order_line_items: Order Line Items
     order_mailer:
       cancel_email:
         dear_customer: |
-          Sayın Müşterimiz,
         instructions: Siparişiniz iptal edilmiştir. Kayıtlarınız için lütfen iptal etme işleminin bilgilerini saklayınız.
         order_summary_canceled: Sipariş Özeti[İPTAL]
         subject: Sipariş İptal Etme
@@ -822,7 +902,6 @@ tr:
         total:
       confirm_email:
         dear_customer: |
-          Değerli Müşterimiz,
         instructions: Lütfen aşağıdaki sipariş bilgilerini gözden geçiriniz ve kayıtlarınız için saklayınız.
         order_summary: Sipariş Özeti
         subject: Sipariş Onayı
@@ -850,7 +929,6 @@ tr:
     order_total: Sipariş Toplamı
     order_updated: Sipariş Güncellendi
     orders: Siparişler
-    other_items_in_other:
     out_of_stock: Stokta Yok
     overview: Gözden Geçirme
     package_from: kimden
@@ -864,7 +942,6 @@ tr:
     pay: "öde"
     payment: "Ödeme"
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: "Ödeme Bilgisi"
     payment_method: "Ödeme Yöntemi"
     payment_method_not_supported:
@@ -892,6 +969,7 @@ tr:
     phone: Telefon
     place_order: Sipariş Ver
     please_define_payment_methods: Lütfen önce bir ödeme yöntemi tanımlayın.
+    please_enter_reasonable_quantity: Please enter a reasonable quantity.
     populate_get_error: Bir hata oluştu. Lütfen ürün ekleme işlemini tekrar deneyin.
     powered_by: Geliştiren
     pre_tax_amount:
@@ -936,6 +1014,7 @@ tr:
         description:
         name:
     promotion_actions: Hareketler
+    promotion_category: Promotion Category
     promotion_form:
       match_policies:
         all: Bu kuralların tümünü eşleştir
@@ -991,6 +1070,7 @@ tr:
     received: Gelen
     reception_status:
     reference: Referans
+    reference_contains: Reference Contains
     refund: Geri Ödeme
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1024,6 +1104,7 @@ tr:
     rename: Yeniden adlandır
     report: Rapor
     reports: Raporlar
+    resellable: Resellable
     resend: Tekrar Gönder
     reset_password: "Şifremi Sıfırla"
     response_code: Yanıt Kodu
@@ -1036,6 +1117,7 @@ tr:
     return_authorizations: "İade Yönetimleri"
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed: Return item's order must be completed
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1043,7 +1125,6 @@ tr:
     return_number:
     return_quantity: "İade Miktarı"
     returned: "İade Edilmiş"
-    returns:
     review: Gözden Geçir
     risk:
     risk_analysis:
@@ -1051,6 +1132,7 @@ tr:
     rma_credit: "İade(RMA) Kredisi"
     rma_number: "İade(RMA) Numarası"
     rma_value: "İade(RMA) Değeri"
+    role_id: Role ID
     roles: Roller
     rules: Kurallar
     safe: Güvenli
@@ -1072,6 +1154,7 @@ tr:
     select_a_stock_location:
     select_from_prototype: Prototipten Seç
     select_stock: Stok Seç
+    selected_quantity_not_available: ! 'selected of %{item} is not available.'
     send_copy_of_all_mails_to: Tüm e-postaların bir kopyasını şuraya gönder
     send_mails_as: Postaları Gönderim Şekli
     server: Sunucu
@@ -1086,7 +1169,6 @@ tr:
     shipment_mailer:
       shipped_email:
         dear_customer: |
-          Değerli Müşterimiz,
         instructions: Siparişiniz kargoya verildi
         shipment_summary: Kargo Özeti
         subject: Kargo Bildirimi
@@ -1263,7 +1345,9 @@ tr:
     usage_limit: Kullanım Limiti
     use_app_default:
     use_billing_address: Fatura Adresini Kullan
+    use_existing_cc: Use an existing card on file
     use_new_cc: Yeni bir kart kullan
+    use_new_cc_or_payment_method: Use a new card / payment method
     use_s3: Resimler için Amazon S3 kullan
     user: Kullanıcı
     user_rule:
@@ -1273,7 +1357,7 @@ tr:
       cannot_be_less_than_shipped_units: kargolanmış ürün sayısından daha az olamaz.
       cannot_destroy_line_item_as_inventory_units_have_shipped:
       exceeds_available_stock: elde olan stok aşıldı. İstenilen ürün miktarının geçerli miktarda olduğundan emin olun.
-      is_too_large: "çok fazla -- eldeki stok istenilen miktarı karşılayacak kadar yeterli değil!"
+      is_too_large: "çok fazla - eldeki stok istenilen miktarı karşılayacak kadar yeterli değil!"
       must_be_int: bir sayı olmak zorundadır
       must_be_non_negative: negatif olmayan bir değer olmalıdır
       unpaid_amount_not_zero:
