@@ -49,7 +49,7 @@ namespace :spree_i18n do
       FileUtils.mkdir_p(default_dir)
     end
 
-    File.open("#{default_dir}/spree_core.yml", 'w') { |file| file << response.body }
+    File.open("#{default_dir}/spree_core.yml", 'w') { |file| file << response.body.force_encoding("UTF-8") }
   end
 
   desc "Syncronize translation files with latest en (adds comments with fallback en value)"
@@ -60,8 +60,11 @@ namespace :spree_i18n do
     Dir["#{locales_dir}/*.yml"].each do |filename|
       basename = File.basename(filename, '.yml')
       (comments, other) = Spree::I18nUtils.read_file(filename, basename)
-      words.each { |k,v| other[k] ||= "#{words[k]}" }  #Initializing hash variable as en fallback if it does not exist
-      other.delete_if { |k,v| !words[k] } #Remove if not defined in en locale
+      # Initializing hash variable as en fallback if it does not exist
+      words.each { |k, v| other[k] ||= "#{words[k]}" }
+
+      # Remove if not defined in en locale
+      other.delete_if { |k, v| !words[k] }
       Spree::I18nUtils.write_file(filename, basename, comments, other, false)
     end
   end
