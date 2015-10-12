@@ -1,3 +1,4 @@
+---
 sl-SI:
   activerecord:
     attributes:
@@ -72,6 +73,7 @@ sl-SI:
         zipcode:
       spree/payment:
         amount:
+        number:
       spree/payment_method:
         name:
       spree/product:
@@ -105,6 +107,8 @@ sl-SI:
         amount:
       spree/role:
         name:
+      spree/shipment:
+        number:
       spree/state:
         abbr:
         name:
@@ -200,43 +204,119 @@ sl-SI:
               cannot_destroy_default_store:
     models:
       spree/address:
+        one:
+        other:
       spree/country:
+        one:
+        other:
       spree/credit_card:
+        one:
+        other:
       spree/customer_return:
+        one:
+        other:
       spree/inventory_unit:
+        one:
+        other:
       spree/line_item:
+        one:
+        other:
       spree/option_type:
+        one:
+        other:
       spree/option_value:
+        one:
+        other:
       spree/order:
+        one:
+        other:
       spree/payment:
+        one:
+        other:
       spree/payment_method:
+        one:
+        other:
       spree/product:
+        one:
+        other:
       spree/promotion:
+        one:
+        other:
       spree/promotion_category:
+        one:
+        other:
       spree/property:
+        one:
+        other:
       spree/prototype:
+        one:
+        other:
       spree/refund_reason:
+        one:
+        other:
       spree/reimbursement:
+        one:
+        other:
       spree/reimbursement_type:
+        one:
+        other:
       spree/return_authorization:
+        one:
+        other:
       spree/return_authorization_reason:
+        one:
+        other:
       spree/role:
+        one:
+        other:
       spree/shipment:
+        one:
+        other:
       spree/shipping_category:
+        one:
+        other:
       spree/shipping_method:
+        one:
+        other:
       spree/state:
+        one:
+        other:
       spree/state_change:
+        one:
+        other:
       spree/stock_location:
+        one:
+        other:
       spree/stock_movement:
+        one:
+        other:
       spree/stock_transfer:
+        one:
+        other:
       spree/tax_category:
+        one:
+        other:
       spree/tax_rate:
+        one:
+        other:
       spree/taxon:
+        one:
+        other:
       spree/taxonomy:
+        one:
+        other:
       spree/tracker:
+        one:
+        other:
       spree/user:
+        one:
+        other:
       spree/variant:
+        one:
+        other:
       spree/zone:
+        one:
+        other:
   devise:
     confirmations:
       confirmed:
@@ -281,6 +361,8 @@ sl-SI:
       not_found:
       not_locked:
       not_saved:
+        one:
+        other:
   spree:
     abbreviation: Okrajšava
     accept:
@@ -317,10 +399,10 @@ sl-SI:
     add_rule_of_type: Dodaj tip pravila
     add_state: Dodaj pokraijno
     add_stock:
-    add_stock_management:
     add_to_cart: Dodaj v košarico
     add_variant:
     additional_item: Additional Item Cost
+    address:
     address1:
     address2:
     adjustable:
@@ -337,8 +419,8 @@ sl-SI:
         orders:
         overview:
         products:
-        promotions:
         promotion_categories:
+        promotions:
         properties:
         prototypes:
         reports:
@@ -363,9 +445,6 @@ sl-SI:
     all_adjustments_opened:
     all_departments: Vsi oddelki
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test:
-    allow_ssl_in_production:
-    allow_ssl_in_staging:
     already_signed_up_for_analytics:
     alt_text: Alternativni tekst
     alternative_phone: Drugi telefon
@@ -384,7 +463,7 @@ sl-SI:
     are_you_sure: Ste prepričani?
     are_you_sure_delete: Ste prepričani, da želite izbrisati ta vnos?
     associated_adjustment_closed:
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Napaka pri avtorizaciji
     authorized:
     auto_capture:
@@ -411,12 +490,14 @@ sl-SI:
     both: Oboje
     calculated_reimbursements:
     calculator: Kalkulator
-    calculator_settings_warning: "Če spreminjate tip kalkulatorja, morate pred urejanjem nastavitev najprej shraniti."
+    calculator_settings_warning: "Če spreminjate tip kalkulatorja, morate pred urejanjem
+      nastavitev najprej shraniti."
     cancel: prekini
     canceled_at:
     canceler:
     cannot_create_customer_returns:
-    cannot_create_payment_without_payment_methods: You cannot create a payment for an order without any payment methods defined.
+    cannot_create_payment_without_payment_methods: You cannot create a payment for
+      an order without any payment methods defined.
     cannot_create_returns: Ne morem generirati vračil, ker naročilo še ni bilo poslano.
     cannot_perform_operation: Ni mogoče izvesti zahtevane operacije
     cannot_set_shipping_method_without_address:
@@ -428,10 +509,11 @@ sl-SI:
     card_type_is: Tip kartice je
     cart: Košarica
     cart_subtotal:
+      one:
+      other:
     categories: Kategorije
     category: Kategorija
     charged:
-    check_for_spree_alerts:
     checkout: Naročilo
     choose_a_customer:
     choose_a_taxon_to_sort_products_for:
@@ -492,10 +574,7 @@ sl-SI:
     credit_owed:
     credits:
     currency:
-    currency_decimal_mark:
     currency_settings:
-    currency_symbol_position:
-    currency_thousands_separator:
     current: Trenutno
     current_promotion_usage:
     customer: Stranka
@@ -528,6 +607,7 @@ sl-SI:
     default_tax:
     default_tax_zone:
     delete: Izbriši
+    delete_from_taxon:
     deleted_variants_present:
     delivery: Delivery
     depth: Globina
@@ -538,7 +618,6 @@ sl-SI:
     discount_amount: Znesek popusta
     dismiss_banner:
     display: Prikaži
-    display_currency: Display currency
     doesnt_track_inventory:
     edit: Uredi
     editing_resource:
@@ -565,14 +644,14 @@ sl-SI:
     enable_mail_delivery: Vklopi pošiljanje emailov
     end:
     ending_in:
-    environment: Okolje
     error: napaka
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available:
         no_shipping_methods_available:
     errors_prohibited_this_record_from_being_saved:
+      one:
+      other:
     event: Dogodek
     events:
       spree:
@@ -598,6 +677,7 @@ sl-SI:
     failed_payment_attempts:
     filename: Datoteka
     fill_in_customer_info:
+    filter:
     filter_results:
     finalize: Zaključi
     finalized:
@@ -613,7 +693,6 @@ sl-SI:
     free_shipping_amount:
     front_end: Front End
     gateway: Ponudnik
-    gateway_config_unavailable: Gateway unavailable for environment
     gateway_error: Napaka ponudnika
     general: Splošno
     general_settings: Splošne nastavitve
@@ -623,15 +702,20 @@ sl-SI:
     guest_user_account: Naroči kot gost
     has_no_shipped_units: nima prodajnih enot
     height: Višina
-    hide_cents:
     home: Domov
     i18n:
       available_locales:
+      fields:
       language:
       localization_settings:
+      only_complete:
+      only_incomplete:
+      select_locale:
+      show_only:
+      supported_locales:
       this_file_language: Slovenščina (SL)
+      translations:
     icon: Ikona
-    identifier:
     image: Slika
     images: Slike
     implement_eligible_for_return:
@@ -642,8 +726,11 @@ sl-SI:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one:
+      other:
     info_product_has_multiple_skus:
-    instructions_to_reset_password: 'Izpolnite spodnji obrazec in navodila za ponastavitev gesla vam bomo poslali na email:'
+    instructions_to_reset_password: 'Izpolnite spodnji obrazec in navodila za ponastavitev
+      gesla vam bomo poslali na email:'
     insufficient_stock:
     insufficient_stock_lines_present:
     intercept_email_address: Prestrezi Email naslov
@@ -683,6 +770,7 @@ sl-SI:
     line_item_adjustments:
     list: Seznam
     loading: Nalagam
+    loading_tree:
     locale_changed: Locale Changed
     location:
     lock:
@@ -714,6 +802,7 @@ sl-SI:
     meta_title:
     metadata: Metadata
     minimal_amount: Minimalni znesek
+    missing_return_authorization:
     month: Mesec
     more: More
     move_stock_between_locations:
@@ -742,6 +831,7 @@ sl-SI:
     new_refund_reason:
     new_return_authorization: Nova avtorizacija vračila
     new_rma_reason:
+    new_role:
     new_shipment_at_location:
     new_shipping_category: Dodaj kategorijo poštnine
     new_shipping_method: Dodaj tip dostave
@@ -805,6 +895,7 @@ sl-SI:
     order_details: Podrobnosti naročila
     order_email_resent: Email z naročilom je bil ponovno poslan.
     order_information:
+    order_line_items:
     order_mailer:
       cancel_email:
         dear_customer:
@@ -842,7 +933,6 @@ sl-SI:
     order_total: Naročilo skupaj
     order_updated: Naročilo osveženo
     orders: Naročila
-    other_items_in_other:
     out_of_stock: Ni na zalogi
     overview: Pregled
     package_from:
@@ -856,12 +946,12 @@ sl-SI:
     pay: plačaj
     payment: Plačilo
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Podatki o plačilu
     payment_method: Način plačila
     payment_method_not_supported:
     payment_methods: Načini plačila
-    payment_processing_failed: Plačila ni možno izvesti, prosimo preverite vnešene podatke
+    payment_processing_failed: Plačila ni možno izvesti, prosimo preverite vnešene
+      podatke
     payment_processor_choose_banner_text:
     payment_processor_choose_link:
     payment_state: Stanje plačila
@@ -884,6 +974,7 @@ sl-SI:
     phone: Telefon
     place_order: Oddaj naročilo
     please_define_payment_methods:
+    please_enter_reasonable_quantity:
     populate_get_error:
     powered_by: Poganja
     pre_tax_amount:
@@ -928,6 +1019,7 @@ sl-SI:
         description:
         name:
     promotion_actions:
+    promotion_category:
     promotion_form:
       match_policies:
         all: Ujemaj se s katerim koli izmed teh pravil
@@ -970,7 +1062,8 @@ sl-SI:
     prototype: Prototip
     prototypes: Prototipi
     provider: Ponudnik
-    provider_settings_warning: "Če spreminjate tip ponudnika, morate najprej shraniti predno lahko urejate nastavitve ponudnika"
+    provider_settings_warning: "Če spreminjate tip ponudnika, morate najprej shraniti
+      predno lahko urejate nastavitve ponudnika"
     qty: Količina
     quantity:
     quantity_returned: Quantity Returned
@@ -983,6 +1076,7 @@ sl-SI:
     received: Prejeto
     reception_status:
     reference:
+    reference_contains:
     refund: Povračilo
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1016,6 +1110,7 @@ sl-SI:
     rename:
     report:
     reports: Poročila
+    resellable:
     resend: Pošlji ponovno
     reset_password: Ponastavi moje geslo
     response_code: Odzivna koda
@@ -1028,6 +1123,7 @@ sl-SI:
     return_authorizations: Avtorizacije vračil
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed:
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1035,7 +1131,6 @@ sl-SI:
     return_number:
     return_quantity: Količina za vračilo
     returned: Vrnjeno
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1043,6 +1138,7 @@ sl-SI:
     rma_credit: RMA kredit
     rma_number: RMA šifra
     rma_value: RMA vrednost
+    role_id:
     roles: Vloge
     rules:
     safe:
@@ -1064,6 +1160,7 @@ sl-SI:
     select_a_stock_location:
     select_from_prototype: Izberi iz prototipa
     select_stock:
+    selected_quantity_not_available:
     send_copy_of_all_mails_to: Pošlji kopijo vseh emailov na
     send_mails_as: Pošiljatelj izhodnih emailov
     server: Strežnik
@@ -1122,7 +1219,8 @@ sl-SI:
     source:
     special_instructions: Special Instructions
     split:
-    spree_gateway_error_flash_for_checkout: There was a problem with your payment information. Please check your information and try again.
+    spree_gateway_error_flash_for_checkout: There was a problem with your payment
+      information. Please check your information and try again.
     ssl:
       change_protocol:
     start: Od
@@ -1206,8 +1304,10 @@ sl-SI:
     taxonomies: Taksonomije
     taxonomy: Taxonomy
     taxonomy_edit: Uredi taksonomijo
-    taxonomy_tree_error: Zahtevana sprememba ni bila sprejeta zato je bila drevesna struktura povrnjena v prejšnje stanje, prosimo poskusite znova.
-    taxonomy_tree_instruction: "* Ob desnem kliku na vejo v drevesni strukturi se odpre meni za dodajanje, sortiranje in brisanje elementov"
+    taxonomy_tree_error: Zahtevana sprememba ni bila sprejeta zato je bila drevesna
+      struktura povrnjena v prejšnje stanje, prosimo poskusite znova.
+    taxonomy_tree_instruction: "* Ob desnem kliku na vejo v drevesni strukturi se
+      odpre meni za dodajanje, sortiranje in brisanje elementov"
     taxons: Taksoni
     test: Test
     test_mailer:
@@ -1216,9 +1316,11 @@ sl-SI:
         message: If you have received this email, then your email settings are correct.
         subject: Testmail
     test_mode: Testni način
-    thank_you_for_your_order: Hvala za zaupanje. Prosimo natisnite si kopijo te potrditvene strani za lastno referenco.
+    thank_you_for_your_order: Hvala za zaupanje. Prosimo natisnite si kopijo te potrditvene
+      strani za lastno referenco.
     there_are_no_items_for_this_order:
-    there_were_problems_with_the_following_fields: There were problems with the following fields
+    there_were_problems_with_the_following_fields: There were problems with the following
+      fields
     this_order_has_already_received_a_refund:
     thumbnail: Mala slika
     tiered_flat_rate:
@@ -1254,7 +1356,9 @@ sl-SI:
     usage_limit: Omejitev uporabe
     use_app_default:
     use_billing_address: Uporabi naslov za račun
+    use_existing_cc:
     use_new_cc: Uporabi drugo kreditno karico
+    use_new_cc_or_payment_method:
     use_s3: Use Amazon S3 For Images
     user: Uporabnik
     user_rule:
