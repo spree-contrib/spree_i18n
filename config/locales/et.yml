@@ -1,3 +1,4 @@
+---
 et:
   activerecord:
     attributes:
@@ -72,6 +73,7 @@ et:
         zipcode:
       spree/payment:
         amount: Summa
+        number:
       spree/payment_method:
         name: Nimetus
       spree/product:
@@ -105,6 +107,8 @@ et:
         amount: Kogus
       spree/role:
         name: Nimetus
+      spree/shipment:
+        number:
       spree/state:
         abbr:
         name:
@@ -206,11 +210,23 @@ et:
         one: Riik
         other: Riigid
       spree/credit_card:
+        one:
+        other:
       spree/customer_return:
+        one:
+        other:
       spree/inventory_unit:
+        one:
+        other:
       spree/line_item:
+        one:
+        other:
       spree/option_type:
+        one:
+        other:
       spree/option_value:
+        one:
+        other:
       spree/order:
         one: Tellimus
         other: Tellimused
@@ -218,19 +234,41 @@ et:
         one: Makse
         other: Maksed
       spree/payment_method:
+        one:
+        other:
       spree/product:
         one: Toode
         other: Tooted
       spree/promotion:
+        one:
+        other:
       spree/promotion_category:
+        one:
+        other:
       spree/property:
+        one:
+        other:
       spree/prototype:
+        one:
+        other:
       spree/refund_reason:
+        one:
+        other:
       spree/reimbursement:
+        one:
+        other:
       spree/reimbursement_type:
+        one:
+        other:
       spree/return_authorization:
+        one:
+        other:
       spree/return_authorization_reason:
+        one:
+        other:
       spree/role:
+        one:
+        other:
       spree/shipment:
         one: Tarne
         other: Tarned
@@ -238,17 +276,29 @@ et:
         one: Tarnekategooria
         other: Tarnekategooriad
       spree/shipping_method:
+        one:
+        other:
       spree/state:
         one: Maakond
         other: Maakonnad
       spree/state_change:
+        one:
+        other:
       spree/stock_location:
+        one:
+        other:
       spree/stock_movement:
+        one:
+        other:
       spree/stock_transfer:
+        one:
+        other:
       spree/tax_category:
         one: Maksukategooria
         other: Maksukategooriad
       spree/tax_rate:
+        one:
+        other:
       spree/taxon:
         one: Takson
         other: Taksonid
@@ -256,10 +306,14 @@ et:
         one: Taksonoomia
         other: Taksonoomiad
       spree/tracker:
+        one:
+        other:
       spree/user:
         one: Kasutaja
         other: Kasutajad
       spree/variant:
+        one:
+        other:
       spree/zone:
         one: Zone
         other: Zones
@@ -286,16 +340,20 @@ et:
       failure: Ei õnnestunud autoriseerida %{kind}-kontot, põhjus %{reason}.
       success: Edukalt autoriseeritud %{kind}-konto.
     unlocks:
-      send_instructions: Sa saad mõne minuti jooksul e-kirja juhistega, kuidas oma konto lukust vabastada.
+      send_instructions: Sa saad mõne minuti jooksul e-kirja juhistega, kuidas oma
+        konto lukust vabastada.
       unlocked: Sinu konto on edukalt lukust vabastatud. Sa oled nüüd sisse logitud.
     user_passwords:
       user:
         cannot_be_blank: Sinu parool ei tohi olla tühi.
-        send_instructions: Mõne minuti jooksul saad sa kirja juhistega, kuidas oma parooli taastada.
+        send_instructions: Mõne minuti jooksul saad sa kirja juhistega, kuidas oma
+          parooli taastada.
         updated: Sinu salasõna vahetati edukalt. Oled sisse logitud.
     user_registrations:
-      destroyed: Nägemist! Sinu konto on edukalt tühistatud. Loodame sind peagi uuesti näha.
-      inactive_signed_up: 'Sa registreerusid edukalt. Siiski ei saa me sind sisse logida, põhjus: %{reason}.'
+      destroyed: Nägemist! Sinu konto on edukalt tühistatud. Loodame sind peagi uuesti
+        näha.
+      inactive_signed_up: 'Sa registreerusid edukalt. Siiski ei saa me sind sisse
+        logida, põhjus: %{reason}.'
       signed_up: Tere tulemast! Sa registreerusid edukalt.
       updated: Sa uuendasid edukalt oma kontot.
     user_sessions:
@@ -345,10 +403,10 @@ et:
     add_rule_of_type:
     add_state: Lisa maakond
     add_stock:
-    add_stock_management:
     add_to_cart: Lisa ostukorvi
     add_variant: Lisa variant
     additional_item: Iga järgneva toote summa
+    address:
     address1: Aadress
     address2: Aadress (jätkub)
     adjustable:
@@ -365,8 +423,8 @@ et:
         orders:
         overview:
         products: Tooted
-        promotions:
         promotion_categories:
+        promotions:
         properties:
         prototypes:
         reports: Raportid
@@ -391,9 +449,6 @@ et:
     all_adjustments_opened:
     all_departments: Kõik osakonnad
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test:
-    allow_ssl_in_production:
-    allow_ssl_in_staging:
     already_signed_up_for_analytics:
     alt_text: Alternatiivne tekst
     alternative_phone: Teine telefoninumber
@@ -412,7 +467,7 @@ et:
     are_you_sure: Kas oled kindel?
     are_you_sure_delete: Kas oled kindel, et soovid seda kirjet kustutada?
     associated_adjustment_closed:
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Tõrge autoriseerimisel
     authorized:
     auto_capture:
@@ -439,7 +494,8 @@ et:
     both: Mõlemad
     calculated_reimbursements:
     calculator: Kalkulaator
-    calculator_settings_warning: Kalkulaatoritüübi ja -seadete muutmiseks pead kõigepealt salvestama.
+    calculator_settings_warning: Kalkulaatoritüübi ja -seadete muutmiseks pead kõigepealt
+      salvestama.
     cancel: Tühista
     canceled_at:
     canceler:
@@ -456,10 +512,11 @@ et:
     card_type_is: Kaarditüüp on
     cart: Ostukorv
     cart_subtotal:
+      one:
+      other:
     categories: Katergooriad
     category: Kategooria
     charged:
-    check_for_spree_alerts:
     checkout: Vormista tellimus
     choose_a_customer: Vali klient
     choose_a_taxon_to_sort_products_for:
@@ -520,10 +577,7 @@ et:
     credit_owed: Krediit võlgu
     credits:
     currency:
-    currency_decimal_mark:
     currency_settings:
-    currency_symbol_position:
-    currency_thousands_separator:
     current: Praegune
     current_promotion_usage:
     customer: Klient
@@ -556,6 +610,7 @@ et:
     default_tax:
     default_tax_zone:
     delete: Kustuta
+    delete_from_taxon:
     deleted_variants_present:
     delivery: Delivery
     depth: Sügavus
@@ -566,7 +621,6 @@ et:
     discount_amount:
     dismiss_banner:
     display: Kuvatav väärtus
-    display_currency:
     doesnt_track_inventory:
     edit: Muuda
     editing_resource:
@@ -593,14 +647,14 @@ et:
     enable_mail_delivery: Luba e-mailide saatmine
     end: Lõpp
     ending_in: Ending in
-    environment: Keskkond
     error: Viga
     errors:
       messages:
         could_not_create_taxon:
-        no_payment_methods_available:
         no_shipping_methods_available:
     errors_prohibited_this_record_from_being_saved:
+      one:
+      other:
     event: Sündmus
     events:
       spree:
@@ -626,6 +680,7 @@ et:
     failed_payment_attempts:
     filename: Faili nimi
     fill_in_customer_info:
+    filter:
     filter_results: Filtreeri tulemusi
     finalize: Lõpeta
     finalized:
@@ -641,7 +696,6 @@ et:
     free_shipping_amount:
     front_end:
     gateway: Lüüs
-    gateway_config_unavailable:
     gateway_error: Lüüsi viga
     general: "Üldine"
     general_settings: "Üldised sätted"
@@ -651,15 +705,20 @@ et:
     guest_user_account: Vormista ost külalisena
     has_no_shipped_units: Postitatud esemed puuduvad
     height: Kõrgus
-    hide_cents:
     home: Avaleht
     i18n:
       available_locales:
+      fields:
       language: Keel
       localization_settings:
+      only_complete:
+      only_incomplete:
+      select_locale:
+      show_only:
+      supported_locales:
       this_file_language: Eesti keel
+      translations:
     icon: Icon
-    identifier:
     image: Pilt
     images: Pildid
     implement_eligible_for_return:
@@ -670,8 +729,11 @@ et:
     included_price_validation:
     incomplete:
     info_number_of_skus_not_shown:
+      one:
+      other:
     info_product_has_multiple_skus:
-    instructions_to_reset_password: Täida allolev vorm. Juhised salasõna uuesti seadistamiseks saadetakse Teile e-maili teel.
+    instructions_to_reset_password: Täida allolev vorm. Juhised salasõna uuesti seadistamiseks
+      saadetakse Teile e-maili teel.
     insufficient_stock: Insufficient stock available, only %{on_hand} remaining
     insufficient_stock_lines_present:
     intercept_email_address:
@@ -711,6 +773,7 @@ et:
     line_item_adjustments:
     list: Loetelu
     loading: Laen...
+    loading_tree:
     locale_changed: Keel vahetatud
     location: Asukoht
     lock:
@@ -742,6 +805,7 @@ et:
     meta_title:
     metadata: Metaandmed
     minimal_amount: Minimal Amount
+    missing_return_authorization:
     month: Kuu
     more:
     move_stock_between_locations:
@@ -770,6 +834,7 @@ et:
     new_refund_reason:
     new_return_authorization: Uue toote tagastamine
     new_rma_reason:
+    new_role:
     new_shipment_at_location:
     new_shipping_category: Uus tarnekategooria
     new_shipping_method: Uus tarnemeetod
@@ -833,6 +898,7 @@ et:
     order_details: Tellimuse info
     order_email_resent: E-mail tellimuse kohta uuesti saadetud
     order_information:
+    order_line_items:
     order_mailer:
       cancel_email:
         dear_customer:
@@ -870,7 +936,6 @@ et:
     order_total: Tellimus kokku
     order_updated: Tellimus uuendatud
     orders: Tellimused
-    other_items_in_other:
     out_of_stock: Laost lõppenud
     overview: "Ülevaade"
     package_from:
@@ -884,7 +949,6 @@ et:
     pay: Maksa
     payment: Makse
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Makse informatsioon
     payment_method: Makseviis
     payment_method_not_supported:
@@ -912,6 +976,7 @@ et:
     phone: Telefon
     place_order: Esita tellimus
     please_define_payment_methods:
+    please_enter_reasonable_quantity:
     populate_get_error:
     powered_by: Toetab
     pre_tax_amount:
@@ -956,6 +1021,7 @@ et:
         description:
         name:
     promotion_actions:
+    promotion_category:
     promotion_form:
       match_policies:
         all:
@@ -998,7 +1064,8 @@ et:
     prototype: Prototüüp
     prototypes: Prototüübid
     provider: Varustaja
-    provider_settings_warning: Varustaja sätete muutmiseks peab eelnevalt varustaja salvestama
+    provider_settings_warning: Varustaja sätete muutmiseks peab eelnevalt varustaja
+      salvestama
     qty: Kogus
     quantity: Kogus
     quantity_returned: Quantity Returned
@@ -1011,6 +1078,7 @@ et:
     received: Vastu võetud
     reception_status:
     reference:
+    reference_contains:
     refund: Tagasimakse
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1044,6 +1112,7 @@ et:
     rename: Rename
     report:
     reports: Aruanded
+    resellable:
     resend: Saada uuesti
     reset_password: Lähtesta salasõna
     response_code: Vastuse kood
@@ -1056,6 +1125,7 @@ et:
     return_authorizations: Tagasta tooted
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed:
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1063,7 +1133,6 @@ et:
     return_number:
     return_quantity: Tagastatav kogus
     returned: Tagastatud
-    returns:
     review:
     risk:
     risk_analysis:
@@ -1071,6 +1140,7 @@ et:
     rma_credit:
     rma_number: Tagastatud toote number
     rma_value: Tagastatud toote väärtus
+    role_id:
     roles: Rollid
     rules:
     safe:
@@ -1092,6 +1162,7 @@ et:
     select_a_stock_location:
     select_from_prototype: Vali prototüüpide hulgast
     select_stock:
+    selected_quantity_not_available:
     send_copy_of_all_mails_to: Saada koopia kõikidest e-mailidest
     send_mails_as: Saada e-mailid kui
     server:
@@ -1234,8 +1305,10 @@ et:
     taxonomies: Taksonoomia
     taxonomy: Taxonomy
     taxonomy_edit: Redigeeri taksonoomiaid
-    taxonomy_tree_error: Soovitud muutuse tegemine ebaõnnestus ja puu muudeti tagasi endisele kujule. Palun proovige uuesti.
-    taxonomy_tree_instruction: "* Elementide lisamiseks, muutmisek ja kustutamiseks kliki hiire parema nupuga mõnel puu elemendil"
+    taxonomy_tree_error: Soovitud muutuse tegemine ebaõnnestus ja puu muudeti tagasi
+      endisele kujule. Palun proovige uuesti.
+    taxonomy_tree_instruction: "* Elementide lisamiseks, muutmisek ja kustutamiseks
+      kliki hiire parema nupuga mõnel puu elemendil"
     taxons: Taksonid
     test: Test
     test_mailer:
@@ -1246,14 +1319,16 @@ et:
     test_mode: Testrežiim
     thank_you_for_your_order: Täname teid tellimuse eest
     there_are_no_items_for_this_order:
-    there_were_problems_with_the_following_fields: There were problems with the following fields
+    there_were_problems_with_the_following_fields: There were problems with the following
+      fields
     this_order_has_already_received_a_refund:
     thumbnail: Pisipilt
     tiered_flat_rate:
     tiered_percent:
     tiers:
     time: Aeg
-    to_add_variants_you_must_first_define: variantide lisamiseks pead esmalt defineerima TODO
+    to_add_variants_you_must_first_define: variantide lisamiseks pead esmalt defineerima
+      TODO
     total: Kokku
     total_per_item:
     total_pre_tax_refund:
@@ -1282,7 +1357,9 @@ et:
     usage_limit: Kasutuslimiit
     use_app_default:
     use_billing_address: Kasuta arve saaja aadressi
+    use_existing_cc:
     use_new_cc: Kasuta uut kaarti
+    use_new_cc_or_payment_method:
     use_s3:
     user: Kasutaja
     user_rule:

@@ -1,3 +1,4 @@
+---
 fi:
   activerecord:
     attributes:
@@ -72,6 +73,7 @@ fi:
         zipcode: Vastaanottajan postinumero
       spree/payment:
         amount: Summa
+        number:
       spree/payment_method:
         name: Nimi
       spree/product:
@@ -105,6 +107,8 @@ fi:
         amount: Määrä
       spree/role:
         name: Nimi
+      spree/shipment:
+        number:
       spree/state:
         abbr: Lyhenne
         name: Nimi
@@ -209,6 +213,8 @@ fi:
         one: Luottokortti
         other: Luottokortit
       spree/customer_return:
+        one:
+        other:
       spree/inventory_unit:
         one: Myyntiyksikkö
         other: Myyntiyksikköä
@@ -216,7 +222,11 @@ fi:
         one: Tuoterivi
         other: Tuoterivit
       spree/option_type:
+        one:
+        other:
       spree/option_value:
+        one:
+        other:
       spree/order:
         one: Tilaus
         other: Tilaukset
@@ -233,6 +243,8 @@ fi:
         one: Kampanja
         other: Kampanjat
       spree/promotion_category:
+        one:
+        other:
       spree/property:
         one: Ominaisuus
         other: Ominaisuudet
@@ -240,12 +252,20 @@ fi:
         one: Prototyyppi
         other: Prototyypit
       spree/refund_reason:
+        one:
+        other:
       spree/reimbursement:
+        one:
+        other:
       spree/reimbursement_type:
+        one:
+        other:
       spree/return_authorization:
         one: Asiakaspalautus
         other: Asiakaspalautukset
       spree/return_authorization_reason:
+        one:
+        other:
       spree/role:
         one: Rooli
         other: Roolit
@@ -262,10 +282,14 @@ fi:
         one: Osavalitio
         other: Osavaltiot
       spree/state_change:
+        one:
+        other:
       spree/stock_location:
         one: Varasto
         other: Varastot
       spree/stock_movement:
+        one:
+        other:
       spree/stock_transfer:
         one: Varastosiirto
         other: Varastosiirrot
@@ -296,7 +320,8 @@ fi:
   devise:
     confirmations:
       confirmed: Kiitos tilisi vahvistamisesta! Kirjasimme sinut nyt sisään.
-      send_instructions: Saat ihan kohta sähköpostilla ohjeet tilisi vahvistamiseksi. Älä huoli, se onnistuu helposti!
+      send_instructions: Saat ihan kohta sähköpostilla ohjeet tilisi vahvistamiseksi.
+        Älä huoli, se onnistuu helposti!
     failure:
       inactive: Et ole aktivoinut vielä tiliäsi.
       invalid: Sähköpostiosoite tai salasana oli väärin.
@@ -324,8 +349,10 @@ fi:
         send_instructions: Saat pian sähköpostin jossa on ohjeet salasanan vaihtamiseksi.
         updated: Salasanasi on nyt vaihdettu. Olet myös kirjautunut sisään.
     user_registrations:
-      destroyed: Näkemiin! Tilisi on nyt peruttu. Toivottavasti näemme sinut pian uudelleen.
-      inactive_signed_up: Olet rekisteröitynyt onnistuneesti, mutta valitettavasti emme voi kirjata sinua sisään koska tilisi on %{reason}.
+      destroyed: Näkemiin! Tilisi on nyt peruttu. Toivottavasti näemme sinut pian
+        uudelleen.
+      inactive_signed_up: Olet rekisteröitynyt onnistuneesti, mutta valitettavasti
+        emme voi kirjata sinua sisään koska tilisi on %{reason}.
       signed_up: Tervetuloa! Olet nyt kirjautunut sisään.
       updated: Tilisi on nyt päivitetty.
     user_sessions:
@@ -375,10 +402,10 @@ fi:
     add_rule_of_type: Lisää uusi tyyppisääntö
     add_state: Lisää osavaltio
     add_stock: Lisää varastoon
-    add_stock_management: Lisää varastonhallinta
     add_to_cart: Lisää koriin
     add_variant: Lisää variantti
     additional_item: Ylimääräiset kulut
+    address:
     address1: Osoite
     address2: Osoite (jatkuu)
     adjustable:
@@ -395,8 +422,8 @@ fi:
         orders: Tilaukset
         overview: Yleiskatsaus
         products: Tuotteet
-        promotions: Kampanjat
         promotion_categories:
+        promotions: Kampanjat
         properties:
         prototypes:
         reports: Raportit
@@ -421,9 +448,6 @@ fi:
     all_adjustments_opened: Kaikki hintamuutokset avattiin!
     all_departments: Kaikki tuoteryhmät
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: Salli SSL-suojauksen käyttö kehitys- ja testiympäristöissä
-    allow_ssl_in_production: Salli SSL-suojauksen käyttö tuotantoympäristössä
-    allow_ssl_in_staging: Allow SSL to be used in staging mode
     already_signed_up_for_analytics: Olet jo rekisteröitynyt Spree Analytics -palveluun
     alt_text: Vaihtoehtoinen teksti
     alternative_phone: Vaihtoehtoinen puhelin
@@ -441,8 +465,9 @@ fi:
     approver:
     are_you_sure: Oletko varma?
     are_you_sure_delete: Haluatko varmasti poistaa tämän tiedon?
-    associated_adjustment_closed: Tähän liitetty hintamuutos on suljettu, joten sitä ei huomioida laskuissa. Haluatko avata sen?
-    at_symbol: '@'
+    associated_adjustment_closed: Tähän liitetty hintamuutos on suljettu, joten sitä
+      ei huomioida laskuissa. Haluatko avata sen?
+    at_symbol: "@"
     authorization_failure: Valtuutus epäonnistui
     authorized:
     auto_capture:
@@ -469,15 +494,19 @@ fi:
     both: Molemmat
     calculated_reimbursements:
     calculator: Laskin
-    calculator_settings_warning: Mikäli vaihdat laskimen tyyppiä, sinun täytyy ensin tallentaa ennen kuin voit muuttaa laskimen asetuksia
+    calculator_settings_warning: Mikäli vaihdat laskimen tyyppiä, sinun täytyy ensin
+      tallentaa ennen kuin voit muuttaa laskimen asetuksia
     cancel: peruuta
     canceled_at:
     canceler:
     cannot_create_customer_returns:
-    cannot_create_payment_without_payment_methods: Et voi luoda maksua tilaukselle ilman että mitään maksutapoja on määritelty.
-    cannot_create_returns: Palautuksia ei voida luoda, koska tilausta ei ole vielä lähetetty.
+    cannot_create_payment_without_payment_methods: Et voi luoda maksua tilaukselle
+      ilman että mitään maksutapoja on määritelty.
+    cannot_create_returns: Palautuksia ei voida luoda, koska tilausta ei ole vielä
+      lähetetty.
     cannot_perform_operation: Pyydettyä toimitoa ei voida suorittaa.
-    cannot_set_shipping_method_without_address: Toimitustapaa ei voi valita ennen kuin asiakastiedot on annettu.
+    cannot_set_shipping_method_without_address: Toimitustapaa ei voi valita ennen
+      kuin asiakastiedot on annettu.
     capture: Kuittaa maksetuksi
     capture_events:
     card_code: Kortin koodi
@@ -486,10 +515,11 @@ fi:
     card_type_is: Kortin tyyppi on
     cart: Ostoskori
     cart_subtotal:
+      one:
+      other:
     categories: Kategoriat
     category: Kategoria
     charged:
-    check_for_spree_alerts: Tarkasta Spreen varoitukset
     checkout: Kassa
     choose_a_customer: Valitse asiakas
     choose_a_taxon_to_sort_products_for:
@@ -516,9 +546,11 @@ fi:
     continue_shopping: Jatka ostoksia
     cost_currency: Maksuvaluutta
     cost_price: Kustannushinta
-    could_not_connect_to_jirafe: Tietojen päivittäminen Jirafeen epäonnistui. Yritetään automaattisesti myöhemmin uudelleen.
+    could_not_connect_to_jirafe: Tietojen päivittäminen Jirafeen epäonnistui. Yritetään
+      automaattisesti myöhemmin uudelleen.
     could_not_create_customer_return:
-    could_not_create_stock_movement: Varaston siirron tallentamisessa tapahtui jokin virhe. Yritä uudelleen.
+    could_not_create_stock_movement: Varaston siirron tallentamisessa tapahtui jokin
+      virhe. Yritä uudelleen.
     count_on_hand: Määrä varastossa
     countries: Maat
     country: Maa
@@ -550,10 +582,7 @@ fi:
     credit_owed: Veloittamatta
     credits:
     currency: Valuutta
-    currency_decimal_mark: Valuutan desimaalien erotin
     currency_settings: Valuutta-asetukset
-    currency_symbol_position: Sijoitetaanko valuutan symboli ennen hintaa vai sen jälkeen?
-    currency_thousands_separator: Valuutan tuhaterotin
     current: Nykyinen
     current_promotion_usage: 'Käytetty nyt: %{count}'
     customer: Asiakas
@@ -568,8 +597,10 @@ fi:
       jirafe:
         app_id: App ID
         app_token: App Token
-        currently_unavailable: Jirafeen ei saada tällä hetkellä yhteyttä. Spree yhdistää Jirafeen kun palvelu on taas käytettävissä.
-        explanation: Lomake voi olla täytetty valmiiksi, jos valitsit Jirafeen rekisteröitymisen hallintapaneelista.
+        currently_unavailable: Jirafeen ei saada tällä hetkellä yhteyttä. Spree yhdistää
+          Jirafeen kun palvelu on taas käytettävissä.
+        explanation: Lomake voi olla täytetty valmiiksi, jos valitsit Jirafeen rekisteröitymisen
+          hallintapaneelista.
         header: Jirafe Analytics -asetukset
         site_id: Site ID
         token: Token
@@ -586,6 +617,7 @@ fi:
     default_tax: Oletusvero
     default_tax_zone: Default Tax Zone
     delete: Poista
+    delete_from_taxon:
     deleted_variants_present:
     delivery: Toimitus
     depth: Syvyys
@@ -596,7 +628,6 @@ fi:
     discount_amount: Alennuksen määrä
     dismiss_banner: Ei kiitos! En ole kiinnostunut, älä näytä tätä viestiä uudelleen.
     display: Näytä
-    display_currency: Näytä valuutta
     doesnt_track_inventory:
     edit: Muokkaa
     editing_resource:
@@ -623,13 +654,12 @@ fi:
     enable_mail_delivery: Salli sähköpostin toimitus
     end: Päättyy
     ending_in: Loppuu merkkeihin
-    environment: Ympäristö
     error: virhe
     errors:
       messages:
         could_not_create_taxon: Ei voi luoda taksonia
-        no_payment_methods_available: No payment methods are configured for this environment
-        no_shipping_methods_available: Valitulle sijainnille ei ole toimitustapaa, vaihda osoite ja yritä uudelleen.
+        no_shipping_methods_available: Valitulle sijainnille ei ole toimitustapaa,
+          vaihda osoite ja yritä uudelleen.
     errors_prohibited_this_record_from_being_saved:
       one: Yksi ongelma esti tiedon tallennuksen.
       other: "%{count} virhettä esti tiedon tallennuksen"
@@ -648,7 +678,9 @@ fi:
         user:
           signup: Käyttäjän rekisteröityminen
     exceptions:
-      count_on_hand_setter: 'Ei voida asettaa count_on_hand -tietoa manuaalisesti, koska recalculate_count_on_hand -callback asettaa sen automaattisesti. Käytä sen seuraavaa: update_column(:count_on_hand, value)'
+      count_on_hand_setter: 'Ei voida asettaa count_on_hand -tietoa manuaalisesti,
+        koska recalculate_count_on_hand -callback asettaa sen automaattisesti. Käytä
+        sen seuraavaa: update_column(:count_on_hand, value)'
     exchange_for:
     excl:
     existing_shipments:
@@ -658,6 +690,7 @@ fi:
     failed_payment_attempts:
     filename: Tiedostonimi
     fill_in_customer_info: Täytä asiakastiedot
+    filter:
     filter_results: Suodata tuloksia
     finalize: Viimeistele
     finalized:
@@ -673,7 +706,6 @@ fi:
     free_shipping_amount:
     front_end: Front End
     gateway: Yhdyskäytävä
-    gateway_config_unavailable: Yhdyskäytävä ei ole saatavilla ympäristöön
     gateway_error: Virhe yhdyskäytävässä
     general: Yleistä
     general_settings: Yleiset asetukset
@@ -683,15 +715,20 @@ fi:
     guest_user_account: Tilaa ilman rekisteröitymistä
     has_no_shipped_units: ei toimitettuja yksiköitä
     height: Korkeus
-    hide_cents: Piilota sentit
     home: Koti
     i18n:
       available_locales: Käytettävissä olevat kielet
+      fields:
       language: Kieli
       localization_settings: Lokalisointiasetukset
+      only_complete:
+      only_incomplete:
+      select_locale:
+      show_only:
+      supported_locales:
       this_file_language: Suomi
+      translations:
     icon: Kuvake
-    identifier:
     image: Kuva
     images: Kuvat
     implement_eligible_for_return:
@@ -699,11 +736,15 @@ fi:
     inactive:
     incl:
     included_in_price: Sisällytetty hintaan
-    included_price_validation: cannot be selected unless you have set a Default Tax Zone
+    included_price_validation: cannot be selected unless you have set a Default Tax
+      Zone
     incomplete:
     info_number_of_skus_not_shown:
+      one:
+      other:
     info_product_has_multiple_skus:
-    instructions_to_reset_password: 'Täytä alla oleva lomake, ja ohjeet salasanan palauttamiseksi lähetetään sähköpostilla:'
+    instructions_to_reset_password: 'Täytä alla oleva lomake, ja ohjeet salasanan
+      palauttamiseksi lähetetään sähköpostilla:'
     insufficient_stock: Insufficient stock available, only %{on_hand} remaining
     insufficient_stock_lines_present:
     intercept_email_address: Intercept Email Address
@@ -716,7 +757,8 @@ fi:
     invalid_promotion_rule: Virheellinen kampanjan sääntö.
     inventory: Varasto
     inventory_adjustment: Varaston muutos
-    inventory_error_flash_for_insufficient_quantity: Ostoskorissasi oleva tuote ei valitettavasti ole enää saatavilla.
+    inventory_error_flash_for_insufficient_quantity: Ostoskorissasi oleva tuote ei
+      valitettavasti ole enää saatavilla.
     inventory_state:
     is_not_available_to_shipment_address: ei ole saatavilla toimitusosoitteeseen
     iso_name: ISO-nimi
@@ -743,6 +785,7 @@ fi:
     line_item_adjustments:
     list: Lista
     loading: Ladataan
+    loading_tree:
     locale_changed: Lokalisointi vaihdettu
     location: Sijainti
     lock: Lukitse
@@ -774,6 +817,7 @@ fi:
     meta_title:
     metadata: Metadata
     minimal_amount: Vähimmäismäärä
+    missing_return_authorization:
     month: Kuukausi
     more: More
     move_stock_between_locations: Siirrä varastojen välillä
@@ -802,6 +846,7 @@ fi:
     new_refund_reason:
     new_return_authorization: Uusi asiakaspalautus
     new_rma_reason:
+    new_role:
     new_shipment_at_location:
     new_shipping_category: Uusi toimituskategoria
     new_shipping_method: Uusi toimitustapa
@@ -834,7 +879,8 @@ fi:
     normal_amount: Normaali määrä
     not: ei
     not_available: N/A
-    not_enough_stock: Varastossa josta tuotteet pitäisi lähettää ei ole tarpeeksi montaa tuotetta siirron suorittamiseksi.
+    not_enough_stock: Varastossa josta tuotteet pitäisi lähettää ei ole tarpeeksi
+      montaa tuotetta siirron suorittamiseksi.
     not_found: "%{resource} ei löytynyt"
     note:
     notice_messages:
@@ -865,10 +911,12 @@ fi:
     order_details: Tilauksen tiedot
     order_email_resent: Tilausviesti uudelleenlähetetty
     order_information: Tilauksen tiedot
+    order_line_items:
     order_mailer:
       cancel_email:
         dear_customer: Hyvä asiakkaamme,\n
-        instructions: Tilauksesi on PERUUTETTU. Ole hyvä ja pidä tämä peruutusvahvistus tallessa.
+        instructions: Tilauksesi on PERUUTETTU. Ole hyvä ja pidä tämä peruutusvahvistus
+          tallessa.
         order_summary_canceled: Tilauksen yhteenveto [PERUUTETTU]
         subject: Tilauksen peruutus
         subtotal:
@@ -881,12 +929,9 @@ fi:
         subtotal:
         thanks: Thank you for your business.
         total:
-    order_not_found: Tilaustasi ei löytynyt näillä tiedoilla. Yritä ystävällisesti uudelleen.
+    order_not_found: Tilaustasi ei löytynyt näillä tiedoilla. Yritä ystävällisesti
+      uudelleen.
     order_number:
-    order_populator:
-      out_of_stock: "%{item} on loppunut varastosta."
-      please_enter_reasonable_quantity: Anna joku kohtuullinen määrä.
-      selected_quantity_not_available:
     order_processed_successfully: Tilauksenne käsitelty onnistuneesti
     order_resumed:
     order_state:
@@ -906,7 +951,6 @@ fi:
     order_total: Tilaus yhteensä
     order_updated: Tilaus päivitetty
     orders: Tilaukset
-    other_items_in_other:
     out_of_stock: Ei saatavilla
     overview: Yleiskuva
     package_from: lähetys varastosta
@@ -920,13 +964,15 @@ fi:
     pay: maksa
     payment: Maksu
     payment_could_not_be_created:
-    payment_identifier:
     payment_information: Maksun tiedot
     payment_method: Maksutapa
-    payment_method_not_supported: Tätä maksutapaa ei voida hyväksyä. Valitse joku toinen maksutapa.
+    payment_method_not_supported: Tätä maksutapaa ei voida hyväksyä. Valitse joku
+      toinen maksutapa.
     payment_methods: Maksutavat
-    payment_processing_failed: Maksua ei voitu käsitellä, ole hyvä ja tarkista antamasi tiedot
-    payment_processor_choose_banner_text: Mikäli tarvitset apua maksuvaihtoehdon valitsemisessa, vieraile
+    payment_processing_failed: Maksua ei voitu käsitellä, ole hyvä ja tarkista antamasi
+      tiedot
+    payment_processor_choose_banner_text: Mikäli tarvitset apua maksuvaihtoehdon valitsemisessa,
+      vieraile
     payment_processor_choose_link: maksusivullamme.
     payment_state: Maksun tila
     payment_states:
@@ -948,6 +994,7 @@ fi:
     phone: Puhelin
     place_order: Tee tilaus
     please_define_payment_methods: Ole hyvä ja määrittele ensin joitakin maksutapoja.
+    please_enter_reasonable_quantity:
     populate_get_error: Jokin meni pieleen. Ole hyvä ja yritä lisätä tuotetta uudelleen.
     powered_by: Palvelun tarjoaa
     pre_tax_amount:
@@ -964,7 +1011,8 @@ fi:
     product: Tuote
     product_details: Tuotetiedot
     product_has_no_description: Tuotteella ei tuotekuvausta
-    product_not_available_in_this_currency: Tämä tuote ei ole saatavissa valitsemallasi valuutalla.
+    product_not_available_in_this_currency: Tämä tuote ei ole saatavissa valitsemallasi
+      valuutalla.
     product_properties: Tuotteen ominaisuudet
     product_rule:
       choose_products: Valitse tuotteet
@@ -992,6 +1040,7 @@ fi:
         description:
         name:
     promotion_actions: Actions
+    promotion_category:
     promotion_form:
       match_policies:
         all: Match any of these rules
@@ -1034,7 +1083,8 @@ fi:
     prototype: Prototyyppi
     prototypes: Prototyypit
     provider: Tarjoaja
-    provider_settings_warning: Jos muutat tarjoajan tyyppiä, sinun täytyy tallentaa ennen kuin voit muuttaa tarjoajan asetuksia
+    provider_settings_warning: Jos muutat tarjoajan tyyppiä, sinun täytyy tallentaa
+      ennen kuin voit muuttaa tarjoajan asetuksia
     qty: lkm
     quantity: Määrä
     quantity_returned: Palautettu määrä
@@ -1047,6 +1097,7 @@ fi:
     received: Vastaanotettu
     reception_status:
     reference: Viite
+    reference_contains:
     refund: Hyvitä
     refund_amount_must_be_greater_than_zero:
     refund_reasons:
@@ -1080,6 +1131,7 @@ fi:
     rename: Nimeä uudelleen
     report:
     reports: Raportit
+    resellable:
     resend: Lähetä uudelleen
     reset_password: Palauta salasana
     response_code: Vastauskoodi
@@ -1092,6 +1144,7 @@ fi:
     return_authorizations: Asiakaspalautukset
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
+    return_item_order_not_completed:
     return_item_rma_ineligible:
     return_item_time_period_ineligible:
     return_items:
@@ -1099,7 +1152,6 @@ fi:
     return_number:
     return_quantity: Palautettava määrä
     returned: Palattu
-    returns:
     review: Review
     risk:
     risk_analysis:
@@ -1107,6 +1159,7 @@ fi:
     rma_credit: RMA Credit
     rma_number: Palautusnumero (RMA)
     rma_value: Palautusnumeron arvo
+    role_id:
     roles: Roolit
     rules: Säännöt
     safe:
@@ -1128,6 +1181,7 @@ fi:
     select_a_stock_location:
     select_from_prototype: Valitse prototyypistä
     select_stock: Valitse varasto
+    selected_quantity_not_available:
     send_copy_of_all_mails_to: Lähetä kopio kaikista sähköposteista
     send_mails_as: Lähetä sähköpostiviestit
     server: Palvelin
@@ -1186,7 +1240,8 @@ fi:
     source: Lähde
     special_instructions: Erityisohjeet
     split: Jaa osiin
-    spree_gateway_error_flash_for_checkout: Maksusi tiedoissa oli virhe. Ole hyvä ja tarkista tiedot, ja yritä uudelleen.
+    spree_gateway_error_flash_for_checkout: Maksusi tiedoissa oli virhe. Ole hyvä
+      ja tarkista tiedot, ja yritä uudelleen.
     ssl:
       change_protocol:
     start: Alku
@@ -1233,7 +1288,8 @@ fi:
     stock_locations: Varastot
     stock_locations_need_a_default_country:
     stock_management: Varastonhallinta
-    stock_management_requires_a_stock_location: Luo ensin varasto, että voit hallita varastotilannetta.
+    stock_management_requires_a_stock_location: Luo ensin varasto, että voit hallita
+      varastotilannetta.
     stock_movements: Varastosiirrot
     stock_movements_for_stock_location: Siirrot varastossa %{stock_location_name}
     stock_successfully_transferred: Siirto varastojen välillä tehty.
@@ -1257,7 +1313,8 @@ fi:
     tax_category: Verokategoria
     tax_code:
     tax_included:
-    tax_rate_amount_explanation: Veroprosentit ilmoitetaan desimaalin sadasosina helpottamaan laskemista, (esim. 5% ilmoitetaan 0.05)
+    tax_rate_amount_explanation: Veroprosentit ilmoitetaan desimaalin sadasosina helpottamaan
+      laskemista, (esim. 5% ilmoitetaan 0.05)
     tax_rates: Veroprosentit
     taxon: Taksoni
     taxon_edit: Muokkaa taksonia
@@ -1270,8 +1327,10 @@ fi:
     taxonomies: Taksonomiat
     taxonomy: Taxonomy
     taxonomy_edit: Muokkaa taksonomiaa
-    taxonomy_tree_error: Muutosta ei hyväksytty ja hakemistopuu on palautettu edelliseen tilaansa. Yritä uudelleen.
-    taxonomy_tree_instruction: "* Voit lisätä, poistaa ja järjestää taksoneita klikkaamalla taksonia hiiren oikealla näppäimellä."
+    taxonomy_tree_error: Muutosta ei hyväksytty ja hakemistopuu on palautettu edelliseen
+      tilaansa. Yritä uudelleen.
+    taxonomy_tree_instruction: "* Voit lisätä, poistaa ja järjestää taksoneita klikkaamalla
+      taksonia hiiren oikealla näppäimellä."
     taxons: Taksonit
     test: Testaa
     test_mailer:
@@ -1280,8 +1339,10 @@ fi:
         message: Mikäli sait tämän sähköpostin, sähköpostiasetuksesi ovat oikein.
         subject: Testiviesti
     test_mode: Testimoodi
-    thank_you_for_your_order: Kiitos tilauksestasi! Tulosta tarvittaessa kopio tästä vahvistuksesta.
-    there_are_no_items_for_this_order: Tilaus ei sisällä yhtään tuotetta. Lisää tuote jatkaaksesi tästä eteenpäin.
+    thank_you_for_your_order: Kiitos tilauksestasi! Tulosta tarvittaessa kopio tästä
+      vahvistuksesta.
+    there_are_no_items_for_this_order: Tilaus ei sisällä yhtään tuotetta. Lisää tuote
+      jatkaaksesi tästä eteenpäin.
     there_were_problems_with_the_following_fields: Seuraavissa kentissä oli virhe
     this_order_has_already_received_a_refund:
     thumbnail: Näytekuva
@@ -1289,7 +1350,8 @@ fi:
     tiered_percent:
     tiers:
     time: Aika
-    to_add_variants_you_must_first_define: Ennen variantin lisäämistä sinun tulee määritellä
+    to_add_variants_you_must_first_define: Ennen variantin lisäämistä sinun tulee
+      määritellä
     total: Yhteensä
     total_per_item:
     total_pre_tax_refund:
@@ -1318,7 +1380,9 @@ fi:
     usage_limit: Käyttöraja
     use_app_default:
     use_billing_address: Käytä laskutusosoitetta
+    use_existing_cc:
     use_new_cc: Käytä uutta korttia
+    use_new_cc_or_payment_method:
     use_s3: Käytä Amazon S3:a kuvia varten
     user: Käyttäjä
     user_rule:
@@ -1327,7 +1391,8 @@ fi:
     validation:
       cannot_be_less_than_shipped_units: ei voi olla pienempi kuin toimitettu määrä.
       cannot_destroy_line_item_as_inventory_units_have_shipped:
-      exceeds_available_stock: ylittää nykyisen varastotilanteen. Varmista tuoterivien oikea kappalemäärä.
+      exceeds_available_stock: ylittää nykyisen varastotilanteen. Varmista tuoterivien
+        oikea kappalemäärä.
       is_too_large: on liian iso -- varastossa ei riittävästi tuotteita
       must_be_int: täytyy olla kokonaisluku
       must_be_non_negative: täytyy olla ei-negatiivinen
@@ -1345,7 +1410,8 @@ fi:
     year: Vuosi
     you_have_no_orders_yet: Sinulla ei ole vielä tilauksia.
     your_cart_is_empty: Ostoskorisi on tyhjä.
-    your_order_is_empty_add_product: Tilauksesi ei sisällä yhtään tuotetta. Lisää tuotteita ensin ostoskoriin.
+    your_order_is_empty_add_product: Tilauksesi ei sisällä yhtään tuotetta. Lisää
+      tuotteita ensin ostoskoriin.
     zip: Postinumero
     zipcode: Postinumero
     zone: Alue
