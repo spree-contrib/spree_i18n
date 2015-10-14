@@ -78,6 +78,24 @@ Remove all occurrences of `SpreeI18n::Config.supported_locales` from your code.
 
 ---
 
+## Managing Translations
+
+We use i18n-tasks to keep locales normalized with spree upstream.
+
+### Updating Keys with Spree Master
+``` bash
+be rake spree_i18n:update_en # Pulls en.yml from spree/spree master
+i18n-tasks add-missing-nil
+```
+
+### Normalizing Locales
+``` bash
+i18n-tasks normalize
+```
+
+See i18n-tasks for the rest of the magic
+
+
 ## Contributing
 
 [See corresponding guidelines][7]
