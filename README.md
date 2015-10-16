@@ -83,6 +83,12 @@ Remove all occurrences of `SpreeI18n::Config.supported_locales` from your code.
 We use i18n-tasks to keep locales normalized with spree upstream.
 
 ### Updating Keys with Spree Master
+
+** Beta ** this currently requires a version of i18n-tasks that conflicts with
+spree_cmd, over highline versions, i18n-tasks 0.9.0-rc2 or higher must be
+installed for the  custom Spree.t parser to work.  Otherwise i18n-tasks will
+mangle translations.
+
 ``` bash
 be rake spree_i18n:update_en # Pulls en.yml from spree/spree master
 i18n-tasks add-missing-nil
