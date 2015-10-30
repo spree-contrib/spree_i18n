@@ -25,61 +25,14 @@ task :test_app do
 end
 
 namespace :spree_i18n do
-  desc 'Update by retrieving the latest Spree locale files'
-  task :update_default do
-    puts "Fetching latest Spree locale file to #{locales_dir}"
-    require 'uri'
-    require 'net/https'
-
+  desc 'Update by retrieving the latest Spree locale files for i18n-tasks'
+  task :update_en do
+    puts "Fetching latest English Spree locale"
+    require 'open-uri'
     location = 'https://raw.github.com/spree/spree/master/core/config/locales/en.yml'
-    begin
-      uri = URI.parse(location)
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      puts "Getting from #{uri}"
-      request = Net::HTTP::Get.new(uri.request_uri)
-      case response = http.request(request)
-      when Net::HTTPRedirection then location = response['location']
-      when Net::HTTPClientError, Net::HTTPServerError then response.error!
-      end
-    end until Net::HTTPSuccess == response
 
-    FileUtils.mkdir_p(default_dir) unless File.directory?(default_dir)
-
-    File.open("#{default_dir}/spree_core.yml", 'w') { |file| file << response.body }
-  end
-
-  desc 'Syncronize translation files with latest en (adds comments with fallback en value)'
-  task :sync do
-    puts 'Starting syncronization...'
-    words = translation_keys
-
-    Dir["#{locales_dir}/*.yml"].each do |filename|
-      basename = File.basename(filename, '.yml')
-      (comments, other) = Spree::I18nUtils.read_file(filename, basename)
-      # Initializing hash variable as en fallback if it does not exist
-      words.each { |k, _v| other[k] ||= "#{words[k]}" }
-      # Remove if not defined in en locale
-      other.delete_if { |k, _v| !words[k] }
-      Spree::I18nUtils.write_file(filename, basename, comments, other, false)
+    open("config/locales/en.yml", 'wb') do |file|
+      file << open(location).read
     end
-  end
-
-  def translation_keys
-    (dummy_comments, words) = Spree::I18nUtils.read_file(File.dirname(__FILE__) + '/default/spree_core.yml', 'en')
-      words
-  end
-
-  def locales_dir
-    File.join File.dirname(__FILE__), 'config/locales'
-  end
-
-  def default_dir
-    File.join File.dirname(__FILE__), 'default'
-  end
-
-  def env_locale
-    ENV['LOCALE'].presence
   end
 end
