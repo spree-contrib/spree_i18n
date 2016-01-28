@@ -55,6 +55,19 @@ module Spree
         expect(result.to_a).to match_array [product, other_product]
       end
 
+      context 'ransacking by taxonomy' do
+        let(:product_with_taxon) { create(:product, name: 'product-with-taxon') }
+        let(:sack_params) { {m: 'or', name_cont: product.name, taxons_name_cont: product.name} }
+        before do
+          Spree::Product.whitelisted_ransackable_associations.push('taxons')
+          product_with_taxon.taxons << create(:taxon, name: product.name)
+        end
+        it 'handles ransack with and/or grouping parameter safely' do
+          result = described_class.ransack(sack_params).result
+          expect(result.to_a).to match_array [product, product_with_taxon]
+        end
+      end
+
       it 'handles ransack with an invalid key safely' do
         result = described_class.ransack(foo: 'blub').result
         expect(result.to_a).to match_array [product, other_product]
