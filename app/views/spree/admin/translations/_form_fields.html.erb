@@ -1,10 +1,10 @@
 <div id="attr_fields">
   <% SpreeI18n::Config.available_locales.each do |locale| %>
     <%= f.globalize_fields_for locale.to_sym do |g| %>
-      <% @resource.class.translated_attribute_names.each_with_index do |attr, i| %>
-        <div class="panel panel-default <%= attr %> <%= locale %>" style="display:<%= i == 0 ? 'auto' : 'none' %>;">
+      <% @resource.class.translated_attribute_names.each_with_index do |attribute, i| %>
+        <div class="panel panel-default <%= attribute %> <%= locale %>" style="display:<%= i == 0 ? 'auto' : 'none' %>;">
           <div class="panel-heading">
-            <%= Spree.t(attr, locale: locale) %>
+            <%= Spree.t(attribute, locale: locale) %>
 
             <div class="pull-right text-muted">
               <small><i><%= Spree.t(:'i18n.this_file_language', locale: locale) %></i></small>
@@ -18,10 +18,10 @@
           </div>
 
           <div class="panel-body">
-            <% if @resource.class.columns_hash[attr.to_s].type == :text %>
-              <%= g.text_area attr, class: 'form-control', rows: 4 %>
+            <% if @resource.class.columns_hash[attribute.to_s].type == :text %>
+              <%= g.text_area attribute, class: 'form-control', rows: 4 %>
             <% else %>
-              <%= g.text_field attr, class: 'form-control' %>
+              <%= g.text_field attribute, class: 'form-control' %>
             <% end %>
           </div>
         </div>
