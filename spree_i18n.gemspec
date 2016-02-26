@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'byebug'
   s.add_development_dependency 'capybara', '~> 2.5'
+  s.add_development_dependency 'capybara-screenshot', '~> 1.0.11'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
   s.add_development_dependency 'database_cleaner', '~> 1.3'
   s.add_development_dependency 'factory_girl', '~> 4.5'
@@ -45,4 +46,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3', '~> 1.3.10'
   s.add_development_dependency 'simplecov', '~> 0.9'
   s.add_development_dependency 'guard-rspec', '>= 4.2.0'
+  s.add_development_dependency 'sprockets-rails', '~> 2.0'
 end
