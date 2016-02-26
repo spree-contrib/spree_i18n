@@ -11,6 +11,7 @@ RSpec.feature 'Translations', :js do
     context 'switches locale from the dropdown' do
       before do
         visit spree.root_path
+        wait_for_ajax
         select(language, from: Spree.t(:language, scope: 'i18n'))
       end
 

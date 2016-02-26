@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'spree_core', '~> 3.1.0.beta'
 
   s.add_development_dependency 'byebug'
-  s.add_development_dependency 'capybara', '~> 2.4.4'
+  s.add_development_dependency 'capybara', '~> 2.5'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
   s.add_development_dependency 'database_cleaner', '~> 1.3'
   s.add_development_dependency 'factory_girl', '~> 4.5'
