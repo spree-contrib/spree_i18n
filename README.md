@@ -24,7 +24,7 @@ Run `bundle install`
 You can use the generator to install migrations and append spree_i18n assets to
 your app spree manifest file.
 
-    rails g spree_i18n:install
+    bundle exec rails g spree_i18n:install
 
 This will insert these lines into your spree manifest files:
 
