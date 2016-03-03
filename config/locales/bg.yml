@@ -1,5 +1,5 @@
 bg:
-  activerecord:
+  activerecord2:
     attributes:
       spree/address:
         address1: "Адрес"
@@ -12,11 +12,11 @@ bg:
         state: "Област"
         zipcode: "Пощенски код"
       spree/calculator/tiered_flat_rate:
-        preferred_base_amount:
-        preferred_tiers:
+        preferred_base_amount: "Препоръчителна базова стойност"
+        preferred_tiers: "Предпочитана тарифа"
       spree/calculator/tiered_percent:
-        preferred_base_percent:
-        preferred_tiers:
+        preferred_base_percent: "Предпочитан базов процент"
+        preferred_tiers: "Предпочитана тарифа"
       spree/country:
         iso: ISO
         iso3: ISO3
@@ -24,10 +24,10 @@ bg:
         name: "Име"
         numcode: ISO Код
       spree/credit_card:
-        base:
+        base: "Вид"
         cc_type: Type
         month: "Месец"
-        name:
+        name: "Име"
         number: "Номер"
         verification_value: "Стойност за потвърждение"
         year: "Година"
@@ -95,7 +95,7 @@ bg:
         starts_at: "Започва на"
         usage_limit: "Лимит"
       spree/promotion_category:
-        name:
+        name: "Име"
       spree/property:
         name: "Име"
         presentation: "Презентация"
@@ -112,17 +112,17 @@ bg:
         state_changes:
         state_from:
         state_to:
-        timestamp:
-        type:
-        updated:
-        user:
+        timestamp: "Времева зона"
+        type: "Вид"
+        updated: "Обновен"
+        user: "Потребител"
       spree/store:
-        mail_from_address:
-        meta_description:
-        meta_keywords:
-        name:
-        seo_title:
-        url:
+        mail_from_address: "Получено от "
+        meta_description: "HTML meta описание"
+        meta_keywords: "HTML meta ключови думи"
+        name: "Име"
+        seo_title: "SEO заглавие"
+        url: "URL Адрес"
       spree/tax_category:
         description: "Описание"
         name: "Име"
@@ -157,47 +157,47 @@ bg:
         spree/calculator/tiered_flat_rate:
           attributes:
             base:
-              keys_should_be_positive_number:
+              keys_should_be_positive_number: "Сборът трябва да е положителен"
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: "Трябва да е hash"
         spree/calculator/tiered_percent:
           attributes:
             base:
-              keys_should_be_positive_number:
-              values_should_be_percent:
+              keys_should_be_positive_number: "Сборът трябва да е положителен"
+              values_should_be_percent: "Стойноста трябва е в проценти"
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: "Трябва да е hash"
         spree/classification:
           attributes:
             taxon_id:
-              already_linked:
+              already_linked: "Вече е зает"
         spree/credit_card:
           attributes:
             base:
               card_expired: "Картата е изтекла"
-              expiry_invalid:
+              expiry_invalid: "Срокът е изтекъл"
         spree/line_item:
-          attributes:
-            currency:
-              must_match_order_currency:
+          attributes: 
+            currency: 
+              must_match_order_currency: "Валутата трябва да съвпада с тази на поръчката"
         spree/refund:
           attributes:
             amount:
-              greater_than_allowed:
+              greater_than_allowed: "Надвишавате допустимия лимит"
         spree/reimbursement:
           attributes:
             base:
-              return_items_order_id_does_not_match:
+              return_items_order_id_does_not_match: "ID-то на продукта не съвпада"
         spree/return_item:
           attributes:
             inventory_unit:
-              other_completed_return_item_exists:
+              other_completed_return_item_exists: 
             reimbursement:
-              cannot_be_associated_unless_accepted:
+              cannot_be_associated_unless_accepted: 
         spree/store:
           attributes:
             base:
-              cannot_destroy_default_store:
+              cannot_destroy_default_store: "Не може да изтриете главни магазин"
     models:
       spree/address:
         one: "Адрес"
@@ -323,10 +323,10 @@ bg:
         other: "%{count} грешки предоотвратиха запазването на %{resource}"
   spree:
     abbreviation: "Абривиатура"
-    accept: 
-    acceptance_errors:
-    acceptance_status:
-    accepted: 
+    accept: "Приемете"
+    acceptance_errors: "Грешки при приемането"
+    acceptance_status: "Процес на приемането"
+    accepted: "Приет сте"
     account: "Акаунт"
     account_updated: "Акаунтът бе обновен!"
     action: "Действие"
@@ -363,14 +363,14 @@ bg:
     additional_item: "Допълнителна стока"
     address1: "Адрес"
     address2: "Адрес (продължение)"
-    adjustable:
+    adjustable: "Променливо"
     adjustment: "Поправка"
     adjustment_amount: "Стойност"
     adjustment_successfully_closed: "Поправката бе успешно затворена"
     adjustment_successfully_opened: "Поправката бе успешно отворена"
     adjustment_total: "Обща стойност на поправката"
     adjustments: "Поправки"
-    admin:
+    admin: "Админ"
       tab:
         configuration: "Конфигурация"
         option_types: "Видове опции"
@@ -406,7 +406,7 @@ bg:
     allow_ssl_in_development_and_test: "Позволи SSL да бъде ползвано при тестов режим"
     allow_ssl_in_production: "Позволи SSL да бъде използвано при работещ режим"
     allow_ssl_in_staging:
-    already_signed_up_for_analytics:
+    already_signed_up_for_analytics: 
     alt_text: "Алтернативен текст"
     alternative_phone: "Алтернативен телефон"
     amount: "Сума"
@@ -420,25 +420,25 @@ bg:
     and: "и"
     approve: "Одобри"
     approved_at: "Одобрено на"
-    approver:
+    approver: 
     are_you_sure: "Сигурни ли сте"
     are_you_sure_delete: "Сигурни ли сте, че искате да изтриете този запис?"
     associated_adjustment_closed:
     at_symbol: '@'
     authorization_failure: ""
-    authorized: 
-    auto_capture:
+    authorized: "Ауторизиран"
+    auto_capture: 
     available_on: "Налично на"
     average_order_value: "Средна стойност на поръчките"
     avs_response:
     back: "Назад"
-    back_end: 
+    back_end: "Сървърна част"
     back_to_payment: "Назад към плащане"
     back_to_resource_list: 
     back_to_rma_reason_list:
     back_to_store: "Назад към магазина"
     back_to_users_list: "Назад към списъка с потребители"
-    backorderable:
+    backorderable: 
     backorderable_default:
     backordered:
     backorders_allowed:
@@ -464,10 +464,10 @@ bg:
     capture_events:
     card_code: "Код на карта"
     card_number: "Номер на карта"
-    card_type:
+    card_type: "Тип на картата"
     card_type_is: "Видът на картата"
     cart: "Кошница"
-    cart_subtotal:
+    cart_subtotal: "Междинна сума"
     categories: "Категории"
     category: "Категория"
     charged: "Таксувано"
@@ -476,13 +476,13 @@ bg:
     choose_a_customer: "Избери клиент"
     choose_a_taxon_to_sort_products_for: "Сортирай по таксон"
     choose_currency: "Избери валута"
-    choose_dashboard_locale:
-    choose_location: 
+    choose_dashboard_locale: "Избери език на dashboard-а"
+    choose_location: "Изберете локация"
     city: "Град"
     clear_cache: "Изчисти кеша"
-    clear_cache_ok: 
+    clear_cache_ok: "Изчистването на кеша е готово"
     clear_cache_warning: "Сигурни ли сте че искате да изчистите кеша ?"
-    click_and_drag_on_the_products_to_sort_them:
+    click_and_drag_on_the_products_to_sort_them: "Кликнете и провлачете продуктите да ги сортирате"
     clone: "Клонирай"
     close: "Затвори"
     close_all_adjustments: "Затвори всички промени"
@@ -498,15 +498,15 @@ bg:
     continue_shopping: "Продължи пазаруването"
     cost_currency: "Валута"
     cost_price: "Цена"
-    could_not_connect_to_jirafe:
-    could_not_create_customer_return:
-    could_not_create_stock_movement:
-    count_on_hand:
-    countries:
+    could_not_connect_to_jirafe: 
+    could_not_create_customer_return: "Невъзможно създаването на рекламация"
+    could_not_create_stock_movement: 
+    count_on_hand: "Наложен платеж"
+    countries: "Държави"
     country: "Страна"
-    country_based:
+    country_based: "Базирано на държави"
     country_name: "Име"
-    country_names:
+    country_names: "Имена на държави"
       CA: "Канада"
       FRA: "Франция"
       ITA: "Италия"
@@ -524,81 +524,81 @@ bg:
     create: "Създай"
     create_a_new_account: "Създай нов акаунт"
     create_new_order: "Поръчай"
-    create_reimbursement:
+    create_reimbursement: "Създай рекламация"
     created_at: "Създаден на"
     credit: "Кредит"
     credit_card: "Кредитна карта"
     credit_cards: "Кредитни карти"
     credit_owed: "Дължима сума по кредит"
-    credits:
+    credits: "Кредити"
     currency: "Валута"
     currency_decimal_mark: "Настройки на десетичната запетая"
     currency_settings: "Настройки на валутата"
     currency_symbol_position: "Настройки на позицията на паричният знак"
-    currency_thousands_separator: 
+    currency_thousands_separator: "Настройки на десетичния знак"
     current: "Текущо"
-    current_promotion_usage:
+    current_promotion_usage: "Текуща промоция"
     customer: "Клиент"
     customer_details: "Детайли за клиента"
     customer_details_updated: "Детайлите са обновени"
-    customer_return: 
+    customer_return: "Клиентски рекламации"
     customer_returns: "Клиентски рекламации"
     customer_search: "Търсене в 'Клиенти' "
-    cut:
+    cut: "Отрежи"
     cvv_response:
     dash:
       jirafe:
-        app_id:
-        app_token:
-        currently_unavailable:
-        explanation:
-        header:
-        site_id:
-        token:
+        app_id: "ИД на програмата"
+        app_token: "token на програмата"
+        currently_unavailable: "невъзможно свързването"
+        explanation: "обяснение"
+        header: "заглавие"
+        site_id: "id на сайта"
+        token: "token"
       jirafe_settings_updated:
-    date:
-    date_completed:
-    date_picker:
+    date: "Дата"
+    date_completed: "Дата на завършване"
+    date_picker: 
       first_day: 0
       format: "%Y/%m/%d"
       js_format: yy/mm/dd
-    date_range:
-    default: 
-    default_refund_amount:
-    default_tax:
-    default_tax_zone:
+    date_range: ""
+    default: "Стандартна стойност"
+    default_refund_amount: "Стандартна стойност за рекламация"
+    default_tax: "Стандартна такса"
+    default_tax_zone: 
     delete: "Изтрий"
     deleted_variants_present:
     delivery: "Доставка"
-    depth: 
+    depth: "Дълбочина"
     description: "Описание"
     destination: "Дестинация"
     destroy: "Унищожи"
     details: "Детайли"
     discount_amount: "Сума на отстъпката"
-    dismiss_banner:
+    dismiss_banner: "Премахни банера"
     display: "Покажи"
     display_currency: "Покажи валута"
-    doesnt_track_inventory: 
+    doesnt_track_inventory: "Не следи наличности"
     edit: "Редактирай"
     editing_resource: "Редактиране на ресурс"
     editing_rma_reason:
     editing_user: "Редактиране на потребител"
     eligibility_errors:
       messages:
-        has_excluded_product:
-        item_total_less_than:
-        item_total_less_than_or_equal:
-        item_total_more_than:
-        item_total_more_than_or_equal:
-        limit_once_per_user:
+        has_excluded_product: "Има отхвърлени продукти"
+        item_total_less_than: "Сбора на артикули е по-малък от "
+        item_total_less_than_or_equal: "Сбора на артикули е по-малък или равен на "
+        item_total_more_than: "Сбора на артикули е по-голям от "
+        item_total_more_than_or_equal: "Сбора на артикули е по-голям или равен на "
+        limit_once_per_user: "Лимитирано по една бройка на потребител"
         missing_product: "Липсващ продукт"
         missing_taxon: "Липсващ таксон"
-        no_applicable_products:
-        no_matching_taxons:
+        no_applicable_products: "Няма приложими продукти"
+        no_matching_taxons: "Не са открити таксони"
         no_user_or_email_specified: "Не сте задали потребител/и-мейл"
         no_user_specified: "Не сте задали потребител"
-        not_first_order: 
+        not_first_order: "Не е първа поръчка"
     email: "И-мейл"
     empty: "Празно"
     empty_cart: "Празна кошница"
@@ -632,7 +632,7 @@ bg:
     exceptions:
       count_on_hand_setter: "Грешка при ръчното обновяването на count_on_hand, тъй като бе обновено от повик към recalculate_count_on_hand. Моля използвайте`update_column(:count_on_hand, value)` вместо това."
     exchange_for: "Замяна за "
-    excl:
+    excl: "Без "
     existing_shipments: "Текущи пратки"
     expedited_exchanges_warning: 
     expiration: "Срок на годност"
@@ -642,7 +642,7 @@ bg:
     fill_in_customer_info: "Моля попълнете потребителска информация"
     filter_results: "Филтриране на резултатите"
     finalize: "Финализирай"
-    finalized:
+    finalized: "Финализирана"
     find_a_taxon: "Тъсене по таксон"
     first_item: "Цена на първи предмет"
     first_name: "Първо име"
@@ -668,7 +668,7 @@ bg:
     hide_cents: "Скрий стотинките"
     home: "Начална страница"
     i18n:
-      available_locales: "Достъпни места"
+      available_locales: "Достъпни езици"
       language: "Език"
       localization_settings: "Настройки за локализация"
       this_file_language: "Български (БГ)"
@@ -709,12 +709,12 @@ bg:
       operators:
         gt: "повече ог"
         gte: "повече от или равно на"
-        lt:
-        lte:
+        lt: "по-малко от"
+        lte: "по-малко или равно на"
     items_cannot_be_shipped: "Нямаме възможносттта да доставим тези предмети до този адрес. Моля изберете друг адрес на доставка."
-    items_in_rmas:
-    items_reimbursed:
-    items_to_be_reimbursed: 
+    items_in_rmas: 
+    items_reimbursed: "рекламации"
+    items_to_be_reimbursed: "артикули чакаши потвърждение за рекламация"
     jirafe: "Жираф"
     landing_page_rule:
       path: "Път"
@@ -889,182 +889,182 @@ bg:
     overview: "Преглед"
     package_from: package from
     pagination:
-      next_page: next page »
-      previous_page: "« previous page"
+      next_page: "следваща страница"
+      previous_page: "« предишна страница"
       truncate: "…"
     password: "Парола"
     paste: "Постави"
     path: "Път"
     pay: "Плати"
     payment: "Плащане"
-    payment_could_not_be_created:
-    payment_identifier:
+    payment_could_not_be_created: "Изплащането не може да се извърши"
+    payment_identifier: "Идентификатор на плащането"
     payment_information: "Информация за плащане"
     payment_method: "Начин на плащане"
-    payment_method_not_supported:
+    payment_method_not_supported: "Този вид плащане не се поддържа"
     payment_methods: "Методи на плащане"
-    payment_processing_failed:
-    payment_processor_choose_banner_text:
-    payment_processor_choose_link:
+    payment_processing_failed: "Плащането не е успешно"
+    payment_processor_choose_banner_text: "payment banner"
+    payment_processor_choose_link: "payment link"
     payment_state: "Статус на плащането"
-    payment_states:
-      balance_due:
-      checkout:
-      completed:
-      credit_owed:
+    payment_states: "Статуси на плащанията"
+      balance_due: "баланс"
+      checkout: "финализиране"
+      completed: "приключен"
+      credit_owed: "задължение"
       failed: "провалено"
-      paid:
-      pending:
-      processing:
-      void:
+      paid: "платено"
+      pending: "чакащ"
+      processing: "обработва се"
+      void: "вакантен"
     payment_updated: "Плащането бе обновено"
     payments: "Плащания"
-    pending:
+    pending: "Чакащи"
     percent: "Процент"
-    percent_per_item:
+    percent_per_item: "Процент на артикул"
     permalink: Permalink
     phone: "Телефон"
     place_order: "Направи поръчка"
     please_define_payment_methods: "Моля, първо дефинирайте методи за плащане."
     populate_get_error:
     powered_by: "Уебсайтът е задвижван от"
-    pre_tax_amount:
-    pre_tax_refund_amount:
-    pre_tax_total:
-    preferred_reimbursement_type:
-    presentation:
+    pre_tax_amount: "Предварителна такса"
+    pre_tax_refund_amount: 
+    pre_tax_total: ""
+    preferred_reimbursement_type: "Предпочитан вид връщане"
+    presentation: "Презентация"
     previous: "Предходен"
-    previous_state_missing:
+    previous_state_missing: "Предишния state липсва"
     price: "Цена"
-    price_range:
-    price_sack:
+    price_range: "Ценова листа"
+    price_sack: 
     process: "Продукт"
     product: Product
     product_details: "Информация за продукта"
-    product_has_no_description:
-    product_not_available_in_this_currency:
-    product_properties:
-    product_rule:
+    product_has_no_description: "Продукта няма описание"
+    product_not_available_in_this_currency: "Продукта не е наличен за тази валута"
+    product_properties: "Характеристики на продукта"
+    product_rule: 
       choose_products: "Избери продукти"
-      label:
+      label: "етикет"
       match_all: "всички"
-      match_any: "поне един"
-      match_none:
+      match_any: "сравни всички"
+      match_none: "сравни един"
       product_source:
         group: "От продуктова група"
         manual: "Избери ръчно"
     products: "Продукти"
-    promotion:
-    promotion_action:
+    promotion: "Промоция"
+    promotion_action: 
     promotion_action_types:
       create_adjustment:
-        description:
-        name:
+        description: "Създай преференции за промоции"
+        name: "Създай промоция"
       create_item_adjustments:
-        description:
-        name:
+        description: "Добави продукти за промоции"
+        name: "Добави продукт"
       create_line_items:
-        description:
-        name:
+        description: "Описание"
+        name: "Име"
       free_shipping:
-        description:
-        name:
+        description: "Безплатна доставка"
+        name: "Безплатна доставка"
     promotion_actions:
     promotion_form:
       match_policies:
-        all:
-        any:
-    promotion_rule:
+        all: "Всички"
+        any: "Някой"
+    promotion_rule: "Правила на промоциите"
     promotion_rule_types:
       first_order:
-        description:
-        name:
+        description: "Ако направите първата поръчка получавате отстъпка"
+        name: "Първа поръчка"
       item_total:
-        description:
-        name:
+        description: "При определен брой продукти получавате отстъпка"
+        name: "Сбор продукти"
       landing_page:
         description: "Потребителят трябва да е посетил определена страница"
         name: "Целева страница"
       one_use_per_user:
-        description:
-        name:
+        description: "Само по 1 брой на потребител"
+        name: "1 брой лимит"
       option_value:
-        description:
-        name:
+        description: 
+        name: "Име"
       product:
         description: "Поръчката има следният/ите продукт(и)"
         name: "Продукт(и)"
       taxon:
         description:
-        name:
+        name: "Име"
       user:
         description: "Достъпно само за определени потребители"
         name: "Потребител"
       user_logged_in:
         description: "Достъпно само за потребители, които са влезли в сайта"
         name: "Потребителят е влязал в сайта"
-    promotion_uses:
-    promotionable:
-    promotions:
-    propagate_all_variants:
-    properties:
-    property:
-    prototype:
+    promotion_uses: 
+    promotionable: "Продукти който подлежат на промоции"
+    promotions: "Промоции"
+    propagate_all_variants: "Промотирай всички варианти"
+    properties: "Характеристики"
+    property: "Свойства"
+    prototype: "Вид"
     prototypes: "Прототипи"
     provider: "Доставчик"
-    provider_settings_warning:
+    provider_settings_warning: "Проблем с настройките на доставчика"
     qty: "Кол."
     quantity: "Количество"
     quantity_returned: "Количество върнато"
     quantity_shipped: "Количество пратено"
-    quick_search:
+    quick_search: "Бързо търсене"
     rate: Rate
     reason: "Причина"
     receive: "получи"
-    receive_stock:
+    receive_stock: "Получени количества"
     received: "Получено"
-    reception_status:
-    reference:
-    refund:
-    refund_amount_must_be_greater_than_zero:
-    refund_reasons:
-    refunded_amount:
-    refunds:
+    reception_status: ""
+    reference: "Препоръка"
+    refund: "Възвръщане на субсидии"
+    refund_amount_must_be_greater_than_zero: "Стойноста на рекламацията трябва да е над нула"
+    refund_reasons: "Причини за рекламацията"
+    refunded_amount: "Стойност на рекламацията"
+    refunds: "Рекламации"
     register: "Регистрирай се като нов потребител"
     registration: "Регистрация"
-    reimburse:
-    reimbursed:
-    reimbursement:
-    reimbursement_mailer:
+    reimburse: "Възвръщане"
+    reimbursed: "Върнато"
+    reimbursement: "Клиент който е върнал стоката"
+    reimbursement_mailer: "И-мейл на клиента"
       reimbursement_email:
-        days_to_send:
-        dear_customer:
-        exchange_summary:
-        for:
-        instructions:
-        refund_summary:
-        subject:
-        total_refunded:
-    reimbursement_perform_failed:
+        days_to_send: "Дни за изпращане"
+        dear_customer: "Драги клиенти"
+        exchange_summary: "сума на замяната"
+        for: "За"
+        instructions: "инструкции"
+        refund_summary: "сума за въстановяване"
+        subject: "продукт"
+        total_refunded: "Обща сума "
+    reimbursement_perform_failed: 
     reimbursement_status:
     reimbursement_type:
     reimbursement_type_override:
     reimbursement_types:
     reimbursements:
-    reject:
-    rejected:
+    reject: "Откажи"
+    rejected: "Отказано"
     remember_me: "Запомни ме"
     remove: "Премахни"
     rename: "Преименувай"
-    report:
-    reports:
+    report: "Доклад"
+    reports: "Доклади"
     resend: "Препрати"
     reset_password: "Възстанови паролата"
-    response_code:
+    response_code: "Код за потвърждаване"
     resume: "продължи"
     resumed: "Продължено"
     return: "върни"
-    return_authorization:
+    return_authorization: ""
     return_authorization_reasons:
     return_authorization_updated:
     return_authorizations:
