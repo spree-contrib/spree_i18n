@@ -1,5 +1,5 @@
 bg:
-  activerecord2:
+  activerecord:
     attributes:
       spree/address:
         address1: "Адрес"
@@ -41,7 +41,7 @@ bg:
         presentation: "Презентация"
       spree/order:
         checkout_complete: "Завършена поръчка"
-        completed_at: "Завършена на"
+        completed_at: Завършена на
         considered_risky: "Определена като рискова"
         coupon_code: "Код на ваучер"
         created_at: "Дата на поръчка"
@@ -52,7 +52,7 @@ bg:
         payment_state: "Състояние на плащане"
         shipment_state: "Състояние на доставка"
         special_instructions: "Специални инструкции"
-        state: "Държава"
+        state: "Статус на поръчката"
         total: "Общо"
       spree/order/bill_address:
         address1: "Адрес за плащане -улица"
@@ -84,7 +84,7 @@ bg:
         on_hand: "В наличие"
         shipping_category: "Доставна категория"
         tax_category: "Данъчна категория"
-      spree/promotion:
+      spree/promotions:
         advertise: "Рекламирай"
         code: Code Код
         description: "Описание"
@@ -226,7 +226,7 @@ bg:
         one: "Продукт"
         other: "Продукти"
       spree/promotion:
-      spree/promotion_category:
+      spree/promotion_category: "Групи за промоции"
       spree/property:
         one: "Харатеристика"
         other: "Характеристики"
@@ -263,8 +263,8 @@ bg:
       spree/tax_rate:
         one: "Данъчен процент"
         other: "данъчни проценти"
-      spree/taxon:
-      spree/taxonomy:
+      spree/taxon: "Категория"
+      spree/taxonomy: "Раздел"
       spree/tracker:
       spree/user:
         one: "Потребител"
@@ -378,12 +378,12 @@ bg:
         overview: "Прегледай"
         products: "Продукти"
         promotions: "Промоции"
-        promotion_categories:
+        promotion_categories: "Видове промоции"
         properties: "Характеристики"
         prototypes: "Прототипи"
         reports: "Доклади"
-        taxonomies: "Таксономии"
-        taxons: "Таксони"
+        taxonomies: "Категории"
+        taxons: "Опции"
         users: "Потребители"
       user:
         account: "Акаунт"
@@ -474,7 +474,7 @@ bg:
     check_for_spree_alerts:
     checkout: "Плащане"
     choose_a_customer: "Избери клиент"
-    choose_a_taxon_to_sort_products_for: "Сортирай по таксон"
+    choose_a_taxon_to_sort_products_for: "Сортирай по опция"
     choose_currency: "Избери валута"
     choose_dashboard_locale: "Избери език на dashboard-а"
     choose_location: "Изберете локация"
@@ -593,9 +593,9 @@ bg:
         item_total_more_than_or_equal: "Сбора на артикули е по-голям или равен на "
         limit_once_per_user: "Лимитирано по една бройка на потребител"
         missing_product: "Липсващ продукт"
-        missing_taxon: "Липсващ таксон"
+        missing_taxon: "Липсващта опция"
         no_applicable_products: "Няма приложими продукти"
-        no_matching_taxons: "Не са открити таксони"
+        no_matching_taxons: "Не са открити зададени опции"
         no_user_or_email_specified: "Не сте задали потребител/и-мейл"
         no_user_specified: "Не сте задали потребител"
         not_first_order: "Не е първа поръчка"
@@ -643,7 +643,7 @@ bg:
     filter_results: "Филтриране на резултатите"
     finalize: "Финализирай"
     finalized: "Финализирана"
-    find_a_taxon: "Тъсене по таксон"
+    find_a_taxon: "Тъсене по опции"
     first_item: "Цена на първи предмет"
     first_name: "Първо име"
     first_name_begins_with: "Първо име  започва с"
@@ -793,8 +793,8 @@ bg:
     new_stock_transfer: "Нов трансфер на стока"
     new_tax_category: "Нова категория такси"
     new_tax_rate: "Новa данъчна ставка"
-    new_taxon: "Нова опция"
-    new_taxonomy: "Нов раздел"
+    new_taxon: "Нова категория"
+    new_taxonomy: "Нова категория"
     new_tracker: "Нов тракер"
     new_user: "Нов потребител"
     new_variant: "Нов вариант"
@@ -1087,7 +1087,7 @@ bg:
     rma_value: "Стойност на връщането"
     roles: "Роли"
     rules: "ПРавила"
-    safe: "Сеиф"
+    safe: "Сигурна"
     sales_total: "Общ брой продажби"
     sales_total_description: "Описание на всички продажби"
     sales_totals: "Общ сбор продажби"
@@ -1150,7 +1150,7 @@ bg:
     shipping_methods: "Методи на изпращане"
     shipping_price_sack: "Цени за изпращане"
     shipping_total: "Обща цена за транспорта"
-    shop_by_taxonomy: "Пазарувай по детайли"
+    shop_by_taxonomy: "Пазарувай по категории"
     shopping_cart: "Количка"
     show: "Покажи"
     show_active: "Покажи активните"
@@ -1236,21 +1236,21 @@ bg:
     tax_code: "код за конкретен вид данък"
     tax_included: "Данъците са включени"
     tax_rate_amount_explanation: "Пояснения за сумата на данъка"
-    tax_rates: "курсове за данъци"
-    taxon: "Категория/таксон"
-    taxon_edit: "Промени таксон"
-    taxon_placeholder: "Добави таксон"
+    tax_rates: "Курсове за данъци"
+    taxon: "Категория"
+    taxon_edit: "Редактирай категория"
+    taxon_placeholder: "Добави опция"
     taxon_rule:
-      choose_taxons: "Избери спецификация/таксон"
+      choose_taxons: "Избери категория"
       label: "Име на спецификацията"
       match_all: "Сравни всички"
       match_any: "Сравни с някой"
-    taxonomies: "Таксономии"
-    taxonomy: "Таксономия"
-    taxonomy_edit: "Промени таксономия"
+    taxonomies: "Раздели"
+    taxonomy: "Раздел"
+    taxonomy_edit: "Редактирай категорията"
     taxonomy_tree_error: "Грешка в дървото на спецификациите"
     taxonomy_tree_instruction: "Обяснение на дървото на спецификациите"
-    taxons: "Таксони"
+    taxons: "Категория"
     test: "Тест"
     test_mailer:
       test_email:
