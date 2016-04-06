@@ -11,7 +11,7 @@ module SpreeI18n
     MAJOR = 3
     MINOR = 1
     TINY  = 0
-    PRE   = 'beta'
+    PRE   = nil
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')
   end
