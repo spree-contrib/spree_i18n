@@ -13,26 +13,27 @@ Happy translating!
 
 ## Installation
 
-Add the following to your `Gemfile`:
+1. Add this extension to your Gemfile with this line:
+  ```ruby
+  gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'X-X-stable'
+  ```
 
-```ruby
-gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'master'
-```
+  The `branch` option is important: it must match the version of Spree you're using.
+  For example, use `3-0-stable` if you're using Spree `3-0-stable` or any `3.0.x` version.
 
-Run `bundle install`
+2. Install the gem using Bundler:
+  ```ruby
+  bundle install
+  ```
 
-You can use the generator to install migrations and append spree_i18n assets to
-your app spree manifest file.
+3. Copy & run migrations
+  ```ruby
+  bundle exec rails g spree_i18n:install
+  ```
 
-    bundle exec rails g spree_i18n:install
+4. Restart your server
 
-This will insert these lines into your spree manifest files:
-
-In `vendor/assets/javascripts/spree/frontend/all.js`
-
-```
-//= require spree/frontend/spree_i18n
-```
+  If your server was running, restart it so that it can find the assets properly.
 
 ---
 
