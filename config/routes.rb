@@ -1,5 +1,5 @@
 Spree::Core::Engine.add_routes do
-  post '/locale/set', :to => 'locale#set', :defaults => { :format => :json }, :as => :set_locale
+  post '/locale/set', to: 'locale#set', defaults: { format: :json }, as: :set_locale
 
   namespace :admin do
     get '/:resource/:resource_id/translations' => 'translations#index', as: :translations

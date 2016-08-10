@@ -1,0 +1,17 @@
+<%= render partial: 'spree/admin/shared/configuration_menu' %>
+
+<div class="row">
+  <fieldset class="no-border-top translations">
+    <%= render 'settings' %>
+
+    <%= form_for [:admin, @resource], url: admin_general_settings_path do |f| %>
+      <%= render 'form_fields', f: f %>
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= button Spree.t('actions.update'), 'refresh' %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= button_link_to Spree.t('actions.cancel'), edit_admin_general_settings_path, icon: 'remove' %>
+      </div>
+
+    <% end %>
+  </fieldset>
+</div>
