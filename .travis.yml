@@ -1,10 +1,15 @@
 language: ruby
 rvm:
-  - 2.2.4
-  - 2.3.0
+  - 2.2.5
+  - 2.3.1
 env:
   - DB=mysql
   - DB=postgres
+
+gemfile:
+  - gemfiles/spree_3_1.gemfile
+  - gemfiles/spree_master.gemfile
+
 sudo: false
 cache: bundler
 before_script:
