@@ -11,9 +11,16 @@ Happy translating!
 
 ---
 
-## Installation
-
 1. Add this extension to your Gemfile with this line:
+
+  #### Spree >= 3.1
+
+  ```ruby
+  gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+  ```
+
+  #### Spree 3.0 and Spree 2.x
+
   ```ruby
   gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'X-X-stable'
   ```
