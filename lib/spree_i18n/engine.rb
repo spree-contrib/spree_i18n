@@ -5,7 +5,7 @@ module SpreeI18n
   class Engine < Rails::Engine
     engine_name 'spree_i18n'
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.eager_load_paths += %W(#{config.root}/lib)
 
     initializer 'spree-i18n' do |app|
       SpreeI18n::Engine.instance_eval do
