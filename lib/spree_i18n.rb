@@ -1,4 +1,6 @@
 require 'rails-i18n'
+require 'rails/generators'
+require 'rails/generators/base'
 require 'spree_core'
 require 'spree_i18n/engine'
 require 'spree_i18n/version'
