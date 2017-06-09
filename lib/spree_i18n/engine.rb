@@ -26,6 +26,16 @@ module SpreeI18n
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
+
+      if self.frontend_available?
+        Dir.glob(File.join(File.dirname(__FILE__), '../controllers/**/*.rb')) do |c|
+          Rails.configuration.cache_classes ? require(c) : load(c)
+        end
+      end
+    end
+
+    def self.frontend_available?
+      @@frontend_available ||= ::Rails::Engine.subclasses.map(&:instance).map{ |e| e.class.to_s }.include?('Spree::Frontend::Engine')
     end
 
     config.to_prepare(&method(:activate).to_proc)
