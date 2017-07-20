@@ -1,4 +1,4 @@
-class RemoveTranslationsFromSpreeTables < ActiveRecord::Migration
+class RemoveTranslationsFromSpreeTables < SpreeExtension::Migration[4.2]
   def up
     # Don't migrate if we still use Globalize, i.e. through spree_globalize Gem
     return if defined?(Globalize)
