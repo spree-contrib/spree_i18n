@@ -9,9 +9,9 @@ module SpreeI18n
 
   module VERSION
     MAJOR = 3
-    MINOR = 2
+    MINOR = 3
     TINY  = 0
-    PRE   = 'alpha'.freeze
+    PRE   = 'rc1'.freeze
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')
   end
