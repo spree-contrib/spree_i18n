@@ -42,7 +42,7 @@ zh-CN:
       spree/order:
         checkout_complete: "完成结账"
         completed_at: "结账日期"
-        considered_risky:
+        considered_risky: "风险"
         coupon_code: "优惠券号码"
         created_at: "下单日期"
         email: "电子邮件"
@@ -243,8 +243,12 @@ zh-CN:
         one: "原型"
         other: "原型"
       spree/refund_reason:
+        one: '退款原因'
+        other: '退款原因' 
       spree/reimbursement:
       spree/reimbursement_type:
+        one: '退款类型'
+        other: '退款类型'
       spree/return_authorization:
         one: "返回授权"
         other: "返回授权"
@@ -268,6 +272,12 @@ zh-CN:
       spree/stock_location:
       spree/stock_movement:
       spree/stock_transfer:
+      spree/store_credit:
+        one: Store Credit
+        other: Store Credits
+      spree/store_credit_category:
+        one: "Store Credit 类型"
+        other: "Store Credit 类型"
       spree/tax_category:
         one: "缴税分类"
         other: "缴税分类"
@@ -336,6 +346,7 @@ zh-CN:
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
     abbreviation: "缩写"
+    store_credit_categories: "Store Credit 类型"
     accept:
     acceptance_errors:
     acceptance_status:
@@ -402,13 +413,15 @@ zh-CN:
         taxonomies: "分类层级"
         taxons: "分类"
         users: "用户"
+        return_authorizations: "退货审批"
+        customer_returns: "客户退货"
       user:
         account: "账户"
         addresses: "地址"
-        items:
-        items_purchased:
-        order_history:
-        order_num:
+        items: "商品"
+        items_purchased: "已购商品"
+        order_history: "订单历史"
+        order_num: "订单号"
         orders: "订单"
         user_information:
     administration: "管理"
@@ -443,10 +456,13 @@ zh-CN:
     associated_adjustment_closed: "相关联的价格调整已被关闭，并且不会被重复计算。您需要启用它吗？"
     at_symbol: '@'
     authorization_failure: "认证失败"
-    authorized:
+    authorized: '已经审批'
+    canceled: '已经取消'
+    number: '订单号'
     auto_capture:
     available_on: "上架日期"
-    average_order_value:
+    discontinue_on: "下架日期"
+    average_order_value: "订单平均价"
     avs_response:
     back: "后退"
     back_end: "后端"
@@ -470,9 +486,9 @@ zh-CN:
     calculator: "计算器"
     calculator_settings_warning: "如果你正在修改计算方式，你必须在编辑计算器设置之前先保存"
     cancel: "取消"
-    canceled_at:
+    canceled_at: "取消时间"
     canceler:
-    cannot_create_customer_returns:
+    cannot_create_customer_returns: "您无法创建客户退款"
     cannot_create_payment_without_payment_methods: "您无法在没有定义任何支付方式的情况下进行支付。"
     cannot_create_returns: "没有配送的订单不能申请退货"
     cannot_perform_operation: "无法执行请求的操作"
@@ -481,10 +497,10 @@ zh-CN:
     capture_events:
     card_code: "卡验证码"
     card_number: "卡号"
-    card_type:
+    card_type: "卡类型"
     card_type_is: "卡的类型是"
     cart: "购物车"
-    cart_subtotal:
+    cart_subtotal: "购物车小计"
     categories: "分类"
     category: "分类"
     charged:
@@ -496,10 +512,10 @@ zh-CN:
     choose_dashboard_locale: "选择控制面板语言"
     choose_location:
     city: "城市"
-    clear_cache:
-    clear_cache_ok:
-    clear_cache_warning:
-    click_and_drag_on_the_products_to_sort_them:
+    clear_cache: "清除缓存"
+    clear_cache_ok: "缓存清除成功"
+    clear_cache_warning: "清除缓存提醒"
+    click_and_drag_on_the_products_to_sort_them: "在商品上点击拖拽进行排序"
     clone: "复制"
     close: "关闭"
     close_all_adjustments: "禁用所有价格调整"
@@ -540,7 +556,7 @@ zh-CN:
     coupon_code_unknown_error:
     create: "创建"
     create_a_new_account: "创建一个新帐号"
-    create_new_order:
+    create_new_order: "新建订单"
     create_reimbursement:
     created_at: "创建日期"
     credit: "欠款??"
@@ -558,8 +574,8 @@ zh-CN:
     customer: "顾客"
     customer_details: "顾客详细信息"
     customer_details_updated: "已更新客户的详细信息"
-    customer_return:
-    customer_returns:
+    customer_return:  "客户退货"
+    customer_returns: "客户退货"
     customer_search: "顾客搜索"
     cut: "剪下"
     cvv_response:
@@ -648,7 +664,7 @@ zh-CN:
           signup: "用户注册"
     exceptions:
       count_on_hand_setter: "无法手动设置 count_on_hand, 将会在 recalculate_count_on_hand 中被自动设定。请使用 `update_column(:count_on_hand, value)`"
-    exchange_for:
+    exchange_for: "调换"
     excl:
     existing_shipments:
     expedited_exchanges_warning:
@@ -723,15 +739,15 @@ zh-CN:
     iso_name: ISO名称
     item: "商品项"
     item_description: "商品项描述"
-    item_total: "项目总计"
+    item_total: "商品总计"
     item_total_rule:
       operators:
         gt: "大于"
         gte: "大于或等于"
-        lt:
-        lte:
-    items_cannot_be_shipped:
-    items_in_rmas:
+        lt: "小于"
+        lte: "小于或等于"
+    items_cannot_be_shipped: "商品无法发货"
+    items_in_rmas: "商品"
     items_reimbursed:
     items_to_be_reimbursed:
     jirafe: Jirafe
@@ -740,7 +756,7 @@ zh-CN:
     last_name: "姓"
     last_name_begins_with: "姓的开始"
     learn_more: "更多"
-    lifetime_stats:
+    lifetime_stats: "行为统计"
     line_item_adjustments:
     list: "列表"
     loading: "加载"
@@ -768,11 +784,11 @@ zh-CN:
       all: "全部"
       none: "清空"
     max_items: "最大商品项??"
-    member_since:
+    member_since: "会员开始时间"
     memo:
     meta_description: "元描述"
     meta_keywords: "关键字"
-    meta_title:
+    meta_title: "元标题"
     metadata: "元数据"
     minimal_amount: "少量"
     month: "月"
@@ -785,9 +801,9 @@ zh-CN:
     name_or_sku: "名称或条形码（输入产品名称中的至少4个字母）"
     new: "新建"
     new_adjustment: "新建调整"
-    new_country:
+    new_country: "新建国家"
     new_customer: "新建客户"
-    new_customer_return:
+    new_customer_return: "新建客户退货"
     new_image: "新建图片"
     new_option_type: "新建选项类型"
     new_order: "新建订单"
@@ -799,9 +815,10 @@ zh-CN:
     new_promotion_category: "新建促销分类"
     new_property: "新建属性"
     new_prototype: "新建原型"
-    new_refund:
-    new_refund_reason:
-    new_return_authorization: "新建退货"
+    new_refund: "新建退款"
+    new_refund_reason: '新建退款原因'
+    new_return_authorization: "新建退货审批"
+    new_reimbursement_type: "新建退款类型"
     new_rma_reason:
     new_shipment_at_location:
     new_shipping_category: "新建配送分类"
@@ -818,6 +835,8 @@ zh-CN:
     new_user: "新建用户"
     new_variant: "新建具体型号"
     new_zone: "新建区域"
+    new_store_credit_category: "新建Store Credit 类型"
+    new_role: "新建角色"
     next: "下一页"
     no_actions_added: "未添加动作"
     no_payment_found:
@@ -845,7 +864,7 @@ zh-CN:
       product_not_deleted: "产品无法被删除"
       variant_deleted: "具体型号已经被删除"
       variant_not_deleted: "具体型号不能被删除"
-    num_orders:
+    num_orders: "订单数量"
     on_hand: "库存"
     open: "打开"
     open_all_adjustments: "启用所有价格调整"
@@ -860,9 +879,9 @@ zh-CN:
     or_over_price: "%{price}或以上"
     order: "订单"
     order_adjustments: "订单调整"
-    order_already_updated:
-    order_approved:
-    order_canceled:
+    order_already_updated: "订单已经更新"
+    order_approved: "订单已核准"
+    order_canceled: "订单已取消"
     order_details: "订单详情"
     order_email_resent: "重新发出了订单邮件"
     order_information: "订单信息"
@@ -947,9 +966,9 @@ zh-CN:
     please_define_payment_methods: "请先设定支付方式。"
     populate_get_error: "出错了，请重新添加项目。"
     powered_by: "技术支持"
-    pre_tax_amount:
-    pre_tax_refund_amount:
-    pre_tax_total:
+    pre_tax_amount: "税前金额"
+    pre_tax_refund_amount: "税前退款金额"
+    pre_tax_total: "税前总计"
     preferred_reimbursement_type:
     presentation: "描述"
     previous: "上一页"
@@ -965,7 +984,7 @@ zh-CN:
     product_properties: "产品属性"
     product_rule:
       choose_products: "选择产品"
-      label:
+      label: "订单应该包含这些商品的数量"
       match_all: "全部"
       match_any: "至少一个"
       match_none:
@@ -1046,13 +1065,13 @@ zh-CN:
     reference:
     refund: "退款"
     refund_amount_must_be_greater_than_zero:
-    refund_reasons:
+    refund_reasons: '退款原因'
     refunded_amount:
     refunds:
     register: "注册成为新用户"
     registration: "注册"
-    reimburse:
-    reimbursed:
+    reimburse: '退款'
+    reimbursed: '已退款'
     reimbursement:
     reimbursement_mailer:
       reimbursement_email:
@@ -1066,9 +1085,11 @@ zh-CN:
         total_refunded:
     reimbursement_perform_failed:
     reimbursement_status:
-    reimbursement_type:
+    reimbursement_type: "退款类型"
     reimbursement_type_override:
-    reimbursement_types:
+    reimbursement_types: "退款类型"
+    purchased_quantity: "购买数量"
+    charged: "付款金额"
     reimbursements:
     reject:
     rejected:
@@ -1082,9 +1103,10 @@ zh-CN:
     response_code: "返回代码"
     resume: "恢复"
     resumed: "已恢复"
-    return: "退回"
+    return: "退货"
+    returns: "退货"		
     return_authorization: "退货审批"
-    return_authorization_reasons:
+    return_authorization_reasons: "退货审批原因"
     return_authorization_updated: "退货审批已更新"
     return_authorizations: "退货审批"
     return_item_inventory_unit_ineligible:
@@ -1096,7 +1118,6 @@ zh-CN:
     return_number:
     return_quantity: "退货数量"
     returned: "已退回"
-    returns:
     review: Review
     risk:
     risk_analysis:
@@ -1121,8 +1142,8 @@ zh-CN:
     secure_connection_type: "安全连接类型"
     security_settings: "安全设置"
     select: "选择"
-    select_a_return_authorization_reason:
-    select_a_stock_location:
+    select_a_return_authorization_reason: '选择一个退货审批原因'
+    select_a_stock_location: '选择一个库存区域'
     select_from_prototype: "从原型中选择"
     select_stock:
     send_copy_of_all_mails_to: "将所有邮件的副本发送至"
@@ -1175,7 +1196,7 @@ zh-CN:
     show_active: "显示激活的"
     show_deleted: "显示删除的"
     show_only_complete_orders: "只显示完整的订单"
-    show_only_considered_risky:
+    show_only_considered_risky: "只显示有风险的订单"
     show_rate_in_label:
     sku: "条形码"
     skus:
@@ -1252,18 +1273,20 @@ zh-CN:
     tax: "税"
     tax_categories: "缴税分类"
     tax_category: "缴税分类"
-    tax_code:
+    tax_code: "缴税码"
     tax_included:
     tax_rate_amount_explanation:
     tax_rates: "税率"
     taxon: "分类"
     taxon_edit: "编辑分类"
     taxon_placeholder: "添加分类"
+    tags: "标签"
+    tags_placeholder: "添加标签"
     taxon_rule:
-      choose_taxons:
-      label:
-      match_all:
-      match_any:
+      choose_taxons: "选择分类"
+      label: "订单必须包含这些分类的数量"
+      match_all: "全部"
+      match_any: "至少一个"
     taxonomies: "分类层级"
     taxonomy: "分类层级"
     taxonomy_edit: "编辑分类层级"
@@ -1289,9 +1312,9 @@ zh-CN:
     to_add_variants_you_must_first_define: "要添加具体型号，您需要先定义"
     total: "总计"
     total_per_item:
-    total_pre_tax_refund:
-    total_price:
-    total_sales:
+    total_pre_tax_refund: "税前总共退款金额"
+    total_price: "总价"
+    total_sales: "总计消费金额"
     track_inventory:
     tracking: "追踪"
     tracking_number:
