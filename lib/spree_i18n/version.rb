@@ -11,8 +11,7 @@ module SpreeI18n
     MAJOR = 3
     MINOR = 3
     TINY  = 0
-    PRE   = 'rc1'.freeze
 
-    STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')
+    STRING = [MAJOR, MINOR, TINY].compact.join('.')
   end
 end
