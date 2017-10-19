@@ -5,7 +5,13 @@ module Spree
     end
 
     def set
-      redirect_to root_path(locale: params[:switch_to_locale])
+      if request.referrer
+        path = spree.routes.recognize_path(request.referrer)
+        path[:locale] = params[:switch_to_locale]
+        redirect_to url_for(path)
+      else
+        redirect_to root_path(locale: params[:switch_to_locale])
+      end
     end
   end
 end
