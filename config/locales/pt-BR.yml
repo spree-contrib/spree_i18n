@@ -154,19 +154,19 @@ pt-BR:
         name: Nome
     errors:
       models:
-        spree/calculator/tiered_flat_rate:
+        spree/calculator/tiered_flat_rate: 
           attributes:
             base:
-              keys_should_be_positive_number:
+              keys_should_be_positive_number: "As chaves de nível devem ser números maiores do que 0" 
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: "Deve ser uma hash"
         spree/calculator/tiered_percent:
           attributes:
             base:
-              keys_should_be_positive_number:
-              values_should_be_percent:
+              keys_should_be_positive_number: "As chaves de nível devem ser números maiores do que 0" 
+              values_should_be_percent: "Os valores do nível devem ser percentuais entre 0% e 100%"
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: "Deve ser uma hash"
         spree/classification:
           attributes:
             taxon_id:
@@ -194,10 +194,14 @@ pt-BR:
               other_completed_return_item_exists:
             reimbursement:
               cannot_be_associated_unless_accepted:
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: "Você deve selecionar pelo menos um categoria de entrega"      
         spree/store:
           attributes:
             base:
-              cannot_destroy_default_store:
+              cannot_destroy_default_store: Não é possível destruir a loja padrão.
     models:
       spree/address:
         one: Endereço
