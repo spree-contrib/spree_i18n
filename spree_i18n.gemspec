@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.has_rdoc = false
-
+ 
   s.add_runtime_dependency 'i18n_data'
   s.add_runtime_dependency 'rails-i18n'
   s.add_runtime_dependency 'kaminari-i18n'
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'byebug'
-  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara', '2.18.0'
   s.add_development_dependency 'capybara-screenshot'
   s.add_development_dependency 'coffee-rails'
   s.add_development_dependency 'database_cleaner'
