@@ -94,8 +94,8 @@ Remove all occurrences of `SpreeI18n::Config.supported_locales` from your code.
 
 Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. released under the [New BSD License][6]
 
-[1]: http://spreecommerce.com
-[2]: http://guides.spreecommerce.com/developer/i18n.html
+[1]: https://spreecommerce.org
+[2]: https://guides.spreecommerce.org/developer/i18n.html
 [5]: https://github.com/spree-contrib/spree_i18n/graphs/contributors
 [6]: https://github.com/spree-contrib/spree_i18n/blob/master/LICENSE.md
 [7]: https://github.com/spree-contrib/spree_i18n/blob/master/CONTRIBUTING.md
