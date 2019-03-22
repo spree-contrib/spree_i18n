@@ -8,8 +8,8 @@ appraise 'spree-3-5' do
   gem 'rails-controller-testing'
 end
 
-appraise 'spree-3-6' do
-  gem 'spree', '~> 3.6.0'
+appraise 'spree-3-7' do
+  gem 'spree', '~> 3.7.0'
   gem 'rails-controller-testing'
 end
 
