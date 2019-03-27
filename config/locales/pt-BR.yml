@@ -27,10 +27,10 @@ pt-BR:
         base: ''
         cc_type: Tipo de Cartão
         month: Mês
+        name: Nome no Cartão
         number: Número
         verification_value: Código de Verificação
         year: Ano
-        name: Nome no Cartão
       spree/inventory_unit:
         state: Estado
       spree/line_item:
@@ -42,6 +42,7 @@ pt-BR:
       spree/order:
         checkout_complete: Checkout Completo
         completed_at: Completado em
+        considered_risky: Considerado arriscado
         coupon_code: Código do cupom
         created_at: Criado em
         email: Email do cliente
@@ -53,7 +54,6 @@ pt-BR:
         special_instructions: Instruções de Envio
         state: Estado
         total: Total
-        considered_risky: Considerado arriscado
       spree/order/bill_address:
         address1: Endereço
         city: Cidade
@@ -77,10 +77,10 @@ pt-BR:
         name: Nome
       spree/product:
         available_on: Disponível em
-        discontinue_on: Indisponível em
         cost_currency: Moeda
         cost_price: Preço de Custo
         description: Descrição
+        discontinue_on: Indisponível em
         master_price: Preço Principal
         name: Nome
         on_hand: Pronta Entrega
@@ -94,9 +94,9 @@ pt-BR:
         expires_at: Expira em
         name: Nome
         path: Caminho
+        promotion_category: Categoria de Promoção
         starts_at: Início em
         usage_limit: Limite de uso
-        promotion_category: Categoria de Promoção
       spree/promotion_category:
         name: Categorias de Promoções
         code: Código
@@ -118,10 +118,10 @@ pt-BR:
         state_changes: Mudanças de estado
         state_from: Estado anterior
         state_to: Estado posterior
-        user: Usuário
         timestamp: Data
         type: Tip
         updated: Atualizado
+        user: Usuário
       spree/store:
         mail_from_address: E-mail para envio de mensagens
         meta_description: Descrição
@@ -429,7 +429,7 @@ pt-BR:
       refund: Reembolsar
       save: Salvar
       update: Atualizar
-    activate: Activate
+    activate: Ativar
     active: Ativo
     add: Adicionar
     add_action_of_type: Adicionar Ação do Tipo
@@ -444,13 +444,13 @@ pt-BR:
     add_rule_of_type: Adicionar Regra do Tipo
     add_state: Adicionar Estado
     add_stock: Adicionar Estoque
+    add_store_credit: Adicionar crédito da loja
     add_to_cart: Adicionar ao Carrinho
     add_variant: Adicionar Variação
-    add_store_credit: Adicionar crédito da loja
     additional_item: Item Adicional
-    address: Endereço
     address1: Endereço
     address2: Endereço (complemento)
+    address: Endereço
     addresses: Endereços
     adjustable: Ajustável
     adjustment: Ajuste
@@ -466,20 +466,20 @@ pt-BR:
     admin:
       tab:
         configuration: Configurações
+        customer_returns: Devoluções de clientes
         option_types: Tipos de opção
         orders: Pedidos
         overview: Geral
         products: Produtos
-        promotions: Promoções
         promotion_categories: Categorias de Promoção
+        promotions: Promoções
         properties: Propriedades
         prototypes: Protótipos
         reports: Relatórios
+        return_authorizations: Autorizações de devolução
         taxonomies: Categorias
         taxons:  Árvores de Categorias
         users: Usuários
-        return_authorizations: Autorizações de devolução
-        customer_returns: Devoluções de clientes
       order:
         events:
           approve: aprovar
@@ -489,15 +489,15 @@ pt-BR:
       user:
         account: Conta
         addresses: Endereçamento
+        available_store_credit: Usuário possui %{amount} de Créditos da Loja disponíveis.
         items: Compras
         items_purchased: Histórico de compras
+        no_store_credit: Usuário não possui Créditos da Loja disponíveis.
         order_history: Historico de pedidos
         order_num: Pedido Num.
         orders: Pedidos
-        user_information: Informações do usuário
         store_credits: Créditos da loja
-        no_store_credit: Usuário não possui Créditos da Loja disponíveis.
-        available_store_credit: Usuário possui %{amount} de Créditos da Loja disponíveis.
+        user_information: Informações do usuário
     administration: Administração
     advertise: Anunciar
     agree_to_privacy_policy: Concordo com a politica de privacidade
@@ -521,8 +521,8 @@ pt-BR:
     analytics_trackers: Rastreadores do Analytics
     and: e
     approve: aprovar
-    approver: Aprovador
     approved_at: Aprovado em
+    approver: Aprovador
     are_you_sure: Tem Certeza?
     are_you_sure_delete: Tem certeza que deseja remover este registro?
     associated_adjustment_closed: O ajuste relacionado está fechado e não será recalculado. Você que deixar o ajuste em aberto?
@@ -530,13 +530,12 @@ pt-BR:
     authorization_failure: Falha na Autorização
     authorized: Autorizado
     auto_capture: Captura automática
-    available_on: Disponível em
     available: Available
+    available_on: Disponível em
     average_order_value: Média de valor por compra
     avs_response: Resposta do AVS
     back: Voltar
     back_end: Back End
-    backordered: Pendente
     back_to_payment: Voltar para lista de Pagamentos
     back_to_resource_list: "Voltar para lista de %{resource}"
     back_to_rma_reason_list: Voltar para a lista de Motivos de Autorização de Devolução
@@ -544,6 +543,7 @@ pt-BR:
     back_to_users_list: Voltar a lista de usuários
     backorderable: Aceita pedido sem estoque
     backorderable_default: Aceita pedido sem estoque por padrão
+    backordered: Pendente
     backorders_allowed: permite pedido em espera
     balance_due: Saldo Devedor
     base_amount: Valor Base
@@ -557,12 +557,12 @@ pt-BR:
     calculator_settings_warning: Se você alterar o tipo de calculadora, deve-se primeiro confirmar a alteração antes de editar as configurações.
     cancel: Cancelar
     canceled: Cancelado
-    canceler: Cancelado por
     canceled_at: Cancelado em
-    cannot_empty_completed_order: Pedido já foi processado, por isto não pode ser esvaziado
-    cannot_create_payment_without_payment_methods: Você não pode efetuar o pagamento sem definir a forma de pagamento.
+    canceler: Cancelado por
     cannot_create_customer_returns: Não foi possível criar devolução do cliente
+    cannot_create_payment_without_payment_methods: Você não pode efetuar o pagamento sem definir a forma de pagamento.
     cannot_create_returns: Não é possível criar um retorno para esse pedido, pois ele ainda não foi enviado.
+    cannot_empty_completed_order: Pedido já foi processado, por isto não pode ser esvaziado
     cannot_perform_operation: Não foi possível realizar esta operação
     cannot_return_more_than_bought_quantity: Não é possível devolver quantidade maior que a adquirida.
     cannot_set_shipping_method_without_address: Insira os detalhes do cliente para escolher o método de envio
@@ -622,9 +622,9 @@ pt-BR:
       label: Este escolha deve ser enviada para este país
     coupon: Cupom
     coupon_code: Código do Cupom
-    coupon_code_apply: Aplicar Cupom
     coupon_code_already_applied: O cupom já foi adicionado ao pedido
     coupon_code_applied: O Código do cupom foi acrecentado ao seu pedido
+    coupon_code_apply: Aplicar Cupom
     coupon_code_better_exists: O pedido já possui um cupom com melhor desconto
     coupon_code_expired: O cupom está expirado
     coupon_code_max_usage: O limite de uso do cupom foi excedido
@@ -678,18 +678,18 @@ pt-BR:
     default_tax: Imposto Padrão
     default_tax_zone: Imposto de Zona Padrão
     delete: Remover
-    deleted: Removido
     delete_from_taxon: Removido da categoria
-    discontinued_variants_present: Alguns itens deste pedido não estão mais disponíveis.
+    deleted: Removido
     delivery: Entrega
     depth: Profundidade
-    details: Detalhes
     description: Descrição
     destination: Destino
     destroy: Apagar
-    discount_amount: Quantia de Desconto
+    details: Detalhes
     discontinue_on: Indisponível em
     discontinued: Indisponível
+    discontinued_variants_present: Alguns itens deste pedido não estão mais disponíveis.
+    discount_amount: Quantia de Desconto
     dismiss_banner: Não, obrigado! Eu não estou interessado, não mostre essa mensagem novamente!
     display: Mostrar
     doesnt_track_inventory: Não gerenciar estoque
@@ -745,20 +745,20 @@ pt-BR:
     exceptions:
       count_on_hand_setter: Não pode setar coun_on_hand manualmente, esse valor é automaticamente gerado do método recalculate_count_on_hand. Por favor use `update_column(:count_on_hand, value)`.
     exchange_for: Trocar por
-    expedited_exchanges_warning: "Qualquer alteração será enviada imediatamente ao cliente assim que salvo. O cliente será cobrado pelo valor total do item caso não devolva o original até %{days_window} dias."
     excl: excluir
+    existing_shipments: Envios existentes
+    expedited_exchanges_warning: "Qualquer alteração será enviada imediatamente ao cliente assim que salvo. O cliente será cobrado pelo valor total do item caso não devolva o original até %{days_window} dias."
     expiration: Validade
     extension: Extensão
     extensions_directory: Diretório de extensões
-    existing_shipments: Envios existentes
     failed_payment_attempts: Tentativas fracassadas de pagamento
     filename: Nome do arquivo
     fill_in_customer_info: Por favor insira as informações do cliente
     filter: Filtrar
     filter_results: Filtrar resultados
     finalize: Finalizar
-    find_a_taxon: Procurar uma árvore de categorias
     finalized: Finalizado
+    find_a_taxon: Procurar uma árvore de categorias
     first_item: Primeiro item
     first_name: Nome
     first_name_begins_with: Primeiro nome começa com
@@ -779,15 +779,15 @@ pt-BR:
     guest_user_account: Conta de Visitante
     has_no_shipped_units: Não existem unidades entregues
     height: Altura
-    home: Início
     help_center: Central de Ajuda
+    home: Início
     i18n:
       available_locales: Idiomas disponíveis
       fields: Campos
       language: Idioma
       localization_settings: Configurações de idioma
-      only_incomplete: Apenas incompletos
       only_complete: Apenas completos
+      only_incomplete: Apenas incompletos
       select_locale: Selecionar idioma
       show_only: Mostrar apenas
       supported_locales: Idiomas suportados
@@ -878,12 +878,12 @@ pt-BR:
     meta_keywords: Palavras-Chave
     meta_title: Título da Página
     metadata: Metadados
-    mutable: Mutável
     minimal_amount: Quantidade Mínima
     missing_return_authorization: ! 'Faltando Autorização de Devolução %{item_name}.'
     month: Mês
     more: Mais
     move_stock_between_locations: Transferir estoque entre localidades
+    mutable: Mutável
     my_account: Minha Conta
     my_orders: Meus Pedidos
     name: Nome
@@ -891,9 +891,9 @@ pt-BR:
     name_or_sku: Nome ou SKU (insira pelo menos 4 caracteres do nome do produto)
     new: Novo
     new_adjustment: Novo Ajuste
+    new_country: Novo país
     new_customer: Novo Cliente
     new_customer_return: Nova devolução de cliente
-    new_country: Novo país
     new_image: Nova Imagem
     new_option_type: Novo Tipo de Opção
     new_order: Novo Pedido
@@ -908,12 +908,12 @@ pt-BR:
     new_refund: Novo reembolso
     new_refund_reason: Criar razão para reembolso
     new_reimbursement_type: Novo tipo de reembolso
-    new_rma_reason: Novo motivo para autorização de devolução
     new_return_authorization: Nova Autorização de Devolução
+    new_rma_reason: Novo motivo para autorização de devolução
     new_role: Nova Função
+    new_shipment_at_location: Novo envio da Localidade
     new_shipping_category: Nova Categoria de Entrega
     new_shipping_method: Novo Método de Entrega
-    new_shipment_at_location: Novo envio da Localidade
     new_state: Novo Estado
     new_stock_location: Adicionar Local de Estoque
     new_stock_movement: Nova movimentação de estoque
@@ -934,10 +934,10 @@ pt-BR:
     no_payment_found: Nenhum pagamento encontrado
     no_pending_payments: Sem pagamentos pendentes
     no_products_found: Não existem produtos
-    no_results: Não existem resultados
-    no_rules_added: Nenhuma regra adicionada
     no_resource_found: Não existe %{resource}
+    no_results: Não existem resultados
     no_returns_found: Nenhum retorno encontrado
+    no_rules_added: Nenhuma regra adicionada
     no_shipping_method_selected: Nenhum método de entrega selecionado
     no_state_changes: Nenhuma alteração de estado
     no_tracking_present: Detalhes de rastreamento não foram fornecidos
