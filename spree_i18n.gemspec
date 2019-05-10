@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'routing-filter'
   s.add_runtime_dependency 'spree_core', '>= 3.1.0', '< 5.0'
   s.add_runtime_dependency 'spree_extension'
+  s.add_runtime_dependency 'deface', '~> 1.0'
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'byebug'
