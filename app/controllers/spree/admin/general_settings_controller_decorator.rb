@@ -1,5 +1,7 @@
-Spree::Admin::GeneralSettingsController.class_eval do
-  before_action :update_i18n_settings, only: :update
+module Spree::Admin::GeneralSettingsControllerDecorator
+  def self.prepended(base)
+    base.before_action :update_i18n_settings, only: :update
+  end
 
   private
 
@@ -10,3 +12,4 @@ Spree::Admin::GeneralSettingsController.class_eval do
     end
   end
 end
+Spree::Admin::GeneralSettingsController.prepend(Spree::Admin::GeneralSettingsControllerDecorator)
