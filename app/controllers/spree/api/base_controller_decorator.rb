@@ -1,6 +1,4 @@
 module Spree::Api::BaseControllerDecorator
-  def self.prepended(base)
-    base.include SpreeI18n::ControllerLocaleHelper
-  end
+  Spree::Api::BaseController.include(SpreeI18n::LocaleHelper)
 end
 Spree::Api::BaseController.prepend(Spree::Api::BaseControllerDecorator)
