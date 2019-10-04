@@ -40,7 +40,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mysql2'
   s.add_development_dependency 'pg'
   s.add_development_dependency 'selenium-webdriver'
-  s.add_development_dependency 'webdrivers', '~> 4.0.0'
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'puma'
   s.add_development_dependency 'rubocop'
