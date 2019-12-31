@@ -6,3 +6,5 @@ require 'spree_i18n/version'
 require 'spree/i18n_utils'
 require 'spree_extension'
 require 'deface'
+
+require 'ignore_generator'

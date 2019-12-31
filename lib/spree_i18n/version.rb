@@ -4,10 +4,10 @@ module SpreeI18n
   # Returns the version of the currently loaded SpreeI18n as a
   # <tt>Gem::Version</tt>.
   def version
-    Gem::Version.new VERSION::STRING
+    Gem::Version.new Version::STRING
   end
 
-  module VERSION
+  module Version
     MAJOR = 3
     MINOR = 3
     TINY  = 2
