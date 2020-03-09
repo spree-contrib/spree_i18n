@@ -18,6 +18,8 @@ module SpreeI18n
         I18n.locale = \
           if params[:locale] && Config.available_locales.include?(params[:locale].to_sym)
             params[:locale]
+          elsif respond_to?(:store_locale, true) && !config_locale.blank?
+            store_locale
           elsif respond_to?(:config_locale, true) && !config_locale.blank?
             config_locale
           else
