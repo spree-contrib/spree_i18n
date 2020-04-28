@@ -1,5 +1,5 @@
 module Spree
-  class LocaleController < Spree::StoreController
+  class LocaleController < Spree::BaseController
     def index
       render :index, layout: false
     end
