@@ -1,3 +1,4 @@
+# coding: utf-8
 RSpec.feature 'Translations', :js do
   stub_authorization!
 
@@ -17,13 +18,15 @@ RSpec.feature 'Translations', :js do
     end
 
     scenario 'adds german to available locales' do
-      targetted_select2_search(language, from: '#s2id_available_locales_')
+      find('#s2id_available_locales_').click
+      find('.select2-result-selectable', text: language).click
       click_on 'Update'
       expect(SpreeI18n::Config.available_locales).to include(:de)
     end
 
     scenario 'adds french to available locales' do
-      targetted_select2_search(french, from: '#s2id_available_locales_')
+      find('#s2id_available_locales_').click
+      find('.select2-result-selectable', text: french).click
       click_on 'Update'
       expect(SpreeI18n::Config.available_locales).to include(:fr)
     end
