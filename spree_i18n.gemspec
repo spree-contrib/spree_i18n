@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('spree_core',  '>= 1.1')
   s.add_dependency('i18n', '~> 0.5')
   s.add_dependency('rails-i18n')
 
