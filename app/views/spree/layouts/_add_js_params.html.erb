@@ -1,3 +1,5 @@
 <%= javascript_tag do %>
-  Spree.url_params["locale"] = "<%= I18n.locale %>";
+  document.addEventListener("load", function(){
+    Spree.url_params["locale"] = "<%= I18n.locale %>";
+  })
 <% end %>
