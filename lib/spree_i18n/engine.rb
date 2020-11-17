@@ -1,4 +1,5 @@
-require 'globalize'
+require 'routing_filter'
+require 'kaminari-i18n/engine'
 
 module SpreeI18n
   class Engine < Rails::Engine
@@ -15,29 +16,22 @@ module SpreeI18n
       end
     end
 
-    initializer "spree_i18n.environment", :before => :load_config_initializers do |app|
+    initializer 'spree_i18n.environment', before: :load_config_initializers do |app|
       app.config.i18n.fallbacks = true
       I18n.locale = app.config.i18n.default_locale if app.config.i18n.default_locale
       SpreeI18n::Config = SpreeI18n::Configuration.new
     end
 
-    initializer "spree_i18n.permitted_attributes", :before => :load_config_initializers do |app|
-      taxon_attributes = { translations_attributes: [:id, :locale, :name, :description, :permalink, :meta_description, :meta_keywords, :meta_title] }
-      Spree::PermittedAttributes.taxon_attributes << taxon_attributes
-
-      option_value_attributes = { translations_attributes: [:id, :locale, :name, :presentation] }
-      Spree::PermittedAttributes.option_value_attributes << option_value_attributes
-    end
-
     def self.activate
-      Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
+      Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
     end
 
-    config.to_prepare &method(:activate).to_proc
+    config.to_prepare(&method(:activate).to_proc)
 
     protected
+
     def self.add(pattern)
       files = Dir[File.join(File.dirname(__FILE__), '../..', pattern)]
       I18n.load_path.concat(files)

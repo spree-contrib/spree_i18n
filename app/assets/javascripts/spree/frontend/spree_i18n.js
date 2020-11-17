@@ -1,2 +1,3 @@
 //= require spree/frontend
-//= require_tree .
+//= require spree/frontend/cart_decorator
+//= require spree/frontend/locale

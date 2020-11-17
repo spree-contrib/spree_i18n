@@ -1,12 +1,11 @@
 module Spree
-  class LocaleController < Spree::StoreController
-    def set
-      session[:locale] = params[:locale]
+  class LocaleController < Spree::BaseController
+    def index
+      render :index, layout: false
+    end
 
-      respond_to do |format|
-        format.json { render :json => true }
-        format.html { redirect_to root_path }
-      end
+    def set
+      redirect_to root_path(locale: params[:switch_to_locale])
     end
   end
 end

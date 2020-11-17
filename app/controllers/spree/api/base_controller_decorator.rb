@@ -1,3 +1,5 @@
-Spree::Api::BaseController.class_eval do
-  include SpreeI18n::ControllerLocaleHelper
+module Spree::Api::BaseControllerDecorator
+  Spree::Api::BaseController.include(SpreeI18n::ControllerLocaleHelper)
 end
+Spree::Api::BaseController.prepend(Spree::Api::BaseControllerDecorator)
+
