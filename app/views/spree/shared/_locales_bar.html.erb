@@ -1,1 +1,5 @@
-<script>Spree.fetch_locales()</script>
+<%= javascript_tag do %>
+  document.addEventListener("turbolinks:load", function(){
+    Spree.fetch_locales();
+  })
+<% end %>
