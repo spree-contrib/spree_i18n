@@ -11,6 +11,7 @@ RSpec.feature 'Translations', :js do
   context 'localization settings' do
     given(:language) { Spree.t(:this_file_language, scope: 'i18n', locale: 'de') }
     given(:french) { Spree.t(:this_file_language, scope: 'i18n', locale: 'fr') }
+    given(:swedish) { Spree.t(:this_file_language, scope: 'i18n', locale: 'sv') }
 
     background do
       SpreeI18n::Config.available_locales = []
@@ -29,6 +30,13 @@ RSpec.feature 'Translations', :js do
       find('.select2-result-selectable', text: french).click
       click_on 'Update'
       expect(SpreeI18n::Config.available_locales).to include(:fr)
+    end
+
+    scenario 'adds swedish to available locales' do
+      find('#s2id_available_locales_').click
+      find('.select2-result-selectable', text: swedish).click
+      click_on 'Update'
+      expect(SpreeI18n::Config.available_locales).to include(:sv)
     end
   end
 end

@@ -27,4 +27,12 @@ RSpec.describe 'Translation' do
       expect(translation).to eq 'Código Postal'
     end
   end
+
+    # Swedish is chosen
+  context 'when current locale is Swedish' do
+    it 'translation is available' do
+      I18n.locale = :'sv'
+      expect(translation).to eq 'Postnummer'
+    end
+  end
 end
