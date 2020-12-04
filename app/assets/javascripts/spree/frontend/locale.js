@@ -2,6 +2,7 @@ Spree.fetch_locales = function () {
   return $.ajax({
     url: Spree.pathFor('locales')
   }).done(function (data) {
+    $('#locale-select').remove()
     $('.footer-spree-menu-links .col-3').last().find('.pt-2').after(data);
   });
 };
