@@ -8,7 +8,7 @@ module SpreeI18n
   end
 
   module Version
-    MAJOR = 4
+    MAJOR = 5
     MINOR = 0
     TINY  = 0
 
