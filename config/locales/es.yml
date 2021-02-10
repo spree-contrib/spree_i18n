@@ -5,6 +5,7 @@ es:
         spree/fulfilment_changer:
           attributes:
             desired_shipment:
+              has_not_enough_stock_at_desired_location: no tiene suficiente stock en la ubicación de stock deseada
               can_not_transfer_within_same_shipment: no puede ser el envío actual
               not_enough_stock_at_desired_location: no hay stock suficiente en la ubicación seleccionada
             current_shipment:
@@ -23,6 +24,7 @@ es:
         phone: Teléfono
         state: Provincia o Estado
         zipcode: Código Postal
+        label: Nombre de la dirección
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: Monto Base
         preferred_tiers: Niveles preferidos
@@ -51,6 +53,7 @@ es:
       spree/option_type:
         name: Nombre
         presentation: Presentación
+        filterable: Filtrable
       spree/order:
         checkout_complete: Completar Pedido
         completed_at: Completado En
@@ -143,6 +146,7 @@ es:
         seo_title: Título SEO
         name: Nombre
         mail_from_address: Remitente
+        seo_robots: Robots SEO
       spree/store_credit:
         amount_used: Monto utilizado
       spree/store_credit_category:
@@ -267,6 +271,8 @@ es:
       spree/stock_transfer:
         one: Transferencia de stock
         other: Transferencias de stock
+        errors:
+          variants_unavailable: "Algunas variantes no están disponibles en % {stock}"
       spree/store_credit:
         one: Crédito de la tienda
         other: Créditos de la tienda
@@ -513,6 +519,10 @@ es:
       successfully_updated: "Actualizado exitoso"
       unsuccessfully_updated: "Hubo un error mientras se intentaba actualizar tu dirección."
       save: "Guardar"
+      address_name_placeholder: Asigne un nombre único a esta dirección (trabajo, casa, etc.)
+      new_address: "Nueva direccion"
+      edit_address: "Editar dirección"
+      remove_address: Eliminar dirección
     adjustable: Ajustable
     adjustment: Ajuste
     adjustment_amount: Cuantía
@@ -818,6 +828,7 @@ es:
         blank: no puede estar vacío
         could_not_create_taxon: No pude crear taxon
         no_shipping_methods_available: No hay métodos de envió disponibles para la localización seleccionada, por favor cambia tu dirección e inténtalo de nuevo
+        cannot_remove_icon: No se puede eliminar la imagen
       services:
         get_shipping_rates:
           no_shipping_address: Para generar tarifa de envío para la orden es necesaria una dirección de envío
@@ -872,6 +883,8 @@ es:
     free_shipping: Envío gratuito
     free_shipping_amount: Cantidad de envío gratuito
     front_end: Parte delantera
+    filterable: Filtrable
+    footer: Pie de página
     gateway: Pasarela
     gateway_error: Error en pasarela
     general: General
@@ -958,6 +971,8 @@ es:
     inventory_state: Estado del inventorio
     is_not_available_to_shipment_address: no está disponible para la dirección de envío
     iso_name: Nombre ISO
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
     issued_on: Emitido en
     item: Artículo
     item_description: Descripción del Artículo
@@ -1028,6 +1043,8 @@ es:
     move_stock_between_locations: Mover Stock entre localizaciones
     my_account: Mi Cuenta
     my_orders: Mis Pedidos
+    mailer_logo: Logotipo de correo (solo imágenes JPG o PNG)
+    no_payment_provider_settings_message: Este proveedor de pagos no tiene configuraciones personalizadas disponibles
     name: Nombre
     name_on_card: Nombre en la tarjeta
     name_or_sku: Nombre o SKU (introducir al menos los 4 primeros caracteres o nombre del producto)
@@ -1090,6 +1107,7 @@ es:
     no_address_given: No se informó dirección
     no_available_date_set: No se informó fecha de disponibilidad
     no_country: No se informó país
+    no_limits_zone: Sin limites
     no_payment_found: No se encontró pago
     no_pending_payments: No hay pagos pendientes
     no_product_available:
@@ -1113,6 +1131,7 @@ es:
     not_found: No se encontró %{resource}
     note: Nota
     notice_messages:
+      icon_removed: La imagen se ha eliminado correctamente
       prices_saved: Precios guardados con éxito
       product_cloned: El producto ha sido clonado
       product_deleted: El producto ha sido borrado
@@ -1145,6 +1164,7 @@ es:
     order_information: Información del pedido
     order_line_items: Ítems en en el pedido
     order_mailer:
+      store_team: 'Equipo de %{store_name}'
       subtotal: ! 'Subtotal:'
       total: ! 'Total del pedido:'
       cancel_email:
@@ -1152,6 +1172,7 @@ es:
         instructions: Tu pedido ha sido CANCELADO. Por favor conserva esta información de cancelación para tus registros.
         order_summary_canceled: Resumen de pedido [CANCELADO]
         subject: Cancelación de pedido
+        thanks: Gracias por hacer negocios.
       confirm_email:
         dear_customer: Estimado Cliente,\n
         instructions: Por favor, revisa y conserva la siguiente información del pedido de tus registros.
@@ -1163,6 +1184,7 @@ es:
         instructions: Has recibido un nuevo pedido.
         order_summary: Resumen del pedido %{number}
         subject: '%{store_name} recibió un nuevo pedido'
+        thanks: Gracias por hacer negocios.
     order_not_found: No pudimos encontrar tu pedido. Por favor intenta esta acción de nuevo
     order_number: Número de orden
     order_processed_successfully: Tu pedido ha sido procesado con éxito
@@ -1210,6 +1232,7 @@ es:
     payment_processing_failed: El pago no pudo ser procesado, por favor comprueba los detalles que has introducido
     payment_processor_choose_banner_text: Si necesitas ayuda a la hora de escoger un procesador de pago, por favor visita
     payment_processor_choose_link: nuestra pagina de pagos
+    payment_provider_settings: Configuración del proveedor de pagos remove_image; Quita la imagen
     payment_state: Estado del Pago
     payment_states:
       balance_due: Saldo deudor
@@ -1431,6 +1454,7 @@ es:
         instructions: Instrucciones
         refund_summary: Resumen de reembolso
         subject: sujeto
+        store_team: 'Equipo de %{store_name}'
         total_refunded: Total de reembolso
         thanks: Gracias por tu compra.
     return_number: Número de retorno
@@ -1491,6 +1515,7 @@ es:
         shipment_summary: Resumen del envío
         shipping_method: "Método de envío: %{shipping_method}"
         subject: Notificación de Envío
+        store_team: 'Equipo de %{store_name}'
         thanks: "¡Gracias por su compra!"
         track_information: 'Información Seguimiento: %{tracking}'
         track_link: 'Link del tracking: %{url}'
@@ -1656,6 +1681,22 @@ es:
     summary: Resumen
     supported_currencies: Monedas soportadas
     supported_currencies_long: Lista separada por comas de las monedas soportadas
+        select_an_option: Seleccione una opción
+    seo_robots: Robots SEO
+    show_store_selector:
+      short: Mostrar selector de tienda
+      long: Muestre el selector de tienda en la barra de navegación principal de Storefront y permita a los usuarios cambiar la tienda y la moneda
+    store_form:
+      code_help: "Identificador único de la tienda, que es una versión abreviada del nombre de la tienda (se utiliza como el nombre del directorio de diseño y también es útil para separar las plantillas por tienda)"
+      checkout_zone_help: "La selección de una zona limitará a los clientes en el pago a direcciones en países o estados en esa zona."
+      languages_help: "Instale la <a href='https://github.com/spree-contrib/spree_i18n target='_blank' class='alert-link'>Spree I18n extension</a> para agregar más idiomas"
+      social_help: "Si desea vincular sus cuentas sociales en la parte del pie de página de su sitio web, complete los campos a continuación"
+      default_country_help: "Este es el país que se preseleccionará en el formulario de dirección de pago"
+      footer_help: "Este contenido es visible en la sección de pie de página de su tienda"
+      mail_from_address_help: "Este es el correo electrónico que será el remitente de todos los correos electrónicos de su tienda (confirmación de pedido, notificación de envío, etc.)"
+      customer_support_email_help: "Este correo electrónico es visible para los visitantes de su tienda en la sección Pie de página"
+      new_order_notifications_email_help: "Si desea recibir una notificación por correo electrónico cada vez que alguien realiza un pedido, proporcione una dirección de correo electrónico a la que se enviará esa notificación"
+      seo_robots: "Consulate <a href='https://developers.google.com/search/reference/robots_meta_tag' target='_blank'>esta página para obtener más ayuda</a>"
     tax: Impuestos
     tax_included: Impuestos incluídos
     tax_categories: Categorías fiscales
@@ -1763,5 +1804,6 @@ es:
     your_order_is_empty_add_product: Tu pedido está vacío, por favor busca y añade un producto a continuación
     zip: Postal
     zipcode: Código Postal
+    zipcode_required: Código postal requerido
     zone: Zona
     zones: Zonas
