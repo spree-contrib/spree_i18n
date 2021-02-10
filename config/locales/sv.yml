@@ -1,4 +1,14 @@
 sv:
+  activemodel:
+    errors:
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            desired_shipment:
+              can_not_transfer_within_same_shipment: kan inte vara samma som nuvarande leverans
+              has_not_enough_stock_at_desired_location: har inte tillräckligt med lager i önskad lagerplats
+            current_shipment:
+              has_already_been_shipped: har redan skickats
   activerecord:
     attributes:
       spree/address:
@@ -11,6 +21,8 @@ sv:
         phone: Telefon
         state: Län
         zipcode: Postnummer
+        label: Adressnamn
+        company: företag
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: Basbelopp
         preferred_tiers: Nivåer
@@ -49,6 +61,7 @@ sv:
       spree/option_type:
         name: Namn
         presentation: Visa som
+        filterable: Filtrerbar
       spree/order:
         checkout_complete: Utcheckning genomförd
         completed_at: Fullständig vid
@@ -84,6 +97,7 @@ sv:
         zipcode: Leveransadress, postnr.
       spree/payment:
         amount: Belopp
+        number: Siffra
       spree/payment_method:
         name: Namn
       spree/product:
@@ -91,6 +105,7 @@ sv:
         cost_currency: Kostnadsvaluta
         cost_price: Kostnadspris
         description: Beskrivning
+        discontinue_on: Avbryt På
         less_than: <
         master_price: Grundpris
         name: Namn
@@ -103,6 +118,7 @@ sv:
         description: Beskrivning
         event_name: Aktivitet
         expires_at: Löper ut
+        generate_code: Skapa kupongkod
         name: Namn
         path: Sökväg
         starts_at: Startar
@@ -128,6 +144,8 @@ sv:
         name: Namn
       spree/role:
         name: Namn
+      spree/shipment:
+        number: Siffra
       spree/state:
         abbr: Förkortning
         name: Namn
@@ -147,7 +165,12 @@ sv:
         meta_keywords: Referensord
         name: Webbsidans namn
         seo_title: Rubrik
+        seo_robots: SEO-robotar
         url: Webbsidans URL
+      spree/store_credit:
+        amount_used: Mängd som används
+      spree/store_credit_category:
+        name: namn
       spree/tax_category:
         description: Beskrivning
         name: Namn
@@ -205,10 +228,36 @@ sv:
           attributes:
             attachment:
               attachment_must_be_present: för bilden saknas
+              not_allowed_content_type: Har inte tillåtit innehållstyp
         spree/line_item:
           attributes:
             currency:
               must_match_order_currency: Måste matcha orderns valuta
+        spree/promotion:
+            attributes:
+              expires_at:
+                invalid_date_range: Måste vara senare än startdatumet
+        spree/product:
+          attributes:
+            discontinue_on:
+              invalid_date_range: Måste vara senare än tillgängligt datum
+            base:
+              cannot_destroy_if_attached_to_line_items: Det går inte att ta bort produkter när de är kopplade till rader.
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: "Du måste välja minst en fraktkategori"
+        spree/store_credit:
+          attributes:
+            amount_used:
+              cannot_be_greater_than_amount: Får inte vara större än beloppet.
+              greater_than_zero_restrict_delete: Är större än noll. Det går inte att ta bort butikskredit.
+            amount_authorized:
+              exceeds_total_credits: Överstiger totala poäng.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Det går inte att ta bort butikskreditkategorier när de används i butikskrediter.
         spree/refund:
           attributes:
             amount:
@@ -227,6 +276,16 @@ sv:
           attributes:
             base:
               cannot_destroy_default_store: Kan inte radera den primära butiken.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: Har inte tillåtit innehållstyp
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Det går inte att ta bort varianter när de är kopplade till rader.
+              no_master_variant_found_to_infer_price: Ingen huvudvariant hittades för att sluta priset
+              must_supply_price_for_variant_or_master: Måste leverera pris för variant eller huvudpris för produkt.
     models:
       spree/image:
         one: Bild
@@ -320,9 +379,14 @@ sv:
         one: Lagerplats
         other: Lagerplatser
       spree/stock_movement:
+        one: Lagerrörelse
+        other: Lagerrörelser
       spree/stock_transfer:
         one: Lageröverföring
         other: Lageröverföringar
+      spree/store_credit:
+        one: Butikskredit
+        other: Lagra poäng
       spree/store_credit_category:
         one: Tillgodokategori
         other: Tillgodokategorier
@@ -396,7 +460,14 @@ sv:
       not_saved:
         one: '1 fel hindrade detta %{resource} från att sparas:'
         other: "%{count} fel hindrade detta %{resource} från att sparas:"
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    previous: "&lsaquo;"
+    next: "&rsaquo;"
+    truncate: "&hellip;"
   spree:
+    account_info: Konto information
     abbreviation: Förkortning
     accept: Accept
     acceptance_errors: Accept fel
@@ -440,6 +511,7 @@ sv:
     add_to_cart: Lägg i varukorgen
     add_variant: Lägg till variant
     additional_item: Ytterligare artikelkostnad
+    address: adress
     address1: Adress
     address2: Adress (forts.)
     addresses: Adresser
@@ -447,6 +519,15 @@ sv:
       delete_title: Ta bort titel
       delete_text: Ta bort text
       delete_button: Ta bort knapp
+    address_book:
+      other_address: "Annan adress"
+      address_name_placeholder: Ge denna adress ett unikt namn (arbete, hem, etc.)
+      new_address: "Ny adress"
+      edit_address: "Redigera adress"
+      remove_address: Ta bort adress
+      successfully_created: "Adress har skapats."
+      successfully_removed: "Adress har tagits bort."
+      successfully_updated: "Uppdateringen lyckades"
     adjustable: Justerbar
     adjustment: Justering
     adjustment_amount: Belopp
@@ -454,6 +535,10 @@ sv:
     adjustment_successfully_opened: "Ändring öppnad!"
     adjustment_total: Summa justeringar
     adjustments: "Ändringar"
+    adjustment_labels:
+      tax_rates:
+        including_tax: "% {name}% {amount} (ingår i priset)"
+        excluding_tax: "% {name}% {amount}"
     admin:
       tab:
         configuration: Konfiguration
@@ -483,6 +568,15 @@ sv:
         store_credits: Tillgodohavande
         user_information: Användarinformation
         stores: Butiker
+        no_store_credit: Användaren har ingen butikskredit tillgänglig.
+      order:
+        events:
+          approve: godkänna
+          cancel: avboka
+          resend: Skicka igen
+          resume: resume
+      orders:
+        cart: vagn
     administration: Administration
     advertise: Marknadsför
     agree_to_privacy_policy: Acceptera privatpolicyn
@@ -528,6 +622,7 @@ sv:
     authorized: Medgivna
     auto_capture: Fullgör betalning automatiskt
     availability: Tillgänglighet
+    available: tillgänglig
     available_on: Tillgänglig fr.o.m.
     average_order_value: Genomsnittligt orderbelopp
     avs_response: AVS svar
@@ -543,15 +638,19 @@ sv:
     backordered:
     backorders_allowed: restnotering tillåtet
     balance_due: Summa att betala
+    basic_information: Grundläggande information
     base_amount: Basbelopp
     base_percent: Grundprocent
     bill_address: Faktureringsadress
     billing: Fakturering
     billing_address: Faktureringsadress
     both: Butikskassa & Administrationsgränssnitt
+    breadcrumbs: ströbröd
+    backordered_info: Ombeställt
     calculated_reimbursements: Ersättningar som beräknats
     calculator: Kalkylator
     calculator_settings_warning: Om du ändra kalkylatortypen, måste du först spara innan du kan ändra kalkylatorinställningar
+    call_us_now: "Ring oss nu: "
     cancel: avbryt
     canceled: Avbrutna
     canceled_at: Avbeställd datum
@@ -561,6 +660,8 @@ sv:
     cannot_create_returns: Kan inte returnera ordern eftersom den inte har levererats än.
     cannot_perform_operation: Kan inte utföra efterfrågad aktivitet
     cannot_set_shipping_method_without_address: Kan inte använda leveransmetod förrän kunddetaljerna är angivna
+    cannot_empty_completed_order: Beställningen har redan bearbetats så att den inte kan tömmas
+    cannot_return_more_than_bought_quantity: Kan inte returnera mer än köpt kvantitet.
     capture: Fullgör betalning
     capture_events:
     card_code: Säkerhetskod
@@ -576,11 +677,18 @@ sv:
       product: Produkt
       title: Varukorg
       quantity: Antal
+      change_quantity: Translation service is temporarily unavailable
+      remove_from_cart: Ta bort från vagnen
     cart_subtotal:
       one: Delsumma (1 artikel)
       other: Delsumma (%{count} artiklar)
     categories: Kategorier
     category: Kategori
+    category_nav_bar:
+      get_up_to_30_percent_off: FÅ UPP TILL 30% RABATT
+      jackets_and_coats: JACKA & KUST
+      new_collection: NY KOLLEKTION
+      special_offers: SPECIALERBJUDANDEN
     channel: Kanal
     charged: Debiterad
     check_for_spree_alerts: Kontrollera om det finns Spree larm
@@ -589,6 +697,9 @@ sv:
       back_to_cart: Fortsätt handla
       delivery_method: Leveransalternativ
       header: Varukorg
+      main_navigation: Huvudnavigering
+      checkout_navigation: Kassanavigering
+      product: Produkt
     choose_a_customer: Välj en kund
     choose_a_taxon_to_sort_products_for: Välj ett klass att sortera produkter för
     choose_currency: Välj valuta
@@ -605,6 +716,7 @@ sv:
     code: Kod
     commission: "Provision:"
     company: Företag
+    compare_at_price: Jämför till pris
     complete: komplett
     configuration: Konfiguration
     configurations: Konfigurationer
@@ -612,6 +724,7 @@ sv:
     confirm_delete: Bekräfta borttagning
     confirm_password: Bekräfta lösenord
     contact_us: Kontanta oss
+    contact_phone: Kontakt Telefon
     continue: Fortsätt
     continue_shopping: Fortsätt handla
     cost_currency: Kostnadsvaluta
@@ -620,6 +733,7 @@ sv:
     could_not_create_customer_return: Kunde inte skapa mottagen retur
     could_not_create_stock_movement: Det blev ett problem att spara lagerrörelsen. Försök senare.
     count_on_hand: Tillgängligt
+    continue_as_guest: Fortsätt som gäst
     countries: Länder
     country: Land
     country_based: Landbaserat
@@ -629,6 +743,8 @@ sv:
       FRA: Frankrike
       ITA: Italien
       US: USA
+    country_rule:
+      label: Välj måste skickas till detta land
     coupon: Värdekupong
     coupon_code: Värdekupongskod
     coupon_code_already_applied: Kupongkoden har redan använts på denna order
@@ -665,6 +781,7 @@ sv:
     customer_return: Mottagen retur
     customer_returns: Mottagna returer
     customer_search: Sök kund
+    customer_support_email: E-post för kundsupport
     cut: Klipp
     cvv: CVC
     cvv_response: CVV svar
@@ -693,6 +810,10 @@ sv:
     delete_from_taxon: Ta bort klass
     deleted_variants_present: Vissa poster i denna order har produkter som inte längre finns.
     delivery: Leverera
+    delivery_information: Leveransinformation
+    default_country_cannot_be_deleted: Standardland kan inte raderas
+    default_currency: Standardvaluta
+    deleted: radera
     depth: Djup
     description: Beskrivning
     destination: Destination
@@ -700,6 +821,8 @@ sv:
     details: Detaljer
     discount_amount: Rabattbelopp
     discontinue_on: Utgår fr.o.m.
+    discontinued: Avbruten
+    discontinued_variants_present: Vissa rader i den här beställningen har produkter som inte längre är tillgängliga.
     dismiss_banner: Nej tack. Jag är inte intresserad, och visa inte detta meddelande igen
     display: Visa i
     display_currency: Visa valuta
@@ -730,16 +853,24 @@ sv:
     enable_mail_delivery: Aktivera sändning av e-post
     end: Slut
     ending_in: Slutar med
+    ends_at: Slutar kl
+    ending_at: Slutar kl
     environment: Miljö
     error: fel
     errors:
       messages:
+        blank: Kan inte vara tom
+        cannot_remove_icon: Det går inte att ta bort bilden
         could_not_create_taxon: Kunde inte skapa klass
         no_payment_methods_available: Inga betalningsmetoder är konfigurerade för denna miljö
         no_shipping_methods_available: Inget leveransmetod är tillgängligt för den valda platsen. Var god ändra din adress och försök igen.
+      services:
+        get_shipping_rates:
+          no_line_items: För att generera fraktpriser måste du lägga till några rader att beställa
     errors_prohibited_this_record_from_being_saved:
       one: 1 fel hindrade detta inlägg att sparas
       other: "%{count} fel hindrade detta inlägg att sparas"
+    error_user_destroy_with_orders: Användare som är associerade med beställningar kan inte förstöras
     event: Händelse
     events:
       spree:
@@ -781,6 +912,10 @@ sv:
     free_shipping: Gratis leverans
     free_shipping_amount: "-"
     front_end: Butikskassan
+    facebook: Facebook
+    filterable: Filtrerbar
+    follow_us: Följ oss
+    footer: sidfot
     gateway: Gateway
     gateway_config_unavailable: Gateway är inte tillgänglig för miljön
     gateway_error: Gateway-fel
@@ -792,6 +927,10 @@ sv:
     google_analytics_id: Analytics-ID
     guest_checkout: Gästkassa
     guest_user_account: Gå till kassan som gäst
+    get_back_to_the: Gå tillbaka till
+    header_banner: Rubrikbanner
+    hide_from_subcategories_nav: Dölj från underkategorinavigering
+    home_page: hemsida
     has_no_shipped_units: har inga levererade enheter
     height: Höjd
     help_center: Hjälp
@@ -855,6 +994,11 @@ sv:
     inventory_error_flash_for_insufficient_quantity: En artikel i din varukorg är inte längre tillgänglig.
     inventory_state: Lagerstatus
     is_not_available_to_shipment_address: "är inte tillgänglig till leveransadress"
+    info_product_has_multiple_skus: "Den här produkten har% {count} varianter:"
+    instagram: Instagram
+    internationalization: internationaliseringv
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
     iso_name: Iso namn
     item: Artikel
     item_description: Artikelbeskrivning
@@ -897,6 +1041,9 @@ sv:
     logout: Logga ut
     logs: Loggar
     look_for_similar_items: Visa liknande artiklar
+    limit_usage_to: Begränsa användningen till
+    loading_tree: Laddar träd. Vänta…
+    logo: logotyp
     make_refund: Gör återbetalning
     make_sure_the_above_reimbursement_amount_is_correct:
     manage_promotion_categories: Hantera kampanjkategorier
@@ -921,10 +1068,18 @@ sv:
     mutable: Föränderlig
     my_account: Mitt konto
     my_orders: Mina ordrar
+    mail_from_address: E-post från adress
+    mailer_logo: Mailer-logotyp (endast JPG- eller PNG-bilder)
+    master: Bemästra
+    missing_return_authorization: ! "Returbehörighet saknas för% {item_name}."
     name: Namn
     name_on_card: Namn på kortet
     name_or_sku: Namn eller SKU (ange minst de 4 första bokstäverna i produktnamnet)
     nav_bar:
+      admin_panel: Administratörspanel
+      change_country: Ändra land
+      desktop: Navigering på skrivbordet
+      mobile: Mobilnavigering
       show_search: "Sök"
       show_user_menu: Användare
       close_menu: Stäng meny
@@ -944,6 +1099,7 @@ sv:
     new_option_type: Ny tillvalstyp
     new_order: Ny order
     new_order_completed: Ny order slutförd
+    new_order_notifications_email: Nya beställningsmeddelanden E-post
     new_payment: Ny betalning
     new_payment_method: Ny betalningsmetod
     new_product: Ny produkt
@@ -988,6 +1144,7 @@ sv:
     no_shipping_method_selected: Ingen leveransmetod vald.
     no_state_changes: Inga status förändringar ännu.
     no_tracking_present: Inga spårningsdetaljer tillgängliga
+    no_limits_zone: Inga gränser
     none: Ingen
     none_selected: Ingen vald
     normal_amount: Normalt belopp
@@ -997,6 +1154,8 @@ sv:
     not_found: "%{resource} hittades inte"
     note: Notering
     notice_messages:
+      icon_removed: Bilden har tagits bort
+      prices_saved: Priserna har sparats
       product_cloned: Produkten har klonats
       product_deleted: Produkten har tagits bort
       product_not_cloned: Produkten kunde inte klonas
@@ -1005,6 +1164,9 @@ sv:
       variant_not_deleted: Varianten kunde inte tas bort
     num_orders: "Totalt antal ordrar"
     number: Nummer
+    no_available_date_set: Inget tillgängligt datum inställt
+    no_country: Inget land satt
+    no_payment_provider_settings_message: Denna betalningsleverantör har inga tillgängliga anpassade inställningar
     ok: OK
     on_hand: Tillgängligt
     open: "Öppen"
@@ -1026,8 +1188,13 @@ sv:
     order_details: Orderdetaljer
     order_email_resent: Order epost har skickats igen
     order_information: Orderinformation
+    order_line_items: Beställ rader
     order_mailer:
+      subtotal: ! "Delsumma:"
+      total: ! "Ordersumma:"
+      store_team: "% {store_name} Team"
       cancel_email:
+        thanks: Tack för din verksamhet.
         dear_customer: Bäste kund,\n
         instructions: Din order är AVBRUTEN. Spara denna information.
         order_summary_canceled: Översikt order [AVBRUTEN]
@@ -1042,6 +1209,12 @@ sv:
         subtotal: 'Delsumma:'
         thanks: Tack för dit köp.
         total: 'Totalsumma:'
+      store_owner_notification_email:
+        heading: Ny order mottagen
+        instructions: Du har fått en ny beställning.
+        order_summary: Beställ% {antal} Sammanfattning
+        subject: "% {store_name} fick en ny beställning"
+        thanks: Tack för din verksamhet.
     order_not_found: Vi kunde inte hitta din order. Gör ett nytt försök.
     order_number: Ordernummer
     order_processed_successfully: Din order har tagits emot.
@@ -1074,6 +1247,8 @@ sv:
       next_page: nästa sida »
       previous_page: "« föregående sida"
       truncate: "…"
+    page_not_found: Förlåt! Sidan du letar efter kan inte hittas.
+    payment_provider_settings: Inställningar för betalningsleverantör
     password: Lösenord
     paste: Klistra
     path: Sökväg
@@ -1102,7 +1277,9 @@ sv:
     payment_type: Betalsätt
     payment_updated: Betalning uppdaterad
     payments: Betalningar
+    pending_sale: Väntande försäljning
     pdp:
+      products_included_in_promotion: Produkter som ingår i kampanjen
       checkout: Till kassan
       view_cart: Till varukorgen
       quantity: Antal
@@ -1128,6 +1305,10 @@ sv:
       price_high_to_low: Högsta pris
       price_low_to_high: Lägsta pris
       sort_by: Sortera efter
+      no_results_found: Inga resultat funna
+      not_found_text1: Vi kunde inte hitta produkter för "% {keywords}".
+      not_found_text2: Försök med en ny sökning.
+      results_for: RESULTAT FÖR
     populate_get_error: Något gick fel. Försök att lägga till artikeln igen.
     powered_by: Powered by
     pre_tax_amount: Belopp före skatt
@@ -1137,6 +1318,8 @@ sv:
     presentation: Visa som
     previous: Föregående
     previous_state_missing: Föregående status saknas
+    preview_taxon: Förhandsgranska Taxon
+    previously_used_card: Tidigare använda kort
     price: Pris
     price_range: Prisintervall
     price_sack: Prisgräns
@@ -1182,7 +1365,12 @@ sv:
         any: Matcha någon av dessa regler
     promotion_label: Kampanj
     promotion_rule: Kampanjregel
+    promotion_cloned: Kampanjen har klonats
+    promotion_not_cloned: Kampanjen har inte klonats. "Orsak:% {error} "
     promotion_rule_types:
+      country:
+        description: Order skickas till rätt (eller standard) land
+        name: land
       first_order:
         description: Måste vara kundens första order
         name: Första order
@@ -1239,6 +1427,9 @@ sv:
     refunds: "Återbetalning"
     register: Registrera dig
     registration: Registrering
+    remove_image: Ta bort bild
+    return_authorization_canceled: Återlämnande godkänd
+    return_item_order_not_completed: Returvarans beställning måste vara klar
     reimburse: Ersätta
     reimbursed: Ersatt
     reimbursement: Ersättning
@@ -1251,7 +1442,9 @@ sv:
         instructions: Din ersättning har behandlats.
         refund_summary: "Återbetalnings sammanfattning"
         subject: Ersättnings notifiering
-        total_refunded:
+        store_team: "% {store_name} Team"
+        thanks: Tack för din verksamhet.
+        total_refunded: "! Totalt återbetalat:% {total}"
     reimbursement_perform_failed:
     reimbursement_status: Ersättningsstatus
     reimbursement_type: Ersättningstyp
@@ -1273,6 +1466,8 @@ sv:
     resumed: "Återupptagen"
     return: returera
     return_authorization: Returmedgivande
+    return_authorization:
+      product: vara
     return_authorization_reasons: Returorsaker
     return_authorization_states:
       authorized: medgiven
@@ -1323,19 +1518,31 @@ sv:
     select_stock: Välj lager
     select_a_store_credit_reason: Orsak tillgodohavande
     selected_quantity_not_available: "finns inte på lager"
+    select_a_date: Välj ett datum
+    select_an_option: Välj ett alternativ
+    seo: SEO
+    seo_robots: SEO-robotar
+    seo_title: SEO-titel
     send_copy_of_all_mails_to: Skicka kopia av alla mail till
     send_mails_as: Skicka e-post som
     server: Server
     server_error: Servern returnerade ett fel
     settings: Inställningar
     ship: leverera
+    ship_to: "Skickas till:"
     ship_address: Leveransadress
     ship_total: Leveranskostnad
     shipment: Leverans
     shipment_adjustments: Leveransjusteringar
     shipment_details: Från %{stock_location} via %{shipping_method}
     shipment_mailer:
+      shipping_rates:
+        display_price:
+          including_tax: "% {pris} (inkl.% {tax_amount}% {tax_rate_name})"
+          excluding_tax: "% {price} (+% {tax_amount}% {tax_rate_name})"
       shipped_email:
+        store_team: "% {store_name} Team"
+        shipping_method: "Leveransmetod:% {shipping_method}"
         dear_customer: Bäste kund,\n
         instructions: Din order har levererats
         shipment_summary: Översikt leverans
@@ -1425,11 +1632,37 @@ sv:
     states: Län
     states_required: Län krävs
     status: Status
+    store_set_default_button: Ange som standard
     store_credit:
+      credit: "kreditera"
+      authorized: "befogad"
+      captured: "begagnad"
+      allocated: "ökad"
+      apply: "tillämpas"
+      remove: "ta bort"
+      applicable_amount: "stark% {belopp} / stark i butikskredit kommer att tillämpas på denna beställning."
+      available_amount: "Du har starka% {amount} / starka i butikskrediter tillgängliga!"
+      remaining_amount: "Du har starka% {belopp} / stark kvar i ditt kontos butikskredit."
+      additional_payment_needed: Välj en annan betalningsmetod för återstående starka% {belopp} / starka.
       errors:
+        cannot_change_used_store_credit: Du kan inte ändra en butikskredit som redan har använts
+        unable_to_delete: Det går inte att ta bort butikskredit
+        unable_to_update: Det går inte att uppdatera butikskredit
         unable_to_create: Kunde inte skapa tillgodohavande
     store_credit_name: Tillgodohavande
     store_credit_categories: Tillgodokategorier
+    store_credit_payment_method:
+      unable_to_void: "Det går inte att ogiltigförklara koden:% {auth_code}"
+      unable_to_credit: "Det går inte att kreditera kod:% {auth_code}"
+      successful_action: "Framgångsrik butikskredit% {action}"
+      unable_to_find: "Det gick inte att hitta butikskredit"
+      insufficient_funds: "Återstående kreditbelopp räcker inte"
+      currency_mismatch: "Butikskreditvalutan matchar inte ordervalutan"
+      insufficient_authorized_amount: "Det går inte att fånga mer än det godkända beloppet"
+      unable_to_find_for_action: "Det gick inte att hitta butikskredit för auth-kod:% {auth_code} för åtgärd:% {action}"
+    store_not_set_as_default: Det gick inte att ställa in butik% {store} som en standardbutik
+    store_set_as_default: Butik% {store} är nu en standardbutik
+    supported_currencies: Valutor som stöds
     stock: Lager
     stock_location: Lagerplats
     stock_location_info: Information om lagret
@@ -1440,11 +1673,37 @@ sv:
     stock_movements: Lagerrörelser
     stock_movements_for_stock_location: Lagerrörelser för %{stock_location_name}
     stock_successfully_transferred: Lagret flyttades mellan positioner.
+    show_property: Visa egendom
+    show_store_selector:
+      short: Visa butiksväljaren
+      long: Visa butiksväljaren i huvudfältet i Storefront och låt användare ändra butik och valuta
+    social: social
+    starting_from: Börjar kl
+    stock_transfer_name: Lageröverföring
     stock_transfer: Lageröverföring
+    stock_transfer:
+      errors:
+        must_have_variant: Du måste lägga till minst en variant.
+        variants_unavailable: "Vissa varianter är inte tillgängliga på% {stock}"
     stock_transfers: Lageröverföringar
     stop: Stopp
     store: Butik
+    store_errors:
+      unable_to_create: Det gick inte att skapa butik.
+      unable_to_update: Det gick inte att uppdatera butiken.
+      unable_to_delete: Det gick inte att ta bort butiken.
     stores: Butiker
+    store_form:
+      code_help: "Lagra unik identifierare, som är en förkortad version av butikens namn (används som layoutkatalognamn och också till hjälp för att separera mallar efter butik)"
+      checkout_zone_help: "Att välja en zon begränsar kunderna vid utcheckningen till adresser i länder eller stater i den zonen. För mer information en href = 'https: //guides.spreecommerce.org/user/configuration/configuring_geography.html#zones" target = "_ blank" class = "alert-link" se dokumentation / a "
+      languages_help: "Installera en href =" https: //github.com/spree-contrib/spree_i18n target = "_ blank" class = "alert-link" Spree I18n-tillägg / a för att lägga till fler språk "
+      social_help: "Om du vill länka till dina sociala konton i sidfoten på din webbplats fyll i nedanstående fält"
+      default_country_help: "Detta är det land som kommer att väljas i förväg i formuläret till kassan"
+      footer_help: "Detta innehåll syns i sidfoten i din butik"
+      mail_from_address_help: "Detta är e-postmeddelandet som kommer att sändas av alla dina e-postmeddelanden i butiken (orderbekräftelse, leveransavisering etc.)"
+      customer_support_email_help: "Det här e-postmeddelandet är synligt för dina butiksbesökare i sidfoten"
+      new_order_notifications_email_help: "Om du vill få ett e-postmeddelande varje gång någon gör en beställning, ange en e-postadress för att meddelandet ska skickas till"
+      seo_robots: "Kontrollera en href = "https: //developers.google.com/search/reference/robots_meta_tag" target = "_ blank" denna sida för mer hjälp / a"
     street_address: Adress
     street_address_2: Adress (forts.)
     subtotal: Delsumma
@@ -1478,6 +1737,10 @@ sv:
     taxonomy_tree_error: "Ändringen har inte accepterats och trädet har återställts. Var god försök igen."
     taxonomy_tree_instruction: "* Högerklicka på en klassifisering för att lägga till, ta bort eller sortera klassifiseringar."
     taxons: Klasser
+    taxon_missing_alt: Beskrivning av kategoribanner
+    taxonomy_brands_name: stämpla
+    taxonomy_categories_name: kategori
+    twitter: Twitter
     test: Test
     test_mailer:
       test_email:
@@ -1531,6 +1794,7 @@ sv:
     user_rule:
       choose_users: Välj användare
     users: Användare
+    user_not_found: Användaren hittades inte
     validation:
       cannot_be_less_than_shipped_units: får inte vara mindre än antalet levererade enheter.
       cannot_destroy_line_item_as_inventory_units_have_shipped:
@@ -1545,6 +1809,7 @@ sv:
     variants: Varianter
     version: Version
     void: Tom
+    variant_prices_search_placeholder: Sök efter SKU eller variantnamn ...
     weight: Vikt
     what_is_a_cvv: Vad är en säkerthetskod (CVV)?
     what_is_this: Vad är det här?
@@ -1555,5 +1820,6 @@ sv:
     your_order_is_empty_add_product: Din order är tom, sök och lägg till produkten ovan
     zip: Postnr.
     zipcode: Postnummer
+    zipcode_required: Postnummer krävs
     zone: Zon
     zones: Zoner
