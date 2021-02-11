@@ -40,14 +40,20 @@ From `vendor/assets/javascripts/spree/backend/all.js`
 //= require spree/backend/spree_i18n
 ```
 
+and from `vendor/assets/javascripts/spree/frontend/all.js`
+```
+//= require spree/frontend/spree_i18n
+```
+
 and from `vendor/assets/stylesheets/spree/backend/all.css`
 ```
 *= require spree/backend/spree_i18n
 ```
 
-### 3. Remove Configuration
-
-Remove all occurrences of `SpreeI18n::Config` from your codebase. This is now handled via Admin UI
+and from `vendor/assets/stylesheets/spree/frontend/all.css`
+```
+*= require spree/backend/spree_i18n
+```
 
 ---
 
