@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_runtime_dependency 'i18n_data'
   s.add_runtime_dependency 'rails-i18n'
   s.add_runtime_dependency 'kaminari-i18n'
   s.add_runtime_dependency 'spree_core', '>= 4.2.0.rc3', '< 5.0'
