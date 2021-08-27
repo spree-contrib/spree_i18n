@@ -22,7 +22,9 @@ module I18n
   end
 end
 
-I18n.backend = I18n::Backend::Chain.new(I18n::Backend::I18nDataBackend.new, I18n.backend)
+if Spree.version.to_f < 4.3
+  I18n.backend = I18n::Backend::Chain.new(I18n::Backend::I18nDataBackend.new, I18n.backend)
+end
 
 module I18nData
   private
