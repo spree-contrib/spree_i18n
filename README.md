@@ -3,13 +3,17 @@
 [![Build Status](https://travis-ci.org/spree-contrib/spree_i18n.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_i18n)
 [![Code Climate](https://codeclimate.com/github/spree-contrib/spree_i18n/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_i18n)
 
-This is the Internationalization project for [Spree Commerce][1]
-
-See the [official Internationalization documentation][2] for more details.
+This is the Internationalization project for [Spree Commerce][1] See the [official Internationalization documentation][2] for more details.
 
 Happy translating!
 
----
+## Maintained by
+
+[![Vendo](https://assets-global.website-files.com/6230c485f2c32ea1b0daa438/623372f40a8c54ca9aea34e8_vendo%202.svg)](https://getvendo.com?utm_source=spree_i18n_github)
+
+> All-in-one platform for all your Marketplace and B2B eCommerce needs. [Start your 30-day free trial](https://e98esoirr8c.typeform.com/contactvendo?typeform-source=spree_i18n_github)
+
+## Installation
 
 1. Add this extension to your Gemfile with this line:
 
@@ -66,7 +70,7 @@ and from `vendor/assets/stylesheets/spree/frontend/all.css`
 Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. released under the [New BSD License][6]
 
 [1]: https://spreecommerce.org
-[2]: https://guides.spreecommerce.org/developer/i18n.html
+[2]: https://dev-docs.spreecommerce.org/customization/i18n
 [5]: https://github.com/spree-contrib/spree_i18n/graphs/contributors
 [6]: https://github.com/spree-contrib/spree_i18n/blob/master/LICENSE.md
 [7]: https://github.com/spree-contrib/spree_i18n/blob/master/CONTRIBUTING.md
