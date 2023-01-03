@@ -285,6 +285,10 @@ pt-BR:
         other: Regiões
     errors:
       models:
+        spree/order:
+          attributes:
+            state:
+              invalid_transition: "Transição inválida"
         spree/calculator/tiered_flat_rate:
           attributes:
             base:
@@ -458,6 +462,7 @@ pt-BR:
     adjustment_labels:
       tax_rates:
         including_tax: '%{name}%{amount} (Incluso no preço)'
+        sales_tax_with_rate: "%{amount} %{name}"
         excluding_tax: '%{name}%{amount}'
     adjustment_successfully_closed: Ajuste foi salvo com sucesso!
     adjustment_successfully_opened: Ajuste foi aberto com sucesso!
@@ -1297,6 +1302,7 @@ pt-BR:
     shipping_price_sack: Preço
     shipping_rates:
       display_price:
+        display_price_with_explanations: "%{price} (inkl. %{explanations})"
         including_tax: "%{price} (incluso %{tax_amount} %{tax_rate_name})"
         excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
     shipping_total: Total de envio
