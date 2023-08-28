@@ -217,7 +217,7 @@ nb:
         spree/return_item:
           attributes:
             inventory_unit:
-              other_completed_return_item_exists: "% {inventory_unit_id} er allerede tatt av returvaren% {return_item_id}"
+              other_completed_return_item_exists: "%{inventory_unit_id} er allerede tatt av returvaren %{return_item_id}"
             reimbursement:
               cannot_be_associated_unless_accepted: kan ikke knyttes til en returvare som ikke godtas.
         spree/store:
@@ -407,8 +407,8 @@ nb:
       unlock_instructions:
         subject: Opplåsningsinstruksjoner
     oauth_callbacks:
-      failure: Kunne ikke godkjenne deg fra% {kind} fordi "% {reason}".
-      success: Godkjent fra% {kind} konto.
+      failure: Kunne ikke godkjenne deg fra %{kind} fordi "%{reason}".
+      success: Godkjent fra %{kind} konto.
     unlocks:
       send_instructions: Send opplåsningsinstruksjoner
       unlocked: Ulåst
@@ -598,7 +598,7 @@ nb:
     back: Tilbake
     back_end: Back End
     back_to_payment: Tilbake til betaling
-    back_to_resource_list: 'Tilbake til% {resource} Liste'
+    back_to_resource_list: 'Tilbake til %{resource} Liste'
     back_to_rma_reason_list:
     back_to_store: Tilbake til butikken
     back_to_users_list: Tilbake til brukere
@@ -646,7 +646,7 @@ nb:
     cart: Handlekurv
     cart_subtotal:
       one: 'Delsum (1 vare)'
-      other: 'Delsum (% {count} elementer)'
+      other: 'Delsum (%{count} elementer)'
     categories: Kategorier
     category: Kategori
     category_nav_bar:
@@ -729,7 +729,7 @@ nb:
     currency_symbol_position: Plasser valutasymbol foran eller etter beløp?
     currency_thousands_separator: Separator for tusenedeler
     current: Nå
-    current_promotion_usage: ! 'nåværende bruk:% {count}'
+    current_promotion_usage: ! 'nåværende bruk: %{count}'
     customer: Kunde
     customer_details: Kundedetaljer
     customer_details_updated: Kundedetaljer
@@ -794,15 +794,15 @@ nb:
     ends_at: Ender kl
     ending_at: Slutter kl
     edit: Endre
-    editing_resource: Redigerer% {resource}
+    editing_resource: Redigerer %{resource}
     editing_rma_reason: Redigering av RMA-begrunnelse
     editing_user: Endre bruker
     eligibility_errors:
       messages:
         has_excluded_product: Handlekurven din inneholder et produkt som forhindrer at denne kupongkoden blir brukt.
-        item_total_less_than: Denne kupongkoden kan ikke brukes på bestillinger mindre enn% {beløp}.
-        item_total_less_than_or_equal: Denne kupongkoden kan ikke brukes på bestillinger som er mindre enn eller lik% {beløp}.
-        item_total_more_than: Denne kupongkoden kan ikke brukes på bestillinger som er høyere enn% {beløp}.
+        item_total_less_than: Denne kupongkoden kan ikke brukes på bestillinger mindre enn %{beløp}.
+        item_total_less_than_or_equal: Denne kupongkoden kan ikke brukes på bestillinger som er mindre enn eller lik %{beløp}.
+        item_total_more_than: Denne kupongkoden kan ikke brukes på bestillinger som er høyere enn %{beløp}.
         item_total_more_than_or_equal: This coupon code can't be applied to orders higher than or equal to %{amount}.
         limit_once_per_user: Denne kupongkoden kan bare brukes én gang per bruker.
         missing_product: Denne kupongkoden kan ikke brukes fordi du ikke har alle nødvendige produkter i handlekurven.
@@ -852,7 +852,7 @@ nb:
     exchange_for: Bytt mot
     excl: ekskl.
     existing_shipments: Eksisterende forsendelser
-    expedited_exchanges_warning: "Eventuelle spesifiserte sentraler sendes til kunden umiddelbart etter lagring. Kunden belastes hele beløpet for varen hvis de ikke returnerer den opprinnelige varen innen% {days_window} dager."
+    expedited_exchanges_warning: "Eventuelle spesifiserte sentraler sendes til kunden umiddelbart etter lagring. Kunden belastes hele beløpet for varen hvis de ikke returnerer den opprinnelige varen innen %{days_window} dager."
     expiration: Utgår
     extension: Utvidelse
     error_user_destroy_with_orders: Bruker tilknyttet bestillinger kan ikke ødelegges
@@ -918,7 +918,7 @@ nb:
     info_number_of_skus_not_shown:
       one: "og en annen"
       other: "og %{count} andre"
-    info_product_has_multiple_skus: "Dette produktet har% {count} varianter:"
+    info_product_has_multiple_skus: "Dette produktet har %{count} varianter:"
     instructions_to_reset_password: 'Fyll ut skjemaet under og du vil motta instruksjoner for hvordan du tilbakestiller passordet ditt per epost:'
     insufficient_stock: Manglende lagerbeholdning, kun %{on_hand} gjenstår
     insufficient_stock_lines_present: Noen ordrelinjer i denne bestillingen har ikke tilstrekkelig antall.
@@ -971,7 +971,7 @@ nb:
     lock: Låst
     log_entries: "Loggoppføringer"
     logged_in_as: Innlogget som
-    logged_in_succesfully: Logget inn
+    logged_in_successfully: Logget inn
     logged_out: Du har blitt utlogget.
     login: Logg inn
     login_as_existing: Logg inn som eksisterende bruker
@@ -1253,14 +1253,14 @@ nb:
         description: Opprett en kampanjekreditt på ordren
         name: Opprett en justering
       create_item_adjustments:
-        description:
-        name:
+        description: Oppretter en markedsføringskredittjustering på en ordrelinje
+        name: Create per line item adjustment
       create_line_items:
         description: Fyller handlekurv med det spesifiserte antallet av varianten
         name: Opprett varelinjer
       free_shipping:
-        description:
-        name:
+        description: Gjør alle forsendelser gratis
+        name: Gratis frakt
     promotion_actions: Handling
     promotion_form:
       match_policies:
@@ -1310,26 +1310,26 @@ nb:
       landing_page:
         description: Kunden må ha besøkt den spesifiserte siden
         name: Landingsiden
-      one_use_per_user:
-        description:
-        name:
-      option_value:
-        description:
-        name:
+      one_use_per_user: 
+        description: Bare én bruk per bruker
+        name: Én bruk per bruker
+      option_value: 
+        description: Bestillingen inkluderer spesifiserte produkter med samsvarende alternativverdi(er)
+        name: Alternativverdi
       product:
         description: Ordren inkluderer spesifikke produkt(er)
         name: Produkt(er)
       taxon:
-        description:
-        name:
+        description: Bestillingen inkluderer produkter med spesifikk taxon
+        name: Taxon
       user:
         description: Tilgjengelig kun for spesifiserte brukere
         name: Brukere
       user_logged_in:
         description: Kun tilgjengelig for innloggede brukere
         name: Bruker innlogget
-    promotion_uses:
-    promotionable:
+    promotion_uses: Kampanje bruker
+    promotionable: 
     promotions: Kampanjer
     propagate_all_variants:
     properties: Egenskaper
@@ -1573,7 +1573,7 @@ nb:
     stock_management: Lagerstyring
     stock_management_requires_a_stock_location: Lagerstyring krever en lagerlokasjon
     stock_movements: Beholdningsendring
-    stock_movements_for_stock_location: Lagerbevegelser for% {stock_location_name}
+    stock_movements_for_stock_location: Lagerbevegelser for %{stock_location_name}
     stock_successfully_transferred: Beholdning vellykket flyttet
     stock_transfers: Beholdningsendringer
     stock_transfer_name: Lageroverføring
@@ -1611,9 +1611,9 @@ nb:
       apply: Søke om
       remove: Ta vekk
       applicable_amount: "<strong>%{amount}</strong> i butikk kreditt vil bli brukt på denne bestillingen."
-      available_amount: "Du har <strong>% {amount} </strong> i butikkreditt tilgjengelig! "
-      remaining_amount: "Du har <strong>% {amount} </strong> igjen i kontoens butikkreditt."
-      additional_payment_needed: Velg en annen betalingsmåte for de resterende <strong>% {amount} </strong>.
+      available_amount: "Du har <strong>%{amount} </strong> i butikkreditt tilgjengelig! "
+      remaining_amount: "Du har <strong>%{amount} </strong> igjen i kontoens butikkreditt."
+      additional_payment_needed: Velg en annen betalingsmåte for de resterende <strong>%{amount} </strong>.
       errors:
         cannot_change_used_store_credit: Du kan ikke endre en butikkreditt som allerede er brukt
         unable_to_create: Kan ikke opprette butikkreditt
@@ -1637,7 +1637,7 @@ nb:
     subtract: Trekk fra
     success: Suksess
     successfully_created: "%{resource} ble opprettet!"
-    successfully_refunded: ! '% {resource} har fått tilbakebetaling!'
+    successfully_refunded: ! '%{resource} har fått tilbakebetaling!'
     successfully_removed: "%{resource} ble fjernet!"
     successfully_signed_up_for_analytics:
     successfully_updated: "%{resource} ble oppdatert!"
@@ -1729,7 +1729,8 @@ nb:
       exceeds_available_stock: overstiger tilgjengelig lager. Forsikre deg om at ordrelinjer har et gyldig antall.
       is_too_large: er for stor -- varebeholdningen kan ikke dekke forespurt antall!
       must_be_int: må være et heltall
-      must_be_non_negative: må være en ikke-negativ verdi unpaid_amount_not_zero:"Beløpet ble ikke fullstendig tilbakebetalt. Forfaller fortsatt:% {beløp}"
+      must_be_non_negative: må være en ikke-negativ verdi
+      unpaid_amount_not_zero: "Beløpet ble ikke fullstendig tilbakebetalt. Forfaller fortsatt: %{beløp}"
     value: Verdi
     variant: Variant
     variant_placeholder: Varianter
