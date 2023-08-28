@@ -116,7 +116,7 @@ es:
         promotion_category: Categoría promocional
       spree/promotion_category:
         name: Nombre
-        code: Code
+        code: Código
       spree/property:
         name: Nombre
         presentation: Presentación
@@ -127,7 +127,7 @@ es:
       spree/role:
         name: Nombre
       spree/shipment:
-        number: Number
+        number: Número
       spree/state:
         abbr: Abreviatura
         name: Nombre
@@ -140,7 +140,7 @@ es:
         timestamp: Fecha
         updated: Actualizado
       spree/store:
-        url: URL del sítio
+        url: URL del sitio
         meta_description: Meta Descripción
         meta_keywords: Palabras Clave
         seo_title: Título SEO
@@ -272,7 +272,7 @@ es:
         one: Transferencia de stock
         other: Transferencias de stock
         errors:
-          variants_unavailable: "Algunas variantes no están disponibles en % {stock}"
+          variants_unavailable: "Algunas variantes no están disponibles en %{stock}"
       spree/store_credit:
         one: Crédito de la tienda
         other: Créditos de la tienda
@@ -459,7 +459,7 @@ es:
     acceptance_errors: Errores de aceptación
     accepted: Aceptado
     account: Cuenta
-    account_info: Información de la cuenta
+    account_info: Data de la cuenta
     account_updated: Cuenta actualizada
     action: Acción
     actions:
@@ -574,6 +574,25 @@ es:
         store_credits: Créditos de la tienda
         no_store_credit: El usuario no tiene créditos de la tienda disponibles.
         available_store_credit: El usuario tiene %{amount} disponibles en créditos de la tienda.
+      gettting_started:
+        lets_get_you_started: Vamos a empezar
+        add_products: Agregar productos
+        setup_shipping: Configurar envío
+        setup_payment_method: Configurar métodos de pago
+        setup_taxes: Configurar impuestos
+        setup_taxes_calculation: Configurar cálculo de impuestos
+        products_section:
+          message_with_products_html: Has añadido <strong> %{count} productos</strong> hasta ahora, buen trabajo!!</p>
+          message_without_products: Puede agregar productos manualmente a través de la API o importarlos desde un archivo CSV.
+        shipping_section:
+          message_with_shipping: Ha configurado el envío para
+          message_without_shipping: Puede agregar múltiples métodos de envío, diferentes para cada país, continente o región.
+        payment_methods_section:
+          message_with_payment_method: ¡Estás listo para aceptar pagos!
+          message_without_payment_method: Puede configurar múltiples métodos de pago como Stripe, PayPal, ApplePay, etc.
+        taxes_section:
+          message_with_taxes: ¡Su cálculo de impuestos está configurado!
+          message_without_taxes: Puede usar servicios de impuestos como TaxJar o configurar el cálculo de impuestos manualmente
     administration: Administración
     advertise: Anunciar
     agree_to_privacy_policy: De acuerdo con la politica de privacidad.
@@ -1006,7 +1025,7 @@ es:
     log_in_to_continue: Ingresar para continuar
     logs: "Logs"
     logged_in_as: Identificado como
-    logged_in_succesfully: Conectado con éxito
+    logged_in_successfully: Conectado con éxito
     logged_out: Se ha cerrado la sesión.
     login: Validación
     login_as_existing: Validarse como cliente existente
@@ -1168,23 +1187,23 @@ es:
       subtotal: ! 'Subtotal:'
       total: ! 'Total del pedido:'
       cancel_email:
-        dear_customer: Estimado cliente,\n
+        dear_customer: Estimado cliente, %{name}
         instructions: Tu pedido ha sido CANCELADO. Por favor conserva esta información de cancelación para tus registros.
         order_summary_canceled: Resumen de pedido [CANCELADO]
         subject: Cancelación de pedido
-        thanks: Gracias por hacer negocios.
+        thanks: Gracias por hacer negocios con nosotros,
       confirm_email:
-        dear_customer: Estimado Cliente,\n
+        dear_customer: Estimado Cliente, %{name}
         instructions: Por favor, revisa y conserva la siguiente información del pedido de tus registros.
         order_summary: Resumen del pedido
         subject: Confirmación del pedido
-        thanks: "¡Gracias por su compra!"
+        thanks: Gracias por su compra,
       store_owner_notification_email:
         heading: Nuevo pedido recibido
         instructions: Has recibido un nuevo pedido.
         order_summary: Resumen del pedido %{number}
         subject: '%{store_name} recibió un nuevo pedido'
-        thanks: Gracias por hacer negocios.
+        thanks: Gracias por hacer negocios con nosotros,
     order_not_found: No pudimos encontrar tu pedido. Por favor intenta esta acción de nuevo
     order_number: Número de orden
     order_processed_successfully: Tu pedido ha sido procesado con éxito
@@ -1203,7 +1222,7 @@ es:
       returned: devuelto
     order_success: Pedido hecho con éxito
     order_success_explain: La información de tu pedido te será enviada por correo
-    order_summary: Resumen del pedido
+    order_summary: Resumen
     order_sure_want_to: "¿Estás seguro de que quieres %{event} este pedido?"
     order_total: Total Pedido
     order_updated: Pedido actualizado
@@ -1448,15 +1467,15 @@ es:
     reimbursement_mailer:
       reimbursement_email:
         days_to_send: Días para envío
-        dear_customer: Estimado comprador
+        dear_customer: Estimado Cliente,
         exchange_summary: Resumen de intercambio
         for: Para
-        instructions: Instrucciones
+        instructions: Se ha procesado su reembolso.
         refund_summary: Resumen de reembolso
         subject: sujeto
         store_team: 'Equipo de %{store_name}'
         total_refunded: Total de reembolso
-        thanks: Gracias por tu compra.
+        thanks: Gracias por su compra,
     return_number: Número de retorno
     return_quantity: Cantidad de devolución
     returned: Devuelto
@@ -1510,13 +1529,13 @@ es:
     shipment_details: Detalles de Envío
     shipment_mailer:
       shipped_email:
-        dear_customer: Estimado Cliente,\n
+        dear_customer: Estimado Cliente, %{name}
         instructions: Su pedido ha sido enviado
         shipment_summary: Resumen del envío
         shipping_method: "Método de envío: %{shipping_method}"
         subject: Notificación de Envío
         store_team: 'Equipo de %{store_name}'
-        thanks: "¡Gracias por su compra!"
+        thanks: Gracias por su compra,
         track_information: 'Información Seguimiento: %{tracking}'
         track_link: 'Link del tracking: %{url}'
     shipment_state: Estado del envío
