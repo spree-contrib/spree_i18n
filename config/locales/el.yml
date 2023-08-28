@@ -13,11 +13,11 @@ el:
         state: Πολιτεία
         zipcode: Ταχυδρομικός κώδικας
       spree/calculator/tiered_flat_rate:
-        preferred_base_amount:
-        preferred_tiers:
+        preferred_base_amount: Βάση τιμής
+        preferred_tiers: Επίπεδα
       spree/calculator/tiered_percent:
-        preferred_base_percent:
-        preferred_tiers:
+        preferred_base_percent: Βάση ποσοστού
+        preferred_tiers: Επίπεδα
       spree/country:
         iso: ISO
         iso3: ISO3
@@ -28,7 +28,7 @@ el:
         base:
         cc_type: Τύπος
         month: Μήνας
-        name:
+        name: Όνομα στην κάρτα
         number: Αριθμός
         verification_value: Κωδικός επιβεβαίωσης
         year: Χρονιά
@@ -47,13 +47,13 @@ el:
         coupon_code:
         created_at: Ημερομηνία παραγγελίας
         email: E-Mail Πελάτη
-        ip_address: IP Address
+        ip_address: Διεύθυνση IP
         item_total: Σύνολο Προϊόντων
         number: Αριθμός
-        payment_state: Payment State
-        shipment_state: Shipment State
-        special_instructions: Special Instructions
-        state: State
+        payment_state: Κατάσταση πληρωμής
+        shipment_state: Κατάσταση αποστολής
+        special_instructions: Οδηγίες πελάτη
+        state: Κατάσταση
         total: Σύνολο
       spree/order/bill_address:
         address1: Οδός διεύθυνσης Χρέωσης
@@ -76,15 +76,15 @@ el:
       spree/payment_method:
         name: Όνομα
       spree/product:
-        available_on: Διαθέσιμο
+        available_on: Διαθέσιμο στις
         can_be_part: Μπορεί να είναι μέρος άλλου προϊόντος
-        cost_currency: Κόστος Συναλλάγματος
+        cost_currency: Συνάλλαγμα Κόστους
         cost_price: Κόστος
         description: Περιγραφή
         individual_sale: Πωλείται Μεμονωμένα
-        master_price: Καθαρή Αξία
+        master_price: Τιμή
         name: Όνομα
-        on_hand: On Hand
+        on_hand: Διαθέσιμα τεμάχια
         shipping_category: Κατηγορία αποστολής
         tax_category: Κατηγορία φόρου
       spree/promotion:
@@ -111,7 +111,7 @@ el:
       spree/role:
         name: Όνομα
       spree/state:
-        abbr: Abbreviation
+        abbr: Συντομογραφία
         name: Όνομα
       spree/state_change:
         state_changes:
@@ -211,8 +211,8 @@ el:
         one: Χώρα
         other: Χώρες
       spree/credit_card:
-        one: Credit Card
-        other: Credit Cards
+        one: Πιστωτική Κάρτα
+        other: Πιστωτικές Κάρτες
       spree/customer_return:
         one: Επιστροφή Πελάτη
         other: Επιστροφές Πελατών
@@ -250,17 +250,17 @@ el:
         one: Κατηγορία Προσφοράς
         other: Κατηγορίες Προσφορών
       spree/property:
-        one: Property
-        other: Properties
+        one: Ιδιότητα
+        other: Ιδιότητες
       spree/prototype:
-        one: Prototype
-        other: Prototypes
+        one: Πρωτότυπο
+        other: Πρωτότυπα
       spree/refund_reason:
         one: Αιτία Επιστροφής Χρημάτων
         other: Αιτίες Επιστροφής Χρημάτων
       spree/reimbursement:
-        one:
-        other:
+        one: Αποζημίωση
+        other: Αποζημιώσεις
       spree/reimbursement_type:
         one: Τρόπος Αποζημίωσης
         other: Τρόποι Αποζημίωσης
@@ -454,7 +454,7 @@ el:
         store_credits: Πίστωση Καταστήματος
         stores: Καταστήματα
         user_information: Πληροφορίες Χρήστη
-    administration: Διαχειριστής
+    administration: Διαχείριση
     advertise: Διαφήμιση
     agree_to_privacy_policy: Συμφωνώ στην πολιτική απορρήτου
     agree_to_terms_of_service: Συμφωνώ στους όρους χρήσης
@@ -489,8 +489,8 @@ el:
     approve: Αποδοχή
     approved_at:
     approver:
-    are_you_sure: Είσαι σίγουρος?
-    are_you_sure_delete: Είσαι σίγουρος οτι θέλεις να διαγράψης αυτήν την καταχώρηση?
+    are_you_sure: Σίγουρα?
+    are_you_sure_delete: Θέλετε σίγουρα να διαγράψετε αυτήν την καταχώρηση?
     associated_adjustment_closed: The associated adjustment is closed, and will not be recalculated. Do you want to open it?
     at_symbol: '@'
     authorization_failure: Αποτυχία εξουσιοδότησης
@@ -1464,7 +1464,7 @@ el:
       cannot_be_less_than_shipped_units: δεν μπορει να ειναι μικροτερος απο τον αριθμο απεσταλμενων.
       cannot_destroy_line_item_as_inventory_units_have_shipped:
       exceeds_available_stock: υπερβαινει το διαθεσιμο stock. Ελεγξτε την διαθεσιμοτητα των προϊόντων.
-      is_too_large: είναι πολύ μεγάλο -- stock on hand cannot cover requested quantity!
+      is_too_large: είναι πολύ μεγάλο -- τα διαθέσιμα τεμάχια στην αποθήκη δεν μπορούν να καλύψουν την ποσότητα!
       must_be_int: πρέπει να είναι αριθμός
       must_be_non_negative: δεν πρεπει να ειναι αρνητικος αριθμός
       unpaid_amount_not_zero:
@@ -1479,10 +1479,10 @@ el:
     what_is_a_cvv: Τι είναι το (CVV) Credit Card Code?
     what_is_this: Τι είναι αυτό?
     width: Πλάτος
-    year: Χρονία
+    year: Χρονιά
     you_have_no_orders_yet: Δεν έχεις ακόμα παραγγελίες.
     your_cart_is_empty: Το καλάθι είναι άδειο
-    your_order_is_empty_add_product: Η παραγγελία σου ειναι κενή, παρακαλώ αναζητήστε και προσθέστε προϊόντα
+    your_order_is_empty_add_product: Η παραγγελία σας ειναι κενή, αναζητήστε και προσθέστε προϊόντα
     zip: Αριθμός PIN
     zipcode: Ταχυδρομικός Κωδικός
     zipcode_required: Υποχρετικοί Ταχ.Κωδικοί
