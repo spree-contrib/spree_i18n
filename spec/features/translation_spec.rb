@@ -35,4 +35,12 @@ RSpec.describe 'Translation' do
       expect(translation).to eq 'Postnummer'
     end
   end
+
+    # Hungarian is chosen
+    context 'when current locale is Hungarian' do
+      it 'translation is available' do
+        I18n.locale = :'hu'
+        expect(translation).to eq 'Irányítószám'
+      end
+    end
 end
