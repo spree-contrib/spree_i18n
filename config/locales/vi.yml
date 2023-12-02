@@ -12,11 +12,11 @@ vi:
         state: Bang
         zipcode: Mã Zip
       spree/calculator/tiered_flat_rate:
-        preferred_base_amount:
-        preferred_tiers:
+        preferred_base_amount: Số Lượng Cơ Bản Ưu Tiên
+        preferred_tiers: Các Cấp Độ Ưu Tiên
       spree/calculator/tiered_percent:
-        preferred_base_percent:
-        preferred_tiers:
+        preferred_base_percent: Phần Trăm Cơ Bản Ưu Tiên
+        preferred_tiers: Các Cấp Độ Ưu Tiên
       spree/country:
         iso: ISO
         iso3: ISO3
@@ -27,7 +27,7 @@ vi:
         base:
         cc_type: Kiểu
         month: Tháng
-        name:
+        name: Tên Chủ Thẻ
         number: Số
         verification_value: Thông số kiểm tra
         year: Năm
@@ -43,12 +43,12 @@ vi:
         checkout_complete: Thanh toán hoàn tất
         completed_at: Hoàn tất lúc
         considered_risky: Tình trảng rủi ro
-        coupon_code:
+        coupon_code: Mã Giảm Giá
         created_at: Ngày đặt hàng
         email: Email của khách hàng
         ip_address: "Địa chỉ IP"
         item_total: Tổng sản phẩm
-        number: Số
+        number: Mã Đơn Hàng
         payment_state: Trạng thái thanh toán
         shipment_state: Trạng thái giao hàng
         special_instructions: Chỉ dẫn đặc biệt
@@ -109,20 +109,20 @@ vi:
         abbr: Viết tắt
         name: Tên
       spree/state_change:
-        state_changes:
-        state_from:
-        state_to:
-        timestamp:
-        type:
-        updated:
-        user:
+        state_changes: Thay Đổi Trạng Thái
+        state_from: Trạng Thái Từ
+        state_to: Trạng Thái Đến
+        timestamp: Dấu Thời Gian
+        type: Loại
+        updated: Đã Cập Nhật
+        user: Người Dùng
       spree/store:
-        mail_from_address:
-        meta_description:
-        meta_keywords:
+        mail_from_address: Email
+        meta_description: Mô Tả Meta
+        meta_keywords: Từ Khoá Meta
         name: Tên
         seo_title: Tiêu đề SEO
-        url:
+        url: url
       spree/tax_category:
         description: Chú thích
         name: Tên
@@ -135,7 +135,7 @@ vi:
         permalink: Permalink
         position: Ví trí
       spree/taxonomy:
-        name:
+        name: Tên
       spree/user:
         email: Email
         password: Mật khẩu
@@ -143,7 +143,7 @@ vi:
       spree/variant:
         cost_currency: Tiền tệ
         cost_price: Giá nhập
-        depth: sâu 
+        depth: sâu
         height: Cao
         price: Giá bán
         sku: Mã
@@ -157,59 +157,59 @@ vi:
         spree/calculator/tiered_flat_rate:
           attributes:
             base:
-              keys_should_be_positive_number:
+              keys_should_be_positive_number: Khóa Phải Là Số Dương
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: Phải Là Hash
         spree/calculator/tiered_percent:
           attributes:
             base:
-              keys_should_be_positive_number:
-              values_should_be_percent:
+              keys_should_be_positive_number: Khóa Phải Là Số Dương
+              values_should_be_percent: Giá Trị Phải Là Phần Trăm
             preferred_tiers:
-              should_be_hash:
+              should_be_hash: Phải Là Hash
         spree/classification:
           attributes:
             taxon_id:
-              already_linked:
+              already_linked: Đã Được Liên Kết
         spree/credit_card:
           attributes:
             base:
-              card_expired:
-              expiry_invalid:
+              card_expired: Thẻ Đã Hết Hạn
+              expiry_invalid: Hạn Sử Dụng Không Hợp Lệ
         spree/line_item:
           attributes:
             currency:
-              must_match_order_currency:
+              must_match_order_currency: Phải Trùng Khớp Với Tiền Tệ Đơn Hàng
         spree/refund:
           attributes:
             amount:
-              greater_than_allowed:
+              greater_than_allowed: Lớn Hơn Số Tiền Cho Phép
         spree/reimbursement:
           attributes:
             base:
-              return_items_order_id_does_not_match:
+              return_items_order_id_does_not_match: ID Đơn Hàng Của Các Mặt Hàng Trả Lại Không Khớp
         spree/return_item:
           attributes:
             inventory_unit:
-              other_completed_return_item_exists:
+              other_completed_return_item_exists: Mặt Hàng Trả Lại Khác Đã Hoàn Tất Tồn Tại
             reimbursement:
-              cannot_be_associated_unless_accepted:
+              cannot_be_associated_unless_accepted: Không Thể Liên Kết Trừ Khi Được Chấp Nhận
         spree/store:
           attributes:
             base:
-              cannot_destroy_default_store:
+            cannot_destroy_default_store: Không Thể Xóa Cửa Hàng Mặc Định
     models:
       spree/address: Địa chỉ
       spree/country: Quốc gia
       spree/credit_card: Thẻ tín dụng
       spree/customer_return:
       spree/inventory_unit: Đơn vị hàng
-      spree/line_item:
-      spree/option_type:
-      spree/option_value:
+      spree/line_item: Item
+      spree/option_type: Loại Tùy Chọn
+      spree/option_value: Giá Trị Tùy Chọn
       spree/order: Đơn đặt hàng
       spree/payment: Thanh toán
-      spree/payment_method:
+      spree/payment_method: Phương Thức Thanh Toán
       spree/product: Sản phẩm
       spree/promotion: Khuyến mãi
       spree/promotion_category: Kiểu khuyến mãi
@@ -222,18 +222,18 @@ vi:
       spree/return_authorization_reason: Lý do trả hàng
       spree/role: Quyền
       spree/shipment: Vận chuyển
-      spree/shipping_category:
+      spree/shipping_category: Danh Mục Vận Chuyển
       spree/shipping_method: Phương thức vận chuyển
       spree/state: Trạng thái
       spree/state_change: Đổi trạng thái
       spree/stock_location: Địa điểm kho
-      spree/stock_movement:
-      spree/stock_transfer:
-      spree/tax_category:
-      spree/tax_rate:
-      spree/taxon:
-      spree/taxonomy:
-      spree/tracker:
+      spree/stock_movement: Kho Vận
+      spree/stock_transfer: Chuyển Kho A-B
+      spree/tax_category: Loại Thuế
+      spree/tax_rate: Tỷ Lệ Thuế
+      spree/taxon: Phân Loại
+      spree/taxonomy: Hệ Thống Phân Loại
+      spree/tracker: Bộ Theo Dõi
       spree/user: Người dùng
       spree/variant: Phân loại
       spree/zone: Vùng
@@ -307,10 +307,10 @@ vi:
     add: Thêm
     add_action_of_type: Thêm hành động loại
     add_country: Thêm quốc gia
-    add_coupon_code:
+    add_coupon_code: Thêm Mã Giảm Giá
     add_new_header: Tạo Header mới
     add_new_style: Tạo style mới
-    add_one: Tạo một
+    add_one: Thêm Mới
     add_option_value: Thêm giá trị của tùy chọn
     add_product: Thêm sản phẩm
     add_product_properties: Thêm đặc tính sản phẩm
@@ -318,12 +318,12 @@ vi:
     add_state: Thêm bang
     add_stock: Thêm hàng hoá
     add_stock_management: Tạo quản lý hàng
-    add_to_cart: Cho vào sọt
+    add_to_cart: Cho Vào Giỏ Hàng
     add_variant: Tạo biến thể
     additional_item: Giá phải trả thêm
     address1: "Địa chỉ"
     address2: "Địa chỉ (tiếp)"
-    adjustable:
+    adjustable: Có Thể Điều Chỉnh
     adjustment: "Điều chỉnh"
     adjustment_amount: Giá trị
     adjustment_successfully_closed: "Điều chỉnh đã được đóng!"
@@ -331,20 +331,63 @@ vi:
     adjustment_total: Tổng Điều chỉnh
     adjustments: "Điều chỉnh"
     admin:
+      data_feeds:
+        data_feeds: Feeds
+      home: Trang Chủ
+      kind: Loại
+      navigation:
+        all_menus: Tất cả Menu
+        code: Mã
+        default_menus_info:
+          body: Thân
+          title: Tiêu Đề
+        item_type: Loại Mục
+        public_details: Chi Tiết Công Khai
+        settings: Cài Đặt
+        type: Loại
+      oauth_applications:
+        list: Danh Sách Ứng Dụng Ngoài
+      orders:
+        abandoned_checkouts: Đơn Chưa Thanh Toán
+        all: Tất Cả Các Đơn Hàng
+        all_orders: Tất Cả Đơn Hàng
+        draft_orders: Đơn Chưa Hoàn Tất
+        unfulfilled: Chưa Hoàn Thành Thanh Toán
+        unpaid: Chưa Thanh Toán
+      product:
+        active: Đang Hoạt Động
+        all: Tất Cả
+        archived: Đã Lưu
+        draft: Bản Nháp
+      product_kinds:
+        physical: Hiện Vật
+      store_form:
+        checkout_zone_help: Khu Vực Hổ Trợ Vận Chuyển
+        currencies_help: Tiền Tệ Hổ Trợ
+        customer_support_email_help: Email Hổ Trợ Khách Hàng
+        customer_support_email_help: Email Hổ Trợ Khách Hàng
+        default_country_help: Hổ Trợ Quốc Gia Mặc Định
+        default_locale_notice: Vùng Mặc Định
+        mail_from_address_help: Email Hổ Trợ
+        new_order_notifications_email_help: Email Thông Báo Đơn Hàng Mới
       tab:
         configuration: Cấu hình
+        content: Nội Dung
+        navigation: Bảng Điều Hướng
         option_types:
         orders: Đơn hàng
         overview: Tổng quát
+        pages: Trang Tĩnh
         products: Sản phẩm
-        promotions: Khuyến mãi
         promotion_categories: Phân loại khuyến mãi
+        promotions: Khuyến mãi
         properties: Đặc tính
         prototypes: Khuôn mẫu
         reports: Báo cáo
         taxonomies: Danh mục chính
         taxons: Danh mục
         users: Người dùng
+        webhook_subscribers: Webhook Subscribers
       user:
         account: Tài khoản
         addresses: Địa chỉ
@@ -386,31 +429,32 @@ vi:
     associated_adjustment_closed: "Điều chỉnh liên đới đã bị đóng và không thể tính lại. Bạn có muốn mở nó không?"
     at_symbol: '@'
     authorization_failure: Không được ủy quyền truy cập
-    authorized:
-    auto_capture:
-    available: Có hàng
-    available_on: Có hàng vào ngày
-    average_order_value:
-    avs_response:
-    back: Quay lại
-    back_end:
-    back_to_payment:
-    back_to_resource_list:
-    back_to_rma_reason_list:
-    back_to_store: Quay lại cửa hàng
-    back_to_users_list: Quay lại Liệt kê người dùng
-    backorderable: Có thể đặt chỗ
-    backorderable_default:
-    backordered:
-    backorders_allowed:
-    balance_due: Tiền cần thanh toán
-    base_amount:
-    base_percent:
+    authorized: Đã Ủy Quyền
+    auto_capture: Tự Động Thu Phí
+    available: Có Hàng
+    available_on: Có Hàng Vào Ngày
+    average_order_value: Giá Trị Đơn Hàng Trung Bình
+    avs_response: Phản Hồi AVS
+    back: Quay Lại
+    back_end: Phía Sau
+    back_to_payment: Quay Lại Thanh Toán
+    back_to_resource_list: Quay Lại Danh Sách Tài Nguyên
+    back_to_rma_reason_list: Quay Lại Danh Sách Lý Do RMA
+    back_to_store: Quay Lại Cửa Hàng
+    back_to_users_list: Quay Lại Danh Sách Người Dùng
+    backorderable: Có Thể Đặt Chỗ
+    backorderable_default: Mặc Định Có Thể Đặt Chỗ
+    backordered: Đã Đặt Chỗ
+    backorders_allowed: Cho Phép Đặt Chỗ
+    balance_due: Tiền Cần Thanh Toán
+    base_amount: Số Tiền Cơ Bản
+    base_percent: Phần Trăm Cơ Bản
+    basic_information: Thông Tin Cơ Bản
     bill_address: "Địa chỉ thanh toán"
     billing: Thanh Toán
     billing_address: "Địa chỉ thanh toán"
     both: Both
-    calculated_reimbursements:
+    calculated_reimbursements: Hoàn Tiền Được Tính Toán
     calculator: Máy tính
     calculator_settings_warning: Nếu bạn đang thay đổi loại máy tính, bạn phải lưu trước khi thay đổi cấu hình máy tính
     cancel: Hủy
@@ -427,11 +471,11 @@ vi:
     card_number: Số thẻ
     card_type: Loại thẻ
     card_type_is: Loại thẻ là
-    cart: Sọt hàng
-    cart_subtotal:
+    cart: Giỏ Hàng
+    cart_subtotal: Tổng Phụ Của Giỏ Hàng
     categories: Loại mặt hàng
     category: Loại mặt hàng
-    charged:
+    charged: Đã Thu Phí
     check_for_spree_alerts: Kiểm tra thông báo
     checkout: Thủ tục mua hàng
     choose_a_customer: Chọn một khách hàng
@@ -468,12 +512,12 @@ vi:
     country_based: Dựa trên quốc gia
     country_name: Tên
     country_names:
-      CA:
-      FRA:
-      ITA:
-      US:
-    coupon:
-    coupon_code:
+      CA: Canada
+      FRA: Pháp
+      ITA: Ý
+      US: Hoa Kỳ
+    coupon: Phiếu Giảm Giá
+    coupon_code: Mã Phiếu Giảm Giá
     coupon_code_already_applied: Mã khuyến mại đã được dùng cho đơn hàng khác
     coupon_code_applied: The coupon code was successfully applied to your order.
     coupon_code_better_exists: Mã khuyến mại trước đó có nhiều khuyến mại hơn
@@ -484,27 +528,28 @@ vi:
     coupon_code_unknown_error:
     create: Tạo
     create_a_new_account: Tạo một tài khoản mới
-    create_new_order:
-    create_reimbursement:
+    create_new_order: Tạo Đơn Hàng Mới
+    create_reimbursement: Tạo Hoàn Tiền
     created_at: Tạo lúc
     credit: Tín dụng
-    credit_card: Thẻ tín dụng
-    credit_cards:
+    credit_card: Thẻ Tín Dụng
+    credit_cards: Thẻ Tín Dụng
     credit_owed: Nợ tín dụng
-    credits:
-    currency:
+    credits: Tín Dụng
+    currency: Tiền Tệ
     currency_decimal_mark: "Điểm phân cách tiền hàng số lẻ"
-    currency_settings:
-    currency_symbol_position:
+    currency_settings: Cài Đặt Tiền Tệ
+    currency_symbol_position: Vị Trí Ký Hiệu Đồng Tiền
     currency_thousands_separator: Phân cách số hàng nghìn
     current: Hiện thời
     current_promotion_usage: "Đang dùng: %{count}"
     customer: Khách hàng
     customer_details: Thông tin khách hàng
     customer_details_updated: The customer's details have been updated.
-    customer_return:
-    customer_returns:
+    customer_return: Khách Trả Hàng
+    customer_returns: Khách Trả Hàng
     customer_search: Tìm kiếm khách hàng
+    customer_support_email: Email Hổ Trợ Khách Hàng
     cut:
     cvv_response:
     dash:
@@ -520,52 +565,52 @@ vi:
     date: Ngày
     date_completed:
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Giới hạn ngày
-    default:
-    default_refund_amount:
-    default_tax:
-    default_tax_zone:
+    default: Mặc Định
+    default_refund_amount: Số Tiền Hoàn Trả Mặc Định
+    default_tax: Thuế Mặc Định
+    default_tax_zone: Khu Vực Thuế Mặc Định
     delete: Xóa
-    deleted_variants_present:
-    delivery: Delivery
+    deleted_variants_present: Các Biến Thể Đã Xóa Tồn Tại
+    delivery: Giao Hàng
     depth: Sâu
-    description: Miêu tả
-    destination: "Đích đến"
-    destroy: Hủy diệt
-    details:
-    discontinue_on: Kết thúc vào ngày
-    discount_amount:
-    dismiss_banner:
-    display:
-    display_currency:
-    doesnt_track_inventory:
-    edit: Sửa đổi
-    editing_resource:
-    editing_rma_reason:
-    editing_user: Sửa đổi người dùng
+    description: Miêu Tả
+    destination: "Đích Đến"
+    destroy: Hủy Bỏ
+    details: Chi Tiết
+    discontinue_on: Ngừng Vào Ngày
+    discount_amount: Số Tiền Giảm Giá
+    dismiss_banner: Bỏ Qua Biểu Ngữ
+    display: Hiển Thị
+    display_currency: Hiển Thị Tiền Tệ
+    doesnt_track_inventory: Không Theo Dõi Hàng Tồn Kho
+    edit: Sửa Đổi
+    editing_resource: Chỉnh Sửa Tài Nguyên
+    editing_rma_reason: Chỉnh Sửa Lý Do RMA
+    editing_user: Chỉnh Sửa Người Dùng
     eligibility_errors:
       messages:
-        has_excluded_product:
-        item_total_less_than:
-        item_total_less_than_or_equal:
-        item_total_more_than:
-        item_total_more_than_or_equal:
-        limit_once_per_user:
-        missing_product:
-        missing_taxon:
-        no_applicable_products:
-        no_matching_taxons:
-        no_user_or_email_specified:
-        no_user_specified:
-        not_first_order:
+        has_excluded_product: Có Sản Phẩm Bị Loại Trừ
+        item_total_less_than: Tổng Mục Nhỏ Hơn
+        item_total_less_than_or_equal: Tổng Mục Nhỏ Hơn Hoặc Bằng
+        item_total_more_than: Tổng Mục Lớn Hơn
+        item_total_more_than_or_equal: Tổng Mục Lớn Hơn Hoặc Bằng
+        limit_once_per_user: Giới Hạn Một Lần Cho Mỗi Người Dùng
+        missing_product: Thiếu Sản Phẩm
+        missing_taxon: Thiếu Phân Loại
+        no_applicable_products: Không Có Sản Phẩm Áp Dụng
+        no_matching_taxons: Không Có Phân Loại Phù Hợp
+        no_user_or_email_specified: Không Có Người Dùng Hoặc Email Được Chỉ Định
+        no_user_specified: Không Có Người Dùng Được Chỉ Định
+        not_first_order: Không Phải Đơn Hàng Đầu Tiên
     email: Email
     empty:
-    empty_cart: Làm rỗng sọt
+    empty_cart: Làm Rỗng Giỏ Hàng
     enable_mail_delivery: Cho phép vận chuyển thư
     end: Kết thúc
+    ending_at: Kết Thúc Lúc
     ending_in: Kết thúc trong
     environment: Môi trường
     error: lỗi
@@ -581,7 +626,7 @@ vi:
     events:
       spree:
         cart:
-          add: Cho vào sọt
+          add: Thêm Vào Giỏ Hàng
         checkout:
           coupon_code_added: Mã coupon đã được thêm vào
         content:
@@ -600,6 +645,8 @@ vi:
     expiration: Mãn hạn
     extension: Gói mở rộng
     failed_payment_attempts:
+    favicon: Favicon
+    favicon_upload_info: Tải Lên Favicon
     filename: Tên tệp tin
     fill_in_customer_info: Xin điền vào thông tin khách hàng
     filter: Bộ lọc
@@ -632,6 +679,7 @@ vi:
     home: Trang chủ
     i18n:
       available_locales:
+      default_country: Quốc Gia Mặc Định
       language:
       localization_settings:
       this_file_language: tiếng Việt (VN)
@@ -654,6 +702,7 @@ vi:
     intercept_email_address: Can thiệp địa chỉ email
     intercept_email_instructions: Ghi đè người nhận email với địa chỉ này
     internal_name:
+    internationalization: Quốc Tế Hoá
     invalid_credit_card:
     invalid_exchange_variant:
     invalid_payment_provider: Nhà cung cấp thanh toán không đúng.
@@ -661,7 +710,7 @@ vi:
     invalid_promotion_rule: Luật khuyến mại không đúng.
     inventory: Hàng
     inventory_adjustment: "Điều chỉnh hàng tồn"
-    inventory_error_flash_for_insufficient_quantity: Một sản phẩm trong sọt của bạn đã cháy hàng.
+    inventory_error_flash_for_insufficient_quantity: Một sản phẩm trong giỏ hàng của bạn đã hết hàng.
     inventory_state:
     is_not_available_to_shipment_address: không thể chuyển đến địa chỉ chỉ định
     iso_name: Tên ISO
@@ -672,8 +721,8 @@ vi:
       operators:
         gt: lớn hơn
         gte: lớn hơn hoặc bằng
-        lt:
-        lte:
+        lt: Nhỏ Hơn
+        lte: Nhỏ Hơn Hoặc Bằng
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -681,6 +730,7 @@ vi:
     jirafe: Jirafe
     landing_page_rule:
       path: "Đường dẫn"
+    language: Ngôn Ngữ
     last_name: Họ
     last_name_begins_with: Tên họ bắt đầu với
     learn_more: "Đọc thêm"
@@ -702,12 +752,13 @@ vi:
     logout: "Đăng xuất"
     logs:
     look_for_similar_items: Tìm sản phẩm tương tự
+    mail_from_address: Email
     make_refund: Thối tiền
     make_sure_the_above_reimbursement_amount_is_correct:
     manage_promotion_categories:
     manage_variants:
     manual_intervention_required:
-    master_price: Giá chủ
+    master_price: Giá Bán
     match_choices:
       all: Tất cả
       none: Không có
@@ -736,6 +787,7 @@ vi:
     new_option_type: Kiểu tùy chọn mới
     new_order: "Đơn đặt hàng mới"
     new_order_completed: Thanh toán mới hoàn tất
+    new_order_notifications_email: Email Thông Báo Đơn Hàng Mới
     new_payment: Thanh toán mới
     new_payment_method: Phương thức thanh toán mới
     new_product: Sản phẩm mới
@@ -790,6 +842,7 @@ vi:
       variant_deleted: Biến thể đã được xóa
       variant_not_deleted: Không thể xóa biến thể
     num_orders:
+    number: Số
     on_hand: Có hàng
     open: Mở
     open_all_adjustments: Mở tất cả Chỉnh sửa
@@ -804,12 +857,14 @@ vi:
     or_over_price: "%{price} or over"
     order: "Đơn hàng"
     order_adjustments:
+    order_adjustments: Điều Chỉnh Đơn Hàng
     order_already_updated:
     order_approved:
     order_canceled:
     order_details: Chi tiết đơn hàng
     order_email_resent: "Đơn hàng đã được gửi email lại"
     order_information: Thông tin đơn hàng
+    order_line_items: Các Sản Phẩm trong Đơn Hàng
     order_mailer:
       cancel_email:
         dear_customer: Kính chào quý khách,\n
@@ -871,15 +926,15 @@ vi:
     payment_processor_choose_link:
     payment_state: Trạng thái thanh toán
     payment_states:
-      balance_due:
-      checkout:
-      completed:
-      credit_owed:
-      failed:
-      paid:
-      pending:
-      processing:
-      void:
+      balance_due: Đợi Thanh Toán
+      checkout: Thanh Toán
+      completed: Hoàn Tất Thanh Toán
+      credit_owed: Nợ Tín Dụng
+      failed: Lỗi
+      paid: Đã Thanh Toán
+      pending: Hoãn
+      processing: Đang Tiến Hành
+      void: Vô Hiệu
     payment_updated: Thanh toán đã được cập nhật
     payments: Thanh toán
     pending:
@@ -905,6 +960,7 @@ vi:
     product: Sản phẩm
     product_details: Chi tiết sản phẩm
     product_has_no_description: Sản phẩm không có chú thích
+    product_name: Tên Sản Phẩm
     product_not_available_in_this_currency: Sản phẩm này không được cung cấp ở tiền tệ được chọn.
     product_properties: "Đặc tính sản phẩm"
     product_rule:
@@ -990,9 +1046,10 @@ vi:
     received: "Đã nhận"
     reception_status:
     reference: Tham khảo
+    reference_contains: Chứa Tham Chiếu
     refund: Thối
     refund_amount_must_be_greater_than_zero:
-    refund_reasons:
+    refund_reasons: Lý Do Trả Hàng
     refunded_amount:
     refunds:
     register: "Đăng ký như một thành viên mới"
@@ -1014,7 +1071,7 @@ vi:
     reimbursement_status:
     reimbursement_type:
     reimbursement_type_override:
-    reimbursement_types:
+    reimbursement_types: Loại Hoàn Trả
     reimbursements:
     reject:
     rejected:
@@ -1030,7 +1087,7 @@ vi:
     resumed: "Đã tiếp tục"
     return: trở về
     return_authorization: "Ủy Quyền Trả Về"
-    return_authorization_reasons:
+    return_authorization_reasons: Cấp Quyền Cho Lý Do Trả Hàng
     return_authorization_updated: "Ủy Quyền Trả Về đã được cập nhật"
     return_authorizations: "Ủy Quyền Trả Về"
     return_item_inventory_unit_ineligible:
@@ -1039,7 +1096,7 @@ vi:
     return_item_time_period_ineligible:
     return_items:
     return_items_cannot_be_associated_with_multiple_orders:
-    return_number:
+    return_number: Mã Trả Hàng
     return_quantity: Số lượng trả về
     returned: "Đã trả về"
     returns: Trả hàng
@@ -1052,7 +1109,7 @@ vi:
     rma_value: Giá trị RMA
     roles: Vai trò
     rules: Rules
-    safe:
+    safe: An Toàn
     sales_total: Tổng giá trị
     sales_total_description:
     sales_totals: Tổng doanh số
@@ -1062,13 +1119,17 @@ vi:
     say_yes:
     scope: Phạm vi
     search: Tìm kiếm
+    search_by: Tìm Kíếm Bằng
+    search_order_number: Mã Đơn Hàng
     search_results: Kết quả tìm kiếm cho '%{keywords}'
     searching: Searching
     secure_connection_type: Kiệu kết nối bảo mật
     security_settings:
     select: Lựa chọn
+    select_a_date: Chọn Ngày
     select_a_return_authorization_reason:
     select_a_stock_location:
+    select_an_option: Chọn Một Option
     select_from_prototype: Lựa chọn từ nguyên mẫu
     select_stock: Chọn hàng
     send_copy_of_all_mails_to: Gửi bản sao tất cả thư đến
@@ -1093,12 +1154,12 @@ vi:
         track_link: 'Link để theo dõi: %{url}'
     shipment_state: Trạng thái giao hàng
     shipment_states:
-      backorder:
-      canceled:
-      partial:
-      pending:
-      ready:
-      shipped:
+      backorder: Hoàn Đơn
+      canceled: Huỷ
+      partial: Một Phần
+      pending: Tạm Hoãn
+      ready: Sẵn Sàng
+      shipped: Đã Giao
     shipment_transfer_error:
     shipment_transfer_success:
     shipments: Vận chuyển
@@ -1115,8 +1176,9 @@ vi:
     shipping_methods: Phương thức vận chuyển
     shipping_price_sack: Xô giá
     shipping_total:
+    shipping_zone: Khu Vực Vận Chuyển
     shop_by_taxonomy: Mua theo %{taxonomy}
-    shopping_cart: Sọt mua sắm
+    shopping_cart: Giỏ Hàng
     show: Xem
     show_active: Liệt kê đơn còn hiệu lực
     show_deleted: Hiện đơn hàng đã xóa
@@ -1133,6 +1195,7 @@ vi:
     ssl:
       change_protocol:
     start: Bắt đầu
+    starting_from: Bắt Đầu Từ
     state: Bang
     state_based: Dựa trên bang
     state_machine_states:
@@ -1184,6 +1247,7 @@ vi:
     stock_transfers: Chuyển hàng
     stop: Kết thúc
     store: Cửa hàng
+    store_credit_categories: D.S Thẻ Tín Dụng Của Cửa Hàng
     street_address: "Địa chỉ"
     street_address_2: "Địa chỉ (tiếp)"
     subtotal: Tổng giá trước thuế
@@ -1195,12 +1259,13 @@ vi:
     successfully_signed_up_for_analytics: Thành công đăng kí cho Spree Analytics
     successfully_updated: "%{resource} has been successfully updated!"
     summary:
+    supported_currencies: Tiền Tệ Hổ Trợ
+    tags_placeholder: tags
     tax: Thuế
     tax_categories: Loại thuế
     tax_category: Biểu thuế
     tax_code:
     tax_included:
-    tags_placeholder: tags
     tax_rate_amount_explanation: Mức thuế ở số thập phân để trợ giúp cách tính, (nghĩa là; nếu mức thuế là 5% thì nhập vào 0.05
     tax_rates: Lãi suất thuế
     taxon: "Đơn vị phân loại"
@@ -1237,7 +1302,7 @@ vi:
     total: Giá trị
     total_per_item:
     total_pre_tax_refund:
-    total_price:
+    total_price: Tổng Thanh Toán
     total_sales:
     track_inventory:
     tracking: Theo dõi
@@ -1288,7 +1353,7 @@ vi:
     width: Rộng
     year: Năm
     you_have_no_orders_yet: You have no orders yet.
-    your_cart_is_empty: Sọt hàng rỗng
+    your_cart_is_empty: Giỏ Hàng Rỗng
     your_order_is_empty_add_product: "Đơn hàng của bạn rỗng, xin hay tìm và thêm vào sản phảm như trên"
     zip: Mã bưu điện
     zipcode: Mã Zip
