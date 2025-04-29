@@ -10,7 +10,7 @@ module SpreeI18n
   module Version
     MAJOR = 5
     MINOR = 3
-    TINY  = 0
+    TINY  = 1
 
     STRING = [MAJOR, MINOR, TINY].compact.join('.')
   end
