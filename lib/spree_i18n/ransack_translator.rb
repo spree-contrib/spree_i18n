@@ -15,7 +15,6 @@ module SpreeI18n
     private
 
     def key_with_translations(key)
-      return key if key.to_s == 's'
       names, pred = split_key key
       translated_names = translate_names(names)
       join_key translated_names, pred
@@ -31,7 +30,7 @@ module SpreeI18n
 
     def join_key(names, pred)
       key = names.join('_or_')
-      key += "_#{pred}" unless pred == ''
+      key += "_#{pred}" unless pred.blank?
       key
     end
 
