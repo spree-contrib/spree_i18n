@@ -1,8 +1,9 @@
+---
 ar:
   activerecord:
     attributes:
       spree/address:
-        address1:  " العنوان "
+        address1: " العنوان "
         address2: " (العنوان (تابع "
         city: " المدينة "
         country: " البلد "
@@ -41,7 +42,7 @@ ar:
         presentation: " التقديم "
       spree/order:
         checkout_complete: " اكتمال الخروج "
-        completed_at: " اكتمل في "
+        completed_at: تاريخ الإكمال
         considered_risky: " محفوف بالمخاطر "
         coupon_code: " رمز القسيمة "
         created_at: " تاريخ الطلب "
@@ -51,7 +52,7 @@ ar:
         number: " رقم "
         payment_state: " حالة الدفع "
         shipment_state: " حالة الشحنة "
-        special_instructions: " تعليمات خاصة "
+        special_instructions: تعليمات خاصة
         state: " مقاطعة "
         total: " الإجمالي "
       spree/order/bill_address:
@@ -92,7 +93,7 @@ ar:
         expires_at: " تنتهي في "
         name: " اسم "
         path: " مسار "
-        starts_at: " يبدأ في "
+        starts_at: يبدأ في
         usage_limit: " حد الاستخدام "
       spree/promotion_category:
         name: " اسم "
@@ -135,7 +136,7 @@ ar:
         permalink: " الرابط الثابت "
         position: " موضع "
       spree/taxonomy:
-        name:  " اسم "
+        name: " اسم "
       spree/user:
         email: " البريد الإلكتروني "
         password: " كلمه المرور "
@@ -152,6 +153,19 @@ ar:
       spree/zone:
         description: " وصف "
         name: " اسم "
+      spree/gift_card:
+        amount_used: المبلغ المستخدم
+      spree/import_mapping:
+        file_column: عمود الملف
+        schema_field: حقل المخطط
+      spree/import_row:
+        row_number: الرقم
+      spree/invitation:
+        inviter: الداعي
+      user:
+        current_sign_in: تسجيل الدخول الحالي
+        last_sign_in: آخر تسجيل دخول
+        sign_in_count: عدد تسجيلات الدخول
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -286,13 +300,14 @@ ar:
       confirmed: " تم تأكيد حسابك بنجاح. انت الآن مسجل دخولك "
       send_instructions: " ستتلقى بريدًا إلكترونيًا يحتوي على تعليمات حول كيفية تأكيد حسابك في بضع دقائق "
     failure:
-      inactive: "لم يتم تفعيل حسابك بعد "
-      invalid: "البريد الإلكتروني أو كلمة السر خاطئة "
+      inactive: 'لم يتم تفعيل حسابك بعد '
+      invalid: 'البريد الإلكتروني أو كلمة السر خاطئة '
       invalid_token: " رمز المصادقة غير صالح "
       locked: " حسابك مغلق "
       timeout: " انتهت جلستك ، يرجى تسجيل الدخول مرة أخرى للمتابعة "
       unauthenticated: " تحتاج إلى تسجيل الدخول أو الاشتراك قبل المتابعة "
       unconfirmed: " يجب عليك تأكيد حسابك قبل المتابعة "
+      too_many_attempts: محاولات كثيرة جداً. يرجى الانتظار قليلاً والمحاولة مرة أخرى.
     mailer:
       confirmation_instructions:
         subject: " تعليمات التأكيد "
@@ -329,55 +344,64 @@ ar:
         other: " أدت أخطاء %{count} إلى منع حفظ %{resource} هذا: "
   spree:
     filter: " فلتر "
-    quick_search: " بحث سريع . . . "
+    quick_search: " .. بحث سريع "
     abbreviation: " اختصار "
-    accept:
-    acceptance_errors:
+    accept: قبول
+    acceptance_errors: أخطاء القبول
     acceptance_status:
-    accepted:
-    account: " الحساب "
+    accepted: مقبول
+    account: الحساب
     account_updated: " تم تحديث الحساب "
-    action: " عمل "
+    action: الإجراء
     actions:
-      cancel: " إلغاء "
-      continue: " استمر "
-      create: " إنشاء "
-      destroy: " هدم "
-      edit: " تعديل "
+      cancel: إلغاء
+      continue: متابعة
+      create: إنشاء
+      destroy: حذف
+      edit: تعديل
       list: " قائمة "
       listing: " قائمة "
       new: " جديد "
       refund:
-      save: " حفظ "
-      update: " تحديث "
+      save: حفظ
+      update: تحديث
+      close: إغلاق
+      connect: ربط
+      discard: تجاهل
+      open: فتح
+      reject: رفض
+      remove: إزالة
+      resend: إعادة الإرسال
+      select_file: اختيار ملف
+      send_invitation: إرسال دعوة
     activate: " تفعيل "
-    active: " نشيط "
-    add: " أضف "
-    add_action_of_type: " أضف إجراء من النوع "
+    active: نشط
+    add: إضافة
+    add_action_of_type: إضافة إجراء من نوع
     add_country: " أضف دولة "
-    add_coupon_code:
+    add_coupon_code: إضافة كود قسيمة
     add_new_header: " إضافة عنوان جديد "
     add_new_style: " أضف نمط جديد "
-    add_one: " أضف واحدا "
+    add_one: إضافة واحد
     add_option_value: " أضف قيمة الخيار "
-    add_product: " أضف منتج "
+    add_product: إضافة منتج
     add_product_properties: " أضف خصائص المنتج "
-    add_rule_of_type: " أضف قاعدة من النوع "
+    add_rule_of_type: إضافة قاعدة من نوع
     add_state: " أضف محافظة "
     add_stock: " إضافة مخزون "
     add_stock_management: " أضف إدارة المخزون "
     add_to_cart: " أضف إلى السلة "
-    add_variant: " أضف متغير "
+    add_variant: إضافة متغير
     additional_item: " تكلفة البند الإضافية "
     address1: " العنوان "
     address2: " العنوان (تابع) "
     adjustable:
-    adjustment: " تعديل "
+    adjustment: تعديل
     adjustment_amount: " المبلغ "
     adjustment_successfully_closed: " تم إغلاق التعديل بنجاح "
     adjustment_successfully_opened: " تم فتح التعديل بنجاح "
     adjustment_total: إجمالي الضبط
-    adjustments: " التعديلات "
+    adjustments: التعديلات
     admin:
       tab:
         configuration: " التكوين "
@@ -404,6 +428,483 @@ ar:
         order_num:
         orders:
         user_information:
+        last_order_placed: آخر طلب
+        no_store_credit: لا يمتلك العميل رصيد متجر متاح
+      allowed_origins:
+        origin_help: أدخل عنوان URL الكامل لأصل متجرك (مثل https://myshop.com). لا تُضمِّن مسارات أو سلاسل استعلام.
+        origin_settings: إعدادات الأصل
+      amount_spent: المبلغ المُنفَق
+      api_keys:
+        example_request: طلب مثال
+        key_revoked_message: تم إلغاء مفتاح API هذا ولا يمكن استخدامه بعد الآن.
+        key_type_descriptions:
+          publishable: آمن للاستخدام في كود العميل مثل تطبيقات الجوال أو المتصفحات.
+          secret: احتفظ به بأمان واستخدمه على الخادم فقط. لا تعرّضه علناً أبداً.
+        key_types:
+          publishable: قابل للنشر
+          secret: سري
+        last_used_at: آخر استخدام
+        list: مفاتيح API
+        name_placeholder: 'مثال: تطبيق الجوال للإنتاج'
+        revoke: إلغاء
+        revoke_confirmation: هل أنت متأكد من إلغاء مفتاح API هذا؟ لا يمكن التراجع عن هذا الإجراء.
+        revoked: تم إلغاء مفتاح API
+        revoked_at: أُلغي في
+        revoked_by: أُلغي بواسطة
+        scopes: النطاقات
+        scopes_description: مطلوبة للمفاتيح السرية. اختر أضيق مجموعة نطاقات تحتاجها تكاملك.
+        scopes_immutable: النطاقات ثابتة عند إنشاء المفتاح. لتغييرها، أنشئ مفتاحاً جديداً بالنطاقات المطلوبة وألغِ هذا المفتاح.
+        secret_key_hidden: لا يمكن الكشف عن هذا المفتاح السري. إذا فقدته، ألغِ هذا المفتاح وأنشئ مفتاحاً جديداً.
+        statuses:
+          active: نشط
+          revoked: مُلغى
+        token_warning: احتفظ بهذا المفتاح بأمان. سيُعرَض مرة واحدة فقط.
+        usage: الاستخدام
+        usage_instructions:
+          publishable: استخدم هذا المفتاح لطلبات العميل. يمكن تضمينه بأمان في كود الواجهة الأمامية.
+          secret: استخدم هذا المفتاح لطلبات الخادم فقط. احتفظ به سرياً ولا تعرّضه في كود العميل.
+      audit_log: سجل التدقيق
+      avg_order_value: متوسط قيمة الطلب
+      back_to_dashboard: العودة إلى لوحة التحكم
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: هل أنت متأكد من إزالة العملاء المحددين من هذه المجموعة؟
+          title:
+            remove: إزالة من المجموعة
+        price_list_products:
+          body:
+            remove: هل أنت متأكد من إزالة المنتجات المحددة من قائمة الأسعار هذه؟ سيؤدي ذلك أيضاً إلى إزالة أسعارها.
+          title:
+            remove: إزالة من قائمة الأسعار
+        products:
+          body:
+            add_tags: 'اختر الوسوم لإضافتها إلى المنتجات:'
+            add_to_taxons: 'اختر الفئات لإضافة المنتجات إليها:'
+            remove_from_taxons: 'اختر الفئات لإزالة المنتجات منها:'
+            remove_tags: 'اختر الوسوم لإزالتها من المنتجات:'
+            set_active: تعيين المنتجات كنشطة سيجعلها متاحة في المتجر.
+            set_archived: تعيين المنتجات كمؤرشفة سيخفيها من المتجر.
+            set_draft: تعيين المنتجات كمسودة سيخفيها من المتجر.
+          title:
+            add_tags: إضافة وسوم
+            add_to_taxons: إضافة إلى فئات
+            remove_from_taxons: إزالة من فئات
+            remove_tags: إزالة وسوم
+            set_active: تعيين كنشط
+            set_archived: تعيين كمؤرشف
+            set_draft: تعيين كمسودة
+        users:
+          body:
+            add_tags: 'اختر الوسوم لإضافتها إلى العملاء:'
+            remove_tags: 'اختر الوسوم لإزالتها من العملاء:'
+          title:
+            add_tags: إضافة وسوم
+            remove_tags: إزالة وسوم
+      channels:
+        code_hint: معرّف قصير ومستقر (مثل "online" أو "pos" أو "wholesale"). يستخدمه عملاء API عبر ترويسة X-Spree-Channel ولإسناد الطلبات.
+        default: القناة الافتراضية
+        default_hint: قناة واحدة فقط لكل متجر هي الافتراضية. تُستخدم كاحتياطي عند عدم اختيار قناة وكهدف للنشر التلقائي للمنتجات الجديدة.
+        order_routing_strategy: استراتيجية توجيه الطلبات
+        order_routing_strategy_hint: يتجاوز استراتيجية التوجيه على مستوى المتجر للطلبات المُنسَبة إلى هذه القناة.
+        order_routing_strategy_inherit: وراثة من المتجر
+      checkout_settings:
+        checkout_links:
+          description: ستُعرَض روابط هذه الصفحات في تذييل صفحة الدفع.
+          label: روابط الدفع
+        checkout_message_description: مرئية لعملائك في صفحة الدفع في الشريط الجانبي الأيمن.
+        countries_managed_by_markets_html: تُدار الدول ومناطق الشحن عبر %{link}.
+        guest_checkout:
+          description: السماح للعملاء بإتمام الدفع دون إنشاء حساب.
+          label: السماح بالدفع كضيف
+        special_instructions:
+          description: السماح للعملاء بإضافة تعليمات خاصة إلى طلبهم.
+          label: عرض حقل التعليمات الخاصة
+      close_sidebar: إغلاق الشريط الجانبي
+      copied: تم النسخ!
+      copy_payment_link: نسخ رابط الدفع
+      copy_to_clipboard: نسخ إلى الحافظة
+      coupon_codes:
+        unused: غير مستخدم
+        used: مستخدم
+      created_at: تاريخ الإنشاء
+      dashboard:
+        getting_started:
+          description: كل ما تحتاجه للإعداد وبدء البيع.
+        hi: مرحباً
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> من أصل %{total} خطوات مكتملة"
+          title: تقدم الإعداد العام
+        top_products: أفضل المنتجات
+        view_report: عرض التقرير
+        whats_happening_on_html: إليك ما يحدث اليوم على <strong>%{store_name}</strong>.
+      datetime_field_timezone_help: 'المنطقة الزمنية: %{zone}'
+      digital_shipment_fulfillment_note: سيُعلَّم هذا الشحن كمُنجَز بمجرد قيام المستخدم بتنزيل المنتج الرقمي
+      display_on_options:
+        back_end: في لوحة الإدارة فقط
+        both: في لوحة الإدارة والمتجر معاً
+        front_end: في المتجر فقط
+      documentation: التوثيق
+      edit_billing_address: تعديل عنوان الفوترة
+      edit_contact_information: تعديل معلومات الاتصال
+      edit_profile: تعديل الملف الشخصي
+      edit_shipping_address: تعديل عنوان الشحن
+      edit_theme: تعديل السمة
+      errors: الأخطاء
+      execution_time: وقت التنفيذ
+      expand_sidebar: توسيع الشريط الجانبي
+      export_all: تصدير جميع السجلات (قد يكون بطيئاً للمجموعات الكبيرة)
+      export_coupons: تصدير القسائم كملف CSV
+      export_created: بدأ التصدير. ستتلقى بريداً إلكترونياً برابط التنزيل عند جاهزيته!
+      export_only_filtered_records: تصدير السجلات المُصفّاة فقط، المطابقة لمعايير البحث
+      export_report: تصدير التقرير كملف CSV
+      filters: عوامل التصفية
+      getting_started: البدء
+      gift_card_batches:
+        codes_count: عدد الأكواد
+        new_gift_card_batch: دفعة بطاقات هدايا جديدة
+        prefix: البادئة
+      gift_cards:
+        active: نشط
+        all_statuses: جميع الحالات
+        code_help_text: إذا تركته فارغاً، سنُنشئ كوداً لك
+        redeemed: مُستخدَم
+        usage: الاستخدام
+      imports:
+        all_required_columns_mapped: أحسنت، جميع الأعمدة المطلوبة مُربَطة!
+        field_required: الحقل مطلوب
+        import_done: اكتمل!
+        large_import_background_note: يمكنك إغلاق هذه الصفحة — سيستمر الاستيراد في الخلفية.
+        large_import_message: يحتوي هذا الاستيراد على %{count} صف وهو كبير جداً للعرض بشكل فردي.
+        large_import_summary: "%{completed} مكتمل، %{failed} فشل"
+        mapping_required: هذا الحقل مطلوب
+        please_map_all_required_fields: يرجى ربط جميع الحقول المطلوبة للمتابعة.
+        waiting_for_file_to_be_processed: في انتظار معالجة الملف...
+      integrations:
+        invalid_integration_type: هذا التكامل غير مسموح
+        page_subtitle: اربط متجرك بخدمات خارجية لتحسين تجربة العملاء.
+      json_preview:
+        no_api_response: لم يُعثَر على استجابة API لهذا المورد
+      manage_markets: إدارة الأسواق
+      manage_properties: إدارة الخصائص
+      manage_stock_locations: إدارة مواقع المخزون
+      manage_taxons: إدارة الفئات
+      manage_zones: إدارة المناطق
+      markets:
+        edit: تعديل السوق
+        list: الأسواق
+        new: سوق جديد
+        supported_locales_hint: قائمة مفصولة بفواصل لرموز اللغات الإضافية (مثل fr,de,es)
+      metafield_definitions:
+        edit_warning: لا يمكنك تغيير نوع المورد أو نوع الحقل المخصص بعد استخدام التعريف.
+        used_in: مستخدم في
+      name: الاسم
+      navigation:
+        nested_under: متداخل تحت
+      newsletter_subscribers:
+        all: الكل
+        unverified: غير مُتحقَّق
+        verified: مُتحقَّق
+      not_tracking_inventory: لا يُتتبَّع المخزون
+      notifications: الإشعارات
+      num_orders: عدد الطلبات
+      oauth_applications:
+        client_id: معرّف العميل
+        client_secret: سر العميل
+        last_used: آخر استخدام
+        list: مفاتيح API
+        never: أبداً
+        new: مفتاح API جديد
+        read_and_write: قراءة وكتابة
+        read_only: قراءة فقط
+        scopes: النطاقات
+      order:
+        events:
+          approve: الموافقة
+          cancel: الإلغاء
+          resend: إعادة الإرسال
+          resume: الاستئناف
+      orders:
+        add_user_to_this_order: إضافة عميل إلى هذا الطلب
+        all_orders: جميع الطلبات
+        canceled: مُلغى
+        fulfilled: مُنجَز
+        no_email_present: يرجى إضافة عنوان بريد إلكتروني لإرسال رابط الدفع
+        orders_to_fulfill: طلبات للتنفيذ
+        partially_refunded: مُسترد جزئياً
+        payment_link_sent: أُرسِل رابط الدفع إلى العميل
+        provide_email: أدخل عنوان بريد إلكتروني
+        refunded: مُسترد
+        remove_user_from_this_order: إزالة العميل من هذا الطلب
+        unfulfilled: غير مُنجَز
+      page_builder:
+        background_color: لون الخلفية
+        border_bottom_width: عرض الحد السفلي
+        border_color: لون الحد
+        border_top_width: عرض الحد العلوي
+        bottom_padding: الحشو السفلي
+        button_alignment: محاذاة الزر
+        button_background_color: لون خلفية الزر
+        button_style: نمط الزر
+        button_text: نص الزر
+        button_text_color: لون نص الزر
+        category: الفئة
+        description: الوصف
+        description_alignment: محاذاة الوصف
+        desktop_image_alignment: محاذاة الصورة لسطح المكتب
+        desktop_logo_height: ارتفاع الشعار (سطح المكتب)
+        heading: العنوان
+        heading_alignment: محاذاة العنوان
+        heading_size: حجم العنوان
+        height: الارتفاع
+        image_click_hint: النقر على الصورة سينقل المستخدم إلى الصفحة/URL المحددة
+        left_aligned: محاذاة لليسار
+        logo_centered: الشعار في المنتصف
+        max_video_width_on_desktop: أقصى عرض للفيديو على سطح المكتب
+        maximum_products_to_show: الحد الأقصى للمنتجات المعروضة
+        nav_centered: التنقل في المنتصف
+        not_set: غير مُعيَّن
+        separated: منفصل
+        show_more_button: عرض زر استكشاف الفئة
+        show_taxon_image: عرض صورة الفئة
+        text_color: لون النص
+        title: العنوان
+        top_padding: الحشو العلوي
+        use_description_from_admin: استخدام الوصف من لوحة الإدارة
+        vertical_alignment: المحاذاة العمودية
+        youtube_video_url: عنوان URL لفيديو YouTube
+      personal_details: البيانات الشخصية
+      price_lists:
+        activate: تفعيل
+        activated: تم تفعيل قائمة الأسعار
+        confirm_activate: هل أنت متأكد من تفعيل قائمة الأسعار هذه؟ سيؤثر فوراً على التسعير.
+        confirm_deactivate: هل أنت متأكد من إلغاء تفعيل قائمة الأسعار هذه؟
+        confirm_schedule: هل أنت متأكد من جدولة قائمة الأسعار هذه؟
+        confirm_unschedule: هل أنت متأكد من إلغاء جدولة قائمة الأسعار هذه؟
+        deactivate: إلغاء التفعيل
+        deactivated: تم إلغاء تفعيل قائمة الأسعار
+        schedule: جدولة
+        scheduled: تمت جدولة قائمة الأسعار
+        unschedule: إلغاء الجدولة
+      product_translations:
+        coverage: تغطية الترجمة
+        locale: اللغة
+        manage_markets: إدارة الأسواق
+        no_locales_description: أعد إعداد أسواق بلغات إضافية لبدء ترجمة منتجاتك.
+        no_locales_title: لا توجد لغات إضافية مُكوَّنة
+        progress: التقدم
+        total: الإجمالي
+        translated: مُترجَم
+      products:
+        active: نشط
+        all_statuses: جميع الحالات
+        any_stock: أي مخزون
+        archived: مؤرشف
+        by_status: حسب الحالة
+        by_stock: حسب المخزون
+        deleted: محذوف
+        draft: مسودة
+        help_bubble: منتجات المسودة غير متاحة للشراء. المنتجات النشطة متاحة للعملاء.
+        in_stock: متوفر
+        inventory:
+          barcode: الباركود (ISBN, UPC, GTIN, إلخ)
+          sku: SKU (وحدة حفظ المخزون)
+        out_of_stock: غير متوفر
+        paused: متوقف
+        search_results:
+          no_products: لم نجد أي منتجات تطابق بحثك :(
+        seo:
+          placeholder: أضف عنواناً ووصفاً لمعاينة كيف قد يظهر هذا المنتج في نتائج محرك البحث
+        status_form:
+          status: منتجات المسودة غير متاحة للشراء. المنتجات النشطة متاحة للعملاء.
+        status_options:
+          active: نشط
+          archived: مؤرشف
+          draft: مسودة
+        stores:
+          choose_stores: اختر المتاجر التي يجب أن يكون هذا المنتج متاحاً فيها
+        variants:
+          option_types_link: لإضافة المزيد من أنواع الخيارات يرجى الانتقال إلى <a href="%{link}">أنواع الخيارات</a>
+      publishing:
+        caption_hidden_after: يُخفى في %{date}
+        caption_live: مرئي للعملاء الآن
+        caption_not_available: مخفي — المنتج %{product_status}
+        caption_scheduled: يُنشر في %{date}
+        caption_unpublished: أُخفي في %{date}
+        caption_window: متاح %{start} → %{end}
+        empty: غير مُدرَج في أي قناة بيع بعد.
+        inactive_marker: غير نشط
+        manage_cta: إدارة
+        manage_description: اختر قنوات البيع التي تُدرِج هذا المنتج. أوقف القناة لإزالته من كل مكان.
+        no_channels: لا توجد قنوات بيع متاحة. أنشئ واحدة في الإعدادات ← قنوات البيع.
+        published_at_label: النشر من
+        status_hidden: مخفي
+        status_live: متاح
+        status_not_available: غير متاح
+        status_scheduled: مجدول
+        title: النشر
+        unpublished_at_label: إلغاء النشر في
+      recommended_size: الحجم الموصى به
+      report_created: جاري إنشاء تقريرك. ستتلقى بريداً إلكترونياً برابط التنزيل عند جاهزيته!
+      reset_digital_link_download_limits: إعادة تعيين حدود التنزيل
+      response_code: رمز الاستجابة
+      selected: محدد
+      send_payment_link: إرسال رابط الدفع
+      shipment:
+        please_provide_tracking_details: قبل وضع علامة على الشحن كمُرسَل يرجى تقديم تفاصيل التتبع
+      shipment_transfer:
+        wrong_destination: وجهة خاطئة
+      show_json: عرض JSON
+      stock_transfers:
+        add_products_tip: تحتاج أولاً إلى اختيار موقع الوجهة
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> متبقٍ (<strong>%{total}</strong> إجمالي)"
+      store_form:
+        company_field:
+          description: يعرض حقل الشركة في نموذج العنوان في قسم حسابي وفي خطوة عنوان الدفع.
+          label: عرض حقل عنوان الشركة
+        customer_support_email_help: هذا البريد الإلكتروني مرئي لزوار متجرك في قسم التذييل
+        new_order_notifications_email_help: إذا أردت تلقي إشعار بريد إلكتروني في كل مرة يقدّم فيها أحد طلباً، يرجى تقديم عنوان بريد إلكتروني لإرسال هذا الإشعار إليه
+        send_consumer_transactional_emails_help: عند إلغاء التحديد، لن تُرسَل رسائل المعاملات مثل تأكيدات الطلبات وإشعارات الشحن إلى العملاء
+      store_setup_tasks:
+        add_billing_address: إضافة عنوان الفوترة
+        add_products: إضافة منتجات
+        payment_methods:
+          copy: لتحصيل المدفوعات، يرجى إعداد مزوّد دفع إلكتروني واحد على الأقل.
+          done: أنت جاهز! يمكنك دائماً إدارة طرق الدفع في <a href="%{link}" data-turbo-frame="_top">هذه</a> الصفحة.
+          setup: إعداد طرق الدفع
+          title: يرجى إعداد طرق الدفع لمتجرك
+        set_customer_support_email: تعيين بريد دعم العملاء
+        setup_taxes_collection: إعداد تحصيل الضرائب
+        taxes:
+          copy: لتحصيل الضرائب، يرجى إعداد معدلات الضريبة.
+          done: أنت جاهز! يمكنك دائماً إدارة الضرائب في صفحة <a href="%{link}" data-turbo-frame="_top">الإعدادات</a>.
+          setup: إعداد معدلات الضريبة
+      storefront: المتجر
+      successful: ناجح
+      successfully_reset_digital_links_limit: تمت إعادة تعيين حدود التنزيل
+      tables:
+        add_filter: إضافة عامل تصفية
+        add_or_group: إضافة مجموعة OR
+        apply: تطبيق
+        apply_filters: تطبيق عوامل التصفية
+        ascending: تصاعدي
+        clear_all: مسح الكل
+        columns: الأعمدة
+        descending: تنازلي
+        enter_value: أدخل قيمة...
+        filter_builder: منشئ عوامل التصفية
+        filters: عوامل التصفية
+        match: مطابقة
+        of_the_following: مما يلي
+        operators:
+          contains: يحتوي على
+          does_not_contain: لا يحتوي على
+          ends_with: ينتهي بـ
+          equals: يساوي
+          greater_than: أكبر من
+          greater_than_or_equal: أكبر من أو يساوي
+          is_any_of: أي من
+          is_empty: فارغ
+          is_none_of: ليس أي من
+          is_not_empty: غير فارغ
+          less_than: أصغر من
+          less_than_or_equal: أصغر من أو يساوي
+          not_equals: لا يساوي
+          starts_with: يبدأ بـ
+        order: الترتيب
+        reset_to_default: إعادة إلى الافتراضي
+        select_field: اختر حقل...
+        sort_by: ترتيب حسب
+        visible_columns: الأعمدة المرئية
+      taxon_rules:
+        all_conditions: جميع الشروط
+        any_condition: أي شرط
+        available_on: متاح في
+        match_policies:
+          contains: يحتوي على
+          does_not_contain: لا يحتوي على
+          is_equal_to: يساوي
+          is_not_equal_to: لا يساوي
+        on_sale: في التخفيض
+        products_must_match: 'يجب أن تطابق المنتجات:'
+        tag: وسم المنتج
+      taxon_type: نوع الفئة
+      taxon_types:
+        automatic: تلقائي
+        automatic_info: إضافة المنتجات تلقائياً إلى هذه الفئة إذا طابقت القواعد التي تحددها.
+        manual: يدوي
+        manual_info: تنظيم المنتجات يدوياً. يمكنك إضافتها أو إزالتها بشكل جماعي.
+      translations:
+        no_translations_configured: لم تُكوَّن ترجمات. يرجى إعداد الأسواق لاستخدام الترجمات.
+      upload_new_asset: رفع وسائط جديدة
+      users:
+        filters:
+          search_placeholder: البحث عن العملاء بالبريد الإلكتروني أو الاسم
+      utilities:
+        preview: معاينة
+      variants:
+        search_results:
+          no_variants: لم نجد أي متغيرات تطابق بحثك :(
+      variants_form:
+        add_option:
+          empty: أضف خيارات مثل الحجم أو اللون
+          not_empty: إضافة خيار آخر
+        compare_at_price_description: يُستخدم هذا السعر لعرض السعر المخفَّض في صفحة المنتج.
+        stock_locations_link: لإضافة المزيد من مواقع المخزون يرجى الانتقال إلى <a href="%{link}">مواقع المخزون</a>
+        total_inventory_html: 'إجمالي المخزون في موقع %{stock_location}: %{count} متاح'
+      vendors:
+        enterprise_feature: سوق متعدد البائعين متاح في الإصدار Enterprise
+      webhook_deliveries:
+        delivered_at: تم التسليم في
+        delivery_details: تفاصيل التسليم
+        delivery_info: معلومات التسليم
+        endpoint_inactive: لا يمكن إعادة المحاولة — نقطة النهاية غير نشطة
+        error_type: نوع الخطأ
+        event: الحدث
+        execution_time: وقت التنفيذ
+        failed: فشل
+        pending: قيد الانتظار
+        redeliver_button: إعادة التسليم
+        redelivered: تمت إعادة تسليم Webhook بنجاح.
+        request_errors: أخطاء الطلب
+        request_payload: حمولة الطلب
+        response_body: نص الاستجابة
+        response_code: رمز الاستجابة
+      webhook_endpoints:
+        auto_disabled: تم تعطيل نقطة النهاية هذه تلقائياً بعد فشل التسليم المتكرر.
+        back_to_endpoint: العودة إلى نقطة النهاية
+        deliveries: عمليات التسليم
+        endpoint_settings: إعدادات نقطة النهاية
+        event_subscriptions: اشتراكات الأحداث
+        event_subscriptions_help: اختر الأحداث التي يجب أن تُطلِق تسليم Webhook إلى نقطة النهاية هذه.
+        events: أحداث
+        failed_deliveries: عمليات التسليم الفاشلة
+        health:
+          degraded: "%{percentage}% نجاح"
+          disabled: معطّل
+          failing: "%{percentage}% نجاح"
+          healthy: "%{percentage}% نجاح"
+          no_deliveries: لا توجد بيانات
+        health_label: الصحة
+        new: نقطة نهاية Webhook جديدة
+        re_enable: إعادة التفعيل
+        secret_key: المفتاح السري
+        secret_key_help: استخدم هذا المفتاح للتحقق من توقيعات Webhook. احتفظ به بأمان ولا تشاركه علناً.
+        send_test: إرسال اختبار
+        subscriptions: الاشتراكات
+        successful_deliveries: عمليات التسليم الناجحة
+        test_failed: فشل إرسال Webhook الاختباري. يرجى التحقق من إعدادات نقطة النهاية.
+        test_sent: أُرسِل Webhook الاختباري. راجع عمليات التسليم للنتيجة.
+      webhooks_subscribers:
+        all_events: جميع الأحداث
+        new_webhooks_subscriber: مشترك Webhooks جديد
+        no_events: لا توجد أحداث
+        select_events: اختر الأحداث
+        subscribe_to_all_events: الاشتراك في جميع الأحداث
+        subscriptions: الاشتراكات
+        time_of_last_event: وقت آخر حدث
+        webhooks_events: أحداث Webhooks
     administration: " الإدارة "
     advertise:
     agree_to_privacy_policy: " أوافق على سياسة الخصوصية "
@@ -412,14 +913,14 @@ ar:
     all_adjustments_closed: " تم إغلاق جميع التعديلات بنجاح "
     all_adjustments_opened: " تم فتح جميع التعديلات بنجاح "
     all_departments: " جميع الأقسام "
-    all_items_have_been_returned:
+    all_items_have_been_returned: تم إرجاع جميع العناصر
     allow_ssl_in_development_and_test: Allow SSL to be used when in development and test modes
     allow_ssl_in_production: Allow SSL to be used in production mode
     allow_ssl_in_staging: Allow SSL to be used in staging mode
     already_signed_up_for_analytics: You have already signed up for Spree Analytics
-    alt_text: " نص بديل "
-    alternative_phone: " هاتف بديل "
-    amount: " المبلغ "
+    alt_text: النص البديل
+    alternative_phone: هاتف بديل
+    amount: المبلغ
     analytics_desc_header_1: Spree Analytics
     analytics_desc_header_2: Live analytics integrated into your Spree dashboard
     analytics_desc_list_1: " احصل على معلومات المبيعات المباشرة فور حدوثها "
@@ -431,16 +932,16 @@ ar:
     approve:
     approved_at:
     approver:
-    are_you_sure: " هل أنت واثق "
-    are_you_sure_delete: " هل أنت متأكد أنك تريد حذف هذا السجل؟ "
+    are_you_sure: هل أنت متأكد؟
+    are_you_sure_delete: هل أنت متأكد من حذف هذا السجل؟
     associated_adjustment_closed: " التعديل المرتبط مغلق ولن يتم إعادة حسابه. هل تريد فتحه؟ "
     at_symbol: "@"
-    authorization_failure: " فشل التفويض "
-    authorized:
-    auto_capture:
+    authorization_failure: فشل التفويض
+    authorized: مُصرَّح
+    auto_capture: التحصيل التلقائي
     available_on: " متاح على "
     average_order_value:
-    avs_response:
+    avs_response: استجابة AVS
     back: " عودة "
     back_end: " النهاية الخلفية "
     back_to_payment:
@@ -448,7 +949,7 @@ ar:
     back_to_rma_reason_list:
     back_to_store: " العودة إلى المتجر "
     back_to_users_list: " الرجوع إلى قائمة المستخدمين "
-    backorderable: " قابل للتأخير "
+    backorderable: قابل للطلب المسبق
     backorderable_default:
     backordered:
     backorders_allowed: backorders allowed
@@ -457,32 +958,32 @@ ar:
     base_percent:
     bill_address: " عنوان الفاتورة "
     billing: " الفواتير "
-    billing_address: " عنوان وصول الفواتير "
+    billing_address: عنوان الفوترة
     both: " الواجهتين "
-    calculated_reimbursements:
-    calculator: " آلة حاسبة "
+    calculated_reimbursements: الاستردادات المحسوبة
+    calculator: الحاسبة
     calculator_settings_warning: " إذا كنت تقوم بتغيير نوع الآلة الحاسبة ، يجب عليك الحفظ أولاً قبل أن تتمكن من تحرير إعدادات الآلة الحاسبة "
-    cancel: " إلغاء "
-    canceled_at:
-    canceler:
+    cancel: إلغاء
+    canceled_at: تاريخ الإلغاء
+    canceler: المُلغي
     cannot_create_customer_returns:
     cannot_create_payment_without_payment_methods: " لا يمكنك إنشاء دفعة لطلب بدون تحديد أي طرق دفع "
     cannot_create_returns: " لا يمكن إنشاء المرتجعات حيث لا يحتوي هذا الطلب على وحدات مشحونة "
-    cannot_perform_operation: " لا يمكن تنفيذ العملية المطلوبة "
+    cannot_perform_operation: لا يمكن تنفيذ العملية المطلوبة
     cannot_set_shipping_method_without_address: " لا يمكن تعيين طريقة الشحن حتى يتم تقديم تفاصيل العميل "
-    capture: " التقاط "
+    capture: تحصيل
     capture_events:
-    card_code: " رمز البطاقة "
-    card_number: " رقم البطاقة "
-    card_type:
-    card_type_is: " نوع البطاقة هو "
+    card_code: رمز التحقق من البطاقة (CVC)
+    card_number: رقم البطاقة
+    card_type: العلامة التجارية
+    card_type_is: نوع البطاقة هو
     cart: " عربة "
     cart_subtotal:
     categories: " الفئات "
     category: " الفئة "
-    charged:
+    charged: مُحصَّل
     check_for_spree_alerts: " تحقق من تنبيهات Katalogplus "
-    checkout: " الدفع "
+    checkout: الدفع
     choose_a_customer: " اختر عميلاً "
     choose_a_taxon_to_sort_products_for:
     choose_currency: " اختر العملة "
@@ -493,17 +994,17 @@ ar:
     clear_cache_ok:
     clear_cache_warning:
     click_and_drag_on_the_products_to_sort_them:
-    clone: " استنساخ "
-    close: " إغلاق "
+    clone: استنساخ
+    close: إغلاق
     close_all_adjustments: " إغلاق جميع التعديلات "
-    code: " الكود "
+    code: الكود
     company: " شركة "
     complete: " اكتمال "
     configuration: " التكوين "
     configurations: " تكوينات "
-    confirm: " تأكيد "
+    confirm: تأكيد
     confirm_delete: " تأكيد الحذف "
-    confirm_password: " تأكيد كلمة المرور "
+    confirm_password: تأكيد كلمة المرور
     continue: Continue
     continue_shopping: " استمر في التسوق "
     cost_currency: " عملة التكلفة "
@@ -511,10 +1012,10 @@ ar:
     could_not_connect_to_jirafe: " تعذر الاتصال بـ Jirafe لمزامنة البيانات. ستتم إعادة محاولة ذلك تلقائيًا لاحقًا. "
     could_not_create_customer_return:
     could_not_create_stock_movement: " حدثت مشكلة أثناء حفظ حركة المخزون هذه. حاول مرة اخرى "
-    count_on_hand: " المعدود "
-    countries: " البلدان "
-    country: " البلد "
-    country_based: " على أساس البلد "
+    count_on_hand: الكمية المتاحة
+    countries: الدول
+    country: الدولة
+    country_based: حسب الدولة
     country_name: " الاسم "
     country_names:
       CA:
@@ -522,7 +1023,7 @@ ar:
       ITA:
       US:
     coupon: " الكوبون "
-    coupon_code: " كود القسيمة "
+    coupon_code: كود القسيمة
     coupon_code_already_applied: " تم تطبيق رمز القسيمة بالفعل على هذا الطلب "
     coupon_code_applied: " تم تطبيق رمز القسيمة بنجاح على طلبك "
     coupon_code_better_exists: " ينتج عن رمز القسيمة الذي تم تطبيقه مسبقًا صفقة أفضل "
@@ -532,30 +1033,30 @@ ar:
     coupon_code_not_found: " رمز القسيمة الذي أدخلته غير موجود. حاول مرة اخرى "
     coupon_code_unknown_error:
     create: " إنشاء "
-    create_a_new_account: " انشاء حساب جديد "
+    create_a_new_account: إنشاء حساب جديد
     create_new_order:
-    create_reimbursement:
-    created_at: " تاريخ الإنشاء "
+    create_reimbursement: إنشاء استرداد
+    created_at: تاريخ الإنشاء
     credit: " الائتمان "
     credit_card: " بطاقة الائتمان "
     credit_cards: " بطاقات الائتمان "
     credit_owed: " الائتمان المستحقة "
-    credits:
-    currency: " العملة "
+    credits: الأرصدة
+    currency: العملة
     currency_decimal_mark: " علامة عشرية للعملة "
     currency_settings: " إعدادات العملة "
     currency_symbol_position: " ضع رمز العملة قبل أو بعد مبلغ الدولار؟ "
     currency_thousands_separator: " عملة فاصل الآلاف "
     current: " حالي "
     current_promotion_usage: " الاستخدام الحالي: %{count} "
-    customer: " الزبون "
+    customer: العميل
     customer_details: " تفاصيل العملاء "
     customer_details_updated: " تم تحديث تفاصيل العميل "
     customer_return:
-    customer_returns:
+    customer_returns: مرتجعات العملاء
     customer_search: " بحث العملاء "
     cut: " قص "
-    cvv_response:
+    cvv_response: استجابة CVV
     dash:
       jirafe:
         app_id: " معرف التطبيق "
@@ -566,31 +1067,30 @@ ar:
         site_id: " معرف الموقع "
         token: " رمز "
       jirafe_settings_updated: " تم تحديث إعدادات Jirafe. "
-    date: " التاريخ "
+    date: التاريخ
     date_completed: " تاريخ الانتهاء "
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: d/m/Y
       fpr_human_friendly_date_time_format: d/m/Y - H:i
     date_range: " نطاق التاريخ "
-    default: " افتراضي "
+    default: افتراضي
     default_refund_amount:
     default_tax: " الضريبة الافتراضية "
-    default_tax_zone: " المنطقة الضريبية الافتراضية "
-    delete: " حذف "
+    default_tax_zone: منطقة الضريبة الافتراضية
+    delete: حذف
     deleted_variants_present:
     delivery: " التوصيل "
     depth: " العمق "
-    description: " الوصف "
-    destination: " الوجهة "
+    description: الوصف
+    destination: الوجهة
     destroy: " تدمير "
-    details:
-    discount_amount: " مبلغ الخصم "
+    details: التفاصيل
+    discount_amount: مبلغ الخصم
     dismiss_banner: " لا ، شكرًا! لست مهتمًا ، لا تعرض هذه الرسالة مرة أخرى "
-    display: " العرض "
+    display: العرض
     display_currency: " لا يتتبع المخزون "
     doesnt_track_inventory:
-    edit: " تعديل "
+    edit: تعديل
     editing_resource:
     editing_rma_reason:
     editing_user: " تعديل حسابك "
@@ -609,23 +1109,27 @@ ar:
         no_user_or_email_specified: " تحتاج إلى تسجيل الدخول أو تقديم بريدك الإلكتروني قبل تطبيق رمز القسيمة "
         no_user_specified: " تحتاج إلى تسجيل الدخول قبل تطبيق رمز القسيمة هذا "
         not_first_order: " لا يمكن تطبيق رمز القسيمة إلا على طلبك الأول "
-    email: " البريد الإلكتروني "
+    email: البريد الإلكتروني
     empty: " فارغ "
     empty_cart: " عربة فارغة "
     enable_mail_delivery: " تمكين تسليم البريد "
     end: " النهاية "
     ending_in: " تنتهي في "
     environment: " بيئة "
-    error: " خطأ "
+    error: خطأ
     errors:
       messages:
         could_not_create_taxon: " تعذر إنشاء الصنف "
         no_payment_methods_available: " لم يتم تكوين طرق دفع لهذه البيئة "
         no_shipping_methods_available: " لا توجد طرق شحن متاحة للموقع المحدد ، يرجى تغيير عنوانك والمحاولة مرة أخرى "
     errors_prohibited_this_record_from_being_saved:
-      one: " خطأ واحد يمنع حفظ هذا السجل "
-      other: " أخطاء %{count} منعت حفظ هذا السجل "
-    event: " حدث "
+      one: خطأ واحد منع حفظ هذا السجل
+      other: "%{count} أخطاء منعت حفظ هذا السجل"
+      few: "%{count} أخطاء منعت حفظ هذا السجل"
+      many: "%{count} خطأً منع حفظ هذا السجل"
+      two: خطآن منعا حفظ هذا السجل
+      zero: لا توجد أخطاء تمنع حفظ هذا السجل
+    event: الحدث
     events:
       spree:
         cart:
@@ -641,16 +1145,16 @@ ar:
           signup: " اشتراك المستخدم "
     exceptions:
       count_on_hand_setter: Cannot set count_on_hand manually, as it is set automatically by the recalculate_count_on_hand callback. Please use `update_column(:count_on_hand, value)` instead.
-    exchange_for:
+    exchange_for: استبدال بـ
     excl:
-    existing_shipments:
-    expedited_exchanges_warning:
-    expiration: Expiration
+    existing_shipments: الشحنات الموجودة
+    expedited_exchanges_warning: سيتم شحن أي استبدالات محددة إلى العميل فور الحفظ. سيُحصَّل من العميل المبلغ الكامل للعنصر إذا لم يُرجِع العنصر الأصلي خلال %{days_window} يوماً.
+    expiration: تاريخ الانتهاء
     extension: Extension
     failed_payment_attempts:
-    filename: " اسم الملف "
+    filename: اسم الملف
     fill_in_customer_info: " يرجى ملء معلومات العميل "
-    filter_results: " نتائج التصفية "
+    filter_results: تصفية النتائج
     finalize: " إنهاء "
     finalized:
     find_a_taxon:
@@ -660,7 +1164,7 @@ ar:
     flat_percent: " النسبة المئوية الثابتة "
     flat_rate_per_order: " تسعيرة ثابته لكل طلب "
     flexible_rate: " معدل مرن "
-    forgot_password: " نسيت كلمة المرور؟ "
+    forgot_password: نسيت كلمة المرور؟
     free_shipping: " شحن مجاني "
     free_shipping_amount:
     front_end: " الواجهة الأمامية "
@@ -668,7 +1172,7 @@ ar:
     gateway_config_unavailable: " البوابة غير متاحة للبيئة "
     gateway_error: " خطأ في البوابة "
     general: " عام "
-    general_settings: " الإعدادات العامة "
+    general_settings: الإعدادات العامة
     google_analytics: " تحليلات جوجل "
     google_analytics_id: " معرف التحليلات "
     guest_checkout: " ضيف المحاسبة "
@@ -676,23 +1180,23 @@ ar:
     has_no_shipped_units: " ليس لديه وحدات مشحونة "
     height: " ارتفاع "
     hide_cents: " إخفاء بنس "
-    home: " الصفحة الرئيسية "
+    home: الرئيسية
     i18n:
       available_locales: " الأماكن المتاحة "
       language: " اللغة "
       localization_settings: " إعدادات الترجمة "
-      this_file_language: Arabic (AR)
+      this_file_language: العربية (AR)
     icon: " أيقونة "
     identifier:
-    image: " صورة "
-    images: " صور "
+    image: صورة
+    images: الصور
     implement_eligible_for_return:
     implement_requires_manual_intervention:
-    inactive:
+    inactive: غير نشط
     incl:
-    included_in_price: " المدرجة في السعر "
+    included_in_price: مشمول في السعر
     included_price_validation: " لا يمكن تحديده إلا إذا قمت بتعيين منطقة ضريبية افتراضية "
-    incomplete:
+    incomplete: غير مكتمل
     info_number_of_skus_not_shown:
     info_product_has_multiple_skus:
     instructions_to_reset_password: " املأ النموذج أدناه وستُرسل إليك تعليمات إعادة تعيين كلمة المرور عبر البريد الإلكتروني "
@@ -700,20 +1204,20 @@ ar:
     insufficient_stock_lines_present:
     intercept_email_address: " عنوان البريد الإلكتروني المعترض "
     intercept_email_instructions: " تجاوز مستلم البريد الإلكتروني واستبداله بهذا العنوان "
-    internal_name: " الاسم الداخلي "
+    internal_name: الاسم الداخلي
     invalid_credit_card:
     invalid_exchange_variant:
     invalid_payment_provider: " مزود خدمة دفع غير صالح "
     invalid_promotion_action: " إجراء ترقية غير صالح "
     invalid_promotion_rule: " قاعدة الترويج غير صالحة "
-    inventory: " المخزون "
+    inventory: المخزون
     inventory_adjustment: " تعديل المخزون "
     inventory_error_flash_for_insufficient_quantity: " أصبح عنصر في سلة التسوق غير متاح "
     inventory_state:
     is_not_available_to_shipment_address: " غير متاح لعنوان الشحن "
     iso_name: Iso Name
-    item: " سلعة "
-    item_description: " وصف السلعة "
+    item: العنصر
+    item_description: وصف العنصر
     item_total: " إجمالي السلع "
     item_total_rule:
       operators:
@@ -722,9 +1226,9 @@ ar:
         lt: " أقل من "
         lte: " أقل من أو يساوي "
     items_cannot_be_shipped: " يتعذر علينا شحن العناصر المحددة إلى عنوان الشحن الخاص بك. يرجى اختيار عنوان شحن آخر. "
-    items_in_rmas:
-    items_reimbursed:
-    items_to_be_reimbursed:
+    items_in_rmas: عناصر في تصاريح الإرجاع
+    items_reimbursed: عناصر مُستردة
+    items_to_be_reimbursed: عناصر للاسترداد
     jirafe: Jirafe
     landing_page_rule:
       path: " مسار "
@@ -734,7 +1238,7 @@ ar:
     lifetime_stats:
     line_item_adjustments:
     list: " قائمة "
-    loading: " جارٍ التحميل "
+    loading: جارٍ التحميل
     locale_changed: " تم تغيير اللغة "
     location: " موقعك "
     lock: " قفل "
@@ -742,25 +1246,25 @@ ar:
     logged_in_as: " تم تسجيل الدخول باسم "
     logged_in_successfully: " تم تسجيل الدخول بنجاح "
     logged_out: " لقد تم تسجيل خروجك "
-    login: " دخول "
+    login: تسجيل الدخول
     login_as_existing: " تسجيل الدخول كزبون موجود "
     login_failed: " فشلت مصادقة تسجيل الدخول "
     login_name: " تسجيل الدخول "
-    logout: " تسجيل الخروج "
+    logout: تسجيل الخروج
     logs:
     look_for_similar_items: " ابحث عن عناصر مماثلة "
     make_refund: " إعادة الأموال "
-    make_sure_the_above_reimbursement_amount_is_correct:
+    make_sure_the_above_reimbursement_amount_is_correct: تأكد من صحة مبلغ الاسترداد أعلاه
     manage_promotion_categories:
     manage_variants:
-    manual_intervention_required:
+    manual_intervention_required: يتطلب تدخلاً يدوياً
     master_price: " سعر رئيسي "
     match_choices:
       all: " الكل "
-      none: " ليس اي "
+      none: لا شيء
     max_items: " الحد الأقصى للعناصر "
     member_since: " عضو منذ "
-    memo: " مذكرة "
+    memo: مذكرة
     meta_description: " وصف التعريف "
     meta_keywords: " كلمات تعريف ميتا "
     meta_title: " عنوان التعريف "
@@ -771,91 +1275,91 @@ ar:
     move_stock_between_locations: " نقل المخزون بين المواقع "
     my_account: " حسابي "
     my_orders: " طلباتي "
-    name: " اسم "
-    name_on_card: " الاسم الموجود على البطاقة "
+    name: الاسم
+    name_on_card: الاسم على البطاقة
     name_or_sku: " الاسم أو رمز التخزين التعريفي (أدخل أول 3 أحرف على الأقل من اسم المنتج) "
     new: " جديد "
-    new_adjustment: " تعديل جديد "
+    new_adjustment: تعديل جديد
     new_country: " بلد جديد "
-    new_customer: " إنشاء حساب جديد "
-    new_customer_return: " إرجاع العملاء الجدد "
+    new_customer: عميل جديد
+    new_customer_return: مرتجع عميل جديد
     new_image: " صورة جديدة "
-    new_option_type: " نوع خيار جديد "
-    new_order: " طلب جديد "
+    new_option_type: نوع خيار جديد
+    new_order: طلب جديد
     new_order_completed: " اكتمل الطلب الجديد "
-    new_payment: " دفعة جديدة "
+    new_payment: دفعة جديدة
     new_payment_method: " طريقة دفع جديدة "
-    new_product: " منتج جديد "
-    new_promotion: " ترويج جديد "
+    new_product: منتج جديد
+    new_promotion: عرض ترويجي جديد
     new_promotion_category:
     new_property: " خاصية جديدة "
     new_prototype: " نموذج أولي جديد "
-    new_refund:
-    new_refund_reason:
-    new_return_authorization: " تفويض إرجاع جديد "
-    new_rma_reason:
-    new_shipment_at_location:
-    new_shipping_category: " فئة شحن جديدة "
-    new_shipping_method: " طريقة الشحن الجديدة "
+    new_refund: استرداد جديد
+    new_refund_reason: سبب استرداد جديد
+    new_return_authorization: تصريح إرجاع جديد
+    new_rma_reason: سبب RMA جديد
+    new_shipment_at_location: شحنة جديدة في الموقع
+    new_shipping_category: فئة شحن جديدة
+    new_shipping_method: طريقة شحن جديدة
     new_state: " ولاية جديدة "
-    new_stock_location: " موقع المخزون الجديدة "
+    new_stock_location: موقع مخزون جديد
     new_stock_movement: " حركة المخزون الجديدة "
-    new_stock_transfer: " نقل المخزون الجديد "
-    new_tax_category: " فئة ضريبية جديدة "
-    new_tax_rate: " معدل الضريبة الجديد "
-    new_taxon: " صنف جديد "
-    new_taxonomy: " تصنيف جديد "
+    new_stock_transfer: تحويل مخزون جديد
+    new_tax_category: فئة ضريبة جديدة
+    new_tax_rate: معدل ضريبة جديد
+    new_taxon: فئة فرعية جديدة
+    new_taxonomy: فئة جديدة
     new_tracker: " متعقب جديد "
     new_user: " مستخدم جديد "
     new_variant: " متغير جديد "
-    new_zone: " منطقة جديدة "
+    new_zone: منطقة جديدة
     next: " التالي "
     no_actions_added: " لم تتم إضافة إجراءات "
     no_payment_found:
     no_pending_payments: " لا دفعات معلقة "
     no_products_found: " لم يتم العثور على منتجات "
-    no_resource_found:
+    no_resource_found: لم يُعثَر على %{resource}
     no_results: " لا نتائج "
     no_returns_found:
     no_rules_added: " لم تتم إضافة قواعد "
-    no_shipping_method_selected:
+    no_shipping_method_selected: لم يتم اختيار طريقة شحن.
     no_state_changes:
-    no_tracking_present: " لم يتم تقديم تفاصيل تتبع "
-    none: " ليس اي"
+    no_tracking_present: لم تُقدَّم تفاصيل التتبع.
+    none: لا شيء
     none_selected:
     normal_amount: " المبلغ العادي "
     not: " ليس "
-    not_available: N/A
+    not_available: غ/م
     not_enough_stock: " لا يوجد مخزون كافٍ في موقع المصدر لإكمال هذا النقل "
     not_found: "  %{Resource} غير موجود "
-    note:
+    note: ملاحظة
     notice_messages:
-      product_cloned: " تم استنساخ المنتج "
+      product_cloned: تم استنساخ المنتج
       product_deleted: " تم حذف المنتج "
-      product_not_cloned: " تعذر استنساخ المنتج "
+      product_not_cloned: 'تعذر استنساخ المنتج. السبب: %{error}'
       product_not_deleted: " تعذر حذف المنتج "
       variant_deleted: " تم حذف المتغير "
       variant_not_deleted: " تعذر حذف المتغير "
     num_orders:
     on_hand: " في متناول اليد "
-    open: " مفتوح "
+    open: مفتوح
     open_all_adjustments: " فتح جميع التعديلات "
     option_type: " نوع الخيار "
     option_type_placeholder: " اختر نوع الخيار "
     option_types: " أنواع الخيارات "
     option_value: " قيمة الخيار "
-    option_values: " قيم الخيار "
+    option_values: قيم الخيارات
     optional: " اختياري "
-    options: " خيارات "
-    or: " او "
+    options: الخيارات
+    or: أو
     or_over_price: " %{price} أو أكثر "
-    order: " طلب "
+    order: الطلب
     order_adjustments: " تعديلات الأمر "
     order_already_updated: " تم تحديث الطلب بالفعل "
     order_approved: " تمت الموافقة على الطلب "
-    order_canceled: " تم إلغاء الطلب "
+    order_canceled: تم إلغاء الطلب
     order_details: " تفاصيل الطلب "
-    order_email_resent: " إعادة إرسال طلب البريد الإلكتروني "
+    order_email_resent: أُعيد إرسال بريد الطلب
     order_information: " معلومات الطلب "
     order_mailer:
       cancel_email:
@@ -893,16 +1397,16 @@ ar:
     order_sure_want_to: " هذا الطلب؟ %{event} هل أنت متأكد من أنك تريد "
     order_total: " إجمالي الطلب "
     order_updated: " تم تحديث الطلب "
-    orders: " طلبات "
+    orders: الطلبات
     other_items_in_other:
-    out_of_stock: " نفد من المخزون "
+    out_of_stock: غير متوفر
     overview: " نظرة عامة "
-    package_from: " رزمة من "
+    package_from: طرد من
     pagination:
       next_page: " الصفحة التالية » "
       previous_page: " « الصفحة السابقة "
       truncate: "…"
-    password: "  كلمة المرور "
+    password: كلمة المرور
     paste: " لصق "
     path: " المسار "
     pay: " دفع "
@@ -910,9 +1414,9 @@ ar:
     payment_could_not_be_created: " تعذر إنشاء الدفع "
     payment_identifier: " معرف الدفع "
     payment_information: " معلومات الدفع "
-    payment_method: " طريقة الدفع "
+    payment_method: طريقة الدفع
     payment_method_not_supported: " طريقة الدفع هذه غير مدعومة. يرجى اختيار واحد آخر "
-    payment_methods: " طرق الدفع "
+    payment_methods: طرق الدفع
     payment_processing_failed: " تعذرت معالجة الدفع ، يرجى التحقق من التفاصيل التي أدخلتها "
     payment_processor_choose_banner_text: " إذا كنت بحاجة إلى مساعدة في اختيار معالج الدفع ، يرجى زيارة "
     payment_processor_choose_link: " صفحة المدفوعات الخاصة بنا "
@@ -920,42 +1424,44 @@ ar:
     payment_states:
       balance_due: " الرصيد المستحق "
       checkout: " الخروج "
-      completed: " مكتمل "
+      completed: مكتمل
       credit_owed: " الائتمان المستحقة "
-      failed: " فشل "
-      paid: " مدفوع "
+      failed: فشل
+      paid: مدفوع
       pending: " في انتظار المراجعة "
-      processing: " التجهيز "
-      void: " باطل "
-    payment_updated: " تحديث الدفع "
-    payments: " المدفوعات "
-    pending:
+      processing: قيد المعالجة
+      void: ملغى
+      partially_refunded: مُسترد جزئياً
+      refunded: مُسترد
+    payment_updated: تم تحديث الدفع
+    payments: المدفوعات
+    pending: قيد الانتظار
     percent: " النسبة المئوية "
     percent_per_item: " النسبة المئوية لكل عنصر "
     permalink: " رابط ثابت "
-    phone: " هاتف "
+    phone: الهاتف
     place_order: " تقديم الطلب "
     please_define_payment_methods: " يرجى تحديد بعض طرق الدفع أولاً "
     populate_get_error: " هناك خطأ ما. يرجى محاولة إضافة العنصر مرة أخرى "
     powered_by: " مدعوم من "
-    pre_tax_amount: " مبلغ رد الدفعة قبل الضريبة "
-    pre_tax_refund_amount: " مبلغ رد الدفعة قبل الضريبة "
-    pre_tax_total: " الإجمالي قبل الضريبة "
-    preferred_reimbursement_type: " نوع السداد المفضل "
-    presentation: " التقديم "
+    pre_tax_amount: المبلغ قبل الضريبة
+    pre_tax_refund_amount: مبلغ الاسترداد قبل الضريبة
+    pre_tax_total: الإجمالي قبل الضريبة
+    preferred_reimbursement_type: نوع الاسترداد المفضل
+    presentation: العرض
     previous: " السابق "
     previous_state_missing: " غير متاح "
-    price: " السعر "
+    price: السعر
     price_range: " نطاق السعر "
     price_sack: " كيس السعر "
     process: " العملية "
-    product: " المنتج "
+    product: المنتج
     product_details: " تفاصيل المنتج "
     product_has_no_description: " لا يوجد وصف لهذا المنتج "
     product_not_available_in_this_currency: " هذا المنتج غير متوفر بالعملة المحددة "
     product_properties: " خصائص المنتج "
     product_rule:
-      choose_products: " اختر المنتجات "
+      choose_products: اختر المنتجات
       label:
       match_all: " الكل "
       match_any: " واحد على الأقل "
@@ -963,7 +1469,7 @@ ar:
       product_source:
         group: " من مجموعة المنتجات "
         manual: " اختر يدويًا "
-    products: " المنتجات "
+    products: المنتجات
     promotion: " الترويج "
     promotion_action: " إجراء الترويج "
     promotion_action_types:
@@ -979,7 +1485,7 @@ ar:
       free_shipping:
         description: " يجعل جميع الشحنات لأجل مجانية "
         name: " شحن مجاني "
-    promotion_actions: " أجراءات "
+    promotion_actions: الإجراءات
     promotion_form:
       match_policies:
         all: " تطابق أي من هذه القواعد "
@@ -1015,7 +1521,7 @@ ar:
         name: " دخول المستخدم "
     promotion_uses: " يستخدم الترويج "
     promotionable:
-    promotions: " الترويجات "
+    promotions: العروض الترويجية
     propagate_all_variants: " نشر جميع المتغيرات "
     properties: " الخصائص "
     property: " الملكية "
@@ -1024,27 +1530,26 @@ ar:
     provider: " مزود "
     provider_settings_warning: " إذا كنت تقوم بتغيير نوع مزود ، فيجب عليك الحفظ أولاً قبل أن تتمكن من تحرير إعدادات المزود "
     qty: " الكمية "
-    quantity: " الكمية "
+    quantity: الكمية
     quantity_returned: " الكمية المرتجعة "
     quantity_shipped: " الكمية التي تم شحنها "
-    quick_search: " .. بحث سريع "
-    rate: " معدل "
-    reason: " السبب "
+    rate: المعدل
+    reason: السبب
     receive: " تلقي "
     receive_stock: " تلقي المخزون "
     received: " تم الاستلام "
     reception_status:
-    reference: " مرجع "
-    refund: " إعادة مال "
+    reference: المرجع
+    refund: استرداد
     refund_amount_must_be_greater_than_zero:
     refund_reasons: " أسباب إعادة المال "
     refunded_amount: " المبلغ المسترد "
-    refunds:
+    refunds: المبالغ المستردة
     register: " سجل كمستخدم جديد "
     registration: " التسجيل "
-    reimburse:
-    reimbursed:
-    reimbursement:
+    reimburse: استرداد
+    reimbursed: مُسترد
+    reimbursement: الاسترداد
     reimbursement_mailer:
       reimbursement_email:
         days_to_send:
@@ -1056,28 +1561,28 @@ ar:
         subject:
         total_refunded:
     reimbursement_perform_failed:
-    reimbursement_status:
-    reimbursement_type:
-    reimbursement_type_override:
+    reimbursement_status: حالة الاسترداد
+    reimbursement_type: نوع الاسترداد
+    reimbursement_type_override: تجاوز نوع الاسترداد
     reimbursement_types: " أنواع السداد "
     reimbursements: " السداد "
     reject:
-    rejected:
-    remember_me: " تذكرني "
-    remove: " إزالة "
+    rejected: مرفوض
+    remember_me: تذكرني
+    remove: إزالة
     rename: " إعادة تسمية "
     report:
-    reports: " التقارير "
-    resend: " إعادة إرسال "
-    reset_password: " إعادة تعيين كلمة المرور الخاصة بي "
-    response_code: " رمز الاستجابة "
+    reports: التقارير
+    resend: إعادة الإرسال
+    reset_password: إعادة تعيين كلمة المرور
+    response_code: رمز الاستجابة
     resume: " استئناف "
     resumed: " مستأنف "
     return: " العودة "
-    return_authorization: " إذن العودة "
+    return_authorization: تصريح الإرجاع
     return_authorization_reasons: " أسباب إذن العودة "
     return_authorization_updated: " تم تحديث إذن العودة "
-    return_authorizations: " أذون الإرجاع "
+    return_authorizations: تصاريح الإرجاع
     return_item_inventory_unit_ineligible:
     return_item_inventory_unit_reimbursed:
     return_item_rma_ineligible:
@@ -1085,46 +1590,46 @@ ar:
     return_items:
     return_items_cannot_be_associated_with_multiple_orders:
     return_number:
-    return_quantity: " كمية المرتجعات "
+    return_quantity: كمية الإرجاع
     returned: " تم إرجاعه "
-    returns: " عائدات "
+    returns: المرتجعات
     review: " مراجعة "
     risk:
-    risk_analysis:
-    risky:
+    risk_analysis: تحليل المخاطر
+    risky: خطير
     rma_credit: RMA Credit
-    rma_number: RMA Number
+    rma_number: رقم RMA
     rma_value: RMA Value
-    roles: " الأدوار "
-    rules: " القواعد "
+    roles: الأدوار
+    rules: القواعد
     safe:
     sales_total: " إجمالي المبيعات "
     sales_total_description: " إجمالي المبيعات لجميع الطلبات "
     sales_totals: " إجماليات المبيعات "
     save_and_continue: " حفظ ومتابعة "
     save_my_address:
-    say_no: "false"
-    say_yes: "true"
+    say_no: لا
+    say_yes: نعم
     scope: " النطاق "
-    search: " بحث "
-    search_results: "Search results for '%{keywords}'"
+    search: بحث
+    search_results: Search results for '%{keywords}'
     searching: " يبحث "
     secure_connection_type: " نوع الاتصال الآمن "
     security_settings: " إعدادات الأمان "
     select: " حدد "
-    select_a_return_authorization_reason:
-    select_a_stock_location:
+    select_a_return_authorization_reason: اختر سبباً لتصريح الإرجاع
+    select_a_stock_location: اختر موقع مخزون
     select_from_prototype: " اختر من النموذج الأولي "
     select_stock: " حدد المخزون "
     send_copy_of_all_mails_to: " إرسال نسخة من جميع الرسائل إلى "
     send_mails_as: " إرسال رسائل البريد باسم "
     server: " الخادم "
     server_error: " عرض الخادم خطأ "
-    settings: " الإعدادات "
-    ship: " السفينة "
+    settings: الإعدادات
+    ship: شحن
     ship_address: " عنوان السفينة "
-    ship_total: " مجموع السفن "
-    shipment: " شحنة "
+    ship_total: إجمالي الشحن
+    shipment: الشحنة
     shipment_adjustments: " تعديلات الشحنة "
     shipment_details:
     shipment_mailer:
@@ -1134,33 +1639,33 @@ ar:
         shipment_summary: " ملخص الشحنة "
         subject: " إشعار الشحن "
         thanks: " شكرا لعملك "
-        track_information: "Tracking Information: %{tracking}"
-        track_link: "Tracking Link: %{url}"
+        track_information: 'Tracking Information: %{tracking}'
+        track_link: 'Tracking Link: %{url}'
     shipment_state: " دولة الشحن "
     shipment_states:
       backorder: " تأجيل "
-      canceled:
-      partial: " جزئي "
+      canceled: مُلغى
+      partial: جزئي
       pending: " قيد الانتظار "
       ready: " مستعد "
-      shipped: " مشحونة "
+      shipped: مُشحَن
     shipment_transfer_error:
-    shipment_transfer_success:
-    shipments: " شحنات "
+    shipment_transfer_success: تم نقل المتغيرات بنجاح
+    shipments: الشحنات
     shipped: " تم الشحن "
-    shipping: " الشحن "
-    shipping_address: " عنوان الشحن "
-    shipping_categories: " فئات الشحن "
-    shipping_category: " فئة الشحن "
+    shipping: الشحن
+    shipping_address: عنوان الشحن
+    shipping_categories: فئات الشحن
+    shipping_category: فئة الشحن
     shipping_flat_rate_per_item: " سعر ثابت لكل سلعة "
     shipping_flat_rate_per_order: " سعر ثابت "
-    shipping_flexible_rate: "Flexible Rate per package item"
+    shipping_flexible_rate: Flexible Rate per package item
     shipping_instructions: " تعليمات الشحن "
     shipping_method: " طريقة الشحن "
     shipping_methods: " طرق الشحن "
     shipping_price_sack: " كيس سعر "
     shipping_total:
-    shop_by_taxonomy: "Shop by %{taxonomy}"
+    shop_by_taxonomy: Shop by %{taxonomy}
     shopping_cart: " عربة التسوق "
     show: " إظهار "
     show_active: " إظهار النشط "
@@ -1168,18 +1673,18 @@ ar:
     show_only_complete_orders: " عرض الطلبات الكاملة فقط "
     show_only_considered_risky:
     show_rate_in_label: " إظهار السعر في المسمى "
-    sku: "SKU"
+    sku: SKU
     skus:
-    slug:
-    source: "Source"
-    special_instructions: "Special Instructions"
-    split: "Split"
-    spree_gateway_error_flash_for_checkout: "There was a problem with your payment information. Please check your information and try again."
+    slug: الرابط المختصر
+    source: المصدر
+    special_instructions: Special Instructions
+    split: تقسيم
+    spree_gateway_error_flash_for_checkout: There was a problem with your payment information. Please check your information and try again.
     ssl:
       change_protocol:
     start: ابدأ
-    state: " محافظة ( مقاطعة) "
-    state_based: " على أساس "
+    state: الحالة
+    state_based: حسب الولاية/المقاطعة
     state_machine_states:
       accepted: " مقبول "
       address: " عنوان "
@@ -1192,11 +1697,11 @@ ar:
       checkout: " الخروج "
       closed: " مغلق "
       complete:
-      completed:
+      completed: مكتمل
       confirm:
       delivery:
       errored:
-      failed:
+      failed: فشل
       given_to_customer:
       invalid:
       manual_intervention_required:
@@ -1204,7 +1709,7 @@ ar:
       open:
       order:
       payment:
-      pending:
+      pending: قيد الانتظار
       processing:
       ready:
       reimbursed:
@@ -1212,55 +1717,55 @@ ar:
       returned:
       shipped:
       void:
-    states: " المقاطعات ( محافظات) "
+    states: الولايات/المقاطعات
     states_required: " المحافظات المطلوبة "
-    status: " الحالة "
-    stock:
-    stock_location: " موقع المخزون "
+    status: الحالة
+    stock: المخزون
+    stock_location: موقع المخزون
     stock_location_info: " معلومات موقع المخزون "
-    stock_locations: " مواقع المخزون "
+    stock_locations: مواقع المخزون
     stock_locations_need_a_default_country: " يجب إنشاء بلد افتراضي قبل إنشاء موقع مخزون "
     stock_management: " إدارة المخزون "
     stock_management_requires_a_stock_location: " يرجى إنشاء موقع مخزون لإدارة المخزون "
-    stock_movements: " حركات المخزون "
+    stock_movements: حركات المخزون
     stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
     stock_successfully_transferred: " تم نقل المخزون بنجاح بين المواقع "
     stock_transfer: " نقل المخزون "
-    stock_transfers: " تحويلات المخزون "
+    stock_transfers: تحويلات المخزون
     stop: Stop
     store: " المتجر "
     street_address: " عنوان الشارع "
     street_address_2: " عنوان الشارع (تكملة) "
-    subtotal: " المجموع الفرعي "
+    subtotal: المجموع الفرعي
     subtract: " طرح "
-    success:
-    successfully_created: "%{resource} has been successfully created!"
+    success: ناجح
+    successfully_created: تم إنشاء %{resource} بنجاح!
     successfully_refunded:
-    successfully_removed: "%{resource} has been successfully removed!"
+    successfully_removed: تمت إزالة %{resource} بنجاح!
     successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
-    successfully_updated: "%{resource} has been successfully updated!"
-    summary:
-    tax: " الضريبة "
+    successfully_updated: تم تحديث %{resource} بنجاح!
+    summary: الملخص
+    tax: الضريبة
     tax_categories: " فئات الضرائب "
-    tax_category: " فئة الضريبة "
+    tax_category: فئة الضريبة
     tax_code:
-    tax_included:
+    tax_included: الضريبة (شامل)
     tax_rate_amount_explanation: Tax rates are a decimal amount to aid in calculations, (i.e. if the tax rate is 5% then enter 0.05)
-    tax_rates: " معدلات الضرائب "
+    tax_rates: معدلات الضريبة
     taxon: " أصناف "
     taxon_edit: " تعديل الصنف "
     taxon_placeholder: " أضف صنف "
     taxon_rule:
-      choose_taxons: " أختر التصنيفات "
+      choose_taxons: اختر الفئات
       label: " يجب أن يحتوي الطلب على عدد × من هذه الأصناف "
       match_all: " الكل "
       match_any: " واحد على الأقل "
-    taxonomies: " التصنيفات "
-    taxonomy: " التصنيف "
+    taxonomies: الفئات
+    taxonomy: الفئة
     taxonomy_edit: " تعديل التصنيف "
     taxonomy_tree_error: " لم يتم قبول التغيير المطلوب وتم الإرجاع إلى الحالة السابقة ، يرجى المحاولة مرة أخرى "
     taxonomy_tree_instruction: " انقر بزر الماوس الأيمن على طفل في الشجرة للوصول إلى القائمة لإضافة طفل أو حذفه أو ترتيبه "
-    taxons: " الاصناف "
+    taxons: الفئات
     test: " اختبار "
     test_mailer:
       test_email:
@@ -1271,61 +1776,61 @@ ar:
     thank_you_for_your_order: " شكرا لعملك. يرجى طباعة نسخة من صفحة التأكيد هذه لسجلاتك "
     there_are_no_items_for_this_order: " لا توجد عناصر لهذا الطلب. يرجى إضافة عنصر إلى الطلب للمتابعة "
     there_were_problems_with_the_following_fields: " حدثت مشاكل في الحقول التالية "
-    this_order_has_already_received_a_refund: " تلقى هذا الطلب رد أموال بالفعل "
+    this_order_has_already_received_a_refund: تلقى هذا الطلب استرداداً بالفعل
     thumbnail: " الصورة المصغرة "
     tiered_flat_rate:
     tiered_percent:
     tiers: " طبقات "
-    time: " التوقيت "
+    time: الوقت
     to_add_variants_you_must_first_define: " لإضافة متغيرات ، يجب عليك أولاً تعريف "
-    total: " الإجمالي "
+    total: الإجمالي
     total_per_item:
-    total_pre_tax_refund:
+    total_pre_tax_refund: إجمالي الاسترداد قبل الضريبة
     total_price:
-    total_sales:
+    total_sales: إجمالي المبيعات
     track_inventory:
-    tracking: " التتبع "
-    tracking_number: " رقم التتبع "
-    tracking_url: Tracking URL
-    tracking_url_placeholder: e.g. http://quickship.com/package?num=:tracking
-    transaction_id: " معرّف المعاملة "
+    tracking: التتبع
+    tracking_number: رقم التتبع
+    tracking_url: رابط التتبع
+    tracking_url_placeholder: 'مثال: http://quickship.com/package?num=:tracking'
+    transaction_id: معرّف المعاملة
     transfer_from_location: " نقل من "
     transfer_stock: " نقل المخزون "
     transfer_to_location: " نقل إلى "
     tree: " الشجرة "
-    type: " النوع "
-    type_to_search: " اكتب للبحث "
+    type: النوع
+    type_to_search: اكتب للبحث
     unable_to_connect_to_gateway: " تعذر الاتصال بالبوابة "
-    unable_to_create_reimbursements:
+    unable_to_create_reimbursements: تعذر إنشاء الاستردادات لأن هناك عناصر تنتظر تدخلاً يدوياً.
     under_price: Under %{price}
     unlock: " فتح "
-    unrecognized_card_type: " نوع بطاقة غير معروف "
+    unrecognized_card_type: نوع بطاقة غير معروف
     unshippable_items: " عناصر غير قابلة للشحن "
     update: " تحديث "
     updating: Updating
-    usage_limit: " حد الاستخدام "
-    use_app_default: " استخدام التطبيق الافتراضي "
+    usage_limit: حد الاستخدام
+    use_app_default: استخدام الافتراضي للتطبيق
     use_billing_address: " استخدم عنوان الفواتير "
-    use_new_cc: " استخدم بطاقة جديدة "
+    use_new_cc: استخدام بطاقة جديدة
     use_s3: Use Amazon S3 For Images
-    user: " المستخدم "
+    user: المستخدم
     user_rule:
-      choose_users: " اختيار المستخدمين "
-    users: " المستخدمون "
+      choose_users: 'أدخل عنوان البريد الإلكتروني الكامل للعميل/العملاء المسجلين في حقل البحث الذين ينطبق عليهم هذا الخصم:'
+    users: المستخدمون
     validation:
       cannot_be_less_than_shipped_units: " لا يمكن أن يكون أقل من عدد الوحدات المشحونة "
       cannot_destroy_line_item_as_inventory_units_have_shipped: " لا يمكن إتلاف البند حيث تم شحن بعض وحدات المخزون "
       exceeds_available_stock: " يتجاوز المخزون المتوفر. يُرجى التأكد من أن البنود تحتوي على كمية صالحة "
-      is_too_large: " كبير جدًا - المخزون الموجود لا يمكنه تغطية الكمية المطلوبة "
+      is_too_large: كبيرة جداً — المخزون المتاح لا يغطي الكمية المطلوبة!
       must_be_int: " يجب أن يكون عددًا صحيحًا "
       must_be_non_negative: " يجب أن تكون قيمة غير سالبة "
       unpaid_amount_not_zero:
     value: " القيمة "
-    variant: " متغير "
+    variant: المتغير
     variant_placeholder: " اختر متغيرًا "
-    variants: " المتغيرات "
+    variants: المتغيرات
     version: " الإصدار "
-    void: " باطل "
+    void: إلغاء
     weight: " الوزن "
     what_is_a_cvv: What is a (CVV) Credit Card Code?
     what_is_this: " ما هذا؟ "
@@ -1336,6 +1841,312 @@ ar:
     your_order_is_empty_add_product: " طلبك فارغ ، يرجى البحث عن منتج وإضافته أعلاه "
     zip: " الرمز البريدي "
     zipcode: " الرمز البريدي "
-    zone: " المنطقة "
-    zones: " المناطق "
+    zone: المنطقة
+    zones: المناطق
     shop_now: " تسوق الآن "
+    add_customers: إضافة عملاء
+    add_gift_card: إضافة بطاقة هدايا
+    add_new_address: إضافة عنوان جديد
+    add_products: إضافة منتجات
+    add_selected: إضافة المحدد
+    add_selected_products: إضافة المنتجات المحددة
+    add_selected_variant: إضافة المتغير المحدد
+    add_store_credit: إضافة رصيد متجر
+    address: العنوان
+    adjustment_amount_help: القيم الموجبة رسوم، والقيم السالبة أرصدة.
+    adjustment_closed_description: التعديل مغلق ولن يُعاد حسابه.
+    adjustment_open_description: التعديل مفتوح وسيُعاد حسابه.
+    admin_language_help: اللغة التي تُعرَض بها لوحة الإدارة. يؤثر فقط على ما تراه أنت، وليس المتجر أو الموظفين الآخرين.
+    admin_locale: لغة الإدارة
+    admin_locale_help: اللغة المستخدمة للوحة الإدارة. إذا لم تُعيَّن، تُستخدم لغة التطبيق الافتراضية.
+    all_time: كل الوقت
+    allowed_origins: الأصول المسموح بها
+    analytics: التحليلات
+    api_key: مفتاح API
+    api_keys: مفاتيح API
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: مُطبَّق على
+    apply: تطبيق
+    assigned_variants: المتغيرات المعيّنة
+    assigned_variants_help: اختر المتغيرات التي تمثلها هذه الصورة. اتركه فارغاً لتطبيقه على جميع المتغيرات.
+    automatic_promotion: تلقائي
+    barcode: الباركود
+    cancel_order: إلغاء الطلب
+    cannot_ship: لا يمكن شحن الشحنة
+    card_expiration_placeholder: MM/YYYY
+    categorization: التصنيف
+    change_password: تغيير كلمة المرور
+    channel: قناة المبيعات
+    channels: قنوات المبيعات
+    closed: مغلق
+    color_code: كود اللون
+    compare_at_amount: مبلغ المقارنة
+    compare_at_price: سعر المقارنة
+    contact_information: معلومات الاتصال
+    contact_us: اتصل بنا
+    continue_selling_when_out_of_stock: متابعة البيع عند نفاد المخزون
+    copied: تم النسخ!
+    copy_id: نسخ المعرّف
+    copy_link: نسخ الرابط
+    coupon_codes: أكواد القسائم
+    create_new: إنشاء جديد
+    created_by: أنشأه
+    credit_allowed: الرصيد مسموح
+    currencies: العملات
+    customer_could_not_be_removed_from_group: تعذرت إزالة العميل من المجموعة
+    customer_group_rule:
+      choose_customer_groups: 'اختر مجموعة/مجموعات العملاء التي ينطبق عليها هذا العرض الترويجي:'
+    customer_groups: مجموعات العملاء
+    customer_removed_from_group: تمت إزالة العميل من المجموعة
+    customer_support_email: بريد دعم العملاء
+    customers: العملاء
+    customers_added_to_group:
+      few: تمت إضافة %{count} عملاء إلى المجموعة
+      many: تمت إضافة %{count} عميلاً إلى المجموعة
+      one: تمت إضافة عميل واحد إلى المجموعة
+      other: تمت إضافة %{count} عميل إلى المجموعة
+      two: تمت إضافة عميلين إلى المجموعة
+      zero: لم تتم إضافة أي عميل إلى المجموعة
+    customers_removed_from_group:
+      few: تمت إزالة %{count} عملاء من المجموعة
+      many: تمت إزالة %{count} عميلاً من المجموعة
+      one: تمت إزالة عميل واحد من المجموعة
+      other: تمت إزالة %{count} عميل من المجموعة
+      two: تمت إزالة عميلين من المجموعة
+      zero: لم تتم إزالة أي عميل من المجموعة
+    days_ago: منذ أيام
+    delete_selected: حذف المحدد
+    deleted: محذوف
+    developers: المطورون
+    digital_assets: الأصول الرقمية
+    digital_assets_help: الأصول الرقمية هي ملفات يمكن للعملاء تنزيلها بعد الشراء.
+    dimension_units:
+      centimeter: سنتيمتر (cm)
+      foot: قدم (ft)
+      inch: بوصة (in)
+      millimeter: مليمتر (mm)
+    discount: الخصم
+    display_on: العرض في
+    display_settings: إعدادات العرض
+    done: تم
+    download: تنزيل
+    draft_orders: مسودات الطلبات
+    edit_prices: تعديل الأسعار
+    edit_refund: تعديل الاسترداد
+    email_marketing: التسويق بالبريد الإلكتروني
+    emails: رسائل البريد الإلكتروني
+    ends_at: ينتهي في
+    error_user_destroy_with_orders: لا يمكن حذف مستخدم مرتبط بطلبات
+    estimated_transit_business_days: أيام العمل المقدرة للعبور
+    existing_address: عنوان موجود
+    expired: منتهٍ
+    expires_at: ينتهي في
+    export: تصدير
+    filtered_records: السجلات المُصفّاة
+    forbidden: الوصول مرفوض
+    forbidden_message: ليس لديك صلاحية للوصول إلى هذه الصفحة.
+    general_information: معلومات عامة
+    get_back_to_the: العودة إلى
+    gift_card: بطاقة هدايا
+    gift_card_batch: دفعة بطاقات هدايا
+    gift_cards: بطاقات الهدايا
+    immediately: فوراً
+    import: استيراد
+    in_stock: متوفر
+    integrations: التكاملات
+    internal_note: ملاحظة داخلية
+    internal_server_error: خطأ داخلي في الخادم
+    internal_server_error_message: واجه الخادم خطأً داخلياً وتعذر إكمال طلبك.
+    invitation_accepted: تم قبول الدعوة!
+    invitation_expired:
+      body: رابط الدعوة هذا لم يعد صالحاً. يرجى طلب دعوة جديدة من الشخص الذي دعاك.
+      heading: الدعوة غير صالحة أو منتهية
+    invitation_resent: أُعيد إرسال الدعوة!
+    invited_by: دعاه
+    issued_on: تاريخ الإصدار
+    kind: النوع
+    label: التسمية
+    language: اللغة
+    line_item: بند الطلب
+    line_items: بنود الطلب
+    locale: اللغة
+    log_in: تسجيل الدخول
+    logo: الشعار
+    manual: يدوي
+    manual_adjustment: تعديل يدوي
+    manual_adjustments: التعديلات اليدوية
+    market: السوق
+    markets: الأسواق
+    max: الحد الأقصى
+    max_quantity: الحد الأقصى للكمية
+    media: الوسائط
+    metafield_definitions: تعريفات حقول الميتا
+    metafields: حقول ميتا
+    min: الحد الأدنى
+    min_quantity: الحد الأدنى للكمية
+    move: نقل
+    move_variant_to: نقل المتغير إلى
+    mutable: قابل للتغيير
+    navigation: التنقل
+    never: أبداً
+    new_allowed_origin: أصل مسموح جديد
+    new_api_key: مفتاح API جديد
+    new_billing_address: عنوان فوترة جديد
+    new_channel: قناة مبيعات جديدة
+    new_customer_group: مجموعة عملاء جديدة
+    new_digital_asset: أصل رقمي جديد
+    new_gift_card: بطاقة هدايا جديدة
+    new_line_item: إضافة بند
+    new_metafield_definition: تعريف حقل ميتا جديد
+    new_nested_taxon: فئة فرعية متداخلة جديدة
+    new_policy: سياسة جديدة
+    new_price_list: قائمة أسعار جديدة
+    new_reimbursement_type: نوع استرداد جديد
+    new_role: دور جديد
+    new_shipping_address: عنوان شحن جديد
+    new_store: متجر جديد
+    new_store_credit: رصيد متجر جديد
+    new_store_credit_category: فئة رصيد متجر جديدة
+    new_webhook_endpoint: نقطة نهاية Webhook جديدة
+    newsletter_subscribers: مشتركو النشرة الإخبارية
+    no_adjustments: لا توجد تعديلات
+    no_billing_address_available: لا يوجد عنوان فوترة متاح
+    no_customers_found: لم يُعثَر على عملاء
+    no_email_provided: لم يُقدَّم بريد إلكتروني
+    no_internal_note: لا توجد ملاحظة داخلية
+    no_products_added: لم تُضف منتجات
+    no_products_in_price_list: لا توجد منتجات في قائمة الأسعار هذه
+    no_promotions_applied: لم تُطبَّق عروض ترويجية
+    no_report_data: لا توجد بيانات تقرير
+    no_saved_cards: لا توجد بطاقات محفوظة
+    no_shipping_address_available: لا يوجد عنوان شحن متاح
+    no_taxes: لا توجد ضرائب
+    no_users_selected: لم يتم اختيار مستخدمين
+    not_risky: غير خطير
+    number: الرقم
+    option_name: اسم الخيار
+    option_type_filterable_info: عند تعيين نوع الخيار كقابل للتصفية، يُعرَض لزوار متجرك خيار تصفية فئة المنتجات بناءً على نوع الخيار. مثال شائع هو تصفية الملابس حسب الحجم واللون.<br><br><b>يرجى الملاحظة:</b> ستظهر عوامل التصفية في المتجر فقط في الفئات التي تحتوي منتجات بهذا النوع من الخيارات.
+    option_type_kind_info: يتحكم في كيفية عرض الخيار في المتجر. عينات الألوان تعرض دوائر ملونة، والأزرار تعرض شرائح قابلة للنقر، والقائمة المنسدلة تعرض قائمة اختيار.
+    or_select_other_address: أو اختر عنواناً آخر
+    order_email_resent_error: يمكن إرسال بريد تأكيد الطلب للطلبات المكتملة فقط
+    origin: المنشأ
+    outstanding_balance: الرصيد المستحق
+    page_not_found: عذراً! الصفحة التي تبحث عنها غير موجودة.
+    page_not_found_message: هذه الصفحة غير موجودة.
+    payment_amount: مبلغ الدفع
+    payment_provider_settings: إعدادات مزوّد الدفع
+    payment_source: مصدر الدفع
+    payment_total: إجمالي الدفع
+    payments_gateway_processing_errors: أخطاء معالجة %{payment_method_name}
+    permissions: الصلاحيات
+    policies: السياسات
+    preview: معاينة
+    previously_used_card: البطاقات المستخدمة سابقاً
+    price_lists: قوائم الأسعار
+    prices: الأسعار
+    pricing: التسعير
+    processing: قيد المعالجة
+    products_added: تمت إضافة المنتجات
+    products_removed: تمت إزالة المنتجات
+    promotion_cloned: تم استنساخ العرض الترويجي
+    promotion_not_cloned: 'لم يتم استنساخ العرض الترويجي. السبب: %{error}'
+    purchased_quantity: الكمية المشتراة
+    query: الاستعلام
+    refund_amount: مبلغ الاسترداد
+    remove_condition: إزالة الشرط
+    resellable: قابل لإعادة البيع
+    resource: المورد
+    return_authorization_canceled: تم إلغاء تصريح الإرجاع
+    role_id: معرّف الدور
+    row: صف
+    same_as_shipping_address: نفس عنوان الشحن
+    search_customers: البحث عن عملاء
+    search_engine_listing: قائمة محرك البحث
+    search_products: البحث عن منتجات
+    select_existing_address: اختر عنواناً موجوداً
+    select_key_type: اختر نوع المفتاح
+    select_user: اختر عميلاً
+    select_vendor: اختر بائعاً
+    send_consumer_transactional_emails: إرسال رسائل المعاملات للعملاء
+    send_payment_link_title: إرسال رابط الدفع إلى العميل بالبريد الإلكتروني. سيتمكن من إكمال الدفع لاحقاً.
+    service_unavailable: الخدمة غير متاحة
+    service_unavailable_message: الخادم غير قادر مؤقتاً على معالجة طلبك بسبب الصيانة أو مشاكل السعة. يرجى المحاولة لاحقاً.
+    shipment_successfully_shipped: تم شحن الشحنة بنجاح
+    show_details: عرض التفاصيل
+    show_report: عرض التقرير
+    size: الحجم
+    standards_and_formats: المعايير والتنسيقات
+    standards_and_formats_help: عيّن المنطقة الزمنية ونظام الوحدات الافتراضي ووحدة الوزن لمتجرك.
+    start_typing_to_search_for_products: ابدأ الكتابة للبحث عن منتجات
+    start_typing_to_search_for_variants: ابدأ الكتابة للبحث عن متغيرات
+    starts_at: يبدأ في
+    stock_items: عناصر المخزون
+    store_credit:
+      allocated: مُضاف
+      authorized: مُصرَّح
+      captured: مُستخدم
+      errors:
+        cannot_change_used_store_credit: لا يمكنك تغيير رصيد متجر تم استخدامه بالفعل
+        unable_to_create: تعذر إنشاء رصيد المتجر
+        unable_to_delete: تعذر حذف رصيد المتجر
+        unable_to_update: تعذر تحديث رصيد المتجر
+      remaining: المتبقي
+    store_credit_events: أحداث رصيد المتجر
+    store_credit_name: رصيد المتجر
+    store_credits: أرصدة المتجر
+    store_details: تفاصيل المتجر
+    store_errors:
+      unable_to_update: تعذر تحديث المتجر.
+    store_name_help: هذا هو اسم متجرك. سيُعرَض في الرأس والتذييل.
+    support: الدعم
+    tags: الوسوم
+    taxes: الضرائب
+    timezone: المنطقة الزمنية
+    title: العنوان
+    track_quantity: تتبع الكمية
+    transaction_id_help: هذا هو معرّف المعاملة التي أُنشئت في بوابة الدفع الخارجية.
+    translations: الترجمات
+    true_label: 'TRUE'
+    type_to_search_customers: اكتب للبحث عن عملاء
+    type_to_search_products: اكتب للبحث عن منتجات
+    unit: الوحدة
+    unit_system: نظام الوحدات
+    unit_system_help: سيُستخدم كنظام الوحدات الافتراضي لمتجرك. يمكنك تجاوزه لكل منتج.
+    unit_systems:
+      imperial_system: النظام الإمبراطوري
+      metric_system: النظام المتري
+    unlimited: غير محدود
+    unprocessable_entity: كيان غير قابل للمعالجة
+    unprocessable_entity_message: تعذرت معالجة طلبك. يرجى التحقق من النموذج بحثاً عن أخطاء والمحاولة مرة أخرى.
+    update_address: تحديث العنوان
+    update_billing_address: تحديث عنوان الفوترة
+    update_contact_information: تحديث معلومات الاتصال
+    update_shipping_address: تحديث عنوان الشحن
+    updated_at: تاريخ التحديث
+    url: URL
+    use_shipping_address: استخدام عنوان الشحن
+    used: مُستخدم
+    vendor: البائع
+    view: عرض
+    view_full_size: عرض بالحجم الكامل
+    view_store: عرض المتجر
+    visibility: الظهور
+    visits: الزيارات
+    webhook_endpoints: نقاط نهاية Webhook
+    weight_unit: وحدة الوزن
+    weight_unit_help: ستُستخدم كوحدة الوزن الافتراضية لمتجرك. يمكنك تجاوزها لكل منتج.
+    weight_units:
+      gram: غرام (g)
+      kilogram: كيلوغرام (kg)
+      ounce: أونصة (oz)
+      pound: رطل (lb)
+  action_text:
+    video_embed:
+      not_found: لا يمكن تضمين فيديو باستخدام عنوان URL المُقدَّم
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
