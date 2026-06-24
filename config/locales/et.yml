@@ -1,3 +1,4 @@
+---
 et:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ et:
         phone: Telefon
         state: Maakond
         zipcode: Postiindeks
+        company: Ettevõte
+        label: Aadressi nimi
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ et:
       spree/option_type:
         name:
         presentation:
+        filterable: Filtreeritav
+        kind: Liik
       spree/order:
         checkout_complete:
         completed_at: Esitatud
@@ -54,6 +59,8 @@ et:
         special_instructions:
         state:
         total: Kokku
+        internal_note: Sisemine märkus
+        item_count: Tooteid
       spree/order/bill_address:
         address1:
         city:
@@ -72,6 +79,7 @@ et:
         zipcode:
       spree/payment:
         amount: Summa
+        number: Number
       spree/payment_method:
         name: Nimetus
       spree/product:
@@ -84,6 +92,10 @@ et:
         on_hand: Laoseis
         shipping_category: Tarnekategooria
         tax_category: Maksukategooria
+        discontinue_on: Lõpetamise kuupäev
+        less_than: Vähem kui
+        make_active_at: Aktiveerimise kuupäev
+        more_than: Rohkem kui
       spree/promotion:
         advertise:
         code:
@@ -94,8 +106,11 @@ et:
         path:
         starts_at:
         usage_limit:
+        generate_code: Genereeri sooduskood
+        promotion_category: Kampaania kategooria
       spree/promotion_category:
         name:
+        code: Kood
       spree/property:
         name: Nimetus
         presentation: Presentation
@@ -123,6 +138,16 @@ et:
         name:
         seo_title:
         url:
+        address: Aadress
+        contact_phone: Kontakttelefon
+        preferred_digital_asset_authorized_clicks: Allalaadimiste klikkide limiit
+        preferred_digital_asset_authorized_days: Allalaadimise päevade limiit
+        preferred_limit_digital_download_count: Piira digitaalsete linkide allalaadimiste arvu
+        preferred_limit_digital_download_days: Piira digitaalsete linkide allalaadimise päevi
+        seo_robots: SEO robotid
+        storefront_custom_code_body_end: Kohandatud kood enne body-sildi sulgemist
+        storefront_custom_code_body_start: Kohandatud kood pärast body-sildi avamist
+        storefront_custom_code_head: Kohandatud kood lehe päises
       spree/tax_category:
         description: Kirjeldus
         name: Nimetus
@@ -134,12 +159,14 @@ et:
         name: Nimetus
         permalink: Püsiviide
         position: Positsioon
+        sort_order: Sorteerimisjärjekord
       spree/taxonomy:
         name: Nimetus
       spree/user:
         email: Email
         password: Salasõna
         password_confirmation: Salasõna kordus
+        avatar: Avatar
       spree/variant:
         cost_currency:
         cost_price:
@@ -152,6 +179,54 @@ et:
       spree/zone:
         description: Kirjeldus
         name: Nimetus
+      spree/customer_group:
+        description: Kirjeldus
+        name: Nimi
+      spree/customer_return:
+        stock_location_id: Laoasukoht
+      spree/gift_card:
+        amount_used: Kasutatud summa
+        expires_at: Aegub
+      spree/import:
+        preferred_delimiter: Eraldaja
+      spree/import_mapping:
+        file_column: Faili veerg
+        schema_field: Skeemi väli
+      spree/import_row:
+        row_number: Number
+      spree/invitation:
+        inviter: Kutsuja
+      spree/metafield_definition:
+        namespace: Nimeruum
+      spree/option_value:
+        color_code: Värvikood
+        image: Värvinäidise pilt
+      spree/page_link:
+        open_in_new_tab: Ava uuel vahekaardil
+      spree/policy:
+        body: Sisu
+        owner: Reeglistik objektile
+      spree/price_list:
+        description: Kirjeldus
+        ends_at: Lõpeb
+        match_policy: Vastavuse reegel
+        name: Nimi
+        priority: Prioriteet
+        starts_at: Algab
+        status: Olek
+      spree/price_rule:
+        priority: Prioriteet
+        type: Tüüp
+      spree/shipment:
+        number: Number
+      spree/store_credit:
+        amount_used: Kasutatud summa
+      spree/store_credit_category:
+        name: Nimi
+      user:
+        current_sign_in: Praegune sisselogimine
+        last_sign_in: Viimane sisselogimine
+        sign_in_count: Sisselogimiste arv
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,6 +273,109 @@ et:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Ainsat poodi ei saa kustutada.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: peab olema päritolu (skeem ja host) ilma teekonna, päringu või fragmendita
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Kasutatud kinkekaarti ei saa kustutada
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: peab olema olemas
+              not_allowed_content_type: on lubamatu sisutüübiga
+        spree/import:
+          attributes:
+            attachment:
+              content_type: on lubamatu sisutüübiga
+            type:
+              inclusion: ei kuulu lubatud tüüpide loendisse
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: kuulub teisele kasutajale
+              deprecated_in_completed_order: on lõpetatud tellimuses aegunud
+            ship_address_id:
+              belongs_to_other_user: kuulub teisele kasutajale
+              deprecated_in_completed_order: on lõpetatud tellimuses aegunud
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Vaiketurgu ei saa kustutada.
+              cannot_destroy_last_market: Ainsat turgu ei saa kustutada.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: on selles poes juba teisele turule määratud
+              not_in_shipping_zone: ei ole kaetud ühegi tarnetsooniga. Palun seadistage esmalt tarnetsoon.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: on suurem kui lubatud maksimaalne summa %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: peab olema pärast algusaega
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Esitatud tellimustesse lisatud tooteid ei saa kustutada. Sellistel juhtudel palun lõpetage nende müük.
+            discontinue_on:
+              invalid_date_range: peab olema hilisem kui saadavuse kuupäev
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: peab olema pärast avaldamise kuupäeva
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: peab olema hilisem kui alguskuupäev
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Peate valima vähemalt ühe tarnekategooria
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Ületab kogukrediidi summa.
+            amount_used:
+              cannot_be_greater_than_amount: Ei tohi olla suurem kui summa.
+              greater_than_zero_restrict_delete: on suurem kui null. Poekrediiti ei saa kustutada.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Poekrediidi kategooriaid ei saa kustutada, kui neid on poekrediidis kasutatud.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: on lubamatu sisutüübiga
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: kuulub teisele kasutajale
+              deprecated_in_completed_order: on lõpetatud tellimuses aegunud
+            ship_address_id:
+              belongs_to_other_user: kuulub teisele kasutajale
+              deprecated_in_completed_order: on lõpetatud tellimuses aegunud
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Esitatud tellimustesse lisatud variante ei saa kustutada. Sellistel juhtudel palun lõpetage nende müük.
+              must_supply_price_for_variant_or_master: Variandile tuleb määrata hind või tootele põhihind.
+              no_master_variant_found_to_infer_price: Hinna tuletamiseks ei leitud põhivarianti
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: ei tohi viidata sisemisele ega privaatvõrgu aadressile
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Olete selle toote oma soovinimekirja juba lisanud
+      messages:
+        blank: ei tohi olla tühi
     models:
       spree/address:
         one: Aadress
@@ -206,11 +384,23 @@ et:
         one: Riik
         other: Riigid
       spree/credit_card:
+        one: Krediitkaart
+        other: Krediitkaardid
       spree/customer_return:
+        one: Kliendi tagastus
+        other: Kliendi tagastused
       spree/inventory_unit:
+        one: Laoühik
+        other: Laoühikud
       spree/line_item:
+        one: Tellimusrida
+        other: Tellimusread
       spree/option_type:
+        one: Valiku tüüp
+        other: Valiku tüübid
       spree/option_value:
+        one: Valiku väärtus
+        other: Valiku väärtused
       spree/order:
         one: Tellimus
         other: Tellimused
@@ -218,19 +408,41 @@ et:
         one: Makse
         other: Maksed
       spree/payment_method:
+        one: Makseviis
+        other: Makseviisid
       spree/product:
         one: Toode
         other: Tooted
       spree/promotion:
+        one: Kampaania
+        other: Kampaaniad
       spree/promotion_category:
+        one: Kampaania kategooria
+        other: Kampaania kategooriad
       spree/property:
+        one: Omadus
+        other: Omadused
       spree/prototype:
+        one: Prototüüp
+        other: Prototüübid
       spree/refund_reason:
+        one: Tagasimakse põhjus
+        other: Tagasimakse põhjused
       spree/reimbursement:
+        one: Hüvitis
+        other: Hüvitised
       spree/reimbursement_type:
+        one: Hüvitise tüüp
+        other: Hüvitise tüübid
       spree/return_authorization:
+        one: Tagastusluba
+        other: Tagastusload
       spree/return_authorization_reason:
+        one: Tagastusloa põhjus
+        other: Tagastusloa põhjused
       spree/role:
+        one: Rollid
+        other: Rollid
       spree/shipment:
         one: Tarne
         other: Tarned
@@ -238,17 +450,29 @@ et:
         one: Tarnekategooria
         other: Tarnekategooriad
       spree/shipping_method:
+        one: Tarneviis
+        other: Tarneviisid
       spree/state:
         one: Maakond
         other: Maakonnad
       spree/state_change:
+        one: Olekumuutus
+        other: Olekumuutused
       spree/stock_location:
+        one: Laoasukoht
+        other: Laoasukohad
       spree/stock_movement:
+        one: Laoliikumine
+        other: Laoliikumised
       spree/stock_transfer:
+        one: Laosiire
+        other: Laosiirded
       spree/tax_category:
         one: Maksukategooria
         other: Maksukategooriad
       spree/tax_rate:
+        one: Maksumäär
+        other: Maksumäärad
       spree/taxon:
         one: Takson
         other: Taksonid
@@ -256,13 +480,77 @@ et:
         one: Taksonoomia
         other: Taksonoomiad
       spree/tracker:
+        one: Jälgija
+        other: Jälgijad
       spree/user:
         one: Kasutaja
         other: Kasutajad
       spree/variant:
+        one: Variant
+        other: Variandid
       spree/zone:
         one: Zone
         other: Zones
+      spree/classification:
+        one: Klassifikatsioon
+        other: Klassifikatsioonid
+      spree/cms_page:
+        one: Leht
+        other: Lehed
+      spree/cms_section:
+        one: Sektsioon
+        other: Sektsioonid
+      spree/customer_group:
+        one: Kliendigrupp
+        other: Kliendigrupid
+      spree/customer_group_user:
+        one: Kliendigrupi kasutaja
+        other: Kliendigrupi kasutajad
+      spree/digital:
+        one: Digitaalne fail
+        other: Digitaalsed failid
+      spree/export:
+        one: Eksport
+        other: Ekspordid
+      spree/integration:
+        one: Integratsioon
+        other: Integratsioonid
+      spree/page:
+        one: Leht
+        other: Lehed
+      spree/page_block:
+        one: Lehe plokk
+        other: Lehe plokid
+      spree/page_link:
+        one: Lehe link
+        other: Lehe lingid
+      spree/page_section:
+        one: Lehe sektsioon
+        other: Lehe sektsioonid
+      spree/price:
+        one: Hind
+        other: Hinnad
+      spree/price_list:
+        one: Hinnakiri
+        other: Hinnakirjad
+      spree/price_rule:
+        one: Hinnareegel
+        other: Hinnareeglid
+      spree/stock_item:
+        one: Laoartikkel
+        other: Laoartiklid
+      spree/store:
+        one: Pood
+        other: Poed
+      spree/store_credit:
+        one: Poekrediit
+        other: Poekrediidid
+      spree/store_credit_category:
+        one: Poekrediidi kategooria
+        other: Poekrediidi kategooriad
+      spree/theme:
+        one: Teema
+        other: Teemad
   devise:
     confirmations:
       confirmed: Sinu konto on edukalt kinnitatud. Sa oled nüüd sisse logitud.
@@ -275,6 +563,7 @@ et:
       timeout: Sinu sessioon on aegunud, jätkamiseks logi palun sisse.
       unauthenticated: Sa pead sisse logima või registreeruma enne jätkamist.
       unconfirmed: Sa pead oma konto kinnitama, enne jätkamist.
+      too_many_attempts: Liiga palju katseid. Palun oodake hetk ja proovige uuesti.
     mailer:
       confirmation_instructions:
         subject: Kinnitamise juhised
@@ -309,6 +598,7 @@ et:
       not_saved:
         one: '1 viga takistas salvestamast objekti %{resource}:'
         other: "%{count} viga takistasid salvestamast objekti %{resource}:"
+      not_a_number: ei ole arv
   spree:
     abbreviation: Lühend
     accept:
@@ -330,6 +620,15 @@ et:
       refund:
       save: Salvesta
       update: Uuendus
+      close: Sulge
+      connect: Ühenda
+      discard: Loobu
+      open: Ava
+      reject: Lükka tagasi
+      remove: Eemalda
+      resend: Saada uuesti
+      select_file: Vali fail
+      send_invitation: Saada kutse
     activate: Activate
     active: Aktiivne
     add: Lisa
@@ -382,6 +681,483 @@ et:
         order_num:
         orders:
         user_information:
+        last_order_placed: Viimane tellimus esitatud
+        no_store_credit: Kliendil pole poekrediiti saadaval
+      allowed_origins:
+        origin_help: Sisesta oma poe täielik päritolu-URL (nt https://myshop.com). Ära lisa teid ega päringustringe.
+        origin_settings: Päritolu seaded
+      amount_spent: Kulutatud summa
+      api_keys:
+        example_request: Näidispäring
+        key_revoked_message: See API-võti on tühistatud ja seda ei saa enam kasutada.
+        key_type_descriptions:
+          publishable: Turvaline kasutada kliendipoolses koodis, näiteks mobiilirakendustes või brauserites.
+          secret: Hoia see turvaliselt ja kasuta ainult serveripoolselt. Ära kunagi avalikusta seda.
+        key_types:
+          publishable: Avaldatav
+          secret: Salajane
+        last_used_at: Viimati kasutatud
+        list: API-võtmed
+        name_placeholder: nt mobiilirakenduse toodang
+        revoke: Tühista
+        revoke_confirmation: Kas oled kindel, et soovid selle API-võtme tühistada? Seda toimingut ei saa tagasi võtta.
+        revoked: API-võti on tühistatud
+        revoked_at: Tühistatud
+        revoked_by: Tühistas
+        scopes: Õigused
+        scopes_description: Nõutav salajaste võtmete jaoks. Vali kõige kitsam õiguste komplekt, mida sinu integratsioon vajab.
+        scopes_immutable: Õigused määratakse võtme loomisel ja need on fikseeritud. Nende muutmiseks loo uus võti vajalike õigustega ja tühista see.
+        secret_key_hidden: Seda salajast võtit ei saa kuvada. Kui oled selle kaotanud, tühista see võti ja loo uus.
+        statuses:
+          active: Aktiivne
+          revoked: Tühistatud
+        token_warning: Hoia see võti turvaliselt. Seda kuvatakse ainult sel korral.
+        usage: Kasutus
+        usage_instructions:
+          publishable: Kasuta seda võtit kliendipoolsete päringute jaoks. Selle võib turvaliselt lisada oma esiotsa koodi.
+          secret: Kasuta seda võtit ainult serveripoolsete päringute jaoks. Hoia see konfidentsiaalsena ja ära kunagi avalikusta seda kliendipoolses koodis.
+      audit_log: Auditilogi
+      avg_order_value: Keskm. tellimuse väärtus
+      back_to_dashboard: Tagasi töölauale
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Kas oled kindel, et soovid valitud kliendid sellest grupist eemaldada?
+          title:
+            remove: Eemalda grupist
+        price_list_products:
+          body:
+            remove: Kas oled kindel, et soovid valitud tooted sellest hinnakirjast eemaldada? See eemaldab ka nende hinnad.
+          title:
+            remove: Eemalda hinnakirjast
+        products:
+          body:
+            add_tags: 'Vali toodetele lisatavad sildid:'
+            add_to_taxons: 'Vali, millistesse kategooriatesse tooted lisada:'
+            remove_from_taxons: 'Vali, millistest kategooriatest tooted eemaldada:'
+            remove_tags: 'Vali toodetelt eemaldatavad sildid:'
+            set_active: Toodete aktiivseks seadmine teeb need kättesaadavaks poes.
+            set_archived: Toodete arhiveerituks seadmine peidab need poest.
+            set_draft: Toodete mustandiks seadmine peidab need poest.
+          title:
+            add_tags: Lisa sildid
+            add_to_taxons: Lisa kategooriatesse
+            remove_from_taxons: Eemalda kategooriatest
+            remove_tags: Eemalda sildid
+            set_active: Sea aktiivseks
+            set_archived: Sea arhiveerituks
+            set_draft: Sea mustandiks
+        users:
+          body:
+            add_tags: 'Vali klientidele lisatavad sildid:'
+            remove_tags: 'Vali klientidelt eemaldatavad sildid:'
+          title:
+            add_tags: Lisa sildid
+            remove_tags: Eemalda sildid
+      channels:
+        code_hint: Lühike, stabiilne tunnus (nt „online“, „pos“, „wholesale“). Seda kasutavad API-kliendid X-Spree-Channel päise kaudu ja tellimuste omistamiseks.
+        default: Vaikekanal
+        default_hint: Iga poe kohta on täpselt üks vaikekanal. Seda kasutatakse varuvariandina, kui ühtegi kanalit pole valitud, ning uute toodete automaatse avaldamise sihtkohana.
+        order_routing_strategy: Tellimuste suunamise strateegia
+        order_routing_strategy_hint: Tühistab poe tasandi suunamisstrateegia sellele kanalile omistatud tellimuste puhul.
+        order_routing_strategy_inherit: Päri poest
+      checkout_settings:
+        checkout_links:
+          description: Lingid nendele lehtedele kuvatakse kassa jaluses.
+          label: Kassa lingid
+        checkout_message_description: Nähtav sinu klientidele kassalehel paremas külgribas.
+        countries_managed_by_markets_html: Riike ja tarnetsoone hallatakse jaotise %{link} kaudu.
+        guest_checkout:
+          description: Luba klientidel kassasse minna ilma kontot loomata.
+          label: Luba külalisena kassasse minek
+        special_instructions:
+          description: Luba klientidel lisada tellimusele erijuhiseid.
+          label: Kuva erijuhiste väli
+      close_sidebar: Sulge külgriba
+      copied: Kopeeritud!
+      copy_payment_link: Kopeeri makselink
+      copy_to_clipboard: Kopeeri lõikelauale
+      coupon_codes:
+        unused: Kasutamata
+        used: Kasutatud
+      created_at: Loodud
+      dashboard:
+        getting_started:
+          description: Kõik, mille pead seadistama, et müügiga alustada.
+        hi: Tere
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> / %{total} sammu tehtud"
+          title: Sinu üldine seadistamise edenemine
+        top_products: Enimmüüdud tooted
+        view_report: Vaata aruannet
+        whats_happening_on_html: Vaata, mis täna poes <strong>%{store_name}</strong> toimub.
+      datetime_field_timezone_help: 'Ajavöönd: %{zone}'
+      digital_shipment_fulfillment_note: See saadetis märgitakse täidetuks, kui kasutaja digitaalse toote alla laadib
+      display_on_options:
+        back_end: Ainult halduspaneelil
+        both: Nii halduspaneelil kui poes
+        front_end: Ainult poes
+      documentation: Dokumentatsioon
+      edit_billing_address: Muuda arveldusaadressi
+      edit_contact_information: Muuda kontaktandmeid
+      edit_profile: Muuda profiili
+      edit_shipping_address: Muuda tarneaadressi
+      edit_theme: Muuda kujundust
+      errors: Vead
+      execution_time: Täitmisaeg
+      expand_sidebar: Laienda külgriba
+      export_all: Ekspordi kõik kirjed (võib suurte andmehulkade puhul olla aeglane)
+      export_coupons: Ekspordi kupongid CSV-failina
+      export_created: Sinu eksport on alustatud. Saad e-kirja allalaadimislingiga, kui see on valmis!
+      export_only_filtered_records: Ekspordi ainult filtreeritud kirjed, mis vastavad otsingukriteeriumidele
+      export_report: Ekspordi aruanne CSV-failina
+      filters: Filtrid
+      getting_started: Alustamine
+      gift_card_batches:
+        codes_count: Koodide arv
+        new_gift_card_batch: Uus kinkekaartide partii
+        prefix: Eesliide
+      gift_cards:
+        active: Aktiivne
+        all_statuses: Kõik olekud
+        code_help_text: Kui jätad selle tühjaks, genereerime koodi sinu eest
+        redeemed: Lunastatud
+        usage: Kasutus
+      imports:
+        all_required_columns_mapped: Tubli töö, kõik nõutud veerud on vastendatud!
+        field_required: Väli on nõutud
+        import_done: Kõik valmis!
+        large_import_background_note: Võid selle lehe sulgeda – import jätkub taustal.
+        large_import_message: See import sisaldab %{count} rida ja on liiga suur, et neid eraldi kuvada.
+        large_import_summary: "%{completed} tehtud, %{failed} ebaõnnestus"
+        mapping_required: See väli on nõutud
+        please_map_all_required_fields: Jätkamiseks vastenda kõik nõutud väljad.
+        waiting_for_file_to_be_processed: Faili töötlemise ootel...
+      integrations:
+        invalid_integration_type: See integratsioon ei ole lubatud
+        page_subtitle: Ühenda oma pood kolmandate osapoolte teenustega, et parandada kliendikogemust.
+      json_preview:
+        no_api_response: Selle ressursi jaoks API-vastust ei leitud
+      manage_markets: Halda turge
+      manage_properties: Halda omadusi
+      manage_stock_locations: Halda laoasukohti
+      manage_taxons: Halda kategooriaid
+      manage_zones: Halda tsoone
+      markets:
+        edit: Muuda turgu
+        list: Turud
+        new: Uus turg
+        supported_locales_hint: Komadega eraldatud loend täiendavatest lokaadikoodidest (nt fr,de,es)
+      metafield_definitions:
+        edit_warning: Ressursi tüüpi ega metavälja tüüpi ei saa muuta pärast määratluse kasutuselevõttu.
+        used_in: Kasutatud kohas
+      name: Nimi
+      navigation:
+        nested_under: Pesastatud alla
+      newsletter_subscribers:
+        all: Kõik
+        unverified: Kinnitamata
+        verified: Kinnitatud
+      not_tracking_inventory: Laoseisu ei jälgita
+      notifications: Teavitused
+      num_orders: Tellimuste arv
+      oauth_applications:
+        client_id: Kliendi ID
+        client_secret: Kliendi saladus
+        last_used: Viimati kasutatud
+        list: API-võtmed
+        never: Mitte kunagi
+        new: Uus API-võti
+        read_and_write: Lugemine ja kirjutamine
+        read_only: Ainult lugemine
+        scopes: Õigused
+      order:
+        events:
+          approve: Kinnita
+          cancel: Tühista
+          resend: Saada uuesti
+          resume: Jätka
+      orders:
+        add_user_to_this_order: Lisa klient sellele tellimusele
+        all_orders: Kõik tellimused
+        canceled: Tühistatud
+        fulfilled: Täidetud
+        no_email_present: Makselingi saatmiseks lisa e-posti aadress
+        orders_to_fulfill: Täitmist ootavad tellimused
+        partially_refunded: Osaliselt tagastatud
+        payment_link_sent: Makselink saadeti kliendile
+        provide_email: Sisesta e-posti aadress
+        refunded: Tagastatud
+        remove_user_from_this_order: Eemalda klient sellelt tellimuselt
+        unfulfilled: Täitmata
+      page_builder:
+        background_color: Taustavärv
+        border_bottom_width: Alumise äärise laius
+        border_color: Äärise värv
+        border_top_width: Ülemise äärise laius
+        bottom_padding: Alumine täidis
+        button_alignment: Nupu joondus
+        button_background_color: Nupu taustavärv
+        button_style: Nupu stiil
+        button_text: Nupu tekst
+        button_text_color: Nupu tekstivärv
+        category: Kategooria
+        description: Kirjeldus
+        description_alignment: Kirjelduse joondus
+        desktop_image_alignment: Pildi joondus arvutis
+        desktop_logo_height: Logo kõrgus (arvutis)
+        heading: Pealkiri
+        heading_alignment: Pealkirja joondus
+        heading_size: Pealkirja suurus
+        height: Kõrgus
+        image_click_hint: Pildil klõpsamine suunab kasutaja valitud lehele/URL-ile
+        left_aligned: Vasakule joondatud
+        logo_centered: Logo keskel
+        max_video_width_on_desktop: Video maksimaalne laius arvutis
+        maximum_products_to_show: Kuvatavate toodete maksimaalne arv
+        nav_centered: Navigatsioon keskel
+        not_set: Määramata
+        separated: Eraldatud
+        show_more_button: Kuva kategooria avastamise nupp
+        show_taxon_image: Kuva kategooria pilt
+        text_color: Tekstivärv
+        title: Pealkiri
+        top_padding: Ülemine täidis
+        use_description_from_admin: Kasuta haldusest pärit kirjeldust
+        vertical_alignment: Vertikaalne joondus
+        youtube_video_url: YouTube'i video URL
+      personal_details: Isikuandmed
+      price_lists:
+        activate: Aktiveeri
+        activated: Hinnakiri on aktiveeritud
+        confirm_activate: Kas oled kindel, et soovid selle hinnakirja aktiveerida? See mõjutab hindu kohe.
+        confirm_deactivate: Kas oled kindel, et soovid selle hinnakirja deaktiveerida?
+        confirm_schedule: Kas oled kindel, et soovid selle hinnakirja ajastada?
+        confirm_unschedule: Kas oled kindel, et soovid selle hinnakirja ajastuse tühistada?
+        deactivate: Deaktiveeri
+        deactivated: Hinnakiri on deaktiveeritud
+        schedule: Ajasta
+        scheduled: Hinnakiri on ajastatud
+        unschedule: Tühista ajastus
+      product_translations:
+        coverage: Tõlgete katvus
+        locale: Lokaat
+        manage_markets: Halda turge
+        no_locales_description: Seadista täiendavate lokaatidega turud, et alustada oma toodete tõlkimist.
+        no_locales_title: Täiendavaid lokaate pole seadistatud
+        progress: Edenemine
+        total: Kokku
+        translated: Tõlgitud
+      products:
+        active: Aktiivne
+        all_statuses: Kõik olekud
+        any_stock: Mis tahes laoseis
+        archived: Arhiveeritud
+        by_status: Oleku järgi
+        by_stock: Laoseisu järgi
+        deleted: Kustutatud
+        draft: Mustand
+        help_bubble: Mustandtooted ei ole ostmiseks saadaval. Aktiivsed tooted on avaldatud.
+        in_stock: Laos
+        inventory:
+          barcode: Triipkood (ISBN, UPC, GTIN jne)
+          sku: SKU (laoartikli kood)
+        out_of_stock: Otsas
+        paused: Peatatud
+        search_results:
+          no_products: Sinu otsingule vastavaid tooteid ei leitud :(
+        seo:
+          placeholder: Lisa pealkiri ja kirjeldus, et näha, kuidas see toode võiks otsingumootori tulemustes ilmuda
+        status_form:
+          status: Mustandtooted ei ole ostmiseks saadaval. Aktiivsed tooted on avaldatud.
+        status_options:
+          active: Aktiivne
+          archived: Arhiveeritud
+          draft: Mustand
+        stores:
+          choose_stores: Vali, millistes poodides see toode peaks olema saadaval
+        variants:
+          option_types_link: Rohkemate valikutüüpide lisamiseks mine lehele <a href="%{link}">Valikutüübid</a>
+      publishing:
+        caption_hidden_after: Eemaldatakse %{date}
+        caption_live: Praegu klientidele nähtav
+        caption_not_available: Peidetud – toode on %{product_status}
+        caption_scheduled: Avaldatakse %{date}
+        caption_unpublished: Peideti %{date}
+        caption_window: Avaldatud %{start} → %{end}
+        empty: Pole veel üheski müügikanalis loetletud.
+        inactive_marker: Mitteaktiivne
+        manage_cta: Halda
+        manage_description: Vali, millistes müügikanalites see toode loetletakse. Lülita kanal välja, et see kõikjalt loendist eemaldada.
+        no_channels: Ühtegi müügikanalit pole saadaval. Loo üks jaotises Seaded → Müügikanalid.
+        published_at_label: Avaldatud alates
+        status_hidden: Peidetud
+        status_live: Avaldatud
+        status_not_available: Pole saadaval
+        status_scheduled: Ajastatud
+        title: Avaldamine
+        unpublished_at_label: Eemalda avaldamisest
+      recommended_size: Soovitatud suurus
+      report_created: Sinu aruannet koostatakse. Saad e-kirja allalaadimislingiga, kui see on valmis!
+      reset_digital_link_download_limits: Lähtesta allalaadimispiirangud
+      response_code: Vastusekood
+      selected: valitud
+      send_payment_link: Saada makselink
+      shipment:
+        please_provide_tracking_details: Enne saadetise saadetuks märkimist sisesta jälgimisandmed
+      shipment_transfer:
+        wrong_destination: Vale sihtkoht
+      show_json: Näita JSON-i
+      stock_transfers:
+        add_products_tip: Esmalt pead valima sihtasukoha
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> alles (kokku <strong>%{total}</strong>)"
+      store_form:
+        company_field:
+          description: See kuvab ettevõtte välja aadressivormil jaotises Minu konto ja kassa aadressisammul.
+          label: Kuva ettevõtte aadressiväli
+        customer_support_email_help: See e-posti aadress on nähtav sinu poe külastajatele jaluse jaotises
+        new_order_notifications_email_help: Kui soovid saada e-posti teavituse iga kord, kui keegi tellimuse esitab, sisesta e-posti aadress, kuhu see teavitus saata
+        send_consumer_transactional_emails_help: Kui see on märkimata, ei saadeta klientidele tehingulisi e-kirju, näiteks tellimuse kinnitusi ja saadetiste teavitusi
+      store_setup_tasks:
+        add_billing_address: Lisa arveldusaadress
+        add_products: Lisa tooted
+        payment_methods:
+          copy: Maksete vastuvõtmiseks seadista vähemalt üks veebimakseteenuse pakkuja.
+          done: Kõik on valmis! Saad oma makseviise alati hallata <a href="%{link}" data-turbo-frame="_top">sellel</a> lehel.
+          setup: Seadista makseviisid
+          title: Seadista oma poe makseviisid
+        set_customer_support_email: Määra klienditoe e-posti aadress
+        setup_taxes_collection: Seadista maksude kogumine
+        taxes:
+          copy: Maksude kogumiseks seadista oma maksumäärad.
+          done: Kõik on valmis! Saad oma makse alati hallata <a href="%{link}" data-turbo-frame="_top">seadete</a> lehel.
+          setup: Seadista maksumäärad
+      storefront: Pood
+      successful: Õnnestunud
+      successfully_reset_digital_links_limit: Allalaadimispiirangud on lähtestatud
+      tables:
+        add_filter: Lisa filter
+        add_or_group: Lisa VÕI-rühm
+        apply: Rakenda
+        apply_filters: Rakenda filtrid
+        ascending: Kasvavalt
+        clear_all: Tühjenda kõik
+        columns: Veerud
+        descending: Kahanevalt
+        enter_value: Sisesta väärtus...
+        filter_builder: Filtrikoostaja
+        filters: Filtrid
+        match: Vasta
+        of_the_following: järgmistest
+        operators:
+          contains: sisaldab
+          does_not_contain: ei sisalda
+          ends_with: lõpeb
+          equals: võrdub
+          greater_than: suurem kui
+          greater_than_or_equal: suurem või võrdne
+          is_any_of: on üks järgmistest
+          is_empty: on tühi
+          is_none_of: ei ole ükski järgmistest
+          is_not_empty: ei ole tühi
+          less_than: väiksem kui
+          less_than_or_equal: väiksem või võrdne
+          not_equals: ei võrdu
+          starts_with: algab
+        order: Järjestus
+        reset_to_default: Lähtesta vaikeväärtustele
+        select_field: Vali väli...
+        sort_by: Sorteeri
+        visible_columns: Nähtavad veerud
+      taxon_rules:
+        all_conditions: kõik tingimused
+        any_condition: mis tahes tingimus
+        available_on: Saadaval alates
+        match_policies:
+          contains: sisaldab
+          does_not_contain: ei sisalda
+          is_equal_to: on võrdne
+          is_not_equal_to: ei ole võrdne
+        on_sale: Soodushinnaga
+        products_must_match: 'Tooted peavad vastama:'
+        tag: Toote silt
+      taxon_type: Kategooria tüüp
+      taxon_types:
+        automatic: Automaatne
+        automatic_info: Lisa tooted sellesse kategooriasse automaatselt, kui need vastavad sinu seatud reeglitele.
+        manual: Käsitsi
+        manual_info: Halda tooteid käsitsi. Saad neid hulgi lisada või eemaldada.
+      translations:
+        no_translations_configured: Ühtegi tõlget pole seadistatud. Tõlgete kasutamiseks seadista turud.
+      upload_new_asset: Laadi üles uus meedia
+      users:
+        filters:
+          search_placeholder: Otsi kliente e-posti või nime järgi
+      utilities:
+        preview: Eelvaade
+      variants:
+        search_results:
+          no_variants: Sinu otsingule vastavaid variante ei leitud :(
+      variants_form:
+        add_option:
+          empty: Lisa valikud, näiteks suurus või värv
+          not_empty: Lisa veel üks valik
+        compare_at_price_description: Seda hinda kasutatakse allahinnatud hinna kuvamiseks tootelehel.
+        stock_locations_link: Rohkemate laoasukohtade lisamiseks mine lehele <a href="%{link}">Laoasukohad</a>
+        total_inventory_html: 'Kogu laoseis asukohas %{stock_location}: saadaval %{count}'
+      vendors:
+        enterprise_feature: Mitme müüjaga turuplats on saadaval ettevõtteversioonis
+      webhook_deliveries:
+        delivered_at: Edastatud
+        delivery_details: Edastuse üksikasjad
+        delivery_info: Edastuse teave
+        endpoint_inactive: Ei saa uuesti proovida – lõpp-punkt on mitteaktiivne
+        error_type: Vea tüüp
+        event: Sündmus
+        execution_time: Täitmisaeg
+        failed: Ebaõnnestus
+        pending: Ootel
+        redeliver_button: Edasta uuesti
+        redelivered: Veebihaak edastati edukalt uuesti.
+        request_errors: Päringu vead
+        request_payload: Päringu sisu
+        response_body: Vastuse sisu
+        response_code: Vastusekood
+      webhook_endpoints:
+        auto_disabled: See lõpp-punkt keelati automaatselt pärast korduvaid edastustõrkeid.
+        back_to_endpoint: Tagasi lõpp-punkti juurde
+        deliveries: Edastused
+        endpoint_settings: Lõpp-punkti seaded
+        event_subscriptions: Sündmuste tellimused
+        event_subscriptions_help: Vali, millised sündmused peaksid sellesse lõpp-punkti veebihaagi edastuse käivitama.
+        events: sündmused
+        failed_deliveries: Ebaõnnestunud edastused
+        health:
+          degraded: "%{percentage}% õnnestumisi"
+          disabled: Keelatud
+          failing: "%{percentage}% õnnestumisi"
+          healthy: "%{percentage}% õnnestumisi"
+          no_deliveries: Andmed puuduvad
+        health_label: Seisund
+        new: Uus veebihaagi lõpp-punkt
+        re_enable: Luba uuesti
+        secret_key: Salajane võti
+        secret_key_help: Kasuta seda võtit veebihaagi allkirjade kontrollimiseks. Hoia see turvaliselt ja ära jaga seda avalikult.
+        send_test: Saada test
+        subscriptions: Tellimused
+        successful_deliveries: Õnnestunud edastused
+        test_failed: Testveebihaagi saatmine ebaõnnestus. Kontrolli lõpp-punkti seadistust.
+        test_sent: Testveebihaak saadetud. Tulemuse leiad edastuste alt.
+      webhooks_subscribers:
+        all_events: Kõik sündmused
+        new_webhooks_subscriber: Uus veebihaakide tellija
+        no_events: Sündmused puuduvad
+        select_events: Vali sündmused
+        subscribe_to_all_events: Telli kõik sündmused
+        subscriptions: Tellimused
+        time_of_last_event: Viimase sündmuse aeg
+        webhooks_events: Veebihaakide sündmused
     administration: Administreerimisliides
     advertise:
     agree_to_privacy_policy:
@@ -412,7 +1188,7 @@ et:
     are_you_sure: Kas oled kindel?
     are_you_sure_delete: Kas oled kindel, et soovid seda kirjet kustutada?
     associated_adjustment_closed:
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Tõrge autoriseerimisel
     authorized:
     auto_capture:
@@ -547,7 +1323,6 @@ et:
     date: Kuupäev
     date_completed:
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Vali vahemik
@@ -587,6 +1362,7 @@ et:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: See sooduskood ei kehti teie riigis
     email:
     empty: Tühi
     empty_cart: Tühjenda ostukorv
@@ -600,7 +1376,20 @@ et:
         could_not_create_taxon:
         no_payment_methods_available:
         no_shipping_methods_available:
+        cannot_delete_default_channel: Vaikekanalit ei saa kustutada. Tõstke esmalt mõni teine kanal vaikekanaliks.
+        channel_store_mismatch: peab kuuluma samasse poodi
+        invalid_order_routing_rule: ei ole registreeritud tellimuste suunamise reegel
+        invalid_order_routing_strategy: ei ole registreeritud tellimuste suunamise strateegia
+        must_be_origin_only: peab olema päritolu (skeem ja host) ilma teekonna, päringu või fragmendita
+        store_association_can_not_be_changed: Poe seost ei saa muuta
+        store_is_already_set: Pood on juba määratud
+      services:
+        get_shipping_rates:
+          no_line_items: Tarnehindade genereerimiseks peate tellimusele lisama tellimusridu
+          no_shipping_address: Tarnehindade genereerimiseks peab tellimusel olema tarneaadress
     errors_prohibited_this_record_from_being_saved:
+      one: 1 viga takistas selle kirje salvestamist
+      other: "%{count} viga takistas selle kirje salvestamist"
     event: Sündmus
     events:
       spree:
@@ -643,8 +1432,8 @@ et:
     gateway: Lüüs
     gateway_config_unavailable:
     gateway_error: Lüüsi viga
-    general: "Üldine"
-    general_settings: "Üldised sätted"
+    general: Üldine
+    general_settings: Üldised sätted
     google_analytics: Google Analytics
     google_analytics_id: Google Analytics ID
     guest_checkout: Sooritas ostu külalisena
@@ -841,6 +1630,7 @@ et:
         subject:
         subtotal:
         total:
+        thanks: Aitäh, et
       confirm_email:
         dear_customer:
         instructions:
@@ -849,6 +1639,20 @@ et:
         subtotal:
         thanks:
         total:
+      payment_link_email:
+        message: Tellimuse eest tasumiseks klõpsake allolevat nuppu.
+        message_copy_link: 'Kui nupp ei tööta, kopeerige ja kleepige järgmine link oma brauserisse:'
+        pay_for_order: Tasu tellimuse eest
+        subject: 'Makselink tellimusele #%{number}'
+      store_owner_notification_email:
+        heading: Uus tellimus saabunud
+        instructions: Olete saanud uue tellimuse.
+        order_summary: Tellimuse %{number} kokkuvõte
+        subject: "%{store_name} sai uue tellimuse"
+        thanks: Aitäh
+      store_team: "%{store_name} meeskond"
+      subtotal: 'Vahesumma:'
+      total: 'Tellimuse kogusumma:'
     order_not_found:
     order_number:
     order_processed_successfully: Tellimus edastatud
@@ -872,7 +1676,7 @@ et:
     orders: Tellimused
     other_items_in_other:
     out_of_stock: Laost lõppenud
-    overview: "Ülevaade"
+    overview: Ülevaade
     package_from:
     pagination:
       next_page:
@@ -903,6 +1707,9 @@ et:
       pending: Ootel
       processing: processing
       void: Kehtetu
+      complete: Lõpetatud
+      partially_refunded: Osaliselt tagastatud
+      refunded: Tagastatud
     payment_updated: Makse uuendatud
     payments: Maksed
     pending:
@@ -989,6 +1796,24 @@ et:
       user_logged_in:
         description:
         name:
+      category:
+        description: Tellimus sisaldab tooteid määratud kategooriatest
+        name: Kategooriad
+      country:
+        description: Piira tellimustele, mille tarneaadress on kindlas riigis
+        name: Riik
+      currency:
+        description: Piira kindlas valuutas tellimustele
+        name: Valuuta
+      customer:
+        description: Saadaval ainult määratud klientidele
+        name: Kliendid
+      customer_group:
+        description: Saadaval ainult määratud kliendigruppi(de)sse kuuluvatele klientidele
+        name: Kliendigrupp(id)
+      customer_logged_in:
+        description: Saadaval ainult sisselogitud klientidele
+        name: Ainult sisselogitud kliendid
     promotion_uses:
     promotionable:
     promotions: Kampaaniad
@@ -1031,6 +1856,8 @@ et:
         refund_summary:
         subject:
         total_refunded:
+        store_team: "%{store_name} meeskond"
+        thanks: Täname teid asjaajamise eest.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1112,6 +1939,8 @@ et:
         thanks:
         track_information:
         track_link:
+        shipping_method: 'Tarneviis: %{shipping_method}'
+        store_team: "%{store_name} meeskond"
     shipment_state: Tarne staatus
     shipment_states:
       backorder: backorder
@@ -1188,6 +2017,7 @@ et:
       returned:
       shipped:
       void:
+      shipment: Saadetis
     states: Maakonnad
     states_required:
     status: Staatus
@@ -1202,6 +2032,10 @@ et:
     stock_movements_for_stock_location:
     stock_successfully_transferred:
     stock_transfer:
+      errors:
+        must_have_variant: Peate lisama vähemalt ühe variandi
+        same_location: ei tohi olla sama mis sihtasukoht
+        variants_unavailable: Mõned variandid ei ole asukohas %{stock} saadaval
     stock_transfers:
     stop: Kuni
     store: Pood
@@ -1314,3 +2148,686 @@ et:
     zipcode: Postiindeks
     zone: Tsoon
     zones: Tsoonid
+    add_gift_card: Lisa kinkekaart
+    add_new_address: Lisa uus aadress
+    add_selected: Lisa valitud
+    add_selected_products: Lisa valitud tooted
+    add_selected_variant: Lisa valitud variant
+    added_at: Lisatud
+    adjustment_amount_help: Positiivsed väärtused on tasud, negatiivsed väärtused on krediidid.
+    adjustment_closed_description: Korrektsioon on suletud ja seda ei arvutata uuesti.
+    adjustment_open_description: Korrektsioon on avatud ja arvutatakse uuesti.
+    admin_language_help: Keel, milles sinu halduspaneeli kuvatakse. Mõjutab ainult seda, mida sina näed, mitte poodi ega teisi töötajaid.
+    admin_locale_help: Halduspaneeli jaoks kasutatav keel. Kui see pole määratud, kasutatakse rakenduse vaikelokaati.
+    all_time: Kogu aeg
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: Rakendatud
+    assigned_variants: Määratud variandid
+    assigned_variants_help: Vali variandid, mida see pilt esindab. Jäta tühjaks, et rakendada kõigile variantidele.
+    automatic_promotion: Automaatne
+    breadcrumbs: Jälg
+    cancel_order: Tühista tellimus
+    cannot_ship: Saadetist ei saa saata
+    card_expiration_placeholder: KK/AAAA
+    categorization: Kategoriseerimine
+    change_password: Muuda parooli
+    close_sidebar: Sulge külgriba
+    contact_information: Kontaktandmed
+    contact_us: Võta meiega ühendust
+    continue_selling_when_out_of_stock: Jätka müümist, kui kaup on otsas
+    copied: Kopeeritud!
+    copy_id: Kopeeri ID
+    custom_domains: Kohandatud domeenid
+    customer_could_not_be_removed_from_group: Klienti ei õnnestunud grupist eemaldada
+    customer_group_rule:
+      choose_customer_groups: 'Vali kliendigrupp(id), millele see kampaania peaks kehtima:'
+    customer_removed_from_group: Klient eemaldati grupist
+    customers_added_to_group:
+      one: "%{count} klient lisati gruppi"
+      other: "%{count} klienti lisati gruppi"
+    customers_removed_from_group:
+      one: "%{count} klient eemaldati grupist"
+      other: "%{count} klienti eemaldati grupist"
+    days_ago: Päeva tagasi
+    delete_selected: Kustuta valitud
+    digital_assets_help: Digitaalsed failid on failid, mida kliendid saavad pärast ostu alla laadida.
+    dimension_units:
+      centimeter: Sentimeeter (cm)
+      foot: Jalg (ft)
+      inch: Toll (in)
+      millimeter: Millimeeter (mm)
+    display_settings: Kuvamisseaded
+    domains: Domeenid
+    draft_orders: Mustandtellimused
+    edit_address: Muuda aadressi
+    edit_prices: Muuda hindu
+    edit_refund: Muuda tagasimakset
+    estimated_delivery_time: Hinnanguline tarneaeg
+    excerpt: Väljavõte
+    favicon: Favikoon
+    filtered_records: Filtreeritud kirjed
+    forbidden_message: Sul puudub õigus sellele lehele juurde pääseda.
+    general_information: Üldine teave
+    get_back_to_the: Mine tagasi
+    homepage: Avalehele
+    internal_server_error: Serveri sisemine viga
+    internal_server_error_message: Serveris tekkis sisemine viga ja sinu päringut ei õnnestunud lõpule viia.
+    invitation_expired:
+      body: See kutselink ei kehti enam. Palu sind kutsunud isikul saata uus.
+      heading: Kutse on kehtetu või aegunud
+    invitation_resent: Kutse saadeti uuesti!
+    issued_on: Väljastatud
+    log_in: Logi sisse
+    manual_adjustment: Käsitsi korrektsioon
+    manual_adjustments: Käsitsi korrektsioonid
+    mark_as_default: Märgi vaikimisi
+    move_variant_to: Teisalda variant asukohta
+    new_allowed_origin: Uus lubatud päritolu
+    new_api_key: Uus API-võti
+    new_balance: Uus saldo
+    new_billing_address: Uus arveldusaadress
+    new_channel: Uus müügikanal
+    new_custom_domain: Uus kohandatud domeen
+    new_customer_group: Uus kliendigrupp
+    new_digital_asset: Uus digitaalne fail
+    new_domain: Uus domeen
+    new_gift_card: Uus kinkekaart
+    new_line_item: Lisa tellimusrida
+    new_metafield_definition: Uus metavälja määratlus
+    new_nested_taxon: Uus pesastatud alamkategooria
+    new_page: Uus leht
+    new_password: Uus parool
+    new_policy: Uus poliitika
+    new_reimbursement_type: Uus hüvitise tüüp
+    new_role: Uus roll
+    new_shipping_address: Uus tarneaadress
+    new_store: Uus pood
+    new_store_credit: Uus poekrediit
+    new_store_credit_category: Uus poekrediidi kategooria
+    new_webhook_endpoint: Uus veebihaagi lõpp-punkt
+    no_adjustments: Korrektsioonid puuduvad
+    no_billing_address_available: Arveldusaadress puudub
+    no_customers_found: Kliente ei leitud
+    no_email_provided: E-posti aadressi ei esitatud
+    no_internal_note: Sisemärkus puudub
+    no_products_added: Ühtegi toodet pole lisatud
+    no_products_in_price_list: Selles hinnakirjas pole tooteid
+    no_promotions_applied: Ühtegi kampaaniat pole rakendatud
+    no_saved_cards: Salvestatud kaarte pole
+    no_shipping_address_available: Tarneaadress puudub
+    no_taxes: Makse pole
+    no_users_selected: Ühtegi kasutajat pole valitud
+    not_risky: Pole riskantne
+    oauth_applications: OAuth-rakendused
+    option_type_filterable_info: Kui valikutüüp on seatud filtreeritavaks, kuvatakse sinu poe külastajatele võimalus filtreerida tootekategooriat selle valikutüübi alusel. Tüüpiline näide on riiete filtreerimine suuruse ja värvi järgi.<br><br><b>Pane tähele:</b> filtrid on nähtavad ainult nendes poe kategooriates, mis sisaldavad selle valikutüübiga tooteid.
+    option_type_kind_info: Määrab, kuidas valikut poes kuvatakse. Värvinäidised kuvavad värviringe, nupud kuvavad klõpsatavaid kiipe ja rippmenüü kuvab valikumenüü.
+    option_type_kinds:
+      buttons: Nupud
+      color_swatch: Värvinäidis
+      dropdown: Rippmenüü
+    or_select_other_address: või vali muu aadress
+    order_email_resent_error: Tellimuse kinnituskirja saab saata ainult lõpetatud tellimuste puhul
+    order_line_items: Tellimusread
+    page_not_found: Vabandust! Otsitavat lehte ei leitud.
+    page_not_found_message: Seda lehte lihtsalt pole olemas.
+    payment_amount: Makse summa
+    payment_provider_settings: Makseteenuse pakkuja seaded
+    payment_type: Makse tüüp
+    payments_gateway_processing_errors: "%{payment_method_name} töötlemisvead"
+    personal_details: Isikuandmed
+    previously_used_card: Varem kasutatud kaardid
+    price_list_form:
+      match_policies:
+        all: Vasta kõigile nendele reeglitele
+        any: Vasta mis tahes nendest reeglitest
+    price_list_statuses:
+      active: Aktiivne
+      draft: Mustand
+      inactive: Mitteaktiivne
+      scheduled: Ajastatud
+      scheduled_active: Ajastatud (aktiivne)
+    products_added: Tooted lisatud
+    products_removed: Tooted eemaldatud
+    products_sort_options:
+      best_selling: Enimmüüdud
+      manual: Käsitsi
+      name_a_z: Tähestiku järgi, A–Z
+      name_z_a: Tähestiku järgi, Z–A
+      newest_first: Uusimad
+      oldest_first: Vanimad
+      price_high_to_low: Hind (kõrge–madal)
+      price_low_to_high: Hind (madal–kõrge)
+      relevance: Asjakohasus
+    promotion_cloned: Kampaania on kloonitud
+    promotion_not_cloned: 'Kampaaniat ei kloonitud. Põhjus: %{error}'
+    purchased_quantity: Ostetud kogus
+    remove_condition: Eemalda tingimus
+    return_authorization_states:
+      authorized: Volitatud
+      canceled: Tühistatud
+    same_as_shipping_address: Sama mis tarneaadress
+    search_customers: Otsi kliente
+    search_engine_listing: Otsingumootori loend
+    search_products: Otsi tooteid
+    select_existing_address: Vali olemasolev aadress
+    select_key_type: Vali võtme tüüp
+    select_user: Vali klient
+    select_vendor: Vali müüja
+    send_payment_link: Saada makselink
+    send_payment_link_title: Saada kliendile e-postiga makselink. Ta saab makse hiljem lõpule viia.
+    service_unavailable: Teenus pole saadaval
+    service_unavailable_message: Server ei saa ajutiselt sinu päringut teenindada hooldustööde või mahuprobleemide tõttu. Palun proovi hiljem uuesti.
+    shipment_successfully_shipped: Saadetis saadeti edukalt
+    show_details: Näita üksikasju
+    show_report: Näita aruannet
+    standards_and_formats: Standardid ja vormingud
+    standards_and_formats_help: Määra oma poe ajavöönd, vaikemõõtsüsteem ja kaaluühik.
+    start_typing_to_search_for_products: Hakka kirjutama, et tooteid otsida
+    start_typing_to_search_for_variants: Hakka kirjutama, et variante otsida
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Sa ei saa muuta poekrediiti, mida on juba kasutatud
+        unable_to_create: Poekrediidi loomine ebaõnnestus
+        unable_to_delete: Poekrediidi kustutamine ebaõnnestus
+        unable_to_update: Poekrediidi värskendamine ebaõnnestus
+      remaining: Alles
+      allocated: Lisatud
+      authorized: Autoriseeritud
+      captured: Kasutatud
+      credit: Krediit
+      eligible: Sobiv
+    store_credit_categories: Poekrediidi kategooriad
+    store_details: Poe andmed
+    store_errors:
+      unable_to_update: Poe värskendamine ebaõnnestus.
+    store_form:
+      customer_support_email_help: See e-posti aadress on nähtav sinu poe külastajatele jaluse jaotises
+      new_order_notifications_email_help: Kui soovid saada e-posti teavituse iga kord, kui keegi tellimuse esitab, sisesta e-posti aadress, kuhu see teavitus saata
+    store_name_help: See on sinu poe nimi. Seda kuvatakse päises ja jaluses.
+    track_quantity: Jälgi kogust
+    transaction_id_help: See on tehingu ID, mis loodi kolmanda osapoole makselüüsis.
+    true_label: TÕENE
+    type_to_search_customers: Kirjuta, et kliente otsida
+    type_to_search_products: Kirjuta, et tooteid otsida
+    unit_system_help: Seda kasutatakse sinu poe vaikemõõtsüsteemina. Saad selle iga toote puhul üle kirjutada.
+    unit_systems:
+      imperial_system: Inglise mõõdustik
+      metric: meetermõõdustik
+      metric_system: Meetermõõdustik
+    unprocessable_entity: Töötlematu olem
+    unprocessable_entity_message: Sinu päringut ei õnnestunud töödelda. Kontrolli vormi vigade osas ja proovi uuesti.
+    update_address: Värskenda aadressi
+    update_billing_address: Värskenda arveldusaadressi
+    update_contact_information: Värskenda kontaktandmeid
+    update_shipping_address: Värskenda tarneaadressi
+    use_shipping_address: Kasuta tarneaadressi
+    vendors: Müüjad
+    view_full_size: Vaata täissuuruses
+    view_store: Vaata poodi
+    visits: Külastused
+    weight_unit_help: Seda kasutatakse sinu poe vaikekaaluühikuna. Saad selle iga toote puhul üle kirjutada.
+    weight_units:
+      gram: Gramm (g)
+      kilogram: Kilogramm (kg)
+      ounce: Unts (oz)
+      pound: Nael (lb)
+    accepts_email_marketing: Nõustub e-posti turundusega
+    add_customers: Lisa kliente
+    add_products: Lisa tooteid
+    add_store: Uus pood
+    add_store_credit: Lisa poekrediiti
+    added_to_cart: Edukalt ostukorvi lisatud!
+    address: Aadress
+    address_book:
+      add_house_number: Lisa majanumber, kui see on olemas
+    address_not_owned_by_user: Määratud aadress ei kuulu sellele kasutajale.
+    addresses: Aadressid
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (sisaldub hinnas)"
+    adjustments_deleted: Korrektsioonid kustutatud
+    admin_locale: Administraatori keel
+    all_products: Kõik tooted
+    allowed_origin: Lubatud päritolu
+    allowed_origins: Lubatud päritolud
+    analytics: Analüütika
+    api_key: API võti
+    api_key_no_current_key: Ükski API võti ei autentinud seda päringut
+    api_key_scopes_immutable: ei saa pärast võtme loomist muuta; looge uus võti vajalike õigustega ja tühistage see
+    api_keys: API võtmed
+    apply: Rakenda
+    apply_only_on_full_priced_items: Rakenda ainult täishinnaga toodetele
+    apply_store_credit: Rakenda poekrediiti
+    assets: Meedia
+    attachments: Manused
+    author: Autor
+    availability: saadavus
+    available: Saadaval
+    balance: Saldo
+    barcode: Vöötkood
+    brand: Bränd
+    canceled: Tühistatud
+    cannot_be_destroyed: Tellimust ei saa kustutada.
+    cannot_empty: Tellimust ei saa tühjendada.
+    cannot_empty_completed_order: Tellimus on juba töödeldud, seetõttu ei saa seda tühjendada
+    cannot_return_more_than_bought_quantity: Ei saa tagastada rohkem kui ostetud kogus.
+    cart_already_updated: Ostukorv on juba uuendatud.
+    cart_line_item:
+      discontinued: "%{li_name} eemaldati, kuna selle müük lõpetati"
+      out_of_stock: "%{li_name} eemaldati, kuna see oli välja müüdud"
+    change: Muuda
+    channel: Müügikanal
+    channels: Müügikanalid
+    checkout_requirements:
+      email_required: E-posti aadress on nõutav
+      line_items_required: Lisage ostukorvi vähemalt üks toode
+      payment_required: Lisage makseviis
+      ship_address_required: Tarneaadress on nõutav
+      shipping_method_required: Valige kõikidele saadetistele tarneviis
+    clear: Tühjenda
+    clear_all: Tühjenda kõik
+    closed: Suletud
+    color_code: Värvikood
+    colors: Värvid
+    compare_at_amount: Võrdlussumma
+    compare_at_price: Võrdlushind
+    contact: Kontakt
+    contact_phone: Kontakttelefon
+    content: Sisu
+    copy: Kopeeri
+    copy_link: Kopeeri link
+    coupon_code_used: Sisestatud sooduskood on juba kasutatud. Palun proovige uuesti.
+    coupon_codes: Sooduskoodid
+    create_new: Loo uus
+    created_by: Looja
+    credit_allowed: Lubatud krediit
+    credited: Krediteeritud
+    currencies: Valuutad
+    currency_not_supported_by_store: ei ole selle poe poolt toetatud
+    current_password: Praegune parool
+    customer_group: Kliendigrupp
+    customer_groups: Kliendigrupid
+    customer_mailer:
+      password_reset_email:
+        action: Lähtesta parool
+        expiry_notice: See parooli lähtestamise link aegub peagi. Kui te seda ei taotlenud, ei ole midagi vaja ette võtta.
+        greeting: Tere %{name},
+        ignore_notice: Kui te ei taotlenud parooli lähtestamist, võite selle e-kirja rahulikult eirata. Teie parooli ei muudeta.
+        instructions: Saime teie parooli lähtestamise taotluse. Uue parooli valimiseks klõpsake allolevat nuppu.
+    customer_support_email: Klienditoe e-post
+    customers: Kliendid
+    cvv: CVV
+    default_billing_address: Vaike-arveaadress
+    default_country: Vaikeriik
+    default_currency: Vaikevaluuta
+    default_locale: Vaikekeel
+    default_shipping_address: Vaike-tarneaadress
+    default_stock_location_name: Poe asukoht
+    default_wishlist_name: Soovinimekiri
+    deleted: Kustutatud
+    developers: Arendajad
+    digital:
+      digital_delivery: Digitaalne tarne
+    digital_assets: Digitaalsed failid
+    discontinue_on: Lõpetamise kuupäev
+    discontinued: Müük lõpetatud
+    discontinued_variants_present: Mõned selle tellimuse tellimusread sisaldavad tooteid, mis ei ole enam saadaval.
+    discount: Soodustus
+    discounts: Soodustused
+    display_delivery_range: Tarne %{delivery_range} tööpäeva jooksul
+    display_on: Kuva
+    domain: Domeen
+    done: Valmis
+    download: Laadi alla
+    draft: Mustand
+    duplicate: Dubleeri
+    duplicating: Dubleerimine
+    email_marketing: E-posti turundus
+    emails: E-kirjad
+    ends_at: Lõpeb
+    enter: Sisesta
+    error_user_destroy_with_orders: Tellimustega seotud kasutajat ei saa kustutada
+    error_user_does_not_have_any_store_credits: Kasutajal ei ole ühtegi saadaolevat poekrediiti
+    estimated_transit_business_days: Hinnanguline transpordiaeg tööpäevades
+    existing_address: Olemasolev aadress
+    expired: Aegunud
+    expires_at: Aegub
+    export: Eksport
+    export_mailer:
+      export_done:
+        message: Tubli töö, teie eksport on valmis! Selle allalaadimiseks kasutage allolevat linki.
+        subject: Teie eksport %{export_number} on edukalt töödeldud!
+      greeting: Tere %{user_name},
+      thanks: Aitäh,
+    facebook: Facebook
+    featured_image: Esiletõstetud pilt
+    field: Väli
+    filled: Täidetud
+    filter: Filter
+    filterable: Filtreeritav
+    firstname: Eesnimi
+    fonts: Fondid
+    footer: Jalus
+    forbidden: Juurdepääs keelatud
+    free: Tasuta
+    from: Alates
+    generate_code: Genereeri sooduskood
+    gift_card: Kinkekaart
+    gift_card_already_redeemed: Kinkekaart on juba lunastatud.
+    gift_card_applied: Kinkekaart rakendati edukalt teie tellimusele!
+    gift_card_batch: Kinkekaartide partii
+    gift_card_customer_not_logged_in: Kinkekaarti ei saa külaliskasutajaga rakendada.
+    gift_card_expired: Kinkekaart on aegunud.
+    gift_card_mismatched_currency: Kinkekaarti ei saa praeguse valuutaga rakendada.
+    gift_card_mismatched_customer: See kinkekaart on seotud teise kasutajaga.
+    gift_card_not_found: Kinkekaarti ei leitud.
+    gift_card_removed: Kinkekaart eemaldati edukalt teie tellimuselt
+    gift_card_using_store_credit_error: Te ei saa kinkekaarti rakendada pärast poekrediidi rakendamist.
+    gift_cards: Kinkekaardid
+    hide: Peida
+    idempotency_key_reused: Seda Idempotency-Key võtit on juba kasutatud erinevate päringuparameetritega.
+    immediately: Kohe
+    import: Import
+    in_stock: Laos
+    instagram: Instagram
+    integrations: Integratsioonid
+    internal_note: Sisemine märkus
+    internationalization: Rahvusvahelistamine
+    invitation_accepted: Kutse vastu võetud!
+    invitation_mailer:
+      greeting: Tere %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} võttis vastu teie kutse liituda kohaga %{resource_name}"
+        subject: "%{invitee_name} võttis vastu teie kutse liituda kohaga %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} kutsus teid liituma kohaga %{resource_name}"
+        link_description: 'Kutse vastuvõtmiseks klõpsake allolevat linki:'
+        subject: Kutse liituda kohaga %{resource_name}
+      thanks: Aitäh,
+    invitations: Kutsed
+    invited_by: Kutsuja
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Võti
+    kind: Liik
+    label: Silt
+    language: Keel
+    lastname: Perekonnanimi
+    line_item: Tellimusrida
+    line_items: Tellimusread
+    link: Link
+    live: Aktiivne
+    locale: Keel
+    locale_not_supported_by_store: ei ole selle poe poolt toetatud
+    logo: Logo
+    mail_from_address: Saatja e-posti aadress
+    mailer_logo: E-kirja logo (ainult JPG- või PNG-pildid)
+    make_active_at: Aktiveerimise kuupäev
+    manual: Käsitsi
+    market: Turg
+    market_ids: Turud
+    markets: Turud
+    master: Põhi
+    max: Maks
+    max_quantity: Maksimaalne kogus
+    me_no_current_user: Ükski administraator ei autentinud seda päringut
+    media: Meedia
+    metafield_definitions: Metavälja definitsioonid
+    metafields: Metaväljad
+    min: Min
+    min_quantity: Minimaalne kogus
+    missing_return_authorization: Tootele %{item_name} puudub tagastusluba.
+    move: Liiguta
+    mutable: Muudetav
+    navigation: Navigatsioon
+    never: Mitte kunagi
+    new_address: Uus aadress
+    new_order_notifications_email: Uute tellimuste teavituste e-post
+    new_price_list: Uus hinnakiri
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Tere,
+        ignore_disclaimer: Kui te seda ei taotlenud, palun eirake seda e-kirja.
+        instructions: E-posti aadressi kinnitamiseks klõpsake allolevat nuppu.
+        message_copy_link: 'Kui nupp ei tööta, kopeerige ja kleepige järgmine link oma brauserisse:'
+        store_team: "%{store_name} meeskond"
+        subject: Kinnitage oma e-posti aadress
+        thanks: Aitäh
+        verify_email_address_link: Kinnita e-posti aadress
+    newsletter_subscribers: Uudiskirja tellijad
+    no_cc_type: Puudub
+    no_report_data: Aruande andmed puuduvad
+    number: Number
+    ok: OK
+    only_active_products_can_be_added_to_cart: Mustand- ja arhiveeritud tooteid ei saa ostukorvi lisada, palun märkige toode esmalt aktiivseks.
+    option_name: Valiku nimi
+    order_routing:
+      strategies:
+        legacy: Pärand
+        rules: Reeglid (järjestatud)
+    origin: Päritolu
+    other: Muu
+    outstanding_balance: Maksmata saldo
+    page: Leht
+    pages: Lehed
+    payment_source: Makseallikas
+    payment_total: Maksete kogusumma
+    permissions: Õigused
+    policies: Reeglistikud
+    preview: Eelvaade
+    price_lists: Hinnakirjad
+    price_rules:
+      customer_group_rule:
+        description: Rakenda hinnastamist kindlatele kliendigruppidele
+    prices: Hinnad
+    pricing: Hinnastamine
+    privacy_policy: Privaatsuspoliitika
+    processing: Töötlemine
+    product_name: Toote nimi
+    product_translations: Toodete tõlked
+    products_cannot_be_shipped: Me ei saa hetkel tarnida tooteid %{product_names} teie praegusesse asukohta. Palun muutke oma tarneaadressi või eemaldage %{product_names} oma ostukorvist.
+    promotion_already_used: Te ei saa kustutada kampaaniat, mida on juba rakendatud
+    promotion_category: Kampaania kategooria
+    promotion_label: Kampaania (%{name})
+    published_at: Avaldatud
+    query: Päring
+    refund_amount: Tagasimakse summa
+    remove_gift_card_on_completed_order_error: Te ei saa kinkekaarti eemaldada pärast tellimuse esitamist
+    report_mailer:
+      greeting: Tere %{user_name},
+      report_done:
+        message: Selle allalaadimiseks kasutage allolevat linki.
+        subject: Teie aruanne %{report_name} on valmis
+      thanks: Aitäh,
+    report_names:
+      products_performance: Toodete tulemuslikkus
+      sales_total: Müügi kogusumma
+    required: "*"
+    required_fields: kohustuslikud väljad
+    resellable: Edasimüüdav
+    resource: Ressurss
+    return_authorization_canceled: Tagastusluba tühistatud
+    return_item_order_not_completed: Tagastatava toote tellimus peab olema lõpetatud
+    returns_policy: Tagastuspoliitika
+    role_id: Rolli ID
+    row: Rida
+    sale: Soodusmüük
+    saving: Salvestamine
+    scopes: Õigused
+    search_by: 'Otsi:'
+    security: Turvalisus
+    seed:
+      shipping:
+        categories:
+          default: Vaikimisi
+          digital: Digitaalne
+    selected_quantity_not_available: valitud kogust %{item} ei ole saadaval.
+    send_consumer_transactional_emails: Saada klientidele tehingu-e-kirju
+    seo: SEO
+    seo_title: SEO pealkiri
+    ship_to: 'Tarne aadressile:'
+    shipping_policy: Tarnepoliitika
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (sis. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Tarnetsoon
+    show_discontinued: Näita lõpetatud müügiga tooteid
+    sign_up: Registreeru
+    site_name: Saidi nimi
+    size: Suurus
+    social: Sotsiaalmeedia
+    sort_by: Sorteeri
+    square_image: Ruudukujuline pilt
+    starts_at: Algab
+    state_changes: Olekumuutused
+    stock_items: Laoartiklid
+    store_credit_events: Poekrediidi sündmused
+    store_credit_name: Poekrediit
+    store_credit_payment_method:
+      currency_mismatch: Poekrediidi valuuta ei vasta tellimuse valuutale
+      insufficient_authorized_amount: Ei saa hõivata rohkem kui autoriseeritud summa
+      insufficient_funds: Poekrediidi järelejäänud summa ei ole piisav
+      successful_action: Edukas poekrediidi %{action}
+      unable_to_credit: 'Koodi ei õnnestunud krediteerida: %{auth_code}'
+      unable_to_find: Poekrediiti ei leitud
+      unable_to_find_for_action: 'Poekrediiti ei leitud autoriseerimiskoodi %{auth_code} jaoks toimingule: %{action}'
+      unable_to_void: 'Koodi ei õnnestunud tühistada: %{auth_code}'
+    store_credits: Poekrediidid
+    store_default: Vaikepood
+    store_name: Poe nimi
+    stores: Poed
+    subscribed: Tellitud
+    support: Tugi
+    supported_currencies: Toetatud valuutad
+    supported_locales: Toetatud keeled
+    tags: Sildid
+    tax_inclusive: Maks sisaldub
+    taxes: Maksud
+    taxonomy_brands_name: Brändid
+    taxonomy_categories_name: Kategooriad
+    taxonomy_collections_name: Kollektsioonid
+    terms_of_service: Kasutustingimused
+    theme: Teema
+    themes: Teemad
+    timezone: Ajavöönd
+    title: Pealkiri
+    to: Kuni
+    translations: Tõlked
+    twitter: Twitter
+    unit: Ühik
+    unit_system: Ühikute süsteem
+    unlimited: Piiramatu
+    updated_at: Uuendatud
+    url: URL
+    used: Kasutatud
+    user_ids: Kasutajad
+    vendor: Tarnija
+    verified: Kinnitatud
+    verified_at: Kinnitatud
+    view: Vaata
+    visibility: Nähtavus
+    webhook_endpoints: Veebihaagi lõpp-punktid
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Keelatud
+        heading: Veebihaagi lõpp-punkt keelatud
+        instructions: Palun kontrollige lõpp-punkti URL-i ja teenust, seejärel lubage see uuesti menüüs Seaded → Arendajad → Veebihaagid.
+        message: Veebihaagi lõpp-punkt "%{endpoint_name}" keelati automaatselt pärast korduvaid edastamistõrkeid.
+        name_label: Nimi
+        reason_label: Põhjus
+        subject: 'Veebihaagi lõpp-punkt keelatud: %{endpoint_name}'
+        url_label: URL
+    webhooks: Veebihaagid
+    weight_unit: Kaaluühik
+    wishlist: Soovinimekiri
+    zipcode_required: Sihtnumber on nõutav
+    zone_ids: Tsoonid
+    api:
+      cannot_delete: "%{model} ei saa kustutada"
+      current_password_invalid: Praegune parool on vale või puudub
+      gateway_error: 'Makselüüsiga tekkis probleem: %{text}'
+      invalid_api_key: Määratud on vigane API võti (%{key}).
+      invalid_resource: Vigane ressurss. Palun parandage vead ja proovige uuesti.
+      invalid_taxonomy_id: Vigane taksonoomia ID.
+      must_specify_api_key: Peate määrama API võtme.
+      negative_quantity: kogus on negatiivne
+      newsletter_verification_token_invalid: Uudiskirja kinnitustoken on vigane või aegunud.
+      order:
+        could_not_transition: Tellimuse olekut ei õnnestunud muuta. Palun parandage vead ja proovige uuesti.
+        insufficient_quantity: Üks teie ostukorvis olev toode on muutunud kättesaamatuks.
+        invalid_shipping_method: Määratud on vigane tarneviis.
+      password_reset_requested: Kui sellele e-posti aadressile on konto olemas, on parooli lähtestamise juhised saadetud.
+      password_reset_token_invalid: Parooli lähtestamise token on vigane või aegunud.
+      payment:
+        credit_over_limit: Seda makset saab krediteerida ainult kuni %{limit}. Palun määrake summa, mis on sellest arvust väiksem või sellega võrdne.
+        update_forbidden: Seda makset ei saa uuendada, kuna selle olek on %{state}.
+      record_not_found: "%{model} ei leitud"
+      redirect_url_not_allowed: Suunamise URL ei ole selle poe jaoks lubatud päritolust.
+      resource_not_found: Otsitud ressurssi ei leitud.
+      shipment:
+        cannot_ready: Saadetist ei saa valmis seada.
+      shipment_transfer_errors_occurred: 'Selle toimingu sooritamisel ilmnesid järgmised vead:'
+      shipment_transfer_success: Variandid edukalt üle kantud
+      stock_location_required: Laoliikumiste hankimiseks tuleb esitada parameeter stock_location_id.
+      unauthorized: Teil ei ole õigust seda toimingut sooritada.
+      v2:
+        cart:
+          no_coupon_code: Sooduskoodi ei esitatud ja tellimusele ei ole rakendatud ühtegi sooduskoodi kampaaniat
+          wrong_quantity: Kogus peab olema suurem kui 0
+        digitals:
+          missing_file: 'Puuduv digitaalne üksus: manus'
+          unauthorized: Viga, teil ei ole õigust sellele failile juurde pääseda
+        gift_card:
+          amount_not_valid: Kinkekaardi summa ei ole kehtiv
+          not_found: Kinkekaarti ei leitud
+        metadata:
+          invalid_params: Avalikud ja privaatsed metaandmete parameetrid peavad olema objektid
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Soovinimekirja ei õnnestunud kustutada.
+          wrong_quantity: Kogus peab olema suurem kui 0
+      v3:
+        payments:
+          method_unavailable: See makseviis ei ole selle tellimuse jaoks saadaval.
+          session_required: See makseviis nõuab makseseanssi. Kasutage selle asemel makseseansside lõpp-punkti.
+      wrong_shipment_target: sihtsaadetis on sama mis algne saadetis
+  action_text:
+    video_embed:
+      not_found: Esitatud URL-i abil ei õnnestu videot manustada
+  activemodel:
+    errors:
+      messages:
+        blank: ei tohi olla tühi
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: sisaldab järeltellitud laoühikuid
+              has_already_been_shipped: on juba saadetud
+            desired_shipment:
+              can_not_transfer_within_same_shipment: ei tohi olla sama mis praegune saadetis
+              has_not_enough_stock_at_desired_location: soovitud laoasukohas ei ole piisavalt laoseisu
+  address_book:
+    save: Salvesta
+    successfully_created: Uus aadress on edukalt loodud
+  number:
+    currency:
+      format:
+        delimiter: " "
+        separator: ","
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Kärbi

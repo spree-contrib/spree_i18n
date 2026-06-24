@@ -1,3 +1,4 @@
+---
 fi:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ fi:
         phone: Puhelin
         state: Osavaltio tai maakunta
         zipcode: Postinumero
+        company: Yritys
+        label: Osoitteen nimi
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ fi:
       spree/option_type:
         name: Nimi
         presentation: Julkinen nimi
+        filterable: Suodatettava
+        kind: Tyyppi
       spree/order:
         checkout_complete: Tilaus valmis
         completed_at: Valmistui
@@ -54,6 +59,8 @@ fi:
         special_instructions: Erityisohjeet
         state: Tila
         total: Yhteensä
+        internal_note: Sisäinen huomautus
+        item_count: Tuotteet
       spree/order/bill_address:
         address1: Maksajan katuosoite
         city: Maksajan postitoimipaikka
@@ -72,6 +79,7 @@ fi:
         zipcode: Vastaanottajan postinumero
       spree/payment:
         amount: Summa
+        number: Numero
       spree/payment_method:
         name: Nimi
       spree/product:
@@ -84,6 +92,10 @@ fi:
         on_hand: Varastossa
         shipping_category: Toimituskategoria
         tax_category: Verokanta
+        discontinue_on: Poistetaan käytöstä
+        less_than: Vähemmän kuin
+        make_active_at: Aktivoidaan
+        more_than: Enemmän kuin
       spree/promotion:
         advertise: Mainosta
         code: Koodi
@@ -94,8 +106,11 @@ fi:
         path: Polku
         starts_at: Alkaa
         usage_limit: Käyttöraja
+        generate_code: Luo alennuskoodi
+        promotion_category: Kampanjaluokka
       spree/promotion_category:
         name: Kampanjakategoria
+        code: Koodi
       spree/property:
         name: Nimi
         presentation: Julkinen nimi
@@ -123,6 +138,16 @@ fi:
         name:
         seo_title:
         url:
+        address: Osoite
+        contact_phone: Yhteyspuhelin
+        preferred_digital_asset_authorized_clicks: Latausten napsautusten raja
+        preferred_digital_asset_authorized_days: Latauspäivien raja
+        preferred_limit_digital_download_count: Rajoita digitaalisten linkkien latausmäärää
+        preferred_limit_digital_download_days: Rajoita digitaalisten linkkien latauspäiviä
+        seo_robots: SEO-robotit
+        storefront_custom_code_body_end: Mukautettu koodi ennen sulkevaa body-tunnistetta
+        storefront_custom_code_body_start: Mukautettu koodi avaavan body-tunnisteen jälkeen
+        storefront_custom_code_head: Mukautettu koodi sivun headissa
       spree/tax_category:
         description: Kuvaus
         name: Nimi
@@ -134,12 +159,14 @@ fi:
         name: Nimi
         permalink: Siisti url
         position: Sijainti
+        sort_order: Järjestys
       spree/taxonomy:
         name: Nimi
       spree/user:
         email: Sähköpostiosoite
         password: Salasana
         password_confirmation: Vahvista salasana
+        avatar: Profiilikuva
       spree/variant:
         cost_currency: Maksuvaluutta
         cost_price: Inventaarihinta
@@ -152,6 +179,54 @@ fi:
       spree/zone:
         description: Kuvaus
         name: Nimi
+      spree/customer_group:
+        description: Kuvaus
+        name: Nimi
+      spree/customer_return:
+        stock_location_id: Varastopaikka
+      spree/gift_card:
+        amount_used: Käytetty määrä
+        expires_at: Vanhenee
+      spree/import:
+        preferred_delimiter: Erotin
+      spree/import_mapping:
+        file_column: Tiedoston sarake
+        schema_field: Skeeman kenttä
+      spree/import_row:
+        row_number: Numero
+      spree/invitation:
+        inviter: Kutsuja
+      spree/metafield_definition:
+        namespace: Nimiavaruus
+      spree/option_value:
+        color_code: Värikoodi
+        image: Värimallin kuva
+      spree/page_link:
+        open_in_new_tab: Avaa uudessa välilehdessä
+      spree/policy:
+        body: Sisältö
+        owner: Käytäntö kohteelle
+      spree/price_list:
+        description: Kuvaus
+        ends_at: Päättyy
+        match_policy: Vastaavuussääntö
+        name: Nimi
+        priority: Prioriteetti
+        starts_at: Alkaa
+        status: Tila
+      spree/price_rule:
+        priority: Prioriteetti
+        type: Tyyppi
+      spree/shipment:
+        number: Numero
+      spree/store_credit:
+        amount_used: Käytetty määrä
+      spree/store_credit_category:
+        name: Nimi
+      user:
+        current_sign_in: Nykyinen kirjautuminen
+        last_sign_in: Viimeisin kirjautuminen
+        sign_in_count: Kirjautumisten määrä
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,6 +273,109 @@ fi:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Ainoaa kauppaa ei voi poistaa.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: on oltava alkuperä (skeema ja isäntä) ilman polkua, kyselyä tai fragmenttia
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Käytettyä lahjakorttia ei voi poistaa
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: on oltava olemassa
+              not_allowed_content_type: sisältää sisältötyypin, jota ei sallita
+        spree/import:
+          attributes:
+            attachment:
+              content_type: sisältää sisältötyypin, jota ei sallita
+            type:
+              inclusion: ei sisälly sallittujen tyyppien luetteloon
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: kuuluu toiselle käyttäjälle
+              deprecated_in_completed_order: vanhentunut valmiissa tilauksessa
+            ship_address_id:
+              belongs_to_other_user: kuuluu toiselle käyttäjälle
+              deprecated_in_completed_order: vanhentunut valmiissa tilauksessa
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Oletusmarkkinaa ei voi poistaa.
+              cannot_destroy_last_market: Ainoaa markkinaa ei voi poistaa.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: on jo määritetty toiselle markkinalle tässä kaupassa
+              not_in_shipping_zone: ei kuulu mihinkään toimitusalueeseen. Määritä ensin toimitusalue.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: on suurempi kuin sallittu enimmäismäärä %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: on oltava alkamisajan jälkeen
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Tuotteita, jotka on lisätty tehtyihin tilauksiin, ei voi poistaa. Poista ne tällöin käytöstä.
+            discontinue_on:
+              invalid_date_range: on oltava saatavuuspäivän jälkeen
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: on oltava julkaisupäivän jälkeen
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: on oltava alkamispäivän jälkeen
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Sinun on valittava vähintään yksi toimitusluokka
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Ylittää kokonaishyvitykset.
+            amount_used:
+              cannot_be_greater_than_amount: Ei voi olla suurempi kuin määrä.
+              greater_than_zero_restrict_delete: on suurempi kuin nolla. Kauppahyvitystä ei voi poistaa.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Kauppahyvitysluokkia ei voi poistaa, kun niitä on käytetty kauppahyvityksessä.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: sisältää sisältötyypin, jota ei sallita
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: kuuluu toiselle käyttäjälle
+              deprecated_in_completed_order: vanhentunut valmiissa tilauksessa
+            ship_address_id:
+              belongs_to_other_user: kuuluu toiselle käyttäjälle
+              deprecated_in_completed_order: vanhentunut valmiissa tilauksessa
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Variantteja, jotka on lisätty tehtyihin tilauksiin, ei voi poistaa. Poista ne tällöin käytöstä.
+              must_supply_price_for_variant_or_master: Variantille on annettava hinta tai tuotteelle päähinta.
+              no_master_variant_found_to_infer_price: Hinnan päättelemiseksi ei löytynyt päävarianttia
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: ei saa osoittaa sisäiseen tai yksityiseen verkko-osoitteeseen
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Lisäsit tämän tuotteen jo toivelistallesi
+      messages:
+        blank: ei voi olla tyhjä
     models:
       spree/address:
         one: Osoite
@@ -209,6 +387,8 @@ fi:
         one: Luottokortti
         other: Luottokortit
       spree/customer_return:
+        one: Asiakaspalautus
+        other: Asiakaspalautukset
       spree/inventory_unit:
         one: Myyntiyksikkö
         other: Myyntiyksikköä
@@ -219,6 +399,8 @@ fi:
         one: Valintatyyppi
         other: Valintatyypit
       spree/option_value:
+        one: Valinnan arvo
+        other: Valinnan arvot
       spree/order:
         one: Tilaus
         other: Tilaukset
@@ -244,12 +426,20 @@ fi:
         one: Prototyyppi
         other: Prototyypit
       spree/refund_reason:
+        one: Hyvityksen syy
+        other: Hyvityksen syyt
       spree/reimbursement:
+        one: Korvaus
+        other: Korvaukset
       spree/reimbursement_type:
+        one: Korvaustyyppi
+        other: Korvaustyypit
       spree/return_authorization:
         one: Asiakaspalautus
         other: Asiakaspalautukset
       spree/return_authorization_reason:
+        one: Palautusvaltuutuksen syy
+        other: Palautusvaltuutuksen syyt
       spree/role:
         one: Rooli
         other: Roolit
@@ -266,10 +456,14 @@ fi:
         one: Osavalitio
         other: Osavaltiot
       spree/state_change:
+        one: Tilan muutos
+        other: Tilan muutokset
       spree/stock_location:
         one: Varasto
         other: Varastot
       spree/stock_movement:
+        one: Varastotapahtuma
+        other: Varastotapahtumat
       spree/stock_transfer:
         one: Varastosiirto
         other: Varastosiirrot
@@ -297,6 +491,66 @@ fi:
       spree/zone:
         one: Alue
         other: Alueet
+      spree/classification:
+        one: Luokitus
+        other: Luokitukset
+      spree/cms_page:
+        one: Sivu
+        other: Sivut
+      spree/cms_section:
+        one: Osio
+        other: Osiot
+      spree/customer_group:
+        one: Asiakasryhmä
+        other: Asiakasryhmät
+      spree/customer_group_user:
+        one: Asiakasryhmän käyttäjä
+        other: Asiakasryhmän käyttäjät
+      spree/digital:
+        one: Digitaalinen resurssi
+        other: Digitaaliset resurssit
+      spree/export:
+        one: Vienti
+        other: Viennit
+      spree/integration:
+        one: Integraatio
+        other: Integraatiot
+      spree/page:
+        one: Sivu
+        other: Sivut
+      spree/page_block:
+        one: Sivun lohko
+        other: Sivun lohkot
+      spree/page_link:
+        one: Sivun linkki
+        other: Sivun linkit
+      spree/page_section:
+        one: Sivun osio
+        other: Sivun osiot
+      spree/price:
+        one: Hinta
+        other: Hinnat
+      spree/price_list:
+        one: Hinnasto
+        other: Hinnastot
+      spree/price_rule:
+        one: Hintasääntö
+        other: Hintasäännöt
+      spree/stock_item:
+        one: Varastoyksikkö
+        other: Varastoyksiköt
+      spree/store:
+        one: Kauppa
+        other: Kaupat
+      spree/store_credit:
+        one: Kauppahyvitys
+        other: Kauppahyvitykset
+      spree/store_credit_category:
+        one: Kauppahyvitysluokka
+        other: Kauppahyvitysluokat
+      spree/theme:
+        one: Teema
+        other: Teemat
   devise:
     confirmations:
       confirmed: Kiitos tilisi vahvistamisesta! Kirjasimme sinut nyt sisään.
@@ -309,6 +563,7 @@ fi:
       timeout: Istuntosi vanhentui. Jatka kirjautumalla uudelleen sisään.
       unauthenticated: Kirjaudu sisään tai rekisteröidy jatkaaksesi.
       unconfirmed: Voit jatkaa heti kun olet vahvistanut tilisi.
+      too_many_attempts: Liian monta yritystä. Odota hetki ja yritä uudelleen.
     mailer:
       confirmation_instructions:
         subject: Ohjeet tilin vahvistamiseen
@@ -343,6 +598,7 @@ fi:
       not_saved:
         one: 'Yksi virhe esti kohteen %{resource} tallennuksen:'
         other: "%{count} virhettä estivät kohteen %{resource} tallennuksen:"
+      not_a_number: ei ole numero
   spree:
     abbreviation: Lyhenne
     accept:
@@ -364,6 +620,15 @@ fi:
       refund:
       save: Tallenna
       update: Päivitä
+      close: Sulje
+      connect: Yhdistä
+      discard: Hylkää
+      open: Avaa
+      reject: Hylkää
+      remove: Poista
+      resend: Lähetä uudelleen
+      select_file: Valitse tiedosto
+      send_invitation: Lähetä kutsu
     activate: Ota käyttöön
     active: Käytössä
     add: Lisää
@@ -416,6 +681,483 @@ fi:
         order_num:
         orders:
         user_information:
+        last_order_placed: Viimeisin tilaus tehty
+        no_store_credit: Asiakkaalla ei ole kauppakredittiä käytettävissä
+      allowed_origins:
+        origin_help: Anna verkkokauppasi täydellinen alkuperä-URL (esim. https://myshop.com). Älä sisällytä polkuja tai kyselymerkkijonoja.
+        origin_settings: Alkuperäasetukset
+      amount_spent: Käytetty summa
+      api_keys:
+        example_request: Esimerkkipyyntö
+        key_revoked_message: Tämä API-avain on peruutettu, eikä sitä voi enää käyttää.
+        key_type_descriptions:
+          publishable: Turvallinen käytettäväksi asiakaspuolen koodissa, kuten mobiilisovelluksissa tai selaimissa.
+          secret: Pidä tämä turvassa ja käytä sitä vain palvelinpuolella. Älä koskaan paljasta sitä julkisesti.
+        key_types:
+          publishable: Julkaistava
+          secret: Salainen
+        last_used_at: Viimeksi käytetty
+        list: API-avaimet
+        name_placeholder: esim. Mobiilisovellus tuotanto
+        revoke: Peruuta
+        revoke_confirmation: Haluatko varmasti peruuttaa tämän API-avaimen? Tätä toimintoa ei voi kumota.
+        revoked: API-avain on peruutettu
+        revoked_at: Peruutettu
+        revoked_by: Peruuttaja
+        scopes: Käyttöalueet
+        scopes_description: Pakollinen salaisille avaimille. Valitse suppein käyttöaluejoukko, jonka integraatiosi tarvitsee.
+        scopes_immutable: Käyttöalueet kiinnitetään avainta luotaessa. Vaihtaaksesi ne luo uusi avain tarvitsemillasi käyttöalueilla ja peruuta tämä.
+        secret_key_hidden: Tätä salaista avainta ei voi paljastaa. Jos olet kadottanut sen, peruuta tämä avain ja luo uusi.
+        statuses:
+          active: Aktiivinen
+          revoked: Peruutettu
+        token_warning: Säilytä tämä avain turvallisesti. Se näytetään vain tämän kerran.
+        usage: Käyttö
+        usage_instructions:
+          publishable: Käytä tätä avainta asiakaspuolen pyyntöihin. Sen voi turvallisesti sisällyttää frontend-koodiisi.
+          secret: Käytä tätä avainta vain palvelinpuolen pyyntöihin. Pidä se luottamuksellisena äläkä koskaan paljasta sitä asiakaspuolen koodissa.
+      audit_log: Tarkastusloki
+      avg_order_value: Keskim. tilausarvo
+      back_to_dashboard: Takaisin hallintapaneeliin
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Haluatko varmasti poistaa valitut asiakkaat tästä ryhmästä?
+          title:
+            remove: Poista ryhmästä
+        price_list_products:
+          body:
+            remove: Haluatko varmasti poistaa valitut tuotteet tästä hinnastosta? Tämä poistaa myös niiden hinnat.
+          title:
+            remove: Poista hinnastosta
+        products:
+          body:
+            add_tags: 'Valitse tuotteisiin lisättävät tunnisteet:'
+            add_to_taxons: 'Valitse, mihin kategorioihin tuotteet lisätään:'
+            remove_from_taxons: 'Valitse, mistä kategorioista tuotteet poistetaan:'
+            remove_tags: 'Valitse tuotteista poistettavat tunnisteet:'
+            set_active: Tuotteiden asettaminen aktiivisiksi tekee niistä saatavilla verkkokaupassa.
+            set_archived: Tuotteiden asettaminen arkistoiduiksi piilottaa ne verkkokaupasta.
+            set_draft: Tuotteiden asettaminen luonnoksiksi piilottaa ne verkkokaupasta.
+          title:
+            add_tags: Lisää tunnisteita
+            add_to_taxons: Lisää kategorioihin
+            remove_from_taxons: Poista kategorioista
+            remove_tags: Poista tunnisteita
+            set_active: Aseta aktiiviseksi
+            set_archived: Aseta arkistoiduksi
+            set_draft: Aseta luonnokseksi
+        users:
+          body:
+            add_tags: 'Valitse asiakkaisiin lisättävät tunnisteet:'
+            remove_tags: 'Valitse asiakkaista poistettavat tunnisteet:'
+          title:
+            add_tags: Lisää tunnisteita
+            remove_tags: Poista tunnisteita
+      channels:
+        code_hint: Lyhyt, pysyvä tunniste (esim. "online", "pos", "wholesale"). API-asiakkaat käyttävät sitä X-Spree-Channel-otsakkeen kautta ja tilausten kohdistamiseen.
+        default: Oletuskanava
+        default_hint: Tarkalleen yksi kanava per kauppa on oletus. Sitä käytetään varakanavana, kun kanavaa ei ole valittu, ja uusien tuotteiden automaattisena julkaisukohteena.
+        order_routing_strategy: Tilausten reititysstrategia
+        order_routing_strategy_hint: Ohittaa kauppatason reititysstrategian tähän kanavaan kohdistetuissa tilauksissa.
+        order_routing_strategy_inherit: Peri kaupasta
+      checkout_settings:
+        checkout_links:
+          description: Linkit näihin sivuihin näytetään kassan alatunnisteessa.
+          label: Kassan linkit
+        checkout_message_description: Näkyy asiakkaillesi kassasivulla oikeassa sivupalkissa.
+        countries_managed_by_markets_html: Maita ja toimitusalueita hallitaan kohteessa %{link}.
+        guest_checkout:
+          description: Salli asiakkaiden tehdä tilaus ilman tilin luomista.
+          label: Salli kassa vieraana
+        special_instructions:
+          description: Salli asiakkaiden lisätä erityisohjeita tilaukseensa.
+          label: Näytä erityisohjeiden kenttä
+      close_sidebar: Sulje sivupalkki
+      copied: Kopioitu!
+      copy_payment_link: Kopioi maksulinkki
+      copy_to_clipboard: Kopioi leikepöydälle
+      coupon_codes:
+        unused: Käyttämätön
+        used: Käytetty
+      created_at: Luotu
+      dashboard:
+        getting_started:
+          description: Kaikki, mitä tarvitset asettaaksesi myynnin käyntiin.
+        hi: Hei
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> / %{total} vaihetta valmiina"
+          title: Kokonaiskäyttöönoton edistyminen
+        top_products: Suosituimmat tuotteet
+        view_report: Näytä raportti
+        whats_happening_on_html: Tässä on, mitä kaupassa <strong>%{store_name}</strong> tapahtuu tänään.
+      datetime_field_timezone_help: 'Aikavyöhyke: %{zone}'
+      digital_shipment_fulfillment_note: Tämä toimitus merkitään toimitetuksi, kun käyttäjä lataa digitaalisen tuotteen
+      display_on_options:
+        back_end: Vain hallintapaneelissa
+        both: Sekä hallintapaneelissa että verkkokaupassa
+        front_end: Vain verkkokaupassa
+      documentation: Dokumentaatio
+      edit_billing_address: Muokkaa laskutusosoitetta
+      edit_contact_information: Muokkaa yhteystietoja
+      edit_profile: Muokkaa profiilia
+      edit_shipping_address: Muokkaa toimitusosoitetta
+      edit_theme: Muokkaa teemaa
+      errors: Virheet
+      execution_time: Suoritusaika
+      expand_sidebar: Laajenna sivupalkki
+      export_all: Vie kaikki tietueet (voi olla hidasta suurille tietojoukoille)
+      export_coupons: Vie kupongit CSV-tiedostona
+      export_created: Vientisi käynnistettiin. Saat sähköpostiin latauslinkin, kun se on valmis!
+      export_only_filtered_records: Vie vain suodatetut tietueet, jotka vastaavat hakuehtoja
+      export_report: Vie raportti CSV-tiedostona
+      filters: Suodattimet
+      getting_started: Aloittaminen
+      gift_card_batches:
+        codes_count: Koodien määrä
+        new_gift_card_batch: Uusi lahjakorttierä
+        prefix: Etuliite
+      gift_cards:
+        active: Aktiivinen
+        all_statuses: Kaikki tilat
+        code_help_text: Jos jätät tämän tyhjäksi, luomme koodin puolestasi
+        redeemed: Lunastettu
+        usage: Käyttö
+      imports:
+        all_required_columns_mapped: Hyvää työtä, kaikki pakolliset sarakkeet on määritetty!
+        field_required: Kenttä pakollinen
+        import_done: Valmista!
+        large_import_background_note: Voit sulkea tämän sivun — tuonti jatkuu taustalla.
+        large_import_message: Tämä tuonti sisältää %{count} riviä ja on liian suuri näytettäväksi yksittäin.
+        large_import_summary: "%{completed} valmistunut, %{failed} epäonnistunut"
+        mapping_required: Tämä kenttä on pakollinen
+        please_map_all_required_fields: Määritä kaikki pakolliset kentät jatkaaksesi.
+        waiting_for_file_to_be_processed: Odotetaan tiedoston käsittelyä...
+      integrations:
+        invalid_integration_type: Tämä integraatio ei ole sallittu
+        page_subtitle: Yhdistä kauppasi kolmannen osapuolen palveluihin parantaaksesi asiakaskokemusta.
+      json_preview:
+        no_api_response: API-vastausta ei löytynyt tälle resurssille
+      manage_markets: Hallitse markkinoita
+      manage_properties: Hallitse ominaisuuksia
+      manage_stock_locations: Hallitse varastosijainteja
+      manage_taxons: Hallitse kategorioita
+      manage_zones: Hallitse alueita
+      markets:
+        edit: Muokkaa markkinaa
+        list: Markkinat
+        new: Uusi markkina
+        supported_locales_hint: Pilkuilla eroteltu luettelo lisäkielikoodeista (esim. fr,de,es)
+      metafield_definitions:
+        edit_warning: Et voi muuttaa resurssityyppiä tai metakentän tyyppiä sen jälkeen, kun määritystä on käytetty.
+        used_in: Käytetään kohteessa
+      name: Nimi
+      navigation:
+        nested_under: Sijoitettu kohteen alle
+      newsletter_subscribers:
+        all: Kaikki
+        unverified: Vahvistamaton
+        verified: Vahvistettu
+      not_tracking_inventory: Ei seuraa varastoa
+      notifications: Ilmoitukset
+      num_orders: Tilausten määrä
+      oauth_applications:
+        client_id: Asiakastunnus
+        client_secret: Asiakassalaisuus
+        last_used: Viimeksi käytetty
+        list: API-avaimet
+        never: Ei koskaan
+        new: Uusi API-avain
+        read_and_write: Luku ja kirjoitus
+        read_only: Vain luku
+        scopes: Käyttöalueet
+      order:
+        events:
+          approve: Hyväksy
+          cancel: Peruuta
+          resend: Lähetä uudelleen
+          resume: Jatka
+      orders:
+        add_user_to_this_order: Lisää asiakas tähän tilaukseen
+        all_orders: Kaikki tilaukset
+        canceled: Peruutettu
+        fulfilled: Toimitettu
+        no_email_present: Lisää sähköpostiosoite lähettääksesi maksulinkin
+        orders_to_fulfill: Toimitettavat tilaukset
+        partially_refunded: Osittain hyvitetty
+        payment_link_sent: Maksulinkki lähetettiin asiakkaalle
+        provide_email: Anna sähköpostiosoite
+        refunded: Hyvitetty
+        remove_user_from_this_order: Poista asiakas tästä tilauksesta
+        unfulfilled: Toimittamatta
+      page_builder:
+        background_color: Taustaväri
+        border_bottom_width: Alareunan reunaleveys
+        border_color: Reunaväri
+        border_top_width: Yläreunan reunaleveys
+        bottom_padding: Alatäyte
+        button_alignment: Painikkeen tasaus
+        button_background_color: Painikkeen taustaväri
+        button_style: Painikkeen tyyli
+        button_text: Painikkeen teksti
+        button_text_color: Painikkeen tekstin väri
+        category: Kategoria
+        description: Kuvaus
+        description_alignment: Kuvauksen tasaus
+        desktop_image_alignment: Kuvan tasaus työpöydällä
+        desktop_logo_height: Logon korkeus (työpöytä)
+        heading: Otsikko
+        heading_alignment: Otsikon tasaus
+        heading_size: Otsikon koko
+        height: Korkeus
+        image_click_hint: Kuvan napsauttaminen ohjaa käyttäjän valitulle sivulle/URL-osoitteeseen
+        left_aligned: Tasattu vasemmalle
+        logo_centered: Logo keskitetty
+        max_video_width_on_desktop: Videon enimmäisleveys työpöydällä
+        maximum_products_to_show: Näytettävien tuotteiden enimmäismäärä
+        nav_centered: Navigointi keskitetty
+        not_set: Ei asetettu
+        separated: Erotettu
+        show_more_button: Näytä tutustu kategoriaan -painike
+        show_taxon_image: Näytä kategorian kuva
+        text_color: Tekstin väri
+        title: Otsikko
+        top_padding: Ylätäyte
+        use_description_from_admin: Käytä hallintapaneelin kuvausta
+        vertical_alignment: Pystytasaus
+        youtube_video_url: YouTube-videon URL
+      personal_details: Henkilötiedot
+      price_lists:
+        activate: Aktivoi
+        activated: Hinnasto on aktivoitu
+        confirm_activate: Haluatko varmasti aktivoida tämän hinnaston? Se vaikuttaa hinnoitteluun välittömästi.
+        confirm_deactivate: Haluatko varmasti poistaa tämän hinnaston käytöstä?
+        confirm_schedule: Haluatko varmasti ajastaa tämän hinnaston?
+        confirm_unschedule: Haluatko varmasti poistaa tämän hinnaston ajastuksen?
+        deactivate: Poista käytöstä
+        deactivated: Hinnasto on poistettu käytöstä
+        schedule: Ajasta
+        scheduled: Hinnasto on ajastettu
+        unschedule: Poista ajastus
+      product_translations:
+        coverage: Käännöskattavuus
+        locale: Kieli
+        manage_markets: Hallitse markkinoita
+        no_locales_description: Määritä markkinat lisäkielillä aloittaaksesi tuotteidesi kääntämisen.
+        no_locales_title: Lisäkieliä ei ole määritetty
+        progress: Edistyminen
+        total: Yhteensä
+        translated: Käännetty
+      products:
+        active: Aktiivinen
+        all_statuses: Kaikki tilat
+        any_stock: Mikä tahansa varasto
+        archived: Arkistoitu
+        by_status: Tilan mukaan
+        by_stock: Varaston mukaan
+        deleted: Poistettu
+        draft: Luonnos
+        help_bubble: Luonnostuotteita ei voi ostaa. Aktiiviset tuotteet ovat näkyvillä.
+        in_stock: Varastossa
+        inventory:
+          barcode: Viivakoodi (ISBN, UPC, GTIN jne.)
+          sku: SKU (varastoyksikkö)
+        out_of_stock: Loppu varastosta
+        paused: Keskeytetty
+        search_results:
+          no_products: Hakuasi vastaavia tuotteita ei löytynyt :(
+        seo:
+          placeholder: Lisää otsikko ja kuvaus nähdäksesi, miltä tämä tuote saattaa näyttää hakukoneen tuloksissa
+        status_form:
+          status: Luonnostuotteita ei voi ostaa. Aktiiviset tuotteet ovat näkyvillä.
+        status_options:
+          active: Aktiivinen
+          archived: Arkistoitu
+          draft: Luonnos
+        stores:
+          choose_stores: Valitse, missä kaupoissa tämä tuote on saatavilla
+        variants:
+          option_types_link: Lisätäksesi uusia valintatyyppejä siirry kohtaan <a href="%{link}">Valintatyypit</a>
+      publishing:
+        caption_hidden_after: Poistuu %{date}
+        caption_live: Näkyy asiakkaille nyt
+        caption_not_available: Piilotettu — tuotteen tila on %{product_status}
+        caption_scheduled: Julkaistaan %{date}
+        caption_unpublished: Piilotettiin %{date}
+        caption_window: Näkyvillä %{start} → %{end}
+        empty: Ei vielä listattu millään myyntikanavalla.
+        inactive_marker: Ei aktiivinen
+        manage_cta: Hallitse
+        manage_description: Valitse, millä myyntikanavilla tämä tuote listataan. Poista kanava käytöstä poistaaksesi listauksen kaikkialta.
+        no_channels: Myyntikanavia ei ole saatavilla. Luo sellainen kohdassa Asetukset → Myyntikanavat.
+        published_at_label: Julkaise alkaen
+        status_hidden: Piilotettu
+        status_live: Näkyvillä
+        status_not_available: Ei saatavilla
+        status_scheduled: Ajastettu
+        title: Julkaiseminen
+        unpublished_at_label: Poista julkaisu
+      recommended_size: Suositeltu koko
+      report_created: Raporttiasi luodaan. Saat sähköpostiin latauslinkin, kun se on valmis!
+      reset_digital_link_download_limits: Nollaa latausrajat
+      response_code: Vastauskoodi
+      selected: valittu
+      send_payment_link: Lähetä maksulinkki
+      shipment:
+        please_provide_tracking_details: Ennen kuin merkitset toimituksen lähetetyksi, anna seurantatiedot
+      shipment_transfer:
+        wrong_destination: Väärä kohde
+      show_json: Näytä JSON
+      stock_transfers:
+        add_products_tip: Sinun on valittava ensin kohdesijainti
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> jäljellä (<strong>%{total}</strong> yhteensä)"
+      store_form:
+        company_field:
+          description: Se näyttää yrityskentän osoitelomakkeessa Oma tili -osiossa ja kassan osoitevaiheessa.
+          label: Näytä yrityksen osoitekenttä
+        customer_support_email_help: Tämä sähköposti näkyy kaupan kävijöille alatunnisteosiossa
+        new_order_notifications_email_help: Jos haluat saada sähköposti-ilmoituksen aina, kun joku tekee tilauksen, anna sähköpostiosoite, johon ilmoitus lähetetään
+        send_consumer_transactional_emails_help: Kun tätä ei ole valittu, tapahtumasähköposteja, kuten tilausvahvistuksia ja toimitusilmoituksia, ei lähetetä asiakkaille
+      store_setup_tasks:
+        add_billing_address: Lisää laskutusosoite
+        add_products: Lisää tuotteita
+        payment_methods:
+          copy: Kerätäksesi maksuja määritä vähintään yksi verkkomaksupalveluntarjoaja.
+          done: Kaikki on valmista! Voit aina hallita maksutapojasi <a href="%{link}" data-turbo-frame="_top">tällä</a> sivulla.
+          setup: Määritä maksutavat
+          title: Määritä kauppasi maksutavat
+        set_customer_support_email: Aseta asiakastuen sähköposti
+        setup_taxes_collection: Määritä verojen kerääminen
+        taxes:
+          copy: Kerätäksesi veroja määritä verokantasi.
+          done: Kaikki on valmista! Voit aina hallita verojasi <a href="%{link}" data-turbo-frame="_top">asetukset</a>-sivulla.
+          setup: Määritä verokannat
+      storefront: Verkkokauppa
+      successful: Onnistui
+      successfully_reset_digital_links_limit: Latausrajat on nollattu
+      tables:
+        add_filter: Lisää suodatin
+        add_or_group: Lisää TAI-ryhmä
+        apply: Käytä
+        apply_filters: Käytä suodattimia
+        ascending: Nouseva
+        clear_all: Tyhjennä kaikki
+        columns: Sarakkeet
+        descending: Laskeva
+        enter_value: Anna arvo...
+        filter_builder: Suodatintyökalu
+        filters: Suodattimet
+        match: Vastaavuus
+        of_the_following: seuraavista
+        operators:
+          contains: sisältää
+          does_not_contain: ei sisällä
+          ends_with: päättyy
+          equals: on yhtä suuri kuin
+          greater_than: suurempi kuin
+          greater_than_or_equal: suurempi tai yhtä suuri kuin
+          is_any_of: on jokin näistä
+          is_empty: on tyhjä
+          is_none_of: ei ole mikään näistä
+          is_not_empty: ei ole tyhjä
+          less_than: pienempi kuin
+          less_than_or_equal: pienempi tai yhtä suuri kuin
+          not_equals: ei ole yhtä suuri kuin
+          starts_with: alkaa
+        order: Järjestys
+        reset_to_default: Palauta oletukseksi
+        select_field: Valitse kenttä...
+        sort_by: Lajitteluperuste
+        visible_columns: Näkyvät sarakkeet
+      taxon_rules:
+        all_conditions: kaikki ehdot
+        any_condition: mikä tahansa ehto
+        available_on: Saatavilla
+        match_policies:
+          contains: sisältää
+          does_not_contain: ei sisällä
+          is_equal_to: on yhtä suuri kuin
+          is_not_equal_to: ei ole yhtä suuri kuin
+        on_sale: Alennuksessa
+        products_must_match: 'Tuotteiden on vastattava:'
+        tag: Tuotetunniste
+      taxon_type: Kategoriatyyppi
+      taxon_types:
+        automatic: Automaattinen
+        automatic_info: Lisää tuotteet automaattisesti tähän kategoriaan, jos ne vastaavat asettamiasi sääntöjä.
+        manual: Manuaalinen
+        manual_info: Kokoa tuotteet manuaalisesti. Voit lisätä tai poistaa niitä joukoittain.
+      translations:
+        no_translations_configured: Käännöksiä ei ole määritetty. Määritä markkinat käyttääksesi käännöksiä.
+      upload_new_asset: Lataa uusi media
+      users:
+        filters:
+          search_placeholder: Hae asiakkaita sähköpostin tai nimen mukaan
+      utilities:
+        preview: Esikatselu
+      variants:
+        search_results:
+          no_variants: Hakuasi vastaavia variantteja ei löytynyt :(
+      variants_form:
+        add_option:
+          empty: Lisää valintoja, kuten koko tai väri
+          not_empty: Lisää toinen valinta
+        compare_at_price_description: Tätä hintaa käytetään näyttämään alennettu hinta tuotesivulla.
+        stock_locations_link: Lisätäksesi uusia varastosijainteja siirry kohtaan <a href="%{link}">Varastosijainnit</a>
+        total_inventory_html: 'Kokonaisvarasto sijainnissa %{stock_location}: %{count} saatavilla'
+      vendors:
+        enterprise_feature: Monitoimittajakauppapaikka on saatavilla Enterprise Edition -versiossa
+      webhook_deliveries:
+        delivered_at: Toimitettu
+        delivery_details: Toimituksen tiedot
+        delivery_info: Toimitustiedot
+        endpoint_inactive: Uudelleenyritys ei onnistu - päätepiste ei ole aktiivinen
+        error_type: Virhetyyppi
+        event: Tapahtuma
+        execution_time: Suoritusaika
+        failed: Epäonnistui
+        pending: Odottaa
+        redeliver_button: Toimita uudelleen
+        redelivered: Webhook toimitettiin uudelleen onnistuneesti.
+        request_errors: Pyyntövirheet
+        request_payload: Pyynnön hyötykuorma
+        response_body: Vastauksen runko
+        response_code: Vastauskoodi
+      webhook_endpoints:
+        auto_disabled: Tämä päätepiste poistettiin automaattisesti käytöstä toistuvien toimitusvirheiden jälkeen.
+        back_to_endpoint: Takaisin päätepisteeseen
+        deliveries: Toimitukset
+        endpoint_settings: Päätepisteasetukset
+        event_subscriptions: Tapahtumatilaukset
+        event_subscriptions_help: Valitse, mitkä tapahtumat käynnistävät webhook-toimituksen tähän päätepisteeseen.
+        events: tapahtumaa
+        failed_deliveries: Epäonnistuneet toimitukset
+        health:
+          degraded: "%{percentage} % onnistui"
+          disabled: Ei käytössä
+          failing: "%{percentage} % onnistui"
+          healthy: "%{percentage} % onnistui"
+          no_deliveries: Ei tietoja
+        health_label: Tila
+        new: Uusi webhook-päätepiste
+        re_enable: Ota uudelleen käyttöön
+        secret_key: Salainen avain
+        secret_key_help: Käytä tätä avainta webhook-allekirjoitusten vahvistamiseen. Pidä se turvassa äläkä jaa sitä julkisesti.
+        send_test: Lähetä testi
+        subscriptions: Tilaukset
+        successful_deliveries: Onnistuneet toimitukset
+        test_failed: Testiwebhookin lähettäminen epäonnistui. Tarkista päätepisteen määritykset.
+        test_sent: Testiwebhook lähetetty. Tarkista tulos toimituksista.
+      webhooks_subscribers:
+        all_events: Kaikki tapahtumat
+        new_webhooks_subscriber: Uusi webhook-tilaaja
+        no_events: Ei tapahtumia
+        select_events: Valitse tapahtumat
+        subscribe_to_all_events: Tilaa kaikki tapahtumat
+        subscriptions: Tilaukset
+        time_of_last_event: Viimeisimmän tapahtuman aika
+        webhooks_events: Webhook-tapahtumat
     administration: Hallinnointi
     advertise:
     agree_to_privacy_policy: Hyväksy rekisteriselosteen ehdot
@@ -581,7 +1323,6 @@ fi:
     date: Päivä
     date_completed: Valmistunut
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Päivämäärä (mistä mihin)
@@ -621,6 +1362,7 @@ fi:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: Tämä alennuskoodi ei kelpaa maassasi
     email: Sähköposti
     empty: Tyhjä
     empty_cart: Tyhjennä ostoskori
@@ -634,6 +1376,17 @@ fi:
         could_not_create_taxon: Ei voi luoda taksonia
         no_payment_methods_available: No payment methods are configured for this environment
         no_shipping_methods_available: Valitulle sijainnille ei ole toimitustapaa, vaihda osoite ja yritä uudelleen.
+        cannot_delete_default_channel: Oletuskanavaa ei voi poistaa. Korota ensin toinen kanava oletukseksi.
+        channel_store_mismatch: on kuuluttava samaan kauppaan
+        invalid_order_routing_rule: ei ole rekisteröity tilausten reititityssääntö
+        invalid_order_routing_strategy: ei ole rekisteröity tilausten reititysstrategia
+        must_be_origin_only: on oltava alkuperä (skeema ja isäntä) ilman polkua, kyselyä tai fragmenttia
+        store_association_can_not_be_changed: Kaupan liitosta ei voi muuttaa
+        store_is_already_set: Kauppa on jo asetettu
+      services:
+        get_shipping_rates:
+          no_line_items: Toimitushintojen luomiseksi tilaukseen on lisättävä rivituotteita
+          no_shipping_address: Toimitushintojen luomiseksi tilauksella on oltava toimitusosoite
     errors_prohibited_this_record_from_being_saved:
       one: Yksi ongelma esti tiedon tallennuksen.
       other: "%{count} virhettä esti tiedon tallennuksen"
@@ -886,6 +1639,7 @@ fi:
         subject: Tilauksen peruutus
         subtotal: Välisumma
         total: Yhteensä
+        thanks: Kiitos, että
       confirm_email:
         dear_customer: Hyvä asiakkaamme,
         instructions: Ole hyvä ja pidä tilauksen tiedot tallessa.
@@ -894,6 +1648,20 @@ fi:
         subtotal: Välisumma
         thanks: Kiitos tilauksestanne.
         total: Yhteensä
+      payment_link_email:
+        message: Maksa tilauksesi napsauttamalla alla olevaa painiketta.
+        message_copy_link: 'Jos painike ei toimi, kopioi ja liitä seuraava linkki selaimeesi:'
+        pay_for_order: Maksa tilaus
+        subject: 'Maksulinkki tilaukselle #%{number}'
+      store_owner_notification_email:
+        heading: Uusi tilaus vastaanotettu
+        instructions: Olet vastaanottanut uuden tilauksen.
+        order_summary: Tilauksen %{number} yhteenveto
+        subject: "%{store_name} vastaanotti uuden tilauksen"
+        thanks: Kiitos
+      store_team: "%{store_name} -tiimi"
+      subtotal: 'Välisumma:'
+      total: 'Tilauksen loppusumma:'
     order_not_found: Tilaustasi ei löytynyt näillä tiedoilla. Yritä ystävällisesti uudelleen.
     order_number: Tilausnumero %{number}
     order_populator:
@@ -952,6 +1720,9 @@ fi:
       pending: odottaa
       processing: käsittelyssä
       void: mitätön
+      complete: Valmis
+      partially_refunded: Osittain hyvitetty
+      refunded: Hyvitetty
     payment_updated: Maksu päivitetty
     payments: Maksut
     pending:
@@ -1039,6 +1810,24 @@ fi:
       user_logged_in:
         description: Vain sisäänkirjautuneille käyttäjille
         name: Käyttäjä on kirjautunut
+      category:
+        description: Tilaus sisältää tuotteita määritetyistä luokista
+        name: Luokat
+      country:
+        description: Rajoita tilauksiin, joiden toimitusosoite on tietyssä maassa
+        name: Maa
+      currency:
+        description: Rajoita tilauksiin tietyssä valuutassa
+        name: Valuutta
+      customer:
+        description: Saatavilla vain määritetyille asiakkaille
+        name: Asiakkaat
+      customer_group:
+        description: Saatavilla vain määritettyihin asiakasryhmiin kuuluville asiakkaille
+        name: Asiakasryhmä(t)
+      customer_logged_in:
+        description: Saatavilla vain kirjautuneille asiakkaille
+        name: Vain kirjautuneet asiakkaat
     promotion_uses:
     promotionable:
     promotions: Kampanjat
@@ -1081,6 +1870,8 @@ fi:
         refund_summary:
         subject:
         total_refunded:
+        store_team: "%{store_name} -tiimi"
+        thanks: Kiitos asioinnistasi.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1142,7 +1933,7 @@ fi:
     select_a_stock_location:
     select_from_prototype: Valitse prototyypistä
     select_stock: Valitse varasto
-    selected_quantity_not_available: 'valitulle tuotteelle %{item} ei ole saatavissa'
+    selected_quantity_not_available: valitulle tuotteelle %{item} ei ole saatavissa
     send_copy_of_all_mails_to: Lähetä kopio kaikista sähköposteista
     send_mails_as: Lähetä sähköpostiviestit
     server: Palvelin
@@ -1163,6 +1954,8 @@ fi:
         thanks: Kiitos tilauksesta.
         track_information: 'Seurantatiedot: %{tracking}'
         track_link: 'Seurantalinkki: %{url}'
+        shipping_method: 'Toimitustapa: %{shipping_method}'
+        store_team: "%{store_name} -tiimi"
     shipment_state: Toimituksen tila
     shipment_states:
       backorder: jälkitoimitus
@@ -1240,6 +2033,7 @@ fi:
       returned:
       shipped:
       void:
+      shipment: Toimitus
     states: Läänit/osavaltiot
     states_required: Maakunta vaaditaan
     status: Tila
@@ -1253,7 +2047,11 @@ fi:
     stock_movements: Varastosiirrot
     stock_movements_for_stock_location: Siirrot varastossa %{stock_location_name}
     stock_successfully_transferred: Siirto varastojen välillä tehty.
-    stock_transfer: Varastosiirto
+    stock_transfer:
+      errors:
+        must_have_variant: Sinun on lisättävä vähintään yksi variantti
+        same_location: ei voi olla sama kuin kohdesijainti
+        variants_unavailable: Jotkin variantit eivät ole saatavilla sijainnissa %{stock}
     stock_transfers: Varastosiirrot
     stop: Loppu
     store: Kauppa
@@ -1366,3 +2164,685 @@ fi:
     zipcode: Postinumero
     zone: Alue
     zones: Alueet
+    add_gift_card: Lisää lahjakortti
+    add_new_address: Lisää uusi osoite
+    add_selected: Lisää valitut
+    add_selected_products: Lisää valitut tuotteet
+    add_selected_variant: Lisää valittu variantti
+    added_at: Lisätty
+    adjustment_amount_help: Positiiviset arvot ovat veloituksia, negatiiviset arvot ovat hyvityksiä.
+    adjustment_closed_description: Mukautus on suljettu, eikä sitä lasketa uudelleen.
+    adjustment_open_description: Mukautus on avoin, ja se lasketaan uudelleen.
+    admin_language_help: Kieli, jolla hallintapaneelisi näytetään. Vaikuttaa vain siihen, mitä sinä näet, ei kauppaan tai muihin työntekijöihin.
+    admin_locale_help: Hallintapaneelissa käytetty kieli. Jos ei ole asetettu, käytetään sovelluksen oletuskieltä.
+    all_time: Koko ajalta
+    apis:
+      admin: Admin-API
+      store: Store-API
+    applied_to: Kohdistettu kohteeseen
+    assigned_variants: Liitetyt variantit
+    assigned_variants_help: Valitse variantit, joita tämä kuva edustaa. Jätä tyhjäksi soveltaaksesi kaikkiin variantteihin.
+    automatic_promotion: Automaattinen
+    breadcrumbs: Murupolku
+    cancel_order: Peruuta tilaus
+    cannot_ship: Toimitusta ei voi lähettää
+    card_expiration_placeholder: KK/VVVV
+    categorization: Luokittelu
+    change_password: Vaihda salasana
+    close_sidebar: Sulje sivupalkki
+    contact_information: Yhteystiedot
+    contact_us: Ota yhteyttä
+    continue_selling_when_out_of_stock: Jatka myyntiä, kun varasto on loppu
+    copied: Kopioitu!
+    copy_id: Kopioi tunnus
+    custom_domains: Mukautetut verkkotunnukset
+    customer_could_not_be_removed_from_group: Asiakasta ei voitu poistaa ryhmästä
+    customer_group_rule:
+      choose_customer_groups: 'Valitse asiakasryhmä(t), joihin tätä kampanjaa sovelletaan:'
+    customer_removed_from_group: Asiakas poistettiin ryhmästä
+    customers_added_to_group:
+      one: "%{count} asiakas lisättiin ryhmään"
+      other: "%{count} asiakasta lisättiin ryhmään"
+    customers_removed_from_group:
+      one: "%{count} asiakas poistettiin ryhmästä"
+      other: "%{count} asiakasta poistettiin ryhmästä"
+    days_ago: Päivää sitten
+    delete_selected: Poista valitut
+    digital_assets_help: Digitaaliset resurssit ovat tiedostoja, jotka asiakkaat voivat ladata oston jälkeen.
+    dimension_units:
+      centimeter: Senttimetri (cm)
+      foot: Jalka (ft)
+      inch: Tuuma (in)
+      millimeter: Millimetri (mm)
+    display_settings: Näyttöasetukset
+    domains: Verkkotunnukset
+    draft_orders: Tilausluonnokset
+    edit_address: Muokkaa osoitetta
+    edit_prices: Muokkaa hintoja
+    edit_refund: Muokkaa hyvitystä
+    estimated_delivery_time: Arvioitu toimitusaika
+    excerpt: Ote
+    favicon: Favicon
+    filtered_records: Suodatetut tietueet
+    forbidden_message: Sinulla ei ole oikeutta käyttää tätä sivua.
+    general_information: Yleiset tiedot
+    get_back_to_the: Palaa kohteeseen
+    homepage: Etusivu
+    internal_server_error: Palvelimen sisäinen virhe
+    internal_server_error_message: Palvelin kohtasi sisäisen virheen, eikä pystynyt suorittamaan pyyntöäsi loppuun.
+    invitation_expired:
+      body: Tämä kutsulinkki ei ole enää voimassa. Pyydä sinut kutsunutta henkilöä lähettämään uusi.
+      heading: Kutsu virheellinen tai vanhentunut
+    invitation_resent: Kutsu lähetetty uudelleen!
+    issued_on: Myönnetty
+    log_in: Kirjaudu sisään
+    manual_adjustment: Manuaalinen mukautus
+    manual_adjustments: Manuaaliset mukautukset
+    mark_as_default: Merkitse oletukseksi
+    move_variant_to: Siirrä variantti kohteeseen
+    new_allowed_origin: Uusi sallittu alkuperä
+    new_api_key: Uusi API-avain
+    new_balance: Uusi saldo
+    new_billing_address: Uusi laskutusosoite
+    new_channel: Uusi myyntikanava
+    new_custom_domain: Uusi mukautettu verkkotunnus
+    new_customer_group: Uusi asiakasryhmä
+    new_digital_asset: Uusi digitaalinen resurssi
+    new_domain: Uusi verkkotunnus
+    new_gift_card: Uusi lahjakortti
+    new_line_item: Lisää rivi
+    new_metafield_definition: Uusi metakentän määritys
+    new_nested_taxon: Uusi alikategoria
+    new_page: Uusi sivu
+    new_password: Uusi salasana
+    new_policy: Uusi käytäntö
+    new_reimbursement_type: Uusi korvaustyyppi
+    new_role: Uusi rooli
+    new_shipping_address: Uusi toimitusosoite
+    new_store: Uusi kauppa
+    new_store_credit: Uusi kauppakredit
+    new_store_credit_category: Uusi kauppakreditin kategoria
+    new_webhook_endpoint: Uusi webhook-päätepiste
+    no_adjustments: Ei mukautuksia
+    no_billing_address_available: Laskutusosoitetta ei ole saatavilla
+    no_customers_found: Asiakkaita ei löytynyt
+    no_email_provided: Sähköpostia ei annettu
+    no_internal_note: Ei sisäistä muistiinpanoa
+    no_products_added: Ei lisättyjä tuotteita
+    no_products_in_price_list: Ei tuotteita tässä hinnastossa
+    no_promotions_applied: Ei sovellettuja kampanjoita
+    no_saved_cards: Ei tallennettuja kortteja
+    no_shipping_address_available: Toimitusosoitetta ei ole saatavilla
+    no_taxes: Ei veroja
+    no_users_selected: Ei valittuja käyttäjiä
+    not_risky: Ei riskialtis
+    oauth_applications: OAuth-sovellukset
+    option_type_filterable_info: Kun valintatyyppi on asetettu suodatettavaksi, verkkokaupan kävijöille tarjotaan mahdollisuus suodattaa tuotteiden kategoriaa valintatyypin perusteella. Tyypillinen esimerkki tästä olisi vaatteiden suodattaminen koon ja värin mukaan.<br><br><b>Huomaa:</b> Suodattimet näkyvät vain niissä verkkokaupan kategorioissa, jotka sisältävät tuotteita, joilla on tämä valintatyyppi asetettuna.
+    option_type_kind_info: Määrittää, miten valinta näytetään verkkokaupassa. Värimallit näyttävät väriympyröitä, painikkeet näyttävät napsautettavia siruja ja pudotusvalikko näyttää valikon.
+    option_type_kinds:
+      buttons: Painikkeet
+      color_swatch: Värimalli
+      dropdown: Pudotusvalikko
+    or_select_other_address: tai valitse toinen osoite
+    order_email_resent_error: Tilausvahvistus voidaan lähettää vain valmiille tilauksille
+    order_line_items: Tilausrivit
+    page_not_found: Pahoittelut! Etsimääsi sivua ei löydy.
+    page_not_found_message: Tätä sivua ei vain ole olemassa.
+    payment_amount: Maksun summa
+    payment_provider_settings: Maksupalveluntarjoajan asetukset
+    payment_type: Maksutapa
+    payments_gateway_processing_errors: "%{payment_method_name} -käsittelyvirheet"
+    personal_details: Henkilötiedot
+    previously_used_card: Aiemmin käytetyt kortit
+    price_list_form:
+      match_policies:
+        all: Vastaa kaikkia näitä sääntöjä
+        any: Vastaa mitä tahansa näistä säännöistä
+    price_list_statuses:
+      active: Aktiivinen
+      draft: Luonnos
+      inactive: Ei aktiivinen
+      scheduled: Ajastettu
+      scheduled_active: Ajastettu (aktiivinen)
+    products_added: Tuotteita lisätty
+    products_removed: Tuotteita poistettu
+    products_sort_options:
+      best_selling: Myydyimmät
+      manual: Manuaalinen
+      name_a_z: Aakkosjärjestyksessä, A–Ö
+      name_z_a: Aakkosjärjestyksessä, Ö–A
+      newest_first: Uusimmat
+      oldest_first: Vanhimmat
+      price_high_to_low: Hinta (kallein–halvin)
+      price_low_to_high: Hinta (halvin–kallein)
+      relevance: Osuvuus
+    promotion_cloned: Kampanja on kloonattu
+    promotion_not_cloned: 'Kampanjaa ei kloonattu. Syy: %{error}'
+    purchased_quantity: Ostettu määrä
+    remove_condition: Poista ehto
+    return_authorization_states:
+      authorized: Hyväksytty
+      canceled: Peruutettu
+    same_as_shipping_address: Sama kuin toimitusosoite
+    search_customers: Hae asiakkaita
+    search_engine_listing: Hakukonelistaus
+    search_products: Hae tuotteita
+    select_existing_address: Valitse olemassa oleva osoite
+    select_key_type: Valitse avaintyyppi
+    select_user: Valitse asiakas
+    select_vendor: Valitse toimittaja
+    send_payment_link: Lähetä maksulinkki
+    send_payment_link_title: Lähetä maksulinkki asiakkaalle sähköpostitse. Hän voi suorittaa maksun myöhemmin.
+    service_unavailable: Palvelu ei ole käytettävissä
+    service_unavailable_message: Palvelin ei tilapäisesti pysty käsittelemään pyyntöäsi ylläpitokatkon tai kapasiteettiongelmien vuoksi. Yritä myöhemmin uudelleen.
+    shipment_successfully_shipped: Toimitus lähetettiin onnistuneesti
+    show_details: Näytä tiedot
+    show_report: Näytä raportti
+    standards_and_formats: Standardit ja muodot
+    standards_and_formats_help: Aseta aikavyöhyke, oletusyksikköjärjestelmä ja painoyksikkö kaupallesi.
+    start_typing_to_search_for_products: Aloita kirjoittaminen hakeaksesi tuotteita
+    start_typing_to_search_for_variants: Aloita kirjoittaminen hakeaksesi variantteja
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Et voi muuttaa kauppakredittiä, joka on jo käytetty
+        unable_to_create: Kauppakreditin luominen ei onnistu
+        unable_to_delete: Kauppakreditin poistaminen ei onnistu
+        unable_to_update: Kauppakreditin päivittäminen ei onnistu
+      remaining: Jäljellä
+      allocated: Lisätty
+      authorized: Valtuutettu
+      captured: Käytetty
+      credit: Hyvitys
+      eligible: Kelvollinen
+    store_credit_categories: Kauppakreditin kategoriat
+    store_details: Kaupan tiedot
+    store_errors:
+      unable_to_update: Kaupan päivittäminen ei onnistu.
+    store_form:
+      customer_support_email_help: Tämä sähköposti näkyy kaupan kävijöille alatunnisteosiossa
+      new_order_notifications_email_help: Jos haluat saada sähköposti-ilmoituksen aina, kun joku tekee tilauksen, anna sähköpostiosoite, johon ilmoitus lähetetään
+    store_name_help: Tämä on kauppasi nimi. Se näytetään ylä- ja alatunnisteessa.
+    track_quantity: Seuraa määrää
+    transaction_id_help: Tämä on tunnus tapahtumalle, joka luotiin kolmannen osapuolen maksupalvelussa.
+    true_label: TOSI
+    type_to_search_customers: Kirjoita hakeaksesi asiakkaita
+    type_to_search_products: Kirjoita hakeaksesi tuotteita
+    unit_system_help: Tätä käytetään kaupan oletusyksikköjärjestelmänä. Voit ohittaa tämän tuotekohtaisesti.
+    unit_systems:
+      imperial_system: Imperiaalinen järjestelmä
+      metric: metrinen
+      metric_system: Metrinen järjestelmä
+    unprocessable_entity: Käsittelemätön entiteetti
+    unprocessable_entity_message: Pyyntöäsi ei voitu käsitellä. Tarkista lomake virheiden varalta ja yritä uudelleen.
+    update_address: Päivitä osoite
+    update_billing_address: Päivitä laskutusosoite
+    update_contact_information: Päivitä yhteystiedot
+    update_shipping_address: Päivitä toimitusosoite
+    use_shipping_address: Käytä toimitusosoitetta
+    vendors: Toimittajat
+    view_full_size: Näytä täysikokoisena
+    view_store: Näytä kauppa
+    visits: Käynnit
+    weight_unit_help: Tätä käytetään kaupan oletuspainoyksikkönä. Voit ohittaa tämän tuotekohtaisesti.
+    weight_units:
+      gram: Gramma (g)
+      kilogram: Kilogramma (kg)
+      ounce: Unssi (oz)
+      pound: Naula (lb)
+    accepts_email_marketing: Hyväksyy sähköpostimarkkinoinnin
+    add_customers: Lisää asiakkaita
+    add_products: Lisää tuotteita
+    add_store: Uusi kauppa
+    add_store_credit: Lisää kauppahyvitystä
+    added_to_cart: Lisätty ostoskoriin onnistuneesti!
+    address: Osoite
+    address_book:
+      add_house_number: Lisää talon numero, jos sinulla on sellainen
+    address_not_owned_by_user: Annettu osoite ei kuulu tälle käyttäjälle.
+    addresses: Osoitteet
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (sisältyy hintaan)"
+    adjustments_deleted: Mukautukset poistettu
+    admin_locale: Hallinnan kieliasetus
+    all_products: Kaikki tuotteet
+    allowed_origin: Sallittu alkuperä
+    allowed_origins: Sallitut alkuperät
+    analytics: Analytiikka
+    api_key: API-avain
+    api_key_no_current_key: Mikään API-avain ei todentanut tätä pyyntöä
+    api_key_scopes_immutable: ei voi muuttaa avaimen luonnin jälkeen; luo uusi avain tarvitsemillasi käyttöoikeuksilla ja peruuta tämä
+    api_keys: API-avaimet
+    apply: Käytä
+    apply_only_on_full_priced_items: Käytä vain täysihintaisiin tuotteisiin
+    apply_store_credit: Käytä kauppahyvitystä
+    assets: Media
+    attachments: Liitteet
+    author: Tekijä
+    availability: saatavuus
+    available: Saatavilla
+    balance: Saldo
+    barcode: Viivakoodi
+    brand: Brändi
+    canceled: Peruutettu
+    cannot_be_destroyed: Tilausta ei voi poistaa.
+    cannot_empty: Tilausta ei voi tyhjentää.
+    cannot_empty_completed_order: Tilaus on jo käsitelty, joten sitä ei voi tyhjentää
+    cannot_return_more_than_bought_quantity: Ei voi palauttaa enempää kuin ostettu määrä.
+    cart_already_updated: Ostoskori on jo päivitetty.
+    cart_line_item:
+      discontinued: "%{li_name} poistettiin, koska se poistettiin käytöstä"
+      out_of_stock: "%{li_name} poistettiin, koska se on loppuunmyyty"
+    change: Muuta
+    channel: Myyntikanava
+    channels: Myyntikanavat
+    checkout_requirements:
+      email_required: Sähköpostiosoite vaaditaan
+      line_items_required: Lisää vähintään yksi tuote ostoskoriin
+      payment_required: Lisää maksutapa
+      ship_address_required: Toimitusosoite vaaditaan
+      shipping_method_required: Valitse toimitustapa kaikille lähetyksille
+    clear: Tyhjennä
+    clear_all: Tyhjennä kaikki
+    closed: Suljettu
+    color_code: Värikoodi
+    colors: Värit
+    compare_at_amount: Vertailumäärä
+    compare_at_price: Vertailuhinta
+    contact: Yhteystiedot
+    contact_phone: Yhteyspuhelin
+    content: Sisältö
+    copy: Kopioi
+    copy_link: Kopioi linkki
+    coupon_code_used: Antamasi alennuskoodi on jo käytetty. Yritä uudelleen.
+    coupon_codes: Alennuskoodit
+    create_new: Luo uusi
+    created_by: Luonut
+    credit_allowed: Hyvitys sallittu
+    credited: Hyvitetty
+    currencies: Valuutat
+    currency_not_supported_by_store: ei ole tämän kaupan tukema
+    current_password: Nykyinen salasana
+    customer_group: Asiakasryhmä
+    customer_groups: Asiakasryhmät
+    customer_mailer:
+      password_reset_email:
+        action: Nollaa salasana
+        expiry_notice: Tämä salasanan nollauslinkki vanhenee pian. Jos et pyytänyt tätä, mitään ei tarvitse tehdä.
+        greeting: Hei %{name},
+        ignore_notice: Jos et pyytänyt salasanan nollausta, voit jättää tämän sähköpostin huomiotta. Salasanaasi ei muuteta.
+        instructions: Saimme pyynnön nollata salasanasi. Napsauta alla olevaa painiketta valitaksesi uuden salasanan.
+    customer_support_email: Asiakastuen sähköposti
+    customers: Asiakkaat
+    cvv: CVV
+    default_billing_address: Oletuslaskutusosoite
+    default_country: Oletusmaa
+    default_currency: Oletusvaluutta
+    default_locale: Oletuskieliasetus
+    default_shipping_address: Oletustoimitusosoite
+    default_stock_location_name: Myymälän sijainti
+    default_wishlist_name: Toivelista
+    deleted: Poistettu
+    developers: Kehittäjät
+    digital:
+      digital_delivery: Digitaalinen toimitus
+    digital_assets: Digitaaliset resurssit
+    discontinue_on: Poistetaan käytöstä
+    discontinued: Poistettu käytöstä
+    discontinued_variants_present: Joillakin tämän tilauksen riveillä on tuotteita, jotka eivät ole enää saatavilla.
+    discount: Alennus
+    discounts: Alennukset
+    display_delivery_range: Toimitus %{delivery_range} arkipäivässä
+    display_on: Näytä
+    domain: Verkkotunnus
+    done: Valmis
+    download: Lataa
+    draft: Luonnos
+    duplicate: Monista
+    duplicating: Monistetaan
+    email_marketing: Sähköpostimarkkinointi
+    emails: Sähköpostit
+    ends_at: Päättyy
+    enter: Syötä
+    error_user_destroy_with_orders: Tilauksiin liitettyä käyttäjää ei voi poistaa
+    error_user_does_not_have_any_store_credits: Käyttäjällä ei ole käytettävissä olevia kauppahyvityksiä
+    estimated_transit_business_days: Arvioitu kuljetusaika arkipäivinä
+    existing_address: Olemassa oleva osoite
+    expired: Vanhentunut
+    expires_at: Vanhenee
+    export: Vie
+    export_mailer:
+      export_done:
+        message: Hyvää työtä, vientisi on valmis! Käytä alla olevaa linkkiä ladataksesi sen.
+        subject: Vientisi %{export_number} käsiteltiin onnistuneesti!
+      greeting: Hei %{user_name},
+      thanks: Kiitos,
+    facebook: Facebook
+    featured_image: Esittelykuva
+    field: Kenttä
+    filled: Täytetty
+    filterable: Suodatettava
+    firstname: Etunimi
+    fonts: Fontit
+    footer: Alatunniste
+    forbidden: Pääsy estetty
+    free: Ilmainen
+    from: Alkaen
+    generate_code: Luo alennuskoodi
+    gift_card: Lahjakortti
+    gift_card_already_redeemed: Lahjakortti on jo lunastettu.
+    gift_card_applied: Lahjakortti lisättiin onnistuneesti tilaukseesi!
+    gift_card_batch: Lahjakorttierä
+    gift_card_customer_not_logged_in: Lahjakorttia ei voi käyttää vieraskäyttäjänä.
+    gift_card_expired: Lahjakortti on vanhentunut.
+    gift_card_mismatched_currency: Lahjakorttia ei voi käyttää nykyisellä valuutalla.
+    gift_card_mismatched_customer: Tämä lahjakortti on liitetty toiseen käyttäjään.
+    gift_card_not_found: Lahjakorttia ei löytynyt.
+    gift_card_removed: Lahjakortti poistettiin onnistuneesti tilauksestasi
+    gift_card_using_store_credit_error: Lahjakorttia ei voi käyttää sen jälkeen, kun kauppahyvitys on otettu käyttöön.
+    gift_cards: Lahjakortit
+    hide: Piilota
+    icon: Kuvake
+    idempotency_key_reused: Tätä Idempotency-Key-avainta on jo käytetty eri pyyntöparametreilla.
+    immediately: Heti
+    import: Tuo
+    in_stock: Varastossa
+    instagram: Instagram
+    integrations: Integraatiot
+    internal_note: Sisäinen huomautus
+    internationalization: Kansainvälistäminen
+    invitation_accepted: Kutsu hyväksytty!
+    invitation_mailer:
+      greeting: Hei %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} on hyväksynyt kutsusi liittyä kohteeseen %{resource_name}"
+        subject: "%{invitee_name} on hyväksynyt kutsusi liittyä kohteeseen %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} on kutsunut sinut liittymään kohteeseen %{resource_name}"
+        link_description: 'Hyväksy tämä kutsu napsauttamalla alla olevaa linkkiä:'
+        subject: Kutsu liittyä kohteeseen %{resource_name}
+      thanks: Kiitos,
+    invitations: Kutsut
+    invited_by: Kutsunut
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Avain
+    kind: Tyyppi
+    label: Nimike
+    language: Kieli
+    lastname: Sukunimi
+    line_item: Rivituote
+    line_items: Rivituotteet
+    link: Linkki
+    live: Käytössä
+    locale: Kieliasetus
+    locale_not_supported_by_store: ei ole tämän kaupan tukema
+    logo: Logo
+    mail_from_address: Lähettäjän sähköpostiosoite
+    mailer_logo: Sähköpostin logo (vain JPG- tai PNG-kuvat)
+    make_active_at: Aktivoidaan
+    manual: Manuaalinen
+    market: Markkina
+    market_ids: Markkinat
+    markets: Markkinat
+    master: Pääversio
+    max: Enint.
+    max_quantity: Enimmäismäärä
+    me_no_current_user: Mikään hallintakäyttäjä ei todentanut tätä pyyntöä
+    media: Media
+    metafield_definitions: Metakenttämääritykset
+    metafields: Metakentät
+    min: Väh.
+    min_quantity: Vähimmäismäärä
+    missing_return_authorization: Palautusvaltuutus puuttuu kohteelle %{item_name}.
+    move: Siirrä
+    mutable: Muokattava
+    navigation: Navigointi
+    never: Ei koskaan
+    new_address: Uusi osoite
+    new_order_notifications_email: Uusien tilausten ilmoitussähköposti
+    new_price_list: Uusi hinnasto
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Hei,
+        ignore_disclaimer: Jos et pyytänyt tätä, jätä tämä sähköposti huomiotta.
+        instructions: Vahvista sähköpostiosoitteesi napsauttamalla alla olevaa painiketta.
+        message_copy_link: 'Jos painike ei toimi, kopioi ja liitä seuraava linkki selaimeesi:'
+        store_team: "%{store_name} -tiimi"
+        subject: Vahvista sähköpostiosoitteesi
+        thanks: Kiitos
+        verify_email_address_link: Vahvista sähköpostiosoite
+    newsletter_subscribers: Uutiskirjeen tilaajat
+    no_cc_type: Ei saatavilla
+    no_report_data: Ei raporttitietoja
+    number: Numero
+    ok: OK
+    only_active_products_can_be_added_to_cart: Luonnos- ja arkistoituja tuotteita ei voi lisätä ostoskoriin, merkitse tuote ensin aktiiviseksi.
+    option_name: Valinnan nimi
+    order_routing:
+      strategies:
+        legacy: Perinteinen
+        rules: Säännöt (järjestyksessä)
+    origin: Alkuperä
+    other: Muu
+    outstanding_balance: Maksamaton saldo
+    page: Sivu
+    pages: Sivut
+    payment_source: Maksulähde
+    payment_total: Maksun loppusumma
+    permissions: Käyttöoikeudet
+    policies: Käytännöt
+    preview: Esikatselu
+    price_lists: Hinnastot
+    price_rules:
+      customer_group_rule:
+        description: Sovella hinnoittelua tiettyihin asiakasryhmiin
+    prices: Hinnat
+    pricing: Hinnoittelu
+    privacy_policy: Tietosuojaseloste
+    processing: Käsitellään
+    product_name: Tuotteen nimi
+    product_translations: Tuotteen käännökset
+    products_cannot_be_shipped: Emme voi tällä hetkellä toimittaa tuotteita %{product_names} nykyiseen sijaintiisi. Vaihda toimitusosoitettasi tai poista %{product_names} ostoskoristasi.
+    promotion_already_used: Et voi poistaa kampanjaa, joka on jo otettu käyttöön
+    promotion_category: Kampanjaluokka
+    promotion_label: Kampanja (%{name})
+    published_at: Julkaistu
+    query: Kysely
+    refund_amount: Hyvityksen määrä
+    remove_gift_card_on_completed_order_error: Et voi poistaa lahjakorttia sen jälkeen, kun tilaus on tehty
+    report_mailer:
+      greeting: Hei %{user_name},
+      report_done:
+        message: Käytä alla olevaa linkkiä ladataksesi sen.
+        subject: Raporttisi %{report_name} on valmis
+      thanks: Kiitos,
+    report_names:
+      products_performance: Tuotteiden suorituskyky
+      sales_total: Myynnin kokonaismäärä
+    required: "*"
+    required_fields: pakolliset kentät
+    resellable: Jälleenmyytävissä
+    resource: Resurssi
+    return_authorization_canceled: Palautusvaltuutus peruutettu
+    return_item_order_not_completed: Palautettavan tuotteen tilauksen on oltava valmis
+    returns_policy: Palautuskäytäntö
+    role_id: Roolin tunnus
+    row: Rivi
+    sale: Tarjous
+    saving: Tallennetaan
+    scopes: Käyttöoikeudet
+    search_by: 'Hae:'
+    security: Tietoturva
+    seed:
+      shipping:
+        categories:
+          default: Oletus
+          digital: Digitaalinen
+    send_consumer_transactional_emails: Lähetä asiakkaiden tapahtumasähköpostit
+    seo: SEO
+    seo_title: SEO-otsikko
+    ship_to: 'Toimitus:'
+    shipping_policy: Toimituskäytäntö
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (sis. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Toimitusalue
+    show_discontinued: Näytä käytöstä poistetut
+    sign_up: Rekisteröidy
+    site_name: Sivuston nimi
+    size: Koko
+    social: Sosiaalinen media
+    sort_by: Lajitteluperuste
+    square_image: Neliökuva
+    starts_at: Alkaa
+    state_changes: Tilan muutokset
+    stock_items: Varastoyksiköt
+    store_credit_events: Kauppahyvitystapahtumat
+    store_credit_name: Kauppahyvitys
+    store_credit_payment_method:
+      currency_mismatch: Kauppahyvityksen valuutta ei vastaa tilauksen valuuttaa
+      insufficient_authorized_amount: Valtuutettua määrää enempää ei voi veloittaa
+      insufficient_funds: Jäljellä oleva kauppahyvityksen määrä ei riitä
+      successful_action: Onnistunut kauppahyvitys %{action}
+      unable_to_credit: 'Koodia ei voi hyvittää: %{auth_code}'
+      unable_to_find: Kauppahyvitystä ei löytynyt
+      unable_to_find_for_action: 'Kauppahyvitystä ei löytynyt valtuutuskoodille: %{auth_code} toiminnolle: %{action}'
+      unable_to_void: 'Koodia ei voi mitätöidä: %{auth_code}'
+    store_credits: Kauppahyvitykset
+    store_default: Oletuskauppa
+    store_name: Kaupan nimi
+    stores: Kaupat
+    subscribed: Tilattu
+    support: Tuki
+    supported_currencies: Tuetut valuutat
+    supported_locales: Tuetut kieliasetukset
+    tags: Tunnisteet
+    tax_inclusive: Sisältää veron
+    taxes: Verot
+    taxonomy_brands_name: Brändit
+    taxonomy_categories_name: Luokat
+    taxonomy_collections_name: Kokoelmat
+    terms_of_service: Käyttöehdot
+    theme: Teema
+    themes: Teemat
+    timezone: Aikavyöhyke
+    title: Otsikko
+    to: Asti
+    translations: Käännökset
+    twitter: Twitter
+    unit: Yksikkö
+    unit_system: Yksikköjärjestelmä
+    unlimited: Rajaton
+    updated_at: Päivitetty
+    url: URL
+    used: Käytetty
+    user_ids: Käyttäjät
+    vendor: Toimittaja
+    verified: Vahvistettu
+    verified_at: Vahvistettu
+    view: Näytä
+    visibility: Näkyvyys
+    webhook_endpoints: Webhook-päätepisteet
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Poistettu käytöstä
+        heading: Webhook-päätepiste poistettu käytöstä
+        instructions: Tarkista päätepisteen URL ja palvelu, ja ota se sitten uudelleen käyttöön kohdassa Asetukset → Kehittäjät → Webhookit.
+        message: Webhook-päätepiste "%{endpoint_name}" on poistettu automaattisesti käytöstä toistuvien toimitusvirheiden jälkeen.
+        name_label: Nimi
+        reason_label: Syy
+        subject: 'Webhook-päätepiste poistettu käytöstä: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhookit
+    weight_unit: Painoyksikkö
+    wishlist: Toivelista
+    zipcode_required: Postinumero vaaditaan
+    zone_ids: Alueet
+    api:
+      cannot_delete: "%{model} ei voi poistaa"
+      current_password_invalid: Nykyinen salasana on virheellinen tai puuttuu
+      gateway_error: 'Maksupalveluun liittyi ongelma: %{text}'
+      invalid_api_key: Virheellinen API-avain (%{key}) määritetty.
+      invalid_resource: Virheellinen resurssi. Korjaa virheet ja yritä uudelleen.
+      invalid_taxonomy_id: Virheellinen taksonomian tunnus.
+      must_specify_api_key: Sinun on määritettävä API-avain.
+      negative_quantity: määrä on negatiivinen
+      newsletter_verification_token_invalid: Uutiskirjeen vahvistustunnus on virheellinen tai vanhentunut.
+      order:
+        could_not_transition: Tilauksen tilaa ei voitu siirtää. Korjaa virheet ja yritä uudelleen.
+        insufficient_quantity: Ostoskorisi tuote ei ole enää saatavilla.
+        invalid_shipping_method: Virheellinen toimitustapa määritetty.
+      password_reset_requested: Jos kyseiselle sähköpostille on tili, salasanan nollausohjeet on lähetetty.
+      password_reset_token_invalid: Salasanan nollaustunnus on virheellinen tai vanhentunut.
+      payment:
+        credit_over_limit: Tämä maksu voidaan hyvittää vain määrään %{limit} asti. Määritä summa, joka on pienempi tai yhtä suuri kuin tämä luku.
+        update_forbidden: Tätä maksua ei voi päivittää, koska se on %{state}.
+      record_not_found: "%{model} ei löytynyt"
+      redirect_url_not_allowed: Uudelleenohjaus-URL ei ole tämän kaupan sallitusta alkuperästä.
+      resource_not_found: Etsimääsi resurssia ei löytynyt.
+      shipment:
+        cannot_ready: Lähetystä ei voi merkitä valmiiksi.
+      shipment_transfer_errors_occurred: 'Tätä toimintoa yritettäessä tapahtui seuraavat virheet:'
+      shipment_transfer_success: Variantit siirrettiin onnistuneesti
+      stock_location_required: Varastotapahtumien hakemiseksi on annettava stock_location_id-parametri.
+      unauthorized: Sinulla ei ole oikeutta suorittaa tätä toimintoa.
+      v2:
+        cart:
+          no_coupon_code: Alennuskoodia ei annettu, eikä tilauksessa ole käytössä alennuskoodikampanjoita
+          wrong_quantity: Määrän on oltava suurempi kuin 0
+        digitals:
+          missing_file: 'Digitaalinen tuote puuttuu: liite'
+          unauthorized: Virhe, sinulla ei ole oikeutta käyttää tätä resurssia
+        gift_card:
+          amount_not_valid: Lahjakortin määrä ei kelpaa
+          not_found: Lahjakorttia ei löytynyt
+        metadata:
+          invalid_params: Julkisten ja yksityisten metatietojen parametrien on oltava objekteja
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Toivelistaa ei voitu poistaa.
+          wrong_quantity: Määrän on oltava suurempi kuin 0
+      v3:
+        payments:
+          method_unavailable: Tämä maksutapa ei ole saatavilla tälle tilaukselle.
+          session_required: Tämä maksutapa vaatii maksuistunnon. Käytä sen sijaan maksuistuntojen päätepistettä.
+      wrong_shipment_target: kohdelähetys on sama kuin alkuperäinen lähetys
+  action_text:
+    video_embed:
+      not_found: Videota ei voi upottaa annetulla URL-osoitteella
+  activemodel:
+    errors:
+      messages:
+        blank: ei voi olla tyhjä
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: sisältää jälkitoimitettavia varastoyksiköitä
+              has_already_been_shipped: on jo lähetetty
+            desired_shipment:
+              can_not_transfer_within_same_shipment: ei voi olla sama kuin nykyinen toimitus
+              has_not_enough_stock_at_desired_location: ei ole tarpeeksi varastoa halutussa varastopaikassa
+  address_book:
+    save: Tallenna
+    successfully_created: Uusi osoite on luotu onnistuneesti
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Katkaise

@@ -1,3 +1,4 @@
+---
 nb:
   activemodel:
     errors:
@@ -9,6 +10,9 @@ nb:
               has_not_enough_stock_at_desired_location: har ikke nok lager på ønsket lagerplassering
             current_shipment:
               has_already_been_shipped: har allerede blitt sendt
+              can_not_have_backordered_inventory_units: har restbestilte lagerenheter
+      messages:
+        blank: kan ikke være tom
   activerecord:
     attributes:
       spree/address:
@@ -42,7 +46,7 @@ nb:
         name: Navn
         number: Nummer
         verification_value: Verifiseringsverdi
-        year: "År"
+        year: År
       spree/inventory_unit:
         state: status
       spree/line_item:
@@ -52,6 +56,7 @@ nb:
         filterable: Kan filtreres
         name: Navn
         presentation: Presentasjon
+        kind: Type
       spree/order:
         checkout_complete: Ordre fullført
         completed_at: Fullført
@@ -67,6 +72,8 @@ nb:
         special_instructions: Spesielle instrukser
         state: status
         total: Total
+        internal_note: Intern merknad
+        item_count: Varer
       spree/order/bill_address:
         address1: Adresse
         city: By/Poststed
@@ -100,6 +107,8 @@ nb:
         tax_category: Avgiftskategori
         discontinue_on: Avslutt På
         less_than: Mindre enn
+        make_active_at: Gjør aktiv den
+        more_than: Mer enn
       spree/promotion:
         generate_code: Generer kupongkode
         promotion_category: Kampanjekategori
@@ -145,6 +154,15 @@ nb:
         name: Side navn
         seo_title: SEO-tittel
         url: Nettsteds-URL
+        address: Adresse
+        contact_phone: Kontakttelefon
+        preferred_digital_asset_authorized_clicks: Grense for nedlastingsklikk
+        preferred_digital_asset_authorized_days: Grense for nedlastingsdager
+        preferred_limit_digital_download_count: Begrens antall nedlastinger av digitale lenker
+        preferred_limit_digital_download_days: Begrens nedlastingsdager for digitale lenker
+        storefront_custom_code_body_end: Egendefinert kode før lukkende body-tagg
+        storefront_custom_code_body_start: Egendefinert kode etter åpnende body-tagg
+        storefront_custom_code_head: Egendefinert kode i sidens head
       spree/store_credit:
         amount_used: Mengde brukt
       spree/store_credit_category:
@@ -160,12 +178,14 @@ nb:
         name: Navn
         permalink: Permalenke
         position: Posisjon
+        sort_order: Sorteringsrekkefølge
       spree/taxonomy:
         name: Navn
       spree/user:
         email: Epost
         password: Passord
         password_confirmation: Passord bekreftelse
+        avatar: Profilbilde
       spree/variant:
         cost_currency: Kostnadsvaluta
         cost_price: Kostpris
@@ -178,34 +198,76 @@ nb:
       spree/zone:
         description: Beskrivelse
         name: Navn
+      spree/customer_group:
+        description: Beskrivelse
+        name: Navn
+      spree/customer_return:
+        stock_location_id: Lagerplassering
+      spree/gift_card:
+        amount_used: Brukt beløp
+        expires_at: Utløper
+      spree/import:
+        preferred_delimiter: Skilletegn
+      spree/import_mapping:
+        file_column: Filkolonne
+        schema_field: Skjemafelt
+      spree/import_row:
+        row_number: Nummer
+      spree/invitation:
+        inviter: Invitør
+      spree/metafield_definition:
+        namespace: Navnerom
+      spree/option_value:
+        color_code: Fargekode
+        image: Fargeprøvebilde
+      spree/page_link:
+        open_in_new_tab: Åpne i ny fane
+      spree/policy:
+        body: Brødtekst
+        owner: Retningslinjer for
+      spree/price_list:
+        description: Beskrivelse
+        ends_at: Slutter
+        match_policy: Samsvarsregel
+        name: Navn
+        priority: Prioritet
+        starts_at: Starter
+        status: Status
+      spree/price_rule:
+        priority: Prioritet
+        type: Type
+      user:
+        current_sign_in: Gjeldende innlogging
+        last_sign_in: Siste innlogging
+        sign_in_count: Antall innlogginger
     errors:
       models:
         spree/calculator/tiered_flat_rate:
           attributes:
             base:
-              keys_should_be_positive_number: "Nivånøkler skal alle være tall større enn 0"
+              keys_should_be_positive_number: Nivånøkler skal alle være tall større enn 0
             preferred_tiers:
-              should_be_hash: "burde være en hash"
+              should_be_hash: burde være en hash
         spree/calculator/tiered_percent:
           attributes:
             base:
-              keys_should_be_positive_number: "Nivånøkler skal alle være tall større enn 0"
-              values_should_be_percent: "Nivåverdier skal alle være i prosent mellom 0% og 100%"
+              keys_should_be_positive_number: Nivånøkler skal alle være tall større enn 0
+              values_should_be_percent: Nivåverdier skal alle være i prosent mellom 0% og 100%
             preferred_tiers:
-              should_be_hash: "burde være en hash"
+              should_be_hash: burde være en hash
         spree/classification:
           attributes:
             taxon_id:
-              already_linked: "er allerede knyttet til dette produktet"
+              already_linked: er allerede knyttet til dette produktet
         spree/credit_card:
           attributes:
             base:
               card_expired: Utløpsdato
-              expiry_invalid: "Kortutløpet er ugyldig"
+              expiry_invalid: Kortutløpet er ugyldig
         spree/line_item:
           attributes:
             currency:
-              must_match_order_currency: "Må samsvare med ordrevaluta"
+              must_match_order_currency: Må samsvare med ordrevaluta
         spree/refund:
           attributes:
             amount:
@@ -224,7 +286,7 @@ nb:
           attributes:
             base:
               cannot_destroy_default_store: Kan ikke ødelegge standardbutikken.
-
+              cannot_destroy_only_store: Kan ikke slette den eneste butikken.
         spree/promotion:
           attributes:
             expires_at:
@@ -238,7 +300,7 @@ nb:
         spree/shipping_method:
           attributes:
             base:
-              required_shipping_category: "Du må velge minst én fraktkategori"
+              required_shipping_category: Du må velge minst én fraktkategori
         spree/store_credit:
           attributes:
             amount_used:
@@ -261,11 +323,72 @@ nb:
             attachment:
               not_allowed_content_type: har ikke tillatt innholdstype
               attachment_must_be_present: må være til stede
-
         spree/taxon_image:
           attributes:
             attachment:
               not_allowed_content_type: har ikke tillatt innholdstype
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: må være et opphav (skjema og vert) uten sti, spørring eller fragment
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Kan ikke slette et brukt gavekort
+        spree/import:
+          attributes:
+            attachment:
+              content_type: har en innholdstype som ikke er tillatt
+            type:
+              inclusion: er ikke blant de tillatte typene
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: tilhører en annen bruker
+              deprecated_in_completed_order: er utdatert i en fullført ordre
+            ship_address_id:
+              belongs_to_other_user: tilhører en annen bruker
+              deprecated_in_completed_order: er utdatert i en fullført ordre
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Kan ikke slette standardmarkedet.
+              cannot_destroy_last_market: Kan ikke slette det eneste markedet.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: er allerede tilordnet et annet marked i denne butikken
+              not_in_shipping_zone: dekkes ikke av noen fraktsone. Sett opp en fraktsone først.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: er større enn det tillatte maksbeløpet på %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: må være etter starttidspunktet
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: må være etter publiseringsdatoen
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: tilhører en annen bruker
+              deprecated_in_completed_order: er utdatert i en fullført ordre
+            ship_address_id:
+              belongs_to_other_user: tilhører en annen bruker
+              deprecated_in_completed_order: er utdatert i en fullført ordre
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: må ikke peke til en intern eller privat nettverksadresse
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Du har allerede lagt denne varen i ønskelisten din
+      messages:
+        blank: kan ikke være tom
     models:
       spree/address:
         one: Adresse
@@ -387,6 +510,60 @@ nb:
       spree/zone:
         one: Sone
         other: Soner
+      spree/classification:
+        one: Klassifisering
+        other: Klassifiseringer
+      spree/cms_page:
+        one: Side
+        other: Sider
+      spree/cms_section:
+        one: Seksjon
+        other: Seksjoner
+      spree/customer_group:
+        one: Kundegruppe
+        other: Kundegrupper
+      spree/customer_group_user:
+        one: Kundegruppebruker
+        other: Kundegruppebrukere
+      spree/digital:
+        one: Digital ressurs
+        other: Digitale ressurser
+      spree/export:
+        one: Eksport
+        other: Eksporter
+      spree/integration:
+        one: Integrasjon
+        other: Integrasjoner
+      spree/page:
+        one: Side
+        other: Sider
+      spree/page_block:
+        one: Sideblokk
+        other: Sideblokker
+      spree/page_link:
+        one: Sidelenke
+        other: Sidelenker
+      spree/page_section:
+        one: Seksjon
+        other: Seksjoner
+      spree/price:
+        one: Pris
+        other: Priser
+      spree/price_list:
+        one: Prisliste
+        other: Prislister
+      spree/price_rule:
+        one: Prisregel
+        other: Prisregler
+      spree/stock_item:
+        one: Lagervare
+        other: Lagervarer
+      spree/store:
+        one: Butikk
+        other: Butikker
+      spree/theme:
+        one: Tema
+        other: Temaer
   devise:
     confirmations:
       confirmed: Kontoen din ble bekreftet. Du er nå logget på.
@@ -399,6 +576,7 @@ nb:
       timeout: Tidsavbrudd
       unauthenticated: Uatorisert
       unconfirmed: Ubekfreftet
+      too_many_attempts: For mange forsøk. Vent litt og prøv igjen.
     mailer:
       confirmation_instructions:
         subject: Bekreftelsesinstruksjoner
@@ -431,8 +609,9 @@ nb:
       not_found: Ikke funnet
       not_locked: Ikke låst
       not_saved:
-        one: ! "1 feil forbød dette %{resource} fra å bli frelst:"
-        other: ! "%{count} feil forbød dette %{resource} fra å bli frelst"
+        one: '1 feil forbød dette %{resource} fra å bli frelst:'
+        other: "%{count} feil forbød dette %{resource} fra å bli frelst"
+      not_a_number: er ikke et tall
   pagination:
     first: "&laquo;"
     last: "&raquo;"
@@ -460,6 +639,15 @@ nb:
       refund: Tilbakebetaling
       save: Lagre
       update: Oppdater
+      close: Lukk
+      connect: Koble til
+      discard: Forkast
+      open: Åpne
+      reject: Avvis
+      remove: Fjern
+      resend: Send på nytt
+      select_file: Velg fil
+      send_invitation: Send invitasjon
     activate: Aktiver
     active: Aktiv
     add: Legg til
@@ -496,12 +684,13 @@ nb:
     address_book:
       other_address: Annen adresse
       address_name_placeholder: Gi denne adressen et unikt navn (arbeid, hjem osv.)
-      new_address: "New Address"
-      edit_address: "Rediger adresse"
+      new_address: New Address
+      edit_address: Rediger adresse
       remove_address: Fjern adresse
-      successfully_created: "Adressen ble opprettet."
-      successfully_removed: "Adressen er fjernet."
-      successfully_updated: "Oppdatert"
+      successfully_created: Adressen ble opprettet.
+      successfully_removed: Adressen er fjernet.
+      successfully_updated: Oppdatert
+      add_house_number: Legg til husnummer hvis du har et
     adjustment_labels:
       tax_rates:
         including_tax: "%{name}%{amount} (Inkludert i prisen) "
@@ -543,6 +732,7 @@ nb:
         store_credits: Lagre studiepoeng
         no_store_credit: Bruker har ingen butikkreditt tilgjengelig.
         available_store_credit: Brukeren har %{amount} i butikkreditt tilgjengelig.
+        last_order_placed: Siste ordre lagt inn
       order:
         events:
           approve: vedta
@@ -551,8 +741,476 @@ nb:
           resume: gjenoppta
       orders:
         cart: Handlevogn
+        add_user_to_this_order: Legg til kunde i denne ordren
+        all_orders: Alle ordrer
+        canceled: Kansellert
+        fulfilled: Oppfylt
+        no_email_present: Legg til en e-postadresse for å sende betalingslenken
+        orders_to_fulfill: Ordrer å oppfylle
+        partially_refunded: Delvis refundert
+        payment_link_sent: Betalingslenke ble sendt til kunden
+        provide_email: Oppgi en e-postadresse
+        refunded: Refundert
+        remove_user_from_this_order: Fjern kunde fra denne ordren
+        unfulfilled: Ikke oppfylt
       return_authorization:
         product: Produkt
+      allowed_origins:
+        origin_help: Angi den fullstendige opprinnelses-URL-en til nettbutikken din (f.eks. https://minbutikk.no). Ikke ta med stier eller spørringsstrenger.
+        origin_settings: Opprinnelsesinnstillinger
+      amount_spent: Beløp brukt
+      api_keys:
+        example_request: Eksempelforespørsel
+        key_revoked_message: Denne API-nøkkelen er tilbakekalt og kan ikke lenger brukes.
+        key_type_descriptions:
+          publishable: Trygg å bruke i klientside-kode som mobilapper eller nettlesere.
+          secret: Hold denne sikker og bruk den kun på serversiden. Eksponer den aldri offentlig.
+        key_types:
+          publishable: Publiserbar
+          secret: Hemmelig
+        last_used_at: Sist brukt
+        list: API-nøkler
+        name_placeholder: f.eks. Mobilapp produksjon
+        revoke: Tilbakekall
+        revoke_confirmation: Er du sikker på at du vil tilbakekalle denne API-nøkkelen? Denne handlingen kan ikke angres.
+        revoked: API-nøkkelen er tilbakekalt
+        revoked_at: Tilbakekalt
+        revoked_by: Tilbakekalt av
+        scopes: Tilganger
+        scopes_description: Påkrevd for hemmelige nøkler. Velg det snevreste settet med tilganger integrasjonen din trenger.
+        scopes_immutable: Tilganger fastsettes når nøkkelen opprettes. For å endre dem må du opprette en ny nøkkel med tilgangene du trenger og tilbakekalle denne.
+        secret_key_hidden: Denne hemmelige nøkkelen kan ikke vises. Hvis du har mistet den, tilbakekall denne nøkkelen og opprett en ny.
+        statuses:
+          active: Aktiv
+          revoked: Tilbakekalt
+        token_warning: Lagre denne nøkkelen sikkert. Den vises kun denne ene gangen.
+        usage: Bruk
+        usage_instructions:
+          publishable: Bruk denne nøkkelen til klientside-forespørsler. Den kan trygt inkluderes i frontend-koden din.
+          secret: Bruk denne nøkkelen kun til serverside-forespørsler. Hold den konfidensiell og eksponer den aldri i klientside-kode.
+      audit_log: Revisjonslogg
+      avg_order_value: Gj.snittlig ordreverdi
+      back_to_dashboard: Tilbake til kontrollpanelet
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Er du sikker på at du vil fjerne de valgte kundene fra denne gruppen?
+          title:
+            remove: Fjern fra gruppe
+        price_list_products:
+          body:
+            remove: Er du sikker på at du vil fjerne de valgte produktene fra denne prislisten? Dette vil også fjerne prisene deres.
+          title:
+            remove: Fjern fra prisliste
+        products:
+          body:
+            add_tags: 'Velg etiketter som skal legges til produktene:'
+            add_to_taxons: 'Velg hvilke kategorier produktene skal legges til i:'
+            remove_from_taxons: 'Velg hvilke kategorier produktene skal fjernes fra:'
+            remove_tags: 'Velg etiketter som skal fjernes fra produktene:'
+            set_active: Å sette produkter til aktiv gjør dem tilgjengelige i nettbutikken.
+            set_archived: Å sette produkter til arkivert skjuler dem fra nettbutikken.
+            set_draft: Å sette produkter til utkast skjuler dem fra nettbutikken.
+          title:
+            add_tags: Legg til etiketter
+            add_to_taxons: Legg til i kategorier
+            remove_from_taxons: Fjern fra kategorier
+            remove_tags: Fjern etiketter
+            set_active: Sett som aktiv
+            set_archived: Sett som arkivert
+            set_draft: Sett som utkast
+        users:
+          body:
+            add_tags: 'Velg etiketter som skal legges til kundene:'
+            remove_tags: 'Velg etiketter som skal fjernes fra kundene:'
+          title:
+            add_tags: Legg til etiketter
+            remove_tags: Fjern etiketter
+      channels:
+        code_hint: En kort, stabil identifikator (f.eks. "online", "pos", "engros"). Brukes av API-klienter via X-Spree-Channel-headeren og for ordretilskrivning.
+        default: Standardkanal
+        default_hint: Nøyaktig én kanal per butikk er standard. Brukes som reserveløsning når ingen kanal er valgt, og som mål for autopublisering av nye produkter.
+        order_routing_strategy: Strategi for ordreruting
+        order_routing_strategy_hint: Overstyrer rutingsstrategien på butikknivå for ordrer tilskrevet denne kanalen.
+        order_routing_strategy_inherit: Arv fra butikk
+      checkout_settings:
+        checkout_links:
+          description: Lenker til disse sidene vil vises i bunnteksten ved kassen.
+          label: Kasselenker
+        checkout_message_description: Synlig for kundene dine på kassesiden i det høyre sidefeltet.
+        countries_managed_by_markets_html: Land og fraktsoner administreres gjennom %{link}.
+        guest_checkout:
+          description: La kunder gjennomføre kassen uten å opprette en konto.
+          label: Tillat gjestekasse
+        special_instructions:
+          description: La kunder legge til spesielle instruksjoner til ordren sin.
+          label: Vis feltet for spesielle instruksjoner
+      close_sidebar: Lukk sidefelt
+      copied: Kopiert!
+      copy_payment_link: Kopier betalingslenke
+      copy_to_clipboard: Kopier til utklippstavlen
+      coupon_codes:
+        unused: Ubrukt
+        used: Brukt
+      created_at: Opprettet
+      dashboard:
+        getting_started:
+          description: Alt du trenger å sette opp for å begynne å selge.
+        hi: Hei
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> av %{total} trinn fullført"
+          title: Den samlede oppsettsfremdriften din
+        top_products: Toppprodukter
+        view_report: Vis rapport
+        whats_happening_on_html: Her er hva som skjer på <strong>%{store_name}</strong> i dag.
+      datetime_field_timezone_help: 'Tidssone: %{zone}'
+      digital_shipment_fulfillment_note: Denne forsendelsen markeres som oppfylt når brukeren laster ned det digitale produktet
+      display_on_options:
+        back_end: Kun i administrasjonspanelet
+        both: Både i administrasjonspanelet og nettbutikken
+        front_end: Kun i nettbutikken
+      documentation: Dokumentasjon
+      edit_billing_address: Rediger faktureringsadresse
+      edit_contact_information: Rediger kontaktinformasjon
+      edit_profile: Rediger profil
+      edit_shipping_address: Rediger leveringsadresse
+      edit_theme: Rediger tema
+      errors: Feil
+      execution_time: Utførelsestid
+      expand_sidebar: Utvid sidefelt
+      export_all: Eksporter alle oppføringer (kan være tregt for store datasett)
+      export_coupons: Eksporter kuponger som CSV-fil
+      export_created: Eksporten din ble startet. Du vil motta en e-post med en nedlastingslenke når den er klar!
+      export_only_filtered_records: Eksporter kun filtrerte oppføringer som samsvarer med søkekriteriene
+      export_report: Eksporter rapport som CSV-fil
+      filters: Filtre
+      getting_started: Kom i gang
+      gift_card_batches:
+        codes_count: Antall koder
+        new_gift_card_batch: Ny gavekortgruppe
+        prefix: Prefiks
+      gift_cards:
+        active: Aktiv
+        all_statuses: Alle statuser
+        code_help_text: Hvis du lar den stå tom, genererer vi en kode for deg
+        redeemed: Innløst
+        usage: Bruk
+      imports:
+        all_required_columns_mapped: Godt jobbet, alle påkrevde kolonner er tilordnet!
+        field_required: Felt påkrevd
+        import_done: Alt ferdig!
+        large_import_background_note: Du kan lukke denne siden – importen fortsetter i bakgrunnen.
+        large_import_message: Denne importen inneholder %{count} rader og er for stor til å vises enkeltvis.
+        large_import_summary: "%{completed} fullført, %{failed} mislyktes"
+        mapping_required: Dette feltet er påkrevd
+        please_map_all_required_fields: Tilordne alle de påkrevde feltene for å fortsette.
+        waiting_for_file_to_be_processed: Venter på at filen skal behandles ...
+      integrations:
+        invalid_integration_type: Denne integrasjonen er ikke tillatt
+        page_subtitle: Koble butikken din til tredjepartstjenester for å forbedre kundeopplevelsen.
+      json_preview:
+        no_api_response: Ingen API-respons funnet for denne ressursen
+      manage_markets: Administrer markeder
+      manage_properties: Administrer egenskaper
+      manage_stock_locations: Administrer lagersteder
+      manage_taxons: Administrer kategorier
+      manage_zones: Administrer soner
+      markets:
+        edit: Rediger marked
+        list: Markeder
+        new: Nytt marked
+        supported_locales_hint: Kommadelt liste over ekstra språkkoder (f.eks. fr,de,es)
+      metafield_definitions:
+        edit_warning: Du kan ikke endre ressurstypen eller metafelttypen etter at definisjonen er tatt i bruk.
+        used_in: Brukt i
+      name: Navn
+      navigation:
+        nested_under: Nestet under
+      newsletter_subscribers:
+        all: Alle
+        unverified: Ubekreftet
+        verified: Bekreftet
+      not_tracking_inventory: Sporer ikke lagerbeholdning
+      notifications: Varsler
+      num_orders: Antall ordrer
+      oauth_applications:
+        client_id: Klient-ID
+        client_secret: Klienthemmelighet
+        last_used: Sist brukt
+        list: API-nøkler
+        never: Aldri
+        new: Ny API-nøkkel
+        read_and_write: Lese og skrive
+        read_only: Kun lesing
+        scopes: Tilganger
+      page_builder:
+        background_color: Bakgrunnsfarge
+        border_bottom_width: Bredde på nedre kantlinje
+        border_color: Kantlinjefarge
+        border_top_width: Bredde på øvre kantlinje
+        bottom_padding: Nedre marg
+        button_alignment: Knappejustering
+        button_background_color: Bakgrunnsfarge på knapp
+        button_style: Knappestil
+        button_text: Knappens tekst
+        button_text_color: Tekstfarge på knapp
+        category: Kategori
+        description: Beskrivelse
+        description_alignment: Justering av beskrivelse
+        desktop_image_alignment: Bildejustering for skrivebord
+        desktop_logo_height: Logohøyde (skrivebord)
+        heading: Overskrift
+        heading_alignment: Justering av overskrift
+        heading_size: Størrelse på overskrift
+        height: Høyde
+        image_click_hint: Når brukeren klikker på bildet, sendes vedkommende til den valgte siden/URL-en
+        left_aligned: Venstrejustert
+        logo_centered: Logo sentrert
+        max_video_width_on_desktop: Maks videobredde på skrivebord
+        maximum_products_to_show: Maks antall produkter å vise
+        nav_centered: Navigasjon sentrert
+        not_set: Ikke angitt
+        separated: Adskilt
+        show_more_button: Vis utforsk kategori-knapp
+        show_taxon_image: Vis kategoribilde
+        text_color: Tekstfarge
+        title: Tittel
+        top_padding: Øvre marg
+        use_description_from_admin: Bruk beskrivelse fra administrasjon
+        vertical_alignment: Vertikal justering
+        youtube_video_url: Youtube-video-URL
+      personal_details: Personopplysninger
+      price_lists:
+        activate: Aktiver
+        activated: Prislisten er aktivert
+        confirm_activate: Er du sikker på at du vil aktivere denne prislisten? Den vil umiddelbart påvirke prisingen.
+        confirm_deactivate: Er du sikker på at du vil deaktivere denne prislisten?
+        confirm_schedule: Er du sikker på at du vil planlegge denne prislisten?
+        confirm_unschedule: Er du sikker på at du vil oppheve planleggingen av denne prislisten?
+        deactivate: Deaktiver
+        deactivated: Prislisten er deaktivert
+        schedule: Planlegg
+        scheduled: Prislisten er planlagt
+        unschedule: Opphev planlegging
+      product_translations:
+        coverage: Oversettelsesdekning
+        locale: Språk
+        manage_markets: Administrer markeder
+        no_locales_description: Sett opp markeder med ekstra språk for å begynne å oversette produktene dine.
+        no_locales_title: Ingen ekstra språk konfigurert
+        progress: Fremdrift
+        total: Totalt
+        translated: Oversatt
+      products:
+        active: Aktiv
+        all_statuses: Alle statuser
+        any_stock: Hvilken som helst lagerbeholdning
+        archived: Arkivert
+        by_status: Etter status
+        by_stock: Etter lagerbeholdning
+        deleted: Slettet
+        draft: Utkast
+        help_bubble: Utkastprodukter er ikke tilgjengelige for kjøp. Aktive produkter er publisert.
+        in_stock: På lager
+        inventory:
+          barcode: Strekkode (ISBN, UPC, GTIN osv.)
+          sku: SKU (lagerføringsenhet)
+        out_of_stock: Utsolgt
+        paused: Pauset
+        search_results:
+          no_products: Vi fant ingen produkter som samsvarer med søket ditt :(
+        seo:
+          placeholder: Legg til en tittel og beskrivelse for å se hvordan dette produktet kan vises i en søkemotoroppføring
+        status_form:
+          status: Utkastprodukter er ikke tilgjengelige for kjøp. Aktive produkter er publisert.
+        status_options:
+          active: Aktiv
+          archived: Arkivert
+          draft: Utkast
+        stores:
+          choose_stores: Velg hvilke butikker dette produktet skal være tilgjengelig i
+        variants:
+          option_types_link: For å legge til flere alternativtyper, gå til <a href="%{link}">Alternativtyper</a>
+      publishing:
+        caption_hidden_after: Tas ned %{date}
+        caption_live: Synlig for kunder nå
+        caption_not_available: Skjult – produktet er %{product_status}
+        caption_scheduled: Publiseres %{date}
+        caption_unpublished: Ble skjult %{date}
+        caption_window: Publisert %{start} → %{end}
+        empty: Ikke oppført på noen salgskanal ennå.
+        inactive_marker: Inaktiv
+        manage_cta: Administrer
+        manage_description: Velg hvilke salgskanaler som skal oppføre dette produktet. Slå av en kanal for å fjerne oppføringen overalt.
+        no_channels: Ingen salgskanaler tilgjengelige. Opprett en under Innstillinger → Salgskanaler.
+        published_at_label: Publiser fra
+        status_hidden: Skjult
+        status_live: Publisert
+        status_not_available: Ikke tilgjengelig
+        status_scheduled: Planlagt
+        title: Publisering
+        unpublished_at_label: Avpubliser
+      recommended_size: Anbefalt størrelse
+      report_created: Rapporten din genereres. Du vil motta en e-post med en nedlastingslenke når den er klar!
+      reset_digital_link_download_limits: Tilbakestill nedlastingsgrenser
+      response_code: Responskode
+      selected: valgt
+      send_payment_link: Send betalingslenke
+      shipment:
+        please_provide_tracking_details: Før du markerer forsendelsen som sendt, oppgi sporingsdetaljer
+      shipment_transfer:
+        wrong_destination: Feil destinasjon
+      show_json: Vis JSON
+      stock_transfers:
+        add_products_tip: Du må velge et destinasjonssted først
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> gjenstår (<strong>%{total}</strong> totalt)"
+      store_form:
+        company_field:
+          description: Det viser firmafeltet på adresseskjemaet i Min konto-seksjonen og på adressetrinnet i kassen.
+          label: Vis firmaadressefeltet
+        customer_support_email_help: Denne e-postadressen er synlig for butikkens besøkende i bunntekstseksjonen
+        new_order_notifications_email_help: Hvis du vil motta et e-postvarsel hver gang noen legger inn en ordre, oppgi en e-postadresse som varselet skal sendes til
+        send_consumer_transactional_emails_help: Når dette ikke er avkrysset, sendes ikke transaksjons-e-poster som ordrebekreftelser og forsendelsesvarsler til kunder
+      store_setup_tasks:
+        add_billing_address: Legg til faktureringsadresse
+        add_products: Legg til produkter
+        payment_methods:
+          copy: For å kunne motta betalinger, sett opp minst én nettbasert betalingsleverandør.
+          done: Alt er klart! Du kan alltid administrere betalingsmetodene dine på <a href="%{link}" data-turbo-frame="_top">denne</a> siden.
+          setup: Sett opp betalingsmetoder
+          title: Sett opp betalingsmetoder for butikken din
+        set_customer_support_email: Angi e-post for kundestøtte
+        setup_taxes_collection: Sett opp innkreving av avgifter
+        taxes:
+          copy: For å kunne kreve inn avgifter, sett opp avgiftssatsene dine.
+          done: Alt er klart! Du kan alltid administrere avgiftene dine på <a href="%{link}" data-turbo-frame="_top">innstillinger</a>-siden.
+          setup: Sett opp avgiftssatser
+      storefront: Nettbutikk
+      successful: Vellykket
+      successfully_reset_digital_links_limit: Nedlastingsgrenser er tilbakestilt
+      tables:
+        add_filter: Legg til filter
+        add_or_group: Legg til ELLER-gruppe
+        apply: Bruk
+        apply_filters: Bruk filtre
+        ascending: Stigende
+        clear_all: Tøm alle
+        columns: Kolonner
+        descending: Synkende
+        enter_value: Angi verdi ...
+        filter_builder: Filterbygger
+        filters: Filtre
+        match: Samsvar
+        of_the_following: av følgende
+        operators:
+          contains: inneholder
+          does_not_contain: inneholder ikke
+          ends_with: slutter med
+          equals: er lik
+          greater_than: større enn
+          greater_than_or_equal: større enn eller lik
+          is_any_of: er en av
+          is_empty: er tom
+          is_none_of: er ingen av
+          is_not_empty: er ikke tom
+          less_than: mindre enn
+          less_than_or_equal: mindre enn eller lik
+          not_equals: er ikke lik
+          starts_with: begynner med
+        order: Rekkefølge
+        reset_to_default: Tilbakestill til standard
+        select_field: Velg felt ...
+        sort_by: Sorter etter
+        visible_columns: Synlige kolonner
+      taxon_rules:
+        all_conditions: alle betingelser
+        any_condition: enhver betingelse
+        available_on: Tilgjengelig fra
+        match_policies:
+          contains: inneholder
+          does_not_contain: inneholder ikke
+          is_equal_to: er lik
+          is_not_equal_to: er ikke lik
+        on_sale: På salg
+        products_must_match: 'Produkter må samsvare med:'
+        tag: Produktetikett
+      taxon_type: Kategoritype
+      taxon_types:
+        automatic: Automatisk
+        automatic_info: Legg automatisk produkter til denne kategorien hvis de samsvarer med reglene du angir.
+        manual: Manuell
+        manual_info: Kurater produkter manuelt. Du kan legge til eller fjerne dem i bulk.
+      translations:
+        no_translations_configured: Ingen oversettelser konfigurert. Sett opp markeder for å bruke oversettelser.
+      upload_new_asset: Last opp nye medier
+      users:
+        filters:
+          search_placeholder: Søk etter kunder på e-post eller navn
+      utilities:
+        preview: Forhåndsvisning
+      variants:
+        search_results:
+          no_variants: Vi fant ingen varianter som samsvarer med søket ditt :(
+      variants_form:
+        add_option:
+          empty: Legg til alternativer som størrelse eller farge
+          not_empty: Legg til et annet alternativ
+        compare_at_price_description: Denne prisen brukes til å vise nedsatt pris på produktsiden.
+        stock_locations_link: For å legge til flere lagersteder, gå til <a href="%{link}">Lagersteder</a>
+        total_inventory_html: 'Total lagerbeholdning på %{stock_location}-stedet: %{count} tilgjengelig'
+      vendors:
+        enterprise_feature: Multi-leverandørmarkedsplass er tilgjengelig i Enterprise Edition
+      webhook_deliveries:
+        delivered_at: Levert
+        delivery_details: Leveringsdetaljer
+        delivery_info: Leveringsinformasjon
+        endpoint_inactive: Kan ikke prøve på nytt – endepunktet er inaktivt
+        error_type: Feiltype
+        event: Hendelse
+        execution_time: Utførelsestid
+        failed: Mislyktes
+        pending: Venter
+        redeliver_button: Lever på nytt
+        redelivered: Webhook levert på nytt.
+        request_errors: Forespørselsfeil
+        request_payload: Forespørselsnyttelast
+        response_body: Responsinnhold
+        response_code: Responskode
+      webhook_endpoints:
+        auto_disabled: Dette endepunktet ble automatisk deaktivert etter gjentatte leveringsfeil.
+        back_to_endpoint: Tilbake til endepunkt
+        deliveries: Leveringer
+        endpoint_settings: Endepunktsinnstillinger
+        event_subscriptions: Hendelsesabonnementer
+        event_subscriptions_help: Velg hvilke hendelser som skal utløse en webhook-levering til dette endepunktet.
+        events: hendelser
+        failed_deliveries: Mislykkede leveringer
+        health:
+          degraded: "%{percentage} % vellykket"
+          disabled: Deaktivert
+          failing: "%{percentage} % vellykket"
+          healthy: "%{percentage} % vellykket"
+          no_deliveries: Ingen data
+        health_label: Helse
+        new: Nytt webhook-endepunkt
+        re_enable: Aktiver på nytt
+        secret_key: Hemmelig nøkkel
+        secret_key_help: Bruk denne nøkkelen til å verifisere webhook-signaturer. Hold den sikker og ikke del den offentlig.
+        send_test: Send test
+        subscriptions: Abonnementer
+        successful_deliveries: Vellykkede leveringer
+        test_failed: Kunne ikke sende test-webhook. Sjekk endepunktskonfigurasjonen.
+        test_sent: Test-webhook sendt. Sjekk leveringene for resultatet.
+      webhooks_subscribers:
+        all_events: Alle hendelser
+        new_webhooks_subscriber: Ny webhook-abonnent
+        no_events: Ingen hendelser
+        select_events: Velg hendelser
+        subscribe_to_all_events: Abonner på alle hendelser
+        subscriptions: Abonnementer
+        time_of_last_event: Tidspunkt for siste hendelse
+        webhooks_events: Webhook-hendelser
     administration: Administrasjon
     advertise: Reklamere
     agree_to_privacy_policy: Godta personvernsregler
@@ -583,7 +1241,7 @@ nb:
     are_you_sure: Er du sikker
     are_you_sure_delete: Er du sikker på at du vil slette denne?
     associated_adjustment_closed: Den tilhørende justeringen er lukket og vil ikke beregnes på nytt. Vil du åpne den?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Autorisering feilet
     authorized: Autorisert
     auto_capture: Automatisk fangst
@@ -598,7 +1256,7 @@ nb:
     back: Tilbake
     back_end: Back End
     back_to_payment: Tilbake til betaling
-    back_to_resource_list: 'Tilbake til% {resource} Liste'
+    back_to_resource_list: Tilbake til% {resource} Liste
     back_to_rma_reason_list: Tilbake til RMA årsaksliste
     back_to_store: Tilbake til butikken
     back_to_users_list: Tilbake til brukere
@@ -632,7 +1290,7 @@ nb:
       add_promo_code: LEGG TIL PROMO KODE
       change_quantity: Endre antall
       checkout: Sjekk ut
-      empty_info: 'Vognen din er tom.'
+      empty_info: Vognen din er tom.
       header: Din handlevogn
       quantity: mengde
       remove_from_cart: Fjern fra vognen
@@ -645,8 +1303,8 @@ nb:
     card_type_is: Korttype er
     cart: Handlekurv
     cart_subtotal:
-      one: 'Delsum (1 vare)'
-      other: 'Delsum (%{count} elementer)'
+      one: Delsum (1 vare)
+      other: Delsum (%{count} elementer)
     categories: Kategorier
     category: Kategori
     category_nav_bar:
@@ -666,7 +1324,7 @@ nb:
       header: Sjekk ut
       product: Produkt
     choose_a_customer: Velg kunde
-    choose_a_taxon_to_sort_products_for: "Velg en taxon å sortere produkter etter"
+    choose_a_taxon_to_sort_products_for: Velg en taxon å sortere produkter etter
     choose_currency: Velg valuta
     choose_dashboard_locale: Velg Dashboard Locale
     choose_location: Velg lokasjon
@@ -729,7 +1387,7 @@ nb:
     currency_symbol_position: Plasser valutasymbol foran eller etter beløp?
     currency_thousands_separator: Separator for tusenedeler
     current: Nå
-    current_promotion_usage: ! 'nåværende bruk: %{count}'
+    current_promotion_usage: 'nåværende bruk: %{count}'
     customer: Kunde
     customer_details: Kundedetaljer
     customer_details_updated: Kundedetaljer
@@ -763,7 +1421,6 @@ nb:
     date: dato
     date_completed: Fullføringsdato
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y på H:i
     date_range: Datoområde
@@ -812,6 +1469,7 @@ nb:
         no_user_or_email_specified: Du må logge på eller oppgi e-posten din før du bruker denne kupongkoden.
         no_user_specified: Du må logge på før du bruker denne kupongkoden.
         not_first_order: Denne kupongkoden kan bare brukes på din første bestilling.
+        wrong_country: Denne rabattkoden gjelder ikke i landet ditt
     email: Epost
     empty: Tom
     empty_cart: Tøm handlekurv
@@ -827,9 +1485,17 @@ nb:
         could_not_create_taxon: Kunne ikke opprette gruppe
         no_payment_methods_available: Ingen betalingsmetoder er satt opp for dette miljøet
         no_shipping_methods_available: Ingen leveringsmåter er tilgjengelige for din plassering, vennligst sjekk adressen og prøv igjen.
+        cannot_delete_default_channel: Standardkanalen kan ikke slettes. Gjør en annen kanal til standard først.
+        channel_store_mismatch: må tilhøre samme butikk
+        invalid_order_routing_rule: er ikke en registrert regel for ordreruting
+        invalid_order_routing_strategy: er ikke en registrert strategi for ordreruting
+        must_be_origin_only: må være et opphav (skjema og vert) uten sti, spørring eller fragment
+        store_association_can_not_be_changed: Butikktilknytningen kan ikke endres
+        store_is_already_set: Butikk er allerede angitt
       services:
         get_shipping_rates:
           no_line_items: For å generere fraktpriser må du legge til noen artikler på bestilling
+          no_shipping_address: For å generere fraktpriser må ordren ha en leveringsadresse
     errors_prohibited_this_record_from_being_saved:
       one: 1 feil forhindrer dette fra og kunne lagres
       other: "%{count} feil forhindrer dette fra og kunne lagres"
@@ -848,11 +1514,11 @@ nb:
         user:
           signup: Brukerregistrering
     exceptions:
-      count_on_hand_setter: "Kan ikke angi count_on_hand manuelt, da det blir satt automatisk av tilbakekalkulering_count_on_hand. Bruk `update_column(:count_on_hand, value)` i stedet."
+      count_on_hand_setter: Kan ikke angi count_on_hand manuelt, da det blir satt automatisk av tilbakekalkulering_count_on_hand. Bruk `update_column(:count_on_hand, value)` i stedet.
     exchange_for: Bytt mot
     excl: ekskl.
     existing_shipments: Eksisterende forsendelser
-    expedited_exchanges_warning: "Eventuelle spesifiserte sentraler sendes til kunden umiddelbart etter lagring. Kunden belastes hele beløpet for varen hvis de ikke returnerer den opprinnelige varen innen %{days_window} dager."
+    expedited_exchanges_warning: Eventuelle spesifiserte sentraler sendes til kunden umiddelbart etter lagring. Kunden belastes hele beløpet for varen hvis de ikke returnerer den opprinnelige varen innen %{days_window} dager.
     expiration: Utgår
     extension: Utvidelse
     error_user_destroy_with_orders: Bruker tilknyttet bestillinger kan ikke ødelegges
@@ -908,17 +1574,17 @@ nb:
     identifier:
     image: Bilde
     images: Bilder
-    implement_eligible_for_return: "Må implementere #eligible_for_return? For din kvalifiseringsvalidator."
-    implement_requires_manual_intervention: "Må implementere #requires_manual_intervention? For din kvalifiseringsvalidator."
+    implement_eligible_for_return: 'Må implementere #eligible_for_return? For din kvalifiseringsvalidator.'
+    implement_requires_manual_intervention: 'Må implementere #requires_manual_intervention? For din kvalifiseringsvalidator.'
     inactive: Inaktiv
     incl: inkl. mva.
     included_in_price: Inkludert i pris
     included_price_validation: kan ikke velges med mindre du har definert en standard avgiftsområde
     incomplete: Ufullstendig
     info_number_of_skus_not_shown:
-      one: "og en annen"
-      other: "og %{count} andre"
-    info_product_has_multiple_skus: "Dette produktet har %{count} varianter:"
+      one: og en annen
+      other: og %{count} andre
+    info_product_has_multiple_skus: 'Dette produktet har %{count} varianter:'
     instructions_to_reset_password: 'Fyll ut skjemaet under og du vil motta instruksjoner for hvordan du tilbakestiller passordet ditt per epost:'
     insufficient_stock: Manglende lagerbeholdning, kun %{on_hand} gjenstår
     insufficient_stock_lines_present: Noen ordrelinjer i denne bestillingen har ikke tilstrekkelig antall.
@@ -963,13 +1629,13 @@ nb:
     last_name_begins_with: Etternavn begynner med
     learn_more: Finn ut mer
     lifetime_stats: Livstid Statistikk
-    line_item_adjustments: "Justering av ordrelinjer"
+    line_item_adjustments: Justering av ordrelinjer
     list: Liste
     loading: Laster
     locale_changed: Endret språk
     location: Lokasjon
     lock: Låst
-    log_entries: "Loggoppføringer"
+    log_entries: Loggoppføringer
     logged_in_as: Innlogget som
     logged_in_successfully: Logget inn
     logged_out: Du har blitt utlogget.
@@ -978,7 +1644,7 @@ nb:
     login_failed: Brukerautentisering feilet.
     login_name: Brukernavn
     logout: Logg ut
-    logs: "Tømmerstokker"
+    logs: Tømmerstokker
     limit_usage_to: Begrens bruken til
     loading_tree: Laster inn treet. Vennligst vent…
     log_in: Logg Inn
@@ -990,7 +1656,7 @@ nb:
     master: Master
     master_sku: Master SKU
     mutable: Muterbar
-    missing_return_authorization: ! "Mangler returautorisasjon for %{item_name}."
+    missing_return_authorization: Mangler returautorisasjon for %{item_name}.
     make_refund: Opprett refusjon
     make_sure_the_above_reimbursement_amount_is_correct: Forsikre deg om at refusjonsbeløpet ovenfor er riktig
     manage_promotion_categories: Administrer kampanjekategorier
@@ -1071,7 +1737,7 @@ nb:
     no_payment_found: Ingen betalinger funnet
     no_pending_payments: Ingen utestående betalinger
     no_products_found: Ingen produkter tilgjengelig
-    no_resource_found: 'Ingen %{resource} funnet'
+    no_resource_found: Ingen %{resource} funnet
     no_results: Ingen resultat
     no_returns_found: Ingen avkastninger funnet
     no_rules_added: Ingen regler lagt til
@@ -1085,7 +1751,7 @@ nb:
     not: ikke
     not_available: N/A
     not_enough_stock: Det er ikke nok lager på kildeplasseringen for å fullføre denne overføringen.
-    not_found: ! '%{resource} ble ikke funnet'
+    not_found: "%{resource} ble ikke funnet"
     note: Merk
     notice_messages:
       product_cloned: Produktet ble kopiert
@@ -1099,8 +1765,8 @@ nb:
     num_orders: "# Bestillinger"
     number: Antall
     on_hand: Tilgjengelig
-    open: "Åpen"
-    open_all_adjustments: "Åpne alle justeringer"
+    open: Åpen
+    open_all_adjustments: Åpne alle justeringer
     option_type: Variasjon
     option_type_placeholder: Variasjoner
     option_types: Variasjonstyper
@@ -1121,9 +1787,9 @@ nb:
     ok: OK
     order_line_items: Bestill ordrelinjer
     order_mailer:
-      subtotal: ! 'Delsum:'
-      total: ! 'Bestill totalt:'
-      store_team: '%{store_name} Team'
+      subtotal: 'Delsum:'
+      total: 'Bestill totalt:'
+      store_team: "%{store_name} Team"
       cancel_email:
         dear_customer: Kjære kunde,
         instructions: Din ordre er KANSELLERT. Vennligst ta vare på denne informasjonen.
@@ -1144,8 +1810,13 @@ nb:
         heading: Ny ordre mottatt
         instructions: Du har mottatt en ny ordre.
         order_summary: Rekkefølge %{number} Sammendrag
-        subject: '%{store_name} mottatt en ny ordre '
+        subject: "%{store_name} mottatt en ny ordre "
         thanks: Takk for handelen.
+      payment_link_email:
+        message: Klikk på knappen nedenfor for å betale for ordren din.
+        message_copy_link: 'Hvis knappen ikke fungerer, kopier og lim inn følgende lenke i nettleseren din:'
+        pay_for_order: Betal for ordre
+        subject: 'Betalingslenke for ordre #%{number}'
     order_success: Bestillingen ble gjennomført
     order_success_explain: Bestillingsinformasjonen din vil bli sendt til e-posten din
     order_not_found: Ordren ble ikke funnet
@@ -1153,7 +1824,7 @@ nb:
     order_populator:
       out_of_stock: Utsolgt
       please_enter_reasonable_quantity: Vennligst oppgi et fornuftig antall
-      selected_quantity_not_available: ! 'valgt av %{item} er ikke tilgjengelig.'
+      selected_quantity_not_available: valgt av %{item} er ikke tilgjengelig.
     order_processed_successfully: Din ordre har blitt behandlet
     order_resumed: Bestillingen ble gjenopptatt
     order_state:
@@ -1209,6 +1880,9 @@ nb:
       pending: avventer
       processing: prosesserer
       void: Avvis
+      complete: Fullført
+      partially_refunded: Delvis refundert
+      refunded: Refundert
     payment_updated: Betaling oppdatert
     payments: Betalinger
     pending: Avventer
@@ -1226,7 +1900,7 @@ nb:
     preferred_reimbursement_type: Foretrukket refusjonstype
     presentation: Presentasjon
     previous: Forrige
-    previous_state_missing: "n/a"
+    previous_state_missing: n/a
     price: Pris
     price_range: Prisområde
     price_sack: Prissekk
@@ -1294,9 +1968,9 @@ nb:
     preview_taxon: Forhåndsvisning av Taxon
     previously_used_card: Tidligere brukte kort
     promotion_cloned: Kampanjen er klonet
-    promotion_not_cloned: "Kampanjen er ikke klonet. Årsak: %{error}"
+    promotion_not_cloned: 'Kampanjen er ikke klonet. Årsak: %{error}'
     promotion_category: Kampanjekategori
-    promotion_label: 'Kampanje (%{name})'
+    promotion_label: Kampanje (%{name})
     promotion_rule_types:
       country:
         description: Bestillingen sendes til riktig (eller standard) land
@@ -1328,6 +2002,21 @@ nb:
       user_logged_in:
         description: Kun tilgjengelig for innloggede brukere
         name: Bruker innlogget
+      category:
+        description: Ordren inneholder produkter i bestemte kategorier
+        name: Kategorier
+      currency:
+        description: Begrens til ordrer i en bestemt valuta
+        name: Valuta
+      customer:
+        description: Tilgjengelig kun for de angitte kundene
+        name: Kunder
+      customer_group:
+        description: Tilgjengelig kun for kunder i de angitte kundegruppene
+        name: Kundegruppe(r)
+      customer_logged_in:
+        description: Tilgjengelig kun for innloggede kunder
+        name: Kun innloggede kunder
     promotion_uses: Kampanje bruker
     promotionable: Markedsførbar
     promotions: Kampanjer
@@ -1360,7 +2049,7 @@ nb:
     registration: Registrering
     reference_contains: Referanse Inneholder
     remove_image: Fjern bildet
-    required: '*'
+    required: "*"
     required_fields: Obligatoriske felt
     resellable: Selges videre
     return_authorization_canceled: Returtillatelse kansellert
@@ -1370,17 +2059,17 @@ nb:
     reimbursement: Refusjon
     reimbursement_mailer:
       reimbursement_email:
-        store_team: '%{store_name} Team'
+        store_team: "%{store_name} Team"
         thanks: Takk for handelen.
-        days_to_send: ! "Du har %{dager} dager til å sende tilbake varer som venter på bytte."
+        days_to_send: Du har %{dager} dager til å sende tilbake varer som venter på bytte.
         dear_customer: Kjære %{name},
         exchange_summary: Utvekslingssammendrag
         for: for
         instructions: Refusjonen din er behandlet.
         refund_summary: Sammendrag av refusjon
         subject: Refusjonsmelding
-        total_refunded: ! 'Totalt tilbakebetalt: %{total}'
-    reimbursement_perform_failed: "Refusjon kunne ikke utføres. Feil: %{error}"
+        total_refunded: 'Totalt tilbakebetalt: %{total}'
+    reimbursement_perform_failed: 'Refusjon kunne ikke utføres. Feil: %{error}'
     reimbursement_status: Refusjonsstatus
     reimbursement_type: Refusjonstype
     reimbursement_type_override: Tilbakestillingstype Overstyring
@@ -1446,7 +2135,7 @@ nb:
     select_a_date: Velg en dato
     select_a_store_credit_reason: Velg en grunn for butikkreditten
     select_an_option: Velg et alternativ
-    selected_quantity_not_available: ! 'valgt av %{item} er ikke tilgjengelig.'
+    selected_quantity_not_available: valgt av %{item} er ikke tilgjengelig.
     send_copy_of_all_mails_to: Send kopi av all epost til
     send_mails_as: Send epost som
     seo: SEO
@@ -1458,9 +2147,9 @@ nb:
     ship: sende
     ship_address: Leveringsadresse
     ship_total: Leveringskostnader
-    ship_to: "Sender til:"
+    ship_to: 'Sender til:'
     shipment: Levering
-    shipment_adjustments: "Forsendelsesjusteringer"
+    shipment_adjustments: Forsendelsesjusteringer
     shipment_details: Leveringsdetaljer
     shipment_mailer:
       shipped_email:
@@ -1471,8 +2160,8 @@ nb:
         thanks: Takk for handelen.
         track_information: 'Sporingsinformasjon: %{tracking}'
         track_link: Sporingslink
-        store_team: '%{store_name} Team'
-        shipping_method: "Forsendelsesmetode: %{shipping_method}"
+        store_team: "%{store_name} Team"
+        shipping_method: 'Forsendelsesmetode: %{shipping_method}'
     shipping_rates:
       display_price:
         including_tax: "%{price} (inkl. mva. %{tax_amount} %{tax_rate_name})"
@@ -1485,8 +2174,8 @@ nb:
       pending: venter
       ready: klar
       shipped: sendt
-    shipment_transfer_error: 'Det oppsto en feil under overføring av varianter'
-    shipment_transfer_success: 'Varianter vellykket overført'
+    shipment_transfer_error: Det oppsto en feil under overføring av varianter
+    shipment_transfer_success: Varianter vellykket overført
     shipments: Forsendelser
     shipped: Sendt
     shipping: Frakt
@@ -1580,7 +2269,8 @@ nb:
     stock_transfer:
       errors:
         must_have_variant: Du må legge til minst en variant.
-        variants_unavailable: "Noen varianter er ikke tilgjengelige på %{stock}"
+        variants_unavailable: Noen varianter er ikke tilgjengelige på %{stock}
+        same_location: kan ikke være den samme som målplasseringen
     stop: Stopp
     store: Butikk
     store_set_default_button: Satt som standard
@@ -1590,57 +2280,57 @@ nb:
       unable_to_update: Kan ikke oppdatere butikken.
       unable_to_delete: Kan ikke slette butikken.
     store_form:
-      code_help: "Lagre unik identifikator, som er en forkortet versjon av butikkens navn (brukt som layoutkatalognavn, og også nyttig for å skille maler etter butikk)"
-      checkout_zone_help: "Å velge en sone vil begrense kundene i kassen til adresser i land eller stater i den sonen.
-        For mer informasjon <a href='https://guides.spreecommerce.org/user/configuration/configuring_geography.html#zones' target='_blank' class='alert-link'> se dokumentasjon </a> "
-      languages_help: "Installer <a href='https://github.com/spree-contrib/spree_i18n target='_blank' class='alert-link'>Spree I18n extension</a> for å legge til flere språk"
-      social_help: "Hvis du vil koble til sosiale kontoer i bunntekstdelen av nettstedet ditt, vennligst fyll ut feltene nedenfor"
-      default_country_help: "Dette er landet som vil være forhåndsvalgt i skjemaet for kasse-adresse"
-      footer_help: "Dette innholdet er synlig i bunntekstdelen av butikken din"
-      mail_from_address_help: "Dette er e-postadressen som vil være avsenderen av alle e-postene dine i butikken (ordrebekreftelse, forsendelsesvarsel osv.)"
-      customer_support_email_help: "Denne e-postadressen er synlig for butikkbesøkende i bunntekstdelen"
-      new_order_notifications_email_help: "Hvis du vil motta et e-postvarsel hver gang noen legger inn en bestilling, vennligst oppgi en e-postadresse for at meldingen skal sendes til"
-      seo_robots: "Vennligst sjekk <a href='https://developers.google.com/search/reference/robots_meta_tag' target='_blank'>denne siden for mer hjelp</a>"
+      code_help: Lagre unik identifikator, som er en forkortet versjon av butikkens navn (brukt som layoutkatalognavn, og også nyttig for å skille maler etter butikk)
+      checkout_zone_help: 'Å velge en sone vil begrense kundene i kassen til adresser i land eller stater i den sonen. For mer informasjon <a href=''https://guides.spreecommerce.org/user/configuration/configuring_geography.html#zones'' target=''_blank'' class=''alert-link''> se dokumentasjon </a> '
+      languages_help: Installer <a href='https://github.com/spree-contrib/spree_i18n target='_blank' class='alert-link'>Spree I18n extension</a> for å legge til flere språk
+      social_help: Hvis du vil koble til sosiale kontoer i bunntekstdelen av nettstedet ditt, vennligst fyll ut feltene nedenfor
+      default_country_help: Dette er landet som vil være forhåndsvalgt i skjemaet for kasse-adresse
+      footer_help: Dette innholdet er synlig i bunntekstdelen av butikken din
+      mail_from_address_help: Dette er e-postadressen som vil være avsenderen av alle e-postene dine i butikken (ordrebekreftelse, forsendelsesvarsel osv.)
+      customer_support_email_help: Denne e-postadressen er synlig for butikkbesøkende i bunntekstdelen
+      new_order_notifications_email_help: Hvis du vil motta et e-postvarsel hver gang noen legger inn en bestilling, vennligst oppgi en e-postadresse for at meldingen skal sendes til
+      seo_robots: Vennligst sjekk <a href='https://developers.google.com/search/reference/robots_meta_tag' target='_blank'>denne siden for mer hjelp</a>
     store_credit_name: Butikkreditt
-
     store_credit:
-      credit: "Kreditt"
-      authorized: "Autorisert"
-      captured: "Brukt"
-      allocated: "La til"
+      credit: Kreditt
+      authorized: Autorisert
+      captured: Brukt
+      allocated: La til
       apply: Søke om
       remove: Ta vekk
       applicable_amount: "<strong>%{amount}</strong> i butikk kreditt vil bli brukt på denne bestillingen."
-      available_amount: "Du har <strong>%{amount} </strong> i butikkreditt tilgjengelig! "
-      remaining_amount: "Du har <strong>%{amount} </strong> igjen i kontoens butikkreditt."
+      available_amount: 'Du har <strong>%{amount} </strong> i butikkreditt tilgjengelig! '
+      remaining_amount: Du har <strong>%{amount} </strong> igjen i kontoens butikkreditt.
       additional_payment_needed: Velg en annen betalingsmåte for de resterende <strong>%{amount}</strong>.
       errors:
         cannot_change_used_store_credit: Du kan ikke endre en butikkreditt som allerede er brukt
         unable_to_create: Kan ikke opprette butikkreditt
         unable_to_delete: Unable to delete store credit
         unable_to_update: Kan ikke oppdatere butikkreditt
+      remaining: Gjenstående
+      eligible: Kvalifisert
     store_credit_categories: Store kredittkategorier
     store_credit_payment_method:
-      unable_to_void: "Kan ikke annullere koden: %{auth_code}"
-      unable_to_credit: "Kan ikke kreditere koden: %{auth_code}"
-      successful_action: "Vellykket butikkreditt %{action}"
-      unable_to_find: "Fant ikke butikkreditt"
-      insufficient_funds: "Gjenværende mengde butikkreditt er ikke tilstrekkelig"
-      currency_mismatch: "Butikk-kredittvaluta samsvarer ikke med ordrevaluta"
-      insufficient_authorized_amount: "Kan ikke fange mer enn autorisert beløp"
-      unable_to_find_for_action: "Fant ikke butikkreditt for godkjenningskode: %{auth_code} for action: %{action}"
-    store_not_set_as_default: "Kunne ikke angi butikk %{store} som standardbutikk"
-    store_set_as_default: "Butikk %{store} er nå en standardbutikk"
+      unable_to_void: 'Kan ikke annullere koden: %{auth_code}'
+      unable_to_credit: 'Kan ikke kreditere koden: %{auth_code}'
+      successful_action: Vellykket butikkreditt %{action}
+      unable_to_find: Fant ikke butikkreditt
+      insufficient_funds: Gjenværende mengde butikkreditt er ikke tilstrekkelig
+      currency_mismatch: Butikk-kredittvaluta samsvarer ikke med ordrevaluta
+      insufficient_authorized_amount: Kan ikke fange mer enn autorisert beløp
+      unable_to_find_for_action: 'Fant ikke butikkreditt for godkjenningskode: %{auth_code} for action: %{action}'
+    store_not_set_as_default: Kunne ikke angi butikk %{store} som standardbutikk
+    store_set_as_default: Butikk %{store} er nå en standardbutikk
     street_address: Adresselinje 1
     street_address_2: Adresselinje 2
     subtotal: Sum
     subtract: Trekk fra
     success: Suksess
-    successfully_created: ! '%{resource} ble opprettet!'
-    successfully_refunded: ! '%{resource} har fått tilbakebetaling!'
-    successfully_removed: ! '%{resource} ble fjernet!'
+    successfully_created: "%{resource} ble opprettet!"
+    successfully_refunded: "%{resource} har fått tilbakebetaling!"
+    successfully_removed: "%{resource} ble fjernet!"
     successfully_signed_up_for_analytics:
-    successfully_updated: ! '%{resource} ble oppdatert!'
+    successfully_updated: "%{resource} ble oppdatert!"
     summary: Sammendrag
     supported_currencies: Støttede valutaer
     tags_placeholder: Legg til merkelapper
@@ -1648,7 +2338,7 @@ nb:
     tax_categories: Avgiftsklasser
     tax_category: Avgiftsklasse
     tax_code: Skattekode
-    tax_included: "Skatt (inkl.)"
+    tax_included: Skatt (inkl.)
     tax_rate_amount_explanation: Avgiftsnivå (0.10 = 10%)
     tax_rates: Avgiftsnivå
     taxon: Gruppe
@@ -1663,7 +2353,7 @@ nb:
     taxonomy: Gruppering
     taxonomy_edit: Endre grupperinger
     taxonomy_tree_error: Den forespurte endringen ble ikke akseptert, og treet har blitt tilbakestilt til sin opprinnelige tilstand. Vennligst prøv igjen.
-    taxonomy_tree_instruction: ! '* Høyreklikk på underelement i treet for å aksessere menyen for og legge til, slette å sortere underelementer.'
+    taxonomy_tree_instruction: "* Høyreklikk på underelement i treet for å aksessere menyen for og legge til, slette å sortere underelementer."
     taxons: Klasser
     taxon_missing_alt: Kategoribannerbeskrivelse
     taxonomy_brands_name: Merker
@@ -1730,7 +2420,7 @@ nb:
       is_too_large: er for stor -- varebeholdningen kan ikke dekke forespurt antall!
       must_be_int: må være et heltall
       must_be_non_negative: må være en ikke-negativ verdi
-      unpaid_amount_not_zero: "Beløpet ble ikke fullstendig tilbakebetalt. Forfaller fortsatt: %{beløp}"
+      unpaid_amount_not_zero: 'Beløpet ble ikke fullstendig tilbakebetalt. Forfaller fortsatt: %{beløp}'
     value: Verdi
     variant: Variant
     variant_placeholder: Varianter
@@ -1742,7 +2432,7 @@ nb:
     what_is_a_cvv: Hva er en CVV-kode?
     what_is_this: Hva er dette?
     width: Bredde
-    year: "År"
+    year: År
     you_have_no_orders_yet: Du har ikke plassert noen ordrer hos oss ennå!
     your_cart_is_empty: Din handlekurv er tom
     your_order_is_empty_add_product: Ordren din er tom - Kjøp noe!
@@ -1751,3 +2441,550 @@ nb:
     zipcode_required: Postnummer kreves
     zone: Sone
     zones: Soner
+    add_gift_card: Legg til gavekort
+    add_selected: Legg til valgte
+    add_selected_products: Legg til valgte produkter
+    add_selected_variant: Legg til valgt variant
+    added_at: Lagt til
+    adjustment_amount_help: Positive verdier er kostnader, negative verdier er krediteringer.
+    adjustment_closed_description: Justeringen er lukket og vil ikke bli beregnet på nytt.
+    adjustment_open_description: Justeringen er åpen og vil bli beregnet på nytt.
+    admin_language_help: Språket administrasjonspanelet ditt vises på. Påvirker kun det du ser, ikke butikken eller andre ansatte.
+    admin_locale_help: Språket som brukes for administrasjonspanelet. Hvis det ikke er angitt, brukes standardspråket for applikasjonen.
+    all_time: Hele tiden
+    apis:
+      admin: Admin-API
+      store: Butikk-API
+    applied_to: Brukt på
+    assigned_variants: Tilordnede varianter
+    assigned_variants_help: Velg variantene dette bildet representerer. La det stå tomt for å bruke det på alle varianter.
+    automatic_promotion: Automatisk
+    cancel_order: Kanseller ordre
+    cannot_ship: Forsendelsen kan ikke sendes
+    card_expiration_placeholder: MM/ÅÅÅÅ
+    categorization: Kategorisering
+    change_password: Endre passord
+    close_sidebar: Lukk sidefelt
+    contact_information: Kontaktinformasjon
+    continue_selling_when_out_of_stock: Fortsett å selge når utsolgt
+    copied: Kopiert!
+    copy_id: Kopier ID
+    custom_domains: Egendefinerte domener
+    customer_could_not_be_removed_from_group: Kunden kunne ikke fjernes fra gruppen
+    customer_group_rule:
+      choose_customer_groups: 'Velg kundegruppen(e) denne kampanjen skal gjelde for:'
+    customer_removed_from_group: Kunde fjernet fra gruppen
+    customers_added_to_group:
+      one: "%{count} kunde lagt til gruppen"
+      other: "%{count} kunder lagt til gruppen"
+    customers_removed_from_group:
+      one: "%{count} kunde fjernet fra gruppen"
+      other: "%{count} kunder fjernet fra gruppen"
+    days_ago: Dager siden
+    delete_selected: Slett valgte
+    digital_assets_help: Digitale ressurser er filer som kan lastes ned av kunder etter kjøp.
+    dimension_units:
+      centimeter: Centimeter (cm)
+      foot: Fot (ft)
+      inch: Tomme (in)
+      millimeter: Millimeter (mm)
+    display_settings: Visningsinnstillinger
+    domains: Domener
+    draft_orders: Ordreutkast
+    edit_address: Rediger adresse
+    edit_prices: Rediger priser
+    edit_refund: Rediger refusjon
+    estimated_delivery_time: Estimert leveringstid
+    excerpt: Utdrag
+    favicon: Favorittikon
+    filtered_records: Filtrerte oppføringer
+    forbidden_message: Du har ikke tilgang til denne siden.
+    general_information: Generell informasjon
+    homepage: Hjemmeside
+    internal_server_error: Intern serverfeil
+    internal_server_error_message: Serveren støtte på en intern feil og kunne ikke fullføre forespørselen din.
+    invitation_expired:
+      body: Denne invitasjonslenken er ikke lenger gyldig. Be personen som inviterte deg om å sende en ny.
+      heading: Invitasjonen er ugyldig eller utløpt
+    invitation_resent: Invitasjonen er sendt på nytt!
+    manual_adjustment: Manuell justering
+    manual_adjustments: Manuelle justeringer
+    mark_as_default: Merk som standard
+    move_variant_to: Flytt variant til
+    new_allowed_origin: Ny tillatt opprinnelse
+    new_api_key: Ny API-nøkkel
+    new_balance: Ny saldo
+    new_billing_address: Ny faktureringsadresse
+    new_channel: Ny salgskanal
+    new_custom_domain: Nytt egendefinert domene
+    new_customer_group: Ny kundegruppe
+    new_digital_asset: Ny digital ressurs
+    new_domain: Nytt domene
+    new_gift_card: Nytt gavekort
+    new_line_item: Legg til ordrelinje
+    new_metafield_definition: Ny metafeltdefinisjon
+    new_nested_taxon: Ny nestet underkategori
+    new_page: Ny side
+    new_password: Nytt passord
+    new_policy: Nye retningslinjer
+    new_reimbursement_type: Ny refusjonstype
+    new_role: Ny rolle
+    new_shipping_address: Ny leveringsadresse
+    new_store: Ny butikk
+    new_store_credit: Ny butikkreditt
+    new_store_credit_category: Ny butikkreditt-kategori
+    new_webhook_endpoint: Nytt webhook-endepunkt
+    no_adjustments: Ingen justeringer
+    no_billing_address_available: Ingen faktureringsadresse tilgjengelig
+    no_customers_found: Ingen kunder funnet
+    no_email_provided: Ingen e-post oppgitt
+    no_internal_note: Ingen intern merknad
+    no_products_added: Ingen produkter lagt til
+    no_products_in_price_list: Ingen produkter i denne prislisten
+    no_promotions_applied: Ingen kampanjer brukt
+    no_saved_cards: Ingen lagrede kort
+    no_shipping_address_available: Ingen leveringsadresse tilgjengelig
+    no_taxes: Ingen avgifter
+    no_users_selected: Ingen brukere valgt
+    not_risky: Ikke risikabelt
+    oauth_applications: OAuth-applikasjoner
+    option_type_filterable_info: Når en alternativtype er satt til Filtrerbar, gis dine besøkende i nettbutikken muligheten til å filtrere et produkttaxon basert på alternativtypen. Et typisk eksempel på dette er å filtrere klær etter størrelse og farge.<br><br><b>Merk:</b> Filtre vil kun være synlige i de taxonene i nettbutikken som inneholder produkter med denne alternativtypen satt.
+    option_type_kind_info: Styrer hvordan alternativet vises i nettbutikken. Fargeprøver viser fargesirkler, knapper viser klikkbare brikker, og rullegardin viser en valgmeny.
+    option_type_kinds:
+      buttons: Knapper
+      color_swatch: Fargeprøve
+      dropdown: Rullegardin
+    or_select_other_address: eller velg en annen adresse
+    order_email_resent_error: Ordrebekreftelse på e-post kan kun sendes for fullførte ordrer
+    page_not_found_message: Denne siden finnes rett og slett ikke.
+    payment_amount: Betalingsbeløp
+    payments_gateway_processing_errors: "%{payment_method_name} behandlingsfeil"
+    personal_details: Personopplysninger
+    price_list_form:
+      match_policies:
+        all: Samsvar med alle disse reglene
+        any: Samsvar med en av disse reglene
+    price_list_statuses:
+      active: Aktiv
+      draft: Utkast
+      inactive: Inaktiv
+      scheduled: Planlagt
+      scheduled_active: Planlagt (aktiv)
+    products_added: Produkter lagt til
+    products_removed: Produkter fjernet
+    products_sort_options:
+      best_selling: Mest solgte
+      manual: Manuell
+      name_a_z: Alfabetisk, A–Å
+      name_z_a: Alfabetisk, Å–A
+      newest_first: Nyeste
+      oldest_first: Eldste
+      price_high_to_low: Pris (høy–lav)
+      price_low_to_high: Pris (lav–høy)
+      relevance: Relevans
+    remove_condition: Fjern betingelse
+    return_authorization_states:
+      authorized: Autorisert
+      canceled: Kansellert
+    same_as_shipping_address: Samme som leveringsadresse
+    search_customers: Søk etter kunder
+    search_engine_listing: Søkemotoroppføring
+    search_products: Søk etter produkter
+    select_existing_address: Velg eksisterende adresse
+    select_key_type: Velg nøkkeltype
+    select_user: Velg kunde
+    select_vendor: Velg leverandør
+    send_payment_link: Send betalingslenke
+    send_payment_link_title: Send betalingslenke til kunden på e-post. De vil kunne fullføre betalingen senere.
+    service_unavailable: Tjenesten er utilgjengelig
+    service_unavailable_message: Serveren kan midlertidig ikke betjene forespørselen din på grunn av vedlikehold eller kapasitetsproblemer. Prøv igjen senere.
+    shipment_successfully_shipped: Forsendelsen er sendt
+    show_details: Vis detaljer
+    show_report: Vis rapport
+    standards_and_formats: Standarder og formater
+    standards_and_formats_help: Angi tidssone, standard enhetssystem og vektenhet for butikken din.
+    start_typing_to_search_for_products: Begynn å skrive for å søke etter produkter
+    start_typing_to_search_for_variants: Begynn å skrive for å søke etter varianter
+    store_details: Butikkdetaljer
+    store_name_help: Dette er navnet på butikken din. Det vises i toppteksten og i bunnteksten.
+    track_quantity: Spor antall
+    transaction_id_help: Dette er ID-en til transaksjonen som ble opprettet i tredjeparts betalingsgateway.
+    true_label: SANN
+    type_to_search_customers: Skriv for å søke etter kunder
+    type_to_search_products: Skriv for å søke etter produkter
+    unit_system_help: Dette vil brukes som standard enhetssystem for butikken din. Du kan overstyre dette per produkt.
+    unit_systems:
+      imperial_system: Imperialsystem
+      metric: metrisk
+      metric_system: Metrisk system
+    unprocessable_entity: Kan ikke behandles
+    unprocessable_entity_message: Forespørselen din kunne ikke behandles. Sjekk skjemaet for feil og prøv igjen.
+    update_address: Oppdater adresse
+    update_billing_address: Oppdater faktureringsadresse
+    update_contact_information: Oppdater kontaktinformasjon
+    update_shipping_address: Oppdater leveringsadresse
+    use_shipping_address: Bruk leveringsadresse
+    vendors: Leverandører
+    view_full_size: Vis i full størrelse
+    view_store: Vis butikk
+    visits: Besøk
+    weight_unit_help: Dette vil brukes som standard vektenhet for butikken din. Du kan overstyre dette per produkt.
+    weight_units:
+      gram: Gram (g)
+      kilogram: Kilogram (kg)
+      ounce: Unse (oz)
+      pound: Pund (lb)
+    accepts_email_marketing: Godtar e-postmarkedsføring
+    add_customers: Legg til kunder
+    add_products: Legg til produkter
+    address_not_owned_by_user: Den angitte adressen tilhører ikke denne brukeren.
+    adjustments_deleted: Justeringer slettet
+    admin_locale: Adminspråk
+    all_products: Alle produkter
+    allowed_origin: Tillatt opphav
+    allowed_origins: Tillatte opphav
+    analytics: Analyse
+    api_key: API-nøkkel
+    api_key_no_current_key: Ingen API-nøkkel autentiserte denne forespørselen
+    api_key_scopes_immutable: kan ikke endres etter at nøkkelen er opprettet; opprett en ny nøkkel med de tilgangsnivåene du trenger og tilbakekall denne
+    api_keys: API-nøkler
+    apply: Bruk
+    apply_only_on_full_priced_items: Gjelder kun fullprisvarer
+    apply_store_credit: Bruk butikkreditt
+    assets: Media
+    attachments: Vedlegg
+    author: Forfatter
+    availability: tilgjengelighet
+    balance: Saldo
+    barcode: Strekkode
+    brand: Merke
+    cannot_be_destroyed: Ordren kan ikke slettes.
+    cannot_empty: Kan ikke tømme ordren.
+    cart_already_updated: Handlekurven er allerede oppdatert.
+    cart_line_item:
+      discontinued: "%{li_name} ble fjernet fordi den er utgått"
+      out_of_stock: "%{li_name} ble fjernet fordi den er utsolgt"
+    change: Endre
+    channels: Salgskanaler
+    checkout_requirements:
+      email_required: E-postadresse er påkrevd
+      line_items_required: Legg minst én vare i handlekurven
+      payment_required: Legg til en betalingsmåte
+      ship_address_required: Leveringsadresse er påkrevd
+      shipping_method_required: Velg en fraktmåte for alle forsendelser
+    clear: Tøm
+    clear_all: Tøm alt
+    closed: Lukket
+    color_code: Fargekode
+    colors: Farger
+    compare_at_amount: Sammenlign med beløp
+    contact: Kontakt
+    content: Innhold
+    copy: Kopier
+    copy_link: Kopier lenke
+    coupon_code_used: Rabattkoden du oppga er allerede brukt. Prøv igjen.
+    coupon_codes: Rabattkoder
+    create_new: Opprett ny
+    credit_allowed: Kreditt tillatt
+    currencies: Valutaer
+    currency_not_supported_by_store: støttes ikke av denne butikken
+    current_password: Gjeldende passord
+    customer_group: Kundegruppe
+    customer_groups: Kundegrupper
+    customer_mailer:
+      password_reset_email:
+        action: Tilbakestill passord
+        expiry_notice: Denne lenken for tilbakestilling av passord utløper snart. Hvis du ikke ba om dette, trenger du ikke gjøre noe.
+        greeting: Hei %{name},
+        ignore_notice: Hvis du ikke ba om å tilbakestille passordet, kan du trygt se bort fra denne e-posten. Passordet ditt blir ikke endret.
+        instructions: Vi mottok en forespørsel om å tilbakestille passordet ditt. Klikk på knappen nedenfor for å velge et nytt passord.
+    customers: Kunder
+    default_billing_address: Standard fakturaadresse
+    default_country: Standardland
+    default_locale: Standardspråk
+    default_shipping_address: Standard leveringsadresse
+    default_stock_location_name: Butikkplassering
+    default_wishlist_name: Ønskeliste
+    developers: Utviklere
+    digital:
+      digital_delivery: Digital levering
+    digital_assets: Digitale ressurser
+    discontinued_variants_present: Noen varelinjer i denne ordren inneholder produkter som ikke lenger er tilgjengelige.
+    discount: Rabatt
+    discounts: Rabatter
+    display_delivery_range: Levering om %{delivery_range} virkedager
+    display_on: Vis på
+    domain: Domene
+    done: Ferdig
+    download: Last ned
+    draft: Utkast
+    duplicate: Dupliser
+    duplicating: Dupliserer
+    email_marketing: E-postmarkedsføring
+    emails: E-poster
+    enter: Skriv inn
+    error_user_does_not_have_any_store_credits: Brukeren har ingen tilgjengelig butikkreditt
+    estimated_transit_business_days: Anslåtte virkedager for transport
+    existing_address: Eksisterende adresse
+    expired: Utløpt
+    expires_at: Utløper
+    export: Eksporter
+    export_mailer:
+      export_done:
+        message: Bra jobbet, eksporten din er klar! Bruk lenken nedenfor for å laste den ned.
+        subject: Eksporten din %{export_number} ble behandlet!
+      greeting: Hei %{user_name},
+      thanks: Takk,
+    featured_image: Fremhevet bilde
+    field: Felt
+    filled: Fylt
+    firstname: Fornavn
+    fonts: Skrifttyper
+    forbidden: Tilgang nektet
+    free: Gratis
+    from: Fra
+    gift_card: Gavekort
+    gift_card_already_redeemed: Gavekortet er allerede innløst.
+    gift_card_applied: Gavekortet ble lagt til ordren din!
+    gift_card_batch: Gavekortparti
+    gift_card_customer_not_logged_in: Gavekort kan ikke brukes som gjestebruker.
+    gift_card_expired: Gavekortet har utløpt.
+    gift_card_mismatched_currency: Gavekort kan ikke brukes med gjeldende valuta.
+    gift_card_mismatched_customer: Dette gavekortet er knyttet til en annen bruker.
+    gift_card_not_found: Gavekortet ble ikke funnet.
+    gift_card_removed: Gavekortet ble fjernet fra ordren din
+    gift_card_using_store_credit_error: Du kan ikke bruke gavekortet etter at du har brukt butikkreditt.
+    gift_cards: Gavekort
+    hide: Skjul
+    idempotency_key_reused: Denne Idempotency-Key er allerede brukt med andre forespørselsparametere.
+    immediately: Umiddelbart
+    import: Importer
+    integrations: Integrasjoner
+    internal_note: Intern merknad
+    invitation_accepted: Invitasjonen er godtatt!
+    invitation_mailer:
+      greeting: Hei %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} har godtatt invitasjonen din om å bli med i %{resource_name}"
+        subject: "%{invitee_name} har godtatt invitasjonen din om å bli med i %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} har invitert deg til å bli med i %{resource_name}"
+        link_description: 'Klikk på lenken nedenfor for å godta denne invitasjonen:'
+        subject: Invitasjon til å bli med i %{resource_name}
+      thanks: Takk,
+    invitations: Invitasjoner
+    invited_by: Invitert av
+    key: Nøkkel
+    kind: Type
+    label: Etikett
+    language: Språk
+    lastname: Etternavn
+    line_item: Varelinje
+    line_items: Varelinjer
+    link: Lenke
+    live: Aktiv
+    locale: Språk
+    locale_not_supported_by_store: støttes ikke av denne butikken
+    make_active_at: Gjør aktiv den
+    manual: Manuell
+    market: Marked
+    market_ids: Markeder
+    markets: Markeder
+    max: Maks
+    max_quantity: Maks antall
+    me_no_current_user: Ingen adminbruker autentiserte denne forespørselen
+    media: Media
+    metafield_definitions: Metafeltdefinisjoner
+    metafields: Metafelt
+    min: Min
+    min_quantity: Min antall
+    move: Flytt
+    navigation: Navigasjon
+    never: Aldri
+    new_address: Ny adresse
+    new_price_list: Ny prisliste
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Hei,
+        ignore_disclaimer: Hvis du ikke ba om dette, kan du se bort fra denne e-posten.
+        instructions: Klikk på knappen nedenfor for å bekrefte e-postadressen din.
+        message_copy_link: 'Hvis knappen ikke fungerer, kopier og lim inn følgende lenke i nettleseren din:'
+        store_team: "%{store_name}-teamet"
+        subject: Bekreft e-postadressen din
+        thanks: Takk
+        verify_email_address_link: Bekreft e-postadresse
+    newsletter_subscribers: Nyhetsbrevabonnenter
+    no_cc_type: Ikke tilgjengelig
+    no_report_data: Ingen rapportdata
+    only_active_products_can_be_added_to_cart: Utkast og arkiverte produkter kan ikke legges i handlekurven. Merk produktet som aktivt først.
+    option_name: Alternativnavn
+    order_routing:
+      strategies:
+        legacy: Eldre
+        rules: Regler (rangert)
+    origin: Opphav
+    other: Annet
+    outstanding_balance: Utestående saldo
+    page: Side
+    pages: Sider
+    payment_source: Betalingskilde
+    payment_total: Totalt betalt
+    permissions: Tillatelser
+    policies: Retningslinjer
+    preview: Forhåndsvis
+    price_lists: Prislister
+    price_rules:
+      customer_group_rule:
+        description: Bruk prissetting på bestemte kundegrupper
+    prices: Priser
+    pricing: Prissetting
+    privacy_policy: Personvernerklæring
+    processing: Behandler
+    product_name: Produktnavn
+    product_translations: Produktoversettelser
+    products_cannot_be_shipped: Vi kan dessverre ikke sende %{product_names} til ditt nåværende sted. Endre leveringsadressen din eller fjern %{product_names} fra handlekurven.
+    promotion_already_used: Du kan ikke slette en kampanje som allerede er brukt
+    published_at: Publisert
+    query: Spørring
+    refund_amount: Refusjonsbeløp
+    remove_gift_card_on_completed_order_error: Du kan ikke fjerne gavekortet etter at ordren er lagt inn
+    report_mailer:
+      greeting: Hei %{user_name},
+      report_done:
+        message: Bruk lenken nedenfor for å laste den ned.
+        subject: Rapporten din %{report_name} er klar
+      thanks: Takk,
+    report_names:
+      products_performance: Produktytelse
+      sales_total: Totalt salg
+    resource: Ressurs
+    returns_policy: Returregler
+    row: Rad
+    sale: Salg
+    scopes: Tilgangsnivåer
+    search_by: 'Søk etter:'
+    security: Sikkerhet
+    seed:
+      shipping:
+        categories:
+          default: Standard
+          digital: Digital
+    send_consumer_transactional_emails: Send transaksjonelle e-poster til kunder
+    shipping_policy: Fraktregler
+    shipping_zone: Fraktsone
+    site_name: Nettstedsnavn
+    size: Størrelse
+    sort_by: Sorter etter
+    square_image: Kvadratisk bilde
+    starts_at: Starter
+    state_changes: Statusendringer
+    stock_items: Lagervarer
+    store_credit_events: Butikkreditthendelser
+    store_credits: Butikkreditt
+    store_default: Standardbutikk
+    store_name: Butikknavn
+    subscribed: Abonnert
+    support: Kundestøtte
+    supported_locales: Støttede språk
+    tags: Etiketter
+    tax_inclusive: Inkludert mva.
+    taxes: Avgifter
+    taxonomy_collections_name: Samlinger
+    terms_of_service: Vilkår for bruk
+    theme: Tema
+    themes: Temaer
+    timezone: Tidssone
+    title: Tittel
+    to: Til
+    translations: Oversettelser
+    unit: Enhet
+    unit_system: Enhetssystem
+    unlimited: Ubegrenset
+    updated_at: Oppdatert
+    user_ids: Brukere
+    vendor: Leverandør
+    verified: Bekreftet
+    verified_at: Bekreftet
+    view: Vis
+    visibility: Synlighet
+    webhook_endpoints: Webhook-endepunkter
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Deaktivert
+        heading: Webhook-endepunkt deaktivert
+        instructions: Kontroller endepunktets URL og tjeneste, og aktiver det deretter på nytt under Innstillinger → Utviklere → Webhooks.
+        message: Webhook-endepunktet «%{endpoint_name}» er automatisk deaktivert etter gjentatte leveringsfeil.
+        name_label: Navn
+        reason_label: Årsak
+        subject: 'Webhook-endepunkt deaktivert: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhooks
+    weight_unit: Vektenhet
+    wishlist: Ønskeliste
+    zone_ids: Soner
+    api:
+      cannot_delete: "%{model} kan ikke slettes"
+      current_password_invalid: Gjeldende passord er ugyldig eller mangler
+      gateway_error: 'Det oppstod et problem med betalingsgatewayen: %{text}'
+      invalid_api_key: Ugyldig API-nøkkel (%{key}) angitt.
+      invalid_resource: Ugyldig ressurs. Rett opp feilene og prøv igjen.
+      invalid_taxonomy_id: Ugyldig taksonomi-ID.
+      must_specify_api_key: Du må angi en API-nøkkel.
+      negative_quantity: antallet er negativt
+      newsletter_verification_token_invalid: Bekreftelsestoken for nyhetsbrev er ugyldig eller har utløpt.
+      order:
+        could_not_transition: Ordren kunne ikke endre tilstand. Rett opp feilene og prøv igjen.
+        insufficient_quantity: En vare i handlekurven din er blitt utilgjengelig.
+        invalid_shipping_method: Ugyldig fraktmåte angitt.
+      password_reset_requested: Hvis det finnes en konto for den e-postadressen, er instruksjoner for tilbakestilling av passord sendt.
+      password_reset_token_invalid: Token for tilbakestilling av passord er ugyldig eller har utløpt.
+      payment:
+        credit_over_limit: Denne betalingen kan kun krediteres opptil %{limit}. Angi et beløp som er mindre enn eller lik dette tallet.
+        update_forbidden: Denne betalingen kan ikke oppdateres fordi den er %{state}.
+      record_not_found: "%{model} ble ikke funnet"
+      redirect_url_not_allowed: Omdirigerings-URL-en er ikke fra et tillatt opphav for denne butikken.
+      resource_not_found: Ressursen du lette etter ble ikke funnet.
+      shipment:
+        cannot_ready: Kan ikke klargjøre forsendelsen.
+      shipment_transfer_errors_occurred: 'Følgende feil oppstod under forsøket på denne handlingen:'
+      shipment_transfer_success: Varianter ble overført
+      stock_location_required: En stock_location_id-parameter må oppgis for å hente lagerbevegelser.
+      unauthorized: Du har ikke tillatelse til å utføre denne handlingen.
+      v2:
+        cart:
+          no_coupon_code: Ingen rabattkode oppgitt, og ordren har ingen kampanjer med rabattkode brukt
+          wrong_quantity: Antallet må være større enn 0
+        digitals:
+          missing_file: 'Manglende digital vare: vedlegg'
+          unauthorized: Feil, du har ikke tilgang til denne ressursen
+        gift_card:
+          amount_not_valid: Gavekortbeløpet er ikke gyldig
+          not_found: Gavekortet ble ikke funnet
+        metadata:
+          invalid_params: Parameterne for offentlige og private metadata skal være objekter
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Ønskelisten kunne ikke slettes.
+          wrong_quantity: Antallet må være større enn 0
+      v3:
+        payments:
+          method_unavailable: Denne betalingsmåten er ikke tilgjengelig for denne ordren.
+          session_required: Denne betalingsmåten krever en betalingsøkt. Bruk endepunktet for betalingsøkter i stedet.
+      wrong_shipment_target: målforsendelsen er den samme som den opprinnelige forsendelsen
+  action_text:
+    video_embed:
+      not_found: Kan ikke bygge inn en video med den angitte URL-en
+  address_book:
+    save: Lagre
+    successfully_created: Ny adresse er opprettet
+  number:
+    currency:
+      format:
+        delimiter: ","
+        separator: "."
+    percentage:
+      format:
+        precision: 1
+  views:
+    pagination:
+      truncate: Avkort

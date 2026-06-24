@@ -1,3 +1,4 @@
+---
 zh-TW:
   activemodel:
     errors:
@@ -7,9 +8,12 @@ zh-TW:
             desired_shipment:
               can_not_transfer_within_same_shipment: 無法使用一樣的運送方式
               not_enough_stock_at_desired_location: 該地點無足夠的庫存
+              has_not_enough_stock_at_desired_location: 在所需的庫存地點沒有足夠的庫存
             current_shipment:
               has_already_been_shipped: 已寄出
               can_not_have_backordered_inventory_units: 有沒有庫存的項目
+      messages:
+        blank: 不能為空白
   activerecord:
     attributes:
       spree/address:
@@ -23,6 +27,7 @@ zh-TW:
         phone: 電話號碼
         state: 省/洲
         zipcode: 郵遞區號
+        label: 地址名稱
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: 最少數量
         preferred_tiers: 分層
@@ -51,6 +56,8 @@ zh-TW:
       spree/option_type:
         name: 名稱
         presentation: 描述
+        filterable: 可篩選
+        kind: 類型
       spree/order:
         checkout_complete: 訂單已完成
         completed_at: 結帳日期
@@ -66,6 +73,8 @@ zh-TW:
         special_instructions: 特別說明
         state: 訂單狀態
         total: 總計
+        internal_note: 內部備註
+        item_count: 商品
       spree/order/bill_address:
         address1: 帳單地址
         city: 城市
@@ -99,6 +108,8 @@ zh-TW:
         shipping_category: 寄送方式
         tax_category: 稅金類別
         less_than: 少於
+        make_active_at: 啟用時間
+        more_than: 多於
       spree/promotion:
         advertise: 廣告
         code: 優惠代碼
@@ -143,6 +154,16 @@ zh-TW:
         seo_title: 提供給搜尋引擎之標題
         name: 網站名稱
         mail_from_address: 寄件電子郵件地址
+        address: 地址
+        contact_phone: 聯絡電話
+        preferred_digital_asset_authorized_clicks: 下載點擊次數上限
+        preferred_digital_asset_authorized_days: 下載天數上限
+        preferred_limit_digital_download_count: 限制數位連結下載次數
+        preferred_limit_digital_download_days: 限制數位連結下載天數
+        seo_robots: SEO 爬蟲設定
+        storefront_custom_code_body_end: body 結束標籤前的自訂程式碼
+        storefront_custom_code_body_start: body 開始標籤後的自訂程式碼
+        storefront_custom_code_head: 頁面 head 中的自訂程式碼
       spree/store_credit:
         amount_used: 已使用金額
       spree/store_credit_category:
@@ -158,12 +179,14 @@ zh-TW:
         name: 名稱
         permalink: 永久鏈結
         position: 位置
+        sort_order: 排序順序
       spree/taxonomy:
         name: 名稱
       spree/user:
         email: Email
         password: 密碼
         password_confirmation: 確認密碼
+        avatar: 頭像
       spree/variant:
         cost_currency: 成本幣別
         cost_price: 成本
@@ -176,6 +199,48 @@ zh-TW:
       spree/zone:
         description: 敘述
         name: 名稱
+      spree/customer_group:
+        description: 說明
+        name: 名稱
+      spree/customer_return:
+        stock_location_id: 庫存地點
+      spree/gift_card:
+        amount_used: 已使用金額
+        expires_at: 到期時間
+      spree/import:
+        preferred_delimiter: 分隔符號
+      spree/import_mapping:
+        file_column: 檔案欄位
+        schema_field: 結構欄位
+      spree/import_row:
+        row_number: 編號
+      spree/invitation:
+        inviter: 邀請人
+      spree/metafield_definition:
+        namespace: 命名空間
+      spree/option_value:
+        color_code: 顏色代碼
+        image: 色票圖片
+      spree/page_link:
+        open_in_new_tab: 在新分頁中開啟
+      spree/policy:
+        body: 內文
+        owner: 適用政策對象
+      spree/price_list:
+        description: 說明
+        ends_at: 結束時間
+        match_policy: 比對政策
+        name: 名稱
+        priority: 優先順序
+        starts_at: 開始時間
+        status: 狀態
+      spree/price_rule:
+        priority: 優先順序
+        type: 類型
+      user:
+        current_sign_in: 本次登入時間
+        last_sign_in: 上次登入時間
+        sign_in_count: 登入次數
     models:
       spree/address:
         one: 地址
@@ -185,7 +250,7 @@ zh-TW:
         other: 所有地址
       spree/credit_card:
         one: 信用卡
-        other:  所有信用卡
+        other: 所有信用卡
       spree/customer_return:
         one: 退貨
         other: 所有退貨
@@ -297,6 +362,60 @@ zh-TW:
       spree/zone:
         one: 區域
         other: 區域
+      spree/classification:
+        one: 分類
+        other: 分類
+      spree/cms_page:
+        one: 頁面
+        other: 頁面
+      spree/cms_section:
+        one: 區段
+        other: 區段
+      spree/customer_group:
+        one: 顧客群組
+        other: 顧客群組
+      spree/customer_group_user:
+        one: 顧客群組使用者
+        other: 顧客群組使用者
+      spree/digital:
+        one: 數位資產
+        other: 數位資產
+      spree/export:
+        one: 匯出
+        other: 匯出
+      spree/integration:
+        one: 整合
+        other: 整合
+      spree/page:
+        one: 頁面
+        other: 頁面
+      spree/page_block:
+        one: 頁面區塊
+        other: 頁面區塊
+      spree/page_link:
+        one: 頁面連結
+        other: 頁面連結
+      spree/page_section:
+        one: 頁面區段
+        other: 頁面區段
+      spree/price:
+        one: 價格
+        other: 價格
+      spree/price_list:
+        one: 價目表
+        other: 價目表
+      spree/price_rule:
+        one: 價格規則
+        other: 價格規則
+      spree/stock_item:
+        one: 庫存項目
+        other: 庫存項目
+      spree/store:
+        one: 商店
+        other: 商店
+      spree/theme:
+        one: 佈景主題
+        other: 佈景主題
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -348,7 +467,7 @@ zh-TW:
             reimbursement:
               cannot_be_associated_unless_accepted: 無法連結退貨品項，因為該品項不被接受。
             inventory_unit:
-              other_completed_return_item_exists: '%{inventory_unit_id} 已經被退貨品項 %{return_item_id} 所使用。'
+              other_completed_return_item_exists: "%{inventory_unit_id} 已經被退貨品項 %{return_item_id} 所使用。"
         spree/shipping_method:
           attributes:
             base:
@@ -357,6 +476,7 @@ zh-TW:
           attributes:
             base:
               cannot_destroy_default_store: 預設商店無法被刪除
+              cannot_destroy_only_store: 無法刪除唯一的商店。
         spree/store_credit:
           attributes:
             amount_used:
@@ -383,6 +503,68 @@ zh-TW:
           attributes:
             attachment:
               not_allowed_content_type: 是不允許的檔案類型
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: 必須是來源（協定與主機），不可包含路徑、查詢字串或片段
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: 無法刪除已使用的禮品卡
+        spree/import:
+          attributes:
+            attachment:
+              content_type: 的內容類型不被允許
+            type:
+              inclusion: 不在允許的類型清單中
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: 屬於其他使用者
+              deprecated_in_completed_order: 在已完成的訂單中已棄用
+            ship_address_id:
+              belongs_to_other_user: 屬於其他使用者
+              deprecated_in_completed_order: 在已完成的訂單中已棄用
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: 無法刪除預設市場。
+              cannot_destroy_last_market: 無法刪除唯一的市場。
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: 已被指派給此商店中的另一個市場
+              not_in_shipping_zone: 未被任何運送區域涵蓋。請先設定運送區域。
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: 超過允許的最高金額 %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: 必須在開始時間之後
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: 必須在發布日期之後
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: 屬於其他使用者
+              deprecated_in_completed_order: 在已完成的訂單中已棄用
+            ship_address_id:
+              belongs_to_other_user: 屬於其他使用者
+              deprecated_in_completed_order: 在已完成的訂單中已棄用
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: 不可指向內部或私人網路位址
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: 您已將此商品加入願望清單
+      messages:
+        blank: 不能為空白
   address_book:
     save: 儲存
     successfully_created: 新地址儲存成功
@@ -396,43 +578,45 @@ zh-TW:
     failure:
       already_authenticated: 您已經登入
       inactive: 您的帳號尚未被啟用
-      invalid: '%{authentication_keys}或密碼錯誤'
+      invalid: "%{authentication_keys}或密碼錯誤"
       last_attempt: 您還有最後一次嘗試機會，再次失敗您的帳號將會被鎖定
       locked: 您的帳號已被鎖定
       not_found_in_database: 尚未建立帳號
       timeout: 您的登入時效過期，請重新登入
       unauthenticated: 您需要先登入或註冊後才能繼續
       unconfirmed: 您的帳號需要經過驗證後，才能繼續
+      invalid_token: 驗證權杖無效。
+      too_many_attempts: 嘗試次數過多。請稍候片刻後再試一次。
     mailer:
       confirmation_instructions:
         action: 確認帳號
-        greeting: '%{recipient} 您好！'
+        greeting: "%{recipient} 您好！"
         instruction: 您可以利用下面的連結確認您的帳號的電子郵件：
         subject: 驗證帳號
       email_changed:
-        greeting: '%{recipient} 您好！'
-        message: '我們寫信是爲了通知您，您的 Email 已被修改爲 %{email}'
+        greeting: "%{recipient} 您好！"
+        message: 我們寫信是爲了通知您，您的 Email 已被修改爲 %{email}
         subject: Email 已經更新
       password_change:
-        greeting: '%{recipient} 您好！'
+        greeting: "%{recipient} 您好！"
         message: 您的密碼已被更改
         subject: 密碼已更改
       reset_password_instructions:
         action: 重新設定密碼
-        greeting: '%{recipient} 您好！'
+        greeting: "%{recipient} 您好！"
         instruction: 我們收到了您的重新設定密碼的請求，您可以利用下面的連結更改密碼
         instruction_2: 如果您沒有要求，請忽略此電子郵件
         instruction_3: 如果您沒有進入上面的連結，並建立新的密碼，您的密碼不會被改變
         subject: 重新設定密碼
       unlock_instructions:
         action: 帳號解鎖
-        greeting: '%{recipient} 您好！'
+        greeting: "%{recipient} 您好！"
         instruction: 點擊下面的連結解鎖您的帳號
         message: 由於多次登入失敗，您的帳號已被鎖定
         subject: 帳號解鎖
     omniauth_callbacks:
-      failure: '無法從 %{kind} 驗證，因為 %{reason}'
-      success: '成功從 %{kind} 驗證'
+      failure: 無法從 %{kind} 驗證，因為 %{reason}
+      success: 成功從 %{kind} 驗證
     passwords:
       edit:
         change_my_password: 更改我的密碼
@@ -452,9 +636,9 @@ zh-TW:
       edit:
         are_you_sure: 您確定嗎？
         cancel_my_account: 取消我的帳號
-        currently_waiting_confirmation_for_email: '等待 %{email} 的確認'
+        currently_waiting_confirmation_for_email: 等待 %{email} 的確認
         leave_blank_if_you_don_t_want_to_change_it: 不想修改的話就不需要填寫這個欄位
-        title: '修改 %{resource}'
+        title: 修改 %{resource}
         unhappy: 不喜歡
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 我們需要您的目前的密碼以確認您的更改
@@ -480,29 +664,50 @@ zh-TW:
         didn_t_receive_unlock_instructions: 沒有收到解鎖信件？
         forgot_your_password: 忘記密碼？
         sign_in: 登入
-        sign_in_with_provider: '透過 %{provider} 登入'
+        sign_in_with_provider: 透過 %{provider} 登入
         sign_up: 註冊
-      minimum_password_length: '（密碼長度最少為%{count}個字符）'
+      minimum_password_length: "（密碼長度最少為%{count}個字符）"
     unlocks:
       new:
         resend_unlock_instructions: 重發解鎖說明信件
       send_instructions: 您將在幾分鐘後收到一封電子郵件，內有將帳號解除鎖定的步驟說明。
       send_paranoid_instructions: 如果您的帳號已存在，您的電子信箱將會收到如何解鎖帳號的指示。
       unlocked: 您的帳號已被解鎖，現在已經登入。
+    oauth_callbacks:
+      failure: 無法透過 %{kind} 授權您，原因為「%{reason}」。
+      success: 已成功透過 %{kind} 帳號授權。
+    user_passwords:
+      user:
+        cannot_be_blank: 您的密碼不能為空白。
+        send_instructions: 您將於幾分鐘內收到一封含有重設密碼說明的電子郵件。
+        updated: 您的密碼已成功變更。您現在已登入。
+    user_registrations:
+      destroyed: 再見！您的帳號已成功取消。期待很快再次與您相見。
+      inactive_signed_up: 您已成功註冊。但由於您的帳號為 %{reason}，我們無法為您登入。
+      signed_up: 歡迎！您已成功註冊。
+      updated: 您已成功更新帳號。
+    user_sessions:
+      signed_in: 已成功登入。
+      signed_out: 已成功登出。
   errors:
     messages:
       already_confirmed: 已經驗證，請直接登入。
-      confirmation_period_expired: '必須在 %{period} 內驗證，請重新申請。'
+      confirmation_period_expired: 必須在 %{period} 內驗證，請重新申請。
       expired: 已經過期，請重新申請。
       not_found: 找不到。
       not_locked: 並未被鎖定。
       not_saved:
-        one: '有一個錯誤導致 %{resource} 不能被儲存：'
-        other: '有 %{count} 個錯誤導致 %{resource} 不能被儲存：'
+        one: 有一個錯誤導致 %{resource} 不能被儲存：
+        other: 有 %{count} 個錯誤導致 %{resource} 不能被儲存：
+      not_a_number: 不是數字
   number:
     percentage:
       format:
         precision: 1
+    currency:
+      format:
+        delimiter: ","
+        separator: "."
   pagination:
     first: "&laquo;"
     last: "&raquo;"
@@ -530,6 +735,15 @@ zh-TW:
       refund: 退款
       save: 儲存
       update: 更新
+      close: 關閉
+      connect: 連接
+      discard: 捨棄
+      open: 開啟
+      reject: 拒絕
+      remove: 移除
+      resend: 重新傳送
+      select_file: 選擇檔案
+      send_invitation: 傳送邀請
     activate: 啟用
     active: 啟動
     add: 新增
@@ -575,13 +789,14 @@ zh-TW:
       successfully_updated: 更新成功。
       unsuccessfully_updated: 稱新時發生錯誤
       save: 儲存
+      add_house_number: 如有門牌號碼請填寫
     adjustable: 可調整項目
     adjustment: 調整項目
     adjustment_amount: 調整數量
     adjustment_labels:
       tax_rates:
-        including_tax: '%{name}%{amount} (售價已含稅金)'
-        excluding_tax: '%{name}%{amount}'
+        including_tax: "%{name}%{amount} (售價已含稅金)"
+        excluding_tax: "%{name}%{amount}"
     adjustment_successfully_closed: 調整項目已被關閉
     adjustment_successfully_opened: 調整項目已被開啟
     adjustment_total: 調整項目總計
@@ -611,6 +826,18 @@ zh-TW:
           resend: 補寄
       orders:
         cart: 購物車
+        add_user_to_this_order: 將顧客新增至此訂單
+        all_orders: 所有訂單
+        canceled: 已取消
+        fulfilled: 已履行
+        no_email_present: 請新增電子郵件地址以傳送付款連結
+        orders_to_fulfill: 待履行訂單
+        partially_refunded: 部分退款
+        payment_link_sent: 付款連結已傳送給顧客
+        provide_email: 提供電子郵件地址
+        refunded: 已退款
+        remove_user_from_this_order: 從此訂單中移除顧客
+        unfulfilled: 未履行
       return_authorization:
         product: 商品
       user:
@@ -625,7 +852,464 @@ zh-TW:
         stores: 商店
         store_credits: 商城抵用金
         no_store_credit: 沒有商城抵用金
-        available_store_credit: '%{amount} 的商城抵用金'
+        available_store_credit: "%{amount} 的商城抵用金"
+        last_order_placed: 最後下單時間
+      allowed_origins:
+        origin_help: 請輸入您店面的完整來源 URL（例如 https://myshop.com）。請勿包含路徑或查詢字串。
+        origin_settings: 來源設定
+      amount_spent: 消費金額
+      api_keys:
+        example_request: 範例請求
+        key_revoked_message: 此 API 金鑰已被撤銷，無法再使用。
+        key_type_descriptions:
+          publishable: 可安全用於用戶端程式碼，例如行動應用程式或瀏覽器。
+          secret: 請妥善保管，僅限伺服器端使用。切勿公開暴露。
+        key_types:
+          publishable: 可發布
+          secret: 私密
+        last_used_at: 最後使用
+        list: API 金鑰
+        name_placeholder: 例如：行動應用程式正式環境
+        revoke: 撤銷
+        revoke_confirmation: 您確定要撤銷此 API 金鑰嗎？此操作無法復原。
+        revoked: API 金鑰已被撤銷
+        revoked_at: 撤銷時間
+        revoked_by: 撤銷者
+        scopes: 權限範圍
+        scopes_description: 私密金鑰必填。請選擇您的整合所需的最小權限範圍。
+        scopes_immutable: 建立金鑰時權限範圍即固定。如需變更，請以所需的權限範圍建立新金鑰，並撤銷此金鑰。
+        secret_key_hidden: 此私密金鑰無法再次顯示。若您已遺失，請撤銷此金鑰並建立新的。
+        statuses:
+          active: 啟用中
+          revoked: 已撤銷
+        token_warning: 請妥善保管此金鑰。它僅會顯示這一次。
+        usage: 使用方式
+        usage_instructions:
+          publishable: 此金鑰用於用戶端請求，可安全地包含在您的前端程式碼中。
+          secret: 此金鑰僅用於伺服器端請求。請妥善保密，切勿在用戶端程式碼中暴露。
+      audit_log: 稽核記錄
+      avg_order_value: 平均訂單金額
+      back_to_dashboard: 返回儀表板
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: 您確定要將所選顧客從此群組中移除嗎？
+          title:
+            remove: 從群組中移除
+        price_list_products:
+          body:
+            remove: 您確定要將所選商品從此價目表中移除嗎？這也會移除其價格。
+          title:
+            remove: 從價目表中移除
+        products:
+          body:
+            add_tags: 選擇要新增至商品的標籤：
+            add_to_taxons: 選擇要將商品新增至哪些類別：
+            remove_from_taxons: 選擇要將商品從哪些類別中移除：
+            remove_tags: 選擇要從商品中移除的標籤：
+            set_active: 將商品設為啟用後，這些商品將會在店面上架。
+            set_archived: 將商品設為已封存後，會將其從店面隱藏。
+            set_draft: 將商品設為草稿後，會將其從店面隱藏。
+          title:
+            add_tags: 新增標籤
+            add_to_taxons: 新增至類別
+            remove_from_taxons: 從類別中移除
+            remove_tags: 移除標籤
+            set_active: 設為啟用
+            set_archived: 設為已封存
+            set_draft: 設為草稿
+        users:
+          body:
+            add_tags: 選擇要新增至顧客的標籤：
+            remove_tags: 選擇要從顧客中移除的標籤：
+          title:
+            add_tags: 新增標籤
+            remove_tags: 移除標籤
+      channels:
+        code_hint: 簡短且穩定的識別碼（例如「online」、「pos」、「wholesale」）。供 API 用戶端透過 X-Spree-Channel 標頭使用，並用於訂單歸因。
+        default: 預設通路
+        default_hint: 每個商店僅有一個通路為預設。當未選擇通路時作為後備，並作為新商品的自動發布目標。
+        order_routing_strategy: 訂單路由策略
+        order_routing_strategy_hint: 覆寫歸因於此通路的訂單的商店層級路由策略。
+        order_routing_strategy_inherit: 繼承自商店
+      checkout_settings:
+        checkout_links:
+          description: 這些頁面的連結將顯示在結帳頁尾。
+          label: 結帳連結
+        checkout_message_description: 在結帳頁面右側邊欄對顧客顯示。
+        countries_managed_by_markets_html: 國家與運送區域透過 %{link} 管理。
+        guest_checkout:
+          description: 允許顧客在不建立帳號的情況下結帳。
+          label: 允許訪客結帳
+        special_instructions:
+          description: 允許顧客在訂單中加入特別說明。
+          label: 顯示特別說明欄位
+      close_sidebar: 關閉側邊欄
+      copied: 已複製！
+      copy_payment_link: 複製付款連結
+      copy_to_clipboard: 複製到剪貼簿
+      coupon_codes:
+        unused: 未使用
+        used: 已使用
+      created_at: 建立時間
+      dashboard:
+        getting_started:
+          description: 開始銷售前所需設定的一切。
+        hi: 您好
+        setup_progress:
+          steps_done_html: 已完成 <strong>%{done}</strong> / %{total} 個步驟
+          title: 您的整體設定進度
+        top_products: 熱門商品
+        view_report: 檢視報表
+        whats_happening_on_html: 以下是 <strong>%{store_name}</strong> 今天的最新動態。
+      datetime_field_timezone_help: 時區：%{zone}
+      digital_shipment_fulfillment_note: 當使用者下載數位商品後，此貨件將標記為已履行
+      display_on_options:
+        back_end: 僅限管理後台
+        both: 管理後台與店面皆顯示
+        front_end: 僅限店面
+      documentation: 文件
+      edit_billing_address: 編輯帳單地址
+      edit_contact_information: 編輯聯絡資訊
+      edit_profile: 編輯個人資料
+      edit_shipping_address: 編輯運送地址
+      edit_theme: 編輯佈景主題
+      errors: 錯誤
+      execution_time: 執行時間
+      expand_sidebar: 展開側邊欄
+      export_all: 匯出所有記錄（大型資料集可能較慢）
+      export_coupons: 將優惠券匯出為 CSV 檔案
+      export_created: 您的匯出已開始。準備就緒後，您將收到含有下載連結的電子郵件！
+      export_only_filtered_records: 僅匯出符合搜尋條件的篩選記錄
+      export_report: 將報表匯出為 CSV 檔案
+      filters: 篩選
+      getting_started: 開始使用
+      gift_card_batches:
+        codes_count: 代碼數量
+        new_gift_card_batch: 新增禮品卡批次
+        prefix: 前綴
+      gift_cards:
+        active: 啟用中
+        all_statuses: 所有狀態
+        code_help_text: 若留空，我們將為您產生代碼
+        redeemed: 已兌換
+        usage: 使用情況
+      imports:
+        all_required_columns_mapped: 做得好，所有必填欄位皆已對應！
+        field_required: 此欄位為必填
+        import_done: 全部完成！
+        large_import_background_note: 您可以關閉此頁面 — 匯入將在背景繼續進行。
+        large_import_message: 此匯入包含 %{count} 列，過大而無法逐筆顯示。
+        large_import_summary: 已完成 %{completed} 筆，失敗 %{failed} 筆
+        mapping_required: 此欄位為必填
+        please_map_all_required_fields: 請對應所有必填欄位以繼續。
+        waiting_for_file_to_be_processed: 正在等待檔案處理中…
+      integrations:
+        invalid_integration_type: 不允許此整合
+        page_subtitle: 將您的商店連接至第三方服務，以提升顧客體驗。
+      json_preview:
+        no_api_response: 找不到此資源的 API 回應
+      manage_markets: 管理市場
+      manage_properties: 管理屬性
+      manage_stock_locations: 管理庫存地點
+      manage_taxons: 管理類別
+      manage_zones: 管理區域
+      markets:
+        edit: 編輯市場
+        list: 市場
+        new: 新增市場
+        supported_locales_hint: 以逗號分隔的其他語系代碼清單（例如 fr,de,es）
+      metafield_definitions:
+        edit_warning: 定義被使用後，您無法變更資源類型或中繼欄位類型。
+        used_in: 使用於
+      name: 名稱
+      navigation:
+        nested_under: 巢狀於
+      newsletter_subscribers:
+        all: 全部
+        unverified: 未驗證
+        verified: 已驗證
+      not_tracking_inventory: 不追蹤庫存
+      notifications: 通知
+      num_orders: 訂單數
+      oauth_applications:
+        client_id: 用戶端 ID
+        client_secret: 用戶端密鑰
+        last_used: 最後使用
+        list: API 金鑰
+        never: 從未
+        new: 新增 API 金鑰
+        read_and_write: 讀取與寫入
+        read_only: 唯讀
+        scopes: 權限範圍
+      page_builder:
+        background_color: 背景顏色
+        border_bottom_width: 下邊框寬度
+        border_color: 邊框顏色
+        border_top_width: 上邊框寬度
+        bottom_padding: 下方內距
+        button_alignment: 按鈕對齊方式
+        button_background_color: 按鈕背景顏色
+        button_style: 按鈕樣式
+        button_text: 按鈕文字
+        button_text_color: 按鈕文字顏色
+        category: 類別
+        description: 說明
+        description_alignment: 說明對齊方式
+        desktop_image_alignment: 桌面版圖片對齊方式
+        desktop_logo_height: 標誌高度（桌面版）
+        heading: 標題
+        heading_alignment: 標題對齊方式
+        heading_size: 標題大小
+        height: 高度
+        image_click_hint: 點擊圖片會將使用者導向所選的頁面/URL
+        left_aligned: 靠左對齊
+        logo_centered: 標誌置中
+        max_video_width_on_desktop: 桌面版最大影片寬度
+        maximum_products_to_show: 最多顯示商品數
+        nav_centered: 導覽列置中
+        not_set: 未設定
+        separated: 分隔
+        show_more_button: 顯示探索類別按鈕
+        show_taxon_image: 顯示類別圖片
+        text_color: 文字顏色
+        title: 標題
+        top_padding: 上方內距
+        use_description_from_admin: 使用管理後台的說明
+        vertical_alignment: 垂直對齊方式
+        youtube_video_url: YouTube 影片 URL
+      personal_details: 個人詳細資料
+      price_lists:
+        activate: 啟用
+        activated: 價目表已啟用
+        confirm_activate: 您確定要啟用此價目表嗎？它將立即影響定價。
+        confirm_deactivate: 您確定要停用此價目表嗎？
+        confirm_schedule: 您確定要排程此價目表嗎？
+        confirm_unschedule: 您確定要取消排程此價目表嗎？
+        deactivate: 停用
+        deactivated: 價目表已停用
+        schedule: 排程
+        scheduled: 價目表已排程
+        unschedule: 取消排程
+      product_translations:
+        coverage: 翻譯涵蓋率
+        locale: 語系
+        manage_markets: 管理市場
+        no_locales_description: 設定具有其他語系的市場，以開始翻譯您的商品。
+        no_locales_title: 未設定其他語系
+        progress: 進度
+        total: 總計
+        translated: 已翻譯
+      products:
+        active: 啟用中
+        all_statuses: 所有狀態
+        any_stock: 任何庫存
+        archived: 已封存
+        by_status: 依狀態
+        by_stock: 依庫存
+        deleted: 已刪除
+        draft: 草稿
+        help_bubble: 草稿商品無法購買。啟用中的商品為上線狀態。
+        in_stock: 有庫存
+        inventory:
+          barcode: 條碼（ISBN、UPC、GTIN 等）
+          sku: SKU（庫存單位）
+        out_of_stock: 缺貨
+        paused: 已暫停
+        search_results:
+          no_products: 我們找不到符合您搜尋條件的商品 :(
+        seo:
+          placeholder: 新增標題與說明，以預覽此商品在搜尋引擎列表中的呈現方式
+        status_form:
+          status: 草稿商品無法購買。啟用中的商品為上線狀態。
+        status_options:
+          active: 啟用中
+          archived: 已封存
+          draft: 草稿
+        stores:
+          choose_stores: 選擇此商品應在哪些商店上架
+        variants:
+          option_types_link: 若要新增更多選項類型，請前往 <a href="%{link}">選項類型</a>
+      publishing:
+        caption_hidden_after: 於 %{date} 下架
+        caption_live: 現正對顧客顯示
+        caption_not_available: 已隱藏 — 商品為 %{product_status}
+        caption_scheduled: 於 %{date} 上線
+        caption_unpublished: 已於 %{date} 隱藏
+        caption_window: 上線時間 %{start} → %{end}
+        empty: 尚未在任何銷售通路上架。
+        inactive_marker: 未啟用
+        manage_cta: 管理
+        manage_description: 選擇哪些銷售通路上架此商品。關閉某通路即可在該處下架。
+        no_channels: 沒有可用的銷售通路。請在「設定」→「銷售通路」中建立。
+        published_at_label: 發布起始
+        status_hidden: 已隱藏
+        status_live: 已上線
+        status_not_available: 無法使用
+        status_scheduled: 已排程
+        title: 發布
+        unpublished_at_label: 取消發布於
+      recommended_size: 建議尺寸
+      report_created: 您的報表正在產生中。準備就緒後，您將收到含有下載連結的電子郵件！
+      reset_digital_link_download_limits: 重設下載次數限制
+      response_code: 回應代碼
+      selected: 已選取
+      send_payment_link: 傳送付款連結
+      shipment:
+        please_provide_tracking_details: 在將貨件標記為已出貨前，請提供追蹤資訊
+      shipment_transfer:
+        wrong_destination: 目的地錯誤
+      show_json: 顯示 JSON
+      stock_transfers:
+        add_products_tip: 您需要先選擇目的地點
+      store_credit:
+        amount_remaining_of_total: 剩餘 <strong>%{amount}</strong>（總計 <strong>%{total}</strong>）
+      store_form:
+        company_field:
+          description: 在「我的帳戶」區段的地址表單及結帳地址步驟中顯示公司欄位。
+          label: 顯示公司地址欄位
+        customer_support_email_help: 此電子郵件會在頁尾區段向您的商店訪客顯示
+        new_order_notifications_email_help: 若您希望每次有人下單時都收到電子郵件通知，請提供接收該通知的電子郵件地址
+        send_consumer_transactional_emails_help: 取消勾選時，將不會向顧客傳送如訂單確認與出貨通知等交易電子郵件
+      store_setup_tasks:
+        add_billing_address: 新增帳單地址
+        add_products: 新增商品
+        payment_methods:
+          copy: 為了收取付款，請至少設定一個線上付款服務商。
+          done: 您已全部設定完成！您隨時可以在<a href="%{link}" data-turbo-frame="_top">此</a>頁面管理您的付款方式。
+          setup: 設定付款方式
+          title: 請為您的商店設定付款方式
+        set_customer_support_email: 設定顧客支援電子郵件
+        setup_taxes_collection: 設定稅金收取
+        taxes:
+          copy: 為了收取稅金，請設定您的稅率。
+          done: 您已全部設定完成！您隨時可以在<a href="%{link}" data-turbo-frame="_top">設定</a>頁面管理您的稅金。
+          setup: 設定稅率
+      storefront: 店面
+      successful: 成功
+      successfully_reset_digital_links_limit: 下載次數限制已重設
+      tables:
+        add_filter: 新增篩選器
+        add_or_group: 新增 OR 群組
+        apply: 套用
+        apply_filters: 套用篩選器
+        ascending: 遞增
+        clear_all: 全部清除
+        columns: 欄位
+        descending: 遞減
+        enter_value: 輸入值…
+        filter_builder: 篩選器建立工具
+        filters: 篩選器
+        match: 符合
+        of_the_following: 以下條件
+        operators:
+          contains: 包含
+          does_not_contain: 不包含
+          ends_with: 結尾為
+          equals: 等於
+          greater_than: 大於
+          greater_than_or_equal: 大於或等於
+          is_any_of: 為其中任一
+          is_empty: 為空
+          is_none_of: 皆非其中之一
+          is_not_empty: 不為空
+          less_than: 小於
+          less_than_or_equal: 小於或等於
+          not_equals: 不等於
+          starts_with: 開頭為
+        order: 排序
+        reset_to_default: 重設為預設值
+        select_field: 選擇欄位…
+        sort_by: 排序依據
+        visible_columns: 顯示的欄位
+      taxon_rules:
+        all_conditions: 所有條件
+        any_condition: 任一條件
+        available_on: 上架時間
+        match_policies:
+          contains: 包含
+          does_not_contain: 不包含
+          is_equal_to: 等於
+          is_not_equal_to: 不等於
+        on_sale: 特價中
+        products_must_match: 商品必須符合：
+        tag: 商品標籤
+      taxon_type: 類別類型
+      taxon_types:
+        automatic: 自動
+        automatic_info: 若商品符合您設定的規則，則自動將其新增至此類別。
+        manual: 手動
+        manual_info: 手動策劃商品。您可以批次新增或移除。
+      translations:
+        no_translations_configured: 未設定翻譯。請設定市場以使用翻譯。
+      upload_new_asset: 上傳新媒體
+      users:
+        filters:
+          search_placeholder: 依電子郵件或名稱搜尋顧客
+      utilities:
+        preview: 預覽
+      variants:
+        search_results:
+          no_variants: 我們找不到符合您搜尋條件的款式 :(
+      variants_form:
+        add_option:
+          empty: 新增如尺寸或顏色等選項
+          not_empty: 新增其他選項
+        compare_at_price_description: 此價格用於在商品頁面顯示降價後的價格。
+        stock_locations_link: 若要新增更多庫存地點，請前往 <a href="%{link}">庫存地點</a>
+        total_inventory_html: "%{stock_location} 地點的總庫存：可用 %{count} 件"
+      vendors:
+        enterprise_feature: 多賣家市集功能於企業版中提供
+      webhook_deliveries:
+        delivered_at: 送達時間
+        delivery_details: 傳遞詳細資料
+        delivery_info: 傳遞資訊
+        endpoint_inactive: 無法重試 - 端點未啟用
+        error_type: 錯誤類型
+        event: 事件
+        execution_time: 執行時間
+        failed: 失敗
+        pending: 待處理
+        redeliver_button: 重新傳遞
+        redelivered: Webhook 已成功重新傳遞。
+        request_errors: 請求錯誤
+        request_payload: 請求酬載
+        response_body: 回應內容
+        response_code: 回應代碼
+      webhook_endpoints:
+        auto_disabled: 此端點在多次傳遞失敗後已自動停用。
+        back_to_endpoint: 返回端點
+        deliveries: 傳遞
+        endpoint_settings: 端點設定
+        event_subscriptions: 事件訂閱
+        event_subscriptions_help: 選擇哪些事件應觸發向此端點傳遞 webhook。
+        events: 事件
+        failed_deliveries: 失敗的傳遞
+        health:
+          degraded: "%{percentage}% 成功"
+          disabled: 已停用
+          failing: "%{percentage}% 成功"
+          healthy: "%{percentage}% 成功"
+          no_deliveries: 無資料
+        health_label: 健康狀態
+        new: 新增 Webhook 端點
+        re_enable: 重新啟用
+        secret_key: 私密金鑰
+        secret_key_help: 使用此金鑰驗證 webhook 簽章。請妥善保管，切勿公開分享。
+        send_test: 傳送測試
+        subscriptions: 訂閱
+        successful_deliveries: 成功的傳遞
+        test_failed: 傳送測試 webhook 失敗。請檢查端點設定。
+        test_sent: 測試 webhook 已傳送。請查看傳遞以了解結果。
+      webhooks_subscribers:
+        all_events: 所有事件
+        new_webhooks_subscriber: 新增 Webhook 訂閱者
+        no_events: 無事件
+        select_events: 選擇事件
+        subscribe_to_all_events: 訂閱所有事件
+        subscriptions: 訂閱
+        time_of_last_event: 最後事件時間
+        webhooks_events: Webhook 事件
     administration: 管理
     advertise: 廣告行銷
     agree_to_privacy_policy: 同意隱私權條款
@@ -647,7 +1331,7 @@ zh-TW:
     are_you_sure: 確定？
     are_you_sure_delete: 你確定要刪除此筆紀錄？
     associated_adjustment_closed: 有關聯的調整項目已經停用，並不會被重複計算。您要啓用它嗎?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: 授權失敗
     authorized: 已授權
     auto_capture: 自動收款
@@ -659,7 +1343,7 @@ zh-TW:
     back: 返回
     back_end: 後台
     backordered: 已缺貨
-    back_to_resource_list: '返回 %{resource} 清單'
+    back_to_resource_list: 返回 %{resource} 清單
     back_to_payment: 返回至付款
     back_to_rma_reason_list: 返回退貨授權清單
     back_to_store: 返回商店
@@ -707,8 +1391,8 @@ zh-TW:
       remove_from_cart: 從購物車移除
       title: 購物車
     cart_subtotal:
-      one: '小計 (1 個品項)'
-      other: '小記 (%{count} 個品項)'
+      one: 小計 (1 個品項)
+      other: 小記 (%{count} 個品項)
     categories: 分類
     category: 分類
     category_nav_bar:
@@ -762,7 +1446,11 @@ zh-TW:
     country: 國家
     country_based: 依據國家
     country_name: 國家名稱
-    country_names: 國家名稱
+    country_names:
+      CA: 加拿大
+      FRA: 法國
+      ITA: 義大利
+      US: 美利堅合眾國
     country_rule:
       label: 一定要寄送至此國家
     coupon: 優惠
@@ -792,7 +1480,7 @@ zh-TW:
     currency: 貨幣
     currency_settings: 貨幣設定
     current: 目前
-    current_promotion_usage: ! '目前用量: %{count}'
+    current_promotion_usage: '目前用量: %{count}'
     customer: 客戶
     customer_details: 客戶資訊
     customer_details_updated: 客戶資訊已更新
@@ -807,7 +1495,6 @@ zh-TW:
     date: 日期
     date_completed: 完成日期
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: 日期區間
@@ -836,16 +1523,16 @@ zh-TW:
     doesnt_track_inventory: 庫存沒有被追蹤
     dont_have_account: 沒有帳號？
     edit: 編輯
-    editing_resource: '%{resource}編輯中'
+    editing_resource: "%{resource}編輯中"
     editing_rma_reason: 編輯退貨授權理由
     editing_user: 編輯你的帳號
     eligibility_errors:
       messages:
         has_excluded_product: 你的購物車中有商品導致此優惠無法使用
-        item_total_less_than: '此優惠代碼無法使用於訂單金額少於 %{amount} 的情況。'
-        item_total_less_than_or_equal: '此優惠代碼無法使用於訂單金額少於或等於 %{amount} 的情況。'
-        item_total_more_than: '此優惠代碼無法使用於訂單金額高於 %{amount} 的情況。'
-        item_total_more_than_or_equal: '此優惠代碼無法使用於訂單金額高於或等於 %{amount} 的情況。'
+        item_total_less_than: 此優惠代碼無法使用於訂單金額少於 %{amount} 的情況。
+        item_total_less_than_or_equal: 此優惠代碼無法使用於訂單金額少於或等於 %{amount} 的情況。
+        item_total_more_than: 此優惠代碼無法使用於訂單金額高於 %{amount} 的情況。
+        item_total_more_than_or_equal: 此優惠代碼無法使用於訂單金額高於或等於 %{amount} 的情況。
         limit_once_per_user: 此優惠代碼每個會員只能使用一次
         missing_product: 此優惠代碼無法使用，購物車內的商品沒有滿足優惠條件。
         missing_taxon: 你必須有商品來自適用此活動的類別於購物車，才能使用此優惠代碼
@@ -854,6 +1541,7 @@ zh-TW:
         no_user_or_email_specified: 你必須登入或是提供 Email ，才能使用此優惠代碼
         no_user_specified: 你必須登入才能使用此優惠代碼
         not_first_order: 此優惠代碼只適用於首購
+        wrong_country: 此優惠代碼在您的國家不適用
     email: Email
     empty: 清空
     empty_cart: 清空購物車
@@ -868,13 +1556,20 @@ zh-TW:
         blank: 不能為空白
         could_not_create_taxon: 無法建立自訂類別
         no_shipping_methods_available: 你所選的地區沒有辦法建立寄送選項，請重新建立一個。
+        cannot_delete_default_channel: 無法刪除預設通路。請先將另一個通路提升為預設通路。
+        channel_store_mismatch: 必須屬於同一個商店
+        invalid_order_routing_rule: 不是已註冊的訂單路由規則
+        invalid_order_routing_strategy: 不是已註冊的訂單路由策略
+        must_be_origin_only: 必須是來源（協定與主機），不可包含路徑、查詢字串或片段
+        store_association_can_not_be_changed: 商店關聯無法變更
+        store_is_already_set: 商店已設定
       services:
         get_shipping_rates:
           no_shipping_address: 必須要有地址才能估算郵資
           no_line_items: 必須要品項於訂單內才能估算郵資
     errors_prohibited_this_record_from_being_saved:
       one: 1 個錯誤導致此筆紀錄無法儲存
-      other: ! '%{count} 個錯誤導致此筆紀錄無法儲存'
+      other: "%{count} 個錯誤導致此筆紀錄無法儲存"
     error_user_destroy_with_orders: 已經有訂單的客戶無法被刪除
     event: 活動
     events:
@@ -891,9 +1586,9 @@ zh-TW:
         user:
           signup: 註冊
     exceptions:
-      count_on_hand_setter: '無法手動更新庫存，請使用： update_column(:count_on_hand, value)'
+      count_on_hand_setter: 無法手動更新庫存，請使用： update_column(:count_on_hand, value)
     exchange_for: 換貨
-    expedited_exchanges_warning: '所有的換貨在儲存後會馬上寄出給客戶。 客戶於 %{days_window} 天內沒有退還原商品將會被收取所有的費用。'
+    expedited_exchanges_warning: 所有的換貨在儲存後會馬上寄出給客戶。 客戶於 %{days_window} 天內沒有退還原商品將會被收取所有的費用。
     excl: 不包括
     expiration: 到期
     expiration_date: 到期日
@@ -950,7 +1645,7 @@ zh-TW:
       sportswear: SPORTSWEAR
       streetstyle: STREETSTYLE
       summer_2019: Summer 2019
-      summer_collection:  Summer Collection
+      summer_collection: Summer Collection
       summer_sale: SUMMER SALE
       trending: TRENDING
       up_to_60: UP TO 60%
@@ -971,20 +1666,20 @@ zh-TW:
     icon: 圖標
     image: 圖片
     images: 圖片
-    implement_eligible_for_return: "Must implement #eligible_for_return? for your EligibilityValidator."
-    implement_requires_manual_intervention: "Must implement #requires_manual_intervention? for your EligibilityValidator."
+    implement_eligible_for_return: 'Must implement #eligible_for_return? for your EligibilityValidator.'
+    implement_requires_manual_intervention: 'Must implement #requires_manual_intervention? for your EligibilityValidator.'
     in_stock: 有庫存
     inactive: 已失效
     incl: 包括
     included_in_price: 包含於價格
     included_price_validation: 無法被選擇直到預設稅區已經設定好
     incomplete: 未完成
-    info_product_has_multiple_skus: "此商品有 %{count} 個型號:"
+    info_product_has_multiple_skus: '此商品有 %{count} 個型號:'
     info_number_of_skus_not_shown:
-      one: '與另一個'
-      other: '與其他 %{count} 個'
+      one: 與另一個
+      other: 與其他 %{count} 個
     instructions_to_reset_password: 請填入你的 Email
-    insufficient_stock: '庫存不夠，只剩下 %{on_hand} 個'
+    insufficient_stock: 庫存不夠，只剩下 %{on_hand} 個
     insufficient_stock_item_quantity: 庫存不夠
     insufficient_stock_lines_present: 此訂單中有幾個品項庫存不夠
     intercept_email_address: 截取 Email
@@ -1029,7 +1724,7 @@ zh-TW:
     locale_changed: 語言改變
     location: 地點
     lock: 鎖定
-    log_entries: "Log Entries"
+    log_entries: Log Entries
     log_in: 登入
     log_in_to_continue: 登入後繼續
     logs: 紀錄
@@ -1063,7 +1758,7 @@ zh-TW:
     metadata: Metadata
     mutable: 可調整的
     minimal_amount: 最低金額
-    missing_return_authorization: ! '%{item_name} 沒有退貨授權'
+    missing_return_authorization: "%{item_name} 沒有退貨授權"
     month: 月份
     more: 更多
     move_stock_between_locations: 於不同地點間移動庫存
@@ -1139,7 +1834,7 @@ zh-TW:
     no_products_found: 找不到商品
     no_results: 沒有結果
     no_rules_added: 沒有規則被新增
-    no_resource_found: '找不到 %{resource}'
+    no_resource_found: 找不到 %{resource}
     no_returns_found: 找不到退貨
     no_shipping_method_selected: 沒有選取寄送選項
     no_state_changes: 沒有狀態改變
@@ -1151,16 +1846,16 @@ zh-TW:
     not: 不
     not_available: N/A
     not_enough_stock: 選定的地點沒有足夠的庫存去做轉移
-    not_found: ! '找不到%{resource}'
+    not_found: 找不到%{resource}
     note: 筆記
     notice_messages:
       product_cloned: 商品已被複製
       product_deleted: 商品已被刪除
-      product_not_cloned: '商品無法被複製，原因為：%{error}'
-      product_not_deleted: '商品無法被刪除，原因為：%{error}'
+      product_not_cloned: 商品無法被複製，原因為：%{error}
+      product_not_deleted: 商品無法被刪除，原因為：%{error}
       variant_deleted: 型號已被刪除
-      variant_not_deleted: '型號無法被刪除，原因為：%{error}'
-    num_orders: '# 訂單'
+      variant_not_deleted: 型號無法被刪除，原因為：%{error}
+    num_orders: "# 訂單"
     number: 號碼
     ok: 好
     on_hand: 庫存
@@ -1174,7 +1869,7 @@ zh-TW:
     optional: 非必填
     options: 選項
     or: 或
-    or_over_price: ! '%{price}或更高'
+    or_over_price: "%{price}或更高"
     order: 訂單
     order_adjustments: 訂單調整
     order_already_updated: 此訂單更新成功
@@ -1185,26 +1880,34 @@ zh-TW:
     order_information: 訂單資訊
     order_line_items: 訂單品項
     order_mailer:
-      subtotal: ! '小記:'
-      total: ! '總計:'
+      subtotal: '小記:'
+      total: '總計:'
       cancel_email:
         dear_customer: 親愛的顧客,
         instructions: 你的訂單已取消。請你保留好此信件做為紀錄。
-        order_summary_canceled: '訂單編號 %{number} 總結 [CANCELED]'
+        order_summary_canceled: 訂單編號 %{number} 總結 [CANCELED]
         subject: 訂單取消
+        thanks: 感謝您
       confirm_email:
         dear_customer: 親愛的顧客,
         instructions: 請你保留好此信件做為紀錄。
-        order_summary: '訂單編號 %{number} 總結'
+        order_summary: 訂單編號 %{number} 總結
         subject: 訂單確認信件
         thanks: 感謝你
       store_owner_notification_email:
         heading: 新訂單
         instructions: 一筆新訂單
-        order_summary: '訂單 %{number} 總結'
-        subject: '%{store_name}收到了一筆新訂單'
+        order_summary: 訂單 %{number} 總結
+        subject: "%{store_name}收到了一筆新訂單"
+        thanks: 謝謝您
+      payment_link_email:
+        message: 請點選下方按鈕為您的訂單付款。
+        message_copy_link: 若按鈕無法運作，請複製並貼上以下連結至您的瀏覽器：
+        pay_for_order: 為訂單付款
+        subject: '訂單 #%{number} 的付款連結'
+      store_team: "%{store_name} 團隊"
     order_not_found: 我們無法找到你的訂單，請再試一次
-    order_number: '訂單編號 %{number}'
+    order_number: 訂單編號 %{number}
     order_processed_successfully: 你的訂單已經處理完成。
     order_resumed: 繼續訂單
     order_state:
@@ -1222,7 +1925,7 @@ zh-TW:
     order_success: 訂單建立成功
     order_success_explain: 你的訂單資訊將會被寄送至 Email
     order_summary: 訂單總結
-    order_sure_want_to: '你確定要%{event}此筆訂單？'
+    order_sure_want_to: 你確定要%{event}此筆訂單？
     order_total: 訂單總計
     order_updated: 訂單已更新
     orders: 訂單
@@ -1234,8 +1937,8 @@ zh-TW:
     page_not_found: 您所訪問的頁面不存在！
     pagination:
       next_page: 下一頁 &raquo;
-      previous_page: ! '&laquo; 上一頁'
-      truncate: ! '&hellip;'
+      previous_page: "&laquo; 上一頁"
+      truncate: "&hellip;"
     password: 密碼
     paste: 貼上
     path: 路徑
@@ -1261,6 +1964,9 @@ zh-TW:
       pending: 等待中
       processing: 處理中
       void: 作廢
+      complete: 已完成
+      partially_refunded: 部分退款
+      refunded: 已退款
     payment_type: 付款類型
     payment_updated: 付款已更新
     payments: 付款
@@ -1296,7 +2002,7 @@ zh-TW:
       no_results_found: 沒有結果
       not_found_filters1: 沒有商品符合你的篩選條件
       not_found_filters2: 請嘗試新的篩選條件
-      not_found_text1: '我們找不到商品包含關鍵字： %{keywords}'
+      not_found_text1: 我們找不到商品包含關鍵字： %{keywords}
       not_found_text2: 請嘗試新的關鍵字
       price: 價格
       price_high_to_low: 價格 (高 - 低)
@@ -1340,7 +2046,7 @@ zh-TW:
     promotion: 優惠
     promotionable: 可提供優惠
     promotion_cloned: 優惠已複製
-    promotion_not_cloned: '優惠無法被複製，原因：%{error}'
+    promotion_not_cloned: 優惠無法被複製，原因：%{error}
     promotion_action: 優惠操作
     promotion_action_types:
       create_adjustment:
@@ -1361,7 +2067,7 @@ zh-TW:
       match_policies:
         all: 符合所有條件
         any: 滿足其中一個條件
-    promotion_label: '優惠活動：%{name}'
+    promotion_label: 優惠活動：%{name}
     promotion_rule: 優惠規則
     promotion_rule_types:
       country:
@@ -1391,6 +2097,21 @@ zh-TW:
       taxon:
         description: 訂單包含指定的自訂類別內的商品
         name: 自訂類別(s)
+      category:
+        description: 訂單包含指定類別中的商品
+        name: 類別
+      currency:
+        description: 限定使用特定貨幣的訂單
+        name: 貨幣
+      customer:
+        description: 僅供指定顧客使用
+        name: 顧客
+      customer_group:
+        description: 僅供指定顧客群組中的顧客使用
+        name: 顧客群組
+      customer_logged_in:
+        description: 僅供已登入的顧客使用
+        name: 僅限已登入的顧客
     promotions: 優惠
     promotion_uses: 優惠使用
     propagate_all_variants: 使用於所有型號
@@ -1437,7 +2158,7 @@ zh-TW:
     rename: 重新命名
     report: 報告
     reports: 報告
-    required: '*'
+    required: "*"
     required_fields: 必填欄位
     resellable: 可轉售
     resend: 重寄
@@ -1464,15 +2185,16 @@ zh-TW:
     return_items_cannot_be_associated_with_multiple_orders: 退換貨項目不能與多筆訂單共存
     reimbursement_mailer:
       reimbursement_email:
-        days_to_send: ! '你有幾 %{days} 天將需要換貨的商品寄回。'
+        days_to_send: 你有幾 %{days} 天將需要換貨的商品寄回。
         dear_customer: 親愛的顧客，
         exchange_summary: 換貨總結
         for: 為了
         instructions: 核銷已經在處理中
         refund_summary: 退款總結
         subject: 核銷通知
-        total_refunded: ! '退款總計: %{total}'
+        total_refunded: '退款總計: %{total}'
         thanks: 感謝
+        store_team: "%{store_name} 團隊"
     return_number: 退貨號碼
     return_quantity: 退貨數量
     returned: 已退貨
@@ -1497,7 +2219,7 @@ zh-TW:
     say_yes: 是
     scope: 範圍
     search: 搜尋
-    search_results: '%{keywords}的搜尋結果'
+    search_results: "%{keywords}的搜尋結果"
     searching: 搜尋中
     secure_connection_type: 安全連線類型
     security_settings: 安全設定
@@ -1509,7 +2231,7 @@ zh-TW:
     select_a_stock_location: 選取庫存地點
     select_a_store_credit_reason: 選取商城抵用金的理由
     select_stock: 選取庫存
-    selected_quantity_not_available: ! '所選數量 %{item} 不可行'
+    selected_quantity_not_available: 所選數量 %{item} 不可行
     send_copy_of_all_mails_to: 寄至所有的信箱
     send_mails_as: 寄出所有信件以
     seo_title: SEO 標題
@@ -1522,17 +2244,18 @@ zh-TW:
     ship_total: 物流金額
     shipment: 物流
     shipment_adjustments: 物流調整
-    shipment_details: '從 %{stock_location} 藉由 %{shipping_method} 寄送'
+    shipment_details: 從 %{stock_location} 藉由 %{shipping_method} 寄送
     shipment_mailer:
       shipped_email:
         dear_customer: 親愛的客戶
-        instructions: '你的訂單 %{number} 已經寄出'
+        instructions: 你的訂單 %{number} 已經寄出
         shipment_summary: 此筆訂單的物流總結
-        shipping_method: '寄送方法：%{shipping_method}'
+        shipping_method: 寄送方法：%{shipping_method}
         subject: 寄送通知
         thanks: 感謝
-        track_information: ! '追蹤號碼 %{tracking}'
+        track_information: 追蹤號碼 %{tracking}
         track_link: '追蹤方法: %{url}'
+        store_team: "%{store_name} 團隊"
     shipment_state: 寄送狀態
     shipment_states:
       backorder: 補貨中
@@ -1558,10 +2281,10 @@ zh-TW:
     shipping_price_sack: 每袋價格
     shipping_rates:
       display_price:
-        including_tax: '%{price} (包含 %{tax_amount} %{tax_rate_name})'
-        excluding_tax: '%{price} (+ %{tax_amount} %{tax_rate_name})'
+        including_tax: "%{price} (包含 %{tax_amount} %{tax_rate_name})"
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
     shipping_total: 運費總計
-    shop_by_taxonomy: '於%{taxonomy}選購'
+    shop_by_taxonomy: 於%{taxonomy}選購
     shopping_cart: 購物車
     show: 顯示
     show_active: 顯示活躍
@@ -1629,12 +2352,14 @@ zh-TW:
     stock_management: 庫存管理
     stock_management_requires_a_stock_location: 庫存管理需要有一個庫存位置
     stock_movements: 庫存動態
-    stock_movements_for_stock_location: '%{stock_location_name}的庫存動態'
+    stock_movements_for_stock_location: "%{stock_location_name}的庫存動態"
     stock_successfully_transferred: 庫存已經成功地轉移
     stock_transfer_name: 庫存轉移
     stock_transfer:
       errors:
         must_have_variant: 必須至少有有一個型號
+        same_location: 不可與目的地地點相同
+        variants_unavailable: 部分款式在 %{stock} 無法取得
     stock_transfers: 庫存轉移
     stop: 停止
     store: 商店
@@ -1652,46 +2377,48 @@ zh-TW:
       allocated: 已新增
       apply: 使用
       remove: 移除
-      applicable_amount: '<strong>%{amount}</strong> 的商城抵用金會被用於此筆訂單。'
-      available_amount: '你有 <strong>%{amount}</strong> 的商城抵用金可以使用！'
-      remaining_amount: '你的帳號仍有 <strong>%{amount}</strong> 的商城抵用金可以使用！'
-      additional_payment_needed: '選擇一個付款方式支付所剩之 <strong>%{amount}</strong> 的餘額。'
+      applicable_amount: "<strong>%{amount}</strong> 的商城抵用金會被用於此筆訂單。"
+      available_amount: 你有 <strong>%{amount}</strong> 的商城抵用金可以使用！
+      remaining_amount: 你的帳號仍有 <strong>%{amount}</strong> 的商城抵用金可以使用！
+      additional_payment_needed: 選擇一個付款方式支付所剩之 <strong>%{amount}</strong> 的餘額。
       errors:
         cannot_change_used_store_credit: 你無法更改已經使用過的商城抵用金
         unable_to_create: 無法建立商城抵用金
         unable_to_delete: 無法刪除商城抵用金
         unable_to_fund: 無法使用商城抵用金支付此訂單
         unable_to_update: 無法更新商城抵用金
+      remaining: 剩餘
+      eligible: 符合資格
     store_credits: 商城抵用金
     store_credit_categories: 商城抵用金類別
     store_credit_payment_method:
       unable_to_void: '無法作廢: %{auth_code}'
       unable_to_credit: '無法給予商城抵用金: %{auth_code}'
-      successful_action: '成功的商城抵用金 %{action}'
+      successful_action: 成功的商城抵用金 %{action}
       unable_to_find: 無法找到商城抵用金
       insufficient_funds: 商城抵用金不足
       currency_mismatch: 商城抵用金的幣別與訂單不符
       insufficient_authorized_amount: 無法獲取超過的金額
-      unable_to_find_for_action: '%{action} 的行為，無法找到商城抵用金: %{auth_code}'
+      unable_to_find_for_action: "%{action} 的行為，無法找到商城抵用金: %{auth_code}"
       user_has_no_store_credits: 用戶沒有任何的商城抵用金
       select_one_store_credit: 使用商城抵用金支付剩餘的款項
     store_default: 預設商店
-    store_not_set_as_default: '%{store}無法設為預設商店'
-    store_set_as_default: '%{store}現在為預設商店'
+    store_not_set_as_default: "%{store}無法設為預設商店"
+    store_set_as_default: "%{store}現在為預設商店"
     street_address: 地址
     street_address_2: 地址 (接續)
     subtotal: 小計
     subtract: 扣除
     success: 成功
-    successfully_created: ! '%{resource}已被成功建立!'
-    successfully_refunded: ! '%{resource}已被成功的退款!'
-    successfully_removed: ! '%{resource}已被成功的移除!'
-    successfully_updated: ! '%{resource}已被成功的更新!'
+    successfully_created: "%{resource}已被成功建立!"
+    successfully_refunded: "%{resource}已被成功的退款!"
+    successfully_removed: "%{resource}已被成功的移除!"
+    successfully_updated: "%{resource}已被成功的更新!"
     summary: 總結
     supported_currencies: 支援的貨幣
     supported_currencies_long: 支援貨幣清單，以逗號分隔
     tax: 稅金
-    tax_included: '稅金 (包含.)'
+    tax_included: 稅金 (包含.)
     tax_categories: 稅金類別
     tax_category: 稅金類別
     tax_code: 稅金代碼
@@ -1714,7 +2441,7 @@ zh-TW:
     taxonomy_categories_name: 自訂類別集合類別
     taxonomy_edit: 編輯自訂類別集合
     taxonomy_tree_error: 請求失敗，自訂類別集合的樹狀結構已經回復至之前的狀態，請再試一次。
-    taxonomy_tree_instruction: ! '* 滑鼠右鍵點選子集合可以新增、刪除和排序他們。'
+    taxonomy_tree_instruction: "* 滑鼠右鍵點選子集合可以新增、刪除和排序他們。"
     taxons: 自訂類別
     test: 測試
     test_mailer:
@@ -1752,7 +2479,7 @@ zh-TW:
     type_to_search: 搜尋類型
     unable_to_connect_to_gateway: 無法連線至接口
     unable_to_create_reimbursements: 無法建立核銷
-    under_price: '價格：%{price} 以下'
+    under_price: 價格：%{price} 以下
     unlock: 解鎖
     unrecognized_card_type: 無法辨識卡片類型
     unshippable_items: 無法運送的項目
@@ -1797,3 +2524,543 @@ zh-TW:
     zipcode: 郵遞區號
     zone: 區域
     zones: 所有區域
+    add_gift_card: 新增禮品卡
+    add_selected: 新增所選項目
+    add_selected_products: 新增所選商品
+    add_selected_variant: 新增所選款式
+    added_at: 新增時間
+    adjustment_amount_help: 正值為收費，負值為退款。
+    adjustment_closed_description: 此調整項已關閉，不會重新計算。
+    adjustment_open_description: 此調整項為開啟狀態，將會重新計算。
+    admin_language_help: 您的管理儀表板顯示的語言。僅影響您所看到的內容，不影響商店或其他員工。
+    admin_locale_help: 用於管理儀表板的語言。若未設定，則預設為應用程式語系。
+    all_time: 所有時間
+    apis:
+      admin: 管理 API
+      store: 商店 API
+    applied_to: 套用於
+    assigned_variants: 指定的款式
+    assigned_variants_help: 選擇此圖片代表的款式。留空則套用至所有款式。
+    automatic_promotion: 自動
+    cancel_order: 取消訂單
+    cannot_ship: 貨件無法出貨
+    card_expiration_placeholder: MM/YYYY
+    categorization: 分類
+    change_password: 變更密碼
+    close_sidebar: 關閉側邊欄
+    contact_information: 聯絡資訊
+    continue_selling_when_out_of_stock: 缺貨時繼續銷售
+    copied: 已複製！
+    copy_id: 複製 ID
+    custom_domains: 自訂網域
+    customer_could_not_be_removed_from_group: 無法將顧客從群組中移除
+    customer_group_rule:
+      choose_customer_groups: 選擇此促銷應套用的顧客群組：
+    customer_removed_from_group: 顧客已從群組中移除
+    customers_added_to_group:
+      one: 已將 %{count} 位顧客新增至群組
+      other: 已將 %{count} 位顧客新增至群組
+    customers_removed_from_group:
+      one: 已將 %{count} 位顧客從群組中移除
+      other: 已將 %{count} 位顧客從群組中移除
+    days_ago: 天前
+    delete_selected: 刪除所選項目
+    digital_assets_help: 數位資產是顧客購買後可下載的檔案。
+    dimension_units:
+      centimeter: 公分（cm）
+      foot: 英尺（ft）
+      inch: 英寸（in）
+      millimeter: 公釐（mm）
+    display_settings: 顯示設定
+    domains: 網域
+    draft_orders: 草稿訂單
+    edit_address: 編輯地址
+    edit_prices: 編輯價格
+    edit_refund: 編輯退款
+    estimated_delivery_time: 預估送達時間
+    excerpt: 摘要
+    favicon: 網站圖示
+    filtered_records: 篩選的記錄
+    forbidden_message: 您無權存取此頁面。
+    general_information: 一般資訊
+    internal_server_error: 伺服器內部錯誤
+    internal_server_error_message: 伺服器遇到內部錯誤，無法完成您的請求。
+    invitation_expired:
+      body: 此邀請連結已失效。請請求邀請您的人重新傳送一份新的。
+      heading: 邀請無效或已過期
+    invitation_resent: 邀請已重新傳送！
+    manual_adjustment: 手動調整
+    manual_adjustments: 手動調整
+    mark_as_default: 設為預設
+    move_variant_to: 將款式移至
+    new_allowed_origin: 新增允許的來源
+    new_api_key: 新增 API 金鑰
+    new_balance: 新餘額
+    new_billing_address: 新增帳單地址
+    new_channel: 新增銷售通路
+    new_custom_domain: 新增自訂網域
+    new_customer_group: 新增顧客群組
+    new_digital_asset: 新增數位資產
+    new_domain: 新增網域
+    new_gift_card: 新增禮品卡
+    new_line_item: 新增明細項目
+    new_metafield_definition: 新增中繼欄位定義
+    new_nested_taxon: 新增巢狀子類別
+    new_page: 新增頁面
+    new_password: 新密碼
+    new_policy: 新增政策
+    new_shipping_address: 新增運送地址
+    new_store: 新增商店
+    new_webhook_endpoint: 新增 Webhook 端點
+    no_adjustments: 無調整項
+    no_billing_address_available: 無可用的帳單地址
+    no_customers_found: 找不到顧客
+    no_email_provided: 未提供電子郵件
+    no_internal_note: 無內部備註
+    no_products_added: 未新增商品
+    no_products_in_price_list: 此價目表中無商品
+    no_promotions_applied: 未套用任何促銷
+    no_saved_cards: 無已儲存的卡片
+    no_shipping_address_available: 無可用的運送地址
+    no_taxes: 無稅金
+    no_users_selected: 未選取任何使用者
+    not_risky: 無風險
+    oauth_applications: OAuth 應用程式
+    option_type_filterable_info: 當選項類型設為可篩選時，您的店面訪客可選擇根據該選項類型篩選某分類的商品。典型範例是依尺寸與顏色篩選服飾。<br><br><b>請注意：</b>篩選器僅會在含有設定此選項類型商品的店面分類中顯示。
+    option_type_kind_info: 控制選項在店面上的顯示方式。色票顯示彩色圓圈，按鈕顯示可點擊的標籤，下拉選單顯示選擇選單。
+    option_type_kinds:
+      buttons: 按鈕
+      color_swatch: 色票
+      dropdown: 下拉選單
+    or_select_other_address: 或選擇其他地址
+    order_email_resent_error: 訂單確認信僅能針對已完成的訂單寄送
+    page_not_found_message: 此頁面不存在。
+    payment_amount: 付款金額
+    payment_provider_settings: 付款服務商設定
+    payments_gateway_processing_errors: "%{payment_method_name} 處理錯誤"
+    personal_details: 個人詳細資料
+    previously_used_card: 先前使用的卡片
+    price_list_form:
+      match_policies:
+        all: 符合所有這些規則
+        any: 符合任一這些規則
+    price_list_statuses:
+      active: 啟用中
+      draft: 草稿
+      inactive: 未啟用
+      scheduled: 已排程
+      scheduled_active: 已排程（啟用中）
+    products_added: 已新增商品
+    products_removed: 已移除商品
+    products_sort_options:
+      best_selling: 最暢銷
+      manual: 手動
+      name_a_z: 依字母順序，A-Z
+      name_z_a: 依字母順序，Z-A
+      newest_first: 最新
+      oldest_first: 最舊
+      price_high_to_low: 價格（高至低）
+      price_low_to_high: 價格（低至高）
+      relevance: 相關性
+    remove_condition: 移除條件
+    same_as_shipping_address: 與運送地址相同
+    search_customers: 搜尋顧客
+    search_engine_listing: 搜尋引擎列表
+    search_products: 搜尋商品
+    select_existing_address: 選擇現有地址
+    select_key_type: 選擇金鑰類型
+    select_user: 選擇顧客
+    select_vendor: 選擇賣家
+    send_payment_link: 傳送付款連結
+    send_payment_link_title: 透過電子郵件傳送付款連結給顧客。他們稍後即可完成付款。
+    service_unavailable: 服務無法使用
+    service_unavailable_message: 由於維護停機或容量問題，伺服器暫時無法處理您的請求。請稍後再試。
+    shipment_successfully_shipped: 貨件已成功出貨
+    show_details: 顯示詳細資料
+    show_report: 顯示報表
+    standards_and_formats: 標準與格式
+    standards_and_formats_help: 設定您商店的時區、預設單位制與重量單位。
+    start_typing_to_search_for_products: 開始輸入以搜尋商品
+    start_typing_to_search_for_variants: 開始輸入以搜尋款式
+    store_details: 商店詳細資料
+    store_form:
+      customer_support_email_help: 此電子郵件會在頁尾區段向您的商店訪客顯示
+      new_order_notifications_email_help: 若您希望每次有人下單時都收到電子郵件通知，請提供接收該通知的電子郵件地址
+    store_name_help: 這是您商店的名稱。它將顯示在頁首與頁尾。
+    track_quantity: 追蹤數量
+    transaction_id_help: 這是在第三方付款閘道中建立的交易 ID。
+    true_label: 'TRUE'
+    type_to_search_customers: 輸入以搜尋顧客
+    type_to_search_products: 輸入以搜尋商品
+    unit_system_help: 這將作為您商店的預設單位制。您可以針對個別商品進行覆寫。
+    unit_systems:
+      imperial_system: 英制
+      metric: 公制
+      metric_system: 公制
+    unprocessable_entity: 無法處理的請求
+    unprocessable_entity_message: 無法處理您的請求。請檢查表單是否有錯誤後再試一次。
+    update_address: 更新地址
+    update_billing_address: 更新帳單地址
+    update_contact_information: 更新聯絡資訊
+    update_shipping_address: 更新運送地址
+    use_shipping_address: 使用運送地址
+    vendors: 賣家
+    view_full_size: 檢視完整大小
+    view_store: 檢視商店
+    visits: 造訪次數
+    weight_unit_help: 這將作為您商店的預設重量單位。您可以針對個別商品進行覆寫。
+    weight_units:
+      gram: 公克（g）
+      kilogram: 公斤（kg）
+      ounce: 盎司（oz）
+      pound: 磅（lb）
+    accepts_email_marketing: 接受電子郵件行銷
+    add_customers: 新增顧客
+    add_products: 新增商品
+    address_not_owned_by_user: 指定的地址不屬於此使用者。
+    adjustments_deleted: 調整已刪除
+    admin_locale: 管理介面語言
+    all_products: 所有商品
+    allowed_origin: 允許的來源
+    allowed_origins: 允許的來源
+    analytics: 分析
+    api_key: API 金鑰
+    api_key_no_current_key: 沒有任何 API 金鑰對此請求進行驗證
+    api_key_scopes_immutable: 在金鑰建立後無法變更；請建立一把含有所需範圍的新金鑰並撤銷此金鑰
+    api_keys: API 金鑰
+    apply: 套用
+    apply_only_on_full_priced_items: 僅套用於全價商品
+    apply_store_credit: 套用商店點數
+    assets: 媒體
+    attachments: 附件
+    author: 作者
+    balance: 餘額
+    barcode: 條碼
+    brand: 品牌
+    cannot_be_destroyed: 無法刪除訂單。
+    cannot_empty: 無法清空訂單。
+    cart_already_updated: 購物車已更新。
+    cart_line_item:
+      discontinued: "%{li_name} 已下架，因此被移除"
+      out_of_stock: "%{li_name} 已售完，因此被移除"
+    change: 變更
+    channels: 銷售通路
+    checkout_requirements:
+      email_required: 電子郵件地址為必填
+      line_items_required: 請至少在購物車中加入一項商品
+      payment_required: 請新增付款方式
+      ship_address_required: 運送地址為必填
+      shipping_method_required: 請為所有貨件選擇運送方式
+    clear: 清除
+    clear_all: 全部清除
+    closed: 已關閉
+    color_code: 顏色代碼
+    colors: 顏色
+    compare_at_amount: 比較金額
+    contact: 聯絡
+    contact_phone: 聯絡電話
+    content: 內容
+    copy: 複製
+    copy_link: 複製連結
+    coupon_code_used: 您輸入的優惠代碼已被使用過。請再試一次。
+    coupon_codes: 優惠代碼
+    create_new: 建立新項目
+    credit_allowed: 允許的點數
+    currencies: 貨幣
+    currency_not_supported_by_store: 不被此商店支援
+    current_password: 目前的密碼
+    customer_group: 顧客群組
+    customer_groups: 顧客群組
+    customer_mailer:
+      password_reset_email:
+        action: 重設密碼
+        expiry_notice: 此重設密碼連結將很快失效。若您並未提出此要求，則無需採取任何行動。
+        greeting: 您好 %{name}，
+        ignore_notice: 若您並未要求重設密碼，可放心忽略此電子郵件。您的密碼不會被變更。
+        instructions: 我們收到了重設您密碼的要求。請點選下方按鈕設定新密碼。
+    customers: 顧客
+    default_billing_address: 預設帳單地址
+    default_country: 預設國家
+    default_locale: 預設語言
+    default_shipping_address: 預設運送地址
+    default_stock_location_name: 商店地點
+    default_wishlist_name: 願望清單
+    developers: 開發者
+    digital:
+      digital_delivery: 數位交付
+    digital_assets: 數位資產
+    discount: 折扣
+    discounts: 折扣
+    display_delivery_range: "%{delivery_range} 個工作天內送達"
+    display_on: 顯示於
+    domain: 網域
+    done: 完成
+    download: 下載
+    draft: 草稿
+    duplicate: 複製
+    duplicating: 複製中
+    email_marketing: 電子郵件行銷
+    emails: 電子郵件
+    enter: 輸入
+    error_user_does_not_have_any_store_credits: 使用者沒有任何可用的商店點數
+    estimated_transit_business_days: 預估運送工作天數
+    existing_address: 現有地址
+    expired: 已過期
+    expires_at: 到期時間
+    export: 匯出
+    export_mailer:
+      export_done:
+        message: 做得好，您的匯出已就緒！請使用下方連結下載。
+        subject: 您的匯出 %{export_number} 已成功處理！
+      greeting: 您好 %{user_name}，
+      thanks: 謝謝您，
+    facebook: Facebook
+    featured_image: 精選圖片
+    field: 欄位
+    filled: 已填滿
+    filterable: 可篩選
+    fonts: 字型
+    footer: 頁尾
+    forbidden: 存取遭拒
+    free: 免費
+    from: 從
+    gift_card: 禮品卡
+    gift_card_already_redeemed: 此禮品卡已被兌換。
+    gift_card_applied: 禮品卡已成功套用至您的訂單！
+    gift_card_batch: 禮品卡批次
+    gift_card_customer_not_logged_in: 訪客無法套用禮品卡。
+    gift_card_expired: 此禮品卡已過期。
+    gift_card_mismatched_currency: 禮品卡無法以目前的貨幣套用。
+    gift_card_mismatched_customer: 此禮品卡已與其他使用者建立關聯。
+    gift_card_not_found: 找不到此禮品卡。
+    gift_card_removed: 禮品卡已成功從您的訂單中移除
+    gift_card_using_store_credit_error: 套用商店點數後即無法再套用禮品卡。
+    gift_cards: 禮品卡
+    hide: 隱藏
+    idempotency_key_reused: 此 Idempotency-Key 已搭配不同的請求參數使用過。
+    immediately: 立即
+    import: 匯入
+    instagram: Instagram
+    integrations: 整合
+    internal_note: 內部備註
+    internationalization: 國際化
+    invitation_accepted: 邀請已接受！
+    invitation_mailer:
+      greeting: 您好 %{user_name}，
+      invitation_accepted:
+        body: "%{invitee_name} 已接受您加入 %{resource_name} 的邀請"
+        subject: "%{invitee_name} 已接受您加入 %{resource_name} 的邀請"
+      invitation_email:
+        body: "%{inviter_name} 已邀請您加入 %{resource_name}"
+        link_description: 若要接受此邀請，請點選下方連結：
+        subject: 加入 %{resource_name} 的邀請
+      thanks: 謝謝您，
+    invitations: 邀請
+    invited_by: 邀請者
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: 金鑰
+    kind: 類型
+    label: 標籤
+    language: 語言
+    line_item: 明細項目
+    line_items: 明細項目
+    link: 連結
+    live: 上線中
+    locale: 語言
+    locale_not_supported_by_store: 不被此商店支援
+    logo: 標誌
+    mailer_logo: 郵件標誌（僅限 JPG 或 PNG 圖片）
+    make_active_at: 啟用時間
+    manual: 手動
+    market: 市場
+    market_ids: 市場
+    markets: 市場
+    master: 主要
+    max: 最大
+    max_quantity: 最大數量
+    me_no_current_user: 沒有任何管理員使用者對此請求進行驗證
+    media: 媒體
+    metafield_definitions: 中繼欄位定義
+    metafields: 中繼欄位
+    min: 最小
+    min_quantity: 最小數量
+    move: 移動
+    navigation: 導覽
+    never: 永不
+    new_address: 新地址
+    new_price_list: 新增價目表
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: 您好，
+        ignore_disclaimer: 若您並未提出此要求，請忽略此電子郵件。
+        instructions: 請點選下方按鈕以驗證您的電子郵件地址。
+        message_copy_link: 若按鈕無法運作，請複製並貼上以下連結至您的瀏覽器：
+        store_team: "%{store_name} 團隊"
+        subject: 驗證您的電子郵件地址
+        thanks: 謝謝您
+        verify_email_address_link: 驗證電子郵件地址
+    newsletter_subscribers: 電子報訂閱者
+    no_cc_type: 不適用
+    no_report_data: 無報表資料
+    only_active_products_can_be_added_to_cart: 草稿與已封存的商品無法加入購物車，請先將商品標示為啟用。
+    option_name: 選項名稱
+    order_routing:
+      strategies:
+        legacy: 舊版
+        rules: 規則（依序）
+    origin: 來源
+    other: 其他
+    outstanding_balance: 未付餘額
+    page: 頁面
+    pages: 頁面
+    payment_source: 付款來源
+    payment_total: 付款總額
+    permissions: 權限
+    policies: 政策
+    preview: 預覽
+    price_lists: 價目表
+    price_rules:
+      customer_group_rule:
+        description: 將定價套用至特定顧客群組
+    pricing: 定價
+    privacy_policy: 隱私權政策
+    processing: 處理中
+    product_name: 商品名稱
+    product_translations: 商品翻譯
+    products_cannot_be_shipped: 我們目前無法將 %{product_names} 運送至您所在的地點。請變更您的運送地址，或從購物車中移除 %{product_names}。
+    promotion_already_used: 您無法刪除已套用的促銷活動
+    published_at: 發布時間
+    query: 查詢
+    refund_amount: 退款金額
+    remove_gift_card_on_completed_order_error: 訂單成立後即無法移除禮品卡
+    report_mailer:
+      greeting: 您好 %{user_name}，
+      report_done:
+        message: 請使用下方連結下載。
+        subject: 您的報表 %{report_name} 已就緒
+      thanks: 謝謝您，
+    report_names:
+      products_performance: 商品績效
+      sales_total: 銷售總額
+    resource: 資源
+    returns_policy: 退貨政策
+    row: 列
+    sale: 特價
+    scopes: 範圍
+    search_by: 搜尋依據：
+    security: 安全性
+    seed:
+      shipping:
+        categories:
+          default: 預設
+          digital: 數位
+    send_consumer_transactional_emails: 傳送顧客交易電子郵件
+    seo: SEO
+    shipping_policy: 運送政策
+    shipping_zone: 運送區域
+    site_name: 網站名稱
+    size: 尺寸
+    social: 社群
+    sort_by: 排序依據
+    square_image: 方形圖片
+    starts_at: 開始時間
+    state_changes: 狀態變更
+    stock_items: 庫存項目
+    store_credit_events: 商店點數事件
+    store_name: 商店名稱
+    subscribed: 已訂閱
+    support: 支援
+    supported_locales: 支援的語言
+    tax_inclusive: 含稅
+    taxes: 稅金
+    taxonomy_collections_name: 系列
+    terms_of_service: 服務條款
+    theme: 佈景主題
+    themes: 佈景主題
+    timezone: 時區
+    title: 標題
+    to: 至
+    translations: 翻譯
+    twitter: Twitter
+    unit: 單位
+    unit_system: 單位制
+    unlimited: 無限制
+    updated_at: 更新時間
+    user_ids: 使用者
+    vendor: 供應商
+    verified: 已驗證
+    verified_at: 驗證時間
+    view: 檢視
+    visibility: 可見度
+    webhook_endpoints: Webhook 端點
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: 停用時間
+        heading: Webhook 端點已停用
+        instructions: 請檢查端點 URL 與服務，然後於「設定 → 開發者 → Webhook」中重新啟用。
+        message: Webhook 端點「%{endpoint_name}」在多次傳送失敗後已被自動停用。
+        name_label: 名稱
+        reason_label: 原因
+        subject: Webhook 端點已停用：%{endpoint_name}
+        url_label: URL
+    webhooks: Webhook
+    weight_unit: 重量單位
+    wishlist: 願望清單
+    zipcode_required: 需要郵遞區號
+    zone_ids: 區域
+    api:
+      cannot_delete: "%{model} 無法刪除"
+      current_password_invalid: 目前的密碼無效或未提供
+      gateway_error: 付款閘道發生問題：%{text}
+      invalid_api_key: 指定的 API 金鑰 (%{key}) 無效。
+      invalid_resource: 資源無效。請修正錯誤後再試一次。
+      invalid_taxonomy_id: 分類法 ID 無效。
+      must_specify_api_key: 您必須指定 API 金鑰。
+      negative_quantity: 數量為負數
+      newsletter_verification_token_invalid: 電子報驗證權杖無效或已過期。
+      order:
+        could_not_transition: 訂單無法轉換狀態。請修正錯誤後再試一次。
+        insufficient_quantity: 您購物車中的某項商品已無法取得。
+        invalid_shipping_method: 指定的運送方式無效。
+      password_reset_requested: 若該電子郵件有對應的帳號，重設密碼的說明已寄出。
+      password_reset_token_invalid: 重設密碼權杖無效或已過期。
+      payment:
+        credit_over_limit: 此筆付款最多只能退款 %{limit}。請指定小於或等於此數值的金額。
+        update_forbidden: 此筆付款因狀態為 %{state} 而無法更新。
+      record_not_found: 找不到 %{model}
+      redirect_url_not_allowed: 此重新導向 URL 並非來自此商店允許的來源。
+      resource_not_found: 找不到您所尋找的資源。
+      shipment:
+        cannot_ready: 無法將貨件設為就緒。
+      shipment_transfer_errors_occurred: 嘗試執行此動作時發生下列錯誤：
+      shipment_transfer_success: 款式已成功轉移
+      stock_location_required: 必須提供 stock_location_id 參數才能擷取庫存異動。
+      unauthorized: 您無權執行該動作。
+      v2:
+        cart:
+          no_coupon_code: 未提供優惠代碼，且該訂單未套用任何優惠代碼促銷
+          wrong_quantity: 數量必須大於 0
+        digitals:
+          missing_file: 缺少數位項目：附件
+          unauthorized: 發生錯誤，您無權存取此資產
+        gift_card:
+          amount_not_valid: 禮品卡金額無效
+          not_found: 找不到禮品卡
+        metadata:
+          invalid_params: 公開與私人中繼資料參數應為物件
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: 無法刪除此願望清單。
+          wrong_quantity: 數量必須大於 0
+      v3:
+        payments:
+          method_unavailable: 此付款方式不適用於此訂單。
+          session_required: 此付款方式需要付款工作階段。請改用付款工作階段端點。
+      wrong_shipment_target: 目標貨件與原始貨件相同
+  action_text:
+    video_embed:
+      not_found: 無法使用提供的 URL 嵌入影片
+  views:
+    pagination:
+      truncate: 省略

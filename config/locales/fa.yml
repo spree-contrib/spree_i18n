@@ -1,17 +1,20 @@
+---
 fa:
   Bazaar: بازار
   activerecord:
     attributes:
       spree/address:
-        address1: "آدرس"
-        address2: "ادامه آدرس"
-        city: "شهر"
-        country: "کشور"
-        firstname: "نام"
-        lastname: "نام‌خانوادگی"
-        phone: "تلفن"
-        state: "استان"
-        zipcode: "کد پستی"
+        address1: آدرس
+        address2: ادامه آدرس
+        city: شهر
+        country: کشور
+        firstname: نام
+        lastname: نام‌خانوادگی
+        phone: تلفن
+        state: استان
+        zipcode: کد پستی
+        company: شرکت
+        label: نام آدرس
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -22,24 +25,26 @@ fa:
         iso: ISO
         iso3: ISO3
         iso_name: ISO Name
-        name: "نام"
+        name: نام
         numcode: ISO Code
       spree/credit_card:
         base:
-        cc_type: "نوع"
-        month: "ماه"
+        cc_type: نوع
+        month: ماه
         name:
-        number: "عدد"
+        number: عدد
         verification_value:
-        year: "سال"
+        year: سال
       spree/inventory_unit:
-        state: "استان"
+        state: استان
       spree/line_item:
-        price: "قیمت"
-        quantity: "مقدار"
+        price: قیمت
+        quantity: مقدار
       spree/option_type:
-        name: "نام"
-        presentation: "نمایش"
+        name: نام
+        presentation: نمایش
+        filterable: قابل فیلتر
+        kind: نوع
       spree/order:
         checkout_complete:
         completed_at: پایان یافته در
@@ -55,7 +60,8 @@ fa:
         state: وضعیت
         total: مجموع
         considered_risky: ریسکی
-
+        internal_note: یادداشت داخلی
+        item_count: اقلام
       spree/order/bill_address:
         address1:
         city:
@@ -74,6 +80,7 @@ fa:
         zipcode:
       spree/payment:
         amount:
+        number: شماره
       spree/payment_method:
         name:
       spree/product:
@@ -86,30 +93,37 @@ fa:
         on_hand: On Hand
         shipping_category: Shipping Category
         tax_category: Tax Category
+        discontinue_on: توقف عرضه در
+        less_than: کمتر از
+        make_active_at: فعال‌سازی در
+        more_than: بیشتر از
       spree/promotion:
         advertise:
         code: کد
         description:
         event_name:
         expires_at:
-        name: "نام"
-        path: "مسیر"
+        name: نام
+        path: مسیر
         starts_at:
         usage_limit:
+        generate_code: تولید کد تخفیف
+        promotion_category: دسته‌بندی تخفیف
       spree/promotion_category:
         name: نام
+        code: کد
       spree/property:
-        name: "نام"
-        presentation: "نمایش"
+        name: نام
+        presentation: نمایش
       spree/prototype:
-        name: "نام"
+        name: نام
       spree/return_authorization:
         amount: مقدار
       spree/role:
-        name: "نام"
+        name: نام
       spree/state:
         abbr:
-        name: "نام"
+        name: نام
       spree/state_change:
         state_changes:
         state_from:
@@ -125,9 +139,19 @@ fa:
         name:
         seo_title:
         url:
+        address: آدرس
+        contact_phone: تلفن تماس
+        preferred_digital_asset_authorized_clicks: محدودیت تعداد دانلود
+        preferred_digital_asset_authorized_days: محدودیت روزهای دانلود
+        preferred_limit_digital_download_count: محدود کردن تعداد دانلود لینک‌های دیجیتال
+        preferred_limit_digital_download_days: محدود کردن روزهای دانلود لینک‌های دیجیتال
+        seo_robots: ربات‌های SEO
+        storefront_custom_code_body_end: کد سفارشی پیش از بسته شدن تگ body
+        storefront_custom_code_body_start: کد سفارشی پس از باز شدن تگ body
+        storefront_custom_code_head: کد سفارشی در head صفحه
       spree/tax_category:
-        description: "توضیحات"
-        name: "نام"
+        description: توضیحات
+        name: نام
       spree/tax_rate:
         amount:
         included_in_price:
@@ -136,12 +160,14 @@ fa:
         name:
         permalink:
         position:
+        sort_order: ترتیب نمایش
       spree/taxonomy:
-        name: "نام"
+        name: نام
       spree/user:
-        email: "ایمیل"
-        password: "رمز‌عبور"
-        password_confirmation: "تایید رمز‌عبور"
+        email: ایمیل
+        password: رمز‌عبور
+        password_confirmation: تایید رمز‌عبور
+        avatar: تصویر پروفایل
       spree/variant:
         cost_currency:
         cost_price: Cost Price
@@ -152,8 +178,56 @@ fa:
         weight: وزن
         width: عرض
       spree/zone:
-        description: "توضیحات"
-        name: "نام"
+        description: توضیحات
+        name: نام
+      spree/customer_group:
+        description: توضیحات
+        name: نام
+      spree/customer_return:
+        stock_location_id: انبار
+      spree/gift_card:
+        amount_used: مبلغ استفاده‌شده
+        expires_at: تاریخ انقضا
+      spree/import:
+        preferred_delimiter: جداکننده
+      spree/import_mapping:
+        file_column: ستون فایل
+        schema_field: فیلد طرح‌واره
+      spree/import_row:
+        row_number: شماره
+      spree/invitation:
+        inviter: دعوت‌کننده
+      spree/metafield_definition:
+        namespace: فضای نام
+      spree/option_value:
+        color_code: کد رنگ
+        image: تصویر نمونه رنگ
+      spree/page_link:
+        open_in_new_tab: باز کردن در زبانه جدید
+      spree/policy:
+        body: متن
+        owner: خط‌مشی برای
+      spree/price_list:
+        description: توضیحات
+        ends_at: پایان در
+        match_policy: خط‌مشی تطبیق
+        name: نام
+        priority: اولویت
+        starts_at: شروع در
+        status: وضعیت
+      spree/price_rule:
+        priority: اولویت
+        type: نوع
+      spree/shipment:
+        number: شماره
+      spree/store_credit:
+        amount_used: مبلغ استفاده‌شده
+      spree/store_credit_category:
+        name: نام
+      user:
+        current_sign_in: ورود فعلی در
+        last_sign_in: آخرین ورود در
+        sign_in_count: تعداد ورودها
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -200,21 +274,134 @@ fa:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: نمی‌توان تنها فروشگاه موجود را حذف کرد.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: باید یک مبدأ (طرح و میزبان) بدون مسیر، پرس‌وجو یا قطعه باشد
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: نمی‌توان کارت هدیه استفاده‌شده را حذف کرد
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: باید موجود باشد
+              not_allowed_content_type: نوع محتوای مجاز ندارد
+        spree/import:
+          attributes:
+            attachment:
+              content_type: نوع محتوای مجاز ندارد
+            type:
+              inclusion: در فهرست انواع مجاز قرار ندارد
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: به کاربر دیگری تعلق دارد
+              deprecated_in_completed_order: در سفارش تکمیل‌شده منسوخ شده است
+            ship_address_id:
+              belongs_to_other_user: به کاربر دیگری تعلق دارد
+              deprecated_in_completed_order: در سفارش تکمیل‌شده منسوخ شده است
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: نمی‌توان بازار پیش‌فرض را حذف کرد.
+              cannot_destroy_last_market: نمی‌توان تنها بازار موجود را حذف کرد.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: قبلاً به بازار دیگری در این فروشگاه اختصاص داده شده است
+              not_in_shipping_zone: تحت پوشش هیچ منطقه ارسالی نیست. لطفاً ابتدا یک منطقه ارسال تنظیم کنید.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: از حداکثر مبلغ مجاز %{max_amount} بیشتر است
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: باید پس از زمان شروع باشد
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: نمی‌توان محصولاتی را که به سفارش‌های ثبت‌شده افزوده شده‌اند حذف کرد. در چنین مواردی، لطفاً عرضه آن‌ها را متوقف کنید.
+            discontinue_on:
+              invalid_date_range: باید پس از تاریخ در دسترس بودن باشد
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: باید پس از تاریخ انتشار باشد
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: باید پس از تاریخ شروع باشد
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: باید حداقل یک دسته‌بندی ارسال انتخاب کنید
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: از مجموع اعتبارها بیشتر است.
+            amount_used:
+              cannot_be_greater_than_amount: نمی‌تواند بیشتر از مبلغ باشد.
+              greater_than_zero_restrict_delete: بیشتر از صفر است. نمی‌توان اعتبار فروشگاه را حذف کرد.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: پس از استفاده دسته‌بندی‌های اعتبار فروشگاه در اعتبار فروشگاه، نمی‌توان آن‌ها را حذف کرد.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: نوع محتوای مجاز ندارد
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: به کاربر دیگری تعلق دارد
+              deprecated_in_completed_order: در سفارش تکمیل‌شده منسوخ شده است
+            ship_address_id:
+              belongs_to_other_user: به کاربر دیگری تعلق دارد
+              deprecated_in_completed_order: در سفارش تکمیل‌شده منسوخ شده است
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: نمی‌توان واریانت‌هایی را که به سفارش‌های ثبت‌شده افزوده شده‌اند حذف کرد. در چنین مواردی، لطفاً عرضه آن‌ها را متوقف کنید.
+              must_supply_price_for_variant_or_master: باید برای واریانت قیمت یا برای محصول قیمت اصلی ارائه شود.
+              no_master_variant_found_to_infer_price: هیچ واریانت اصلی برای استنتاج قیمت یافت نشد
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: نباید به یک آدرس شبکه داخلی یا خصوصی اشاره کند
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: این کالا را قبلاً به فهرست علاقه‌مندی‌های خود افزوده‌اید
+      messages:
+        blank: نمی‌تواند خالی باشد
     models:
       spree/address:
-        one: "آدرس"
-        other: "آدرس‌ها"
+        one: آدرس
+        other: آدرس‌ها
       spree/country:
-        one: "کشور"
-        other: "کشورها"
+        one: کشور
+        other: کشورها
       spree/credit_card:
-        one: "کارت اعتباری"
-        other: "کارت‌های اعتباری"
+        one: کارت اعتباری
+        other: کارت‌های اعتباری
       spree/customer_return:
+        one: مرجوعی مشتری
+        other: مرجوعی‌های مشتری
       spree/inventory_unit:
+        one: واحد موجودی
+        other: واحدهای موجودی
       spree/line_item:
-      spree/option_type: نوع گزینه
+        one: قلم سفارش
+        other: اقلام سفارش
+      spree/option_type:
+        one: نوع گزینه
+        other: انواع گزینه
       spree/option_value:
+        one: مقدار گزینه
+        other: مقادیر گزینه
       spree/order:
         one: سفارش
         other: سفارشات
@@ -222,55 +409,155 @@ fa:
         one: Payment
         other: Payments
       spree/payment_method:
+        one: روش پرداخت
+        other: روش‌های پرداخت
       spree/product:
-        one: "محصول"
-        other: "محصول‌ها"
-      spree/promotion: فروش ویژه
-      spree/promotion_category: دسته بندی فروش ویژه
+        one: محصول
+        other: محصول‌ها
+      spree/promotion:
+        one: فروش ویژه
+        other: تخفیف‌ها
+      spree/promotion_category:
+        one: دسته بندی فروش ویژه
+        other: دسته‌بندی‌های تخفیف
       spree/property:
-        one: "خصوصیت"
-        other: "خصوصیات"
+        one: خصوصیت
+        other: خصوصیات
       spree/prototype:
         one: نمونه آزمایشی
         other: نمنونه های آزمایشی
-      spree/refund_reason: دلیل استرداد
-      spree/reimbursement: بازپرداخت
-      spree/reimbursement_type: نوع بازپرداخت
+      spree/refund_reason:
+        one: دلیل استرداد
+        other: دلایل بازپرداخت
+      spree/reimbursement:
+        one: بازپرداخت
+        other: جبران خسارت‌ها
+      spree/reimbursement_type:
+        one: نوع بازپرداخت
+        other: انواع جبران خسارت
       reimbursement_perform_failed:
       reimbursement_status: وضعیت بازپرداخت
       reimbursement_type: نوع بازپرداخت
       reimbursement_type_override:
       reimbursement_types: انواع بازپرداخت
       reimbursements: بازپرداخت‌ها
-      spree/return_authorization: مجوز بازگشت
-      spree/return_authorization_reason: دلیل مجوز بازگشت
-      spree/role: نقش
-      spree/shipment: نحوه ارسال
+      spree/return_authorization:
+        one: مجوز بازگشت
+        other: مجوزهای مرجوعی
+      spree/return_authorization_reason:
+        one: دلیل مجوز بازگشت
+        other: دلایل مجوز مرجوعی
+      spree/role:
+        one: نقش
+        other: نقش‌ها
+      spree/shipment:
+        one: نحوه ارسال
+        other: مرسوله‌ها
       spree/shipping_category:
         one: دسته‌بندی حمل و نقل
         other: دسته‌بندی حمل نقل
       spree/shipping_method:
+        one: روش ارسال
+        other: روش‌های ارسال
       spree/state:
         one: State
         other: States
       spree/stock_location:
+        one: انبار
+        other: انبارها
       spree/stock_transfer:
+        one: انتقال موجودی
+        other: انتقال‌های موجودی
       spree/tax_category:
+        one: دسته‌بندی مالیاتی
+        other: دسته‌بندی‌های مالیاتی
       spree/tax_rate:
+        one: نرخ مالیات
+        other: نرخ‌های مالیات
       spree/taxon:
+        one: دسته‌بندی
+        other: دسته‌بندی‌ها
       spree/taxonomy:
         one: Taxonomy
         other: Taxonomies
       spree/tracker:
+        one: ردیاب
+        other: ردیاب‌ها
       spree/user:
-        one: "کاربر"
-        other: "کاربرها"
+        one: کاربر
+        other: کاربرها
       spree/variant:
         one: Variant
         other: Variants
       spree/zone:
         one: Zone
         other: Zones
+      spree/classification:
+        one: طبقه‌بندی
+        other: طبقه‌بندی‌ها
+      spree/cms_page:
+        one: صفحه
+        other: صفحات
+      spree/cms_section:
+        one: بخش
+        other: بخش‌ها
+      spree/customer_group:
+        one: گروه مشتری
+        other: گروه‌های مشتری
+      spree/customer_group_user:
+        one: کاربر گروه مشتری
+        other: کاربران گروه مشتری
+      spree/digital:
+        one: دارایی دیجیتال
+        other: دارایی‌های دیجیتال
+      spree/export:
+        one: خروجی
+        other: خروجی‌ها
+      spree/integration:
+        one: یکپارچه‌سازی
+        other: یکپارچه‌سازی‌ها
+      spree/page:
+        one: صفحه
+        other: صفحات
+      spree/page_block:
+        one: بلوک صفحه
+        other: بلوک‌های صفحه
+      spree/page_link:
+        one: پیوند صفحه
+        other: پیوندهای صفحه
+      spree/page_section:
+        one: بخش صفحه
+        other: بخش‌های صفحه
+      spree/price:
+        one: قیمت
+        other: قیمت‌ها
+      spree/price_list:
+        one: فهرست قیمت
+        other: فهرست‌های قیمت
+      spree/price_rule:
+        one: قاعده قیمت
+        other: قواعد قیمت
+      spree/state_change:
+        one: تغییر وضعیت
+        other: تغییرات وضعیت
+      spree/stock_item:
+        one: قلم موجودی
+        other: اقلام موجودی
+      spree/stock_movement:
+        one: جابه‌جایی موجودی
+        other: جابه‌جایی‌های موجودی
+      spree/store:
+        one: فروشگاه
+        other: فروشگاه‌ها
+      spree/store_credit:
+        one: اعتبار فروشگاه
+        other: اعتبارهای فروشگاه
+      spree/store_credit_category:
+        one: دسته‌بندی اعتبار فروشگاه
+        other: دسته‌بندی‌های اعتبار فروشگاه
+      spree/theme:
+        one: قالب
+        other: قالب‌ها
   devise:
     confirmations:
       confirmed:
@@ -283,6 +570,7 @@ fa:
       timeout:
       unauthenticated:
       unconfirmed:
+      too_many_attempts: تلاش‌های بیش از حد. لطفاً لحظه‌ای صبر کنید و دوباره تلاش کنید.
     mailer:
       confirmation_instructions:
         subject:
@@ -315,17 +603,20 @@ fa:
       not_found:
       not_locked:
       not_saved:
+        one: '۱ خطا مانع از ذخیره این %{resource} شد:'
+        other: "%{count} خطا مانع از ذخیره این %{resource} شد:"
+      not_a_number: یک عدد نیست
   spree:
     quick_search: جستوجو سریع . . .
     filter: فیلتر
-    abbreviation: "مخفف"
+    abbreviation: مخفف
     accept:
     acceptance_errors:
     acceptance_status:
     accepted:
-    account: "حساب"
-    account_updated: "حساب شما بروزرسانی شد!"
-    action: "حرکت"
+    account: حساب
+    account_updated: حساب شما بروزرسانی شد!
+    action: حرکت
     actions:
       cancel: لغو
       continue:
@@ -337,6 +628,15 @@ fa:
       new: جدید
       save:
       update: بروز رسانی
+      close: بستن
+      connect: اتصال
+      discard: نادیده گرفتن
+      open: باز کردن
+      reject: رد کردن
+      remove: حذف
+      resend: ارسال مجدد
+      select_file: انتخاب فایل
+      send_invitation: ارسال دعوت‌نامه
     activate: Activate
     active: فعال
     add: افزودن
@@ -378,6 +678,484 @@ fa:
         option_types: انواع اختیارات
         taxonomies: رده بندی
         taxons: گونه
+      allowed_origins:
+        origin_help: نشانی کامل مبدأ فروشگاه خود را وارد کنید (مثلاً https://myshop.com). مسیر یا رشته‌ی پرس‌وجو را شامل نکنید.
+        origin_settings: تنظیمات مبدأ
+      amount_spent: مبلغ خرج‌شده
+      api_keys:
+        example_request: نمونه درخواست
+        key_revoked_message: این کلید API ابطال شده است و دیگر قابل استفاده نیست.
+        key_type_descriptions:
+          publishable: برای استفاده در کد سمت کاربر مانند اپلیکیشن‌های موبایل یا مرورگرها ایمن است.
+          secret: این کلید را ایمن نگه دارید و فقط در سمت سرور استفاده کنید. هرگز آن را به‌صورت عمومی فاش نکنید.
+        key_types:
+          publishable: قابل انتشار
+          secret: محرمانه
+        last_used_at: آخرین استفاده
+        list: کلیدهای API
+        name_placeholder: مثلاً اپلیکیشن موبایل تولید
+        revoke: ابطال
+        revoke_confirmation: آیا مطمئن هستید که می‌خواهید این کلید API را ابطال کنید؟ این عمل قابل بازگشت نیست.
+        revoked: کلید API ابطال شد
+        revoked_at: ابطال‌شده در
+        revoked_by: ابطال‌شده توسط
+        scopes: دسترسی‌ها
+        scopes_description: برای کلیدهای محرمانه الزامی است. محدودترین مجموعه دسترسی موردنیاز یکپارچه‌سازی خود را انتخاب کنید.
+        scopes_immutable: دسترسی‌ها هنگام ایجاد کلید تثبیت می‌شوند. برای تغییر آن‌ها، کلید جدیدی با دسترسی‌های موردنیاز خود بسازید و این کلید را ابطال کنید.
+        secret_key_hidden: این کلید محرمانه قابل نمایش نیست. اگر آن را گم کرده‌اید، این کلید را ابطال کرده و کلید جدیدی بسازید.
+        statuses:
+          active: فعال
+          revoked: ابطال‌شده
+        token_warning: این کلید را به‌صورت ایمن ذخیره کنید. فقط همین یک بار نمایش داده می‌شود.
+        usage: استفاده
+        usage_instructions:
+          publishable: از این کلید برای درخواست‌های سمت کاربر استفاده کنید. می‌توان آن را با اطمینان در کد سمت کلاینت قرار داد.
+          secret: از این کلید فقط برای درخواست‌های سمت سرور استفاده کنید. آن را محرمانه نگه دارید و هرگز در کد سمت کلاینت فاش نکنید.
+      audit_log: گزارش حسابرسی
+      avg_order_value: میانگین ارزش سفارش
+      back_to_dashboard: بازگشت به داشبورد
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: آیا مطمئن هستید که می‌خواهید مشتریان انتخاب‌شده را از این گروه حذف کنید؟
+          title:
+            remove: حذف از گروه
+        price_list_products:
+          body:
+            remove: آیا مطمئن هستید که می‌خواهید محصولات انتخاب‌شده را از این فهرست قیمت حذف کنید؟ این کار قیمت‌های آن‌ها را نیز حذف می‌کند.
+          title:
+            remove: حذف از فهرست قیمت
+        products:
+          body:
+            add_tags: 'برچسب‌هایی را برای افزودن به محصولات انتخاب کنید:'
+            add_to_taxons: 'دسته‌بندی‌هایی را که محصولات باید به آن‌ها افزوده شوند انتخاب کنید:'
+            remove_from_taxons: 'دسته‌بندی‌هایی را که محصولات باید از آن‌ها حذف شوند انتخاب کنید:'
+            remove_tags: 'برچسب‌هایی را برای حذف از محصولات انتخاب کنید:'
+            set_active: فعال کردن محصولات آن‌ها را در ویترین فروشگاه در دسترس می‌کند.
+            set_archived: بایگانی کردن محصولات آن‌ها را از ویترین فروشگاه پنهان می‌کند.
+            set_draft: تبدیل محصولات به پیش‌نویس آن‌ها را از ویترین فروشگاه پنهان می‌کند.
+          title:
+            add_tags: افزودن برچسب
+            add_to_taxons: افزودن به دسته‌بندی‌ها
+            remove_from_taxons: حذف از دسته‌بندی‌ها
+            remove_tags: حذف برچسب
+            set_active: تنظیم به‌عنوان فعال
+            set_archived: تنظیم به‌عنوان بایگانی‌شده
+            set_draft: تنظیم به‌عنوان پیش‌نویس
+        users:
+          body:
+            add_tags: 'برچسب‌هایی را برای افزودن به مشتریان انتخاب کنید:'
+            remove_tags: 'برچسب‌هایی را برای حذف از مشتریان انتخاب کنید:'
+          title:
+            add_tags: افزودن برچسب
+            remove_tags: حذف برچسب
+      channels:
+        code_hint: یک شناسه‌ی کوتاه و پایدار (مثلاً «online»، «pos»، «wholesale»). توسط کلاینت‌های API از طریق هدر X-Spree-Channel و برای انتساب سفارش استفاده می‌شود.
+        default: کانال پیش‌فرض
+        default_hint: دقیقاً یک کانال در هر فروشگاه پیش‌فرض است. به‌عنوان جایگزین زمانی که کانالی انتخاب نشده و به‌عنوان مقصد انتشار خودکار محصولات جدید استفاده می‌شود.
+        order_routing_strategy: راهبرد مسیریابی سفارش
+        order_routing_strategy_hint: راهبرد مسیریابی سطح فروشگاه را برای سفارش‌های منتسب به این کانال بازنویسی می‌کند.
+        order_routing_strategy_inherit: ارث‌بری از فروشگاه
+      checkout_settings:
+        checkout_links:
+          description: پیوند به این صفحه‌ها در پاورقی تسویه‌حساب نمایش داده می‌شود.
+          label: پیوندهای تسویه‌حساب
+        checkout_message_description: در صفحه‌ی تسویه‌حساب در نوار کناری راست برای مشتریان شما قابل مشاهده است.
+        countries_managed_by_markets_html: کشورها و مناطق ارسال از طریق %{link} مدیریت می‌شوند.
+        guest_checkout:
+          description: به مشتریان اجازه دهید بدون ایجاد حساب کاربری تسویه‌حساب کنند.
+          label: اجازه تسویه‌حساب مهمان
+        special_instructions:
+          description: به مشتریان اجازه دهید دستورالعمل‌های ویژه‌ای به سفارش خود اضافه کنند.
+          label: نمایش فیلد دستورالعمل‌های ویژه
+      close_sidebar: بستن نوار کناری
+      copied: کپی شد!
+      copy_payment_link: کپی پیوند پرداخت
+      copy_to_clipboard: کپی در کلیپ‌بورد
+      coupon_codes:
+        unused: استفاده‌نشده
+        used: استفاده‌شده
+      created_at: ایجادشده در
+      dashboard:
+        getting_started:
+          description: هر آنچه برای شروع فروش باید راه‌اندازی کنید.
+        hi: سلام
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> از %{total} مرحله انجام شد"
+          title: پیشرفت کلی راه‌اندازی شما
+        top_products: محصولات برتر
+        view_report: مشاهده گزارش
+        whats_happening_on_html: این هم آنچه امروز در <strong>%{store_name}</strong> در حال رخ دادن است.
+      datetime_field_timezone_help: 'منطقه زمانی: %{zone}'
+      digital_shipment_fulfillment_note: این محموله پس از دانلود محصول دیجیتال توسط کاربر، انجام‌شده علامت‌گذاری می‌شود
+      display_on_options:
+        back_end: فقط در پنل مدیریت
+        both: در پنل مدیریت و ویترین فروشگاه
+        front_end: فقط در ویترین فروشگاه
+      documentation: مستندات
+      edit_billing_address: ویرایش نشانی صورت‌حساب
+      edit_contact_information: ویرایش اطلاعات تماس
+      edit_profile: ویرایش پروفایل
+      edit_shipping_address: ویرایش نشانی ارسال
+      edit_theme: ویرایش قالب
+      errors: خطاها
+      execution_time: زمان اجرا
+      expand_sidebar: گسترش نوار کناری
+      export_all: خروجی‌گیری از همه رکوردها (برای مجموعه‌داده‌های بزرگ ممکن است کند باشد)
+      export_coupons: خروجی‌گیری کدهای تخفیف به‌صورت فایل CSV
+      export_created: خروجی‌گیری شما آغاز شد. هنگامی که آماده شود، ایمیلی حاوی پیوند دانلود دریافت خواهید کرد!
+      export_only_filtered_records: خروجی‌گیری فقط از رکوردهای فیلترشده مطابق با معیارهای جستجو
+      export_report: خروجی‌گیری گزارش به‌صورت فایل CSV
+      filters: فیلترها
+      getting_started: شروع به کار
+      gift_card_batches:
+        codes_count: تعداد کدها
+        new_gift_card_batch: دسته کارت هدیه جدید
+        prefix: پیشوند
+      gift_cards:
+        active: فعال
+        all_statuses: همه وضعیت‌ها
+        code_help_text: اگر آن را خالی بگذارید، کد را برای شما تولید می‌کنیم
+        redeemed: استفاده‌شده
+        usage: استفاده
+      imports:
+        all_required_columns_mapped: آفرین، همه ستون‌های موردنیاز نگاشت شدند!
+        field_required: فیلد الزامی است
+        import_done: همه چیز انجام شد!
+        large_import_background_note: می‌توانید این صفحه را ببندید — وارد کردن در پس‌زمینه ادامه خواهد یافت.
+        large_import_message: این وارد کردن شامل %{count} ردیف است و برای نمایش تک‌به‌تک بسیار بزرگ است.
+        large_import_summary: "%{completed} تکمیل‌شده، %{failed} ناموفق"
+        mapping_required: این فیلد الزامی است
+        please_map_all_required_fields: برای ادامه لطفاً همه فیلدهای موردنیاز را نگاشت کنید.
+        waiting_for_file_to_be_processed: در انتظار پردازش فایل...
+      integrations:
+        invalid_integration_type: این یکپارچه‌سازی مجاز نیست
+        page_subtitle: فروشگاه خود را به سرویس‌های شخص ثالث متصل کنید تا تجربه‌ی مشتری را بهبود ببخشید.
+      json_preview:
+        no_api_response: هیچ پاسخ API برای این منبع یافت نشد
+      manage_markets: مدیریت بازارها
+      manage_properties: مدیریت ویژگی‌ها
+      manage_stock_locations: مدیریت مکان‌های انبار
+      manage_taxons: مدیریت دسته‌بندی‌ها
+      manage_zones: مدیریت مناطق
+      markets:
+        edit: ویرایش بازار
+        list: بازارها
+        new: بازار جدید
+        supported_locales_hint: فهرست کدهای زبان اضافی جداشده با کاما (مثلاً fr,de,es)
+      metafield_definitions:
+        edit_warning: پس از استفاده از تعریف، نمی‌توانید نوع منبع یا نوع متافیلد را تغییر دهید.
+        used_in: استفاده‌شده در
+      name: نام
+      navigation:
+        nested_under: زیرمجموعه‌ی
+      newsletter_subscribers:
+        all: همه
+        unverified: تأییدنشده
+        verified: تأییدشده
+      not_tracking_inventory: بدون ردیابی موجودی
+      notifications: اعلان‌ها
+      num_orders: تعداد سفارش‌ها
+      oauth_applications:
+        client_id: شناسه کلاینت
+        client_secret: رمز کلاینت
+        last_used: آخرین استفاده
+        list: کلیدهای API
+        never: هرگز
+        new: کلید API جدید
+        read_and_write: خواندن و نوشتن
+        read_only: فقط خواندنی
+        scopes: دسترسی‌ها
+      order:
+        events:
+          approve: تأیید
+          cancel: لغو
+          resend: ارسال مجدد
+          resume: از سرگیری
+      orders:
+        add_user_to_this_order: افزودن مشتری به این سفارش
+        all_orders: همه سفارش‌ها
+        canceled: لغوشده
+        fulfilled: انجام‌شده
+        no_email_present: لطفاً برای ارسال پیوند پرداخت یک نشانی ایمیل اضافه کنید
+        orders_to_fulfill: سفارش‌های در انتظار انجام
+        partially_refunded: بازپرداخت جزئی‌شده
+        payment_link_sent: پیوند پرداخت برای مشتری ارسال شد
+        provide_email: یک نشانی ایمیل وارد کنید
+        refunded: بازپرداخت‌شده
+        remove_user_from_this_order: حذف مشتری از این سفارش
+        unfulfilled: انجام‌نشده
+      page_builder:
+        background_color: رنگ پس‌زمینه
+        border_bottom_width: ضخامت کادر پایین
+        border_color: رنگ کادر
+        border_top_width: ضخامت کادر بالا
+        bottom_padding: حاشیه داخلی پایین
+        button_alignment: تراز دکمه
+        button_background_color: رنگ پس‌زمینه دکمه
+        button_style: سبک دکمه
+        button_text: متن دکمه
+        button_text_color: رنگ متن دکمه
+        category: دسته‌بندی
+        description: توضیحات
+        description_alignment: تراز توضیحات
+        desktop_image_alignment: تراز تصویر برای دسکتاپ
+        desktop_logo_height: ارتفاع لوگو (دسکتاپ)
+        heading: سرتیتر
+        heading_alignment: تراز سرتیتر
+        heading_size: اندازه سرتیتر
+        height: ارتفاع
+        image_click_hint: کلیک روی تصویر کاربر را به صفحه/نشانی انتخاب‌شده هدایت می‌کند
+        left_aligned: تراز چپ
+        logo_centered: لوگوی وسط‌چین
+        max_video_width_on_desktop: حداکثر عرض ویدیو در دسکتاپ
+        maximum_products_to_show: حداکثر محصولات برای نمایش
+        nav_centered: منوی وسط‌چین
+        not_set: تنظیم‌نشده
+        separated: جداشده
+        show_more_button: نمایش دکمه‌ی کاوش دسته‌بندی
+        show_taxon_image: نمایش تصویر دسته‌بندی
+        text_color: رنگ متن
+        title: عنوان
+        top_padding: حاشیه داخلی بالا
+        use_description_from_admin: استفاده از توضیحات بخش مدیریت
+        vertical_alignment: تراز عمودی
+        youtube_video_url: نشانی ویدیوی یوتیوب
+      personal_details: اطلاعات شخصی
+      price_lists:
+        activate: فعال‌سازی
+        activated: فهرست قیمت فعال شد
+        confirm_activate: آیا مطمئن هستید که می‌خواهید این فهرست قیمت را فعال کنید؟ این کار بلافاصله بر قیمت‌گذاری اثر می‌گذارد.
+        confirm_deactivate: آیا مطمئن هستید که می‌خواهید این فهرست قیمت را غیرفعال کنید؟
+        confirm_schedule: آیا مطمئن هستید که می‌خواهید این فهرست قیمت را زمان‌بندی کنید؟
+        confirm_unschedule: آیا مطمئن هستید که می‌خواهید زمان‌بندی این فهرست قیمت را لغو کنید؟
+        deactivate: غیرفعال‌سازی
+        deactivated: فهرست قیمت غیرفعال شد
+        schedule: زمان‌بندی
+        scheduled: فهرست قیمت زمان‌بندی شد
+        unschedule: لغو زمان‌بندی
+      product_translations:
+        coverage: پوشش ترجمه
+        locale: زبان
+        manage_markets: مدیریت بازارها
+        no_locales_description: برای شروع ترجمه‌ی محصولات خود، بازارهایی با زبان‌های اضافی راه‌اندازی کنید.
+        no_locales_title: هیچ زبان اضافی پیکربندی نشده است
+        progress: پیشرفت
+        total: مجموع
+        translated: ترجمه‌شده
+      products:
+        active: فعال
+        all_statuses: همه وضعیت‌ها
+        any_stock: هر موجودی
+        archived: بایگانی‌شده
+        by_status: بر اساس وضعیت
+        by_stock: بر اساس موجودی
+        deleted: حذف‌شده
+        draft: پیش‌نویس
+        help_bubble: محصولات پیش‌نویس برای خرید در دسترس نیستند. محصولات فعال منتشرشده‌اند.
+        in_stock: موجود
+        inventory:
+          barcode: بارکد (ISBN، UPC، GTIN و غیره)
+          sku: SKU (واحد نگه‌داری کالا)
+        out_of_stock: ناموجود
+        paused: متوقف‌شده
+        search_results:
+          no_products: هیچ محصولی مطابق با جستجوی شما پیدا نشد :(
+        seo:
+          placeholder: عنوان و توضیحاتی اضافه کنید تا ببینید این محصول چگونه ممکن است در فهرست نتایج موتور جستجو ظاهر شود
+        status_form:
+          status: محصولات پیش‌نویس برای خرید در دسترس نیستند. محصولات فعال منتشرشده‌اند.
+        status_options:
+          active: فعال
+          archived: بایگانی‌شده
+          draft: پیش‌نویس
+        stores:
+          choose_stores: انتخاب کنید که این محصول در کدام فروشگاه‌ها در دسترس باشد
+        variants:
+          option_types_link: برای افزودن انواع گزینه‌ی بیشتر لطفاً به <a href="%{link}">انواع گزینه</a> بروید
+      publishing:
+        caption_hidden_after: در %{date} حذف می‌شود
+        caption_live: هم‌اکنون برای مشتریان قابل مشاهده است
+        caption_not_available: پنهان — وضعیت محصول %{product_status} است
+        caption_scheduled: در %{date} منتشر می‌شود
+        caption_unpublished: در %{date} پنهان شد
+        caption_window: منتشرشده %{start} ← %{end}
+        empty: هنوز در هیچ کانال فروشی فهرست نشده است.
+        inactive_marker: غیرفعال
+        manage_cta: مدیریت
+        manage_description: انتخاب کنید کدام کانال‌های فروش این محصول را فهرست می‌کنند. خاموش کردن یک کانال آن را در همه‌جا از فهرست خارج می‌کند.
+        no_channels: هیچ کانال فروشی در دسترس نیست. یکی را در تنظیمات ← کانال‌های فروش ایجاد کنید.
+        published_at_label: انتشار از
+        status_hidden: پنهان
+        status_live: منتشرشده
+        status_not_available: در دسترس نیست
+        status_scheduled: زمان‌بندی‌شده
+        title: انتشار
+        unpublished_at_label: لغو انتشار در
+      recommended_size: اندازه پیشنهادی
+      report_created: گزارش شما در حال تولید است. هنگامی که آماده شود، ایمیلی حاوی پیوند دانلود دریافت خواهید کرد!
+      reset_digital_link_download_limits: بازنشانی محدودیت‌های دانلود
+      response_code: کد پاسخ
+      selected: انتخاب‌شده
+      send_payment_link: ارسال پیوند پرداخت
+      shipment:
+        please_provide_tracking_details: پیش از علامت‌گذاری محموله به‌عنوان ارسال‌شده، لطفاً جزئیات رهگیری را وارد کنید
+      shipment_transfer:
+        wrong_destination: مقصد نادرست
+      show_json: نمایش JSON
+      stock_transfers:
+        add_products_tip: ابتدا باید یک مکان مقصد انتخاب کنید
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> باقی‌مانده (<strong>%{total}</strong> مجموع)"
+      store_form:
+        company_field:
+          description: فیلد شرکت را در فرم نشانی در بخش حساب من و در مرحله‌ی نشانی تسویه‌حساب نمایش می‌دهد.
+          label: نمایش فیلد نشانی شرکت
+        customer_support_email_help: این ایمیل در بخش پاورقی برای بازدیدکنندگان فروشگاه شما قابل مشاهده است
+        new_order_notifications_email_help: اگر می‌خواهید هر بار که کسی سفارشی ثبت می‌کند یک اعلان ایمیلی دریافت کنید، لطفاً نشانی ایمیلی برای ارسال آن اعلان وارد کنید
+        send_consumer_transactional_emails_help: وقتی تیک خورده نباشد، ایمیل‌های تراکنشی مانند تأییدیه‌ی سفارش و اعلان‌های ارسال برای مشتریان ارسال نخواهند شد
+      store_setup_tasks:
+        add_billing_address: افزودن نشانی صورت‌حساب
+        add_products: افزودن محصولات
+        payment_methods:
+          copy: برای دریافت پرداخت‌ها، لطفاً حداقل یک ارائه‌دهنده پرداخت آنلاین راه‌اندازی کنید.
+          done: همه چیز آماده است! همیشه می‌توانید روش‌های پرداخت خود را در <a href="%{link}" data-turbo-frame="_top">این</a> صفحه مدیریت کنید.
+          setup: راه‌اندازی روش‌های پرداخت
+          title: لطفاً روش‌های پرداخت را برای فروشگاه خود راه‌اندازی کنید
+        set_customer_support_email: تنظیم ایمیل پشتیبانی مشتری
+        setup_taxes_collection: راه‌اندازی دریافت مالیات
+        taxes:
+          copy: برای دریافت مالیات، لطفاً نرخ‌های مالیاتی خود را راه‌اندازی کنید.
+          done: همه چیز آماده است! همیشه می‌توانید مالیات‌های خود را در صفحه‌ی <a href="%{link}" data-turbo-frame="_top">تنظیمات</a> مدیریت کنید.
+          setup: راه‌اندازی نرخ‌های مالیاتی
+      storefront: ویترین فروشگاه
+      successful: موفق
+      successfully_reset_digital_links_limit: محدودیت‌های دانلود بازنشانی شد
+      tables:
+        add_filter: افزودن فیلتر
+        add_or_group: افزودن گروه «یا»
+        apply: اعمال
+        apply_filters: اعمال فیلترها
+        ascending: صعودی
+        clear_all: پاک کردن همه
+        columns: ستون‌ها
+        descending: نزولی
+        enter_value: مقدار را وارد کنید...
+        filter_builder: سازنده فیلتر
+        filters: فیلترها
+        match: تطبیق
+        of_the_following: از موارد زیر
+        operators:
+          contains: شامل
+          does_not_contain: شامل نمی‌شود
+          ends_with: پایان می‌یابد با
+          equals: برابر است با
+          greater_than: بزرگ‌تر از
+          greater_than_or_equal: بزرگ‌تر یا مساوی
+          is_any_of: هر یک از
+          is_empty: خالی است
+          is_none_of: هیچ‌یک از
+          is_not_empty: خالی نیست
+          less_than: کوچک‌تر از
+          less_than_or_equal: کوچک‌تر یا مساوی
+          not_equals: برابر نیست با
+          starts_with: آغاز می‌شود با
+        order: ترتیب
+        reset_to_default: بازنشانی به پیش‌فرض
+        select_field: انتخاب فیلد...
+        sort_by: مرتب‌سازی بر اساس
+        visible_columns: ستون‌های قابل مشاهده
+      taxon_rules:
+        all_conditions: همه شرایط
+        any_condition: هر شرطی
+        available_on: در دسترس در
+        match_policies:
+          contains: شامل
+          does_not_contain: شامل نمی‌شود
+          is_equal_to: برابر است با
+          is_not_equal_to: برابر نیست با
+        on_sale: در حال فروش ویژه
+        products_must_match: 'محصولات باید مطابقت داشته باشند با:'
+        tag: برچسب محصول
+      taxon_type: نوع دسته‌بندی
+      taxon_types:
+        automatic: خودکار
+        automatic_info: در صورتی که محصولات با قوانینی که تنظیم می‌کنید مطابقت داشته باشند، به‌طور خودکار به این دسته‌بندی افزوده می‌شوند.
+        manual: دستی
+        manual_info: محصولات را به‌صورت دستی گزینش کنید. می‌توانید آن‌ها را به‌صورت دسته‌ای اضافه یا حذف کنید.
+      translations:
+        no_translations_configured: هیچ ترجمه‌ای پیکربندی نشده است. لطفاً برای استفاده از ترجمه‌ها بازارها را راه‌اندازی کنید.
+      upload_new_asset: بارگذاری رسانه جدید
+      user:
+        last_order_placed: آخرین سفارش ثبت‌شده
+        no_store_credit: مشتری هیچ اعتبار فروشگاهی در دسترس ندارد
+      users:
+        filters:
+          search_placeholder: جستجوی مشتریان بر اساس ایمیل یا نام
+      utilities:
+        preview: پیش‌نمایش
+      variants:
+        search_results:
+          no_variants: هیچ گونه‌ای مطابق با جستجوی شما پیدا نشد :(
+      variants_form:
+        add_option:
+          empty: گزینه‌هایی مانند اندازه یا رنگ اضافه کنید
+          not_empty: افزودن گزینه دیگر
+        compare_at_price_description: این قیمت برای نمایش قیمت کاهش‌یافته در صفحه‌ی محصول استفاده می‌شود.
+        stock_locations_link: برای افزودن مکان‌های انبار بیشتر لطفاً به <a href="%{link}">مکان‌های انبار</a> بروید
+        total_inventory_html: 'مجموع موجودی در مکان %{stock_location}: %{count} در دسترس'
+      vendors:
+        enterprise_feature: بازارگاه چندفروشنده‌ای در نسخه‌ی سازمانی در دسترس است
+      webhook_deliveries:
+        delivered_at: تحویل‌شده در
+        delivery_details: جزئیات تحویل
+        delivery_info: اطلاعات تحویل
+        endpoint_inactive: امکان تلاش مجدد نیست - نقطه پایانی غیرفعال است
+        error_type: نوع خطا
+        event: رویداد
+        execution_time: زمان اجرا
+        failed: ناموفق
+        pending: در انتظار
+        redeliver_button: تحویل مجدد
+        redelivered: وبهوک با موفقیت دوباره تحویل داده شد.
+        request_errors: خطاهای درخواست
+        request_payload: محتوای درخواست
+        response_body: بدنه پاسخ
+        response_code: کد پاسخ
+      webhook_endpoints:
+        auto_disabled: این نقطه پایانی پس از شکست‌های مکرر در تحویل، به‌طور خودکار غیرفعال شد.
+        back_to_endpoint: بازگشت به نقطه پایانی
+        deliveries: تحویل‌ها
+        endpoint_settings: تنظیمات نقطه پایانی
+        event_subscriptions: اشتراک‌های رویداد
+        event_subscriptions_help: انتخاب کنید کدام رویدادها باید یک تحویل وبهوک به این نقطه پایانی را فعال کنند.
+        events: رویدادها
+        failed_deliveries: تحویل‌های ناموفق
+        health:
+          degraded: "%{percentage}٪ موفقیت"
+          disabled: غیرفعال
+          failing: "%{percentage}٪ موفقیت"
+          healthy: "%{percentage}٪ موفقیت"
+          no_deliveries: بدون داده
+        health_label: سلامت
+        new: نقطه پایانی وبهوک جدید
+        re_enable: فعال‌سازی مجدد
+        secret_key: کلید محرمانه
+        secret_key_help: از این کلید برای تأیید امضاهای وبهوک استفاده کنید. آن را ایمن نگه دارید و به‌صورت عمومی به اشتراک نگذارید.
+        send_test: ارسال آزمایشی
+        subscriptions: اشتراک‌ها
+        successful_deliveries: تحویل‌های موفق
+        test_failed: ارسال وبهوک آزمایشی ناموفق بود. لطفاً پیکربندی نقطه پایانی را بررسی کنید.
+        test_sent: وبهوک آزمایشی ارسال شد. برای دیدن نتیجه، تحویل‌ها را بررسی کنید.
+      webhooks_subscribers:
+        all_events: همه رویدادها
+        new_webhooks_subscriber: مشترک وبهوک جدید
+        no_events: بدون رویداد
+        select_events: انتخاب رویدادها
+        subscribe_to_all_events: اشتراک در همه رویدادها
+        subscriptions: اشتراک‌ها
+        time_of_last_event: زمان آخرین رویداد
+        webhooks_events: رویدادهای وبهوک
     administration: مدیریت
     agree_to_privacy_policy:
     agree_to_terms_of_service:
@@ -408,7 +1186,7 @@ fa:
     attachment_path: Attachments Path
     attachment_styles: Paperclip Styles
     attachment_url:
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: خرابی در صدور مجوز
     available_on: موجود است در
     back: برگشت
@@ -527,7 +1305,6 @@ fa:
     date:
     date_completed: Date Completed
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: محدوده ی زمانی
@@ -576,26 +1353,37 @@ fa:
     error: ایراد
     errors:
       messages:
-        could_not_create_taxon: "امکان ایجاد نوع دسته‌بندی وجود ندارد"
+        could_not_create_taxon: امکان ایجاد نوع دسته‌بندی وجود ندارد
         no_payment_methods_available:
-        no_shipping_methods_available: "ارسال برای ناحیه انتخاب شده مقدور نمی‌باشد، لطفا منطقه‌ی دیگری را انتخاب کنید"
+        no_shipping_methods_available: ارسال برای ناحیه انتخاب شده مقدور نمی‌باشد، لطفا منطقه‌ی دیگری را انتخاب کنید
+        cannot_delete_default_channel: کانال پیش‌فرض قابل حذف نیست. ابتدا کانال دیگری را به پیش‌فرض ارتقا دهید.
+        channel_store_mismatch: باید به همان فروشگاه تعلق داشته باشد
+        invalid_order_routing_rule: یک قاعده مسیریابی سفارش ثبت‌شده نیست
+        invalid_order_routing_strategy: یک راهبرد مسیریابی سفارش ثبت‌شده نیست
+        must_be_origin_only: باید یک مبدأ (طرح و میزبان) بدون مسیر، پرس‌وجو یا قطعه باشد
+        store_association_can_not_be_changed: ارتباط فروشگاه قابل تغییر نیست
+        store_is_already_set: فروشگاه قبلاً تنظیم شده است
+      services:
+        get_shipping_rates:
+          no_line_items: برای تولید نرخ‌های ارسال باید اقلامی به سفارش اضافه کنید
+          no_shipping_address: برای تولید نرخ‌های ارسال، سفارش باید آدرس ارسال داشته باشد
     errors_prohibited_this_record_from_being_saved:
-      one: "یک ایراد مانع از انجام ذخیره‌سازی است"
+      one: یک ایراد مانع از انجام ذخیره‌سازی است
       other: "%{count} ایراد مانع از انجام ذخیره‌سازی است"
-    event: "رویداد"
+    event: رویداد
     events:
       spree:
         cart:
-          add: "اضافه به سبد خرید"
+          add: اضافه به سبد خرید
         checkout:
-          coupon_code_added: "کد کوپن اضافه شد"
+          coupon_code_added: کد کوپن اضافه شد
         content:
           visited:
         order:
-          contents_changed: "محتویات سفارش تغییر یافت"
+          contents_changed: محتویات سفارش تغییر یافت
         page_view:
         user:
-          signup: "ثبت‌نام کاربر"
+          signup: ثبت‌نام کاربر
     exceptions:
       count_on_hand_setter:
     expiration: انقضاء
@@ -660,6 +1448,8 @@ fa:
       operators:
         gt: بیشتر از
         gte: بیشتر از یا مساوی با
+        lt: کوچک‌تر از
+        lte: کوچک‌تر یا مساوی
     items_cannot_be_shipped:
     jirafe:
     landing_page_rule:
@@ -675,7 +1465,7 @@ fa:
     listing_tax_categories: لیست کردن دسته بندی های مالیات
     listing_users: لیست کردن کاربران
     loading: در حال بارگذاری
-    locale_changed: (زبان سایت به فارسی تغییر کرد)
+    locale_changed: "(زبان سایت به فارسی تغییر کرد)"
     location:
     lock:
     logged_in_as: شما وارد شدید به عنوان
@@ -756,7 +1546,7 @@ fa:
     not: not
     not_available: N/A
     not_enough_stock:
-    not_found: ! '%{resource} is not found'
+    not_found: "%{resource} is not found"
     notice_messages:
       product_cloned: Product has been cloned
       product_deleted: محصول حذف شد
@@ -775,7 +1565,7 @@ fa:
     optional: اختیاری
     options: اختیارات
     or: یا
-    or_over_price: ! '%{price} or over'
+    or_over_price: "%{price} or over"
     order: سفارش
     order_adjustments: Order adjustments
     order_details: جزئیات سفارش
@@ -789,6 +1579,7 @@ fa:
         subject: لغو سفارش
         subtotal:
         total:
+        thanks: با تشکر بابت
       confirm_email:
         dear_customer: مشتری محترم,
         instructions: Please review and retain the following order information for your records.
@@ -797,6 +1588,20 @@ fa:
         subtotal:
         thanks: از خرید شما متشکریم.
         total:
+      payment_link_email:
+        message: لطفاً برای پرداخت سفارش خود روی دکمه زیر کلیک کنید.
+        message_copy_link: 'اگر دکمه کار نکرد لطفاً پیوند زیر را کپی کرده و در مرورگر خود جای‌گذاری کنید:'
+        pay_for_order: پرداخت سفارش
+        subject: 'پیوند پرداخت برای سفارش #%{number}'
+      store_owner_notification_email:
+        heading: سفارش جدید دریافت شد
+        instructions: شما یک سفارش جدید دریافت کرده‌اید.
+        order_summary: خلاصه سفارش %{number}
+        subject: "%{store_name} یک سفارش جدید دریافت کرد"
+        thanks: با تشکر
+      store_team: تیم %{store_name}
+      subtotal: 'جمع جزء:'
+      total: 'مجموع سفارش:'
     order_not_found:
     order_number: سفارش
     order_processed_successfully: سفارش شما به طور موفقیت‌آمیز ثبت شد.
@@ -821,8 +1626,8 @@ fa:
     package_from:
     pagination:
       next_page: next page &raquo;
-      previous_page: ! '&laquo; previous page'
-      truncate: ! '&hellip;'
+      previous_page: "&laquo; previous page"
+      truncate: "&hellip;"
     password: رمز عبور
     paste: Paste
     path: Path
@@ -846,6 +1651,9 @@ fa:
       pending: معلق
       processing: در حال پردازش
       void: void
+      complete: تکمیل‌شده
+      partially_refunded: بازپرداخت جزئی‌شده
+      refunded: بازپرداخت‌شده
     payment_updated: پرداخت بروز رسانی شد
     payments: پرداخت ها
     percent:
@@ -868,16 +1676,16 @@ fa:
     product_not_available_in_this_currency:
     product_properties: ویژگی های محصول
     product_rule:
-      choose_products: "محصول‌ها را انتخاب کنید"
+      choose_products: محصول‌ها را انتخاب کنید
       label:
-      match_all: "همه"
-      match_any: "حداقل یکی"
+      match_all: همه
+      match_any: حداقل یکی
       match_none:
       product_source:
         group: از گروه محصول
         manual: انتخاب دستی
     products: محصولات
-    promotion: "فروش ویژه"
+    promotion: فروش ویژه
     promotion_action: فروش ویژه فعال
     promotion_action_types:
       create_adjustment:
@@ -926,6 +1734,24 @@ fa:
       user_logged_in:
         description: Available only to logged in users
         name: User Logged In
+      category:
+        description: سفارش شامل محصولاتی در دسته‌بندی‌های مشخص است
+        name: دسته‌بندی‌ها
+      country:
+        description: محدود به سفارش‌هایی با آدرس ارسال در یک کشور خاص
+        name: کشور
+      currency:
+        description: محدود به سفارش‌هایی با یک ارز خاص
+        name: ارز
+      customer:
+        description: فقط برای مشتریان مشخص‌شده در دسترس است
+        name: مشتریان
+      customer_group:
+        description: فقط برای مشتریان در گروه‌(های) مشتری مشخص‌شده در دسترس است
+        name: گروه‌(های) مشتری
+      customer_logged_in:
+        description: فقط برای مشتریان واردشده در دسترس است
+        name: فقط مشتریان واردشده
     promotions: فروش ویژه
     properties: ویژگی ها
     property: ویژگی
@@ -969,7 +1795,7 @@ fa:
     rma_credit: RMA Credit
     rma_number: RMA Number
     rma_value: RMA Value
-    roles: "نقش ها"
+    roles: نقش ها
     rules: قوانین
     safe: مطمئن
     s3_access_key: Access Key
@@ -1009,8 +1835,10 @@ fa:
         shipment_summary: Shipment Summary
         subject: Shipment Notification
         thanks: Thank you for your business.
-        track_information: ! 'Tracking Information: %{tracking}'
+        track_information: 'Tracking Information: %{tracking}'
         track_link:
+        shipping_method: 'روش ارسال: %{shipping_method}'
+        store_team: تیم %{store_name}
     shipment_state: Shipment State
     shipment_states:
       backorder: backorder
@@ -1018,6 +1846,7 @@ fa:
       pending: معلق
       ready: آماده
       shipped: ارسال شد
+      canceled: لغوشده
     shipments: Shipments
     shipped: ارسال شد
     shipping: ارسال
@@ -1069,7 +1898,11 @@ fa:
     stock_movements:
     stock_movements_for_stock_location:
     stock_successfully_transferred:
-    stock_transfer: ترخیص از انبار
+    stock_transfer:
+      errors:
+        must_have_variant: باید حداقل یک واریانت اضافه کنید
+        same_location: نمی‌تواند همان محل مقصد باشد
+        variants_unavailable: برخی واریانت‌ها در %{stock} در دسترس نیستند
     stock_transfers: ترخیص ها از انبار
     stop: توقف
     store: فروشگاه
@@ -1077,10 +1910,10 @@ fa:
     street_address_2: ادامه آدرس
     subtotal: جمع
     subtract: Subtract
-    successfully_created: ! '%{resource} با موفقیت اضافه شد!'
-    successfully_removed: ! '%{resource} با موفقیت حذف شد!'
+    successfully_created: "%{resource} با موفقیت اضافه شد!"
+    successfully_removed: "%{resource} با موفقیت حذف شد!"
     successfully_signed_up_for_analytics:
-    successfully_updated: ! '%{resource} با موفقیت به روز رسانی شد!'
+    successfully_updated: "%{resource} با موفقیت به روز رسانی شد!"
     tax: مالیات
     tax_categories: دسته بندی های مالیات
     tax_category: دسته بندی مالیات
@@ -1095,7 +1928,7 @@ fa:
     taxonomy: رده‌بندی
     taxonomy_edit: ویرایش طبقه بندی
     taxonomy_tree_error: The requested change has not been accepted and the tree has been returned to its previous state, please try again.
-    taxonomy_tree_instruction: ! '* Right click a child in the tree to access the menu for adding, deleting or sorting a child.'
+    taxonomy_tree_instruction: "* Right click a child in the tree to access the menu for adding, deleting or sorting a child."
     taxons: گونه ها
     test: تست
     test_mailer:
@@ -1134,8 +1967,8 @@ fa:
     use_s3: Use Amazon S3 For Images
     user: کاربر
     user_rule:
-      choose_users: "انتخاب کاربرها"
-    users: "کاربرها"
+      choose_users: انتخاب کاربرها
+    users: کاربرها
     validation:
       cannot_be_less_than_shipped_units: cannot be less than the number of shipped units.
       cannot_destory_line_item_as_inventory_units_have_shipped: Cannot destory line item as some inventory units have shipped.
@@ -1143,6 +1976,7 @@ fa:
       is_too_large: is too large -- stock on hand cannot cover requested quantity!
       must_be_int: باید به صورت عدد صحیح وارد شوند
       must_be_non_negative: must be a non-negative value
+      unpaid_amount_not_zero: 'مبلغ به‌طور کامل جبران نشد. هنوز بدهکار: %{amount}'
     value: مقدار
     variant: Variant
     variant_placeholder:
@@ -1161,3 +1995,868 @@ fa:
     zipcode:
     zone: ناحیه
     zones: ناحیه ها
+    add_coupon_code: افزودن کد تخفیف
+    add_gift_card: افزودن کارت هدیه
+    add_new_address: افزودن نشانی جدید
+    add_selected: افزودن موارد انتخاب‌شده
+    add_selected_products: افزودن محصولات انتخاب‌شده
+    add_selected_variant: افزودن گونه انتخاب‌شده
+    added_at: افزوده‌شده در
+    adjustment_amount_help: مقادیر مثبت هزینه و مقادیر منفی اعتبار هستند.
+    adjustment_closed_description: این تعدیل بسته شده است و دوباره محاسبه نخواهد شد.
+    adjustment_open_description: این تعدیل باز است و دوباره محاسبه خواهد شد.
+    admin_language_help: زبانی که داشبورد مدیریت شما با آن نمایش داده می‌شود. فقط بر آنچه شما می‌بینید اثر می‌گذارد، نه فروشگاه یا سایر کارکنان.
+    admin_locale_help: زبان مورد استفاده برای داشبورد مدیریت. در صورت تنظیم‌نشدن، به‌صورت پیش‌فرض از زبان برنامه استفاده می‌شود.
+    all_items_have_been_returned: همه اقلام مرجوع شده‌اند
+    all_time: همه‌ی زمان‌ها
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: اعمال‌شده به
+    assigned_variants: گونه‌های تخصیص‌یافته
+    assigned_variants_help: گونه‌هایی را که این تصویر نمایان‌گر آن‌هاست انتخاب کنید. برای اعمال به همه گونه‌ها خالی بگذارید.
+    automatic_promotion: خودکار
+    breadcrumbs: مسیر راهنما
+    calculated_reimbursements: بازپرداخت‌های محاسبه‌شده
+    cancel_order: لغو سفارش
+    cannot_ship: محموله قابل ارسال نیست
+    card_expiration_placeholder: ماه/سال
+    card_type: برند
+    categorization: دسته‌بندی
+    change_password: تغییر رمز عبور
+    close_sidebar: بستن نوار کناری
+    contact_information: اطلاعات تماس
+    contact_us: تماس با ما
+    continue_selling_when_out_of_stock: ادامه‌ی فروش هنگام اتمام موجودی
+    copied: کپی شد!
+    copy_id: کپی شناسه
+    custom_domains: دامنه‌های سفارشی
+    customer_could_not_be_removed_from_group: مشتری از گروه حذف نشد
+    customer_group_rule:
+      choose_customer_groups: 'گروه‌های مشتری‌ای را که این تبلیغ باید برایشان اعمال شود انتخاب کنید:'
+    customer_removed_from_group: مشتری از گروه حذف شد
+    customers_added_to_group:
+      one: "%{count} مشتری به گروه افزوده شد"
+      other: "%{count} مشتری به گروه افزوده شدند"
+    customers_removed_from_group:
+      one: "%{count} مشتری از گروه حذف شد"
+      other: "%{count} مشتری از گروه حذف شدند"
+    days_ago: روز پیش
+    delete_selected: حذف موارد انتخاب‌شده
+    digital_assets_help: دارایی‌های دیجیتال فایل‌هایی هستند که مشتریان می‌توانند پس از خرید دانلود کنند.
+    dimension_units:
+      centimeter: سانتی‌متر (cm)
+      foot: فوت (ft)
+      inch: اینچ (in)
+      millimeter: میلی‌متر (mm)
+    display_settings: تنظیمات نمایش
+    domains: دامنه‌ها
+    draft_orders: سفارش‌های پیش‌نویس
+    edit_address: ویرایش نشانی
+    edit_prices: ویرایش قیمت‌ها
+    edit_refund: ویرایش بازپرداخت
+    estimated_delivery_time: زمان تخمینی تحویل
+    excerpt: گزیده
+    exchange_for: تعویض با
+    existing_shipments: محموله‌های موجود
+    expedited_exchanges_warning: هر تعویض مشخص‌شده بلافاصله پس از ذخیره برای مشتری ارسال می‌شود. اگر مشتری کالای اصلی را ظرف %{days_window} روز مرجوع نکند، مبلغ کامل کالا از او دریافت خواهد شد.
+    favicon: فاوآیکون
+    filtered_records: رکوردهای فیلترشده
+    forbidden_message: شما مجاز به دسترسی به این صفحه نیستید.
+    general_information: اطلاعات عمومی
+    get_back_to_the: بازگشت به
+    homepage: صفحه‌ی اصلی
+    internal_server_error: خطای داخلی سرور
+    internal_server_error_message: سرور با یک خطای داخلی مواجه شد و نتوانست درخواست شما را تکمیل کند.
+    invitation_expired:
+      body: این پیوند دعوت دیگر معتبر نیست. لطفاً از فردی که شما را دعوت کرده بخواهید پیوند جدیدی ارسال کند.
+      heading: دعوت‌نامه نامعتبر یا منقضی‌شده
+    invitation_resent: دعوت‌نامه دوباره ارسال شد!
+    issued_on: صادرشده در
+    items_in_rmas: اقلام در مجوزهای مرجوعی
+    items_reimbursed: اقلام بازپرداخت‌شده
+    items_to_be_reimbursed: اقلامی که باید بازپرداخت شوند
+    lifetime_stats: آمار طول عمر
+    log_in: ورود
+    make_sure_the_above_reimbursement_amount_is_correct: مطمئن شوید که مبلغ بازپرداخت بالا درست است
+    manual_adjustment: تعدیل دستی
+    manual_adjustments: تعدیل‌های دستی
+    mark_as_default: تنظیم به‌عنوان پیش‌فرض
+    move_variant_to: انتقال گونه به
+    name_on_card: نام روی کارت
+    new_allowed_origin: مبدأ مجاز جدید
+    new_api_key: کلید API جدید
+    new_balance: موجودی جدید
+    new_billing_address: نشانی صورت‌حساب جدید
+    new_channel: کانال فروش جدید
+    new_country: کشور جدید
+    new_custom_domain: دامنه سفارشی جدید
+    new_customer_group: گروه مشتری جدید
+    new_customer_return: مرجوعی مشتری جدید
+    new_digital_asset: دارایی دیجیتال جدید
+    new_domain: دامنه جدید
+    new_gift_card: کارت هدیه جدید
+    new_line_item: افزودن قلم سفارش
+    new_metafield_definition: تعریف متافیلد جدید
+    new_nested_taxon: زیردسته‌ی تودرتوی جدید
+    new_page: صفحه جدید
+    new_password: رمز عبور جدید
+    new_policy: خط‌مشی جدید
+    new_refund: بازپرداخت جدید
+    new_refund_reason: دلیل بازپرداخت جدید
+    new_reimbursement_type: نوع بازپرداخت جدید
+    new_role: نقش جدید
+    new_shipment_at_location: محموله جدید در مکان
+    new_shipping_address: نشانی ارسال جدید
+    new_store: فروشگاه جدید
+    new_store_credit: اعتبار فروشگاهی جدید
+    new_store_credit_category: دسته‌بندی اعتبار فروشگاهی جدید
+    new_webhook_endpoint: نقطه پایانی وبهوک جدید
+    no_adjustments: بدون تعدیل
+    no_billing_address_available: هیچ نشانی صورت‌حسابی در دسترس نیست
+    no_customers_found: هیچ مشتری‌ای پیدا نشد
+    no_email_provided: هیچ ایمیلی وارد نشده است
+    no_internal_note: بدون یادداشت داخلی
+    no_products_added: هیچ محصولی افزوده نشده است
+    no_products_in_price_list: هیچ محصولی در این فهرست قیمت نیست
+    no_promotions_applied: هیچ تبلیغی اعمال نشده است
+    no_saved_cards: هیچ کارت ذخیره‌شده‌ای نیست
+    no_shipping_address_available: هیچ نشانی ارسالی در دسترس نیست
+    no_shipping_method_selected: هیچ روش ارسالی انتخاب نشده است.
+    no_taxes: بدون مالیات
+    no_users_selected: هیچ کاربری انتخاب نشده است
+    not_risky: بدون ریسک
+    oauth_applications: اپلیکیشن‌های OAuth
+    option_type_filterable_info: وقتی یک نوع گزینه روی قابل‌فیلتر تنظیم شود، بازدیدکنندگان ویترین فروشگاه شما می‌توانند یک دسته از محصولات را بر اساس آن نوع گزینه فیلتر کنند. نمونه‌ای رایج از این، فیلتر کردن پوشاک بر اساس اندازه و رنگ است.<br><br><b>لطفاً توجه کنید:</b> فیلترها فقط در دسته‌بندی‌های ویترین فروشگاهی نمایش داده می‌شوند که حاوی محصولاتی با این نوع گزینه‌ی تنظیم‌شده باشند.
+    option_type_kind_info: نحوه‌ی نمایش گزینه در ویترین فروشگاه را کنترل می‌کند. نمونه‌رنگ‌ها دایره‌های رنگی، دکمه‌ها چیپ‌های قابل کلیک و کشویی یک منوی انتخابی را نشان می‌دهند.
+    option_type_kinds:
+      buttons: دکمه‌ها
+      color_swatch: نمونه‌رنگ
+      dropdown: کشویی
+    or_select_other_address: یا نشانی دیگری انتخاب کنید
+    order_email_resent_error: ایمیل تأییدیه‌ی سفارش فقط برای سفارش‌های تکمیل‌شده قابل ارسال است
+    order_line_items: اقلام سفارش
+    page_not_found: متأسفیم! صفحه‌ای که به دنبال آن هستید پیدا نشد.
+    page_not_found_message: این صفحه به‌سادگی وجود ندارد.
+    payment_amount: مبلغ پرداخت
+    payment_provider_settings: تنظیمات ارائه‌دهنده پرداخت
+    payment_type: نوع پرداخت
+    payments_gateway_processing_errors: خطاهای پردازش %{payment_method_name}
+    personal_details: اطلاعات شخصی
+    pre_tax_refund_amount: مبلغ بازپرداخت پیش از مالیات
+    previously_used_card: کارت‌های قبلاً استفاده‌شده
+    price_list_form:
+      match_policies:
+        all: تطبیق با همه‌ی این قوانین
+        any: تطبیق با هر یک از این قوانین
+    price_list_statuses:
+      active: فعال
+      draft: پیش‌نویس
+      inactive: غیرفعال
+      scheduled: زمان‌بندی‌شده
+      scheduled_active: زمان‌بندی‌شده (فعال)
+    products_added: محصولات افزوده شدند
+    products_removed: محصولات حذف شدند
+    products_sort_options:
+      best_selling: پرفروش‌ترین
+      manual: دستی
+      name_a_z: الفبایی، الف-ی
+      name_z_a: الفبایی، ی-الف
+      newest_first: جدیدترین
+      oldest_first: قدیمی‌ترین
+      price_high_to_low: قیمت (زیاد به کم)
+      price_low_to_high: قیمت (کم به زیاد)
+      relevance: مرتبط‌ترین
+    promotion_cloned: تبلیغ کپی شد
+    promotion_not_cloned: 'تبلیغ کپی نشد. دلیل: %{error}'
+    purchased_quantity: تعداد خریداری‌شده
+    reimbursement_type_override: بازنویسی نوع بازپرداخت
+    remove_condition: حذف شرط
+    return_authorization_states:
+      authorized: مجاز‌شده
+      canceled: لغوشده
+    risk_analysis: تحلیل ریسک
+    same_as_shipping_address: همان نشانی ارسال
+    search_customers: جستجوی مشتریان
+    search_engine_listing: فهرست موتور جستجو
+    search_products: جستجوی محصولات
+    select_a_return_authorization_reason: دلیلی برای مجوز مرجوعی انتخاب کنید
+    select_a_stock_location: یک مکان انبار انتخاب کنید
+    select_existing_address: انتخاب نشانی موجود
+    select_key_type: انتخاب نوع کلید
+    select_user: انتخاب مشتری
+    select_vendor: انتخاب فروشنده
+    send_payment_link: ارسال پیوند پرداخت
+    send_payment_link_title: ارسال پیوند پرداخت برای مشتری از طریق ایمیل. آن‌ها می‌توانند بعداً پرداخت را تکمیل کنند.
+    service_unavailable: سرویس در دسترس نیست
+    service_unavailable_message: سرور به‌دلیل توقف برای نگه‌داری یا مشکلات ظرفیتی، موقتاً قادر به ارائه‌ی سرویس به درخواست شما نیست. لطفاً بعداً دوباره تلاش کنید.
+    shipment_successfully_shipped: محموله با موفقیت ارسال شد
+    shipment_transfer_success: گونه‌ها با موفقیت منتقل شدند
+    show_details: نمایش جزئیات
+    show_report: نمایش گزارش
+    standards_and_formats: استانداردها و قالب‌ها
+    standards_and_formats_help: منطقه زمانی، سیستم واحد پیش‌فرض و واحد وزن فروشگاه خود را تنظیم کنید.
+    start_typing_to_search_for_products: برای جستجوی محصولات شروع به تایپ کنید
+    start_typing_to_search_for_variants: برای جستجوی گونه‌ها شروع به تایپ کنید
+    state_machine_states:
+      accepted: پذیرفته‌شده
+      address: نشانی
+      authorized: مجاز‌شده
+      awaiting: در انتظار
+      awaiting_return: در انتظار مرجوعی
+      backordered: سفارش معوق
+      canceled: لغوشده
+      cart: سبد خرید
+      checkout: تسویه‌حساب
+      closed: بسته
+      complete: تکمیل‌شده
+      completed: تکمیل‌شده
+      confirm: تأیید
+      delivery: تحویل
+      errored: دارای خطا
+      failed: ناموفق
+      given_to_customer: تحویل‌شده به مشتری
+      invalid: نامعتبر
+      manual_intervention_required: نیازمند مداخله‌ی دستی
+      on_hand: موجود در انبار
+      open: باز
+      order: سفارش
+      payment: پرداخت
+      pending: در انتظار
+      processing: در حال پردازش
+      ready: آماده
+      reimbursed: بازپرداخت‌شده
+      resumed: از سرگرفته‌شده
+      returned: مرجوع‌شده
+      shipment: محموله
+      shipped: ارسال‌شده
+      void: باطل‌شده
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: نمی‌توانید اعتبار فروشگاهی‌ای را که قبلاً استفاده شده تغییر دهید
+        unable_to_create: امکان ایجاد اعتبار فروشگاهی وجود ندارد
+        unable_to_delete: امکان حذف اعتبار فروشگاهی وجود ندارد
+        unable_to_update: امکان به‌روزرسانی اعتبار فروشگاهی وجود ندارد
+      remaining: باقی‌مانده
+      allocated: افزوده‌شده
+      authorized: مجاز شده
+      captured: استفاده‌شده
+      credit: اعتبار
+      eligible: واجد شرایط
+    store_credit_categories: دسته‌بندی‌های اعتبار فروشگاهی
+    store_details: جزئیات فروشگاه
+    store_errors:
+      unable_to_update: امکان به‌روزرسانی فروشگاه وجود ندارد.
+    store_form:
+      customer_support_email_help: این ایمیل در بخش پاورقی برای بازدیدکنندگان فروشگاه شما قابل مشاهده است
+      new_order_notifications_email_help: اگر می‌خواهید هر بار که کسی سفارشی ثبت می‌کند یک اعلان ایمیلی دریافت کنید، لطفاً نشانی ایمیلی برای ارسال آن اعلان وارد کنید
+    store_name_help: این نام فروشگاه شماست. در سربرگ و پاورقی نمایش داده می‌شود.
+    tax_included: مالیات (با احتساب)
+    taxon_rule:
+      choose_taxons: انتخاب دسته‌بندی‌ها
+    this_order_has_already_received_a_refund: این سفارش قبلاً یک بازپرداخت دریافت کرده است
+    total_pre_tax_refund: مجموع بازپرداخت پیش از مالیات
+    total_sales: مجموع فروش
+    track_quantity: ردیابی تعداد
+    transaction_id_help: این شناسه‌ی تراکنشی است که در درگاه پرداخت شخص ثالث ایجاد شده است.
+    true_label: درست
+    type_to_search_customers: برای جستجوی مشتریان تایپ کنید
+    type_to_search_products: برای جستجوی محصولات تایپ کنید
+    unable_to_create_reimbursements: به‌دلیل وجود اقلام در انتظار مداخله‌ی دستی، امکان ایجاد بازپرداخت‌ها وجود ندارد.
+    unit_system_help: این به‌عنوان سیستم واحد پیش‌فرض فروشگاه شما استفاده می‌شود. می‌توانید آن را برای هر محصول جداگانه بازنویسی کنید.
+    unit_systems:
+      imperial_system: سیستم امپریال
+      metric: متریک
+      metric_system: سیستم متریک
+    unprocessable_entity: موجودیت غیرقابل پردازش
+    unprocessable_entity_message: درخواست شما قابل پردازش نبود. لطفاً فرم را برای یافتن خطاها بررسی کرده و دوباره تلاش کنید.
+    update_address: به‌روزرسانی نشانی
+    update_billing_address: به‌روزرسانی نشانی صورت‌حساب
+    update_contact_information: به‌روزرسانی اطلاعات تماس
+    update_shipping_address: به‌روزرسانی نشانی ارسال
+    use_app_default: استفاده از پیش‌فرض برنامه
+    use_shipping_address: استفاده از نشانی ارسال
+    vendors: فروشندگان
+    view_full_size: مشاهده در اندازه کامل
+    view_store: مشاهده فروشگاه
+    visits: بازدیدها
+    weight_unit_help: این به‌عنوان واحد وزن پیش‌فرض فروشگاه شما استفاده می‌شود. می‌توانید آن را برای هر محصول جداگانه بازنویسی کنید.
+    weight_units:
+      gram: گرم (g)
+      kilogram: کیلوگرم (kg)
+      ounce: اونس (oz)
+      pound: پوند (lb)
+    accepts_email_marketing: پذیرش بازاریابی ایمیلی
+    add_customers: افزودن مشتریان
+    add_products: افزودن محصولات
+    add_store: فروشگاه جدید
+    add_store_credit: افزودن اعتبار فروشگاه
+    added_to_cart: با موفقیت به سبد خرید افزوده شد!
+    address: آدرس
+    address_book:
+      add_house_number: اگر پلاک منزل دارید آن را وارد کنید
+    address_not_owned_by_user: آدرس مشخص‌شده به این کاربر تعلق ندارد.
+    addresses: آدرس‌ها
+    adjustable: قابل تعدیل
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (در قیمت لحاظ شده)"
+    adjustments_deleted: تعدیل‌ها حذف شدند
+    admin_locale: زبان مدیریت
+    advertise: تبلیغ
+    all_products: همه محصولات
+    allowed_origin: مبدأ مجاز
+    allowed_origins: مبدأهای مجاز
+    analytics: تحلیل‌ها
+    api_key: کلید API
+    api_key_no_current_key: هیچ کلید API این درخواست را احراز هویت نکرد
+    api_key_scopes_immutable: پس از ایجاد کلید قابل تغییر نیست؛ کلید جدیدی با دامنه‌های مورد نیاز خود بسازید و این کلید را باطل کنید
+    api_keys: کلیدهای API
+    apply: اعمال
+    apply_only_on_full_priced_items: فقط روی اقلام با قیمت کامل اعمال شود
+    apply_store_credit: اعمال اعتبار فروشگاه
+    approve: تأیید
+    approved_at: تأیید شده در
+    approver: تأییدکننده
+    assets: رسانه
+    attachments: پیوست‌ها
+    author: نویسنده
+    authorized: مجاز شده
+    auto_capture: دریافت خودکار
+    availability: موجود بودن
+    available: موجود
+    average_order_value: میانگین ارزش سفارش
+    avs_response: پاسخ AVS
+    backorderable_default: پیش‌فرض قابل پیش‌سفارش
+    backordered: پیش‌سفارش شده
+    balance: موجودی
+    barcode: بارکد
+    base_amount: مبلغ پایه
+    base_percent: درصد پایه
+    brand: برند
+    canceled: لغو شده
+    canceled_at: لغو شده در
+    canceler: لغوکننده
+    cannot_be_destroyed: سفارش قابل حذف نیست.
+    cannot_empty: نمی‌توان سفارش را خالی کرد.
+    cannot_empty_completed_order: سفارش قبلاً پردازش شده است، بنابراین نمی‌توان آن را خالی کرد
+    cannot_return_more_than_bought_quantity: نمی‌توان بیشتر از تعداد خریداری‌شده مرجوع کرد.
+    capture_events: رویدادهای دریافت
+    cart_already_updated: سبد خرید قبلاً به‌روزرسانی شده است.
+    cart_line_item:
+      discontinued: "%{li_name} به دلیل توقف عرضه حذف شد"
+      out_of_stock: "%{li_name} به دلیل اتمام موجودی حذف شد"
+    change: تغییر
+    channel: کانال فروش
+    channels: کانال‌های فروش
+    charged: دریافت‌شده
+    checkout_requirements:
+      email_required: آدرس ایمیل الزامی است
+      line_items_required: حداقل یک کالا به سبد خرید خود اضافه کنید
+      payment_required: یک روش پرداخت اضافه کنید
+      ship_address_required: آدرس ارسال الزامی است
+      shipping_method_required: برای همه مرسوله‌ها یک روش ارسال انتخاب کنید
+    clear: پاک کردن
+    clear_all: پاک کردن همه
+    clear_cache: پاک کردن حافظه پنهان
+    closed: بسته‌شده
+    color_code: کد رنگ
+    colors: رنگ‌ها
+    compare_at_amount: مبلغ مقایسه‌ای
+    compare_at_price: قیمت مقایسه‌ای
+    contact: تماس
+    contact_phone: تلفن تماس
+    content: محتوا
+    copy: کپی
+    copy_link: کپی پیوند
+    country_names:
+      CA: کانادا
+      FRA: فرانسه
+      ITA: ایتالیا
+      US: ایالات متحده آمریکا
+    coupon_code_unknown_error: این کد تخفیف در حال حاضر قابل اعمال به سبد خرید نیست.
+    coupon_code_used: کد تخفیفی که وارد کردید قبلاً استفاده شده است. لطفاً دوباره تلاش کنید.
+    coupon_codes: کدهای تخفیف
+    create_new: ایجاد جدید
+    create_reimbursement: ایجاد جبران خسارت
+    created_by: ایجاد شده توسط
+    credit_allowed: اعتبار مجاز
+    credited: اعتبار داده‌شده
+    credits: اعتبارها
+    currencies: ارزها
+    currency_not_supported_by_store: توسط این فروشگاه پشتیبانی نمی‌شود
+    current_password: گذرواژه فعلی
+    customer_group: گروه مشتری
+    customer_groups: گروه‌های مشتری
+    customer_mailer:
+      password_reset_email:
+        action: بازنشانی گذرواژه
+        expiry_notice: این پیوند بازنشانی گذرواژه به‌زودی منقضی می‌شود. اگر شما این درخواست را نداده‌اید، نیازی به هیچ اقدامی نیست.
+        greeting: سلام %{name}،
+        ignore_notice: اگر درخواست بازنشانی گذرواژه نداده‌اید، می‌توانید این ایمیل را نادیده بگیرید. گذرواژه شما تغییر نخواهد کرد.
+        instructions: درخواستی برای بازنشانی گذرواژه شما دریافت کردیم. برای انتخاب گذرواژه جدید روی دکمه زیر کلیک کنید.
+    customer_return: مرجوعی مشتری
+    customer_returns: مرجوعی‌های مشتری
+    customer_support_email: ایمیل پشتیبانی مشتری
+    customers: مشتریان
+    cvv: CVV
+    cvv_response: پاسخ CVV
+    default_billing_address: آدرس صورتحساب پیش‌فرض
+    default_country: کشور پیش‌فرض
+    default_currency: ارز پیش‌فرض
+    default_locale: زبان پیش‌فرض
+    default_refund_amount: مبلغ بازپرداخت پیش‌فرض
+    default_shipping_address: آدرس ارسال پیش‌فرض
+    default_stock_location_name: محل فروشگاه
+    default_wishlist_name: فهرست علاقه‌مندی‌ها
+    deleted: حذف‌شده
+    details: جزئیات
+    developers: توسعه‌دهندگان
+    digital:
+      digital_delivery: تحویل دیجیتال
+    digital_assets: دارایی‌های دیجیتال
+    discontinue_on: توقف عرضه در
+    discontinued: عرضه متوقف‌شده
+    discontinued_variants_present: برخی از اقلام این سفارش محصولاتی دارند که دیگر در دسترس نیستند.
+    discount: تخفیف
+    discounts: تخفیف‌ها
+    display_delivery_range: تحویل ظرف %{delivery_range} روز کاری
+    display_on: نمایش در
+    domain: دامنه
+    done: انجام شد
+    download: دانلود
+    draft: پیش‌نویس
+    duplicate: تکثیر
+    duplicating: در حال تکثیر
+    eligibility_errors:
+      messages:
+        has_excluded_product: سبد خرید شما محصولی دارد که مانع اعمال این کد تخفیف می‌شود.
+        item_total_less_than: این کد تخفیف برای سفارش‌های کمتر از %{amount} قابل اعمال نیست.
+        item_total_less_than_or_equal: این کد تخفیف برای سفارش‌های کمتر یا مساوی %{amount} قابل اعمال نیست.
+        item_total_more_than: این کد تخفیف برای سفارش‌های بیشتر از %{amount} قابل اعمال نیست.
+        item_total_more_than_or_equal: این کد تخفیف برای سفارش‌های بیشتر یا مساوی %{amount} قابل اعمال نیست.
+        limit_once_per_user: این کد تخفیف فقط یک بار برای هر کاربر قابل استفاده است.
+        missing_product: این کد تخفیف قابل اعمال نیست زیرا همه محصولات لازم را در سبد خرید خود ندارید.
+        missing_taxon: پیش از اعمال این کد تخفیف باید محصولی از همه دسته‌بندی‌های مرتبط اضافه کنید.
+        no_applicable_products: پیش از اعمال این کد تخفیف باید یک محصول مرتبط اضافه کنید.
+        no_matching_taxons: پیش از اعمال این کد تخفیف باید محصولی از یک دسته‌بندی مرتبط اضافه کنید.
+        no_user_or_email_specified: پیش از اعمال این کد تخفیف باید وارد شوید یا ایمیل خود را وارد کنید.
+        no_user_specified: پیش از اعمال این کد تخفیف باید وارد شوید.
+        not_first_order: این کد تخفیف فقط برای نخستین سفارش شما قابل اعمال است.
+        wrong_country: این کد تخفیف در کشور شما واجد شرایط نیست
+    email_marketing: بازاریابی ایمیلی
+    emails: ایمیل‌ها
+    ends_at: پایان در
+    enter: ورود
+    error_user_destroy_with_orders: کاربری که با سفارش‌ها مرتبط است قابل حذف نیست
+    error_user_does_not_have_any_store_credits: کاربر هیچ اعتبار فروشگاهی در دسترس ندارد
+    estimated_transit_business_days: روزهای کاری تخمینی حمل‌ونقل
+    excl: بدون
+    existing_address: آدرس موجود
+    expired: منقضی‌شده
+    expires_at: تاریخ انقضا
+    export: خروجی‌گیری
+    export_mailer:
+      export_done:
+        message: کارتان عالی بود، خروجی شما آماده است! لطفاً برای دانلود از پیوند زیر استفاده کنید.
+        subject: خروجی شما %{export_number} با موفقیت پردازش شد!
+      greeting: سلام %{user_name}،
+      thanks: با تشکر،
+    facebook: فیسبوک
+    featured_image: تصویر شاخص
+    field: فیلد
+    filled: تکمیل‌شده
+    filterable: قابل فیلتر
+    finalized: نهایی‌شده
+    firstname: نام
+    fonts: فونت‌ها
+    footer: پاورقی
+    forbidden: دسترسی رد شد
+    free: رایگان
+    from: از
+    generate_code: تولید کد تخفیف
+    gift_card: کارت هدیه
+    gift_card_already_redeemed: این کارت هدیه قبلاً استفاده شده است.
+    gift_card_applied: کارت هدیه با موفقیت به سفارش شما اعمال شد!
+    gift_card_batch: دسته کارت هدیه
+    gift_card_customer_not_logged_in: کارت هدیه با کاربر مهمان قابل اعمال نیست.
+    gift_card_expired: کارت هدیه منقضی شده است.
+    gift_card_mismatched_currency: کارت هدیه با ارز فعلی قابل اعمال نیست.
+    gift_card_mismatched_customer: این کارت هدیه با کاربر دیگری مرتبط است.
+    gift_card_not_found: کارت هدیه یافت نشد.
+    gift_card_removed: کارت هدیه با موفقیت از سفارش شما حذف شد
+    gift_card_using_store_credit_error: پس از اعمال اعتبار فروشگاه نمی‌توانید کارت هدیه را اعمال کنید.
+    gift_cards: کارت‌های هدیه
+    hide: پنهان کردن
+    idempotency_key_reused: این Idempotency-Key قبلاً با پارامترهای درخواست متفاوتی استفاده شده است.
+    immediately: فوری
+    implement_eligible_for_return: باید ‎#eligible_for_return?‎ را برای EligibilityValidator خود پیاده‌سازی کنید.
+    implement_requires_manual_intervention: باید ‎#requires_manual_intervention?‎ را برای EligibilityValidator خود پیاده‌سازی کنید.
+    import: درون‌ریزی
+    in_stock: موجود در انبار
+    inactive: غیرفعال
+    incl: شامل
+    incomplete: ناقص
+    instagram: اینستاگرام
+    insufficient_stock_lines_present: برخی از اقلام این سفارش تعداد ناکافی دارند.
+    integrations: یکپارچه‌سازی‌ها
+    internal_note: یادداشت داخلی
+    internationalization: بین‌المللی‌سازی
+    invalid_credit_card: کارت اعتباری نامعتبر است.
+    invalid_exchange_variant: واریانت تعویض نامعتبر است.
+    invitation_accepted: دعوت پذیرفته شد!
+    invitation_mailer:
+      greeting: سلام %{user_name}،
+      invitation_accepted:
+        body: "%{invitee_name} دعوت شما برای پیوستن به %{resource_name} را پذیرفت"
+        subject: "%{invitee_name} دعوت شما برای پیوستن به %{resource_name} را پذیرفت"
+      invitation_email:
+        body: "%{inviter_name} شما را به پیوستن به %{resource_name} دعوت کرده است"
+        link_description: 'برای پذیرش این دعوت، لطفاً روی پیوند زیر کلیک کنید:'
+        subject: دعوت به پیوستن به %{resource_name}
+      thanks: با تشکر،
+    invitations: دعوت‌ها
+    invited_by: دعوت‌شده توسط
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: کلید
+    kind: نوع
+    label: برچسب
+    language: زبان
+    lastname: نام خانوادگی
+    line_item: قلم سفارش
+    line_item_adjustments: تعدیل‌های قلم سفارش
+    line_items: اقلام سفارش
+    link: پیوند
+    live: زنده
+    locale: زبان
+    locale_not_supported_by_store: توسط این فروشگاه پشتیبانی نمی‌شود
+    log_entries: ورودی‌های گزارش
+    logo: لوگو
+    logs: گزارش‌ها
+    mail_from_address: آدرس فرستنده ایمیل
+    mailer_logo: لوگوی ایمیل (فقط تصاویر JPG یا PNG)
+    make_active_at: فعال‌سازی در
+    manual: دستی
+    manual_intervention_required: نیاز به مداخله دستی است
+    market: بازار
+    market_ids: بازارها
+    markets: بازارها
+    master: اصلی
+    max: حداکثر
+    max_quantity: حداکثر تعداد
+    me_no_current_user: هیچ کاربر مدیری این درخواست را احراز هویت نکرد
+    media: رسانه
+    memo: یادداشت
+    meta_title: عنوان متا
+    metafield_definitions: تعاریف فیلدهای متا
+    metafields: فیلدهای متا
+    min: حداقل
+    min_quantity: حداقل تعداد
+    missing_return_authorization: مجوز مرجوعی برای %{item_name} وجود ندارد.
+    move: جابه‌جایی
+    mutable: قابل تغییر
+    navigation: ناوبری
+    never: هرگز
+    new_address: آدرس جدید
+    new_order_notifications_email: ایمیل اعلان سفارش جدید
+    new_price_list: فهرست قیمت جدید
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: سلام،
+        ignore_disclaimer: اگر شما این درخواست را نداده‌اید، لطفاً این ایمیل را نادیده بگیرید.
+        instructions: لطفاً برای تأیید آدرس ایمیل خود روی دکمه زیر کلیک کنید.
+        message_copy_link: 'اگر دکمه کار نکرد لطفاً پیوند زیر را کپی کرده و در مرورگر خود جای‌گذاری کنید:'
+        store_team: تیم %{store_name}
+        subject: آدرس ایمیل خود را تأیید کنید
+        thanks: با تشکر
+        verify_email_address_link: تأیید آدرس ایمیل
+    newsletter_subscribers: مشترکان خبرنامه
+    no_cc_type: موجود نیست
+    no_payment_found: هیچ پرداختی یافت نشد
+    no_report_data: داده گزارشی وجود ندارد
+    note: یادداشت
+    number: شماره
+    ok: تأیید
+    only_active_products_can_be_added_to_cart: محصولات پیش‌نویس و بایگانی‌شده را نمی‌توان به سبد خرید افزود، لطفاً ابتدا محصول را فعال کنید.
+    option_name: نام گزینه
+    order_canceled: سفارش لغو شد
+    order_resumed: سفارش از سر گرفته شد
+    order_routing:
+      strategies:
+        legacy: قدیمی
+        rules: قواعد (مرتب‌شده)
+    origin: مبدأ
+    other: سایر
+    outstanding_balance: مانده پرداخت‌نشده
+    page: صفحه
+    pages: صفحات
+    payment_source: منبع پرداخت
+    payment_total: مجموع پرداخت
+    pending: در انتظار
+    permissions: مجوزها
+    policies: خط‌مشی‌ها
+    pre_tax_amount: مبلغ پیش از مالیات
+    pre_tax_total: مجموع پیش از مالیات
+    preferred_reimbursement_type: نوع جبران خسارت ترجیحی
+    preview: پیش‌نمایش
+    price_lists: فهرست‌های قیمت
+    price_rules:
+      customer_group_rule:
+        description: اعمال قیمت‌گذاری برای گروه‌های مشتری مشخص
+    prices: قیمت‌ها
+    pricing: قیمت‌گذاری
+    privacy_policy: خط‌مشی حریم خصوصی
+    processing: در حال پردازش
+    product_name: نام محصول
+    product_translations: ترجمه‌های محصول
+    products_cannot_be_shipped: در حال حاضر نمی‌توانیم %{product_names} را به موقعیت مکانی فعلی شما ارسال کنیم. لطفاً آدرس ارسال خود را تغییر دهید یا %{product_names} را از سبد خرید خود حذف کنید.
+    promotion_already_used: نمی‌توانید تخفیفی را که قبلاً اعمال شده است حذف کنید
+    promotion_category: دسته‌بندی تخفیف
+    promotion_label: تخفیف (%{name})
+    promotionable: قابل تخفیف
+    propagate_all_variants: اعمال روی همه واریانت‌ها
+    published_at: منتشر شده در
+    query: پرس‌وجو
+    reception_status: وضعیت دریافت
+    refund_amount: مبلغ بازپرداخت
+    refunds: بازپرداخت‌ها
+    reimburse: جبران خسارت
+    reimbursed: جبران‌شده
+    reimbursement: جبران خسارت
+    reimbursement_mailer:
+      reimbursement_email:
+        days_to_send: شما %{days} روز فرصت دارید تا اقلام در انتظار تعویض را بازگردانید.
+        dear_customer: "%{name} گرامی،"
+        exchange_summary: خلاصه تعویض
+        instructions: جبران خسارت شما پردازش شده است.
+        refund_summary: خلاصه بازپرداخت
+        store_team: تیم %{store_name}
+        subject: اعلان جبران خسارت
+        thanks: از خرید شما سپاسگزاریم.
+        total_refunded: 'مجموع بازپرداخت‌شده: %{total}'
+    reimbursement_status: وضعیت جبران خسارت
+    reimbursement_type: نوع جبران خسارت
+    reimbursement_types: انواع جبران خسارت
+    reimbursements: جبران خسارت‌ها
+    reject: رد کردن
+    rejected: رد شده
+    remove_gift_card_on_completed_order_error: پس از ثبت سفارش نمی‌توانید کارت هدیه را حذف کنید
+    report: گزارش
+    report_mailer:
+      greeting: سلام %{user_name}،
+      report_done:
+        message: لطفاً برای دانلود از پیوند زیر استفاده کنید.
+        subject: گزارش شما %{report_name} آماده است
+      thanks: با تشکر،
+    report_names:
+      products_performance: عملکرد محصولات
+      sales_total: مجموع فروش
+    required: "*"
+    required_fields: فیلدهای الزامی
+    resellable: قابل فروش مجدد
+    resource: منبع
+    return_authorization_canceled: مجوز مرجوعی لغو شد
+    return_item_inventory_unit_ineligible: واحد موجودی قلم مرجوعی باید ارسال شده باشد
+    return_item_inventory_unit_reimbursed: واحد موجودی قلم مرجوعی قبلاً جبران شده است
+    return_item_order_not_completed: سفارش قلم مرجوعی باید تکمیل شده باشد
+    return_item_rma_ineligible: قلم مرجوعی به یک RMA نیاز دارد
+    return_item_time_period_ineligible: قلم مرجوعی خارج از بازه زمانی واجد شرایط است
+    return_items: اقلام مرجوعی
+    return_items_cannot_be_associated_with_multiple_orders: اقلام مرجوعی نمی‌توانند به چند سفارش مرتبط شوند.
+    returns: مرجوعی‌ها
+    returns_policy: خط‌مشی مرجوعی
+    risk: ریسک
+    risky: پرریسک
+    role_id: شناسه نقش
+    row: ردیف
+    sale: حراج
+    saving: در حال ذخیره
+    scopes: دامنه‌ها
+    search_by: 'جستجو بر اساس:'
+    security: امنیت
+    seed:
+      shipping:
+        categories:
+          default: پیش‌فرض
+          digital: دیجیتال
+    selected_quantity_not_available: تعداد انتخاب‌شده از %{item} در دسترس نیست.
+    send_consumer_transactional_emails: ارسال ایمیل‌های تراکنشی به مشتری
+    seo: SEO
+    seo_title: عنوان SEO
+    ship_to: 'ارسال به:'
+    shipment_adjustments: تعدیل‌های مرسوله
+    shipping_policy: خط‌مشی ارسال
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (شامل %{tax_amount} %{tax_rate_name})"
+    shipping_zone: منطقه ارسال
+    show_discontinued: نمایش موارد متوقف‌شده
+    sign_up: ثبت‌نام
+    site_name: نام سایت
+    size: اندازه
+    skus: SKUها
+    slug: اسلاگ
+    social: شبکه‌های اجتماعی
+    sort_by: مرتب‌سازی بر اساس
+    square_image: تصویر مربعی
+    starts_at: شروع در
+    state_changes: تغییرات وضعیت
+    stock: موجودی
+    stock_items: اقلام موجودی
+    store_credit_events: رویدادهای اعتبار فروشگاه
+    store_credit_name: اعتبار فروشگاه
+    store_credit_payment_method:
+      currency_mismatch: ارز اعتبار فروشگاه با ارز سفارش مطابقت ندارد
+      insufficient_authorized_amount: نمی‌توان بیشتر از مبلغ مجاز دریافت کرد
+      insufficient_funds: مبلغ باقی‌مانده اعتبار فروشگاه کافی نیست
+      successful_action: اعتبار فروشگاه با موفقیت %{action}
+      unable_to_credit: 'اعتباردهی کد ممکن نشد: %{auth_code}'
+      unable_to_find: اعتبار فروشگاه یافت نشد
+      unable_to_find_for_action: 'اعتبار فروشگاه برای کد مجوز: %{auth_code} برای عملیات: %{action} یافت نشد'
+      unable_to_void: 'ابطال کد ممکن نشد: %{auth_code}'
+    store_credits: اعتبارهای فروشگاه
+    store_default: فروشگاه پیش‌فرض
+    store_name: نام فروشگاه
+    stores: فروشگاه‌ها
+    subscribed: مشترک‌شده
+    success: موفقیت
+    summary: خلاصه
+    support: پشتیبانی
+    supported_currencies: ارزهای پشتیبانی‌شده
+    supported_locales: زبان‌های پشتیبانی‌شده
+    tags: برچسب‌ها
+    tax_code: کد مالیاتی
+    tax_inclusive: شامل مالیات
+    taxes: مالیات‌ها
+    taxonomy_brands_name: برندها
+    taxonomy_categories_name: دسته‌بندی‌ها
+    taxonomy_collections_name: مجموعه‌ها
+    terms_of_service: شرایط خدمات
+    theme: قالب
+    themes: قالب‌ها
+    tiered_flat_rate: نرخ ثابت پلکانی
+    tiered_percent: درصد پلکانی
+    tiers: سطوح
+    timezone: منطقه زمانی
+    title: عنوان
+    to: به
+    track_inventory: ردیابی موجودی
+    transaction_id: شناسه تراکنش
+    translations: ترجمه‌ها
+    twitter: توییتر
+    unit: واحد
+    unit_system: سیستم واحد
+    unlimited: نامحدود
+    updated_at: به‌روزرسانی‌شده در
+    url: URL
+    used: استفاده‌شده
+    user_ids: کاربران
+    vendor: فروشنده
+    verified: تأییدشده
+    verified_at: تأییدشده در
+    view: مشاهده
+    visibility: قابلیت نمایش
+    webhook_endpoints: نقاط پایانی وب‌هوک
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: غیرفعال‌شده در
+        heading: نقطه پایانی وب‌هوک غیرفعال شد
+        instructions: لطفاً نشانی و سرویس نقطه پایانی را بررسی کرده، سپس آن را در تنظیمات ← توسعه‌دهندگان ← وب‌هوک‌ها دوباره فعال کنید.
+        message: نقطه پایانی وب‌هوک «%{endpoint_name}» پس از شکست‌های مکرر در تحویل به‌طور خودکار غیرفعال شد.
+        name_label: نام
+        reason_label: دلیل
+        subject: 'نقطه پایانی وب‌هوک غیرفعال شد: %{endpoint_name}'
+        url_label: URL
+    webhooks: وب‌هوک‌ها
+    weight_unit: واحد وزن
+    wishlist: فهرست علاقه‌مندی‌ها
+    zipcode_required: کد پستی الزامی است
+    zone_ids: مناطق
+    api:
+      cannot_delete: "%{model} قابل حذف نیست"
+      current_password_invalid: گذرواژه فعلی نامعتبر یا وارد نشده است
+      gateway_error: 'مشکلی در درگاه پرداخت رخ داد: %{text}'
+      invalid_api_key: کلید API نامعتبر (%{key}) مشخص شده است.
+      invalid_resource: منبع نامعتبر است. لطفاً خطاها را برطرف کرده و دوباره تلاش کنید.
+      invalid_taxonomy_id: شناسه طبقه‌بندی نامعتبر است.
+      must_specify_api_key: باید یک کلید API مشخص کنید.
+      negative_quantity: تعداد منفی است
+      newsletter_verification_token_invalid: توکن تأیید خبرنامه نامعتبر یا منقضی شده است.
+      order:
+        could_not_transition: نمی‌توان وضعیت سفارش را تغییر داد. لطفاً خطاها را برطرف کرده و دوباره تلاش کنید.
+        insufficient_quantity: یکی از اقلام سبد خرید شما دیگر در دسترس نیست.
+        invalid_shipping_method: روش ارسال نامعتبر مشخص شده است.
+      password_reset_requested: اگر حسابی برای آن ایمیل وجود داشته باشد، دستورالعمل بازنشانی گذرواژه ارسال شده است.
+      password_reset_token_invalid: توکن بازنشانی گذرواژه نامعتبر یا منقضی شده است.
+      payment:
+        credit_over_limit: این پرداخت تنها تا سقف %{limit} قابل اعتباردهی است. لطفاً مبلغی کمتر یا مساوی این عدد مشخص کنید.
+        update_forbidden: این پرداخت قابل به‌روزرسانی نیست زیرا در وضعیت %{state} است.
+      record_not_found: "%{model} یافت نشد"
+      redirect_url_not_allowed: نشانی هدایت از یک مبدأ مجاز برای این فروشگاه نیست.
+      resource_not_found: منبعی که به دنبال آن بودید یافت نشد.
+      shipment:
+        cannot_ready: نمی‌توان مرسوله را آماده کرد.
+      shipment_transfer_errors_occurred: 'خطاهای زیر هنگام تلاش برای انجام این عملیات رخ داد:'
+      shipment_transfer_success: واریانت‌ها با موفقیت منتقل شدند
+      stock_location_required: برای دریافت جابه‌جایی‌های موجودی باید پارامتر stock_location_id ارائه شود.
+      unauthorized: شما مجاز به انجام این عملیات نیستید.
+      v2:
+        cart:
+          no_coupon_code: هیچ کد تخفیفی ارائه نشده و سفارش هیچ تخفیف کد تخفیفی اعمال‌شده‌ای ندارد
+          wrong_quantity: تعداد باید بیشتر از ۰ باشد
+        digitals:
+          missing_file: 'قلم دیجیتال موجود نیست: پیوست'
+          unauthorized: خطا، شما مجاز به دسترسی به این دارایی نیستید
+        gift_card:
+          amount_not_valid: مبلغ کارت هدیه معتبر نیست
+          not_found: کارت هدیه یافت نشد
+        metadata:
+          invalid_params: پارامترهای فراداده عمومی و خصوصی باید شیء باشند
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: نمی‌توان فهرست علاقه‌مندی‌ها را حذف کرد.
+          wrong_quantity: تعداد باید بیشتر از ۰ باشد
+      v3:
+        payments:
+          method_unavailable: این روش پرداخت برای این سفارش در دسترس نیست.
+          session_required: این روش پرداخت به یک نشست پرداخت نیاز دارد. به‌جای آن از نقطه پایانی نشست‌های پرداخت استفاده کنید.
+      wrong_shipment_target: مرسوله مقصد همان مرسوله اصلی است
+  action_text:
+    video_embed:
+      not_found: امکان جاسازی ویدیو با نشانی واردشده وجود ندارد
+  activemodel:
+    errors:
+      messages:
+        blank: نمی‌تواند خالی باشد
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: دارای واحدهای موجودی پیش‌سفارش است
+              has_already_been_shipped: قبلاً ارسال شده است
+            desired_shipment:
+              can_not_transfer_within_same_shipment: نمی‌تواند همان مرسوله فعلی باشد
+              has_not_enough_stock_at_desired_location: موجودی کافی در انبار مورد نظر ندارد
+  address_book:
+    save: ذخیره
+    successfully_created: آدرس جدید با موفقیت ایجاد شد
+  number:
+    currency:
+      format:
+        delimiter: "،"
+        separator: "."
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: کوتاه کردن

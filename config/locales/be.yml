@@ -1,3 +1,4 @@
+---
 be:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ be:
         phone: Тэлефон
         state: Вобласць/Рэгіён
         zipcode: Паштовы індэкс
+        company: Кампанія
+        label: Назва адраса
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: Базавая сума
         preferred_tiers: Узроўні
@@ -39,6 +42,8 @@ be:
       spree/option_type:
         name: Назва
         presentation: Адлюстраваць як
+        filterable: Магчыма фільтраваць
+        kind: Тып
       spree/order:
         checkout_complete: Афармленне замовы завершана
         completed_at: Завершана
@@ -54,6 +59,8 @@ be:
         special_instructions: Дадатковыя інструкцыі
         state: Стан
         total: Усяго
+        internal_note: Унутраная нататка
+        item_count: Тавары
       spree/order/bill_address:
         address1: Вуліца
         city: Горад
@@ -72,6 +79,7 @@ be:
         zipcode: Паштовы індэкс
       spree/payment:
         amount: Сума
+        number: Нумар
       spree/payment_method:
         name: Назва
       spree/product:
@@ -84,6 +92,10 @@ be:
         on_hand: У наяўнасці
         shipping_category: Катэгорыі дастаўкі
         tax_category: Падатковая катэгорыя
+        discontinue_on: Спыніць продаж
+        less_than: Менш за
+        make_active_at: Зрабіць актыўным
+        more_than: Больш за
       spree/promotion:
         advertise: Рэкламаваць
         code: Код купона
@@ -94,6 +106,8 @@ be:
         path: Шлях
         starts_at: Дата пачатку прома-акцыі
         usage_limit: Ліміт выкарыстання
+        generate_code: Згенераваць купонны код
+        promotion_category: Катэгорыя акцыі
       spree/promotion_category:
         name: Назва
         code: Код
@@ -124,6 +138,16 @@ be:
         name: Назва сайта
         seo_title: SEO-загаловак
         url: URL сайта
+        address: Адрас
+        contact_phone: Кантактны тэлефон
+        preferred_digital_asset_authorized_clicks: Ліміт спампоўванняў
+        preferred_digital_asset_authorized_days: Ліміт дзён для спампоўвання
+        preferred_limit_digital_download_count: Абмежаваць колькасць спампоўванняў лічбавых спасылак
+        preferred_limit_digital_download_days: Абмежаваць дні спампоўвання лічбавых спасылак
+        seo_robots: SEO Robots
+        storefront_custom_code_body_end: Карыстальніцкі код перад закрыццём тэга body
+        storefront_custom_code_body_start: Карыстальніцкі код пасля адкрыцця тэга body
+        storefront_custom_code_head: Карыстальніцкі код у загалоўку старонкі
       spree/tax_category:
         description: Апісанне
         name: Назва
@@ -135,12 +159,14 @@ be:
         name: Назва
         permalink: Пастаянная спасылка
         position: Пазіцыя
+        sort_order: Парадак сартавання
       spree/taxonomy:
         name: Назва
       spree/user:
         email: Email
         password: Пароль
         password_confirmation: Пацвярджэнне пароля
+        avatar: Аватар
       spree/variant:
         cost_currency: Валюта
         cost_price: Сабекошт
@@ -153,6 +179,54 @@ be:
       spree/zone:
         description: Апісанне
         name: Назва
+      spree/customer_group:
+        description: Апісанне
+        name: Назва
+      spree/customer_return:
+        stock_location_id: Месца захоўвання
+      spree/gift_card:
+        amount_used: Выкарыстаная сума
+        expires_at: Тэрмін дзеяння да
+      spree/import:
+        preferred_delimiter: Падзяляльнік
+      spree/import_mapping:
+        file_column: Слупок файла
+        schema_field: Поле схемы
+      spree/import_row:
+        row_number: Нумар
+      spree/invitation:
+        inviter: Запрашальнік
+      spree/metafield_definition:
+        namespace: Прастора імёнаў
+      spree/option_value:
+        color_code: Код колеру
+        image: Выява ўзору
+      spree/page_link:
+        open_in_new_tab: Адкрыць у новай укладцы
+      spree/policy:
+        body: Змест
+        owner: Палітыка для
+      spree/price_list:
+        description: Апісанне
+        ends_at: Заканчваецца
+        match_policy: Палітыка супастаўлення
+        name: Назва
+        priority: Прыярытэт
+        starts_at: Пачынаецца
+        status: Статус
+      spree/price_rule:
+        priority: Прыярытэт
+        type: Тып
+      spree/shipment:
+        number: Нумар
+      spree/store_credit:
+        amount_used: Выкарыстаная сума
+      spree/store_credit_category:
+        name: Назва
+      user:
+        current_sign_in: Бягучы ўваход
+        last_sign_in: Апошні ўваход
+        sign_in_count: Колькасць уваходаў
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -199,6 +273,109 @@ be:
           attributes:
             base:
               cannot_destroy_default_store: Немагчыма выдаліць сховішча па змаўчанні
+              cannot_destroy_only_store: Немагчыма выдаліць адзіную краму.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: павінен быць крыніцай (схема і хост) без шляху, запыту або фрагмента
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Немагчыма выдаліць выкарыстаную падарункавую карту
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: павінна быць у наяўнасці
+              not_allowed_content_type: мае недазволены тып змесціва
+        spree/import:
+          attributes:
+            attachment:
+              content_type: мае недазволены тып змесціва
+            type:
+              inclusion: не ўваходзіць у спіс дазволеных тыпаў
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: належыць іншаму карыстальніку
+              deprecated_in_completed_order: састарэлы ў завершаным заказе
+            ship_address_id:
+              belongs_to_other_user: належыць іншаму карыстальніку
+              deprecated_in_completed_order: састарэлы ў завершаным заказе
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Немагчыма выдаліць рынак па змаўчанні.
+              cannot_destroy_last_market: Немагчыма выдаліць адзіны рынак.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: ужо прызначана іншаму рынку ў гэтай краме
+              not_in_shipping_zone: не ахоплена ніводнай зонай дастаўкі. Калі ласка, спачатку наладзьце зону дастаўкі.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: перавышае дазволеную максімальную суму %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: павінна быць пазней за пачатак
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Немагчыма выдаліць тавары, дададзеныя ў аформленыя заказы. У такіх выпадках спыніце іх продаж.
+            discontinue_on:
+              invalid_date_range: павінна быць пазней за дату даступнасці
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: павінна быць пазней за дату публікацыі
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: павінна быць пазней за дату пачатку
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Вы павінны выбраць хаця б адну катэгорыю дастаўкі
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Перавышае агульную суму крэдыту.
+            amount_used:
+              cannot_be_greater_than_amount: Не можа быць больш за суму.
+              greater_than_zero_restrict_delete: больш за нуль. Немагчыма выдаліць крэдыт крамы.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Немагчыма выдаліць катэгорыі крэдыту крамы пасля таго, як яны выкарыстаны ў крэдыце крамы.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: мае недазволены тып змесціва
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: належыць іншаму карыстальніку
+              deprecated_in_completed_order: састарэлы ў завершаным заказе
+            ship_address_id:
+              belongs_to_other_user: належыць іншаму карыстальніку
+              deprecated_in_completed_order: састарэлы ў завершаным заказе
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Немагчыма выдаліць варыянты, дададзеныя ў аформленыя заказы. У такіх выпадках спыніце іх продаж.
+              must_supply_price_for_variant_or_master: Неабходна ўказаць цану для варыянта або асноўную цану для тавару.
+              no_master_variant_found_to_infer_price: Не знойдзены асноўны варыянт для вызначэння цаны
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: не павінен указваць на ўнутраны або прыватны сеткавы адрас
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Вы ўжо дадалі гэты тавар у спіс жаданняў
+      messages:
+        blank: не можа быць пустым
     models:
       spree/address:
         many: Адрасоў
@@ -305,11 +482,15 @@ be:
         one: Вобласць/Рэгіён
         other: Вобласці/Рэгіёны
       spree/state_change:
+        one: Змена стану
+        other: Змены стану
       spree/stock_location:
         many: Складоў
         one: Склада
         other: Складоў
       spree/stock_movement:
+        one: Рух тавару
+        other: Рухі тавару
       spree/stock_transfer:
         many: Перасоўванне тавараў
         one: Перасоўванне тавара
@@ -346,6 +527,66 @@ be:
         many: Зоны
         one: Зона
         other: Зоны
+      spree/classification:
+        one: Класіфікацыя
+        other: Класіфікацыі
+      spree/cms_page:
+        one: Старонка
+        other: Старонкі
+      spree/cms_section:
+        one: Раздзел
+        other: Раздзелы
+      spree/customer_group:
+        one: Група кліентаў
+        other: Групы кліентаў
+      spree/customer_group_user:
+        one: Карыстальнік групы кліентаў
+        other: Карыстальнікі групы кліентаў
+      spree/digital:
+        one: Лічбавы актыў
+        other: Лічбавыя актывы
+      spree/export:
+        one: Экспарт
+        other: Экспарты
+      spree/integration:
+        one: Інтэграцыя
+        other: Інтэграцыі
+      spree/page:
+        one: Старонка
+        other: Старонкі
+      spree/page_block:
+        one: Блок старонкі
+        other: Блокі старонкі
+      spree/page_link:
+        one: Спасылка старонкі
+        other: Спасылкі старонкі
+      spree/page_section:
+        one: Раздзел старонкі
+        other: Раздзелы старонкі
+      spree/price:
+        one: Цана
+        other: Цэны
+      spree/price_list:
+        one: Прайс-ліст
+        other: Прайс-лісты
+      spree/price_rule:
+        one: Цэнавае правіла
+        other: Цэнавыя правілы
+      spree/stock_item:
+        one: Складская пазіцыя
+        other: Складскія пазіцыі
+      spree/store:
+        one: Крама
+        other: Крамы
+      spree/store_credit:
+        one: Крэдыт крамы
+        other: Крэдыты крамы
+      spree/store_credit_category:
+        one: Катэгорыя крэдыту крамы
+        other: Катэгорыі крэдыту крамы
+      spree/theme:
+        one: Тэма
+        other: Тэмы
   devise:
     confirmations:
       confirmed: Ваш акаўнт паспяхова актываваны. Цяпер вы аўтарызаваны.
@@ -358,6 +599,7 @@ be:
       timeout: Ваша сесія мінула. Увайдзіце зноўку, каб працягнуць.
       unauthenticated: Вам патрэбна ўвайсці або зарэгістравацца перад тым, як працягнуць.
       unconfirmed: Вы павінны пацвердзіць свой уліковы запіс перад тым, як працягнуць.
+      too_many_attempts: Занадта шмат спроб. Калі ласка, пачакайце крыху і паспрабуйце зноў.
     mailer:
       confirmation_instructions:
         subject: Інструкцыі для пацверджання
@@ -366,8 +608,8 @@ be:
       unlock_instructions:
         subject: Інструкцыі па разблакаванню
     oauth_callbacks:
-      failure: "Няўдалая аўтарызацыя з %{kind} бо %{reason}."
-      success: "Паспяхова ўвайшлі з %{kind} акаўнта."
+      failure: Няўдалая аўтарызацыя з %{kind} бо %{reason}.
+      success: Паспяхова ўвайшлі з %{kind} акаўнта.
     unlocks:
       send_instructions: Вы атрымаеце ліст з інструкцыямі аб тым як разблакаваць ваш акаўнт на працягу некалькіх хвілін.
       unlocked: Ваш акаўнт быў паспяхова разблакаваны. Зараз вы ўвайшлі ў сістэму.
@@ -378,7 +620,7 @@ be:
         updated: Ваш пароль паспяхова зменены. Цяпер вы ў сістэме.
     user_registrations:
       destroyed: Да сустрэчы! Ваш акаўнт быў паспяхова выдалены. Спадзяемся ўбачыць вас у хуткім будучыні.
-      inactive_signed_up: "Вы паспяхова зарэгістраваліся. На жаль, вы не змаглі ўвайсці, таму што ваш акаўнт %{reason}."
+      inactive_signed_up: Вы паспяхова зарэгістраваліся. На жаль, вы не змаглі ўвайсці, таму што ваш акаўнт %{reason}.
       signed_up: Вітаем! Вы паспяхова зарэгістраваліся.
       updated: Ваш акаўнт быў паспяхова абноўлены.
     user_sessions:
@@ -391,8 +633,9 @@ be:
       not_locked: не быў заблакаваны
       not_saved:
         many: "%{count} памылак перашкаджаюць захаванню %{resource}:"
-        one: "Адна памылка перашкаджае захаванню %{resource}:"
+        one: 'Адна памылка перашкаджае захаванню %{resource}:'
         other: "%{count} памылкі перашкаджаюць захаванню %{resource}:"
+      not_a_number: не з'яўляецца лікам
   spree:
     abbreviation: Абрэвіятура
     accept: Прыняць
@@ -414,6 +657,15 @@ be:
       refund: Вярнуць
       save: Захаваць
       update: Змяніць
+      close: Закрыць
+      connect: Падключыць
+      discard: Адхіліць
+      open: Адкрыць
+      reject: Адхіліць
+      remove: Выдаліць
+      resend: Адправіць паўторна
+      select_file: Выбраць файл
+      send_invitation: Адправіць запрашэнне
     activate: Актываваць
     active: Актыўны
     add: Дадаць
@@ -466,6 +718,483 @@ be:
         order_num: Колькасць замоў
         orders: Заказы
         user_information: Інфармацыя
+        last_order_placed: Апошняя зробленая замова
+        no_store_credit: У кліента няма даступнага крэдыту крамы
+      allowed_origins:
+        origin_help: Увядзіце поўны URL крыніцы вашай вітрыны (напрыклад, https://myshop.com). Не дадавайце шляхі або радкі запыту.
+        origin_settings: Налады крыніц
+      amount_spent: Выдаткаваная сума
+      api_keys:
+        example_request: Прыклад запыту
+        key_revoked_message: Гэты API-ключ адкліканы і больш не можа выкарыстоўвацца.
+        key_type_descriptions:
+          publishable: Бяспечны для выкарыстання ў кліенцкім кодзе, напрыклад у мабільных дадатках або браўзерах.
+          secret: Захоўвайце гэта ў бяспецы і выкарыстоўвайце толькі на серверы. Ніколі не раскрывайце публічна.
+        key_types:
+          publishable: Публічны
+          secret: Сакрэтны
+        last_used_at: Апошняе выкарыстанне
+        list: API-ключы
+        name_placeholder: напрыклад, Mobile App Production
+        revoke: Адклікаць
+        revoke_confirmation: Вы ўпэўнены, што хочаце адклікаць гэты API-ключ? Гэта дзеянне нельга адмяніць.
+        revoked: API-ключ адкліканы
+        revoked_at: Адкліканы
+        revoked_by: Адкліканы кім
+        scopes: Вобласці дзеяння
+        scopes_description: Абавязкова для сакрэтных ключоў. Выберыце найвузейшы набор вобласцей дзеяння, патрэбных для вашай інтэграцыі.
+        scopes_immutable: Вобласці дзеяння фіксуюцца пры стварэнні ключа. Каб іх змяніць, стварыце новы ключ з патрэбнымі вобласцямі дзеяння і адклічце гэты.
+        secret_key_hidden: Гэты сакрэтны ключ нельга паказаць паўторна. Калі вы яго згубілі, адклічце гэты ключ і стварыце новы.
+        statuses:
+          active: Актыўны
+          revoked: Адкліканы
+        token_warning: Захавайце гэты ключ у бяспечным месцы. Ён будзе паказаны толькі адзін раз.
+        usage: Выкарыстанне
+        usage_instructions:
+          publishable: Выкарыстоўвайце гэты ключ для кліенцкіх запытаў. Яго можна бяспечна ўключаць у код вашага фронтэнду.
+          secret: Выкарыстоўвайце гэты ключ толькі для сервернах запытаў. Захоўвайце яго ў таямніцы і ніколі не раскрывайце ў кліенцкім кодзе.
+      audit_log: Журнал аўдыту
+      avg_order_value: Сяр. кошт замовы
+      back_to_dashboard: Назад да панэлі кіравання
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Вы ўпэўнены, што хочаце выдаліць выбраных кліентаў з гэтай групы?
+          title:
+            remove: Выдаліць з групы
+        price_list_products:
+          body:
+            remove: Вы ўпэўнены, што хочаце выдаліць выбраныя тавары з гэтага прайс-ліста? Іх цэны таксама будуць выдалены.
+          title:
+            remove: Выдаліць з прайс-ліста
+        products:
+          body:
+            add_tags: 'Выберыце тэгі для дадання да тавараў:'
+            add_to_taxons: 'Выберыце, у якія катэгорыі дадаць тавары:'
+            remove_from_taxons: 'Выберыце, з якіх катэгорый выдаліць тавары:'
+            remove_tags: 'Выберыце тэгі для выдалення з тавараў:'
+            set_active: Усталяванне тавараў як актыўных зробіць іх даступнымі на вітрыне.
+            set_archived: Усталяванне тавараў як архіўных схавае іх з вітрыны.
+            set_draft: Усталяванне тавараў як чарнавікоў схавае іх з вітрыны.
+          title:
+            add_tags: Дадаць тэгі
+            add_to_taxons: Дадаць у катэгорыі
+            remove_from_taxons: Выдаліць з катэгорый
+            remove_tags: Выдаліць тэгі
+            set_active: Зрабіць актыўным
+            set_archived: Зрабіць архіўным
+            set_draft: Зрабіць чарнавіком
+        users:
+          body:
+            add_tags: 'Выберыце тэгі для дадання да кліентаў:'
+            remove_tags: 'Выберыце тэгі для выдалення з кліентаў:'
+          title:
+            add_tags: Дадаць тэгі
+            remove_tags: Выдаліць тэгі
+      channels:
+        code_hint: Кароткі стабільны ідэнтыфікатар (напрыклад, «online», «pos», «wholesale»). Выкарыстоўваецца API-кліентамі праз загаловак X-Spree-Channel і для прывязкі замоў.
+        default: Канал па змаўчанні
+        default_hint: Толькі адзін канал у краме можа быць па змаўчанні. Выкарыстоўваецца як рэзервовы, калі канал не выбраны, і як мэта аўтапублікацыі для новых тавараў.
+        order_routing_strategy: Стратэгія маршрутызацыі замоў
+        order_routing_strategy_hint: Перавызначае стратэгію маршрутызацыі на ўзроўні крамы для замоў, прывязаных да гэтага канала.
+        order_routing_strategy_inherit: Успадкоўваць ад крамы
+      checkout_settings:
+        checkout_links:
+          description: Спасылкі на гэтыя старонкі будуць паказаны ў ніжнім калонтытуле афармлення замовы.
+          label: Спасылкі афармлення замовы
+        checkout_message_description: Бачна вашым кліентам на старонцы афармлення замовы ў правай бакавой панэлі.
+        countries_managed_by_markets_html: Краіны і зоны дастаўкі кіруюцца праз %{link}.
+        guest_checkout:
+          description: Дазволіць кліентам афармляць замовы без стварэння ўліковага запісу.
+          label: Дазволіць гасцявое афармленне замовы
+        special_instructions:
+          description: Дазволіць кліентам дадаваць спецыяльныя інструкцыі да замовы.
+          label: Паказваць поле спецыяльных інструкцый
+      close_sidebar: Закрыць бакавую панэль
+      copied: Скапіравана!
+      copy_payment_link: Скапіраваць спасылку на аплату
+      copy_to_clipboard: Скапіраваць у буфер абмену
+      coupon_codes:
+        unused: Невыкарыстаны
+        used: Выкарыстаны
+      created_at: Створана
+      dashboard:
+        getting_started:
+          description: Усё, што трэба наладзіць, каб пачаць прадаваць.
+        hi: Прывітанне
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> з %{total} крокаў выканана"
+          title: Ваш агульны прагрэс наладкі
+        top_products: Лепшыя тавары
+        view_report: Прагледзець справаздачу
+        whats_happening_on_html: Вось што адбываецца на <strong>%{store_name}</strong> сёння.
+      datetime_field_timezone_help: 'Часавы пояс: %{zone}'
+      digital_shipment_fulfillment_note: Гэта адпраўленне будзе пазначана як выкананае, як толькі карыстальнік спампуе лічбавы тавар
+      display_on_options:
+        back_end: Толькі на панэлі адміністратара
+        both: І на панэлі адміністратара, і на вітрыне
+        front_end: Толькі на вітрыне
+      documentation: Дакументацыя
+      edit_billing_address: Рэдагаваць плацежны адрас
+      edit_contact_information: Рэдагаваць кантактную інфармацыю
+      edit_profile: Рэдагаваць профіль
+      edit_shipping_address: Рэдагаваць адрас дастаўкі
+      edit_theme: Рэдагаваць тэму
+      errors: Памылкі
+      execution_time: Час выканання
+      expand_sidebar: Разгарнуць бакавую панэль
+      export_all: Экспартаваць усе запісы (можа быць павольна для вялікіх набораў даных)
+      export_coupons: Экспартаваць купоны ў файл CSV
+      export_created: Ваш экспарт пачаўся. Вы атрымаеце ліст са спасылкай для спампоўкі, калі ён будзе гатовы!
+      export_only_filtered_records: Экспартаваць толькі адфільтраваныя запісы, што адпавядаюць крытэрыям пошуку
+      export_report: Экспартаваць справаздачу ў файл CSV
+      filters: Фільтры
+      getting_started: Пачатак працы
+      gift_card_batches:
+        codes_count: Колькасць кодаў
+        new_gift_card_batch: Новая партыя падарункавых картак
+        prefix: Прэфікс
+      gift_cards:
+        active: Актыўная
+        all_statuses: Усе статусы
+        code_help_text: Калі пакінуць пустым, мы створым код за вас
+        redeemed: Выкарыстана
+        usage: Выкарыстанне
+      imports:
+        all_required_columns_mapped: Выдатна, усе абавязковыя слупкі супастаўлены!
+        field_required: Поле абавязковае
+        import_done: Гатова!
+        large_import_background_note: Вы можаце закрыць гэту старонку — імпарт працягнецца ў фонавым рэжыме.
+        large_import_message: Гэты імпарт змяшчае %{count} радкоў і занадта вялікі для паасобнага адлюстравання.
+        large_import_summary: "%{completed} выканана, %{failed} з памылкамі"
+        mapping_required: Гэта поле абавязковае
+        please_map_all_required_fields: Каб працягнуць, супастаўце ўсе абавязковыя палі.
+        waiting_for_file_to_be_processed: Чаканне апрацоўкі файла...
+      integrations:
+        invalid_integration_type: Гэта інтэграцыя не дазволена
+        page_subtitle: Падключыце вашу краму да староніх сэрвісаў, каб палепшыць вопыт кліентаў.
+      json_preview:
+        no_api_response: Для гэтага рэсурсу не знойдзена адказу API
+      manage_markets: Кіраваць рынкамі
+      manage_properties: Кіраваць уласцівасцямі
+      manage_stock_locations: Кіраваць месцамі захоўвання
+      manage_taxons: Кіраваць катэгорыямі
+      manage_zones: Кіраваць зонамі
+      markets:
+        edit: Рэдагаваць рынак
+        list: Рынкі
+        new: Новы рынак
+        supported_locales_hint: Спіс дадатковых кодаў лакаляў праз коску (напрыклад, fr,de,es)
+      metafield_definitions:
+        edit_warning: Вы не можаце змяніць тып рэсурсу або тып метаполя пасля таго, як вызначэнне было выкарыстана.
+        used_in: Выкарыстоўваецца ў
+      name: Назва
+      navigation:
+        nested_under: Укладзена ў
+      newsletter_subscribers:
+        all: Усе
+        unverified: Непацверджаныя
+        verified: Пацверджаныя
+      not_tracking_inventory: Без адсочвання запасаў
+      notifications: Апавяшчэнні
+      num_orders: Колькасць замоў
+      oauth_applications:
+        client_id: Ідэнтыфікатар кліента
+        client_secret: Сакрэт кліента
+        last_used: Апошняе выкарыстанне
+        list: API-ключы
+        never: Ніколі
+        new: Новы API-ключ
+        read_and_write: Чытанне і запіс
+        read_only: Толькі чытанне
+        scopes: Вобласці дзеяння
+      order:
+        events:
+          approve: Зацвердзіць
+          cancel: Адмяніць
+          resend: Адправіць паўторна
+          resume: Аднавіць
+      orders:
+        add_user_to_this_order: Дадаць кліента да гэтай замовы
+        all_orders: Усе замовы
+        canceled: Адменена
+        fulfilled: Выканана
+        no_email_present: Дадайце адрас электроннай пошты, каб адправіць спасылку на аплату
+        orders_to_fulfill: Замовы да выканання
+        partially_refunded: Часткова вернута
+        payment_link_sent: Спасылка на аплату была адпраўлена кліенту
+        provide_email: Укажыце адрас электроннай пошты
+        refunded: Вернута
+        remove_user_from_this_order: Выдаліць кліента з гэтай замовы
+        unfulfilled: Не выканана
+      page_builder:
+        background_color: Колер фону
+        border_bottom_width: Шырыня ніжняй мяжы
+        border_color: Колер мяжы
+        border_top_width: Шырыня верхняй мяжы
+        bottom_padding: Ніжні водступ
+        button_alignment: Выраўноўванне кнопкі
+        button_background_color: Колер фону кнопкі
+        button_style: Стыль кнопкі
+        button_text: Тэкст кнопкі
+        button_text_color: Колер тэксту кнопкі
+        category: Катэгорыя
+        description: Апісанне
+        description_alignment: Выраўноўванне апісання
+        desktop_image_alignment: Выраўноўванне выявы для настольнага дысплея
+        desktop_logo_height: Вышыня лагатыпа (настольны)
+        heading: Загаловак
+        heading_alignment: Выраўноўванне загалоўка
+        heading_size: Памер загалоўка
+        height: Вышыня
+        image_click_hint: Націск на выяву накіруе карыстальніка на выбраную старонку/URL
+        left_aligned: Выраўноўванне па левым краі
+        logo_centered: Лагатып па цэнтры
+        max_video_width_on_desktop: Макс. шырыня відэа на настольным дысплеі
+        maximum_products_to_show: Максімальная колькасць тавараў для паказу
+        nav_centered: Навігацыя па цэнтры
+        not_set: Не зададзена
+        separated: Падзелена
+        show_more_button: Паказваць кнопку прагляду катэгорыі
+        show_taxon_image: Паказваць выяву катэгорыі
+        text_color: Колер тэксту
+        title: Назва
+        top_padding: Верхні водступ
+        use_description_from_admin: Выкарыстоўваць апісанне з панэлі адміністратара
+        vertical_alignment: Вертыкальнае выраўноўванне
+        youtube_video_url: URL відэа з Youtube
+      personal_details: Асабістыя звесткі
+      price_lists:
+        activate: Актываваць
+        activated: Прайс-ліст актываваны
+        confirm_activate: Вы ўпэўнены, што хочаце актываваць гэты прайс-ліст? Гэта неадкладна паўплывае на цэнаўтварэнне.
+        confirm_deactivate: Вы ўпэўнены, што хочаце дэактываваць гэты прайс-ліст?
+        confirm_schedule: Вы ўпэўнены, што хочаце запланаваць гэты прайс-ліст?
+        confirm_unschedule: Вы ўпэўнены, што хочаце адмяніць планаванне гэтага прайс-ліста?
+        deactivate: Дэактываваць
+        deactivated: Прайс-ліст дэактываваны
+        schedule: Запланаваць
+        scheduled: Прайс-ліст запланаваны
+        unschedule: Адмяніць планаванне
+      product_translations:
+        coverage: Ахоп перакладу
+        locale: Лакаль
+        manage_markets: Кіраваць рынкамі
+        no_locales_description: Наладзьце рынкі з дадатковымі лакалямі, каб пачаць перакладаць вашы тавары.
+        no_locales_title: Дадатковыя лакалі не наладжаны
+        progress: Прагрэс
+        total: Усяго
+        translated: Перакладзена
+      products:
+        active: Актыўны
+        all_statuses: Усе статусы
+        any_stock: Любы запас
+        archived: Архіўны
+        by_status: Па статусе
+        by_stock: Па запасе
+        deleted: Выдалены
+        draft: Чарнавік
+        help_bubble: Чарнавыя тавары недаступныя для куплі. Актыўныя тавары даступныя.
+        in_stock: У наяўнасці
+        inventory:
+          barcode: Штрых-код (ISBN, UPC, GTIN і інш.)
+          sku: SKU (артыкул складскога ўліку)
+        out_of_stock: Няма ў наяўнасці
+        paused: Прыпынены
+        search_results:
+          no_products: Мы не змаглі знайсці тавары, што адпавядаюць вашаму запыту :(
+        seo:
+          placeholder: Дадайце назву і апісанне, каб убачыць, як гэты тавар можа выглядаць у выніках пошукавай сістэмы
+        status_form:
+          status: Чарнавыя тавары недаступныя для куплі. Актыўныя тавары даступныя.
+        status_options:
+          active: Актыўны
+          archived: Архіўны
+          draft: Чарнавік
+        stores:
+          choose_stores: Выберыце, у якіх крамах павінен быць даступны гэты тавар
+        variants:
+          option_types_link: Каб дадаць больш тыпаў опцый, перайдзіце ў <a href="%{link}">Тыпы опцый</a>
+      publishing:
+        caption_hidden_after: Знікае %{date}
+        caption_live: Бачна кліентам цяпер
+        caption_not_available: Схавана — тавар %{product_status}
+        caption_scheduled: З'явіцца %{date}
+        caption_unpublished: Было схавана %{date}
+        caption_window: Даступна %{start} → %{end}
+        empty: Пакуль не размешчана ні на адным канале продажаў.
+        inactive_marker: Неактыўны
+        manage_cta: Кіраваць
+        manage_description: Выберыце, на якіх каналах продажаў размяшчаецца гэты тавар. Адключыце канал, каб зняць яго з размяшчэння паўсюль.
+        no_channels: Няма даступных каналаў продажаў. Стварыце канал у Наладах → Каналы продажаў.
+        published_at_label: Публікаваць з
+        status_hidden: Схавана
+        status_live: Актыўна
+        status_not_available: Недаступна
+        status_scheduled: Запланавана
+        title: Публікацыя
+        unpublished_at_label: Зняць з публікацыі
+      recommended_size: Рэкамендаваны памер
+      report_created: Ваша справаздача генеруецца. Вы атрымаеце ліст са спасылкай для спампоўкі, калі яна будзе гатова!
+      reset_digital_link_download_limits: Скінуць ліміты спампоўкі
+      response_code: Код адказу
+      selected: выбрана
+      send_payment_link: Адправіць спасылку на аплату
+      shipment:
+        please_provide_tracking_details: Перад тым як пазначыць адпраўленне як адпраўленае, укажыце звесткі для адсочвання
+      shipment_transfer:
+        wrong_destination: Няправільнае прызначэнне
+      show_json: Паказаць JSON
+      stock_transfers:
+        add_products_tip: Спачатку трэба выбраць месца прызначэння
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> засталося (усяго <strong>%{total}</strong>)"
+      store_form:
+        company_field:
+          description: Паказвае поле кампаніі ў форме адраса ў раздзеле «Мой уліковы запіс» і на кроку адраса пры афармленні замовы.
+          label: Паказваць поле адраса кампаніі
+        customer_support_email_help: Гэты адрас электроннай пошты бачны наведвальнікам вашай крамы ў ніжнім калонтытуле
+        new_order_notifications_email_help: Калі вы хочаце атрымліваць апавяшчэнне на электронную пошту кожны раз, калі нехта аформіць замову, укажыце адрас электроннай пошты, на які будзе адпраўляцца гэта апавяшчэнне
+        send_consumer_transactional_emails_help: Калі гэта не адзначана, транзакцыйныя лісты, такія як пацверджанні замоў і апавяшчэнні аб адпраўленнях, не будуць адпраўляцца кліентам
+      store_setup_tasks:
+        add_billing_address: Дадаць плацежны адрас
+        add_products: Дадаць тавары
+        payment_methods:
+          copy: Каб прымаць плацяжы, наладзьце прынамсі аднаго анлайн-правайдара плацяжоў.
+          done: Усё гатова! Вы заўсёды можаце кіраваць спосабамі аплаты на <a href="%{link}" data-turbo-frame="_top">гэтай</a> старонцы.
+          setup: Наладзіць спосабы аплаты
+          title: Наладзьце спосабы аплаты для вашай крамы
+        set_customer_support_email: Задаць email падтрымкі кліентаў
+        setup_taxes_collection: Наладзіць спагнанне падаткаў
+        taxes:
+          copy: Каб спаганяць падаткі, наладзьце вашы падатковыя стаўкі.
+          done: Усё гатова! Вы заўсёды можаце кіраваць падаткамі на старонцы <a href="%{link}" data-turbo-frame="_top">налад</a>.
+          setup: Наладзіць падатковыя стаўкі
+      storefront: Вітрына
+      successful: Паспяхова
+      successfully_reset_digital_links_limit: Ліміты спампоўкі скінуты
+      tables:
+        add_filter: Дадаць фільтр
+        add_or_group: Дадаць групу АБО
+        apply: Прымяніць
+        apply_filters: Прымяніць фільтры
+        ascending: Па ўзрастанні
+        clear_all: Ачысціць усё
+        columns: Слупкі
+        descending: Па ўбыванні
+        enter_value: Увядзіце значэнне...
+        filter_builder: Канструктар фільтраў
+        filters: Фільтры
+        match: Адпавядаць
+        of_the_following: з наступнага
+        operators:
+          contains: змяшчае
+          does_not_contain: не змяшчае
+          ends_with: заканчваецца на
+          equals: роўна
+          greater_than: больш чым
+          greater_than_or_equal: больш або роўна
+          is_any_of: любое з
+          is_empty: пуста
+          is_none_of: ні адно з
+          is_not_empty: не пуста
+          less_than: менш чым
+          less_than_or_equal: менш або роўна
+          not_equals: не роўна
+          starts_with: пачынаецца з
+        order: Парадак
+        reset_to_default: Скінуць да змаўчання
+        select_field: Выберыце поле...
+        sort_by: Сартаваць па
+        visible_columns: Бачныя слупкі
+      taxon_rules:
+        all_conditions: усе ўмовы
+        any_condition: любая ўмова
+        available_on: Даступна з
+        match_policies:
+          contains: змяшчае
+          does_not_contain: не змяшчае
+          is_equal_to: роўна
+          is_not_equal_to: не роўна
+        on_sale: Са зніжкай
+        products_must_match: 'Тавары павінны адпавядаць:'
+        tag: Тэг тавара
+      taxon_type: Тып катэгорыі
+      taxon_types:
+        automatic: Аўтаматычны
+        automatic_info: Аўтаматычна дадаваць тавары ў гэту катэгорыю, калі яны адпавядаюць зададзеным вамі правілам.
+        manual: Ручны
+        manual_info: Падбірайце тавары ўручную. Вы можаце дадаваць або выдаляць іх масава.
+      translations:
+        no_translations_configured: Пераклады не наладжаны. Наладзьце рынкі, каб выкарыстоўваць пераклады.
+      upload_new_asset: Загрузіць новы медыяфайл
+      users:
+        filters:
+          search_placeholder: Пошук кліентаў па email або імені
+      utilities:
+        preview: Папярэдні прагляд
+      variants:
+        search_results:
+          no_variants: Мы не змаглі знайсці варыянты, што адпавядаюць вашаму запыту :(
+      variants_form:
+        add_option:
+          empty: Дадайце опцыі, такія як памер або колер
+          not_empty: Дадаць яшчэ адну опцыю
+        compare_at_price_description: Гэта цана выкарыстоўваецца для паказу зніжанай цаны на старонцы тавара.
+        stock_locations_link: Каб дадаць больш месцаў захоўвання, перайдзіце ў <a href="%{link}">Месцы захоўвання</a>
+        total_inventory_html: 'Агульны запас у месцы %{stock_location}: %{count} даступна'
+      vendors:
+        enterprise_feature: Шматпастаўшчыцкі маркетплэйс даступны ў выданні Enterprise
+      webhook_deliveries:
+        delivered_at: Дастаўлена
+        delivery_details: Звесткі дастаўкі
+        delivery_info: Інфармацыя аб дастаўцы
+        endpoint_inactive: Немагчыма паўтарыць — канчатковая кропка неактыўная
+        error_type: Тып памылкі
+        event: Падзея
+        execution_time: Час выканання
+        failed: Не атрымалася
+        pending: У чаканні
+        redeliver_button: Дадаставіць
+        redelivered: Вебхук паспяхова дадастаўлены.
+        request_errors: Памылкі запыту
+        request_payload: Карысная нагрузка запыту
+        response_body: Цела адказу
+        response_code: Код адказу
+      webhook_endpoints:
+        auto_disabled: Гэта канчатковая кропка была аўтаматычна адключана пасля паўторных збояў дастаўкі.
+        back_to_endpoint: Назад да канчатковай кропкі
+        deliveries: Дастаўкі
+        endpoint_settings: Налады канчатковай кропкі
+        event_subscriptions: Падпіскі на падзеі
+        event_subscriptions_help: Выберыце, якія падзеі павінны выклікаць дастаўку вебхука на гэту канчатковую кропку.
+        events: падзей
+        failed_deliveries: Няўдалыя дастаўкі
+        health:
+          degraded: "%{percentage}% паспяховых"
+          disabled: Адключана
+          failing: "%{percentage}% паспяховых"
+          healthy: "%{percentage}% паспяховых"
+          no_deliveries: Няма даных
+        health_label: Стан
+        new: Новая канчатковая кропка вебхука
+        re_enable: Уключыць зноў
+        secret_key: Сакрэтны ключ
+        secret_key_help: Выкарыстоўвайце гэты ключ для праверкі подпісаў вебхукаў. Захоўвайце яго ў бяспецы і не раскрывайце публічна.
+        send_test: Адправіць тэст
+        subscriptions: Падпіскі
+        successful_deliveries: Паспяховыя дастаўкі
+        test_failed: Не атрымалася адправіць тэставы вебхук. Праверце канфігурацыю канчатковай кропкі.
+        test_sent: Тэставы вебхук адпраўлены. Праверце дастаўкі для выніку.
+      webhooks_subscribers:
+        all_events: Усе падзеі
+        new_webhooks_subscriber: Новы падпісчык вебхукаў
+        no_events: Няма падзей
+        select_events: Выберыце падзеі
+        subscribe_to_all_events: Падпісацца на ўсе падзеі
+        subscriptions: Падпіскі
+        time_of_last_event: Час апошняй падзеі
+        webhooks_events: Падзеі вебхукаў
     administration: Адміністраванне
     advertise: Рэкламаваць
     agree_to_privacy_policy: Пагадзіцца з Палітыкай Прыватнасці
@@ -496,7 +1225,7 @@ be:
     are_you_sure: Вы ўпэўнены
     are_you_sure_delete: Вы ўпэўнены, што жадаеце выдаліць гэты запіс?
     associated_adjustment_closed: Звязаная карэкціроўка закрыта, і не будзе пералічана. Ці хочаце вы адкрыць яе?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Памылка аўтарызацыі
     authorized: Аўтарызаваны
     auto_capture: Аўтозахоп
@@ -541,7 +1270,7 @@ be:
     cart: Кошык
     cart_subtotal:
       one: Прамежкавы вынік (1 пазіцыя)
-      other: "Промижник вынік (пазіцый: %{count})"
+      other: 'Промижник вынік (пазіцый: %{count})'
     categories: Катэгорыі
     category: Катэгорыя
     charged: Загружаны
@@ -557,7 +1286,7 @@ be:
     clear_cache_ok: Кэш быў выдалены
     clear_cache_warning: Увага, дадзенае дзеянне прывядзе да ачыстцы кэша
     click_and_drag_on_the_products_to_sort_them: Перацягніце тавары мышкай для сартавання
-    clone: ​​Капіяваць
+    clone: "​​Капіяваць"
     close: Закрыць
     close_all_adjustments: Закрыць усе карэкціроўкі
     code: Кодавае слова
@@ -611,7 +1340,7 @@ be:
     currency_symbol_position: Палажэнне сімвала валюты адносна сумы
     currency_thousands_separator: Падзяляльнік тысяч валюты
     current: Бягучы
-    current_promotion_usage: "Выкарыстана: %{count}"
+    current_promotion_usage: 'Выкарыстана: %{count}'
     customer: Кліент
     customer_details: Рэквізіты кліента
     customer_details_updated: Дадзеныя кліента былі абноўленыя.
@@ -633,7 +1362,6 @@ be:
     date: Дата
     date_completed: Дата завяршэння
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Перыяд часу
@@ -655,16 +1383,16 @@ be:
     display_currency: Паказваць валюту
     doesnt_track_inventory: Не адсочваць наяўнасць
     edit: Рэдагаваць
-    editing_resource: "Рэдагаваць %{resource}"
+    editing_resource: Рэдагаваць %{resource}
     editing_rma_reason: Рэдагаваць прычыну скаргі
     editing_user: Рэдагаваць карыстальніка
     eligibility_errors:
       messages:
         has_excluded_product: У кошыку ёсць тавар, які не дазваляе прымяніць код купона.
-        item_total_less_than: "Гэты код купона нельга прымяніць да заказах на суму да %{amount}."
-        item_total_less_than_or_equal: "Гэты купон нельга прымяніць да заказаў на суму да %{amount}."
-        item_total_more_than: "Гэты код купона нельга прымяніць да заказаў на суму больш %{amount}."
-        item_total_more_than_or_equal: "Гэты код купона нельга прымяніць да заказаў на суму ўключна ад %{amount}."
+        item_total_less_than: Гэты код купона нельга прымяніць да заказах на суму да %{amount}.
+        item_total_less_than_or_equal: Гэты купон нельга прымяніць да заказаў на суму да %{amount}.
+        item_total_more_than: Гэты код купона нельга прымяніць да заказаў на суму больш %{amount}.
+        item_total_more_than_or_equal: Гэты код купона нельга прымяніць да заказаў на суму ўключна ад %{amount}.
         limit_once_per_user: Гэты код купона можна выкарыстоўваць толькі адзін раз.
         missing_product: Гэты код купона нельга прымяніць, таму што ў кошыку няма ўсіх неабходных тавараў.
         missing_taxon: Неабходна дадаць тавар усіх акцыйных катэгорый, каб прымяніць гэты код купона.
@@ -673,6 +1401,7 @@ be:
         no_user_or_email_specified: Увайдзiце або увядзіце e-mail, каб прымяніць гэты код купона.
         no_user_specified: Каб прымяніць гэты купон.
         not_first_order: Гэты код купона можна ўжыць толькі да вашай першай замовы.
+        wrong_country: Гэты купонны код не дзейнічае ў вашай краіне
     email: Электронная пошта
     empty: пуста
     empty_cart: Ачысціць кошык
@@ -683,9 +1412,20 @@ be:
     error: памылка
     errors:
       messages:
-       could_not_create_taxon: Немагчыма стварыць таксон
-       no_payment_methods_available: Для гэтага асяроддзя не наладжана ніводнага спосабу аплаты
-       no_shipping_methods_available: Для названага месцазнаходжання адсутнічаюць спосабы дастаўкі, калі ласка, зменіце адрас і паспрабуйце зноў.
+        could_not_create_taxon: Немагчыма стварыць таксон
+        no_payment_methods_available: Для гэтага асяроддзя не наладжана ніводнага спосабу аплаты
+        no_shipping_methods_available: Для названага месцазнаходжання адсутнічаюць спосабы дастаўкі, калі ласка, зменіце адрас і паспрабуйце зноў.
+        cannot_delete_default_channel: Немагчыма выдаліць канал па змаўчанні. Спачатку прызначце іншы канал каналам па змаўчанні.
+        channel_store_mismatch: павінен належаць той жа краме
+        invalid_order_routing_rule: не з'яўляецца зарэгістраваным правілам маршрутызацыі заказаў
+        invalid_order_routing_strategy: не з'яўляецца зарэгістраванай стратэгіяй маршрутызацыі заказаў
+        must_be_origin_only: павінен быць крыніцай (схема і хост) без шляху, запыту або фрагмента
+        store_association_can_not_be_changed: Прывязку да крамы немагчыма змяніць
+        store_is_already_set: Крама ўжо ўсталявана
+      services:
+        get_shipping_rates:
+          no_line_items: Каб згенераваць тарыфы дастаўкі, неабходна дадаць у заказ некаторыя пазіцыі
+          no_shipping_address: Каб згенераваць тарыфы дастаўкі, заказ павінен мець адрас дастаўкі
     errors_prohibited_this_record_from_being_saved:
       few: "%{count} памылкі не дазваляюць захаваць запіс у базе"
       many: "%{count} памылак не дазваляюць захаваць запіс у базе"
@@ -710,7 +1450,7 @@ be:
     exchange_for: Абмяняць на
     excl: за выкл.
     existing_shipments: Існуючыя адпраўлення
-    expedited_exchanges_warning: "Любая паказаная замена будзе адпраўлена пакупніку неадкладна пасля захавання. З пакупніка будзе спісана поўная сума за замену, калі арыгінальная пакупка не будзе вернутая за %{days_window} дзён."
+    expedited_exchanges_warning: Любая паказаная замена будзе адпраўлена пакупніку неадкладна пасля захавання. З пакупніка будзе спісана поўная сума за замену, калі арыгінальная пакупка не будзе вернутая за %{days_window} дзён.
     expiration: Заканчэнне дзеяння
     extension: Пашырэнне
     failed_payment_attempts: Няўдалыя спробы правядзення плацяжу
@@ -753,8 +1493,8 @@ be:
     identifier: Ідэнтыфікатар
     image: Малюнак
     images: Малюнкі
-    implement_eligible_for_return: Для валідацыі патрабаванняў метад #eligible_for_return? павінен быць рэалізаваныя.
-    implement_requires_manual_intervention: Для валідацыі патрабаванняў метад #requires_manual_intervention? павінен быць рэалізаваныя.
+    implement_eligible_for_return: Для валідацыі патрабаванняў метад
+    implement_requires_manual_intervention: Для валідацыі патрабаванняў метад
     inactive: Неактыўны
     incl: Укл.
     included_in_price: Ўключана ў кошт
@@ -762,10 +1502,10 @@ be:
     incomplete: Няпоўны
     info_number_of_skus_not_shown:
       one: і адзін іншы
-      other: "і %{count} іншых"
-    info_product_has_multiple_skus: "Гэты прадукт мае %{count} варыянтаў"
+      other: і %{count} іншых
+    info_product_has_multiple_skus: Гэты прадукт мае %{count} варыянтаў
     instructions_to_reset_password: Каб скінуць пароль, запоўніце форму ніжэй. Новы пароль будзе адпраўлены вам па электроннай пошце
-    insufficient_stock: "Нехапае адзінак тавару, толькі %{on_hand} ёсць у наяўнасці"
+    insufficient_stock: Нехапае адзінак тавару, толькі %{on_hand} ёсць у наяўнасці
     insufficient_stock_lines_present: Некаторыя пазіцыі гэтай замовы маюць недастатковае колькасць.
     intercept_email_address: Перахоп лістоў
     intercept_email_instructions: Замяніць email атрымальніка на гэты адрас.
@@ -791,12 +1531,6 @@ be:
         lt: менш
         lte: менш або роўна
     items_cannot_be_shipped: К сожалению мы не можем доставить ваш товар на указанный адрес. Пожалуйста введите другой адрес.
-    items_in_rmas:
-    items_reimbursed:
-    items_to_be_reimbursed:
-    jirafe: Jirafe
-    landing_page_rule:
-      path: Путь
     items_in_rmas:
     items_reimbursed:
     items_to_be_reimbursed:
@@ -831,8 +1565,8 @@ be:
     manual_intervention_required: Трэба чалавечае ўмяшальніцтва
     master_price: Асноўная цана
     match_choices:
-     all: Усім
-     none: Ніводнаму
+      all: Усім
+      none: Ніводнаму
     MAX_ITEMS: Максімальная колькасць найменняў па пачатковай стаўцы
     member_since: Зарэгістраваны ад
     memo: Заўвага
@@ -923,7 +1657,7 @@ be:
     optional: Не абавязкова
     options: Опцыі
     or: ці
-    or_over_price: "больш за %{price}"
+    or_over_price: больш за %{price}
     order: Заказ
     order_adjustments: Карэкціроўкі замовы
     order_already_updated: Заказ ужо зменены
@@ -940,6 +1674,7 @@ be:
         subject: Ануляванне замовы
         subtotal: Разам
         total: Усяго
+        thanks: Дзякуй за
       confirm_email:
         dear_customer: Дарагі пакупнік, \n
         instructions: Калі ласка, праверце дэталі замовы.
@@ -948,8 +1683,22 @@ be:
         subtotal: Разам
         thanks: Дзякуй, што выбралі нас.
         total: Усяго
+      payment_link_email:
+        message: Калі ласка, націсніце кнопку ніжэй, каб аплаціць ваш заказ.
+        message_copy_link: 'Калі кнопка не працуе, скапіруйце і ўстаўце наступную спасылку ў ваш браўзер:'
+        pay_for_order: Аплаціць заказ
+        subject: 'Спасылка на аплату заказу #%{number}'
+      store_owner_notification_email:
+        heading: Атрыманы новы заказ
+        instructions: Вы атрымалі новы заказ.
+        order_summary: Зводка заказу %{number}
+        subject: "%{store_name} атрымала новы заказ"
+        thanks: Дзякуй
+      store_team: Каманда %{store_name}
+      subtotal: 'Прамежкавы вынік:'
+      total: 'Усяго па заказе:'
     order_not_found: Мы не змаглі знайсці Ваш заказ. Паспрабуйце яшчэ раз.
-    order_number: "Заказ %{number}"
+    order_number: Заказ %{number}
     order_processed_successfully: Ваш заказ быў паспяхова апрацаваны
     order_resumed: Заказ працягнуты
     order_state:
@@ -965,7 +1714,7 @@ be:
       resumed: Адноўлены
       returned: Вернуты
     order_summary: Зводка па замове
-    order_sure_want_to: "Вы ўпэўнены, што жадаеце %{event} гэты заказ?"
+    order_sure_want_to: Вы ўпэўнены, што жадаеце %{event} гэты заказ?
     order_total: Усяго па заказу
     order_updated: Заказ абноўлены
     orders: Заказы
@@ -975,11 +1724,10 @@ be:
     package_from: Фасоўка ў
     pagination:
       next_page: наступная старонка »
-      previous_page: « папярэдняя старонка
-      truncate: …
+      previous_page: "« папярэдняя старонка"
+      truncate: "…"
     password: Пароль
     paste: Уставіць
-    path: Шлях
     pay: Аплаціць
     payment: Плацёж
     payment_could_not_be_created: Немагчыма стварыць плацёж
@@ -1001,7 +1749,11 @@ be:
       paid: аплочаны
       pending: у чаканні
       processing: у апрацоўцы
-    void: ануляваны
+      complete: Завершана
+      partially_refunded: Часткова вернута
+      refunded: Вернута
+      void: Ануляваны
+    void: Ануляваць
     payment_updated: Плацёж абноўлены
     payments: Плацяжы
     pending: У чаканні
@@ -1046,14 +1798,14 @@ be:
         description: Стварае прома-карэкціроўкі для замовы
         name: Стварыць карэкціроўку
       create_item_adjustments:
-        description: "Стварае крэдытныя карэкціроўкі на пазіцыю замовы"
-        name: "Стварыць карэкціроўкі на пазіцыю"
+        description: Стварае крэдытныя карэкціроўкі на пазіцыю замовы
+        name: Стварыць карэкціроўкі на пазіцыю
       create_line_items:
         description: Запаўняе кошык названай колькасцю пазіцый
         name: Стварыць элемент замовы
       free_shipping:
-        description: "Робіць дастаўку замовы бясплатнай"
-        name: "Бясплатная дастаўка"
+        description: Робіць дастаўку замовы бясплатнай
+        name: Бясплатная дастаўка
       promotion_actions: Акцыі
       promotion_form:
         match_policies:
@@ -1088,11 +1840,26 @@ be:
       user_logged_in:
         description: Толькі для зарэгістраваных карыстальнікаў
         name: Карыстальнік увайшоў
-
-
-
-    promotion_uses: "Прымяненне прома-акцый"
-    promotionable: "акцыйны тавар"
+      category:
+        description: Заказ уключае тавары з указаных катэгорый
+        name: Катэгорыі
+      country:
+        description: Абмежаваць заказамі з адрасам дастаўкі ў пэўнай краіне
+        name: Краіна
+      currency:
+        description: Абмежаваць заказамі ў пэўнай валюце
+        name: Валюта
+      customer:
+        description: Даступна толькі для ўказаных кліентаў
+        name: Кліенты
+      customer_group:
+        description: Даступна толькі для кліентаў з указанай(-ых) групы(груп) кліентаў
+        name: Група(-ы) кліентаў
+      customer_logged_in:
+        description: Даступна толькі для кліентаў, якія ўвайшлі ў сістэму
+        name: Толькі для кліентаў, якія ўвайшлі ў сістэму
+    promotion_uses: Прымяненне прома-акцый
+    promotionable: акцыйны тавар
     promotions: Прома-акцыі
     propagate_all_variants: Прымяненне да ўсіх варыянтаў
     properties: Уласцівасці
@@ -1120,27 +1887,29 @@ be:
     refunds: Вяртанне
     register: Зарэгістравацца як новы карыстальнік
     registration: Рэгістрацыя
-    reimburse: "Кампенсіраваць"
-    reimbursed: "Кампенсіравана"
-    reimbursement: "Кампенсацыя"
+    reimburse: Кампенсіраваць
+    reimbursed: Кампенсіравана
+    reimbursement: Кампенсацыя
     reimbursement_mailer:
       reimbursement_email:
-        days_to_send: "Вы можаце вярнуцца для абмену любых тавараў на працягу %{days} дзён."
-        dear_customer: "Паважаны пакупнік,\\n"
-        exchange_summary: "Сцісла аб абмене"
-        for: "на"
-        instructions: "Ваша кампенсацыя было апрацавана."
-        refund_summary: "Сцісла аб вяртанні"
-        subject: "Паведамленне аб кампенсацыі"
-        total_refunded: "Усяго вернута: %{total}"
-    reimbursement_perform_failed: "Немагчыма правесці кампенсацыю. Памылка %{error}"
-    reimbursement_status: "Стан кампенсацыі"
-    reimbursement_type: "Тып кампенсацыі"
-    reimbursement_type_override: "Змена тыпу кампенсацыі"
-    reimbursement_types: "Тыпы кампенсацыі"
-    reimbursements: "Кампенсацыі"
-    reject: "Адхіліць"
-    rejected: "Адхілена"
+        days_to_send: Вы можаце вярнуцца для абмену любых тавараў на працягу %{days} дзён.
+        dear_customer: Паважаны пакупнік,\n
+        exchange_summary: Сцісла аб абмене
+        for: на
+        instructions: Ваша кампенсацыя было апрацавана.
+        refund_summary: Сцісла аб вяртанні
+        subject: Паведамленне аб кампенсацыі
+        total_refunded: 'Усяго вернута: %{total}'
+        store_team: Каманда %{store_name}
+        thanks: Дзякуй за тое, што выбралі нас.
+    reimbursement_perform_failed: Немагчыма правесці кампенсацыю. Памылка %{error}
+    reimbursement_status: Стан кампенсацыі
+    reimbursement_type: Тып кампенсацыі
+    reimbursement_type_override: Змена тыпу кампенсацыі
+    reimbursement_types: Тыпы кампенсацыі
+    reimbursements: Кампенсацыі
+    reject: Адхіліць
+    rejected: Адхілена
     remember_me: Запомніць мяне
     remove: Прыбраць
     rename: Перайменаваць
@@ -1185,7 +1954,7 @@ be:
     say_yes: Так
     scope: Фільтр
     search: Пошук
-    search_results: "Вынікі пошуку па запыце '%{keywords}'"
+    search_results: Вынікі пошуку па запыце '%{keywords}'
     searching: Ідзе пошук...
     secure_connection_type: Тып абароненага злучэння
     security_settings: Налады бяспекі
@@ -1194,7 +1963,7 @@ be:
     select_a_stock_location: Выбраць адрас склада
     select_from_prototype: Выбраць з прататыпаў
     select_stock: Выбраць склад
-    selected_quantity_not_available: "тавару %{item} недастаткова."
+    selected_quantity_not_available: тавару %{item} недастаткова.
     send_copy_of_all_mails_to: Адсылаць копіі ўсіх лістоў на
     send_mails_as: Адсылаць пошту як
     server: Сервер
@@ -1205,7 +1974,7 @@ be:
     ship_total: Усяго да дастаўцы
     shipment: Адпраўка
     shipment_adjustments: Карэкціроўкі дастаўкі
-    shipment_details: "Від %{stock_location} праз %{shipping_method}"
+    shipment_details: Від %{stock_location} праз %{shipping_method}
     shipment_mailer:
       shipped_email:
         dear_customer: Дарагі пакупнік, \n
@@ -1213,8 +1982,10 @@ be:
         shipment_summary: Дэталі дастаўкі
         subject: Апавяшчэнне аб дастаўцы
         thanks: Дзякуй, што выбралі нас.
-        track_information: "Дэталі адсочвання дастаўкі: %{tracking}"
-        track_link: "Адрас трекінга: %{url}"
+        track_information: 'Дэталі адсочвання дастаўкі: %{tracking}'
+        track_link: 'Адрас трекінга: %{url}'
+        shipping_method: 'Спосаб дастаўкі: %{shipping_method}'
+        store_team: Каманда %{store_name}
     shipment_state: Статус адпраўкі
     shipment_states:
       backorder: затрымліваецца
@@ -1291,6 +2062,7 @@ be:
       returned: Даслана назад
       shipped: Пастаўлена
       void: Несапраўдны
+      shipment: Адпраўленне
     states: Рэгіёны/Вобласці
     states_required: Рэгіёны абавязковыя
     status: Статус
@@ -1302,9 +2074,13 @@ be:
     stock_management: Упраўленне запасамі
     stock_management_requires_a_stock_location: Дадайце размяшчэнне склада для кіравання запасамі.
     stock_movements: Перамяшчэння тавараў
-    stock_movements_for_stock_location: "Перамяшчэння тавараў для %{stock_location_name}"
+    stock_movements_for_stock_location: Перамяшчэння тавараў для %{stock_location_name}
     stock_successfully_transferred: Тавары паспяхова перамешчаныя з аднаго склада на іншы.
-    stock_transfer: Рух тавараў
+    stock_transfer:
+      errors:
+        must_have_variant: Вы павінны дадаць хаця б адзін варыянт
+        same_location: не можа супадаць з месцам прызначэння
+        variants_unavailable: Некаторыя варыянты недаступныя ў %{stock}
     stock_transfers: Рухі тавараў
     stop: Канец
     store: У краму
@@ -1332,8 +2108,8 @@ be:
     taxon_rule:
       choose_taxons: Выбраць таксоны
       label: Заўвага
-      match_all: "усе"
-      match_any: "па меншай меры адзін"
+      match_all: усе
+      match_any: па меншай меры адзін
     taxonomies: Таксанаміі
     taxonomy: Таксанамія
     taxonomy_edit: Рэдагаванне таксанаміі
@@ -1375,8 +2151,8 @@ be:
     type: Тып
     type_to_search: Пачніце ўводзіць, каб актываваць пошук
     unable_to_connect_to_gateway: Не атрымалася падлучыцца да аплатнага шлюза.
-    unable_to_create_reimbursements: "Немагчыма стварыць кампенсацыі, паколькі некаторыя пазіцыі чакаюць чалавечага ўмяшання."
-    under_price: "Танней %{price}"
+    unable_to_create_reimbursements: Немагчыма стварыць кампенсацыі, паколькі некаторыя пазіцыі чакаюць чалавечага ўмяшання.
+    under_price: Танней %{price}
     unlock: Разблакаваць
     unrecognized_card_type: Невядомы тып карткі
     unshippable_items: Неадпраўленыя тавары
@@ -1398,13 +2174,12 @@ be:
       is_too_large: занадта шмат - колькасць на складзе менш запытанай колькасці!
       must_be_int: павінен быць цэлым лікам
       must_be_non_negative: павінен быць неадмоўным лікам
-      unpaid_amount_not_zero: "сума цалкам кампенсавана. Рэшта %{amount}"
+      unpaid_amount_not_zero: сума цалкам кампенсавана. Рэшта %{amount}
     value: Значэнне
     variant: Варыянт
     variant_placeholder: Абярыце варыянт
     variants: Варыянты
     version: Версія
-    void: Ануляваць
     weight: Вага
     what_is_a_cvv: Што такое CVV?
     what_is_this: Што гэта?
@@ -1417,3 +2192,693 @@ be:
     zipcode: Паштовы індэкс
     zone: Гандлёвая зона
     zones: Гандлёвыя зоны
+    add_gift_card: Дадаць падарункавую картку
+    add_new_address: Дадаць новы адрас
+    add_selected: Дадаць выбранае
+    add_selected_products: Дадаць выбраныя тавары
+    add_selected_variant: Дадаць выбраны варыянт
+    added_at: Дададзена
+    adjustment_amount_help: Дадатныя значэнні — гэта спагнанні, адмоўныя — крэдыты.
+    adjustment_closed_description: Карэкціроўка закрыта і не будзе пералічвацца.
+    adjustment_open_description: Карэкціроўка адкрыта і будзе пералічвацца.
+    admin_language_help: Мова, на якой адлюстроўваецца ваша панэль адміністратара. Уплывае толькі на тое, што бачыце вы, а не на краму ці іншых супрацоўнікаў.
+    admin_locale_help: Мова, што выкарыстоўваецца для панэлі адміністратара. Калі не зададзена, выкарыстоўваецца лакаль дадатку па змаўчанні.
+    all_time: За ўвесь час
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: Прыменена да
+    assigned_variants: Прызначаныя варыянты
+    assigned_variants_help: Выберыце варыянты, якія прадстаўляе гэта выява. Пакіньце пустым, каб прымяніць да ўсіх варыянтаў.
+    automatic_promotion: Аўтаматычная
+    breadcrumbs: Хлебныя крошкі
+    cancel_order: Адмяніць замову
+    cannot_ship: Адпраўленне не можа быць адпраўлена
+    card_expiration_placeholder: ММ/ГГГГ
+    categorization: Катэгарызацыя
+    change_password: Змяніць пароль
+    close_sidebar: Закрыць бакавую панэль
+    contact_information: Кантактная інфармацыя
+    contact_us: Звязацца з намі
+    continue_selling_when_out_of_stock: Працягваць продаж, калі няма ў наяўнасці
+    copied: Скапіравана!
+    copy_id: Скапіраваць ID
+    custom_domains: Карыстальніцкія дамены
+    customer_could_not_be_removed_from_group: Не атрымалася выдаліць кліента з групы
+    customer_group_rule:
+      choose_customer_groups: 'Выберыце групу(ы) кліентаў, да якіх павінна прымяняцца гэта акцыя:'
+    customer_removed_from_group: Кліент выдалены з групы
+    customers_added_to_group:
+      one: "%{count} кліент дададзены ў групу"
+      other: "%{count} кліентаў дададзена ў групу"
+    customers_removed_from_group:
+      one: "%{count} кліент выдалены з групы"
+      other: "%{count} кліентаў выдалена з групы"
+    days_ago: Дзён таму
+    delete_selected: Выдаліць выбранае
+    digital_assets_help: Лічбавыя файлы — гэта файлы, якія кліенты могуць спампаваць пасля куплі.
+    dimension_units:
+      centimeter: Сантыметр (см)
+      foot: Фут (ft)
+      inch: Цаля (in)
+      millimeter: Міліметр (мм)
+    display_settings: Налады адлюстравання
+    domains: Дамены
+    draft_orders: Чарнавыя замовы
+    edit_address: Рэдагаваць адрас
+    edit_prices: Рэдагаваць цэны
+    edit_refund: Рэдагаваць вяртанне
+    estimated_delivery_time: Меркаваны час дастаўкі
+    excerpt: Урывак
+    favicon: Фавікон
+    filtered_records: Адфільтраваныя запісы
+    forbidden_message: У вас няма дазволу на доступ да гэтай старонкі.
+    general_information: Агульная інфармацыя
+    get_back_to_the: Вярнуцца на
+    homepage: Галоўная старонка
+    internal_name: Унутраная назва
+    internal_server_error: Унутраная памылка сервера
+    internal_server_error_message: Сервер сутыкнуўся з унутранай памылкай і не змог завяршыць ваш запыт.
+    invitation_expired:
+      body: Гэта спасылка-запрашэнне больш не сапраўдная. Папрасіце таго, хто вас запрасіў, адправіць новую.
+      heading: Запрашэнне несапраўднае або пратэрмінаванае
+    invitation_resent: Запрашэнне адпраўлена паўторна!
+    issued_on: Выдадзена
+    log_in: Увайсці
+    manual_adjustment: Ручная карэкціроўка
+    manual_adjustments: Ручныя карэкціроўкі
+    mark_as_default: Зрабіць па змаўчанні
+    move_variant_to: Перамясціць варыянт у
+    new_allowed_origin: Новая дазволеная крыніца
+    new_api_key: Новы API-ключ
+    new_balance: Новы баланс
+    new_billing_address: Новы плацежны адрас
+    new_channel: Новы канал продажаў
+    new_custom_domain: Новы карыстальніцкі дамен
+    new_customer_group: Новая група кліентаў
+    new_digital_asset: Новы лічбавы файл
+    new_domain: Новы дамен
+    new_gift_card: Новая падарункавая картка
+    new_line_item: Дадаць пазіцыю
+    new_metafield_definition: Новае вызначэнне метаполя
+    new_nested_taxon: Новая ўкладзеная падкатэгорыя
+    new_page: Новая старонка
+    new_password: Новы пароль
+    new_policy: Новая палітыка
+    new_reimbursement_type: Новы тып кампенсацыі
+    new_role: Новая роля
+    new_shipping_address: Новы адрас дастаўкі
+    new_store: Новая крама
+    new_store_credit: Новы крэдыт крамы
+    new_store_credit_category: Новая катэгорыя крэдыту крамы
+    new_webhook_endpoint: Новая канчатковая кропка вебхука
+    no_adjustments: Няма карэкціровак
+    no_billing_address_available: Плацежны адрас недаступны
+    no_customers_found: Кліенты не знойдзены
+    no_email_provided: Email не ўказаны
+    no_internal_note: Няма ўнутранай нататкі
+    no_products_added: Тавары не дададзены
+    no_products_in_price_list: У гэтым прайс-лісце няма тавараў
+    no_promotions_applied: Акцыі не прыменены
+    no_saved_cards: Няма захаваных картак
+    no_shipping_address_available: Адрас дастаўкі недаступны
+    no_taxes: Няма падаткаў
+    no_users_selected: Карыстальнікі не выбраны
+    not_risky: Без рызыкі
+    oauth_applications: Дадаткі OAuth
+    option_type_filterable_info: Калі тып опцыі ўсталяваны як фільтруемы, наведвальнікам вашай вітрыны прапануецца магчымасць фільтраваць катэгорыю тавараў на падставе гэтага тыпу опцыі. Тыповым прыкладам гэтага была б фільтрацыя адзення па памеры і колеры.<br><br><b>Звярніце ўвагу:</b> фільтры будуць бачныя толькі ў катэгорыях вітрыны, што змяшчаюць тавары з усталяваным гэтым тыпам опцыі.
+    option_type_kind_info: Кіруе тым, як опцыя адлюстроўваецца на вітрыне. Узоры колеру паказваюць каляровыя кружочкі, кнопкі паказваюць клікабельныя чыпы, а выпадаючы спіс паказвае меню выбару.
+    option_type_kinds:
+      buttons: Кнопкі
+      color_swatch: Узор колеру
+      dropdown: Выпадаючы спіс
+    or_select_other_address: або выберыце іншы адрас
+    order_email_resent_error: Ліст з пацверджаннем замовы можна адправіць толькі для завершаных замоў
+    order_line_items: Пазіцыі замовы
+    page_not_found: Прабачце! Старонка, якую вы шукаеце, не знойдзена.
+    page_not_found_message: Гэтай старонкі проста не існуе.
+    payment_amount: Сума аплаты
+    payment_provider_settings: Налады правайдара плацяжоў
+    payment_type: Тып аплаты
+    payments_gateway_processing_errors: Памылкі апрацоўкі %{payment_method_name}
+    personal_details: Асабістыя звесткі
+    previously_used_card: Раней выкарыстаныя карткі
+    price_list_form:
+      match_policies:
+        all: Адпавядаць усім гэтым правілам
+        any: Адпавядаць любому з гэтых правіл
+    price_list_statuses:
+      active: Актыўны
+      draft: Чарнавік
+      inactive: Неактыўны
+      scheduled: Запланаваны
+      scheduled_active: Запланаваны (актыўны)
+    products_added: Тавары дададзены
+    products_removed: Тавары выдалены
+    products_sort_options:
+      best_selling: Найбольш прадаваныя
+      manual: Уручную
+      name_a_z: Па алфавіце, А-Я
+      name_z_a: Па алфавіце, Я-А
+      newest_first: Найноўшыя
+      oldest_first: Найстарэйшыя
+      price_high_to_low: Цана (высокая-нізкая)
+      price_low_to_high: Цана (нізкая-высокая)
+      relevance: Рэлевантнасць
+    promotion_cloned: Акцыя была кланіравана
+    promotion_form:
+      match_policies:
+        all: Адпавядаць усім гэтым правілам
+        any: Адпавядаць любому з гэтых правіл
+    promotion_not_cloned: 'Акцыя не была кланіравана. Прычына: %{error}'
+    purchased_quantity: Куплёная колькасць
+    remove_condition: Выдаліць умову
+    return_authorization_states:
+      authorized: Дазволена
+      canceled: Адменена
+    same_as_shipping_address: Такі ж, як адрас дастаўкі
+    search_customers: Пошук кліентаў
+    search_engine_listing: Прадстаўленне ў пошукавай сістэме
+    search_products: Пошук тавараў
+    select_existing_address: Выберыце існуючы адрас
+    select_key_type: Выберыце тып ключа
+    select_user: Выберыце кліента
+    select_vendor: Выберыце пастаўшчыка
+    send_payment_link: Адправіць спасылку на аплату
+    send_payment_link_title: Адправіць кліенту спасылку на аплату па электроннай пошце. Ён зможа завяршыць аплату пазней.
+    service_unavailable: Сэрвіс недаступны
+    service_unavailable_message: Сервер часова не можа абслужыць ваш запыт з-за тэхнічных работ або праблем з прапускной здольнасцю. Калі ласка, паспрабуйце пазней.
+    shipment_successfully_shipped: Адпраўленне паспяхова адпраўлена
+    show_details: Паказаць звесткі
+    show_report: Паказаць справаздачу
+    standards_and_formats: Стандарты і фарматы
+    standards_and_formats_help: Задайце часавы пояс, сістэму адзінак вымярэння і адзінку вагі па змаўчанні для вашай крамы.
+    start_typing_to_search_for_products: Пачніце набіраць для пошуку тавараў
+    start_typing_to_search_for_variants: Пачніце набіраць для пошуку варыянтаў
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Вы не можаце змяніць крэдыт крамы, які ўжо быў выкарыстаны
+        unable_to_create: Не атрымалася стварыць крэдыт крамы
+        unable_to_delete: Не атрымалася выдаліць крэдыт крамы
+        unable_to_update: Не атрымалася абнавіць крэдыт крамы
+      remaining: Засталося
+      allocated: Дададзена
+      authorized: Аўтарызавана
+      captured: Выкарыстана
+      credit: Крэдыт
+      eligible: Прыдатна
+    store_credit_categories: Катэгорыі крэдыту крамы
+    store_details: Звесткі крамы
+    store_errors:
+      unable_to_update: Не атрымалася абнавіць краму.
+    store_form:
+      customer_support_email_help: Гэты адрас электроннай пошты бачны наведвальнікам вашай крамы ў ніжнім калонтытуле
+      new_order_notifications_email_help: Калі вы хочаце атрымліваць апавяшчэнне на электронную пошту кожны раз, калі нехта аформіць замову, укажыце адрас электроннай пошты, на які будзе адпраўляцца гэта апавяшчэнне
+    store_name_help: Гэта назва вашай крамы. Яна будзе адлюстроўвацца ў верхнім і ніжнім калонтытулах.
+    track_quantity: Адсочваць колькасць
+    transaction_id_help: Гэта ідэнтыфікатар транзакцыі, што была створана ў старонняй платежнай сістэме.
+    true_label: 'TRUE'
+    type_to_search_customers: Набярыце для пошуку кліентаў
+    type_to_search_products: Набярыце для пошуку тавараў
+    unit_system_help: Гэта будзе выкарыстоўвацца як сістэма адзінак вымярэння па змаўчанні для вашай крамы. Вы можаце перавызначыць гэта для кожнага тавара асобна.
+    unit_systems:
+      imperial_system: Імперская сістэма
+      metric: метрычная
+      metric_system: Метрычная сістэма
+    unprocessable_entity: Немагчыма апрацаваць запыт
+    unprocessable_entity_message: Ваш запыт не атрымалася апрацаваць. Праверце форму на наяўнасць памылак і паспрабуйце зноў.
+    update_address: Абнавіць адрас
+    update_billing_address: Абнавіць плацежны адрас
+    update_contact_information: Абнавіць кантактную інфармацыю
+    update_shipping_address: Абнавіць адрас дастаўкі
+    use_shipping_address: Выкарыстоўваць адрас дастаўкі
+    vendors: Пастаўшчыкі
+    view_full_size: Прагледзець у поўным памеры
+    view_store: Прагледзець краму
+    visits: Наведванні
+    weight_unit_help: Гэта будзе выкарыстоўвацца як адзінка вагі па змаўчанні для вашай крамы. Вы можаце перавызначыць гэта для кожнага тавара асобна.
+    weight_units:
+      gram: Грам (г)
+      kilogram: Кілаграм (кг)
+      ounce: Унцыя (oz)
+      pound: Фунт (lb)
+    accepts_email_marketing: Згаджаецца на email-рассылкі
+    add_customers: Дадаць кліентаў
+    add_products: Дадаць тавары
+    add_store: Новая крама
+    add_store_credit: Дадаць крэдыт крамы
+    added_to_cart: Паспяхова дададзена ў кошык!
+    address: Адрас
+    address_book:
+      add_house_number: Дадайце нумар дома, калі ён ёсць
+    address_not_owned_by_user: Указаны адрас не належыць гэтаму карыстальніку.
+    addresses: Адрасы
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (уключана ў цану)"
+    adjustments_deleted: Карэкціроўкі выдалены
+    admin_locale: Лакаль адміністратара
+    all_products: Усе тавары
+    allowed_origin: Дазволеная крыніца
+    allowed_origins: Дазволеныя крыніцы
+    analytics: Аналітыка
+    api_key: API-ключ
+    api_key_no_current_key: Ні адзін API-ключ не аўтэнтыфікаваў гэты запыт
+    api_key_scopes_immutable: немагчыма змяніць пасля стварэння ключа; стварыце новы ключ з патрэбнымі вобласцямі і адкліч гэты
+    api_keys: API-ключы
+    apply: Прымяніць
+    apply_only_on_full_priced_items: Прымяняць толькі да тавараў па поўнай цане
+    apply_store_credit: Прымяніць крэдыт крамы
+    assets: Медыя
+    attachments: Укладанні
+    author: Аўтар
+    availability: даступнасць
+    available: Даступна
+    balance: Баланс
+    barcode: Штрых-код
+    brand: Брэнд
+    canceled: Скасавана
+    cannot_be_destroyed: Заказ немагчыма выдаліць.
+    cannot_empty: Немагчыма ачысціць заказ.
+    cannot_empty_completed_order: Заказ ужо апрацаваны, таму яго немагчыма ачысціць
+    cannot_return_more_than_bought_quantity: Немагчыма вярнуць больш, чым было набыта.
+    cart_already_updated: Кошык ужо абноўлены.
+    cart_line_item:
+      discontinued: "%{li_name} быў выдалены, бо яго продаж спынены"
+      out_of_stock: "%{li_name} быў выдалены, бо ён распрададзены"
+    change: Змяніць
+    channel: Канал продажаў
+    channels: Каналы продажаў
+    checkout_requirements:
+      email_required: Неабходны адрас электроннай пошты
+      line_items_required: Дадайце хаця б адзін тавар у кошык
+      payment_required: Дадайце спосаб аплаты
+      ship_address_required: Неабходны адрас дастаўкі
+      shipping_method_required: Выберыце спосаб дастаўкі для ўсіх адпраўленняў
+    clear: Ачысціць
+    clear_all: Ачысціць усё
+    closed: Закрыта
+    color_code: Код колеру
+    colors: Колеры
+    compare_at_amount: Сума для параўнання
+    compare_at_price: Цана для параўнання
+    contact: Кантакт
+    contact_phone: Кантактны тэлефон
+    content: Змест
+    copy: Капіяваць
+    copy_link: Капіяваць спасылку
+    coupon_code_used: Уведзены купонны код ужо быў выкарыстаны. Калі ласка, паспрабуйце зноў.
+    coupon_codes: Купонныя коды
+    create_new: Стварыць новы
+    created_by: Створана
+    credit_allowed: Крэдыт дазволены
+    credited: Залічана
+    currencies: Валюты
+    currency_not_supported_by_store: не падтрымліваецца гэтай крамай
+    current_password: Бягучы пароль
+    customer_group: Група кліентаў
+    customer_groups: Групы кліентаў
+    customer_mailer:
+      password_reset_email:
+        action: Скінуць пароль
+        expiry_notice: Гэта спасылка для скіду пароля хутка згіне. Калі вы не запытвалі гэта, ніякіх дзеянняў не патрабуецца.
+        greeting: Прывітанне, %{name}!
+        ignore_notice: Калі вы не запытвалі скід пароля, вы можаце спакойна праігнараваць гэты ліст. Ваш пароль не будзе зменены.
+        instructions: Мы атрымалі запыт на скід вашага пароля. Націсніце кнопку ніжэй, каб выбраць новы пароль.
+    customer_support_email: Email падтрымкі кліентаў
+    customers: Кліенты
+    cvv: CVV
+    default_billing_address: Адрас аплаты па змаўчанні
+    default_country: Краіна па змаўчанні
+    default_currency: Валюта па змаўчанні
+    default_locale: Лакаль па змаўчанні
+    default_shipping_address: Адрас дастаўкі па змаўчанні
+    default_stock_location_name: Месцазнаходжанне крамы
+    default_wishlist_name: Спіс жаданняў
+    deleted: Выдалена
+    developers: Распрацоўшчыкі
+    digital:
+      digital_delivery: Лічбавая дастаўка
+    digital_assets: Лічбавыя актывы
+    discontinue_on: Спыніць продаж
+    discontinued: Продаж спынены
+    discontinued_variants_present: Некаторыя пазіцыі ў гэтым заказе ўтрымліваюць тавары, якія больш недаступныя.
+    discount: Зніжка
+    discounts: Зніжкі
+    display_delivery_range: Дастаўка за %{delivery_range} працоўных дзён
+    display_on: Адлюстроўваць на
+    domain: Дамен
+    done: Гатова
+    download: Спампаваць
+    draft: Чарнавік
+    duplicate: Дубліраваць
+    duplicating: Дубліраванне
+    email_marketing: Email-маркетынг
+    emails: Электронныя лісты
+    ends_at: Заканчваецца
+    enter: Увесці
+    error_user_destroy_with_orders: Немагчыма выдаліць карыстальніка, звязанага з заказамі
+    error_user_does_not_have_any_store_credits: У карыстальніка няма даступных крэдытаў крамы
+    estimated_transit_business_days: Прыблізны тэрмін дастаўкі ў працоўных днях
+    existing_address: Існуючы адрас
+    expired: Тэрмін дзеяння скончыўся
+    expires_at: Тэрмін дзеяння да
+    export: Экспарт
+    export_mailer:
+      export_done:
+        message: Выдатна, ваш экспарт гатовы! Калі ласка, скарыстайцеся спасылкай ніжэй, каб спампаваць яго.
+        subject: Ваш экспарт %{export_number} паспяхова апрацаваны!
+      greeting: Прывітанне, %{user_name}!
+      thanks: Дзякуй,
+    facebook: Facebook
+    featured_image: Галоўная выява
+    field: Поле
+    filled: Запоўнена
+    filterable: Магчыма фільтраваць
+    firstname: Імя
+    fonts: Шрыфты
+    footer: Ніжні калонтытул
+    forbidden: Доступ забаронены
+    free: Бясплатна
+    from: Ад
+    generate_code: Згенераваць купонны код
+    gift_card: Падарункавая карта
+    gift_card_already_redeemed: Падарункавая карта ўжо была пагашана.
+    gift_card_applied: Падарункавая карта паспяхова прымянёна да вашага заказу!
+    gift_card_batch: Партыя падарункавых карт
+    gift_card_customer_not_logged_in: Падарункавую карту немагчыма прымяніць для госця.
+    gift_card_expired: Тэрмін дзеяння падарункавай карты скончыўся.
+    gift_card_mismatched_currency: Падарункавую карту немагчыма прымяніць з бягучай валютай.
+    gift_card_mismatched_customer: Гэта падарункавая карта звязана з іншым карыстальнікам.
+    gift_card_not_found: Падарункавая карта не знойдзена.
+    gift_card_removed: Падарункавая карта паспяхова выдалена з вашага заказу
+    gift_card_using_store_credit_error: Вы не можаце прымяніць падарункавую карту пасля таго, як прымянілі крэдыт крамы.
+    gift_cards: Падарункавыя карты
+    hide: Схаваць
+    idempotency_key_reused: Гэты Idempotency-Key ужо быў выкарыстаны з іншымі параметрамі запыту.
+    immediately: Неадкладна
+    import: Імпарт
+    in_stock: У наяўнасці
+    instagram: Instagram
+    integrations: Інтэграцыі
+    internal_note: Унутраная нататка
+    internationalization: Інтэрнацыяналізацыя
+    invitation_accepted: Запрашэнне прынята!
+    invitation_mailer:
+      greeting: Прывітанне, %{user_name}!
+      invitation_accepted:
+        body: "%{invitee_name} прыняў ваша запрашэнне далучыцца да %{resource_name}"
+        subject: "%{invitee_name} прыняў ваша запрашэнне далучыцца да %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} запрасіў вас далучыцца да %{resource_name}"
+        link_description: 'Каб прыняць гэта запрашэнне, націсніце на спасылку ніжэй:'
+        subject: Запрашэнне далучыцца да %{resource_name}
+      thanks: Дзякуй,
+    invitations: Запрашэнні
+    invited_by: Запрошаны
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Ключ
+    kind: Тып
+    label: Метка
+    language: Мова
+    lastname: Прозвішча
+    line_item: Пазіцыя заказу
+    line_items: Пазіцыі заказу
+    link: Спасылка
+    live: Актыўны
+    locale: Лакаль
+    locale_not_supported_by_store: не падтрымліваецца гэтай крамай
+    logo: Лагатып
+    mail_from_address: Адрас адпраўніка пошты
+    mailer_logo: Лагатып для лістоў (толькі выявы JPG або PNG)
+    make_active_at: Зрабіць актыўным
+    manual: Уручную
+    market: Рынак
+    market_ids: Рынкі
+    markets: Рынкі
+    master: Асноўны
+    max: Макс
+    max_items: Макс. тавараў
+    max_quantity: Макс. колькасць
+    me_no_current_user: Ні адзін адміністратар не аўтэнтыфікаваў гэты запыт
+    media: Медыя
+    metafield_definitions: Вызначэнні метапалёў
+    metafields: Метапалі
+    min: Мін
+    min_quantity: Мін. колькасць
+    missing_return_authorization: Адсутнічае дазвол на вяртанне для %{item_name}.
+    move: Перамясціць
+    mutable: Зменны
+    navigation: Навігацыя
+    never: Ніколі
+    new_address: Новы адрас
+    new_order_notifications_email: Email для апавяшчэнняў пра новыя заказы
+    new_price_list: Новы прайс-ліст
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Прывітанне,
+        ignore_disclaimer: Калі вы не запытвалі гэта, калі ласка, праігнаруйце гэты ліст.
+        instructions: Калі ласка, націсніце кнопку ніжэй, каб пацвердзіць ваш адрас электроннай пошты.
+        message_copy_link: 'Калі кнопка не працуе, скапіруйце і ўстаўце наступную спасылку ў ваш браўзер:'
+        store_team: Каманда %{store_name}
+        subject: Пацвердзіце ваш адрас электроннай пошты
+        thanks: Дзякуй
+        verify_email_address_link: Пацвердзіць адрас электроннай пошты
+    newsletter_subscribers: Падпісчыкі рассылкі
+    no_cc_type: Н/Д
+    no_report_data: Няма даных справаздачы
+    none: Няма
+    not: не
+    number: Нумар
+    ok: ОК
+    only_active_products_can_be_added_to_cart: Чарнавыя і архіўныя тавары немагчыма дадаць у кошык, калі ласка, спачатку зрабіце тавар актыўным.
+    option_name: Назва опцыі
+    order_routing:
+      strategies:
+        legacy: Састарэлая
+        rules: Правілы (па парадку)
+    origin: Крыніца
+    other: Іншае
+    outstanding_balance: Непагашаны баланс
+    page: Старонка
+    pages: Старонкі
+    payment_source: Крыніца аплаты
+    payment_total: Усяго аплачана
+    permissions: Дазволы
+    policies: Палітыкі
+    preview: Папярэдні прагляд
+    price_lists: Прайс-лісты
+    price_rules:
+      customer_group_rule:
+        description: Прымяняць цэны да пэўных груп кліентаў
+    prices: Цэны
+    pricing: Цэнаўтварэнне
+    privacy_policy: Палітыка прыватнасці
+    processing: Апрацоўка
+    product_name: Назва тавару
+    product_translations: Пераклады тавараў
+    products_cannot_be_shipped: На дадзены момант мы не можам даставіць %{product_names} у ваша бягучае месцазнаходжанне. Калі ласка, змяніце адрас дастаўкі або выдаліце %{product_names} з кошыка.
+    promotion_actions: Дзеянні
+    promotion_already_used: Вы не можаце выдаліць акцыю, якая ўжо была прымянёна
+    promotion_category: Катэгорыя акцыі
+    promotion_label: Акцыя (%{name})
+    published_at: Апублікавана
+    query: Запыт
+    refund_amount: Сума вяртання
+    remove_gift_card_on_completed_order_error: Вы не можаце выдаліць падарункавую карту пасля таго, як заказ быў аформлены
+    report_mailer:
+      greeting: Прывітанне, %{user_name}!
+      report_done:
+        message: Калі ласка, скарыстайцеся спасылкай ніжэй, каб спампаваць яе.
+        subject: Ваша справаздача %{report_name} гатова
+      thanks: Дзякуй,
+    report_names:
+      products_performance: Эфектыўнасць тавараў
+      sales_total: Агульны аб'ём продажаў
+    required: "*"
+    required_fields: абавязковыя палі
+    resellable: Можна перапрадаваць
+    resource: Рэсурс
+    return_authorization_canceled: Дазвол на вяртанне скасаваны
+    return_item_order_not_completed: Заказ тавару для вяртання павінен быць завершаны
+    returns_policy: Палітыка вяртанняў
+    role_id: ID ролі
+    row: Радок
+    sale: Распродаж
+    saving: Захаванне
+    scopes: Вобласці доступу
+    search_by: 'Шукаць па:'
+    security: Бяспека
+    seed:
+      shipping:
+        categories:
+          default: Па змаўчанні
+          digital: Лічбавы
+    send_consumer_transactional_emails: Адпраўляць транзакцыйныя лісты кліентам
+    seo: SEO
+    seo_title: SEO-загаловак
+    ship_to: 'Дастаўка ў:'
+    shipping_policy: Палітыка дастаўкі
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (уключ. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Зона дастаўкі
+    show_discontinued: Паказаць знятыя з продажу
+    sign_up: Зарэгістравацца
+    site_name: Назва сайта
+    size: Памер
+    social: Сацыяльныя сеткі
+    sort_by: Сартаваць па
+    square_image: Квадратная выява
+    starts_at: Пачынаецца
+    state_changes: Змены стану
+    stock_items: Складскія пазіцыі
+    store_credit_events: Падзеі крэдыту крамы
+    store_credit_name: Крэдыт крамы
+    store_credit_payment_method:
+      currency_mismatch: Валюта крэдыту крамы не супадае з валютай заказу
+      insufficient_authorized_amount: Немагчыма спісаць больш за аўтарызаваную суму
+      insufficient_funds: Астатак крэдыту крамы недастатковы
+      successful_action: 'Паспяховая аперацыя з крэдытам крамы: %{action}'
+      unable_to_credit: 'Немагчыма залічыць код: %{auth_code}'
+      unable_to_find: Не ўдалося знайсці крэдыт крамы
+      unable_to_find_for_action: 'Не ўдалося знайсці крэдыт крамы для кода аўтарызацыі: %{auth_code} для дзеяння: %{action}'
+      unable_to_void: 'Немагчыма анулiраваць код: %{auth_code}'
+    store_credits: Крэдыты крамы
+    store_default: Крама па змаўчанні
+    store_name: Назва крамы
+    stores: Крамы
+    subscribed: Падпісаны
+    support: Падтрымка
+    supported_currencies: Падтрымліваемыя валюты
+    supported_locales: Падтрымліваемыя лакалі
+    tags: Тэгі
+    tax_inclusive: З улікам падатку
+    taxes: Падаткі
+    taxonomy_brands_name: Брэнды
+    taxonomy_categories_name: Катэгорыі
+    taxonomy_collections_name: Калекцыі
+    terms_of_service: Умовы абслугоўвання
+    theme: Тэма
+    themes: Тэмы
+    timezone: Часавы пояс
+    title: Загаловак
+    to: Да
+    translations: Пераклады
+    twitter: Twitter
+    unit: Адзінка
+    unit_system: Сістэма адзінак
+    unlimited: Неабмежавана
+    updated_at: Абноўлена
+    url: URL
+    used: Выкарыстана
+    user_ids: Карыстальнікі
+    vendor: Пастаўшчык
+    verified: Праверана
+    verified_at: Праверана
+    view: Прагляд
+    visibility: Бачнасць
+    webhook_endpoints: Канчатковыя пункты вебхукаў
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Адключана
+        heading: Канчатковы пункт вебхука адключаны
+        instructions: Калі ласка, праверце URL канчатковага пункта і сэрвіс, затым зноў уключыце яго ў Налады → Распрацоўшчыкі → Вебхукі.
+        message: Канчатковы пункт вебхука «%{endpoint_name}» быў аўтаматычна адключаны пасля паўторных збояў дастаўкі.
+        name_label: Назва
+        reason_label: Прычына
+        subject: 'Канчатковы пункт вебхука адключаны: %{endpoint_name}'
+        url_label: URL
+    webhooks: Вебхукі
+    weight_unit: Адзінка вагі
+    wishlist: Спіс жаданняў
+    zipcode_required: Патрабуецца паштовы індэкс
+    zone_ids: Зоны
+    api:
+      cannot_delete: "%{model} немагчыма выдаліць"
+      current_password_invalid: Бягучы пароль няправільны або адсутнічае
+      gateway_error: 'Узнікла праблема з плацёжным шлюзам: %{text}'
+      invalid_api_key: Указаны няправільны API-ключ (%{key}).
+      invalid_resource: Няправільны рэсурс. Калі ласка, выправіце памылкі і паспрабуйце зноў.
+      invalid_taxonomy_id: Няправільны ідэнтыфікатар таксаноміі.
+      must_specify_api_key: Вы павінны ўказаць API-ключ.
+      negative_quantity: колькасць адмоўная
+      newsletter_verification_token_invalid: Токен пацверджання рассылкі няправільны або яго тэрмін дзеяння скончыўся.
+      order:
+        could_not_transition: Не ўдалося змяніць стан заказу. Калі ласка, выправіце памылкі і паспрабуйце зноў.
+        insufficient_quantity: Тавар у вашым кошыку стаў недаступным.
+        invalid_shipping_method: Указаны няправільны спосаб дастаўкі.
+      password_reset_requested: Калі для гэтай электроннай пошты існуе ўліковы запіс, інструкцыі па скіду пароля былі адпраўлены.
+      password_reset_token_invalid: Токен скіду пароля няправільны або яго тэрмін дзеяння скончыўся.
+      payment:
+        credit_over_limit: Гэты плацёж можа быць залічаны толькі да %{limit}. Калі ласка, укажыце суму, меншую або роўную гэтаму ліку.
+        update_forbidden: Гэты плацёж немагчыма абнавіць, таму што ён %{state}.
+      record_not_found: "%{model} не знойдзена"
+      redirect_url_not_allowed: URL перанакіравання не належыць да дазволенай крыніцы для гэтай крамы.
+      resource_not_found: Рэсурс, які вы шукалі, не знойдзены.
+      shipment:
+        cannot_ready: Немагчыма падрыхтаваць адпраўленне.
+      shipment_transfer_errors_occurred: 'Падчас спробы выканаць гэта дзеянне ўзніклі наступныя памылкі:'
+      shipment_transfer_success: Варыянты паспяхова перададзены
+      stock_location_required: Для атрымання рухаў тавару неабходна ўказаць параметр stock_location_id.
+      unauthorized: Вы не маеце дазволу на выкананне гэтага дзеяння.
+      v2:
+        cart:
+          no_coupon_code: Купонны код не ўказаны, і да заказу не прымянёны ніякія акцыі з купоннымі кодамі
+          wrong_quantity: Колькасць павінна быць больш за 0
+        digitals:
+          missing_file: 'Адсутнічае лічбавы элемент: укладанне'
+          unauthorized: Памылка, вы не маеце дазволу на доступ да гэтага актыву
+        gift_card:
+          amount_not_valid: Сума падарункавай карты няправільная
+          not_found: Падарункавая карта не знойдзена
+        metadata:
+          invalid_params: Параметры публічных і прыватных метаданых павінны быць аб'ектамі
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Не ўдалося выдаліць спіс жаданняў.
+          wrong_quantity: Колькасць павінна быць больш за 0
+      v3:
+        payments:
+          method_unavailable: Гэты спосаб аплаты недаступны для гэтага заказу.
+          session_required: Гэты спосаб аплаты патрабуе плацёжнай сесіі. Замест гэтага скарыстайцеся канчатковым пунктам плацёжных сесій.
+      wrong_shipment_target: мэтавае адпраўленне супадае з зыходным адпраўленнем
+  action_text:
+    video_embed:
+      not_found: Не атрымалася ўбудаваць відэа па пазначаным URL
+  activemodel:
+    errors:
+      messages:
+        blank: не можа быць пустым
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: мае адзінкі тавару з адкладзенага заказу
+              has_already_been_shipped: ужо адпраўлены
+            desired_shipment:
+              can_not_transfer_within_same_shipment: не можа супадаць з бягучай адпраўкай
+              has_not_enough_stock_at_desired_location: недастаткова тавару ў патрэбным месцы захоўвання
+  address_book:
+    save: Захаваць
+    successfully_created: Новы адрас паспяхова створаны
+  number:
+    currency:
+      format:
+        delimiter: " "
+        separator: ","
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Скараціць

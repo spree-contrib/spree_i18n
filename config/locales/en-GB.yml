@@ -1,3 +1,4 @@
+---
 en-GB:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ en-GB:
         phone: Phone
         state: County
         zipcode: Post Code
+        company: Company
+        label: Address name
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ en-GB:
       spree/option_type:
         name: Name
         presentation: Presentation
+        filterable: Filterable
+        kind: Kind
       spree/order:
         checkout_complete: Checkout Complete
         completed_at: Completed At
@@ -54,6 +59,8 @@ en-GB:
         special_instructions: Special Instructions
         state: County
         total: Total
+        internal_note: Internal Note
+        item_count: Items
       spree/order/bill_address:
         address1: Billing address street
         city: Billing address city
@@ -72,6 +79,7 @@ en-GB:
         zipcode: Shipping address post code
       spree/payment:
         amount: Amount
+        number: Number
       spree/payment_method:
         name: Name
       spree/product:
@@ -84,6 +92,10 @@ en-GB:
         on_hand: On Hand
         shipping_category: Shipping Category
         tax_category: Tax Category
+        discontinue_on: Discontinue On
+        less_than: Less than
+        make_active_at: Make Active At
+        more_than: More than
       spree/promotion:
         advertise: Advertise
         code: Code
@@ -94,8 +106,11 @@ en-GB:
         path: Path
         starts_at: Starts At
         usage_limit: Usage Limit
+        generate_code: Generate coupon code
+        promotion_category: Promotion Category
       spree/promotion_category:
         name:
+        code: Code
       spree/property:
         name: Name
         presentation: Presentation
@@ -123,6 +138,16 @@ en-GB:
         name:
         seo_title:
         url:
+        address: Address
+        contact_phone: Contact Phone
+        preferred_digital_asset_authorized_clicks: Download clicks limit
+        preferred_digital_asset_authorized_days: Download days limit
+        preferred_limit_digital_download_count: Limit digital links download count
+        preferred_limit_digital_download_days: Limit digital links download days
+        seo_robots: SEO Robots
+        storefront_custom_code_body_end: Custom Code before closing body tag
+        storefront_custom_code_body_start: Custom Code after opening body tag
+        storefront_custom_code_head: Custom Code in page head
       spree/tax_category:
         description: Description
         name: Name
@@ -134,12 +159,14 @@ en-GB:
         name: Name
         permalink: Permalink
         position: Position
+        sort_order: Sort Order
       spree/taxonomy:
         name: Name
       spree/user:
         email: Email
         password: Password
         password_confirmation: Password Confirmation
+        avatar: Avatar
       spree/variant:
         cost_currency: Cost Currency
         cost_price: Cost Price
@@ -152,6 +179,54 @@ en-GB:
       spree/zone:
         description: Description
         name: Name
+      spree/customer_group:
+        description: Description
+        name: Name
+      spree/customer_return:
+        stock_location_id: Stock Location
+      spree/gift_card:
+        amount_used: Amount used
+        expires_at: Expires at
+      spree/import:
+        preferred_delimiter: Delimiter
+      spree/import_mapping:
+        file_column: File Column
+        schema_field: Schema Field
+      spree/import_row:
+        row_number: Number
+      spree/invitation:
+        inviter: Inviter
+      spree/metafield_definition:
+        namespace: Namespace
+      spree/option_value:
+        color_code: Colour Code
+        image: Swatch Image
+      spree/page_link:
+        open_in_new_tab: Open in new tab
+      spree/policy:
+        body: Body
+        owner: Policy for
+      spree/price_list:
+        description: Description
+        ends_at: Ends At
+        match_policy: Match Policy
+        name: Name
+        priority: Priority
+        starts_at: Starts At
+        status: Status
+      spree/price_rule:
+        priority: Priority
+        type: Type
+      spree/shipment:
+        number: Number
+      spree/store_credit:
+        amount_used: Amount used
+      spree/store_credit_category:
+        name: Name
+      user:
+        current_sign_in: Current sign in at
+        last_sign_in: Last sign in at
+        sign_in_count: Sign in count
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,6 +273,109 @@ en-GB:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Cannot destroy the only Store.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: must be an origin (scheme and host) without path, query, or fragment
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Can't delete a used gift card
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: must be present
+              not_allowed_content_type: has not allowed content type
+        spree/import:
+          attributes:
+            attachment:
+              content_type: has not allowed content type
+            type:
+              inclusion: is not included in the list of allowed types
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: belongs to other user
+              deprecated_in_completed_order: deprecated in completed order
+            ship_address_id:
+              belongs_to_other_user: belongs to other user
+              deprecated_in_completed_order: deprecated in completed order
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Cannot delete the default market.
+              cannot_destroy_last_market: Cannot delete the only market.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: is already assigned to another market in this store
+              not_in_shipping_zone: is not covered by any shipping zone. Please set up a shipping zone first.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: is greater than the allowed maximum amount of %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: must be after starts at
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Cannot delete Products that are added to placed Orders. In such cases, please discontinue them.
+            discontinue_on:
+              invalid_date_range: must be later than available date
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: must be after published date
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: must be later than start date
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: You must select at least one shipping category
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Exceeds total credits.
+            amount_used:
+              cannot_be_greater_than_amount: Cannot be greater than amount.
+              greater_than_zero_restrict_delete: is greater than zero. Can not delete store credit.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Cannot delete store credit categories once they are used in store credit.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: has not allowed content type
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: belongs to other user
+              deprecated_in_completed_order: deprecated in completed order
+            ship_address_id:
+              belongs_to_other_user: belongs to other user
+              deprecated_in_completed_order: deprecated in completed order
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Cannot delete Variants that are added to placed Orders. In such cases, please discontinue them.
+              must_supply_price_for_variant_or_master: Must supply price for variant or master price for product.
+              no_master_variant_found_to_infer_price: No master variant found to infer price
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: must not point to an internal or private network address
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: You already added this item to your wishlist
+      messages:
+        blank: can't be blank
     models:
       spree/address:
         one: Address
@@ -209,6 +387,8 @@ en-GB:
         one: Credit Card
         other: Credit Cards
       spree/customer_return:
+        one: Customer Return
+        other: Customer Returns
       spree/inventory_unit:
         one: Inventory Unit
         other: Inventory Units
@@ -216,7 +396,11 @@ en-GB:
         one: Line Item
         other: Line Items
       spree/option_type:
+        one: Option Type
+        other: Option Types
       spree/option_value:
+        one: Option Value
+        other: Option Values
       spree/order:
         one: Order
         other: Orders
@@ -224,11 +408,17 @@ en-GB:
         one: Payment
         other: Payments
       spree/payment_method:
+        one: Payment Method
+        other: Payment Methods
       spree/product:
         one: Product
         other: Products
       spree/promotion:
+        one: Promotion
+        other: Promotions
       spree/promotion_category:
+        one: Promotion Category
+        other: Promotion Categories
       spree/property:
         one: Property
         other: Properties
@@ -236,12 +426,20 @@ en-GB:
         one: Prototype
         other: Prototypes
       spree/refund_reason:
+        one: Refund Reason
+        other: Refund Reasons
       spree/reimbursement:
+        one: Reimbursement
+        other: Reimbursements
       spree/reimbursement_type:
+        one: Reimbursement Type
+        other: Reimbursement Types
       spree/return_authorization:
         one: Return Authorisation
         other: Return Authorisations
       spree/return_authorization_reason:
+        one: Return Authorisation Reason
+        other: Return Authorisation Reasons
       spree/role:
         one: Roles
         other: Roles
@@ -252,13 +450,23 @@ en-GB:
         one: Shipping Category
         other: Shipping Categories
       spree/shipping_method:
+        one: Shipping Method
+        other: Shipping Methods
       spree/state:
         one: County
         other: Counties
       spree/state_change:
+        one: State Change
+        other: State Changes
       spree/stock_location:
+        one: Stock Location
+        other: Stock Locations
       spree/stock_movement:
+        one: Stock Movement
+        other: Stock Movements
       spree/stock_transfer:
+        one: Stock Transfer
+        other: Stock Transfers
       spree/tax_category:
         one: Tax Category
         other: Tax Categories
@@ -272,6 +480,8 @@ en-GB:
         one: Taxonomy
         other: Taxonomies
       spree/tracker:
+        one: Tracker
+        other: Trackers
       spree/user:
         one: User
         other: Users
@@ -281,6 +491,66 @@ en-GB:
       spree/zone:
         one: Zone
         other: Zones
+      spree/classification:
+        one: Classification
+        other: Classifications
+      spree/cms_page:
+        one: Page
+        other: Pages
+      spree/cms_section:
+        one: Section
+        other: Sections
+      spree/customer_group:
+        one: Customer Group
+        other: Customer Groups
+      spree/customer_group_user:
+        one: Customer Group User
+        other: Customer Group Users
+      spree/digital:
+        one: Digital asset
+        other: Digital assets
+      spree/export:
+        one: Export
+        other: Exports
+      spree/integration:
+        one: Integration
+        other: Integrations
+      spree/page:
+        one: Page
+        other: Pages
+      spree/page_block:
+        one: Page Block
+        other: Page Blocks
+      spree/page_link:
+        one: Page Link
+        other: Page Links
+      spree/page_section:
+        one: Page Section
+        other: Page Sections
+      spree/price:
+        one: Price
+        other: Prices
+      spree/price_list:
+        one: Price List
+        other: Price Lists
+      spree/price_rule:
+        one: Price Rule
+        other: Price Rules
+      spree/stock_item:
+        one: Stock Item
+        other: Stock Items
+      spree/store:
+        one: Store
+        other: Stores
+      spree/store_credit:
+        one: Store Credit
+        other: Store Credits
+      spree/store_credit_category:
+        one: Store Credit Category
+        other: Store Credit Categories
+      spree/theme:
+        one: Theme
+        other: Themes
   devise:
     confirmations:
       confirmed: Your account was successfully confirmed. You are now signed in.
@@ -293,6 +563,7 @@ en-GB:
       timeout: Your session expired, please sign in again to continue.
       unauthenticated: You need to sign in or sign up before continuing.
       unconfirmed: You have to confirm your account before continuing.
+      too_many_attempts: Too many attempts. Please wait a moment and try again.
     mailer:
       confirmation_instructions:
         subject: Confirmation instructions
@@ -327,9 +598,10 @@ en-GB:
       not_saved:
         one: '1 error prohibited with %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      not_a_number: is not a number
   spree:
     filter: Filter
-    quick_search: Quick Search . . .
+    quick_search:
     abbreviation: Abbreviation
     accept:
     acceptance_errors:
@@ -350,6 +622,15 @@ en-GB:
       refund:
       save: Save
       update: Update
+      close: Close
+      connect: Connect
+      discard: Discard
+      open: Open
+      reject: Reject
+      remove: Remove
+      resend: Resend
+      select_file: Select file
+      send_invitation: Send invitation
     activate: Activate
     active: Active
     add: Add
@@ -402,6 +683,483 @@ en-GB:
         order_num:
         orders:
         user_information:
+        last_order_placed: Last order placed
+        no_store_credit: Customer has no Store Credit available
+      allowed_origins:
+        origin_help: Enter the full origin URL of your storefront (e.g. https://myshop.com). Do not include paths or query strings.
+        origin_settings: Origin Settings
+      amount_spent: Amount spent
+      api_keys:
+        example_request: Example Request
+        key_revoked_message: This API key has been revoked and can no longer be used.
+        key_type_descriptions:
+          publishable: Safe to use in client-side code like mobile apps or browsers.
+          secret: Keep this secure and only use it server-side. Never expose it publicly.
+        key_types:
+          publishable: Publishable
+          secret: Secret
+        last_used_at: Last used
+        list: API Keys
+        name_placeholder: e.g. Mobile App Production
+        revoke: Revoke
+        revoke_confirmation: Are you sure you want to revoke this API key? This action cannot be undone.
+        revoked: API key has been revoked
+        revoked_at: Revoked at
+        revoked_by: Revoked by
+        scopes: Scopes
+        scopes_description: Required for secret keys. Pick the narrowest set of scopes your integration needs.
+        scopes_immutable: Scopes are fixed when the key is created. To change them, create a new key with the scopes you need and revoke this one.
+        secret_key_hidden: This secret key cannot be revealed. If you've lost it, revoke this key and create a new one.
+        statuses:
+          active: Active
+          revoked: Revoked
+        token_warning: Store this key securely. It will be shown only this once.
+        usage: Usage
+        usage_instructions:
+          publishable: Use this key for client-side requests. It can be safely included in your frontend code.
+          secret: Use this key for server-side requests only. Keep it confidential and never expose it in client-side code.
+      audit_log: Audit Log
+      avg_order_value: Avg. Order Value
+      back_to_dashboard: Back to dashboard
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Are you sure you want to remove the selected customers from this group?
+          title:
+            remove: Remove from Group
+        price_list_products:
+          body:
+            remove: Are you sure you want to remove the selected products from this price list? This will also remove their prices.
+          title:
+            remove: Remove from Price List
+        products:
+          body:
+            add_tags: 'Select tags to add to the products:'
+            add_to_taxons: 'Select which categories to add the products to:'
+            remove_from_taxons: 'Select which categories to remove the products from:'
+            remove_tags: 'Select tags to remove from the products:'
+            set_active: Setting products to active will make those products available on the storefront.
+            set_archived: Setting products to archived will hide them from storefront.
+            set_draft: Setting products to draft will hide them from storefront.
+          title:
+            add_tags: Add tags
+            add_to_taxons: Add to categories
+            remove_from_taxons: Remove from categories
+            remove_tags: Remove tags
+            set_active: Set as Active
+            set_archived: Set as Archived
+            set_draft: Set as Draft
+        users:
+          body:
+            add_tags: 'Select tags to add to the customers:'
+            remove_tags: 'Select tags to remove from the customers:'
+          title:
+            add_tags: Add tags
+            remove_tags: Remove tags
+      channels:
+        code_hint: A short, stable identifier (e.g. "online", "pos", "wholesale"). Used by API clients via the X-Spree-Channel header and for order attribution.
+        default: Default channel
+        default_hint: Exactly one channel per store is the default. Used as the fallback when no channel is selected and as the auto-publish target for new products.
+        order_routing_strategy: Order routing strategy
+        order_routing_strategy_hint: Overrides the store-level routing strategy for orders attributed to this channel.
+        order_routing_strategy_inherit: Inherit from store
+      checkout_settings:
+        checkout_links:
+          description: Links to these pages will be displayed in the checkout footer.
+          label: Checkout links
+        checkout_message_description: Visible to your customers on the checkout page in the right sidebar.
+        countries_managed_by_markets_html: Countries and shipping zones are managed through %{link}.
+        guest_checkout:
+          description: Allow customers to check out without creating an account.
+          label: Allow guest checkout
+        special_instructions:
+          description: Allow customers to add special instructions to their order.
+          label: Display the special instructions field
+      close_sidebar: Close sidebar
+      copied: Copied!
+      copy_payment_link: Copy Payment Link
+      copy_to_clipboard: Copy to clipboard
+      coupon_codes:
+        unused: Unused
+        used: Used
+      created_at: Created At
+      dashboard:
+        getting_started:
+          description: Everything you need to set up to start selling.
+        hi: Hi
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> of %{total} steps done"
+          title: Your overall setup progress
+        top_products: Top products
+        view_report: View report
+        whats_happening_on_html: Here's what's happening on <strong>%{store_name}</strong> today.
+      datetime_field_timezone_help: 'Time zone: %{zone}'
+      digital_shipment_fulfillment_note: This shipment will be marked as fulfilled once the user downloads the digital product
+      display_on_options:
+        back_end: Only on admin panel
+        both: On both admin panel & storefront
+        front_end: Only on storefront
+      documentation: Documentation
+      edit_billing_address: Edit billing address
+      edit_contact_information: Edit contact information
+      edit_profile: Edit Profile
+      edit_shipping_address: Edit shipping address
+      edit_theme: Edit theme
+      errors: Errors
+      execution_time: Execution Time
+      expand_sidebar: Expand sidebar
+      export_all: Export all records (can be slow for large datasets)
+      export_coupons: Export coupons as CSV file
+      export_created: Your export was started. You will receive an email with a download link when it is ready!
+      export_only_filtered_records: Export only filtered records, matching the search criteria
+      export_report: Export report as CSV file
+      filters: Filters
+      getting_started: Getting started
+      gift_card_batches:
+        codes_count: Codes count
+        new_gift_card_batch: New Gift Card Batch
+        prefix: Prefix
+      gift_cards:
+        active: Active
+        all_statuses: All statuses
+        code_help_text: If you leave it blank, we will generate a code for you
+        redeemed: Redeemed
+        usage: Usage
+      imports:
+        all_required_columns_mapped: Good job, all required columns are mapped!
+        field_required: Field required
+        import_done: All done!
+        large_import_background_note: You can close this page — the import will continue in the background.
+        large_import_message: This import contains %{count} rows and is too large to display individually.
+        large_import_summary: "%{completed} completed, %{failed} failed"
+        mapping_required: This field is required
+        please_map_all_required_fields: Please map all the required fields to continue.
+        waiting_for_file_to_be_processed: Waiting for file to be processed...
+      integrations:
+        invalid_integration_type: This integration is not allowed
+        page_subtitle: Connect your store to third-party services to enhance customer experience.
+      json_preview:
+        no_api_response: No API response found for this resource
+      manage_markets: Manage Markets
+      manage_properties: Manage Properties
+      manage_stock_locations: Manage Stock Locations
+      manage_taxons: Manage Categories
+      manage_zones: Manage Zones
+      markets:
+        edit: Edit Market
+        list: Markets
+        new: New Market
+        supported_locales_hint: Comma-separated list of additional locale codes (e.g. fr,de,es)
+      metafield_definitions:
+        edit_warning: You can't change the resource type or metafield type after the definition has been used.
+        used_in: Used in
+      name: Name
+      navigation:
+        nested_under: Nested under
+      newsletter_subscribers:
+        all: All
+        unverified: Unverified
+        verified: Verified
+      not_tracking_inventory: Not tracking inventory
+      notifications: Notifications
+      num_orders: No. of Orders
+      oauth_applications:
+        client_id: Client ID
+        client_secret: Client Secret
+        last_used: Last used
+        list: API keys
+        never: Never
+        new: New API key
+        read_and_write: Read & Write
+        read_only: Read Only
+        scopes: Scopes
+      order:
+        events:
+          approve: Approve
+          cancel: Cancel
+          resend: Resend
+          resume: Resume
+      orders:
+        add_user_to_this_order: Add customer to this order
+        all_orders: All Orders
+        canceled: Cancelled
+        fulfilled: Fulfilled
+        no_email_present: Please add an email address to send the payment link
+        orders_to_fulfill: Orders to fulfil
+        partially_refunded: Partially Refunded
+        payment_link_sent: Payment link was sent to the customer
+        provide_email: Provide an email address
+        refunded: Refunded
+        remove_user_from_this_order: Remove customer from this order
+        unfulfilled: Unfulfilled
+      page_builder:
+        background_color: Background colour
+        border_bottom_width: Border bottom width
+        border_color: Border colour
+        border_top_width: Border top width
+        bottom_padding: Bottom padding
+        button_alignment: Button alignment
+        button_background_color: Button background colour
+        button_style: Button style
+        button_text: Button's text
+        button_text_color: Button text colour
+        category: Category
+        description: Description
+        description_alignment: Description alignment
+        desktop_image_alignment: Image alignment for desktop
+        desktop_logo_height: Logo height (desktop)
+        heading: Heading
+        heading_alignment: Heading alignment
+        heading_size: Heading size
+        height: Height
+        image_click_hint: Clicking on the image will send the user to the selected page/URL
+        left_aligned: Left aligned
+        logo_centered: Logo centred
+        max_video_width_on_desktop: Max video width on desktop
+        maximum_products_to_show: Maximum products to show
+        nav_centered: Nav centred
+        not_set: Not set
+        separated: Separated
+        show_more_button: Show explore category button
+        show_taxon_image: Show category image
+        text_color: Text colour
+        title: Title
+        top_padding: Top padding
+        use_description_from_admin: Use description from admin
+        vertical_alignment: Vertical alignment
+        youtube_video_url: Youtube video URL
+      personal_details: Personal Details
+      price_lists:
+        activate: Activate
+        activated: Price list has been activated
+        confirm_activate: Are you sure you want to activate this price list? It will immediately affect pricing.
+        confirm_deactivate: Are you sure you want to deactivate this price list?
+        confirm_schedule: Are you sure you want to schedule this price list?
+        confirm_unschedule: Are you sure you want to unschedule this price list?
+        deactivate: Deactivate
+        deactivated: Price list has been deactivated
+        schedule: Schedule
+        scheduled: Price list has been scheduled
+        unschedule: Unschedule
+      product_translations:
+        coverage: Translation coverage
+        locale: Locale
+        manage_markets: Manage Markets
+        no_locales_description: Set up markets with additional locales to start translating your products.
+        no_locales_title: No additional locales configured
+        progress: Progress
+        total: Total
+        translated: Translated
+      products:
+        active: Active
+        all_statuses: All statuses
+        any_stock: Any stock
+        archived: Archived
+        by_status: By status
+        by_stock: By stock
+        deleted: Deleted
+        draft: Draft
+        help_bubble: Draft products aren't available for purchase. Active products are live.
+        in_stock: In Stock
+        inventory:
+          barcode: Barcode (ISBN, UPC, GTIN, etc.)
+          sku: SKU (Stock Keeping Unit)
+        out_of_stock: Out of Stock
+        paused: Paused
+        search_results:
+          no_products: We couldn't find any products matching your search :(
+        seo:
+          placeholder: Add a title and description to see how this product might appear in a search engine listing
+        status_form:
+          status: Draft products aren't available for purchase. Active products are live.
+        status_options:
+          active: Active
+          archived: Archived
+          draft: Draft
+        stores:
+          choose_stores: Choose which stores this product should be available in
+        variants:
+          option_types_link: To add more option types please go to <a href="%{link}">Option Types</a>
+      publishing:
+        caption_hidden_after: Comes down %{date}
+        caption_live: Visible to customers now
+        caption_not_available: Hidden — product is %{product_status}
+        caption_scheduled: Goes live %{date}
+        caption_unpublished: Was hidden on %{date}
+        caption_window: Live %{start} → %{end}
+        empty: Not listed on any sales channel yet.
+        inactive_marker: Inactive
+        manage_cta: Manage
+        manage_description: Pick which sales channels list this product. Toggle a channel off to unlist it everywhere.
+        no_channels: No sales channels available. Create one in Settings → Sales channels.
+        published_at_label: Publish from
+        status_hidden: Hidden
+        status_live: Live
+        status_not_available: Not available
+        status_scheduled: Scheduled
+        title: Publishing
+        unpublished_at_label: Unpublish on
+      recommended_size: Recommended size
+      report_created: Your report is being generated. You will receive an email with a download link when it is ready!
+      reset_digital_link_download_limits: Reset download limits
+      response_code: Response Code
+      selected: selected
+      send_payment_link: Send Payment Link
+      shipment:
+        please_provide_tracking_details: Before marking shipment as shipped please provide tracking details
+      shipment_transfer:
+        wrong_destination: Wrong destination
+      show_json: Show JSON
+      stock_transfers:
+        add_products_tip: You need to select a destination location first
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> remaining (<strong>%{total}</strong> total)"
+      store_form:
+        company_field:
+          description: It shows the company field on the address form in the My Account section and on the checkout address step.
+          label: Display the company address field
+        customer_support_email_help: This email is visible to your Store visitors in the Footer section
+        new_order_notifications_email_help: If you want to receive an email notification every time someone places an Order please provide an email address for that notification to be sent to
+        send_consumer_transactional_emails_help: When unchecked, transactional emails like order confirmations and shipment notifications will not be sent to customers
+      store_setup_tasks:
+        add_billing_address: Add billing address
+        add_products: Add products
+        payment_methods:
+          copy: In order to collect payments, please set up at least one online payment provider.
+          done: You're all set! You can always manage your Payment Methods on <a href="%{link}" data-turbo-frame="_top">this</a> page.
+          setup: Set up Payment Methods
+          title: Please set up Payment Methods for your store
+        set_customer_support_email: Set customer support email
+        setup_taxes_collection: Set up taxes collection
+        taxes:
+          copy: In order to collect taxes, please set up your tax rates.
+          done: You're all set! You can always manage your taxes on the <a href="%{link}" data-turbo-frame="_top">settings</a> page.
+          setup: Set up Tax Rates
+      storefront: Storefront
+      successful: Successful
+      successfully_reset_digital_links_limit: Download limits have been reset
+      tables:
+        add_filter: Add filter
+        add_or_group: Add OR group
+        apply: Apply
+        apply_filters: Apply Filters
+        ascending: Ascending
+        clear_all: Clear All
+        columns: Columns
+        descending: Descending
+        enter_value: Enter value...
+        filter_builder: Filter Builder
+        filters: Filters
+        match: Match
+        of_the_following: of the following
+        operators:
+          contains: contains
+          does_not_contain: does not contain
+          ends_with: ends with
+          equals: equals
+          greater_than: greater than
+          greater_than_or_equal: greater than or equal
+          is_any_of: is any of
+          is_empty: is empty
+          is_none_of: is none of
+          is_not_empty: is not empty
+          less_than: less than
+          less_than_or_equal: less than or equal
+          not_equals: does not equal
+          starts_with: starts with
+        order: Order
+        reset_to_default: Reset to Default
+        select_field: Select field...
+        sort_by: Sort by
+        visible_columns: Visible Columns
+      taxon_rules:
+        all_conditions: all conditions
+        any_condition: any condition
+        available_on: Available on
+        match_policies:
+          contains: contains
+          does_not_contain: does not contain
+          is_equal_to: is equal to
+          is_not_equal_to: is not equal to
+        on_sale: On sale
+        products_must_match: 'Products must match:'
+        tag: Product tag
+      taxon_type: Category type
+      taxon_types:
+        automatic: Automatic
+        automatic_info: Automatically add products to this category if they match the rules you set.
+        manual: Manual
+        manual_info: Curate products manually. You can add or remove them in bulk.
+      translations:
+        no_translations_configured: No translations configured. Please set up Markets to use translations.
+      upload_new_asset: Upload new media
+      users:
+        filters:
+          search_placeholder: Search customers by email or name
+      utilities:
+        preview: Preview
+      variants:
+        search_results:
+          no_variants: We couldn't find any variants matching your search :(
+      variants_form:
+        add_option:
+          empty: Add options like size or colour
+          not_empty: Add another option
+        compare_at_price_description: This price is used to show the marked-down price on the product page.
+        stock_locations_link: To add more stock locations please go to <a href="%{link}">Stock Locations</a>
+        total_inventory_html: 'Total inventory at %{stock_location} location: %{count} available'
+      vendors:
+        enterprise_feature: Multi-Vendor Marketplace is available in the Enterprise Edition
+      webhook_deliveries:
+        delivered_at: Delivered at
+        delivery_details: Delivery Details
+        delivery_info: Delivery Information
+        endpoint_inactive: Cannot retry - endpoint is inactive
+        error_type: Error Type
+        event: Event
+        execution_time: Execution Time
+        failed: Failed
+        pending: Pending
+        redeliver_button: Redeliver
+        redelivered: Webhook redelivered successfully.
+        request_errors: Request Errors
+        request_payload: Request Payload
+        response_body: Response Body
+        response_code: Response Code
+      webhook_endpoints:
+        auto_disabled: This endpoint was automatically disabled after repeated delivery failures.
+        back_to_endpoint: Back to endpoint
+        deliveries: Deliveries
+        endpoint_settings: Endpoint Settings
+        event_subscriptions: Event Subscriptions
+        event_subscriptions_help: Select which events should trigger a webhook delivery to this endpoint.
+        events: events
+        failed_deliveries: Failed Deliveries
+        health:
+          degraded: "%{percentage}% success"
+          disabled: Disabled
+          failing: "%{percentage}% success"
+          healthy: "%{percentage}% success"
+          no_deliveries: No data
+        health_label: Health
+        new: New Webhook Endpoint
+        re_enable: Re-enable
+        secret_key: Secret Key
+        secret_key_help: Use this key to verify webhook signatures. Keep it secure and do not share it publicly.
+        send_test: Send Test
+        subscriptions: Subscriptions
+        successful_deliveries: Successful Deliveries
+        test_failed: Failed to send test webhook. Please check the endpoint configuration.
+        test_sent: Test webhook sent. Check deliveries for the result.
+      webhooks_subscribers:
+        all_events: All Events
+        new_webhooks_subscriber: New Webhooks Subscriber
+        no_events: No Events
+        select_events: Select events
+        subscribe_to_all_events: Subscribe to all events
+        subscriptions: Subscriptions
+        time_of_last_event: Time of Last Event
+        webhooks_events: Webhooks Events
     administration: Administration
     advertise:
     agree_to_privacy_policy: Agree to Privacy Policy
@@ -432,7 +1190,7 @@ en-GB:
     are_you_sure: Are you sure
     are_you_sure_delete: Are you sure you want to delete this record?
     associated_adjustment_closed: The associated adjustment is closed, and will not be recalculated. Do you want to open it?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Authorisation Failure
     authorized:
     auto_capture:
@@ -567,7 +1325,6 @@ en-GB:
     date: Date
     date_completed: Date Completed
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Date Range
@@ -607,6 +1364,7 @@ en-GB:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: This coupon code is not eligible in your country
     email: Email
     empty: Empty
     empty_cart: Empty Basket
@@ -620,6 +1378,17 @@ en-GB:
         could_not_create_taxon: Could not create taxon
         no_payment_methods_available: No payment methods are configured for this environment
         no_shipping_methods_available: No shipping methods available for selected location, please change your address and try again.
+        cannot_delete_default_channel: Default channel cannot be deleted. Promote another channel to default first.
+        channel_store_mismatch: must belong to the same store
+        invalid_order_routing_rule: is not a registered order routing rule
+        invalid_order_routing_strategy: is not a registered order routing strategy
+        must_be_origin_only: must be an origin (scheme and host) without path, query, or fragment
+        store_association_can_not_be_changed: The store association can not be changed
+        store_is_already_set: Store is already set
+      services:
+        get_shipping_rates:
+          no_line_items: To generate Shipping Rates you need to add some Line Items to Order
+          no_shipping_address: To generate Shipping Rates Order needs to have a Shipping Address
     errors_prohibited_this_record_from_being_saved:
       one: 1 error prohibited this record from being saved
       other: "%{count} errors prohibited this record from being saved"
@@ -863,6 +1632,7 @@ en-GB:
         subject: Cancellation of Order
         subtotal:
         total:
+        thanks: Thank you for
       confirm_email:
         dear_customer: Dear Customer,
         instructions: Please review and retain the following order information for your records.
@@ -871,6 +1641,20 @@ en-GB:
         subtotal:
         thanks: Thank you for your business.
         total:
+      payment_link_email:
+        message: Please click the button below to pay for your order.
+        message_copy_link: 'If the button doesn''t work please copy and paste the following link to your browser:'
+        pay_for_order: Pay for order
+        subject: 'Payment link for order #%{number}'
+      store_owner_notification_email:
+        heading: New Order Received
+        instructions: You have received a new order.
+        order_summary: Order %{number} Summary
+        subject: "%{store_name} received a new order"
+        thanks: Thank you
+      store_team: "%{store_name} Team"
+      subtotal: 'Subtotal:'
+      total: 'Order Total:'
     order_not_found: We couldn't find your order. Please try that action again.
     order_number: Order %{number}
     order_processed_successfully: Your order has been processed successfully
@@ -925,6 +1709,9 @@ en-GB:
       pending: pending
       processing: processing
       void: void
+      complete: Complete
+      partially_refunded: Partially Refunded
+      refunded: Refunded
     payment_updated: Payment Updated
     payments: Payments
     pending:
@@ -1011,6 +1798,24 @@ en-GB:
       user_logged_in:
         description: Available only to logged in users
         name: User Logged In
+      category:
+        description: Order includes products in specified categories
+        name: Categories
+      country:
+        description: Limit to orders with shipping address in a specific country
+        name: Country
+      currency:
+        description: Limit to orders in a specific currency
+        name: Currency
+      customer:
+        description: Available only to the specified customers
+        name: Customers
+      customer_group:
+        description: Available only to customers in specified customer group(s)
+        name: Customer Group(s)
+      customer_logged_in:
+        description: Available only to logged in customers
+        name: Only logged in customers
     promotion_uses:
     promotionable:
     promotions: Promotions
@@ -1025,7 +1830,6 @@ en-GB:
     quantity: Quantity
     quantity_returned: Quantity Returned
     quantity_shipped: Quantity Shipped
-    quick_search:
     rate: Rate
     reason: Reason
     receive: receive
@@ -1053,6 +1857,8 @@ en-GB:
         refund_summary:
         subject:
         total_refunded:
+        store_team: "%{store_name} Team"
+        thanks: Thank you for your business.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1134,6 +1940,8 @@ en-GB:
         thanks: Thank you for your business.
         track_information: 'Tracking Information: %{tracking}'
         track_link: 'Tracking Link: %{url}'
+        shipping_method: 'Shipping method: %{shipping_method}'
+        store_team: "%{store_name} Team"
     shipment_state: Shipment State
     shipment_states:
       backorder: backorder
@@ -1210,6 +2018,7 @@ en-GB:
       returned:
       shipped:
       void:
+      shipment: Shipment
     states: Counties
     states_required: County Required
     status: Status
@@ -1223,7 +2032,11 @@ en-GB:
     stock_movements: Stock Movements
     stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
     stock_successfully_transferred: Stock was successfully transferred between locations.
-    stock_transfer: Stock Transfer
+    stock_transfer:
+      errors:
+        must_have_variant: You must add at least one variant
+        same_location: cannot be the same as the destination location
+        variants_unavailable: Some variants are not available on %{stock}
     stock_transfers: Stock Transfers
     stop: Stop
     store: Store
@@ -1336,3 +2149,685 @@ en-GB:
     zipcode: Post Code
     zone: Zone
     zones: Zones
+    add_gift_card: Add Gift Card
+    add_new_address: Add new address
+    add_selected: Add Selected
+    add_selected_products: Add selected products
+    add_selected_variant: Add selected variant
+    added_at: Added At
+    adjustment_amount_help: Positive values are charges, negative values are credits.
+    adjustment_closed_description: The adjustment is closed, and will not be recalculated.
+    adjustment_open_description: The adjustment is open, and will be recalculated.
+    admin_language_help: The language your admin dashboard is displayed in. Only affects what you see, not the store or other staff.
+    admin_locale_help: The language used for the admin dashboard. If not set, defaults to the application locale.
+    all_time: All time
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: Applied to
+    assigned_variants: Assigned variants
+    assigned_variants_help: Pick the variants this image represents. Leave blank to apply to all variants.
+    automatic_promotion: Automatic
+    breadcrumbs: Breadcrumbs
+    cancel_order: Cancel order
+    cannot_ship: Shipment cannot be shipped
+    card_expiration_placeholder: MM/YYYY
+    categorization: Categorisation
+    change_password: Change password
+    close_sidebar: Close sidebar
+    contact_information: Contact information
+    contact_us: Contact us
+    continue_selling_when_out_of_stock: Continue selling when out of stock
+    copied: Copied!
+    copy_id: Copy ID
+    custom_domains: Custom domains
+    customer_could_not_be_removed_from_group: Customer could not be removed from group
+    customer_group_rule:
+      choose_customer_groups: 'Select the customer group(s) to which this promotion should apply:'
+    customer_removed_from_group: Customer removed from group
+    customers_added_to_group:
+      one: "%{count} customer added to group"
+      other: "%{count} customers added to group"
+    customers_removed_from_group:
+      one: "%{count} customer removed from group"
+      other: "%{count} customers removed from group"
+    days_ago: Days ago
+    delete_selected: Delete selected
+    digital_assets_help: Digital assets are files that can be downloaded by customers after purchase.
+    dimension_units:
+      centimeter: Centimetre (cm)
+      foot: Foot (ft)
+      inch: Inch (in)
+      millimeter: Millimetre (mm)
+    display_settings: Display settings
+    domains: Domains
+    draft_orders: Draft Orders
+    edit_address: Edit address
+    edit_prices: Edit Prices
+    edit_refund: Edit refund
+    estimated_delivery_time: Estimated delivery time
+    excerpt: Excerpt
+    favicon: Favicon
+    filtered_records: Filtered records
+    forbidden_message: You are not authorised to access this page.
+    general_information: General information
+    get_back_to_the: Get back to the
+    homepage: Homepage
+    internal_server_error: Internal Server Error
+    internal_server_error_message: The server encountered an internal error and was unable to complete your request.
+    invitation_expired:
+      body: This invitation link is no longer valid. Please ask the person who invited you to send a new one.
+      heading: Invitation invalid or expired
+    invitation_resent: Invitation resent!
+    issued_on: Issued On
+    log_in: Log in
+    manual_adjustment: Manual Adjustment
+    manual_adjustments: Manual Adjustments
+    mark_as_default: Mark as default
+    move_variant_to: Move variant to
+    new_allowed_origin: New Allowed Origin
+    new_api_key: New API Key
+    new_balance: New balance
+    new_billing_address: New Billing Address
+    new_channel: New sales channel
+    new_custom_domain: New Custom Domain
+    new_customer_group: New Customer Group
+    new_digital_asset: New digital asset
+    new_domain: New domain
+    new_gift_card: New Gift Card
+    new_line_item: Add line item
+    new_metafield_definition: New Metafield Definition
+    new_nested_taxon: New nested subcategory
+    new_page: New Page
+    new_password: New password
+    new_policy: New Policy
+    new_reimbursement_type: New Reimbursement Type
+    new_role: New Role
+    new_shipping_address: New Shipping Address
+    new_store: New Store
+    new_store_credit: New Store Credit
+    new_store_credit_category: New Store Credit Category
+    new_webhook_endpoint: New Webhook Endpoint
+    no_adjustments: No adjustments
+    no_billing_address_available: No billing address available
+    no_customers_found: No customers found
+    no_email_provided: No email provided
+    no_internal_note: No internal note
+    no_products_added: No products added
+    no_products_in_price_list: No products in this price list
+    no_promotions_applied: No promotions applied
+    no_saved_cards: No saved cards
+    no_shipping_address_available: No shipping address available
+    no_taxes: No taxes
+    no_users_selected: No users selected
+    not_risky: Not risky
+    oauth_applications: OAuth Applications
+    option_type_filterable_info: When an option type is set to Filterable, your storefront visitors are presented with the option to filter a taxon of products based on the option type. A typical example of this would be to filter clothing by size and colour.<br><br><b>Please Note:</b> Filters will only be visible in the storefront taxons that contain products with this option type set.
+    option_type_kind_info: Controls how the option is displayed on the storefront. Colour swatches show colour circles, buttons show clickable chips, and dropdown shows a select menu.
+    option_type_kinds:
+      buttons: Buttons
+      color_swatch: Colour Swatch
+      dropdown: Dropdown
+    or_select_other_address: or select other address
+    order_email_resent_error: Order confirmation mail can only be sent for completed orders
+    order_line_items: Order Line Items
+    page_not_found: Sorry! The page you are looking for can’t be found.
+    page_not_found_message: This page just doesn't exist.
+    payment_amount: Payment amount
+    payment_provider_settings: Payment Provider Settings
+    payment_type: Payment type
+    payments_gateway_processing_errors: "%{payment_method_name} processing errors"
+    personal_details: Personal details
+    previously_used_card: Previously Used Cards
+    price_list_form:
+      match_policies:
+        all: Match all of these rules
+        any: Match any of these rules
+    price_list_statuses:
+      active: Active
+      draft: Draft
+      inactive: Inactive
+      scheduled: Scheduled
+      scheduled_active: Scheduled (Active)
+    products_added: Products added
+    products_removed: Products removed
+    products_sort_options:
+      best_selling: Best Selling
+      manual: Manual
+      name_a_z: Alphabetically, A-Z
+      name_z_a: Alphabetically, Z-A
+      newest_first: Newest
+      oldest_first: Oldest
+      price_high_to_low: Price (high-low)
+      price_low_to_high: Price (low-high)
+      relevance: Relevance
+    promotion_cloned: Promotion has been cloned
+    promotion_not_cloned: 'Promotion has not been cloned. Reason: %{error}'
+    purchased_quantity: Purchased Quantity
+    remove_condition: Remove condition
+    return_authorization_states:
+      authorized: Authorised
+      canceled: Cancelled
+    same_as_shipping_address: Same as shipping address
+    search_customers: Search customers
+    search_engine_listing: Search engine listing
+    search_products: Search products
+    select_existing_address: Select existing address
+    select_key_type: Select key type
+    select_user: Select customer
+    select_vendor: Select vendor
+    send_payment_link: Send payment link
+    send_payment_link_title: Send payment link to the customer by email. They will be able to complete the payment later.
+    service_unavailable: Service Unavailable
+    service_unavailable_message: The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.
+    shipment_successfully_shipped: Shipment successfully shipped
+    show_details: Show details
+    show_report: Show report
+    standards_and_formats: Standards and formats
+    standards_and_formats_help: Set the timezone, default unit system and weight unit for your store.
+    start_typing_to_search_for_products: Start typing to search for products
+    start_typing_to_search_for_variants: Start typing to search for variants
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: You cannot change a store credit that has already been used
+        unable_to_create: Unable to create store credit
+        unable_to_delete: Unable to delete store credit
+        unable_to_update: Unable to update store credit
+      remaining: Remaining
+      allocated: Added
+      authorized: Authorised
+      captured: Used
+      credit: Credit
+      eligible: Eligible
+    store_credit_categories: Store Credit Categories
+    store_details: Store details
+    store_errors:
+      unable_to_update: Unable to update store.
+    store_form:
+      customer_support_email_help: This email is visible to your Store visitors in the Footer section
+      new_order_notifications_email_help: If you want to receive an email notification every time someone places an Order please provide an email address for that notification to be sent to
+    store_name_help: This is the name of your store. It will be displayed in the header and in the footer.
+    track_quantity: Track quantity
+    transaction_id_help: This is the ID of the transaction that was created in the 3rd party payment gateway.
+    true_label: 'TRUE'
+    type_to_search_customers: Type to search for customers
+    type_to_search_products: Type to search for products
+    unit_system_help: This will be used as the default unit system for your store. You can override this on a per-product basis.
+    unit_systems:
+      imperial_system: Imperial system
+      metric: metric
+      metric_system: Metric system
+    unprocessable_entity: Unprocessable Entity
+    unprocessable_entity_message: Your request could not be processed. Please check the form for errors and try again.
+    update_address: Update address
+    update_billing_address: Update billing address
+    update_contact_information: Update contact information
+    update_shipping_address: Update shipping address
+    use_shipping_address: Use Shipping Address
+    vendors: Vendors
+    view_full_size: View full size
+    view_store: View store
+    visits: Visits
+    weight_unit_help: This will be used as the default weight unit for your store. You can override this on a per-product basis.
+    weight_units:
+      gram: Gram (g)
+      kilogram: Kilogram (kg)
+      ounce: Ounce (oz)
+      pound: Pound (lb)
+    accepts_email_marketing: Accepts email marketing
+    add_customers: Add Customers
+    add_products: Add Products
+    add_store: New Store
+    add_store_credit: Add Store Credit
+    added_to_cart: Added to basket successfully!
+    address: Address
+    address_book:
+      add_house_number: Add a house number if you have one
+    address_not_owned_by_user: The specified address does not belong to this user.
+    addresses: Addresses
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (Included in Price)"
+    adjustments_deleted: Adjustments Deleted
+    admin_locale: Admin locale
+    all_products: All products
+    allowed_origin: Allowed Origin
+    allowed_origins: Allowed Origins
+    analytics: Analytics
+    api_key: API Key
+    api_key_no_current_key: No API key authenticated this request
+    api_key_scopes_immutable: cannot be changed after the key is created; create a new key with the scopes you need and revoke this one
+    api_keys: API Keys
+    apply: Apply
+    apply_only_on_full_priced_items: Apply only on full priced items
+    apply_store_credit: Apply Store Credit
+    assets: Media
+    attachments: Attachments
+    author: Author
+    availability: availability
+    available: Available
+    balance: Balance
+    barcode: Barcode
+    brand: Brand
+    canceled: Cancelled
+    cannot_be_destroyed: Order cannot be destroyed.
+    cannot_empty: Cannot empty order.
+    cannot_empty_completed_order: Order has already been processed so it cannot be emptied
+    cannot_return_more_than_bought_quantity: Cannot return more than bought quantity.
+    cart_already_updated: The basket has already been updated.
+    cart_line_item:
+      discontinued: "%{li_name} was removed because it was discontinued"
+      out_of_stock: "%{li_name} was removed because it was sold out"
+    change: Change
+    channel: Sales channel
+    channels: Sales channels
+    checkout_requirements:
+      email_required: Email address is required
+      line_items_required: Add at least one item to your basket
+      payment_required: Add a payment method
+      ship_address_required: Shipping address is required
+      shipping_method_required: Select a shipping method for all shipments
+    clear: Clear
+    clear_all: Clear all
+    closed: Closed
+    color_code: Colour Code
+    colors: Colours
+    compare_at_amount: Compare at amount
+    compare_at_price: Compare at price
+    contact: Contact
+    contact_phone: Contact phone
+    content: Content
+    copy: Copy
+    copy_link: Copy link
+    coupon_code_used: The coupon code you entered has already been used. Please try again.
+    coupon_codes: Coupon codes
+    create_new: Create new
+    created_by: Created by
+    credit_allowed: Credit allowed
+    credited: Credited
+    currencies: Currencies
+    currency_not_supported_by_store: is not supported by this store
+    current_password: Current password
+    customer_group: Customer Group
+    customer_groups: Customer Groups
+    customer_mailer:
+      password_reset_email:
+        action: Reset Password
+        expiry_notice: This password reset link will expire shortly. If you did not request this, no action is needed.
+        greeting: Hi %{name},
+        ignore_notice: If you did not request a password reset, you can safely ignore this email. Your password will not be changed.
+        instructions: We received a request to reset your password. Click the button below to choose a new password.
+    customer_support_email: Customer Support Email
+    customers: Customers
+    cvv: CVV
+    default_billing_address: Default billing address
+    default_country: Default Country
+    default_currency: Default currency
+    default_locale: Default locale
+    default_shipping_address: Default shipping address
+    default_stock_location_name: Shop location
+    default_wishlist_name: Wishlist
+    deleted: Deleted
+    developers: Developers
+    digital:
+      digital_delivery: Digital Delivery
+    digital_assets: Digital assets
+    discontinue_on: Discontinue On
+    discontinued: Discontinued
+    discontinued_variants_present: Some line items in this order have products that are no longer available.
+    discount: Discount
+    discounts: Discounts
+    display_delivery_range: Delivery in %{delivery_range} business days
+    display_on: Display on
+    domain: Domain
+    done: Done
+    download: Download
+    draft: Draft
+    duplicate: Duplicate
+    duplicating: Duplicating
+    email_marketing: Email marketing
+    emails: Emails
+    ends_at: Ends at
+    enter: Enter
+    error_user_destroy_with_orders: User associated with orders cannot be destroyed
+    error_user_does_not_have_any_store_credits: User does not have any Store Credits available
+    estimated_transit_business_days: Estimated transit business days
+    existing_address: Existing address
+    expired: Expired
+    expires_at: Expires at
+    export: Export
+    export_mailer:
+      export_done:
+        message: Good work, your export is ready! Please use the link below to download it.
+        subject: Your export %{export_number} was successfully processed!
+      greeting: Hi %{user_name},
+      thanks: Thank you,
+    facebook: Facebook
+    featured_image: Featured image
+    field: Field
+    filled: Filled
+    filterable: Filterable
+    firstname: First Name
+    fonts: Fonts
+    footer: Footer
+    forbidden: Access denied
+    free: Free
+    from: From
+    generate_code: Generate coupon code
+    gift_card: Gift Card
+    gift_card_already_redeemed: The Gift Card has already been redeemed.
+    gift_card_applied: The Gift Card was successfully applied to your order!
+    gift_card_batch: Gift Card Batch
+    gift_card_customer_not_logged_in: Gift Card cannot be applied with guest user.
+    gift_card_expired: The Gift Card has expired.
+    gift_card_mismatched_currency: Gift Card cannot be applied with current currency.
+    gift_card_mismatched_customer: This gift card is associated with another user.
+    gift_card_not_found: The Gift Card was not found.
+    gift_card_removed: The Gift Card was successfully removed from your order
+    gift_card_using_store_credit_error: You can't apply the Gift Card after you applied the store credit.
+    gift_cards: Gift Cards
+    hide: Hide
+    idempotency_key_reused: This Idempotency-Key has already been used with different request parameters.
+    immediately: Immediately
+    import: Import
+    in_stock: In Stock
+    instagram: Instagram
+    integrations: Integrations
+    internal_note: Internal Note
+    internationalization: Internationalisation
+    invitation_accepted: Invitation accepted!
+    invitation_mailer:
+      greeting: Hi %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} has accepted your invitation to join %{resource_name}"
+        subject: "%{invitee_name} has accepted your invitation to join %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} has invited you to join %{resource_name}"
+        link_description: 'To accept this invitation, please click the link below:'
+        subject: Invitation to join %{resource_name}
+      thanks: Thank you,
+    invitations: Invitations
+    invited_by: Invited by
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Key
+    kind: Kind
+    label: Label
+    language: Language
+    lastname: Last Name
+    line_item: Line Item
+    line_items: Line items
+    link: Link
+    live: Live
+    locale: Locale
+    locale_not_supported_by_store: is not supported by this store
+    logo: Logo
+    mail_from_address: Mail from address
+    mailer_logo: Mailer logo (JPG or PNG images only)
+    make_active_at: Make Active At
+    manual: Manual
+    market: Market
+    market_ids: Markets
+    markets: Markets
+    master: Master
+    max: Max
+    max_quantity: Max Quantity
+    me_no_current_user: No admin user authenticated this request
+    media: Media
+    metafield_definitions: Metafield Definitions
+    metafields: Metafields
+    min: Min
+    min_quantity: Min Quantity
+    missing_return_authorization: Missing Return Authorisation for %{item_name}.
+    move: Move
+    mutable: Mutable
+    navigation: Navigation
+    never: Never
+    new_address: New address
+    new_order_notifications_email: New Order Notifications Email
+    new_price_list: New Price List
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Hey,
+        ignore_disclaimer: If you didn't request this, please ignore this email.
+        instructions: Please click the button below to verify your email address.
+        message_copy_link: 'If the button doesn''t work please copy and paste the following link to your browser:'
+        store_team: "%{store_name} Team"
+        subject: Verify your email address
+        thanks: Thank you
+        verify_email_address_link: Verify email address
+    newsletter_subscribers: Newsletter Subscribers
+    no_cc_type: N/A
+    no_report_data: No report data
+    number: Number
+    ok: OK
+    only_active_products_can_be_added_to_cart: Draft and archived products cannot be added to basket, please mark the product as active before.
+    option_name: Option name
+    order_routing:
+      strategies:
+        legacy: Legacy
+        rules: Rules (ordered)
+    origin: Origin
+    other: Other
+    outstanding_balance: Outstanding Balance
+    page: Page
+    pages: Pages
+    payment_source: Payment source
+    payment_total: Payment Total
+    permissions: Permissions
+    policies: Policies
+    preview: Preview
+    price_lists: Price Lists
+    price_rules:
+      customer_group_rule:
+        description: Apply pricing to specific customer groups
+    prices: Prices
+    pricing: Pricing
+    privacy_policy: Privacy Policy
+    processing: Processing
+    product_name: Product Name
+    product_translations: Product Translations
+    products_cannot_be_shipped: We cannot ship %{product_names} to your current location at the moment. Please change your shipping address or remove %{product_names} from your basket.
+    promotion_already_used: You can not destroy promotion that was already applied
+    promotion_category: Promotion Category
+    promotion_label: Promotion (%{name})
+    published_at: Published at
+    query: Query
+    refund_amount: Refund Amount
+    remove_gift_card_on_completed_order_error: You can't remove the gift card after the order was placed
+    report_mailer:
+      greeting: Hi %{user_name},
+      report_done:
+        message: Please use the link below to download it.
+        subject: Your report %{report_name} is ready
+      thanks: Thank you,
+    report_names:
+      products_performance: Products performance
+      sales_total: Sales total
+    required: "*"
+    required_fields: required fields
+    resellable: Resellable
+    resource: Resource
+    return_authorization_canceled: Return authorisation cancelled
+    return_item_order_not_completed: Return item's order must be completed
+    returns_policy: Returns Policy
+    role_id: Role ID
+    row: Row
+    sale: Sale
+    saving: Saving
+    scopes: Scopes
+    search_by: 'Search by:'
+    security: Security
+    seed:
+      shipping:
+        categories:
+          default: Default
+          digital: Digital
+    selected_quantity_not_available: selected of %{item} is not available.
+    send_consumer_transactional_emails: Send Customer Transactional Emails
+    seo: SEO
+    seo_title: SEO Title
+    ship_to: 'Shipping to:'
+    shipping_policy: Shipping Policy
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (incl. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Shipping Zone
+    show_discontinued: Show Discontinued
+    sign_up: Sign Up
+    site_name: Site name
+    size: Size
+    social: Social
+    sort_by: Sort by
+    square_image: Square image
+    starts_at: Starts at
+    state_changes: State Changes
+    stock_items: Stock Items
+    store_credit_events: Store Credit Events
+    store_credit_name: Store Credit
+    store_credit_payment_method:
+      currency_mismatch: Store credit currency does not match order currency
+      insufficient_authorized_amount: Unable to capture more than authorised amount
+      insufficient_funds: Store credit amount remaining is not sufficient
+      successful_action: Successful store credit %{action}
+      unable_to_credit: 'Unable to credit code: %{auth_code}'
+      unable_to_find: Could not find store credit
+      unable_to_find_for_action: 'Could not find store credit for auth code: %{auth_code} for action: %{action}'
+      unable_to_void: 'Unable to void code: %{auth_code}'
+    store_credits: Store Credits
+    store_default: Default store
+    store_name: Store name
+    stores: Stores
+    subscribed: Subscribed
+    support: Support
+    supported_currencies: Supported Currencies
+    supported_locales: Supported Locales
+    tags: Tags
+    tax_inclusive: Tax inclusive
+    taxes: Taxes
+    taxonomy_brands_name: Brands
+    taxonomy_categories_name: Categories
+    taxonomy_collections_name: Collections
+    terms_of_service: Terms of Service
+    theme: Theme
+    themes: Themes
+    timezone: Timezone
+    title: Title
+    to: To
+    translations: Translations
+    twitter: Twitter
+    unit: Unit
+    unit_system: Unit system
+    unlimited: Unlimited
+    updated_at: Updated at
+    url: URL
+    used: Used
+    user_ids: Users
+    vendor: Vendor
+    verified: Verified
+    verified_at: Verified at
+    view: View
+    visibility: Visibility
+    webhook_endpoints: Webhook Endpoints
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Disabled at
+        heading: Webhook Endpoint Disabled
+        instructions: Please check the endpoint URL and service, then re-enable it in Settings → Developers → Webhooks.
+        message: The webhook endpoint "%{endpoint_name}" has been automatically disabled after repeated delivery failures.
+        name_label: Name
+        reason_label: Reason
+        subject: 'Webhook endpoint disabled: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhooks
+    weight_unit: Weight unit
+    wishlist: Wishlist
+    zipcode_required: Postcode Required
+    zone_ids: Zones
+    api:
+      cannot_delete: "%{model} cannot be deleted"
+      current_password_invalid: Current password is invalid or missing
+      gateway_error: 'There was a problem with the payment gateway: %{text}'
+      invalid_api_key: Invalid API key (%{key}) specified.
+      invalid_resource: Invalid resource. Please fix errors and try again.
+      invalid_taxonomy_id: Invalid taxonomy id.
+      must_specify_api_key: You must specify an API key.
+      negative_quantity: quantity is negative
+      newsletter_verification_token_invalid: Newsletter verification token is invalid or has expired.
+      order:
+        could_not_transition: The order could not be transitioned. Please fix the errors and try again.
+        insufficient_quantity: An item in your basket has become unavailable.
+        invalid_shipping_method: Invalid shipping method specified.
+      password_reset_requested: If an account exists for that email, password reset instructions have been sent.
+      password_reset_token_invalid: Password reset token is invalid or has expired.
+      payment:
+        credit_over_limit: This payment can only be credited up to %{limit}. Please specify an amount less than or equal to this number.
+        update_forbidden: This payment cannot be updated because it is %{state}.
+      record_not_found: "%{model} not found"
+      redirect_url_not_allowed: The redirect URL is not from an allowed origin for this store.
+      resource_not_found: The resource you were looking for could not be found.
+      shipment:
+        cannot_ready: Cannot ready shipment.
+      shipment_transfer_errors_occurred: 'Following errors occurred while attempting this action:'
+      shipment_transfer_success: Variants successfully transferred
+      stock_location_required: A stock_location_id parameter must be provided in order to retrieve stock movements.
+      unauthorized: You are not authorised to perform that action.
+      v2:
+        cart:
+          no_coupon_code: No coupon code provided and the Order doesn't have any coupon code promotions applied
+          wrong_quantity: Quantity has to be greater than 0
+        digitals:
+          missing_file: 'Missing Digital Item: attachment'
+          unauthorized: Error, you are not authorised to access this asset
+        gift_card:
+          amount_not_valid: Gift card amount is not valid
+          not_found: Gift card is not found
+        metadata:
+          invalid_params: Public and private metadata parameters should be objects
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: The wishlist could not be destroyed.
+          wrong_quantity: Quantity has to be greater than 0
+      v3:
+        payments:
+          method_unavailable: This payment method is not available for this order.
+          session_required: This payment method requires a payment session. Use the payment sessions endpoint instead.
+      wrong_shipment_target: target shipment is the same as original shipment
+  action_text:
+    video_embed:
+      not_found: Can't embed a video using the provided URL
+  activemodel:
+    errors:
+      messages:
+        blank: can't be blank
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: has backordered inventory units
+              has_already_been_shipped: has already been shipped
+            desired_shipment:
+              can_not_transfer_within_same_shipment: can not be same as current shipment
+              has_not_enough_stock_at_desired_location: has not enough stock in desired stock location
+  address_book:
+    save: Save
+    successfully_created: New address has been successfully created
+  number:
+    currency:
+      format:
+        delimiter: ","
+        separator: "."
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Truncate
