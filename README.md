@@ -1,7 +1,6 @@
 # Spree Internationalization
 
-[![Build Status](https://travis-ci.org/spree-contrib/spree_i18n.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_i18n)
-[![Code Climate](https://codeclimate.com/github/spree-contrib/spree_i18n/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_i18n)
+[![CI](https://github.com/spree/spree_i18n/actions/workflows/ci.yml/badge.svg)](https://github.com/spree/spree_i18n/actions/workflows/ci.yml)
 
 This is the Internationalization project for [Spree Commerce][1] 
 
@@ -24,59 +23,56 @@ Spree is developed and maintained by
 1. Add this extension to your Gemfile with this line:
 
   ```ruby
-  gem 'spree_i18n'
+  bundle add spree_i18n
   ```
 
-2. Install the gem using Bundler:
-  ```ruby
-  bundle install
-  ```
+2. Run the install generator
 
-3. Copy & run migrations
   ```ruby
   bundle exec rails g spree_i18n:install
   ```
 
-4. Restart your server
+3. Restart your server
 
   If your server was running, restart it so that it can find the assets properly.
 
-## Upgrading to 5.0 (only Spree 4.2+)
+## Developing
 
-### 1. Remove Asset references
+1. Create a dummy app
 
-From `vendor/assets/javascripts/spree/backend/all.js`
-```
-//= require spree/backend/spree_i18n
+    ```bash
+    bundle update
+    bundle exec rake test_app
+    ```
+
+2. Add your new code
+3. Run tests
+
+    ```bash
+    bundle exec rspec
+    ```
+
+## Releasing a new version
+
+```shell
+bundle exec gem bump -p -t
+bundle exec gem release
 ```
 
-and from `vendor/assets/javascripts/spree/frontend/all.js`
-```
-//= require spree/frontend/spree_i18n
-```
-
-and from `vendor/assets/stylesheets/spree/backend/all.css`
-```
-*= require spree/backend/spree_i18n
-```
-
-and from `vendor/assets/stylesheets/spree/frontend/all.css`
-```
-*= require spree/backend/spree_i18n
-```
-
----
+For more options please see [gem-release README](https://github.com/svenfuchs/gem-release)
 
 ## Contributing
 
-[See corresponding guidelines][7]
+If you'd like to contribute, please take a look at the
+[instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
+pull request.
 
 ---
 
-Copyright (c) 2010-2015 [Spree Commerce Inc.][1] and other [contributors][5]. released under the [New BSD License][6]
+Copyright (c) 2010-2026 [Spree Commerce Inc.][1] and other [contributors][5], released under the [New BSD License][6]
 
 [1]: https://spreecommerce.org
 [2]: https://spreecommerce.org/docs/developer/core-concepts/i18n#internationalization
-[5]: https://github.com/spree-contrib/spree_i18n/graphs/contributors
-[6]: https://github.com/spree-contrib/spree_i18n/blob/master/LICENSE.md
-[7]: https://github.com/spree-contrib/spree_i18n/blob/master/CONTRIBUTING.md
+[5]: https://github.com/spree/spree_i18n/graphs/contributors
+[6]: https://github.com/spree/spree_i18n/blob/main/LICENSE.md
+[7]: https://github.com/spree/spree_i18n/blob/main/CONTRIBUTING.md

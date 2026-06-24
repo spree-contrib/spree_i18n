@@ -1,28 +1,23 @@
-require 'rubygems'
-require 'bundler/setup'
-require 'rake'
-require 'rake/testtask'
-require 'rake/packagetask'
-require 'rubygems/package_task'
-require 'rspec/core/rake_task'
-require 'spree/testing_support/common_rake'
-require 'spree_i18n'
-
+require 'bundler'
 Bundler::GemHelper.install_tasks
+
+require 'rspec/core/rake_task'
+require 'spree/testing_support/extension_rake'
+
 RSpec::Core::RakeTask.new
 
-task default: :spec
-
-spec = eval(File.read('spree_i18n.gemspec'))
-
-Gem::PackageTask.new(spec) do |p|
-  p.gem_spec = spec
+task :default do
+  if Dir['spec/dummy'].empty?
+    Rake::Task[:test_app].invoke
+    Dir.chdir('../../')
+  end
+  Rake::Task[:spec].invoke
 end
 
 desc 'Generates a dummy app for testing'
 task :test_app do
   ENV['LIB_NAME'] = 'spree_i18n'
-  Rake::Task['common:test_app'].invoke
+  Rake::Task['extension:test_app'].execute
 end
 
 namespace :spree_i18n do
