@@ -12,6 +12,8 @@ el:
         phone: Τηλέφωνο
         state: Πολιτεία
         zipcode: Ταχυδρομικός κώδικας
+        company: Εταιρεία
+        label: Όνομα διεύθυνσης
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: Βάση τιμής
         preferred_tiers: Επίπεδα
@@ -40,6 +42,8 @@ el:
       spree/option_type:
         name: Όνομα
         presentation: Παρουσίαση
+        filterable: Με δυνατότητα φιλτραρίσματος
+        kind: Είδος
       spree/order:
         checkout_complete: Ολοκλήρωση συναλλαγής
         completed_at: Ολοκληρώθηκε στις
@@ -55,6 +59,8 @@ el:
         special_instructions: Οδηγίες πελάτη
         state: Κατάσταση
         total: Σύνολο
+        internal_note: Εσωτερική σημείωση
+        item_count: Είδη
       spree/order/bill_address:
         address1: Οδός διεύθυνσης Χρέωσης
         city: Πόλη διεύθυνσης Χρέωσης
@@ -73,6 +79,7 @@ el:
         zipcode: Ταχυδρομικός κώδικας διεύθυνσης αποστολής
       spree/payment:
         amount: Ποσό
+        number: Αριθμός
       spree/payment_method:
         name: Όνομα
       spree/product:
@@ -87,6 +94,10 @@ el:
         on_hand: Διαθέσιμα τεμάχια
         shipping_category: Κατηγορία αποστολής
         tax_category: Κατηγορία φόρου
+        discontinue_on: Διακοπή στις
+        less_than: Λιγότερο από
+        make_active_at: Ενεργοποίηση στις
+        more_than: Περισσότερο από
       spree/promotion:
         advertise: Διαφήμιση
         code: Κωδικός
@@ -98,6 +109,7 @@ el:
         promotion_category: Κατηγορία Προσφοράς
         starts_at: Ξεκινάει στις
         usage_limit: Όριο χρήσης
+        generate_code: Δημιουργία κωδικού κουπονιού
       spree/promotion_category:
         code: Κωδικός
         name: Όνομα
@@ -128,6 +140,16 @@ el:
         name: Όνομα
         seo_title: SEO Τίτλος
         url: URL
+        address: Διεύθυνση
+        contact_phone: Τηλέφωνο επικοινωνίας
+        preferred_digital_asset_authorized_clicks: Όριο κλικ λήψης
+        preferred_digital_asset_authorized_days: Όριο ημερών λήψης
+        preferred_limit_digital_download_count: Περιορισμός αριθμού λήψεων ψηφιακών συνδέσμων
+        preferred_limit_digital_download_days: Περιορισμός ημερών λήψης ψηφιακών συνδέσμων
+        seo_robots: SEO Robots
+        storefront_custom_code_body_end: Προσαρμοσμένος κώδικας πριν το κλείσιμο της ετικέτας body
+        storefront_custom_code_body_start: Προσαρμοσμένος κώδικας μετά το άνοιγμα της ετικέτας body
+        storefront_custom_code_head: Προσαρμοσμένος κώδικας στο head της σελίδας
       spree/tax_category:
         description: Περιγραφή
         name: Όνομα
@@ -139,12 +161,14 @@ el:
         name: Όνομα
         permalink: Permalink
         position: Θέση
+        sort_order: Σειρά ταξινόμησης
       spree/taxonomy:
         name: Όνομα
       spree/user:
         email: Email
         password: Κωδικός
         password_confirmation: Επιβεβαίωση κωδικού
+        avatar: Άβαταρ
       spree/variant:
         cost_currency: Κόστος Συναλλάγματος
         cost_price: Κόστος
@@ -157,6 +181,54 @@ el:
       spree/zone:
         description: Περιγραφή
         name: Όνομα
+      spree/customer_group:
+        description: Περιγραφή
+        name: Όνομα
+      spree/customer_return:
+        stock_location_id: Τοποθεσία αποθέματος
+      spree/gift_card:
+        amount_used: Ποσό που χρησιμοποιήθηκε
+        expires_at: Λήγει στις
+      spree/import:
+        preferred_delimiter: Διαχωριστικό
+      spree/import_mapping:
+        file_column: Στήλη αρχείου
+        schema_field: Πεδίο σχήματος
+      spree/import_row:
+        row_number: Αριθμός
+      spree/invitation:
+        inviter: Προσκαλών
+      spree/metafield_definition:
+        namespace: Χώρος ονομάτων
+      spree/option_value:
+        color_code: Κωδικός χρώματος
+        image: Εικόνα δείγματος
+      spree/page_link:
+        open_in_new_tab: Άνοιγμα σε νέα καρτέλα
+      spree/policy:
+        body: Σώμα
+        owner: Πολιτική για
+      spree/price_list:
+        description: Περιγραφή
+        ends_at: Λήγει στις
+        match_policy: Πολιτική αντιστοίχισης
+        name: Όνομα
+        priority: Προτεραιότητα
+        starts_at: Ξεκινά στις
+        status: Κατάσταση
+      spree/price_rule:
+        priority: Προτεραιότητα
+        type: Τύπος
+      spree/shipment:
+        number: Αριθμός
+      spree/store_credit:
+        amount_used: Ποσό που χρησιμοποιήθηκε
+      spree/store_credit_category:
+        name: Όνομα
+      user:
+        current_sign_in: Τρέχουσα σύνδεση στις
+        last_sign_in: Τελευταία σύνδεση στις
+        sign_in_count: Πλήθος συνδέσεων
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -203,6 +275,109 @@ el:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Δεν είναι δυνατή η διαγραφή του μοναδικού καταστήματος.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: πρέπει να είναι μια προέλευση (σχήμα και host) χωρίς διαδρομή, ερώτημα ή τμήμα
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Δεν είναι δυνατή η διαγραφή χρησιμοποιημένης δωροκάρτας
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: πρέπει να υπάρχει
+              not_allowed_content_type: έχει μη επιτρεπόμενο τύπο περιεχομένου
+        spree/import:
+          attributes:
+            attachment:
+              content_type: έχει μη επιτρεπόμενο τύπο περιεχομένου
+            type:
+              inclusion: δεν περιλαμβάνεται στη λίστα επιτρεπόμενων τύπων
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: ανήκει σε άλλον χρήστη
+              deprecated_in_completed_order: καταργήθηκε σε ολοκληρωμένη παραγγελία
+            ship_address_id:
+              belongs_to_other_user: ανήκει σε άλλον χρήστη
+              deprecated_in_completed_order: καταργήθηκε σε ολοκληρωμένη παραγγελία
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Δεν είναι δυνατή η διαγραφή της προεπιλεγμένης αγοράς.
+              cannot_destroy_last_market: Δεν είναι δυνατή η διαγραφή της μοναδικής αγοράς.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: έχει ήδη αντιστοιχιστεί σε άλλη αγορά σε αυτό το κατάστημα
+              not_in_shipping_zone: δεν καλύπτεται από καμία ζώνη αποστολής. Παρακαλούμε ρυθμίστε πρώτα μια ζώνη αποστολής.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: είναι μεγαλύτερο από το επιτρεπόμενο μέγιστο ποσό των %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: πρέπει να είναι μετά την ημερομηνία έναρξης
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Δεν είναι δυνατή η διαγραφή προϊόντων που έχουν προστεθεί σε υποβληθείσες παραγγελίες. Σε αυτές τις περιπτώσεις, παρακαλούμε διακόψτε τα.
+            discontinue_on:
+              invalid_date_range: πρέπει να είναι μεταγενέστερο από την ημερομηνία διαθεσιμότητας
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: πρέπει να είναι μετά την ημερομηνία δημοσίευσης
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: πρέπει να είναι μεταγενέστερο από την ημερομηνία έναρξης
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Πρέπει να επιλέξετε τουλάχιστον μία κατηγορία αποστολής
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Υπερβαίνει το συνολικό υπόλοιπο.
+            amount_used:
+              cannot_be_greater_than_amount: Δεν μπορεί να είναι μεγαλύτερο από το ποσό.
+              greater_than_zero_restrict_delete: είναι μεγαλύτερο από το μηδέν. Δεν είναι δυνατή η διαγραφή της πίστωσης καταστήματος.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Δεν είναι δυνατή η διαγραφή κατηγοριών πίστωσης καταστήματος όταν χρησιμοποιούνται σε πίστωση καταστήματος.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: έχει μη επιτρεπόμενο τύπο περιεχομένου
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: ανήκει σε άλλον χρήστη
+              deprecated_in_completed_order: καταργήθηκε σε ολοκληρωμένη παραγγελία
+            ship_address_id:
+              belongs_to_other_user: ανήκει σε άλλον χρήστη
+              deprecated_in_completed_order: καταργήθηκε σε ολοκληρωμένη παραγγελία
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Δεν είναι δυνατή η διαγραφή παραλλαγών που έχουν προστεθεί σε υποβληθείσες παραγγελίες. Σε αυτές τις περιπτώσεις, παρακαλούμε διακόψτε τες.
+              must_supply_price_for_variant_or_master: Πρέπει να οριστεί τιμή για την παραλλαγή ή κύρια τιμή για το προϊόν.
+              no_master_variant_found_to_infer_price: Δεν βρέθηκε κύρια παραλλαγή για να συναχθεί η τιμή
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: δεν πρέπει να δείχνει σε εσωτερική ή ιδιωτική διεύθυνση δικτύου
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Έχετε ήδη προσθέσει αυτό το είδος στη λίστα επιθυμιών σας
+      messages:
+        blank: δεν μπορεί να είναι κενό
     models:
       spree/address:
         one: Διεύθυνση
@@ -292,6 +467,8 @@ el:
         one: Αποθήκη
         other: Αποθήκες
       spree/stock_movement:
+        one: Κίνηση αποθέματος
+        other: Κινήσεις αποθέματος
       spree/stock_transfer:
         one: Μεταφορά Μεταφορά
         other: Μεταφορές Μεταφορά
@@ -314,6 +491,8 @@ el:
         one: Κατηγοριοποίηση
         other: Κατηγοριοποίηση
       spree/tracker:
+        one: Ιχνηλάτης
+        other: Ιχνηλάτες
       spree/user:
         one: Χρήστης
         other: Χρήστες
@@ -323,8 +502,63 @@ el:
       spree/zone:
         one: Ζώνη
         other: Ζώνες
+      spree/classification:
+        one: Κατάταξη
+        other: Κατατάξεις
+      spree/cms_page:
+        one: Σελίδα
+        other: Σελίδες
+      spree/cms_section:
+        one: Ενότητα
+        other: Ενότητες
+      spree/customer_group:
+        one: Ομάδα πελατών
+        other: Ομάδες πελατών
+      spree/customer_group_user:
+        one: Χρήστης ομάδας πελατών
+        other: Χρήστες ομάδας πελατών
+      spree/digital:
+        one: Ψηφιακό στοιχείο
+        other: Ψηφιακά στοιχεία
+      spree/export:
+        one: Εξαγωγή
+        other: Εξαγωγές
+      spree/integration:
+        one: Ενσωμάτωση
+        other: Ενσωματώσεις
+      spree/page:
+        one: Σελίδα
+        other: Σελίδες
+      spree/page_block:
+        one: Μπλοκ σελίδας
+        other: Μπλοκ σελίδας
+      spree/page_link:
+        one: Σύνδεσμος σελίδας
+        other: Σύνδεσμοι σελίδας
+      spree/page_section:
+        one: Ενότητα σελίδας
+        other: Ενότητες σελίδας
+      spree/price:
+        one: Τιμή
+        other: Τιμές
+      spree/price_list:
+        one: Τιμοκατάλογος
+        other: Τιμοκατάλογοι
+      spree/price_rule:
+        one: Κανόνας τιμής
+        other: Κανόνες τιμής
+      spree/stock_item:
+        one: Είδος αποθέματος
+        other: Είδη αποθέματος
+      spree/store_credit:
+        one: Πίστωση καταστήματος
+        other: Πιστώσεις καταστήματος
+      spree/theme:
+        one: Θέμα
+        other: Θέματα
   address_book:
     save: Αποθήκευση
+    successfully_created: Η νέα διεύθυνση δημιουργήθηκε με επιτυχία
   devise:
     confirmations:
       confirmed: Ο λογαριασμός σας επιβεβαιώθηκε επιτυχώς. Είσοδος.
@@ -337,6 +571,7 @@ el:
       timeout: Έχετε αποσυνδεθεί, παρακαλώ συνδεθείτε ξανά για να συνεχίσετε.
       unauthenticated: Πρέπει να συνδεθείτε ή να εγγραφείτε για να συνεχίσετε.
       unconfirmed: Πρέπει να επιβεβαιώσετε τον λογαριασμό σας για να συνεχίσετε.
+      too_many_attempts: Πάρα πολλές προσπάθειες. Παρακαλούμε περιμένετε λίγο και δοκιμάστε ξανά.
     mailer:
       confirmation_instructions:
         subject: Οδηγίες επιβεβαίωσης
@@ -370,7 +605,8 @@ el:
       not_locked: δεν είναι κλειδωμένο
       not_saved:
         one: '1 πρόβλημα εμπόδισε αυτήν την %{resource} απο το να αποθηκευτέι:'
-        other: '%{count} προβήματα εμπόδισαν αυτήν την %{resource} απο το να αποθηκευτέι:'
+        other: "%{count} προβήματα εμπόδισαν αυτήν την %{resource} απο το να αποθηκευτέι:"
+      not_a_number: δεν είναι αριθμός
   spree:
     abbreviation: Συντομογραφία
     accept:
@@ -393,6 +629,15 @@ el:
       refund:
       save: Αποθήκευση
       update: Ενημέρωση
+      close: Κλείσιμο
+      connect: Σύνδεση
+      discard: Απόρριψη
+      open: Άνοιγμα
+      reject: Απόρριψη
+      remove: Αφαίρεση
+      resend: Επαναποστολή
+      select_file: Επιλογή αρχείου
+      send_invitation: Αποστολή πρόσκλησης
     activate: Ενεργοποίηση
     active: Ενεργοποιημένο
     add: Προσθήκη
@@ -421,6 +666,7 @@ el:
       address_name_placeholder: Ονομασία
       label: Ονομασία
       new_address: Προσθήκη Νέας Διεύθυνσης
+      add_house_number: Προσθέστε αριθμό οικίας αν έχετε
     adjustable:
     adjustment: Ρύθμιση
     adjustment_amount: Ποσό
@@ -454,6 +700,483 @@ el:
         store_credits: Πίστωση Καταστήματος
         stores: Καταστήματα
         user_information: Πληροφορίες Χρήστη
+        last_order_placed: Τελευταία παραγγελία που υποβλήθηκε
+        no_store_credit: Ο πελάτης δεν έχει διαθέσιμη πίστωση καταστήματος
+      allowed_origins:
+        origin_help: Εισαγάγετε το πλήρες URL προέλευσης του καταστήματός σας (π.χ. https://myshop.com). Μην συμπεριλάβετε διαδρομές ή παραμέτρους ερωτήματος.
+        origin_settings: Ρυθμίσεις προέλευσης
+      amount_spent: Ποσό που δαπανήθηκε
+      api_keys:
+        example_request: Παράδειγμα αιτήματος
+        key_revoked_message: Αυτό το κλειδί API έχει ανακληθεί και δεν μπορεί πλέον να χρησιμοποιηθεί.
+        key_type_descriptions:
+          publishable: Ασφαλές για χρήση σε κώδικα από την πλευρά του πελάτη, όπως εφαρμογές για κινητά ή προγράμματα περιήγησης.
+          secret: Διατηρήστε το ασφαλές και χρησιμοποιήστε το μόνο από την πλευρά του διακομιστή. Μην το εκθέτετε ποτέ δημόσια.
+        key_types:
+          publishable: Δημοσιεύσιμο
+          secret: Μυστικό
+        last_used_at: Τελευταία χρήση
+        list: Κλειδιά API
+        name_placeholder: π.χ. Εφαρμογή κινητού — Παραγωγή
+        revoke: Ανάκληση
+        revoke_confirmation: Είστε βέβαιοι ότι θέλετε να ανακαλέσετε αυτό το κλειδί API; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.
+        revoked: Το κλειδί API έχει ανακληθεί
+        revoked_at: Ανακλήθηκε στις
+        revoked_by: Ανακλήθηκε από
+        scopes: Πεδία εφαρμογής
+        scopes_description: Απαιτείται για μυστικά κλειδιά. Επιλέξτε το πιο περιορισμένο σύνολο πεδίων εφαρμογής που χρειάζεται η ενσωμάτωσή σας.
+        scopes_immutable: Τα πεδία εφαρμογής καθορίζονται κατά τη δημιουργία του κλειδιού. Για να τα αλλάξετε, δημιουργήστε ένα νέο κλειδί με τα πεδία εφαρμογής που χρειάζεστε και ανακαλέστε αυτό.
+        secret_key_hidden: Αυτό το μυστικό κλειδί δεν μπορεί να αποκαλυφθεί. Εάν το έχετε χάσει, ανακαλέστε αυτό το κλειδί και δημιουργήστε ένα νέο.
+        statuses:
+          active: Ενεργό
+          revoked: Ανακλημένο
+        token_warning: Αποθηκεύστε αυτό το κλειδί με ασφάλεια. Θα εμφανιστεί μόνο αυτή τη μία φορά.
+        usage: Χρήση
+        usage_instructions:
+          publishable: Χρησιμοποιήστε αυτό το κλειδί για αιτήματα από την πλευρά του πελάτη. Μπορεί να συμπεριληφθεί με ασφάλεια στον κώδικα του frontend σας.
+          secret: Χρησιμοποιήστε αυτό το κλειδί μόνο για αιτήματα από την πλευρά του διακομιστή. Διατηρήστε το εμπιστευτικό και μην το εκθέτετε ποτέ σε κώδικα από την πλευρά του πελάτη.
+      audit_log: Αρχείο ελέγχου
+      avg_order_value: Μέση αξία παραγγελίας
+      back_to_dashboard: Επιστροφή στον πίνακα ελέγχου
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Είστε βέβαιοι ότι θέλετε να αφαιρέσετε τους επιλεγμένους πελάτες από αυτήν την ομάδα;
+          title:
+            remove: Αφαίρεση από ομάδα
+        price_list_products:
+          body:
+            remove: Είστε βέβαιοι ότι θέλετε να αφαιρέσετε τα επιλεγμένα προϊόντα από αυτόν τον τιμοκατάλογο; Αυτό θα αφαιρέσει επίσης τις τιμές τους.
+          title:
+            remove: Αφαίρεση από τιμοκατάλογο
+        products:
+          body:
+            add_tags: 'Επιλέξτε ετικέτες για προσθήκη στα προϊόντα:'
+            add_to_taxons: 'Επιλέξτε σε ποιες κατηγορίες θα προστεθούν τα προϊόντα:'
+            remove_from_taxons: 'Επιλέξτε από ποιες κατηγορίες θα αφαιρεθούν τα προϊόντα:'
+            remove_tags: 'Επιλέξτε ετικέτες για αφαίρεση από τα προϊόντα:'
+            set_active: Ορίζοντας τα προϊόντα ως ενεργά, θα γίνουν διαθέσιμα στη βιτρίνα.
+            set_archived: Ορίζοντας τα προϊόντα ως αρχειοθετημένα, θα αποκρυφτούν από τη βιτρίνα.
+            set_draft: Ορίζοντας τα προϊόντα ως πρόχειρα, θα αποκρυφτούν από τη βιτρίνα.
+          title:
+            add_tags: Προσθήκη ετικετών
+            add_to_taxons: Προσθήκη σε κατηγορίες
+            remove_from_taxons: Αφαίρεση από κατηγορίες
+            remove_tags: Αφαίρεση ετικετών
+            set_active: Ορισμός ως ενεργό
+            set_archived: Ορισμός ως αρχειοθετημένο
+            set_draft: Ορισμός ως πρόχειρο
+        users:
+          body:
+            add_tags: 'Επιλέξτε ετικέτες για προσθήκη στους πελάτες:'
+            remove_tags: 'Επιλέξτε ετικέτες για αφαίρεση από τους πελάτες:'
+          title:
+            add_tags: Προσθήκη ετικετών
+            remove_tags: Αφαίρεση ετικετών
+      channels:
+        code_hint: Ένα σύντομο, σταθερό αναγνωριστικό (π.χ. "online", "pos", "wholesale"). Χρησιμοποιείται από προγράμματα-πελάτες API μέσω της κεφαλίδας X-Spree-Channel και για την απόδοση παραγγελιών.
+        default: Προεπιλεγμένο κανάλι
+        default_hint: Ακριβώς ένα κανάλι ανά κατάστημα είναι το προεπιλεγμένο. Χρησιμοποιείται ως εφεδρικό όταν δεν έχει επιλεγεί κανάλι και ως προορισμός αυτόματης δημοσίευσης για νέα προϊόντα.
+        order_routing_strategy: Στρατηγική δρομολόγησης παραγγελιών
+        order_routing_strategy_hint: Παρακάμπτει τη στρατηγική δρομολόγησης σε επίπεδο καταστήματος για παραγγελίες που αποδίδονται σε αυτό το κανάλι.
+        order_routing_strategy_inherit: Κληρονόμηση από το κατάστημα
+      checkout_settings:
+        checkout_links:
+          description: Σύνδεσμοι προς αυτές τις σελίδες θα εμφανίζονται στο υποσέλιδο της ολοκλήρωσης αγοράς.
+          label: Σύνδεσμοι ολοκλήρωσης αγοράς
+        checkout_message_description: Ορατό στους πελάτες σας στη σελίδα ολοκλήρωσης αγοράς, στην δεξιά πλαϊνή στήλη.
+        countries_managed_by_markets_html: Οι χώρες και οι ζώνες αποστολής διαχειρίζονται μέσω %{link}.
+        guest_checkout:
+          description: Επιτρέψτε στους πελάτες να ολοκληρώνουν την αγορά χωρίς να δημιουργούν λογαριασμό.
+          label: Επιτρέπεται η ολοκλήρωση αγοράς ως επισκέπτης
+        special_instructions:
+          description: Επιτρέψτε στους πελάτες να προσθέτουν ειδικές οδηγίες στην παραγγελία τους.
+          label: Εμφάνιση του πεδίου ειδικών οδηγιών
+      close_sidebar: Κλείσιμο πλαϊνής γραμμής
+      copied: Αντιγράφηκε!
+      copy_payment_link: Αντιγραφή συνδέσμου πληρωμής
+      copy_to_clipboard: Αντιγραφή στο πρόχειρο
+      coupon_codes:
+        unused: Μη χρησιμοποιημένο
+        used: Χρησιμοποιημένο
+      created_at: Δημιουργήθηκε στις
+      dashboard:
+        getting_started:
+          description: Όλα όσα χρειάζεται να ρυθμίσετε για να ξεκινήσετε τις πωλήσεις.
+        hi: Γεια
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> από %{total} βήματα ολοκληρώθηκαν"
+          title: Η συνολική πρόοδος ρύθμισής σας
+        top_products: Κορυφαία προϊόντα
+        view_report: Προβολή αναφοράς
+        whats_happening_on_html: Δείτε τι συμβαίνει στο <strong>%{store_name}</strong> σήμερα.
+      datetime_field_timezone_help: 'Ζώνη ώρας: %{zone}'
+      digital_shipment_fulfillment_note: Αυτή η αποστολή θα επισημανθεί ως εκτελεσμένη μόλις ο χρήστης κατεβάσει το ψηφιακό προϊόν
+      display_on_options:
+        back_end: Μόνο στον πίνακα διαχείρισης
+        both: Τόσο στον πίνακα διαχείρισης όσο και στη βιτρίνα
+        front_end: Μόνο στη βιτρίνα
+      documentation: Τεκμηρίωση
+      edit_billing_address: Επεξεργασία διεύθυνσης χρέωσης
+      edit_contact_information: Επεξεργασία στοιχείων επικοινωνίας
+      edit_profile: Επεξεργασία προφίλ
+      edit_shipping_address: Επεξεργασία διεύθυνσης αποστολής
+      edit_theme: Επεξεργασία θέματος
+      errors: Σφάλματα
+      execution_time: Χρόνος εκτέλεσης
+      expand_sidebar: Ανάπτυξη πλαϊνής γραμμής
+      export_all: Εξαγωγή όλων των εγγραφών (μπορεί να είναι αργή για μεγάλα σύνολα δεδομένων)
+      export_coupons: Εξαγωγή κουπονιών ως αρχείο CSV
+      export_created: Η εξαγωγή σας ξεκίνησε. Θα λάβετε email με σύνδεσμο λήψης μόλις είναι έτοιμη!
+      export_only_filtered_records: Εξαγωγή μόνο των φιλτραρισμένων εγγραφών που ταιριάζουν με τα κριτήρια αναζήτησης
+      export_report: Εξαγωγή αναφοράς ως αρχείο CSV
+      filters: Φίλτρα
+      getting_started: Ξεκινώντας
+      gift_card_batches:
+        codes_count: Πλήθος κωδικών
+        new_gift_card_batch: Νέα παρτίδα δωροκαρτών
+        prefix: Πρόθεμα
+      gift_cards:
+        active: Ενεργό
+        all_statuses: Όλες οι καταστάσεις
+        code_help_text: Εάν το αφήσετε κενό, θα δημιουργήσουμε κωδικό για εσάς
+        redeemed: Εξαργυρωμένο
+        usage: Χρήση
+      imports:
+        all_required_columns_mapped: Μπράβο, όλες οι απαιτούμενες στήλες αντιστοιχίστηκαν!
+        field_required: Απαιτούμενο πεδίο
+        import_done: Όλα έτοιμα!
+        large_import_background_note: Μπορείτε να κλείσετε αυτήν τη σελίδα — η εισαγωγή θα συνεχιστεί στο παρασκήνιο.
+        large_import_message: Αυτή η εισαγωγή περιέχει %{count} γραμμές και είναι πολύ μεγάλη για να εμφανιστεί μεμονωμένα.
+        large_import_summary: "%{completed} ολοκληρώθηκαν, %{failed} απέτυχαν"
+        mapping_required: Αυτό το πεδίο είναι υποχρεωτικό
+        please_map_all_required_fields: Αντιστοιχίστε όλα τα απαιτούμενα πεδία για να συνεχίσετε.
+        waiting_for_file_to_be_processed: Αναμονή για επεξεργασία του αρχείου...
+      integrations:
+        invalid_integration_type: Αυτή η ενσωμάτωση δεν επιτρέπεται
+        page_subtitle: Συνδέστε το κατάστημά σας με υπηρεσίες τρίτων για να βελτιώσετε την εμπειρία των πελατών.
+      json_preview:
+        no_api_response: Δεν βρέθηκε απάντηση API για αυτόν τον πόρο
+      manage_markets: Διαχείριση αγορών
+      manage_properties: Διαχείριση ιδιοτήτων
+      manage_stock_locations: Διαχείριση τοποθεσιών αποθέματος
+      manage_taxons: Διαχείριση κατηγοριών
+      manage_zones: Διαχείριση ζωνών
+      markets:
+        edit: Επεξεργασία αγοράς
+        list: Αγορές
+        new: Νέα αγορά
+        supported_locales_hint: Λίστα διαχωρισμένη με κόμμα πρόσθετων κωδικών τοπικής ρύθμισης (π.χ. fr,de,es)
+      metafield_definitions:
+        edit_warning: Δεν μπορείτε να αλλάξετε τον τύπο πόρου ή τον τύπο metafield αφού ο ορισμός έχει χρησιμοποιηθεί.
+        used_in: Χρησιμοποιείται σε
+      name: Όνομα
+      navigation:
+        nested_under: Ένθετο κάτω από
+      newsletter_subscribers:
+        all: Όλοι
+        unverified: Μη επαληθευμένοι
+        verified: Επαληθευμένοι
+      not_tracking_inventory: Δεν παρακολουθείται το απόθεμα
+      notifications: Ειδοποιήσεις
+      num_orders: Αρ. παραγγελιών
+      oauth_applications:
+        client_id: Client ID
+        client_secret: Client Secret
+        last_used: Τελευταία χρήση
+        list: Κλειδιά API
+        never: Ποτέ
+        new: Νέο κλειδί API
+        read_and_write: Ανάγνωση & εγγραφή
+        read_only: Μόνο ανάγνωση
+        scopes: Πεδία εφαρμογής
+      order:
+        events:
+          approve: Έγκριση
+          cancel: Ακύρωση
+          resend: Επαναποστολή
+          resume: Συνέχιση
+      orders:
+        add_user_to_this_order: Προσθήκη πελάτη σε αυτήν την παραγγελία
+        all_orders: Όλες οι παραγγελίες
+        canceled: Ακυρωμένη
+        fulfilled: Εκτελεσμένη
+        no_email_present: Προσθέστε μια διεύθυνση email για να σταλεί ο σύνδεσμος πληρωμής
+        orders_to_fulfill: Παραγγελίες προς εκτέλεση
+        partially_refunded: Μερικώς επιστραφέν
+        payment_link_sent: Ο σύνδεσμος πληρωμής στάλθηκε στον πελάτη
+        provide_email: Δώστε μια διεύθυνση email
+        refunded: Επιστραφέν
+        remove_user_from_this_order: Αφαίρεση πελάτη από αυτήν την παραγγελία
+        unfulfilled: Μη εκτελεσμένη
+      page_builder:
+        background_color: Χρώμα φόντου
+        border_bottom_width: Πλάτος κάτω περιγράμματος
+        border_color: Χρώμα περιγράμματος
+        border_top_width: Πλάτος επάνω περιγράμματος
+        bottom_padding: Κάτω εσωτερικό περιθώριο
+        button_alignment: Στοίχιση κουμπιού
+        button_background_color: Χρώμα φόντου κουμπιού
+        button_style: Στυλ κουμπιού
+        button_text: Κείμενο κουμπιού
+        button_text_color: Χρώμα κειμένου κουμπιού
+        category: Κατηγορία
+        description: Περιγραφή
+        description_alignment: Στοίχιση περιγραφής
+        desktop_image_alignment: Στοίχιση εικόνας για επιτραπέζιο
+        desktop_logo_height: Ύψος λογότυπου (επιτραπέζιο)
+        heading: Επικεφαλίδα
+        heading_alignment: Στοίχιση επικεφαλίδας
+        heading_size: Μέγεθος επικεφαλίδας
+        height: Ύψος
+        image_click_hint: Κάνοντας κλικ στην εικόνα, ο χρήστης θα μεταφερθεί στην επιλεγμένη σελίδα/URL
+        left_aligned: Στοίχιση αριστερά
+        logo_centered: Λογότυπο στο κέντρο
+        max_video_width_on_desktop: Μέγιστο πλάτος βίντεο σε επιτραπέζιο
+        maximum_products_to_show: Μέγιστος αριθμός προϊόντων προς εμφάνιση
+        nav_centered: Πλοήγηση στο κέντρο
+        not_set: Δεν έχει οριστεί
+        separated: Διαχωρισμένο
+        show_more_button: Εμφάνιση κουμπιού εξερεύνησης κατηγορίας
+        show_taxon_image: Εμφάνιση εικόνας κατηγορίας
+        text_color: Χρώμα κειμένου
+        title: Τίτλος
+        top_padding: Επάνω εσωτερικό περιθώριο
+        use_description_from_admin: Χρήση περιγραφής από τη διαχείριση
+        vertical_alignment: Κατακόρυφη στοίχιση
+        youtube_video_url: URL βίντεο YouTube
+      personal_details: Προσωπικά στοιχεία
+      price_lists:
+        activate: Ενεργοποίηση
+        activated: Ο τιμοκατάλογος ενεργοποιήθηκε
+        confirm_activate: Είστε βέβαιοι ότι θέλετε να ενεργοποιήσετε αυτόν τον τιμοκατάλογο; Θα επηρεάσει άμεσα την τιμολόγηση.
+        confirm_deactivate: Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε αυτόν τον τιμοκατάλογο;
+        confirm_schedule: Είστε βέβαιοι ότι θέλετε να προγραμματίσετε αυτόν τον τιμοκατάλογο;
+        confirm_unschedule: Είστε βέβαιοι ότι θέλετε να ακυρώσετε τον προγραμματισμό αυτού του τιμοκαταλόγου;
+        deactivate: Απενεργοποίηση
+        deactivated: Ο τιμοκατάλογος απενεργοποιήθηκε
+        schedule: Προγραμματισμός
+        scheduled: Ο τιμοκατάλογος προγραμματίστηκε
+        unschedule: Ακύρωση προγραμματισμού
+      product_translations:
+        coverage: Κάλυψη μετάφρασης
+        locale: Τοπική ρύθμιση
+        manage_markets: Διαχείριση αγορών
+        no_locales_description: Ρυθμίστε αγορές με πρόσθετες τοπικές ρυθμίσεις για να ξεκινήσετε τη μετάφραση των προϊόντων σας.
+        no_locales_title: Δεν έχουν διαμορφωθεί πρόσθετες τοπικές ρυθμίσεις
+        progress: Πρόοδος
+        total: Σύνολο
+        translated: Μεταφρασμένα
+      products:
+        active: Ενεργό
+        all_statuses: Όλες οι καταστάσεις
+        any_stock: Οποιοδήποτε απόθεμα
+        archived: Αρχειοθετημένο
+        by_status: Κατά κατάσταση
+        by_stock: Κατά απόθεμα
+        deleted: Διαγραμμένο
+        draft: Πρόχειρο
+        help_bubble: Τα πρόχειρα προϊόντα δεν είναι διαθέσιμα προς αγορά. Τα ενεργά προϊόντα είναι ζωντανά.
+        in_stock: Σε απόθεμα
+        inventory:
+          barcode: Barcode (ISBN, UPC, GTIN, κ.λπ.)
+          sku: SKU (Κωδικός είδους αποθήκης)
+        out_of_stock: Εξαντλημένο
+        paused: Σε παύση
+        search_results:
+          no_products: Δεν βρήκαμε προϊόντα που να ταιριάζουν με την αναζήτησή σας :(
+        seo:
+          placeholder: Προσθέστε τίτλο και περιγραφή για να δείτε πώς μπορεί να εμφανιστεί αυτό το προϊόν σε μια λίστα μηχανής αναζήτησης
+        status_form:
+          status: Τα πρόχειρα προϊόντα δεν είναι διαθέσιμα προς αγορά. Τα ενεργά προϊόντα είναι ζωντανά.
+        status_options:
+          active: Ενεργό
+          archived: Αρχειοθετημένο
+          draft: Πρόχειρο
+        stores:
+          choose_stores: Επιλέξτε σε ποια καταστήματα θα είναι διαθέσιμο αυτό το προϊόν
+        variants:
+          option_types_link: Για να προσθέσετε περισσότερους τύπους επιλογών, μεταβείτε στους <a href="%{link}">Τύπους επιλογών</a>
+      publishing:
+        caption_hidden_after: Αποσύρεται στις %{date}
+        caption_live: Ορατό στους πελάτες τώρα
+        caption_not_available: Κρυφό — το προϊόν είναι %{product_status}
+        caption_scheduled: Ενεργοποιείται στις %{date}
+        caption_unpublished: Αποκρύφτηκε στις %{date}
+        caption_window: Ζωντανό %{start} → %{end}
+        empty: Δεν έχει καταχωριστεί ακόμη σε κανένα κανάλι πωλήσεων.
+        inactive_marker: Ανενεργό
+        manage_cta: Διαχείριση
+        manage_description: Επιλέξτε ποια κανάλια πωλήσεων καταχωρούν αυτό το προϊόν. Απενεργοποιήστε ένα κανάλι για να το αποσύρετε από παντού.
+        no_channels: Δεν υπάρχουν διαθέσιμα κανάλια πωλήσεων. Δημιουργήστε ένα στις Ρυθμίσεις → Κανάλια πωλήσεων.
+        published_at_label: Δημοσίευση από
+        status_hidden: Κρυφό
+        status_live: Ζωντανό
+        status_not_available: Μη διαθέσιμο
+        status_scheduled: Προγραμματισμένο
+        title: Δημοσίευση
+        unpublished_at_label: Απόσυρση στις
+      recommended_size: Συνιστώμενο μέγεθος
+      report_created: Η αναφορά σας δημιουργείται. Θα λάβετε email με σύνδεσμο λήψης μόλις είναι έτοιμη!
+      reset_digital_link_download_limits: Επαναφορά ορίων λήψης
+      response_code: Κωδικός απόκρισης
+      selected: επιλεγμένα
+      send_payment_link: Αποστολή συνδέσμου πληρωμής
+      shipment:
+        please_provide_tracking_details: Πριν επισημάνετε την αποστολή ως απεσταλμένη, δώστε τα στοιχεία παρακολούθησης
+      shipment_transfer:
+        wrong_destination: Λανθασμένος προορισμός
+      show_json: Εμφάνιση JSON
+      stock_transfers:
+        add_products_tip: Πρέπει πρώτα να επιλέξετε τοποθεσία προορισμού
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> υπόλοιπο (<strong>%{total}</strong> σύνολο)"
+      store_form:
+        company_field:
+          description: Εμφανίζει το πεδίο εταιρείας στη φόρμα διεύθυνσης στην ενότητα Ο λογαριασμός μου και στο βήμα διεύθυνσης κατά την ολοκλήρωση αγοράς.
+          label: Εμφάνιση του πεδίου διεύθυνσης εταιρείας
+        customer_support_email_help: Αυτό το email είναι ορατό στους επισκέπτες του καταστήματός σας στην ενότητα υποσέλιδου
+        new_order_notifications_email_help: Εάν θέλετε να λαμβάνετε ειδοποίηση email κάθε φορά που κάποιος υποβάλλει παραγγελία, δώστε μια διεύθυνση email στην οποία θα αποστέλλεται αυτή η ειδοποίηση
+        send_consumer_transactional_emails_help: Όταν δεν είναι επιλεγμένο, τα συναλλακτικά email όπως οι επιβεβαιώσεις παραγγελιών και οι ειδοποιήσεις αποστολής δεν θα αποστέλλονται στους πελάτες
+      store_setup_tasks:
+        add_billing_address: Προσθήκη διεύθυνσης χρέωσης
+        add_products: Προσθήκη προϊόντων
+        payment_methods:
+          copy: Για να εισπράττετε πληρωμές, ρυθμίστε τουλάχιστον έναν online πάροχο πληρωμών.
+          done: Είστε έτοιμοι! Μπορείτε πάντα να διαχειρίζεστε τις μεθόδους πληρωμής σας σε <a href="%{link}" data-turbo-frame="_top">αυτήν</a> τη σελίδα.
+          setup: Ρύθμιση μεθόδων πληρωμής
+          title: Ρυθμίστε τις μεθόδους πληρωμής για το κατάστημά σας
+        set_customer_support_email: Ορισμός email υποστήριξης πελατών
+        setup_taxes_collection: Ρύθμιση είσπραξης φόρων
+        taxes:
+          copy: Για να εισπράττετε φόρους, ρυθμίστε τους φορολογικούς συντελεστές σας.
+          done: Είστε έτοιμοι! Μπορείτε πάντα να διαχειρίζεστε τους φόρους σας στη σελίδα <a href="%{link}" data-turbo-frame="_top">ρυθμίσεων</a>.
+          setup: Ρύθμιση φορολογικών συντελεστών
+      storefront: Βιτρίνα
+      successful: Επιτυχές
+      successfully_reset_digital_links_limit: Τα όρια λήψης επαναφέρθηκαν
+      tables:
+        add_filter: Προσθήκη φίλτρου
+        add_or_group: Προσθήκη ομάδας OR
+        apply: Εφαρμογή
+        apply_filters: Εφαρμογή φίλτρων
+        ascending: Αύξουσα
+        clear_all: Εκκαθάριση όλων
+        columns: Στήλες
+        descending: Φθίνουσα
+        enter_value: Εισαγάγετε τιμή...
+        filter_builder: Δημιουργία φίλτρων
+        filters: Φίλτρα
+        match: Αντιστοίχιση
+        of_the_following: από τα παρακάτω
+        operators:
+          contains: περιέχει
+          does_not_contain: δεν περιέχει
+          ends_with: τελειώνει σε
+          equals: ισούται με
+          greater_than: μεγαλύτερο από
+          greater_than_or_equal: μεγαλύτερο ή ίσο με
+          is_any_of: είναι οποιοδήποτε από
+          is_empty: είναι κενό
+          is_none_of: δεν είναι κανένα από
+          is_not_empty: δεν είναι κενό
+          less_than: μικρότερο από
+          less_than_or_equal: μικρότερο ή ίσο με
+          not_equals: δεν ισούται με
+          starts_with: αρχίζει με
+        order: Σειρά
+        reset_to_default: Επαναφορά στις προεπιλογές
+        select_field: Επιλογή πεδίου...
+        sort_by: Ταξινόμηση κατά
+        visible_columns: Ορατές στήλες
+      taxon_rules:
+        all_conditions: όλες οι προϋποθέσεις
+        any_condition: οποιαδήποτε προϋπόθεση
+        available_on: Διαθέσιμο στις
+        match_policies:
+          contains: περιέχει
+          does_not_contain: δεν περιέχει
+          is_equal_to: ισούται με
+          is_not_equal_to: δεν ισούται με
+        on_sale: Σε προσφορά
+        products_must_match: 'Τα προϊόντα πρέπει να ταιριάζουν με:'
+        tag: Ετικέτα προϊόντος
+      taxon_type: Τύπος κατηγορίας
+      taxon_types:
+        automatic: Αυτόματη
+        automatic_info: Προσθέστε αυτόματα προϊόντα σε αυτήν την κατηγορία εάν ταιριάζουν με τους κανόνες που ορίζετε.
+        manual: Χειροκίνητη
+        manual_info: Επιμεληθείτε προϊόντα χειροκίνητα. Μπορείτε να τα προσθέσετε ή να τα αφαιρέσετε μαζικά.
+      translations:
+        no_translations_configured: Δεν έχουν διαμορφωθεί μεταφράσεις. Ρυθμίστε αγορές για να χρησιμοποιήσετε μεταφράσεις.
+      upload_new_asset: Μεταφόρτωση νέου πολυμέσου
+      users:
+        filters:
+          search_placeholder: Αναζήτηση πελατών κατά email ή όνομα
+      utilities:
+        preview: Προεπισκόπηση
+      variants:
+        search_results:
+          no_variants: Δεν βρήκαμε παραλλαγές που να ταιριάζουν με την αναζήτησή σας :(
+      variants_form:
+        add_option:
+          empty: Προσθέστε επιλογές όπως μέγεθος ή χρώμα
+          not_empty: Προσθήκη άλλης επιλογής
+        compare_at_price_description: Αυτή η τιμή χρησιμοποιείται για να εμφανίσει τη μειωμένη τιμή στη σελίδα του προϊόντος.
+        stock_locations_link: Για να προσθέσετε περισσότερες τοποθεσίες αποθέματος, μεταβείτε στις <a href="%{link}">Τοποθεσίες αποθέματος</a>
+        total_inventory_html: 'Συνολικό απόθεμα στην τοποθεσία %{stock_location}: %{count} διαθέσιμα'
+      vendors:
+        enterprise_feature: Η αγορά πολλαπλών προμηθευτών είναι διαθέσιμη στην έκδοση Enterprise
+      webhook_deliveries:
+        delivered_at: Παραδόθηκε στις
+        delivery_details: Λεπτομέρειες παράδοσης
+        delivery_info: Πληροφορίες παράδοσης
+        endpoint_inactive: Δεν είναι δυνατή η επανάληψη - το endpoint είναι ανενεργό
+        error_type: Τύπος σφάλματος
+        event: Συμβάν
+        execution_time: Χρόνος εκτέλεσης
+        failed: Απέτυχε
+        pending: Σε εκκρεμότητα
+        redeliver_button: Επαναπαράδοση
+        redelivered: Το webhook επαναπαραδόθηκε με επιτυχία.
+        request_errors: Σφάλματα αιτήματος
+        request_payload: Ωφέλιμο φορτίο αιτήματος
+        response_body: Σώμα απόκρισης
+        response_code: Κωδικός απόκρισης
+      webhook_endpoints:
+        auto_disabled: Αυτό το endpoint απενεργοποιήθηκε αυτόματα μετά από επανειλημμένες αποτυχίες παράδοσης.
+        back_to_endpoint: Επιστροφή στο endpoint
+        deliveries: Παραδόσεις
+        endpoint_settings: Ρυθμίσεις endpoint
+        event_subscriptions: Συνδρομές συμβάντων
+        event_subscriptions_help: Επιλέξτε ποια συμβάντα θα ενεργοποιούν παράδοση webhook σε αυτό το endpoint.
+        events: συμβάντα
+        failed_deliveries: Αποτυχημένες παραδόσεις
+        health:
+          degraded: "%{percentage}% επιτυχία"
+          disabled: Απενεργοποιημένο
+          failing: "%{percentage}% επιτυχία"
+          healthy: "%{percentage}% επιτυχία"
+          no_deliveries: Χωρίς δεδομένα
+        health_label: Κατάσταση υγείας
+        new: Νέο endpoint webhook
+        re_enable: Επανενεργοποίηση
+        secret_key: Μυστικό κλειδί
+        secret_key_help: Χρησιμοποιήστε αυτό το κλειδί για να επαληθεύσετε τις υπογραφές webhook. Διατηρήστε το ασφαλές και μην το μοιράζεστε δημόσια.
+        send_test: Αποστολή δοκιμής
+        subscriptions: Συνδρομές
+        successful_deliveries: Επιτυχημένες παραδόσεις
+        test_failed: Αποτυχία αποστολής δοκιμαστικού webhook. Ελέγξτε τη διαμόρφωση του endpoint.
+        test_sent: Το δοκιμαστικό webhook στάλθηκε. Ελέγξτε τις παραδόσεις για το αποτέλεσμα.
+      webhooks_subscribers:
+        all_events: Όλα τα συμβάντα
+        new_webhooks_subscriber: Νέος συνδρομητής webhooks
+        no_events: Χωρίς συμβάντα
+        select_events: Επιλογή συμβάντων
+        subscribe_to_all_events: Συνδρομή σε όλα τα συμβάντα
+        subscriptions: Συνδρομές
+        time_of_last_event: Ώρα τελευταίου συμβάντος
+        webhooks_events: Συμβάντα webhooks
     administration: Διαχείριση
     advertise: Διαφήμιση
     agree_to_privacy_policy: Συμφωνώ στην πολιτική απορρήτου
@@ -486,13 +1209,61 @@ el:
       key_generated: Επαναδημιουργία κλειδιού ήταν επιτυχής!
       no_key: Δεν υπάρχει κλειδί
       regenerate_key: Επαναδημιουργία Κλειδιού
+      cannot_delete: Δεν είναι δυνατή η διαγραφή του %{model}
+      current_password_invalid: Ο τρέχων κωδικός πρόσβασης είναι μη έγκυρος ή λείπει
+      gateway_error: 'Παρουσιάστηκε πρόβλημα με την πύλη πληρωμών: %{text}'
+      invalid_api_key: Καθορίστηκε μη έγκυρο κλειδί API (%{key}).
+      invalid_resource: Μη έγκυρος πόρος. Παρακαλούμε διορθώστε τα σφάλματα και δοκιμάστε ξανά.
+      invalid_taxonomy_id: Μη έγκυρο αναγνωριστικό ταξινομίας.
+      must_specify_api_key: Πρέπει να καθορίσετε ένα κλειδί API.
+      negative_quantity: η ποσότητα είναι αρνητική
+      newsletter_verification_token_invalid: Το token επαλήθευσης ενημερωτικού δελτίου είναι μη έγκυρο ή έχει λήξει.
+      order:
+        could_not_transition: Δεν ήταν δυνατή η μετάβαση της παραγγελίας. Παρακαλούμε διορθώστε τα σφάλματα και δοκιμάστε ξανά.
+        insufficient_quantity: Ένα είδος στο καλάθι σας δεν είναι πλέον διαθέσιμο.
+        invalid_shipping_method: Καθορίστηκε μη έγκυρη μέθοδος αποστολής.
+      password_reset_requested: Αν υπάρχει λογαριασμός για αυτό το email, έχουν σταλεί οδηγίες επαναφοράς κωδικού πρόσβασης.
+      password_reset_token_invalid: Το token επαναφοράς κωδικού πρόσβασης είναι μη έγκυρο ή έχει λήξει.
+      payment:
+        credit_over_limit: Αυτή η πληρωμή μπορεί να πιστωθεί έως %{limit}. Παρακαλούμε καθορίστε ένα ποσό μικρότερο ή ίσο με αυτόν τον αριθμό.
+        update_forbidden: Αυτή η πληρωμή δεν μπορεί να ενημερωθεί επειδή είναι %{state}.
+      record_not_found: Δεν βρέθηκε %{model}
+      redirect_url_not_allowed: Η διεύθυνση URL ανακατεύθυνσης δεν προέρχεται από επιτρεπόμενη προέλευση για αυτό το κατάστημα.
+      resource_not_found: Ο πόρος που αναζητούσατε δεν βρέθηκε.
+      shipment:
+        cannot_ready: Δεν είναι δυνατή η προετοιμασία της αποστολής.
+      shipment_transfer_errors_occurred: 'Τα ακόλουθα σφάλματα παρουσιάστηκαν κατά την προσπάθεια εκτέλεσης αυτής της ενέργειας:'
+      shipment_transfer_success: Οι παραλλαγές μεταφέρθηκαν με επιτυχία
+      stock_location_required: Πρέπει να παρέχεται μια παράμετρος stock_location_id για την ανάκτηση κινήσεων αποθέματος.
+      unauthorized: Δεν έχετε εξουσιοδότηση να εκτελέσετε αυτή την ενέργεια.
+      v2:
+        cart:
+          no_coupon_code: Δεν παρασχέθηκε κωδικός κουπονιού και η παραγγελία δεν έχει εφαρμοσμένες προσφορές κωδικού κουπονιού
+          wrong_quantity: Η ποσότητα πρέπει να είναι μεγαλύτερη από 0
+        digitals:
+          missing_file: 'Λείπει ψηφιακό είδος: συνημμένο'
+          unauthorized: Σφάλμα, δεν έχετε εξουσιοδότηση να αποκτήσετε πρόσβαση σε αυτό το στοιχείο
+        gift_card:
+          amount_not_valid: Το ποσό της δωροκάρτας δεν είναι έγκυρο
+          not_found: Η δωροκάρτα δεν βρέθηκε
+        metadata:
+          invalid_params: Οι παράμετροι δημόσιων και ιδιωτικών μεταδεδομένων πρέπει να είναι αντικείμενα
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Δεν ήταν δυνατή η διαγραφή της λίστας επιθυμιών.
+          wrong_quantity: Η ποσότητα πρέπει να είναι μεγαλύτερη από 0
+      v3:
+        payments:
+          method_unavailable: Αυτή η μέθοδος πληρωμής δεν είναι διαθέσιμη για αυτή την παραγγελία.
+          session_required: Αυτή η μέθοδος πληρωμής απαιτεί μια συνεδρία πληρωμής. Χρησιμοποιήστε αντ' αυτού το σημείο πρόσβασης συνεδριών πληρωμής.
+      wrong_shipment_target: η αποστολή προορισμού είναι ίδια με την αρχική αποστολή
     approve: Αποδοχή
     approved_at:
     approver:
     are_you_sure: Σίγουρα?
     are_you_sure_delete: Θέλετε σίγουρα να διαγράψετε αυτήν την καταχώρηση?
     associated_adjustment_closed: The associated adjustment is closed, and will not be recalculated. Do you want to open it?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Αποτυχία εξουσιοδότησης
     authorized: Εξουσιοδοτημένο
     auto_capture: Αυτόματη Επιβεβαίωση
@@ -678,6 +1449,7 @@ el:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: Αυτός ο κωδικός κουπονιού δεν ισχύει στη χώρα σας
     email: Email
     empty: Άδειο
     empty_cart: Άδειο Καλάθι
@@ -693,9 +1465,20 @@ el:
         could_not_create_taxon: Could not create taxon
         no_payment_methods_available: Δεν έχουν οριστεί τρόποι πληρωμής
         no_shipping_methods_available: Δεν υπάρχουν διαθέσιμη τρόποι αποστολής για αυτην την τοποθεσία, παρακαλω αλλάξτε διευθυνση και δοκιμαστε ξανά.
+        cannot_delete_default_channel: Δεν είναι δυνατή η διαγραφή του προεπιλεγμένου καναλιού. Ορίστε πρώτα ένα άλλο κανάλι ως προεπιλεγμένο.
+        channel_store_mismatch: πρέπει να ανήκει στο ίδιο κατάστημα
+        invalid_order_routing_rule: δεν είναι καταχωρημένος κανόνας δρομολόγησης παραγγελιών
+        invalid_order_routing_strategy: δεν είναι καταχωρημένη στρατηγική δρομολόγησης παραγγελιών
+        must_be_origin_only: πρέπει να είναι μια προέλευση (σχήμα και host) χωρίς διαδρομή, ερώτημα ή τμήμα
+        store_association_can_not_be_changed: Η συσχέτιση με το κατάστημα δεν μπορεί να αλλάξει
+        store_is_already_set: Το κατάστημα έχει ήδη οριστεί
+      services:
+        get_shipping_rates:
+          no_line_items: Για να δημιουργήσετε χρεώσεις αποστολής πρέπει να προσθέσετε ορισμένα είδη στην παραγγελία
+          no_shipping_address: Για τη δημιουργία χρεώσεων αποστολής η παραγγελία πρέπει να έχει διεύθυνση αποστολής
     errors_prohibited_this_record_from_being_saved:
       one: 1 σφάλμα δεν επέτρεψε αυτην την εγγραφή να αποθηκευτει
-      other: '%{count} σφάλματα δεν επέτρεψαν αυτην την εγγραφή να αποθηκευτει'
+      other: "%{count} σφάλματα δεν επέτρεψαν αυτην την εγγραφή να αποθηκευτει"
     event: Event
     events:
       spree:
@@ -933,7 +1716,7 @@ el:
     not: δεν
     not_available: N/A
     not_enough_stock: Δεν υπαρχει αρκετο περιεχομενο στην τοποθεσια για την μεταφορα.
-    not_found: '%{resource} δεν βρέθηκς'
+    not_found: "%{resource} δεν βρέθηκς"
     note:
     notice_messages:
       product_cloned: Το Προϊόν κλονοποιήθηκε
@@ -955,7 +1738,7 @@ el:
     optional: Μη απαραίτητο
     options: Επιλογές
     or: ή
-    or_over_price: '%{price} η παραπάνω'
+    or_over_price: "%{price} η παραπάνω"
     order: Παραγγελία
     order_adjustments: Ρυθμίσεις παραγγελίας
     order_already_updated:
@@ -972,6 +1755,7 @@ el:
         subject: Ακύρωση παραγγελίας
         subtotal:
         total:
+        thanks: Ευχαριστούμε για
       confirm_email:
         dear_customer: Αγαπητέ πελάτη,\n
         instructions: Παρακαλώ διαβάστε τις παρακάτω πληροφορίες της παραγγελίας.
@@ -980,6 +1764,20 @@ el:
         subtotal:
         thanks: Σας ευχαριστούμε πολύ.
         total:
+      payment_link_email:
+        message: Κάντε κλικ στο παρακάτω κουμπί για να πληρώσετε την παραγγελία σας.
+        message_copy_link: 'Αν το κουμπί δεν λειτουργεί, αντιγράψτε και επικολλήστε τον παρακάτω σύνδεσμο στο πρόγραμμα περιήγησής σας:'
+        pay_for_order: Πληρωμή παραγγελίας
+        subject: 'Σύνδεσμος πληρωμής για την παραγγελία #%{number}'
+      store_owner_notification_email:
+        heading: Λήφθηκε νέα παραγγελία
+        instructions: Λάβατε μια νέα παραγγελία.
+        order_summary: Σύνοψη παραγγελίας %{number}
+        subject: Το %{store_name} έλαβε μια νέα παραγγελία
+        thanks: Ευχαριστούμε
+      store_team: Η ομάδα του %{store_name}
+      subtotal: 'Μερικό σύνολο:'
+      total: 'Σύνολο παραγγελίας:'
     order_not_found: Δεν βρέθηκε η παραγγελία σας. Παρακαλώ δοκιμάστε ξανά.
     order_number: Αριθμός Παραγγελίας
     order_processed_successfully: Η παραγγελία σας ολοκληρώθηκε επιτυχώς
@@ -1007,8 +1805,8 @@ el:
     package_from: πακέτο από
     pagination:
       next_page: επόμενη σελίδα »
-      previous_page: « προηγούμενη σελίδα
-      truncate: …
+      previous_page: "« προηγούμενη σελίδα"
+      truncate: "…"
     password: Κωδικός
     paste: Επικόλληση
     path: Διαδρομή
@@ -1036,6 +1834,9 @@ el:
       pending: αναμονή
       processing: επεξεργασία
       void: void
+      complete: Ολοκληρωμένη
+      partially_refunded: Μερικώς επιστραφέν
+      refunded: Επιστραφέν
     payment_updated: Η πληρωμή ενημερώθηκε
     payments: Πληρωμές
     pending:
@@ -1126,6 +1927,24 @@ el:
       user_logged_in:
         description: Μόνο σε συνδεμένουν χρήστες
         name: Συνδεμένος χρήστης
+      category:
+        description: Η παραγγελία περιλαμβάνει προϊόντα σε συγκεκριμένες κατηγορίες
+        name: Κατηγορίες
+      country:
+        description: Περιορισμός σε παραγγελίες με διεύθυνση αποστολής σε συγκεκριμένη χώρα
+        name: Χώρα
+      currency:
+        description: Περιορισμός σε παραγγελίες με συγκεκριμένο νόμισμα
+        name: Νόμισμα
+      customer:
+        description: Διαθέσιμο μόνο στους συγκεκριμένους πελάτες
+        name: Πελάτες
+      customer_group:
+        description: Διαθέσιμο μόνο σε πελάτες συγκεκριμένων ομάδων πελατών
+        name: Ομάδα(ες) πελατών
+      customer_logged_in:
+        description: Διαθέσιμο μόνο σε συνδεδεμένους πελάτες
+        name: Μόνο συνδεδεμένοι πελάτες
     promotion_uses:
     promotionable: Διαθέσιμο στις προσφορές
     promotions: Προσφορές
@@ -1169,6 +1988,8 @@ el:
         refund_summary:
         subject:
         total_refunded:
+        store_team: Η ομάδα του %{store_name}
+        thanks: Σας ευχαριστούμε για τη συνεργασία.
     reimbursement_perform_failed: Η αποζημίωση απέτυχε
     reimbursement_status: Κατάσταση Αποζημίωσης
     reimbursement_type: Τρόπος Αποζημίωσης
@@ -1258,6 +2079,8 @@ el:
         thanks: Σας ευχαριστούμε πολύ.
         track_information: 'Πληροφορίες παρακολούθησης παραγγελίας: %{tracking}'
         track_link: 'Σύνδεσμος παρακολούθησης: %{url}'
+        shipping_method: 'Μέθοδος αποστολής: %{shipping_method}'
+        store_team: Η ομάδα του %{store_name}
     shipment_state: Κατάσταση Αποστολής
     shipment_states:
       backorder: παραγγελία
@@ -1342,6 +2165,7 @@ el:
       returned:
       shipped:
       void:
+      shipment: Αποστολή
     states: Νομοί
     states_required: Υποχρετικοί Νομοί
     status: Κατάσταση
@@ -1355,7 +2179,11 @@ el:
     stock_movements: Κινήσεις Αποθήκης
     stock_movements_for_stock_location: Κινήσεις Αποθήκης για %{stock_location_name}
     stock_successfully_transferred: Το άπόθεμα μεταφέρθηκε επιτυχώς μεταξύ τοποθεσιών.
-    stock_transfer: Μεταφορά Αποθέματος
+    stock_transfer:
+      errors:
+        must_have_variant: Πρέπει να προσθέσετε τουλάχιστον μία παραλλαγή
+        same_location: δεν μπορεί να είναι ίδια με την τοποθεσία προορισμού
+        variants_unavailable: Ορισμένες παραλλαγές δεν είναι διαθέσιμες στο %{stock}
     stock_transfers: Μεταφορές Αποθέματος
     stop: Πάυση
     store: Κατάστημα
@@ -1379,11 +2207,11 @@ el:
     subtotal: Υποσύνολο
     subtract: Αφαίρεση
     success:
-    successfully_created: '%{resource} δημιουργήθηκε επιτυχώς!'
+    successfully_created: "%{resource} δημιουργήθηκε επιτυχώς!"
     successfully_refunded:
-    successfully_removed: '%{resource} αφαιρέθηκε επιτυχώς!'
+    successfully_removed: "%{resource} αφαιρέθηκε επιτυχώς!"
     successfully_signed_up_for_analytics: Successfully signed up for Spree Analytics
-    successfully_updated: '%{resource} ενημερώθηκε επιτυχώς!'
+    successfully_updated: "%{resource} ενημερώθηκε επιτυχώς!"
     summary: Περίληψη
     supported_currencies: Διαθέσιμα Συναλλάγματα
     tax: Φόρος
@@ -1405,7 +2233,7 @@ el:
     taxonomy: Κατηγοριοποίηση
     taxonomy_edit: Ενημέρωση Κατηγοριοποίησης
     taxonomy_tree_error: The requested change has not been accepted and the tree has been returned to its previous state, please try again.
-    taxonomy_tree_instruction: '* Κάντε δεξί κλικ σε ένα στοιχείο στο δέντρο για πρόσβαση στο μενού για προσθήκη, διαγραφή ή ταξινόμηση ενός στοιχείου.'
+    taxonomy_tree_instruction: "* Κάντε δεξί κλικ σε ένα στοιχείο στο δέντρο για πρόσβαση στο μενού για προσθήκη, διαγραφή ή ταξινόμηση ενός στοιχείου."
     taxons: Κατηγορία
     test: Τεστ
     test_mailer:
@@ -1488,3 +2316,583 @@ el:
     zipcode_required: Υποχρετικοί Ταχ.Κωδικοί
     zone: Ζώνη
     zones: Ζώνες
+    add_gift_card: Προσθήκη δωροκάρτας
+    add_selected: Προσθήκη επιλεγμένων
+    add_selected_products: Προσθήκη επιλεγμένων προϊόντων
+    add_selected_variant: Προσθήκη επιλεγμένης παραλλαγής
+    added_at: Προστέθηκε στις
+    adjustment_amount_help: Οι θετικές τιμές είναι χρεώσεις, οι αρνητικές τιμές είναι πιστώσεις.
+    adjustment_closed_description: Η προσαρμογή είναι κλειστή και δεν θα υπολογιστεί εκ νέου.
+    adjustment_open_description: Η προσαρμογή είναι ανοιχτή και θα υπολογιστεί εκ νέου.
+    admin_language_help: Η γλώσσα στην οποία εμφανίζεται ο πίνακας διαχείρισής σας. Επηρεάζει μόνο αυτό που βλέπετε εσείς, όχι το κατάστημα ή άλλο προσωπικό.
+    admin_locale_help: Η γλώσσα που χρησιμοποιείται για τον πίνακα διαχείρισης. Εάν δεν οριστεί, χρησιμοποιείται η προεπιλεγμένη τοπική ρύθμιση της εφαρμογής.
+    all_time: Όλη η περίοδος
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: Εφαρμόστηκε σε
+    assigned_variants: Αντιστοιχισμένες παραλλαγές
+    assigned_variants_help: Επιλέξτε τις παραλλαγές που αντιπροσωπεύει αυτή η εικόνα. Αφήστε το κενό για να εφαρμοστεί σε όλες τις παραλλαγές.
+    automatic_promotion: Αυτόματη
+    breadcrumbs: Διαδρομή πλοήγησης
+    cancel_order: Ακύρωση παραγγελίας
+    cannot_ship: Η αποστολή δεν μπορεί να αποσταλεί
+    card_expiration_placeholder: ΜΜ/ΕΕΕΕ
+    categorization: Κατηγοριοποίηση
+    change_password: Αλλαγή κωδικού πρόσβασης
+    close_sidebar: Κλείσιμο πλαϊνής γραμμής
+    contact_information: Στοιχεία επικοινωνίας
+    continue_selling_when_out_of_stock: Συνέχιση πώλησης όταν εξαντληθεί το απόθεμα
+    copied: Αντιγράφηκε!
+    copy_id: Αντιγραφή ID
+    custom_domains: Προσαρμοσμένα domains
+    customer_could_not_be_removed_from_group: Δεν ήταν δυνατή η αφαίρεση του πελάτη από την ομάδα
+    customer_group_rule:
+      choose_customer_groups: 'Επιλέξτε την ομάδα/τις ομάδες πελατών στις οποίες θα ισχύει αυτή η προωθητική ενέργεια:'
+    customer_removed_from_group: Ο πελάτης αφαιρέθηκε από την ομάδα
+    customers_added_to_group:
+      one: "%{count} πελάτης προστέθηκε στην ομάδα"
+      other: "%{count} πελάτες προστέθηκαν στην ομάδα"
+    customers_removed_from_group:
+      one: "%{count} πελάτης αφαιρέθηκε από την ομάδα"
+      other: "%{count} πελάτες αφαιρέθηκαν από την ομάδα"
+    days_ago: Πριν από ημέρες
+    delete_selected: Διαγραφή επιλεγμένων
+    digital_assets_help: Τα ψηφιακά στοιχεία είναι αρχεία που μπορούν να κατεβάσουν οι πελάτες μετά την αγορά.
+    dimension_units:
+      centimeter: Εκατοστό (cm)
+      foot: Πόδι (ft)
+      inch: Ίντσα (in)
+      millimeter: Χιλιοστό (mm)
+    display_settings: Ρυθμίσεις εμφάνισης
+    domains: Domains
+    draft_orders: Πρόχειρες παραγγελίες
+    edit_address: Επεξεργασία διεύθυνσης
+    edit_prices: Επεξεργασία τιμών
+    edit_refund: Επεξεργασία επιστροφής χρημάτων
+    estimated_delivery_time: Εκτιμώμενος χρόνος παράδοσης
+    excerpt: Απόσπασμα
+    favicon: Favicon
+    filtered_records: Φιλτραρισμένες εγγραφές
+    forbidden_message: Δεν έχετε εξουσιοδότηση να αποκτήσετε πρόσβαση σε αυτήν τη σελίδα.
+    general_information: Γενικές πληροφορίες
+    get_back_to_the: Επιστρέψτε στην
+    homepage: Αρχική σελίδα
+    internal_server_error: Εσωτερικό σφάλμα διακομιστή
+    internal_server_error_message: Ο διακομιστής αντιμετώπισε ένα εσωτερικό σφάλμα και δεν μπόρεσε να ολοκληρώσει το αίτημά σας.
+    invitation_expired:
+      body: Αυτός ο σύνδεσμος πρόσκλησης δεν ισχύει πλέον. Ζητήστε από το άτομο που σας προσκάλεσε να στείλει έναν νέο.
+      heading: Μη έγκυρη ή ληγμένη πρόσκληση
+    invitation_resent: Η πρόσκληση στάλθηκε ξανά!
+    issued_on: Εκδόθηκε στις
+    manual_adjustment: Χειροκίνητη προσαρμογή
+    manual_adjustments: Χειροκίνητες προσαρμογές
+    mark_as_default: Ορισμός ως προεπιλογή
+    move_variant_to: Μετακίνηση παραλλαγής σε
+    new_allowed_origin: Νέα επιτρεπόμενη προέλευση
+    new_api_key: Νέο κλειδί API
+    new_balance: Νέο υπόλοιπο
+    new_billing_address: Νέα διεύθυνση χρέωσης
+    new_channel: Νέο κανάλι πωλήσεων
+    new_custom_domain: Νέο προσαρμοσμένο domain
+    new_customer_group: Νέα ομάδα πελατών
+    new_digital_asset: Νέο ψηφιακό στοιχείο
+    new_domain: Νέο domain
+    new_gift_card: Νέα δωροκάρτα
+    new_line_item: Προσθήκη στοιχείου παραγγελίας
+    new_metafield_definition: Νέος ορισμός metafield
+    new_nested_taxon: Νέα ένθετη υποκατηγορία
+    new_page: Νέα σελίδα
+    new_password: Νέος κωδικός πρόσβασης
+    new_policy: Νέα πολιτική
+    new_role: Νέος ρόλος
+    new_shipping_address: Νέα διεύθυνση αποστολής
+    new_store: Νέο κατάστημα
+    new_store_credit: Νέα πίστωση καταστήματος
+    new_webhook_endpoint: Νέο endpoint webhook
+    no_adjustments: Χωρίς προσαρμογές
+    no_billing_address_available: Δεν υπάρχει διαθέσιμη διεύθυνση χρέωσης
+    no_customers_found: Δεν βρέθηκαν πελάτες
+    no_email_provided: Δεν δόθηκε email
+    no_internal_note: Χωρίς εσωτερική σημείωση
+    no_products_added: Δεν προστέθηκαν προϊόντα
+    no_products_in_price_list: Δεν υπάρχουν προϊόντα σε αυτόν τον τιμοκατάλογο
+    no_promotions_applied: Δεν εφαρμόστηκαν προωθητικές ενέργειες
+    no_saved_cards: Δεν υπάρχουν αποθηκευμένες κάρτες
+    no_shipping_address_available: Δεν υπάρχει διαθέσιμη διεύθυνση αποστολής
+    no_taxes: Χωρίς φόρους
+    no_users_selected: Δεν επιλέχθηκαν χρήστες
+    not_risky: Χωρίς κίνδυνο
+    oauth_applications: Εφαρμογές OAuth
+    option_type_filterable_info: Όταν ένας τύπος επιλογής έχει οριστεί ως φιλτραρίσιμος, στους επισκέπτες της βιτρίνας σας παρέχεται η δυνατότητα να φιλτράρουν μια κατηγορία προϊόντων με βάση τον τύπο επιλογής. Ένα τυπικό παράδειγμα θα ήταν το φιλτράρισμα ρούχων κατά μέγεθος και χρώμα.<br><br><b>Σημείωση:</b> Τα φίλτρα θα είναι ορατά μόνο στις κατηγορίες της βιτρίνας που περιέχουν προϊόντα με αυτόν τον τύπο επιλογής ορισμένο.
+    option_type_kind_info: Ελέγχει πώς εμφανίζεται η επιλογή στη βιτρίνα. Τα δείγματα χρωμάτων εμφανίζουν κύκλους χρωμάτων, τα κουμπιά εμφανίζουν επιλέξιμες ετικέτες και το αναπτυσσόμενο μενού εμφανίζει ένα μενού επιλογής.
+    option_type_kinds:
+      buttons: Κουμπιά
+      color_swatch: Δείγμα χρώματος
+      dropdown: Αναπτυσσόμενο μενού
+    or_select_other_address: ή επιλέξτε άλλη διεύθυνση
+    order_email_resent_error: Το email επιβεβαίωσης παραγγελίας μπορεί να σταλεί μόνο για ολοκληρωμένες παραγγελίες
+    order_line_items: Στοιχεία παραγγελίας
+    page_not_found: Λυπούμαστε! Η σελίδα που αναζητάτε δεν βρέθηκε.
+    page_not_found_message: Αυτή η σελίδα απλά δεν υπάρχει.
+    payment_amount: Ποσό πληρωμής
+    payment_type: Τύπος πληρωμής
+    payments_gateway_processing_errors: Σφάλματα επεξεργασίας %{payment_method_name}
+    personal_details: Προσωπικά στοιχεία
+    previously_used_card: Κάρτες που χρησιμοποιήθηκαν προηγουμένως
+    price_list_form:
+      match_policies:
+        all: Αντιστοίχιση όλων αυτών των κανόνων
+        any: Αντιστοίχιση οποιουδήποτε από αυτούς τους κανόνες
+    price_list_statuses:
+      active: Ενεργός
+      draft: Πρόχειρος
+      inactive: Ανενεργός
+      scheduled: Προγραμματισμένος
+      scheduled_active: Προγραμματισμένος (ενεργός)
+    products_added: Προϊόντα προστέθηκαν
+    products_removed: Προϊόντα αφαιρέθηκαν
+    products_sort_options:
+      best_selling: Δημοφιλέστερα
+      manual: Χειροκίνητη
+      name_a_z: Αλφαβητικά, Α-Ω
+      name_z_a: Αλφαβητικά, Ω-Α
+      newest_first: Νεότερα
+      oldest_first: Παλαιότερα
+      price_high_to_low: Τιμή (υψηλή-χαμηλή)
+      price_low_to_high: Τιμή (χαμηλή-υψηλή)
+      relevance: Συνάφεια
+    promotion_cloned: Η προωθητική ενέργεια κλωνοποιήθηκε
+    promotion_not_cloned: 'Η προωθητική ενέργεια δεν κλωνοποιήθηκε. Αιτία: %{error}'
+    purchased_quantity: Αγορασμένη ποσότητα
+    remove_condition: Αφαίρεση προϋπόθεσης
+    return_authorization_states:
+      authorized: Εγκεκριμένη
+      canceled: Ακυρωμένη
+    same_as_shipping_address: Ίδια με τη διεύθυνση αποστολής
+    search_customers: Αναζήτηση πελατών
+    search_engine_listing: Καταχώριση σε μηχανή αναζήτησης
+    search_products: Αναζήτηση προϊόντων
+    select_existing_address: Επιλογή υπάρχουσας διεύθυνσης
+    select_key_type: Επιλογή τύπου κλειδιού
+    select_user: Επιλογή πελάτη
+    select_vendor: Επιλογή προμηθευτή
+    send_payment_link: Αποστολή συνδέσμου πληρωμής
+    send_payment_link_title: Αποστολή συνδέσμου πληρωμής στον πελάτη μέσω email. Θα μπορεί να ολοκληρώσει την πληρωμή αργότερα.
+    service_unavailable: Η υπηρεσία δεν είναι διαθέσιμη
+    service_unavailable_message: Ο διακομιστής δεν μπορεί προσωρινά να εξυπηρετήσει το αίτημά σας λόγω διακοπής για συντήρηση ή προβλημάτων χωρητικότητας. Δοκιμάστε ξανά αργότερα.
+    shipment_successfully_shipped: Η αποστολή στάλθηκε με επιτυχία
+    show_details: Εμφάνιση λεπτομερειών
+    show_report: Εμφάνιση αναφοράς
+    standards_and_formats: Πρότυπα και μορφές
+    standards_and_formats_help: Ορίστε τη ζώνη ώρας, το προεπιλεγμένο σύστημα μονάδων και τη μονάδα βάρους για το κατάστημά σας.
+    start_typing_to_search_for_products: Ξεκινήστε να πληκτρολογείτε για αναζήτηση προϊόντων
+    start_typing_to_search_for_variants: Ξεκινήστε να πληκτρολογείτε για αναζήτηση παραλλαγών
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Δεν μπορείτε να αλλάξετε μια πίστωση καταστήματος που έχει ήδη χρησιμοποιηθεί
+        unable_to_create: Δεν είναι δυνατή η δημιουργία πίστωσης καταστήματος
+        unable_to_delete: Δεν είναι δυνατή η διαγραφή πίστωσης καταστήματος
+        unable_to_update: Δεν είναι δυνατή η ενημέρωση πίστωσης καταστήματος
+      remaining: Υπόλοιπο
+      allocated: Προστέθηκε
+      authorized: Εξουσιοδοτήθηκε
+      captured: Χρησιμοποιήθηκε
+      credit: Πίστωση
+      eligible: Επιλέξιμο
+    store_details: Στοιχεία καταστήματος
+    store_errors:
+      unable_to_update: Δεν είναι δυνατή η ενημέρωση του καταστήματος.
+    store_name_help: Αυτό είναι το όνομα του καταστήματός σας. Θα εμφανίζεται στην κεφαλίδα και στο υποσέλιδο.
+    track_quantity: Παρακολούθηση ποσότητας
+    transaction_id_help: Αυτό είναι το ID της συναλλαγής που δημιουργήθηκε στην πύλη πληρωμών τρίτου.
+    true_label: 'TRUE'
+    type_to_search_customers: Πληκτρολογήστε για αναζήτηση πελατών
+    type_to_search_products: Πληκτρολογήστε για αναζήτηση προϊόντων
+    unit_system_help: Αυτό θα χρησιμοποιηθεί ως το προεπιλεγμένο σύστημα μονάδων για το κατάστημά σας. Μπορείτε να το παρακάμψετε ανά προϊόν.
+    unit_systems:
+      imperial_system: Αυτοκρατορικό σύστημα
+      metric: μετρικό
+      metric_system: Μετρικό σύστημα
+    unprocessable_entity: Μη επεξεργάσιμη οντότητα
+    unprocessable_entity_message: Το αίτημά σας δεν ήταν δυνατό να επεξεργαστεί. Ελέγξτε τη φόρμα για σφάλματα και δοκιμάστε ξανά.
+    update_address: Ενημέρωση διεύθυνσης
+    update_billing_address: Ενημέρωση διεύθυνσης χρέωσης
+    update_contact_information: Ενημέρωση στοιχείων επικοινωνίας
+    update_shipping_address: Ενημέρωση διεύθυνσης αποστολής
+    use_shipping_address: Χρήση διεύθυνσης αποστολής
+    vendors: Προμηθευτές
+    view_full_size: Προβολή σε πλήρες μέγεθος
+    view_store: Προβολή καταστήματος
+    visits: Επισκέψεις
+    weight_unit_help: Αυτό θα χρησιμοποιηθεί ως η προεπιλεγμένη μονάδα βάρους για το κατάστημά σας. Μπορείτε να το παρακάμψετε ανά προϊόν.
+    weight_units:
+      gram: Γραμμάριο (g)
+      kilogram: Κιλό (kg)
+      ounce: Ουγγιά (oz)
+      pound: Λίβρα (lb)
+    accepts_email_marketing: Αποδέχεται email marketing
+    add_customers: Προσθήκη πελατών
+    add_products: Προσθήκη προϊόντων
+    add_store_credit: Προσθήκη πίστωσης καταστήματος
+    added_to_cart: Προστέθηκε στο καλάθι με επιτυχία!
+    address_not_owned_by_user: Η συγκεκριμένη διεύθυνση δεν ανήκει σε αυτόν τον χρήστη.
+    addresses: Διευθύνσεις
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (Συμπεριλαμβάνεται στην τιμή)"
+    adjustments_deleted: Οι προσαρμογές διαγράφηκαν
+    admin_locale: Τοπικές ρυθμίσεις διαχείρισης
+    all_products: Όλα τα προϊόντα
+    allowed_origin: Επιτρεπόμενη προέλευση
+    allowed_origins: Επιτρεπόμενες προελεύσεις
+    analytics: Αναλυτικά στοιχεία
+    api_key: Κλειδί API
+    api_key_no_current_key: Κανένα κλειδί API δεν πιστοποίησε αυτό το αίτημα
+    api_key_scopes_immutable: δεν μπορούν να αλλάξουν μετά τη δημιουργία του κλειδιού· δημιουργήστε ένα νέο κλειδί με τα scopes που χρειάζεστε και ανακαλέστε αυτό
+    api_keys: Κλειδιά API
+    apply: Εφαρμογή
+    apply_only_on_full_priced_items: Εφαρμογή μόνο σε είδη πλήρους τιμής
+    apply_store_credit: Εφαρμογή πίστωσης καταστήματος
+    assets: Πολυμέσα
+    attachments: Συνημμένα
+    author: Συγγραφέας
+    availability: διαθεσιμότητα
+    available: Διαθέσιμο
+    balance: Υπόλοιπο
+    barcode: Γραμμωτός κώδικας
+    brand: Μάρκα
+    cannot_be_destroyed: Η παραγγελία δεν μπορεί να διαγραφεί.
+    cannot_empty: Δεν είναι δυνατό το άδειασμα της παραγγελίας.
+    cannot_empty_completed_order: Η παραγγελία έχει ήδη επεξεργαστεί, επομένως δεν μπορεί να αδειάσει
+    cannot_return_more_than_bought_quantity: Δεν μπορείτε να επιστρέψετε περισσότερα από την αγορασμένη ποσότητα.
+    cart_already_updated: Το καλάθι έχει ήδη ενημερωθεί.
+    cart_line_item:
+      discontinued: Το %{li_name} αφαιρέθηκε επειδή διακόπηκε
+      out_of_stock: Το %{li_name} αφαιρέθηκε επειδή εξαντλήθηκε
+    change: Αλλαγή
+    channels: Κανάλια πωλήσεων
+    checkout_requirements:
+      email_required: Απαιτείται διεύθυνση email
+      line_items_required: Προσθέστε τουλάχιστον ένα είδος στο καλάθι σας
+      payment_required: Προσθέστε μια μέθοδο πληρωμής
+      ship_address_required: Απαιτείται διεύθυνση αποστολής
+      shipping_method_required: Επιλέξτε μια μέθοδο αποστολής για όλες τις αποστολές
+    clear: Εκκαθάριση
+    clear_all: Εκκαθάριση όλων
+    closed: Κλειστό
+    color_code: Κωδικός χρώματος
+    colors: Χρώματα
+    compare_at_amount: Συγκριτική τιμή
+    contact: Επικοινωνία
+    content: Περιεχόμενο
+    copy: Αντιγραφή
+    copy_link: Αντιγραφή συνδέσμου
+    coupon_code_used: Ο κωδικός κουπονιού που εισαγάγατε έχει ήδη χρησιμοποιηθεί. Παρακαλούμε δοκιμάστε ξανά.
+    coupon_codes: Κωδικοί κουπονιών
+    create_new: Δημιουργία νέου
+    created_by: Δημιουργήθηκε από
+    credit_allowed: Επιτρεπόμενη πίστωση
+    credited: Πιστώθηκε
+    currencies: Νομίσματα
+    currency_not_supported_by_store: δεν υποστηρίζεται από αυτό το κατάστημα
+    current_password: Τρέχων κωδικός πρόσβασης
+    customer_group: Ομάδα πελατών
+    customer_groups: Ομάδες πελατών
+    customer_mailer:
+      password_reset_email:
+        action: Επαναφορά κωδικού πρόσβασης
+        expiry_notice: Αυτός ο σύνδεσμος επαναφοράς κωδικού πρόσβασης θα λήξει σύντομα. Αν δεν το ζητήσατε εσείς, δεν απαιτείται καμία ενέργεια.
+        greeting: Γεια σου %{name},
+        ignore_notice: Αν δεν ζητήσατε επαναφορά κωδικού πρόσβασης, μπορείτε με ασφάλεια να αγνοήσετε αυτό το email. Ο κωδικός πρόσβασής σας δεν θα αλλάξει.
+        instructions: Λάβαμε ένα αίτημα για επαναφορά του κωδικού πρόσβασής σας. Κάντε κλικ στο παρακάτω κουμπί για να επιλέξετε νέο κωδικό πρόσβασης.
+    customers: Πελάτες
+    cvv: CVV
+    default_billing_address: Προεπιλεγμένη διεύθυνση χρέωσης
+    default_country: Προεπιλεγμένη χώρα
+    default_locale: Προεπιλεγμένες τοπικές ρυθμίσεις
+    default_shipping_address: Προεπιλεγμένη διεύθυνση αποστολής
+    default_stock_location_name: Τοποθεσία καταστήματος
+    default_wishlist_name: Λίστα επιθυμιών
+    deleted: Διαγράφηκε
+    developers: Προγραμματιστές
+    digital:
+      digital_delivery: Ψηφιακή παράδοση
+    digital_assets: Ψηφιακά στοιχεία
+    discontinued: Διακόπηκε
+    discontinued_variants_present: Ορισμένα είδη σε αυτή την παραγγελία περιέχουν προϊόντα που δεν είναι πλέον διαθέσιμα.
+    discount: Έκπτωση
+    discounts: Εκπτώσεις
+    display_delivery_range: Παράδοση σε %{delivery_range} εργάσιμες ημέρες
+    display_on: Εμφάνιση σε
+    domain: Τομέας
+    done: Ολοκληρώθηκε
+    download: Λήψη
+    draft: Πρόχειρο
+    duplicate: Διπλασιασμός
+    duplicating: Διπλασιασμός
+    email_marketing: Email marketing
+    emails: Email
+    enter: Εισαγωγή
+    error_user_destroy_with_orders: Δεν είναι δυνατή η διαγραφή χρήστη που συσχετίζεται με παραγγελίες
+    error_user_does_not_have_any_store_credits: Ο χρήστης δεν έχει διαθέσιμες πιστώσεις καταστήματος
+    estimated_transit_business_days: Εκτιμώμενες εργάσιμες ημέρες μεταφοράς
+    existing_address: Υπάρχουσα διεύθυνση
+    expired: Έληξε
+    expires_at: Λήγει στις
+    export: Εξαγωγή
+    export_mailer:
+      export_done:
+        message: Μπράβο, η εξαγωγή σας είναι έτοιμη! Χρησιμοποιήστε τον παρακάτω σύνδεσμο για να την κατεβάσετε.
+        subject: Η εξαγωγή σας %{export_number} επεξεργάστηκε με επιτυχία!
+      greeting: Γεια σου %{user_name},
+      thanks: Ευχαριστούμε,
+    facebook: Facebook
+    featured_image: Προτεινόμενη εικόνα
+    field: Πεδίο
+    filled: Συμπληρώθηκε
+    fonts: Γραμματοσειρές
+    forbidden: Άρνηση πρόσβασης
+    free: Δωρεάν
+    from: Από
+    gift_card: Δωροκάρτα
+    gift_card_already_redeemed: Η δωροκάρτα έχει ήδη εξαργυρωθεί.
+    gift_card_applied: Η δωροκάρτα εφαρμόστηκε με επιτυχία στην παραγγελία σας!
+    gift_card_batch: Παρτίδα δωροκαρτών
+    gift_card_customer_not_logged_in: Η δωροκάρτα δεν μπορεί να εφαρμοστεί από επισκέπτη.
+    gift_card_expired: Η δωροκάρτα έχει λήξει.
+    gift_card_mismatched_currency: Η δωροκάρτα δεν μπορεί να εφαρμοστεί με το τρέχον νόμισμα.
+    gift_card_mismatched_customer: Αυτή η δωροκάρτα συσχετίζεται με άλλον χρήστη.
+    gift_card_not_found: Η δωροκάρτα δεν βρέθηκε.
+    gift_card_removed: Η δωροκάρτα αφαιρέθηκε με επιτυχία από την παραγγελία σας
+    gift_card_using_store_credit_error: Δεν μπορείτε να εφαρμόσετε τη δωροκάρτα αφού έχετε εφαρμόσει την πίστωση καταστήματος.
+    gift_cards: Δωροκάρτες
+    hide: Απόκρυψη
+    idempotency_key_reused: Αυτό το Idempotency-Key έχει ήδη χρησιμοποιηθεί με διαφορετικές παραμέτρους αιτήματος.
+    immediately: Άμεσα
+    import: Εισαγωγή
+    in_stock: Σε απόθεμα
+    instagram: Instagram
+    integrations: Ενσωματώσεις
+    internal_note: Εσωτερική σημείωση
+    invitation_accepted: Η πρόσκληση έγινε αποδεκτή!
+    invitation_mailer:
+      greeting: Γεια σου %{user_name},
+      invitation_accepted:
+        body: Ο/Η %{invitee_name} αποδέχτηκε την πρόσκλησή σας να συμμετάσχει στο %{resource_name}
+        subject: Ο/Η %{invitee_name} αποδέχτηκε την πρόσκλησή σας να συμμετάσχει στο %{resource_name}
+      invitation_email:
+        body: Ο/Η %{inviter_name} σας προσκάλεσε να συμμετάσχετε στο %{resource_name}
+        link_description: 'Για να αποδεχτείτε αυτή την πρόσκληση, κάντε κλικ στον παρακάτω σύνδεσμο:'
+        subject: Πρόσκληση συμμετοχής στο %{resource_name}
+      thanks: Ευχαριστούμε,
+    invitations: Προσκλήσεις
+    invited_by: Προσκλήθηκε από
+    key: Κλειδί
+    kind: Είδος
+    label: Ετικέτα
+    language: Γλώσσα
+    line_item: Είδος παραγγελίας
+    line_items: Είδη παραγγελίας
+    link: Σύνδεσμος
+    live: Ενεργό
+    locale: Τοπικές ρυθμίσεις
+    locale_not_supported_by_store: δεν υποστηρίζεται από αυτό το κατάστημα
+    make_active_at: Ενεργοποίηση στις
+    manual: Χειροκίνητα
+    market: Αγορά
+    market_ids: Αγορές
+    markets: Αγορές
+    master: Κύρια
+    max: Μέγιστο
+    max_quantity: Μέγιστη ποσότητα
+    me_no_current_user: Κανένας χρήστης διαχειριστή δεν πιστοποίησε αυτό το αίτημα
+    media: Πολυμέσα
+    metafield_definitions: Ορισμοί Metafield
+    metafields: Metafields
+    min: Ελάχιστο
+    min_quantity: Ελάχιστη ποσότητα
+    missing_return_authorization: Λείπει εξουσιοδότηση επιστροφής για το %{item_name}.
+    move: Μετακίνηση
+    navigation: Πλοήγηση
+    never: Ποτέ
+    new_address: Νέα διεύθυνση
+    new_price_list: Νέος τιμοκατάλογος
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Γεια,
+        ignore_disclaimer: Αν δεν το ζητήσατε εσείς, παρακαλούμε αγνοήστε αυτό το email.
+        instructions: Κάντε κλικ στο παρακάτω κουμπί για να επαληθεύσετε τη διεύθυνση email σας.
+        message_copy_link: 'Αν το κουμπί δεν λειτουργεί, αντιγράψτε και επικολλήστε τον παρακάτω σύνδεσμο στο πρόγραμμα περιήγησής σας:'
+        store_team: Η ομάδα του %{store_name}
+        subject: Επαληθεύστε τη διεύθυνση email σας
+        thanks: Ευχαριστούμε
+        verify_email_address_link: Επαλήθευση διεύθυνσης email
+    newsletter_subscribers: Συνδρομητές ενημερωτικού δελτίου
+    no_cc_type: Μ/Δ
+    no_report_data: Δεν υπάρχουν δεδομένα αναφοράς
+    ok: Εντάξει
+    only_active_products_can_be_added_to_cart: Τα πρόχειρα και τα αρχειοθετημένα προϊόντα δεν μπορούν να προστεθούν στο καλάθι· παρακαλούμε ορίστε πρώτα το προϊόν ως ενεργό.
+    option_name: Όνομα επιλογής
+    order_routing:
+      strategies:
+        legacy: Παλαιού τύπου
+        rules: Κανόνες (με σειρά)
+    origin: Προέλευση
+    other: Άλλο
+    outstanding_balance: Εκκρεμές υπόλοιπο
+    page: Σελίδα
+    pages: Σελίδες
+    payment_source: Πηγή πληρωμής
+    payment_total: Σύνολο πληρωμής
+    permissions: Δικαιώματα
+    policies: Πολιτικές
+    preview: Προεπισκόπηση
+    price_lists: Τιμοκατάλογοι
+    price_rules:
+      customer_group_rule:
+        description: Εφαρμογή τιμολόγησης σε συγκεκριμένες ομάδες πελατών
+    pricing: Τιμολόγηση
+    privacy_policy: Πολιτική απορρήτου
+    processing: Επεξεργασία
+    product_name: Όνομα προϊόντος
+    product_translations: Μεταφράσεις προϊόντος
+    products_cannot_be_shipped: Δεν μπορούμε να αποστείλουμε τα %{product_names} στην τρέχουσα τοποθεσία σας προς το παρόν. Παρακαλούμε αλλάξτε τη διεύθυνση αποστολής σας ή αφαιρέστε τα %{product_names} από το καλάθι σας.
+    promotion_already_used: Δεν μπορείτε να διαγράψετε προσφορά που έχει ήδη εφαρμοστεί
+    promotion_label: Προσφορά (%{name})
+    published_at: Δημοσιεύτηκε στις
+    query: Ερώτημα
+    refund_amount: Ποσό επιστροφής χρημάτων
+    remove_gift_card_on_completed_order_error: Δεν μπορείτε να αφαιρέσετε τη δωροκάρτα μετά την υποβολή της παραγγελίας
+    report_mailer:
+      greeting: Γεια σου %{user_name},
+      report_done:
+        message: Χρησιμοποιήστε τον παρακάτω σύνδεσμο για να την κατεβάσετε.
+        subject: Η αναφορά σας %{report_name} είναι έτοιμη
+      thanks: Ευχαριστούμε,
+    report_names:
+      products_performance: Απόδοση προϊόντων
+      sales_total: Σύνολο πωλήσεων
+    resellable: Με δυνατότητα μεταπώλησης
+    resource: Πόρος
+    return_authorization_canceled: Η εξουσιοδότηση επιστροφής ακυρώθηκε
+    return_item_order_not_completed: Η παραγγελία του είδους επιστροφής πρέπει να είναι ολοκληρωμένη
+    returns_policy: Πολιτική επιστροφών
+    role_id: Ταυτότητα ρόλου
+    row: Γραμμή
+    sale: Έκπτωση
+    saving: Αποθήκευση
+    scopes: Scopes
+    search_by: 'Αναζήτηση κατά:'
+    security: Ασφάλεια
+    seed:
+      shipping:
+        categories:
+          default: Προεπιλογή
+          digital: Ψηφιακό
+    selected_quantity_not_available: που επιλέχθηκε από το %{item} δεν είναι διαθέσιμη.
+    send_consumer_transactional_emails: Αποστολή συναλλακτικών email πελατών
+    ship_to: 'Αποστολή σε:'
+    shipping_policy: Πολιτική αποστολής
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (συμπ. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Ζώνη αποστολής
+    site_name: Όνομα ιστότοπου
+    size: Μέγεθος
+    sort_by: Ταξινόμηση κατά
+    square_image: Τετράγωνη εικόνα
+    starts_at: Ξεκινά στις
+    state_changes: Αλλαγές κατάστασης
+    stock_items: Είδη αποθέματος
+    store_credit_events: Συμβάντα πίστωσης καταστήματος
+    store_credit_payment_method:
+      currency_mismatch: Το νόμισμα της πίστωσης καταστήματος δεν ταιριάζει με το νόμισμα της παραγγελίας
+      insufficient_authorized_amount: Δεν είναι δυνατή η δέσμευση ποσού μεγαλύτερου από το εξουσιοδοτημένο
+      insufficient_funds: Το υπόλοιπο της πίστωσης καταστήματος δεν επαρκεί
+      successful_action: Επιτυχής %{action} πίστωσης καταστήματος
+      unable_to_credit: 'Δεν είναι δυνατή η πίστωση του κωδικού: %{auth_code}'
+      unable_to_find: Δεν ήταν δυνατή η εύρεση της πίστωσης καταστήματος
+      unable_to_find_for_action: 'Δεν ήταν δυνατή η εύρεση πίστωσης καταστήματος για τον κωδικό εξουσιοδότησης: %{auth_code} για την ενέργεια: %{action}'
+      unable_to_void: 'Δεν είναι δυνατή η ακύρωση του κωδικού: %{auth_code}'
+    store_credits: Πιστώσεις καταστήματος
+    store_default: Προεπιλεγμένο κατάστημα
+    store_name: Όνομα καταστήματος
+    subscribed: Εγγεγραμμένος
+    support: Υποστήριξη
+    supported_locales: Υποστηριζόμενες τοπικές ρυθμίσεις
+    tags: Ετικέτες
+    tax_inclusive: Συμπεριλαμβανομένου φόρου
+    taxes: Φόροι
+    taxonomy_brands_name: Μάρκες
+    taxonomy_categories_name: Κατηγορίες
+    taxonomy_collections_name: Συλλογές
+    terms_of_service: Όροι παροχής υπηρεσιών
+    theme: Θέμα
+    themes: Θέματα
+    timezone: Ζώνη ώρας
+    title: Τίτλος
+    to: Έως
+    translations: Μεταφράσεις
+    twitter: Twitter
+    unit: Μονάδα
+    unit_system: Σύστημα μονάδων
+    unlimited: Απεριόριστο
+    updated_at: Ενημερώθηκε στις
+    used: Χρησιμοποιήθηκε
+    user_ids: Χρήστες
+    vendor: Προμηθευτής
+    verified: Επαληθεύτηκε
+    verified_at: Επαληθεύτηκε στις
+    view: Προβολή
+    visibility: Ορατότητα
+    webhook_endpoints: Σημεία πρόσβασης Webhook
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Απενεργοποιήθηκε στις
+        heading: Το σημείο πρόσβασης Webhook απενεργοποιήθηκε
+        instructions: Παρακαλούμε ελέγξτε τη διεύθυνση URL και την υπηρεσία του σημείου πρόσβασης και, στη συνέχεια, ενεργοποιήστε το ξανά από τις Ρυθμίσεις → Προγραμματιστές → Webhooks.
+        message: Το σημείο πρόσβασης webhook "%{endpoint_name}" απενεργοποιήθηκε αυτόματα μετά από επανειλημμένες αποτυχίες παράδοσης.
+        name_label: Όνομα
+        reason_label: Αιτία
+        subject: 'Το σημείο πρόσβασης webhook απενεργοποιήθηκε: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhooks
+    weight_unit: Μονάδα βάρους
+    wishlist: Λίστα επιθυμιών
+    zone_ids: Ζώνες
+  action_text:
+    video_embed:
+      not_found: Δεν είναι δυνατή η ενσωμάτωση βίντεο με το παρεχόμενο URL
+  activemodel:
+    errors:
+      messages:
+        blank: δεν μπορεί να είναι κενό
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: έχει μονάδες αποθέματος σε εκκρεμή παραγγελία
+              has_already_been_shipped: έχει ήδη αποσταλεί
+            desired_shipment:
+              can_not_transfer_within_same_shipment: δεν μπορεί να είναι ίδια με την τρέχουσα αποστολή
+              has_not_enough_stock_at_desired_location: δεν έχει αρκετό απόθεμα στην επιθυμητή τοποθεσία αποθέματος
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Αποκοπή

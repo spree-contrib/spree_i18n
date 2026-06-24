@@ -1,3 +1,4 @@
+---
 de-CH:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ de-CH:
         phone:
         state:
         zipcode:
+        company: Firma
+        label: Adressname
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ de-CH:
       spree/option_type:
         name:
         presentation:
+        filterable: Filterbar
+        kind: Art
       spree/order:
         checkout_complete:
         completed_at:
@@ -54,6 +59,8 @@ de-CH:
         special_instructions:
         state:
         total:
+        internal_note: Interne Notiz
+        item_count: Artikel
       spree/order/bill_address:
         address1:
         city:
@@ -72,6 +79,7 @@ de-CH:
         zipcode:
       spree/payment:
         amount:
+        number: Nummer
       spree/payment_method:
         name:
       spree/product:
@@ -84,6 +92,10 @@ de-CH:
         on_hand:
         shipping_category:
         tax_category:
+        discontinue_on: Auslaufen am
+        less_than: Weniger als
+        make_active_at: Aktiv schalten am
+        more_than: Mehr als
       spree/promotion:
         advertise:
         code:
@@ -94,8 +106,11 @@ de-CH:
         path:
         starts_at:
         usage_limit:
+        generate_code: Gutscheincode generieren
+        promotion_category: Aktionskategorie
       spree/promotion_category:
         name:
+        code: Code
       spree/property:
         name:
         presentation:
@@ -123,6 +138,16 @@ de-CH:
         name:
         seo_title:
         url:
+        address: Adresse
+        contact_phone: Kontakttelefon
+        preferred_digital_asset_authorized_clicks: Download-Klick-Limit
+        preferred_digital_asset_authorized_days: Download-Tage-Limit
+        preferred_limit_digital_download_count: Anzahl der Downloads digitaler Links begrenzen
+        preferred_limit_digital_download_days: Download-Tage digitaler Links begrenzen
+        seo_robots: SEO-Robots
+        storefront_custom_code_body_end: Benutzerdefinierter Code vor schliessendem Body-Tag
+        storefront_custom_code_body_start: Benutzerdefinierter Code nach öffnendem Body-Tag
+        storefront_custom_code_head: Benutzerdefinierter Code im Seiten-Head
       spree/tax_category:
         description:
         name:
@@ -134,12 +159,14 @@ de-CH:
         name:
         permalink:
         position:
+        sort_order: Sortierreihenfolge
       spree/taxonomy:
         name:
       spree/user:
         email:
         password:
         password_confirmation:
+        avatar: Avatar
       spree/variant:
         cost_currency:
         cost_price:
@@ -152,6 +179,54 @@ de-CH:
       spree/zone:
         description:
         name:
+      spree/customer_group:
+        description: Beschreibung
+        name: Name
+      spree/customer_return:
+        stock_location_id: Lagerort
+      spree/gift_card:
+        amount_used: Verwendeter Betrag
+        expires_at: Läuft ab am
+      spree/import:
+        preferred_delimiter: Trennzeichen
+      spree/import_mapping:
+        file_column: Dateispalte
+        schema_field: Schemafeld
+      spree/import_row:
+        row_number: Nummer
+      spree/invitation:
+        inviter: Einladende Person
+      spree/metafield_definition:
+        namespace: Namespace
+      spree/option_value:
+        color_code: Farbcode
+        image: Farbmuster-Bild
+      spree/page_link:
+        open_in_new_tab: In neuem Tab öffnen
+      spree/policy:
+        body: Inhalt
+        owner: Richtlinie für
+      spree/price_list:
+        description: Beschreibung
+        ends_at: Endet am
+        match_policy: Übereinstimmungsregel
+        name: Name
+        priority: Priorität
+        starts_at: Beginnt am
+        status: Status
+      spree/price_rule:
+        priority: Priorität
+        type: Typ
+      spree/shipment:
+        number: Nummer
+      spree/store_credit:
+        amount_used: Verwendeter Betrag
+      spree/store_credit_category:
+        name: Name
+      user:
+        current_sign_in: Aktuelle Anmeldung am
+        last_sign_in: Letzte Anmeldung am
+        sign_in_count: Anzahl Anmeldungen
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,45 +273,284 @@ de-CH:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Der einzige Store kann nicht gelöscht werden.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: muss ein Origin (Schema und Host) ohne Pfad, Query oder Fragment sein
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Eine verwendete Geschenkkarte kann nicht gelöscht werden
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: muss vorhanden sein
+              not_allowed_content_type: hat einen nicht erlaubten Inhaltstyp
+        spree/import:
+          attributes:
+            attachment:
+              content_type: hat einen nicht erlaubten Inhaltstyp
+            type:
+              inclusion: ist nicht in der Liste der erlaubten Typen enthalten
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: gehört einem anderen Benutzer
+              deprecated_in_completed_order: in einer abgeschlossenen Bestellung veraltet
+            ship_address_id:
+              belongs_to_other_user: gehört einem anderen Benutzer
+              deprecated_in_completed_order: in einer abgeschlossenen Bestellung veraltet
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Der Standardmarkt kann nicht gelöscht werden.
+              cannot_destroy_last_market: Der einzige Markt kann nicht gelöscht werden.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: ist in diesem Store bereits einem anderen Markt zugewiesen
+              not_in_shipping_zone: wird von keiner Versandzone abgedeckt. Bitte richten Sie zuerst eine Versandzone ein.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: ist grösser als der erlaubte Höchstbetrag von %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: muss nach dem Startdatum liegen
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Produkte, die zu aufgegebenen Bestellungen hinzugefügt wurden, können nicht gelöscht werden. Lassen Sie sie in solchen Fällen bitte auslaufen.
+            discontinue_on:
+              invalid_date_range: muss nach dem Verfügbarkeitsdatum liegen
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: muss nach dem Veröffentlichungsdatum liegen
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: muss nach dem Startdatum liegen
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Sie müssen mindestens eine Versandkategorie auswählen
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Übersteigt das gesamte Guthaben.
+            amount_used:
+              cannot_be_greater_than_amount: Darf nicht grösser als der Betrag sein.
+              greater_than_zero_restrict_delete: ist grösser als null. Store-Guthaben kann nicht gelöscht werden.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Store-Guthaben-Kategorien können nicht gelöscht werden, sobald sie in einem Store-Guthaben verwendet werden.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: hat einen nicht erlaubten Inhaltstyp
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: gehört einem anderen Benutzer
+              deprecated_in_completed_order: in einer abgeschlossenen Bestellung veraltet
+            ship_address_id:
+              belongs_to_other_user: gehört einem anderen Benutzer
+              deprecated_in_completed_order: in einer abgeschlossenen Bestellung veraltet
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Varianten, die zu aufgegebenen Bestellungen hinzugefügt wurden, können nicht gelöscht werden. Lassen Sie sie in solchen Fällen bitte auslaufen.
+              must_supply_price_for_variant_or_master: Es muss ein Preis für die Variante oder ein Hauptpreis für das Produkt angegeben werden.
+              no_master_variant_found_to_infer_price: Keine Hauptvariante gefunden, um den Preis abzuleiten
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: darf nicht auf eine interne oder private Netzwerkadresse verweisen
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Sie haben diesen Artikel bereits zu Ihrer Wunschliste hinzugefügt
+      messages:
+        blank: darf nicht leer sein
     models:
       spree/address:
+        one: Adresse
+        other: Adressen
       spree/country:
+        one: Land
+        other: Länder
       spree/credit_card:
+        one: Kreditkarte
+        other: Kreditkarten
       spree/customer_return:
+        one: Kundenrücksendung
+        other: Kundenrücksendungen
       spree/inventory_unit:
+        one: Lagereinheit
+        other: Lagereinheiten
       spree/line_item:
+        one: Position
+        other: Positionen
       spree/option_type:
+        one: Optionstyp
+        other: Optionstypen
       spree/option_value:
+        one: Optionswert
+        other: Optionswerte
       spree/order:
+        one: Bestellung
+        other: Bestellungen
       spree/payment:
+        one: Zahlung
+        other: Zahlungen
       spree/payment_method:
+        one: Zahlungsart
+        other: Zahlungsarten
       spree/product:
+        one: Produkt
+        other: Produkte
       spree/promotion:
+        one: Aktion
+        other: Aktionen
       spree/promotion_category:
+        one: Aktionskategorie
+        other: Aktionskategorien
       spree/property:
+        one: Eigenschaft
+        other: Eigenschaften
       spree/prototype:
+        one: Prototyp
+        other: Prototypen
       spree/refund_reason:
+        one: Rückerstattungsgrund
+        other: Rückerstattungsgründe
       spree/reimbursement:
+        one: Erstattung
+        other: Erstattungen
       spree/reimbursement_type:
+        one: Erstattungsart
+        other: Erstattungsarten
       spree/return_authorization:
+        one: Rücksendegenehmigung
+        other: Rücksendegenehmigungen
       spree/return_authorization_reason:
+        one: Rücksendegrund
+        other: Rücksendegründe
       spree/role:
+        one: Rollen
+        other: Rollen
       spree/shipment:
+        one: Sendung
+        other: Sendungen
       spree/shipping_category:
+        one: Versandkategorie
+        other: Versandkategorien
       spree/shipping_method:
+        one: Versandart
+        other: Versandarten
       spree/state:
+        one: Kanton/Bundesland
+        other: Kantone/Bundesländer
       spree/state_change:
+        one: Statusänderung
+        other: Statusänderungen
       spree/stock_location:
+        one: Lagerort
+        other: Lagerorte
       spree/stock_movement:
+        one: Lagerbewegung
+        other: Lagerbewegungen
       spree/stock_transfer:
+        one: Lagerumlagerung
+        other: Lagerumlagerungen
       spree/tax_category:
+        one: Steuerkategorie
+        other: Steuerkategorien
       spree/tax_rate:
+        one: Steuersatz
+        other: Steuersätze
       spree/taxon:
+        one: Kategorie
+        other: Kategorien
       spree/taxonomy:
+        one: Kategorie
+        other: Kategorien
       spree/tracker:
+        one: Tracker
+        other: Tracker
       spree/user:
+        one: Benutzer
+        other: Benutzer
       spree/variant:
+        one: Variante
+        other: Varianten
       spree/zone:
+        one: Zone
+        other: Zonen
+      spree/classification:
+        one: Klassifizierung
+        other: Klassifizierungen
+      spree/cms_page:
+        one: Seite
+        other: Seiten
+      spree/cms_section:
+        one: Abschnitt
+        other: Abschnitte
+      spree/customer_group:
+        one: Kundengruppe
+        other: Kundengruppen
+      spree/customer_group_user:
+        one: Kundengruppen-Benutzer
+        other: Kundengruppen-Benutzer
+      spree/digital:
+        one: Digitales Asset
+        other: Digitale Assets
+      spree/export:
+        one: Export
+        other: Exporte
+      spree/integration:
+        one: Integration
+        other: Integrationen
+      spree/page:
+        one: Seite
+        other: Seiten
+      spree/page_block:
+        one: Seitenblock
+        other: Seitenblöcke
+      spree/page_link:
+        one: Seitenlink
+        other: Seitenlinks
+      spree/page_section:
+        one: Seitenabschnitt
+        other: Seitenabschnitte
+      spree/price:
+        one: Preis
+        other: Preise
+      spree/price_list:
+        one: Preisliste
+        other: Preislisten
+      spree/price_rule:
+        one: Preisregel
+        other: Preisregeln
+      spree/stock_item:
+        one: Lagerartikel
+        other: Lagerartikel
+      spree/store:
+        one: Store
+        other: Stores
+      spree/store_credit:
+        one: Store-Guthaben
+        other: Store-Guthaben
+      spree/store_credit_category:
+        one: Store-Guthaben-Kategorie
+        other: Store-Guthaben-Kategorien
+      spree/theme:
+        one: Theme
+        other: Themes
   devise:
     confirmations:
       confirmed:
@@ -249,6 +563,7 @@ de-CH:
       timeout:
       unauthenticated:
       unconfirmed:
+      too_many_attempts: Zu viele Versuche. Bitte warten Sie einen Moment und versuchen Sie es erneut.
     mailer:
       confirmation_instructions:
         subject:
@@ -281,6 +596,9 @@ de-CH:
       not_found:
       not_locked:
       not_saved:
+        one: '1 Fehler hat das Speichern dieser %{resource} verhindert:'
+        other: "%{count} Fehler haben das Speichern dieser %{resource} verhindert:"
+      not_a_number: ist keine Zahl
   spree:
     abbreviation: Abkürzung
     accept:
@@ -302,6 +620,15 @@ de-CH:
       refund:
       save:
       update: Aktualisieren
+      close: Schliessen
+      connect: Verbinden
+      discard: Verwerfen
+      open: Öffnen
+      reject: Ablehnen
+      remove: Entfernen
+      resend: Erneut senden
+      select_file: Datei auswählen
+      send_invitation: Einladung senden
     activate: Aktivieren
     active: Aktiv
     add: Hinzufügen
@@ -354,6 +681,483 @@ de-CH:
         order_num:
         orders:
         user_information:
+        last_order_placed: Letzte Bestellung aufgegeben
+        no_store_credit: Der Kunde hat kein Store-Guthaben verfügbar
+      allowed_origins:
+        origin_help: Geben Sie die vollständige Origin-URL Ihres Storefronts ein (z. B. https://myshop.com). Keine Pfade oder Query-Strings angeben.
+        origin_settings: Origin-Einstellungen
+      amount_spent: Ausgegebener Betrag
+      api_keys:
+        example_request: Beispielanfrage
+        key_revoked_message: Dieser API-Schlüssel wurde widerrufen und kann nicht mehr verwendet werden.
+        key_type_descriptions:
+          publishable: Sicher zur Verwendung in clientseitigem Code wie Mobile-Apps oder Browsern.
+          secret: Bewahren Sie diesen sicher auf und verwenden Sie ihn nur serverseitig. Geben Sie ihn niemals öffentlich preis.
+        key_types:
+          publishable: Veröffentlichbar
+          secret: Geheim
+        last_used_at: Zuletzt verwendet
+        list: API-Schlüssel
+        name_placeholder: z. B. Mobile App Produktion
+        revoke: Widerrufen
+        revoke_confirmation: Möchten Sie diesen API-Schlüssel wirklich widerrufen? Diese Aktion kann nicht rückgängig gemacht werden.
+        revoked: API-Schlüssel wurde widerrufen
+        revoked_at: Widerrufen am
+        revoked_by: Widerrufen von
+        scopes: Berechtigungen
+        scopes_description: Erforderlich für geheime Schlüssel. Wählen Sie den kleinstmöglichen Satz an Berechtigungen, den Ihre Integration benötigt.
+        scopes_immutable: Die Berechtigungen werden bei der Erstellung des Schlüssels festgelegt. Um sie zu ändern, erstellen Sie einen neuen Schlüssel mit den benötigten Berechtigungen und widerrufen Sie diesen.
+        secret_key_hidden: Dieser geheime Schlüssel kann nicht angezeigt werden. Falls Sie ihn verloren haben, widerrufen Sie diesen Schlüssel und erstellen Sie einen neuen.
+        statuses:
+          active: Aktiv
+          revoked: Widerrufen
+        token_warning: Bewahren Sie diesen Schlüssel sicher auf. Er wird nur dieses eine Mal angezeigt.
+        usage: Verwendung
+        usage_instructions:
+          publishable: Verwenden Sie diesen Schlüssel für clientseitige Anfragen. Er kann sicher in Ihren Frontend-Code aufgenommen werden.
+          secret: Verwenden Sie diesen Schlüssel nur für serverseitige Anfragen. Halten Sie ihn vertraulich und geben Sie ihn niemals in clientseitigem Code preis.
+      audit_log: Audit-Protokoll
+      avg_order_value: Durchschn. Bestellwert
+      back_to_dashboard: Zurück zum Dashboard
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Möchten Sie die ausgewählten Kunden wirklich aus dieser Gruppe entfernen?
+          title:
+            remove: Aus Gruppe entfernen
+        price_list_products:
+          body:
+            remove: Möchten Sie die ausgewählten Produkte wirklich aus dieser Preisliste entfernen? Damit werden auch deren Preise entfernt.
+          title:
+            remove: Aus Preisliste entfernen
+        products:
+          body:
+            add_tags: 'Wählen Sie Tags aus, die zu den Produkten hinzugefügt werden sollen:'
+            add_to_taxons: 'Wählen Sie aus, zu welchen Kategorien die Produkte hinzugefügt werden sollen:'
+            remove_from_taxons: 'Wählen Sie aus, aus welchen Kategorien die Produkte entfernt werden sollen:'
+            remove_tags: 'Wählen Sie Tags aus, die von den Produkten entfernt werden sollen:'
+            set_active: Wenn Sie Produkte auf aktiv setzen, werden diese Produkte im Storefront verfügbar.
+            set_archived: Wenn Sie Produkte archivieren, werden sie im Storefront ausgeblendet.
+            set_draft: Wenn Sie Produkte auf Entwurf setzen, werden sie im Storefront ausgeblendet.
+          title:
+            add_tags: Tags hinzufügen
+            add_to_taxons: Zu Kategorien hinzufügen
+            remove_from_taxons: Aus Kategorien entfernen
+            remove_tags: Tags entfernen
+            set_active: Als aktiv setzen
+            set_archived: Als archiviert setzen
+            set_draft: Als Entwurf setzen
+        users:
+          body:
+            add_tags: 'Wählen Sie Tags aus, die zu den Kunden hinzugefügt werden sollen:'
+            remove_tags: 'Wählen Sie Tags aus, die von den Kunden entfernt werden sollen:'
+          title:
+            add_tags: Tags hinzufügen
+            remove_tags: Tags entfernen
+      channels:
+        code_hint: Eine kurze, stabile Kennung (z. B. «online», «pos», «wholesale»). Wird von API-Clients über den Header X-Spree-Channel und für die Bestellzuordnung verwendet.
+        default: Standardkanal
+        default_hint: Genau ein Kanal pro Store ist der Standard. Wird als Fallback verwendet, wenn kein Kanal ausgewählt ist, und als Ziel zur automatischen Veröffentlichung neuer Produkte.
+        order_routing_strategy: Bestell-Routing-Strategie
+        order_routing_strategy_hint: Überschreibt die Routing-Strategie auf Store-Ebene für Bestellungen, die diesem Kanal zugeordnet sind.
+        order_routing_strategy_inherit: Vom Store übernehmen
+      checkout_settings:
+        checkout_links:
+          description: Links zu diesen Seiten werden in der Checkout-Fusszeile angezeigt.
+          label: Checkout-Links
+        checkout_message_description: Für Ihre Kunden auf der Checkout-Seite in der rechten Seitenleiste sichtbar.
+        countries_managed_by_markets_html: Länder und Versandzonen werden über %{link} verwaltet.
+        guest_checkout:
+          description: Erlauben Sie Kunden, ohne Kontoerstellung zur Kasse zu gehen.
+          label: Gast-Checkout erlauben
+        special_instructions:
+          description: Erlauben Sie Kunden, ihrer Bestellung besondere Hinweise hinzuzufügen.
+          label: Feld für besondere Hinweise anzeigen
+      close_sidebar: Seitenleiste schliessen
+      copied: Kopiert!
+      copy_payment_link: Zahlungslink kopieren
+      copy_to_clipboard: In die Zwischenablage kopieren
+      coupon_codes:
+        unused: Unbenutzt
+        used: Verwendet
+      created_at: Erstellt am
+      dashboard:
+        getting_started:
+          description: Alles, was Sie einrichten müssen, um mit dem Verkauf zu beginnen.
+        hi: Hallo
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> von %{total} Schritten erledigt"
+          title: Ihr gesamter Einrichtungsfortschritt
+        top_products: Top-Produkte
+        view_report: Bericht ansehen
+        whats_happening_on_html: Das passiert heute auf <strong>%{store_name}</strong>.
+      datetime_field_timezone_help: 'Zeitzone: %{zone}'
+      digital_shipment_fulfillment_note: Diese Sendung wird als erfüllt markiert, sobald der Benutzer das digitale Produkt heruntergeladen hat
+      display_on_options:
+        back_end: Nur im Admin-Bereich
+        both: Im Admin-Bereich und im Storefront
+        front_end: Nur im Storefront
+      documentation: Dokumentation
+      edit_billing_address: Rechnungsadresse bearbeiten
+      edit_contact_information: Kontaktinformationen bearbeiten
+      edit_profile: Profil bearbeiten
+      edit_shipping_address: Lieferadresse bearbeiten
+      edit_theme: Theme bearbeiten
+      errors: Fehler
+      execution_time: Ausführungszeit
+      expand_sidebar: Seitenleiste ausklappen
+      export_all: Alle Datensätze exportieren (bei grossen Datenmengen kann dies langsam sein)
+      export_coupons: Gutscheine als CSV-Datei exportieren
+      export_created: Ihr Export wurde gestartet. Sie erhalten eine E-Mail mit einem Download-Link, sobald er bereit ist!
+      export_only_filtered_records: Nur gefilterte Datensätze exportieren, die den Suchkriterien entsprechen
+      export_report: Bericht als CSV-Datei exportieren
+      filters: Filter
+      getting_started: Erste Schritte
+      gift_card_batches:
+        codes_count: Anzahl Codes
+        new_gift_card_batch: Neuer Geschenkkarten-Stapel
+        prefix: Präfix
+      gift_cards:
+        active: Aktiv
+        all_statuses: Alle Status
+        code_help_text: Wenn Sie es leer lassen, generieren wir einen Code für Sie
+        redeemed: Eingelöst
+        usage: Verwendung
+      imports:
+        all_required_columns_mapped: Gut gemacht, alle erforderlichen Spalten sind zugeordnet!
+        field_required: Feld erforderlich
+        import_done: Alles erledigt!
+        large_import_background_note: Sie können diese Seite schliessen — der Import wird im Hintergrund fortgesetzt.
+        large_import_message: Dieser Import enthält %{count} Zeilen und ist zu gross, um einzeln angezeigt zu werden.
+        large_import_summary: "%{completed} abgeschlossen, %{failed} fehlgeschlagen"
+        mapping_required: Dieses Feld ist erforderlich
+        please_map_all_required_fields: Bitte ordnen Sie alle erforderlichen Felder zu, um fortzufahren.
+        waiting_for_file_to_be_processed: Warten auf die Verarbeitung der Datei...
+      integrations:
+        invalid_integration_type: Diese Integration ist nicht erlaubt
+        page_subtitle: Verbinden Sie Ihren Store mit Drittanbieterdiensten, um das Kundenerlebnis zu verbessern.
+      json_preview:
+        no_api_response: Keine API-Antwort für diese Ressource gefunden
+      manage_markets: Märkte verwalten
+      manage_properties: Eigenschaften verwalten
+      manage_stock_locations: Lagerstandorte verwalten
+      manage_taxons: Kategorien verwalten
+      manage_zones: Zonen verwalten
+      markets:
+        edit: Markt bearbeiten
+        list: Märkte
+        new: Neuer Markt
+        supported_locales_hint: Kommagetrennte Liste zusätzlicher Sprachcodes (z. B. fr,de,es)
+      metafield_definitions:
+        edit_warning: Sie können den Ressourcentyp oder den Metafield-Typ nicht mehr ändern, nachdem die Definition verwendet wurde.
+        used_in: Verwendet in
+      name: Name
+      navigation:
+        nested_under: Verschachtelt unter
+      newsletter_subscribers:
+        all: Alle
+        unverified: Nicht verifiziert
+        verified: Verifiziert
+      not_tracking_inventory: Bestand wird nicht verfolgt
+      notifications: Benachrichtigungen
+      num_orders: Anzahl Bestellungen
+      oauth_applications:
+        client_id: Client-ID
+        client_secret: Client-Secret
+        last_used: Zuletzt verwendet
+        list: API-Schlüssel
+        never: Nie
+        new: Neuer API-Schlüssel
+        read_and_write: Lesen & Schreiben
+        read_only: Nur Lesen
+        scopes: Berechtigungen
+      order:
+        events:
+          approve: Genehmigen
+          cancel: Stornieren
+          resend: Erneut senden
+          resume: Fortsetzen
+      orders:
+        add_user_to_this_order: Kunde zu dieser Bestellung hinzufügen
+        all_orders: Alle Bestellungen
+        canceled: Storniert
+        fulfilled: Erfüllt
+        no_email_present: Bitte fügen Sie eine E-Mail-Adresse hinzu, um den Zahlungslink zu senden
+        orders_to_fulfill: Zu erfüllende Bestellungen
+        partially_refunded: Teilweise erstattet
+        payment_link_sent: Der Zahlungslink wurde an den Kunden gesendet
+        provide_email: Geben Sie eine E-Mail-Adresse an
+        refunded: Erstattet
+        remove_user_from_this_order: Kunde aus dieser Bestellung entfernen
+        unfulfilled: Nicht erfüllt
+      page_builder:
+        background_color: Hintergrundfarbe
+        border_bottom_width: Rahmenbreite unten
+        border_color: Rahmenfarbe
+        border_top_width: Rahmenbreite oben
+        bottom_padding: Innenabstand unten
+        button_alignment: Schaltflächenausrichtung
+        button_background_color: Hintergrundfarbe der Schaltfläche
+        button_style: Schaltflächenstil
+        button_text: Schaltflächentext
+        button_text_color: Textfarbe der Schaltfläche
+        category: Kategorie
+        description: Beschreibung
+        description_alignment: Ausrichtung der Beschreibung
+        desktop_image_alignment: Bildausrichtung für Desktop
+        desktop_logo_height: Logohöhe (Desktop)
+        heading: Überschrift
+        heading_alignment: Ausrichtung der Überschrift
+        heading_size: Grösse der Überschrift
+        height: Höhe
+        image_click_hint: Beim Klicken auf das Bild wird der Benutzer zur ausgewählten Seite/URL weitergeleitet
+        left_aligned: Linksbündig
+        logo_centered: Logo zentriert
+        max_video_width_on_desktop: Maximale Videobreite auf dem Desktop
+        maximum_products_to_show: Maximale Anzahl anzuzeigender Produkte
+        nav_centered: Navigation zentriert
+        not_set: Nicht festgelegt
+        separated: Getrennt
+        show_more_button: Schaltfläche «Kategorie entdecken» anzeigen
+        show_taxon_image: Kategoriebild anzeigen
+        text_color: Textfarbe
+        title: Titel
+        top_padding: Innenabstand oben
+        use_description_from_admin: Beschreibung aus dem Admin-Bereich verwenden
+        vertical_alignment: Vertikale Ausrichtung
+        youtube_video_url: YouTube-Video-URL
+      personal_details: Persönliche Angaben
+      price_lists:
+        activate: Aktivieren
+        activated: Preisliste wurde aktiviert
+        confirm_activate: Möchten Sie diese Preisliste wirklich aktivieren? Sie wirkt sich sofort auf die Preisgestaltung aus.
+        confirm_deactivate: Möchten Sie diese Preisliste wirklich deaktivieren?
+        confirm_schedule: Möchten Sie diese Preisliste wirklich planen?
+        confirm_unschedule: Möchten Sie die Planung dieser Preisliste wirklich aufheben?
+        deactivate: Deaktivieren
+        deactivated: Preisliste wurde deaktiviert
+        schedule: Planen
+        scheduled: Preisliste wurde geplant
+        unschedule: Planung aufheben
+      product_translations:
+        coverage: Übersetzungsabdeckung
+        locale: Sprache
+        manage_markets: Märkte verwalten
+        no_locales_description: Richten Sie Märkte mit zusätzlichen Sprachen ein, um mit der Übersetzung Ihrer Produkte zu beginnen.
+        no_locales_title: Keine zusätzlichen Sprachen konfiguriert
+        progress: Fortschritt
+        total: Gesamt
+        translated: Übersetzt
+      products:
+        active: Aktiv
+        all_statuses: Alle Status
+        any_stock: Beliebiger Bestand
+        archived: Archiviert
+        by_status: Nach Status
+        by_stock: Nach Bestand
+        deleted: Gelöscht
+        draft: Entwurf
+        help_bubble: Produkte im Entwurf sind nicht zum Kauf verfügbar. Aktive Produkte sind live.
+        in_stock: Auf Lager
+        inventory:
+          barcode: Barcode (ISBN, UPC, GTIN usw.)
+          sku: SKU (Stock Keeping Unit)
+        out_of_stock: Nicht auf Lager
+        paused: Pausiert
+        search_results:
+          no_products: Wir konnten keine Produkte finden, die Ihrer Suche entsprechen :(
+        seo:
+          placeholder: Fügen Sie einen Titel und eine Beschreibung hinzu, um zu sehen, wie dieses Produkt in einer Suchmaschinenliste erscheinen könnte
+        status_form:
+          status: Produkte im Entwurf sind nicht zum Kauf verfügbar. Aktive Produkte sind live.
+        status_options:
+          active: Aktiv
+          archived: Archiviert
+          draft: Entwurf
+        stores:
+          choose_stores: Wählen Sie aus, in welchen Stores dieses Produkt verfügbar sein soll
+        variants:
+          option_types_link: Um weitere Optionstypen hinzuzufügen, gehen Sie bitte zu <a href="%{link}">Optionstypen</a>
+      publishing:
+        caption_hidden_after: Wird am %{date} entfernt
+        caption_live: Jetzt für Kunden sichtbar
+        caption_not_available: Ausgeblendet — Produkt ist %{product_status}
+        caption_scheduled: Wird am %{date} live geschaltet
+        caption_unpublished: Wurde am %{date} ausgeblendet
+        caption_window: Live %{start} → %{end}
+        empty: Noch in keinem Verkaufskanal gelistet.
+        inactive_marker: Inaktiv
+        manage_cta: Verwalten
+        manage_description: Wählen Sie aus, welche Verkaufskanäle dieses Produkt listen. Schalten Sie einen Kanal aus, um es überall zu entfernen.
+        no_channels: Keine Verkaufskanäle verfügbar. Erstellen Sie einen unter Einstellungen → Verkaufskanäle.
+        published_at_label: Veröffentlichen ab
+        status_hidden: Ausgeblendet
+        status_live: Live
+        status_not_available: Nicht verfügbar
+        status_scheduled: Geplant
+        title: Veröffentlichung
+        unpublished_at_label: Veröffentlichung aufheben am
+      recommended_size: Empfohlene Grösse
+      report_created: Ihr Bericht wird erstellt. Sie erhalten eine E-Mail mit einem Download-Link, sobald er bereit ist!
+      reset_digital_link_download_limits: Download-Limits zurücksetzen
+      response_code: Antwortcode
+      selected: ausgewählt
+      send_payment_link: Zahlungslink senden
+      shipment:
+        please_provide_tracking_details: Bevor Sie die Sendung als versendet markieren, geben Sie bitte die Sendungsverfolgungsdetails an
+      shipment_transfer:
+        wrong_destination: Falsches Ziel
+      show_json: JSON anzeigen
+      stock_transfers:
+        add_products_tip: Sie müssen zuerst einen Zielstandort auswählen
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> verbleibend (<strong>%{total}</strong> gesamt)"
+      store_form:
+        company_field:
+          description: Es zeigt das Firmenfeld im Adressformular im Bereich «Mein Konto» und im Adressschritt des Checkouts an.
+          label: Firmenadressfeld anzeigen
+        customer_support_email_help: Diese E-Mail-Adresse ist für Ihre Store-Besucher in der Fusszeile sichtbar
+        new_order_notifications_email_help: Wenn Sie bei jeder Bestellung eine E-Mail-Benachrichtigung erhalten möchten, geben Sie bitte eine E-Mail-Adresse an, an die diese Benachrichtigung gesendet werden soll
+        send_consumer_transactional_emails_help: Wenn diese Option deaktiviert ist, werden transaktionale E-Mails wie Bestellbestätigungen und Versandbenachrichtigungen nicht an Kunden gesendet
+      store_setup_tasks:
+        add_billing_address: Rechnungsadresse hinzufügen
+        add_products: Produkte hinzufügen
+        payment_methods:
+          copy: Um Zahlungen entgegenzunehmen, richten Sie bitte mindestens einen Online-Zahlungsanbieter ein.
+          done: Alles erledigt! Sie können Ihre Zahlungsmethoden jederzeit auf <a href="%{link}" data-turbo-frame="_top">dieser</a> Seite verwalten.
+          setup: Zahlungsmethoden einrichten
+          title: Bitte richten Sie Zahlungsmethoden für Ihren Store ein
+        set_customer_support_email: E-Mail-Adresse für den Kundensupport festlegen
+        setup_taxes_collection: Steuererhebung einrichten
+        taxes:
+          copy: Um Steuern zu erheben, richten Sie bitte Ihre Steuersätze ein.
+          done: Alles erledigt! Sie können Ihre Steuern jederzeit auf der <a href="%{link}" data-turbo-frame="_top">Einstellungsseite</a> verwalten.
+          setup: Steuersätze einrichten
+      storefront: Storefront
+      successful: Erfolgreich
+      successfully_reset_digital_links_limit: Die Download-Limits wurden zurückgesetzt
+      tables:
+        add_filter: Filter hinzufügen
+        add_or_group: ODER-Gruppe hinzufügen
+        apply: Anwenden
+        apply_filters: Filter anwenden
+        ascending: Aufsteigend
+        clear_all: Alle löschen
+        columns: Spalten
+        descending: Absteigend
+        enter_value: Wert eingeben...
+        filter_builder: Filter-Generator
+        filters: Filter
+        match: Übereinstimmung
+        of_the_following: der folgenden
+        operators:
+          contains: enthält
+          does_not_contain: enthält nicht
+          ends_with: endet mit
+          equals: ist gleich
+          greater_than: grösser als
+          greater_than_or_equal: grösser oder gleich
+          is_any_of: ist eines von
+          is_empty: ist leer
+          is_none_of: ist keines von
+          is_not_empty: ist nicht leer
+          less_than: kleiner als
+          less_than_or_equal: kleiner oder gleich
+          not_equals: ist nicht gleich
+          starts_with: beginnt mit
+        order: Reihenfolge
+        reset_to_default: Auf Standard zurücksetzen
+        select_field: Feld auswählen...
+        sort_by: Sortieren nach
+        visible_columns: Sichtbare Spalten
+      taxon_rules:
+        all_conditions: alle Bedingungen
+        any_condition: eine beliebige Bedingung
+        available_on: Verfügbar ab
+        match_policies:
+          contains: enthält
+          does_not_contain: enthält nicht
+          is_equal_to: ist gleich
+          is_not_equal_to: ist nicht gleich
+        on_sale: Im Angebot
+        products_must_match: 'Produkte müssen übereinstimmen mit:'
+        tag: Produkt-Tag
+      taxon_type: Kategorietyp
+      taxon_types:
+        automatic: Automatisch
+        automatic_info: Fügen Sie Produkte automatisch zu dieser Kategorie hinzu, wenn sie den von Ihnen festgelegten Regeln entsprechen.
+        manual: Manuell
+        manual_info: Kuratieren Sie Produkte manuell. Sie können sie in grossen Mengen hinzufügen oder entfernen.
+      translations:
+        no_translations_configured: Keine Übersetzungen konfiguriert. Bitte richten Sie Märkte ein, um Übersetzungen zu verwenden.
+      upload_new_asset: Neue Medien hochladen
+      users:
+        filters:
+          search_placeholder: Kunden nach E-Mail oder Name suchen
+      utilities:
+        preview: Vorschau
+      variants:
+        search_results:
+          no_variants: Wir konnten keine Varianten finden, die Ihrer Suche entsprechen :(
+      variants_form:
+        add_option:
+          empty: Fügen Sie Optionen wie Grösse oder Farbe hinzu
+          not_empty: Weitere Option hinzufügen
+        compare_at_price_description: Dieser Preis wird verwendet, um einen reduzierten Preis auf der Produktseite anzuzeigen.
+        stock_locations_link: Um weitere Lagerstandorte hinzuzufügen, gehen Sie bitte zu <a href="%{link}">Lagerstandorte</a>
+        total_inventory_html: 'Gesamtbestand am Standort %{stock_location}: %{count} verfügbar'
+      vendors:
+        enterprise_feature: Der Multi-Vendor-Marktplatz ist in der Enterprise Edition verfügbar
+      webhook_deliveries:
+        delivered_at: Zugestellt am
+        delivery_details: Zustellungsdetails
+        delivery_info: Zustellungsinformationen
+        endpoint_inactive: Wiederholung nicht möglich – Endpunkt ist inaktiv
+        error_type: Fehlertyp
+        event: Ereignis
+        execution_time: Ausführungszeit
+        failed: Fehlgeschlagen
+        pending: Ausstehend
+        redeliver_button: Erneut zustellen
+        redelivered: Webhook erfolgreich erneut zugestellt.
+        request_errors: Anfragefehler
+        request_payload: Anfrage-Payload
+        response_body: Antwortkörper
+        response_code: Antwortcode
+      webhook_endpoints:
+        auto_disabled: Dieser Endpunkt wurde nach wiederholten Zustellfehlern automatisch deaktiviert.
+        back_to_endpoint: Zurück zum Endpunkt
+        deliveries: Zustellungen
+        endpoint_settings: Endpunkt-Einstellungen
+        event_subscriptions: Ereignis-Abonnements
+        event_subscriptions_help: Wählen Sie aus, welche Ereignisse eine Webhook-Zustellung an diesen Endpunkt auslösen sollen.
+        events: Ereignisse
+        failed_deliveries: Fehlgeschlagene Zustellungen
+        health:
+          degraded: "%{percentage}% erfolgreich"
+          disabled: Deaktiviert
+          failing: "%{percentage}% erfolgreich"
+          healthy: "%{percentage}% erfolgreich"
+          no_deliveries: Keine Daten
+        health_label: Zustand
+        new: Neuer Webhook-Endpunkt
+        re_enable: Wieder aktivieren
+        secret_key: Geheimer Schlüssel
+        secret_key_help: Verwenden Sie diesen Schlüssel, um Webhook-Signaturen zu verifizieren. Halten Sie ihn sicher und geben Sie ihn nicht öffentlich weiter.
+        send_test: Test senden
+        subscriptions: Abonnements
+        successful_deliveries: Erfolgreiche Zustellungen
+        test_failed: Senden des Test-Webhooks fehlgeschlagen. Bitte überprüfen Sie die Endpunkt-Konfiguration.
+        test_sent: Test-Webhook gesendet. Prüfen Sie die Zustellungen für das Ergebnis.
+      webhooks_subscribers:
+        all_events: Alle Ereignisse
+        new_webhooks_subscriber: Neuer Webhooks-Abonnent
+        no_events: Keine Ereignisse
+        select_events: Ereignisse auswählen
+        subscribe_to_all_events: Alle Ereignisse abonnieren
+        subscriptions: Abonnements
+        time_of_last_event: Zeitpunkt des letzten Ereignisses
+        webhooks_events: Webhooks-Ereignisse
     administration: Verwaltung
     advertise:
     agree_to_privacy_policy:
@@ -519,7 +1323,6 @@ de-CH:
     date:
     date_completed:
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Datum (von/bis)
@@ -559,6 +1362,7 @@ de-CH:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: Dieser Gutscheincode ist in Ihrem Land nicht gültig
     email:
     empty:
     empty_cart: Warenkorb leeren
@@ -572,7 +1376,20 @@ de-CH:
         could_not_create_taxon:
         no_payment_methods_available:
         no_shipping_methods_available:
+        cannot_delete_default_channel: Der Standardkanal kann nicht gelöscht werden. Stufen Sie zuerst einen anderen Kanal zum Standard hoch.
+        channel_store_mismatch: muss zum selben Store gehören
+        invalid_order_routing_rule: ist keine registrierte Order-Routing-Regel
+        invalid_order_routing_strategy: ist keine registrierte Order-Routing-Strategie
+        must_be_origin_only: muss ein Origin (Schema und Host) ohne Pfad, Query oder Fragment sein
+        store_association_can_not_be_changed: Die Store-Zuordnung kann nicht geändert werden
+        store_is_already_set: Store ist bereits festgelegt
+      services:
+        get_shipping_rates:
+          no_line_items: Um Versandkosten zu berechnen, müssen Sie der Bestellung einige Positionen hinzufügen
+          no_shipping_address: Um Versandkosten zu berechnen, benötigt die Bestellung eine Lieferadresse
     errors_prohibited_this_record_from_being_saved:
+      one: 1 Fehler hat das Speichern dieses Datensatzes verhindert
+      other: "%{count} Fehler haben das Speichern dieses Datensatzes verhindert"
     event: Ereignis
     events:
       spree:
@@ -696,7 +1513,7 @@ de-CH:
     login_name: Benutzer
     logout: Abmelden
     logs:
-    look_for_similar_items: "Ähnliche Artikel"
+    look_for_similar_items: Ähnliche Artikel
     make_refund:
     make_sure_the_above_reimbursement_amount_is_correct:
     manage_promotion_categories:
@@ -813,6 +1630,7 @@ de-CH:
         subject:
         subtotal:
         total:
+        thanks: Vielen Dank für
       confirm_email:
         dear_customer:
         instructions:
@@ -821,6 +1639,20 @@ de-CH:
         subtotal:
         thanks:
         total:
+      payment_link_email:
+        message: Bitte klicken Sie auf die Schaltfläche unten, um Ihre Bestellung zu bezahlen.
+        message_copy_link: 'Falls die Schaltfläche nicht funktioniert, kopieren Sie bitte den folgenden Link und fügen Sie ihn in Ihren Browser ein:'
+        pay_for_order: Bestellung bezahlen
+        subject: 'Zahlungslink für Bestellung #%{number}'
+      store_owner_notification_email:
+        heading: Neue Bestellung erhalten
+        instructions: Sie haben eine neue Bestellung erhalten.
+        order_summary: Zusammenfassung Bestellung %{number}
+        subject: "%{store_name} hat eine neue Bestellung erhalten"
+        thanks: Vielen Dank
+      store_team: Team %{store_name}
+      subtotal: 'Zwischensumme:'
+      total: 'Bestellsumme:'
     order_not_found:
     order_number:
     order_processed_successfully: Ihre Bestellung wurde erfolgreich bearbeitet
@@ -844,7 +1676,7 @@ de-CH:
     orders: Bestellungen
     other_items_in_other:
     out_of_stock: Ausverkauft
-    overview: "Übersicht"
+    overview: Übersicht
     package_from:
     pagination:
       next_page:
@@ -875,6 +1707,9 @@ de-CH:
       pending:
       processing:
       void:
+      complete: Abgeschlossen
+      partially_refunded: Teilweise erstattet
+      refunded: Erstattet
     payment_updated:
     payments: Zahlungen
     pending:
@@ -961,6 +1796,24 @@ de-CH:
       user_logged_in:
         description:
         name:
+      category:
+        description: Bestellung enthält Produkte aus bestimmten Kategorien
+        name: Kategorien
+      country:
+        description: Auf Bestellungen mit Lieferadresse in einem bestimmten Land beschränken
+        name: Land
+      currency:
+        description: Auf Bestellungen in einer bestimmten Währung beschränken
+        name: Währung
+      customer:
+        description: Nur für die angegebenen Kunden verfügbar
+        name: Kunden
+      customer_group:
+        description: Nur für Kunden in bestimmten Kundengruppen verfügbar
+        name: Kundengruppe(n)
+      customer_logged_in:
+        description: Nur für angemeldete Kunden verfügbar
+        name: Nur angemeldete Kunden
     promotion_uses:
     promotionable:
     promotions: Promotionen
@@ -1003,6 +1856,8 @@ de-CH:
         refund_summary:
         subject:
         total_refunded:
+        store_team: Team %{store_name}
+        thanks: Vielen Dank für Ihren Einkauf.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1084,6 +1939,8 @@ de-CH:
         thanks:
         track_information:
         track_link:
+        shipping_method: 'Versandart: %{shipping_method}'
+        store_team: Team %{store_name}
     shipment_state: Versandstatus
     shipment_states:
       backorder: Lieferrückstand
@@ -1160,6 +2017,7 @@ de-CH:
       returned:
       shipped:
       void:
+      shipment: Sendung
     states: Kantone
     states_required:
     status:
@@ -1174,6 +2032,10 @@ de-CH:
     stock_movements_for_stock_location:
     stock_successfully_transferred:
     stock_transfer:
+      errors:
+        must_have_variant: Sie müssen mindestens eine Variante hinzufügen
+        same_location: darf nicht dieselbe wie der Zielort sein
+        variants_unavailable: Einige Varianten sind in %{stock} nicht verfügbar
     stock_transfers:
     stop: Bis
     store: Laden
@@ -1286,3 +2148,686 @@ de-CH:
     zipcode:
     zone: Zone
     zones: Zonen
+    add_gift_card: Geschenkkarte hinzufügen
+    add_new_address: Neue Adresse hinzufügen
+    add_selected: Ausgewählte hinzufügen
+    add_selected_products: Ausgewählte Produkte hinzufügen
+    add_selected_variant: Ausgewählte Variante hinzufügen
+    added_at: Hinzugefügt am
+    adjustment_amount_help: Positive Werte sind Belastungen, negative Werte sind Gutschriften.
+    adjustment_closed_description: Die Anpassung ist abgeschlossen und wird nicht neu berechnet.
+    adjustment_open_description: Die Anpassung ist offen und wird neu berechnet.
+    admin_language_help: Die Sprache, in der Ihr Admin-Dashboard angezeigt wird. Betrifft nur das, was Sie sehen, nicht den Store oder andere Mitarbeitende.
+    admin_locale_help: Die Sprache, die für das Admin-Dashboard verwendet wird. Wenn nicht festgelegt, wird die Anwendungssprache verwendet.
+    all_time: Gesamter Zeitraum
+    apis:
+      admin: Admin-API
+      store: Store-API
+    applied_to: Angewendet auf
+    assigned_variants: Zugewiesene Varianten
+    assigned_variants_help: Wählen Sie die Varianten aus, die dieses Bild repräsentiert. Leer lassen, um es auf alle Varianten anzuwenden.
+    automatic_promotion: Automatisch
+    breadcrumbs: Brotkrümelnavigation
+    cancel_order: Bestellung stornieren
+    cannot_ship: Sendung kann nicht versendet werden
+    card_expiration_placeholder: MM/JJJJ
+    categorization: Kategorisierung
+    change_password: Passwort ändern
+    close_sidebar: Seitenleiste schliessen
+    contact_information: Kontaktinformationen
+    contact_us: Kontaktieren Sie uns
+    continue_selling_when_out_of_stock: Weiterverkaufen, wenn nicht auf Lager
+    copied: Kopiert!
+    copy_id: ID kopieren
+    custom_domains: Eigene Domains
+    customer_could_not_be_removed_from_group: Der Kunde konnte nicht aus der Gruppe entfernt werden
+    customer_group_rule:
+      choose_customer_groups: 'Wählen Sie die Kundengruppe(n) aus, auf die diese Promotion angewendet werden soll:'
+    customer_removed_from_group: Kunde aus der Gruppe entfernt
+    customers_added_to_group:
+      one: "%{count} Kunde zur Gruppe hinzugefügt"
+      other: "%{count} Kunden zur Gruppe hinzugefügt"
+    customers_removed_from_group:
+      one: "%{count} Kunde aus der Gruppe entfernt"
+      other: "%{count} Kunden aus der Gruppe entfernt"
+    days_ago: Tage her
+    delete_selected: Ausgewählte löschen
+    digital_assets_help: Digitale Assets sind Dateien, die von Kunden nach dem Kauf heruntergeladen werden können.
+    dimension_units:
+      centimeter: Zentimeter (cm)
+      foot: Fuss (ft)
+      inch: Zoll (in)
+      millimeter: Millimeter (mm)
+    display_settings: Anzeigeeinstellungen
+    domains: Domains
+    draft_orders: Bestellentwürfe
+    edit_address: Adresse bearbeiten
+    edit_prices: Preise bearbeiten
+    edit_refund: Rückerstattung bearbeiten
+    estimated_delivery_time: Voraussichtliche Lieferzeit
+    excerpt: Auszug
+    favicon: Favicon
+    filtered_records: Gefilterte Datensätze
+    forbidden_message: Sie sind nicht berechtigt, auf diese Seite zuzugreifen.
+    general_information: Allgemeine Informationen
+    get_back_to_the: Zurück zur
+    homepage: Startseite
+    internal_server_error: Interner Serverfehler
+    internal_server_error_message: Auf dem Server ist ein interner Fehler aufgetreten und Ihre Anfrage konnte nicht abgeschlossen werden.
+    invitation_expired:
+      body: Dieser Einladungslink ist nicht mehr gültig. Bitten Sie die Person, die Sie eingeladen hat, einen neuen zu senden.
+      heading: Einladung ungültig oder abgelaufen
+    invitation_resent: Einladung erneut gesendet!
+    issued_on: Ausgestellt am
+    log_in: Anmelden
+    manual_adjustment: Manuelle Anpassung
+    manual_adjustments: Manuelle Anpassungen
+    mark_as_default: Als Standard festlegen
+    move_variant_to: Variante verschieben nach
+    new_allowed_origin: Neue erlaubte Origin
+    new_api_key: Neuer API-Schlüssel
+    new_balance: Neues Guthaben
+    new_billing_address: Neue Rechnungsadresse
+    new_channel: Neuer Verkaufskanal
+    new_custom_domain: Neue eigene Domain
+    new_customer_group: Neue Kundengruppe
+    new_digital_asset: Neues digitales Asset
+    new_domain: Neue Domain
+    new_gift_card: Neue Geschenkkarte
+    new_line_item: Position hinzufügen
+    new_metafield_definition: Neue Metafield-Definition
+    new_nested_taxon: Neue verschachtelte Unterkategorie
+    new_page: Neue Seite
+    new_password: Neues Passwort
+    new_policy: Neue Richtlinie
+    new_reimbursement_type: Neuer Erstattungstyp
+    new_role: Neue Rolle
+    new_shipping_address: Neue Lieferadresse
+    new_store: Neuer Store
+    new_store_credit: Neues Store-Guthaben
+    new_store_credit_category: Neue Store-Guthaben-Kategorie
+    new_webhook_endpoint: Neuer Webhook-Endpunkt
+    no_adjustments: Keine Anpassungen
+    no_billing_address_available: Keine Rechnungsadresse verfügbar
+    no_customers_found: Keine Kunden gefunden
+    no_email_provided: Keine E-Mail-Adresse angegeben
+    no_internal_note: Keine interne Notiz
+    no_products_added: Keine Produkte hinzugefügt
+    no_products_in_price_list: Keine Produkte in dieser Preisliste
+    no_promotions_applied: Keine Promotionen angewendet
+    no_saved_cards: Keine gespeicherten Karten
+    no_shipping_address_available: Keine Lieferadresse verfügbar
+    no_taxes: Keine Steuern
+    no_users_selected: Keine Benutzer ausgewählt
+    not_risky: Nicht riskant
+    oauth_applications: OAuth-Anwendungen
+    option_type_filterable_info: Wenn ein Optionstyp auf «Filterbar» gesetzt ist, wird Ihren Storefront-Besuchern die Möglichkeit geboten, einen Taxon von Produkten anhand des Optionstyps zu filtern. Ein typisches Beispiel hierfür wäre, Kleidung nach Grösse und Farbe zu filtern.<br><br><b>Bitte beachten Sie:</b> Filter sind nur in den Storefront-Taxons sichtbar, die Produkte mit diesem gesetzten Optionstyp enthalten.
+    option_type_kind_info: Steuert, wie die Option im Storefront angezeigt wird. Farbmuster zeigen Farbkreise, Schaltflächen zeigen anklickbare Chips und Dropdown zeigt ein Auswahlmenü.
+    option_type_kinds:
+      buttons: Schaltflächen
+      color_swatch: Farbmuster
+      dropdown: Dropdown
+    or_select_other_address: oder andere Adresse auswählen
+    order_email_resent_error: Die Bestellbestätigungs-E-Mail kann nur für abgeschlossene Bestellungen gesendet werden
+    order_line_items: Bestellpositionen
+    page_not_found: Entschuldigung! Die gesuchte Seite konnte nicht gefunden werden.
+    page_not_found_message: Diese Seite existiert einfach nicht.
+    payment_amount: Zahlungsbetrag
+    payment_provider_settings: Einstellungen des Zahlungsanbieters
+    payment_type: Zahlungsart
+    payments_gateway_processing_errors: Verarbeitungsfehler bei %{payment_method_name}
+    personal_details: Persönliche Angaben
+    previously_used_card: Zuvor verwendete Karten
+    price_list_form:
+      match_policies:
+        all: Alle dieser Regeln erfüllen
+        any: Eine beliebige dieser Regeln erfüllen
+    price_list_statuses:
+      active: Aktiv
+      draft: Entwurf
+      inactive: Inaktiv
+      scheduled: Geplant
+      scheduled_active: Geplant (Aktiv)
+    products_added: Produkte hinzugefügt
+    products_removed: Produkte entfernt
+    products_sort_options:
+      best_selling: Meistverkauft
+      manual: Manuell
+      name_a_z: Alphabetisch, A-Z
+      name_z_a: Alphabetisch, Z-A
+      newest_first: Neueste
+      oldest_first: Älteste
+      price_high_to_low: Preis (hoch-niedrig)
+      price_low_to_high: Preis (niedrig-hoch)
+      relevance: Relevanz
+    promotion_cloned: Promotion wurde geklont
+    promotion_not_cloned: 'Promotion wurde nicht geklont. Grund: %{error}'
+    purchased_quantity: Gekaufte Menge
+    remove_condition: Bedingung entfernen
+    return_authorization_states:
+      authorized: Autorisiert
+      canceled: Storniert
+    same_as_shipping_address: Gleich wie Lieferadresse
+    search_customers: Kunden suchen
+    search_engine_listing: Suchmaschinen-Eintrag
+    search_products: Produkte suchen
+    select_existing_address: Bestehende Adresse auswählen
+    select_key_type: Schlüsseltyp auswählen
+    select_user: Kunde auswählen
+    select_vendor: Lieferant auswählen
+    send_payment_link: Zahlungslink senden
+    send_payment_link_title: Senden Sie dem Kunden einen Zahlungslink per E-Mail. Er kann die Zahlung später abschliessen.
+    service_unavailable: Dienst nicht verfügbar
+    service_unavailable_message: Der Server kann Ihre Anfrage aufgrund von Wartungsarbeiten oder Kapazitätsproblemen vorübergehend nicht bedienen. Bitte versuchen Sie es später erneut.
+    shipment_successfully_shipped: Sendung erfolgreich versendet
+    show_details: Details anzeigen
+    show_report: Bericht anzeigen
+    standards_and_formats: Standards und Formate
+    standards_and_formats_help: Legen Sie die Zeitzone, das Standard-Einheitensystem und die Gewichtseinheit für Ihren Store fest.
+    start_typing_to_search_for_products: Beginnen Sie zu tippen, um nach Produkten zu suchen
+    start_typing_to_search_for_variants: Beginnen Sie zu tippen, um nach Varianten zu suchen
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Sie können ein bereits verwendetes Store-Guthaben nicht ändern
+        unable_to_create: Store-Guthaben konnte nicht erstellt werden
+        unable_to_delete: Store-Guthaben konnte nicht gelöscht werden
+        unable_to_update: Store-Guthaben konnte nicht aktualisiert werden
+      remaining: Verbleibend
+      allocated: Hinzugefügt
+      authorized: Autorisiert
+      captured: Verwendet
+      credit: Gutschrift
+      eligible: Berechtigt
+    store_credit_categories: Store-Guthaben-Kategorien
+    store_details: Store-Details
+    store_errors:
+      unable_to_update: Store konnte nicht aktualisiert werden.
+    store_form:
+      customer_support_email_help: Diese E-Mail-Adresse ist für Ihre Store-Besucher in der Fusszeile sichtbar
+      new_order_notifications_email_help: Wenn Sie bei jeder Bestellung eine E-Mail-Benachrichtigung erhalten möchten, geben Sie bitte eine E-Mail-Adresse an, an die diese Benachrichtigung gesendet werden soll
+    store_name_help: Dies ist der Name Ihres Stores. Er wird in der Kopf- und in der Fusszeile angezeigt.
+    track_quantity: Menge verfolgen
+    transaction_id_help: Dies ist die ID der Transaktion, die im Zahlungs-Gateway des Drittanbieters erstellt wurde.
+    true_label: WAHR
+    type_to_search_customers: Tippen, um nach Kunden zu suchen
+    type_to_search_products: Tippen, um nach Produkten zu suchen
+    unit_system_help: Dies wird als Standard-Einheitensystem für Ihren Store verwendet. Sie können dies pro Produkt überschreiben.
+    unit_systems:
+      imperial_system: Imperiales System
+      metric: metrisch
+      metric_system: Metrisches System
+    unprocessable_entity: Nicht verarbeitbare Anfrage
+    unprocessable_entity_message: Ihre Anfrage konnte nicht verarbeitet werden. Bitte überprüfen Sie das Formular auf Fehler und versuchen Sie es erneut.
+    update_address: Adresse aktualisieren
+    update_billing_address: Rechnungsadresse aktualisieren
+    update_contact_information: Kontaktinformationen aktualisieren
+    update_shipping_address: Lieferadresse aktualisieren
+    use_shipping_address: Lieferadresse verwenden
+    vendors: Lieferanten
+    view_full_size: In voller Grösse anzeigen
+    view_store: Store ansehen
+    visits: Besuche
+    weight_unit_help: Dies wird als Standard-Gewichtseinheit für Ihren Store verwendet. Sie können dies pro Produkt überschreiben.
+    weight_units:
+      gram: Gramm (g)
+      kilogram: Kilogramm (kg)
+      ounce: Unze (oz)
+      pound: Pfund (lb)
+    accepts_email_marketing: Akzeptiert E-Mail-Marketing
+    add_customers: Kunden hinzufügen
+    add_products: Produkte hinzufügen
+    add_store: Neuer Store
+    add_store_credit: Store-Guthaben hinzufügen
+    added_to_cart: Erfolgreich zum Warenkorb hinzugefügt!
+    address: Adresse
+    address_book:
+      add_house_number: Fügen Sie eine Hausnummer hinzu, falls vorhanden
+    address_not_owned_by_user: Die angegebene Adresse gehört nicht zu diesem Benutzer.
+    addresses: Adressen
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (im Preis enthalten)"
+    adjustments_deleted: Anpassungen gelöscht
+    admin_locale: Admin-Sprache
+    all_products: Alle Produkte
+    allowed_origin: Erlaubter Origin
+    allowed_origins: Erlaubte Origins
+    analytics: Analytics
+    api_key: API-Schlüssel
+    api_key_no_current_key: Diese Anfrage wurde mit keinem API-Schlüssel authentifiziert
+    api_key_scopes_immutable: kann nach Erstellung des Schlüssels nicht mehr geändert werden; erstellen Sie einen neuen Schlüssel mit den gewünschten Scopes und widerrufen Sie diesen
+    api_keys: API-Schlüssel
+    apply: Anwenden
+    apply_only_on_full_priced_items: Nur auf nicht reduzierte Artikel anwenden
+    apply_store_credit: Store-Guthaben anwenden
+    assets: Medien
+    attachments: Anhänge
+    author: Autor
+    availability: Verfügbarkeit
+    available: Verfügbar
+    balance: Saldo
+    barcode: Barcode
+    brand: Marke
+    canceled: Storniert
+    cannot_be_destroyed: Bestellung kann nicht gelöscht werden.
+    cannot_empty: Bestellung kann nicht geleert werden.
+    cannot_empty_completed_order: Die Bestellung wurde bereits bearbeitet und kann daher nicht geleert werden
+    cannot_return_more_than_bought_quantity: Es kann nicht mehr als die gekaufte Menge zurückgegeben werden.
+    cart_already_updated: Der Warenkorb wurde bereits aktualisiert.
+    cart_line_item:
+      discontinued: "%{li_name} wurde entfernt, da der Artikel ausläuft"
+      out_of_stock: "%{li_name} wurde entfernt, da der Artikel ausverkauft ist"
+    change: Ändern
+    channel: Vertriebskanal
+    channels: Vertriebskanäle
+    checkout_requirements:
+      email_required: E-Mail-Adresse ist erforderlich
+      line_items_required: Fügen Sie mindestens einen Artikel zu Ihrem Warenkorb hinzu
+      payment_required: Fügen Sie eine Zahlungsart hinzu
+      ship_address_required: Lieferadresse ist erforderlich
+      shipping_method_required: Wählen Sie für alle Sendungen eine Versandart
+    clear: Löschen
+    clear_all: Alle löschen
+    closed: Geschlossen
+    color_code: Farbcode
+    colors: Farben
+    compare_at_amount: Vergleichsbetrag
+    compare_at_price: Vergleichspreis
+    contact: Kontakt
+    contact_phone: Kontakttelefon
+    content: Inhalt
+    copy: Kopieren
+    copy_link: Link kopieren
+    coupon_code_used: Der eingegebene Gutscheincode wurde bereits verwendet. Bitte versuchen Sie es erneut.
+    coupon_codes: Gutscheincodes
+    create_new: Neu erstellen
+    created_by: Erstellt von
+    credit_allowed: Gutschrift erlaubt
+    credited: Gutgeschrieben
+    currencies: Währungen
+    currency_not_supported_by_store: wird von diesem Store nicht unterstützt
+    current_password: Aktuelles Passwort
+    customer_group: Kundengruppe
+    customer_groups: Kundengruppen
+    customer_mailer:
+      password_reset_email:
+        action: Passwort zurücksetzen
+        expiry_notice: Dieser Link zum Zurücksetzen des Passworts läuft in Kürze ab. Falls Sie dies nicht angefordert haben, ist keine Aktion erforderlich.
+        greeting: Hallo %{name},
+        ignore_notice: Falls Sie kein Zurücksetzen des Passworts angefordert haben, können Sie diese E-Mail bedenkenlos ignorieren. Ihr Passwort wird nicht geändert.
+        instructions: Wir haben eine Anfrage zum Zurücksetzen Ihres Passworts erhalten. Klicken Sie auf die Schaltfläche unten, um ein neues Passwort zu wählen.
+    customer_support_email: E-Mail Kundensupport
+    customers: Kunden
+    cvv: CVV
+    default_billing_address: Standard-Rechnungsadresse
+    default_country: Standardland
+    default_currency: Standardwährung
+    default_locale: Standardsprache
+    default_shipping_address: Standard-Lieferadresse
+    default_stock_location_name: Shop-Standort
+    default_wishlist_name: Wunschliste
+    deleted: Gelöscht
+    developers: Entwickler
+    digital:
+      digital_delivery: Digitale Lieferung
+    digital_assets: Digitale Assets
+    discontinue_on: Auslaufen am
+    discontinued: Ausgelaufen
+    discontinued_variants_present: Einige Positionen in dieser Bestellung enthalten Produkte, die nicht mehr verfügbar sind.
+    discount: Rabatt
+    discounts: Rabatte
+    display_delivery_range: Lieferung in %{delivery_range} Werktagen
+    display_on: Anzeigen auf
+    domain: Domain
+    done: Fertig
+    download: Herunterladen
+    draft: Entwurf
+    duplicate: Duplizieren
+    duplicating: Wird dupliziert
+    email_marketing: E-Mail-Marketing
+    emails: E-Mails
+    ends_at: Endet am
+    enter: Eingeben
+    error_user_destroy_with_orders: Ein Benutzer mit zugehörigen Bestellungen kann nicht gelöscht werden
+    error_user_does_not_have_any_store_credits: Der Benutzer hat kein verfügbares Store-Guthaben
+    estimated_transit_business_days: Geschätzte Transport-Werktage
+    existing_address: Bestehende Adresse
+    expired: Abgelaufen
+    expires_at: Läuft ab am
+    export: Exportieren
+    export_mailer:
+      export_done:
+        message: Gute Arbeit, Ihr Export ist bereit! Bitte verwenden Sie den Link unten, um ihn herunterzuladen.
+        subject: Ihr Export %{export_number} wurde erfolgreich verarbeitet!
+      greeting: Hallo %{user_name},
+      thanks: Vielen Dank,
+    facebook: Facebook
+    featured_image: Hauptbild
+    field: Feld
+    filled: Ausgefüllt
+    filter: Filtern
+    filterable: Filterbar
+    firstname: Vorname
+    fonts: Schriftarten
+    footer: Fusszeile
+    forbidden: Zugriff verweigert
+    free: Gratis
+    from: Von
+    generate_code: Gutscheincode generieren
+    gift_card: Geschenkkarte
+    gift_card_already_redeemed: Die Geschenkkarte wurde bereits eingelöst.
+    gift_card_applied: Die Geschenkkarte wurde erfolgreich auf Ihre Bestellung angewendet!
+    gift_card_batch: Geschenkkarten-Charge
+    gift_card_customer_not_logged_in: Geschenkkarte kann nicht als Gast angewendet werden.
+    gift_card_expired: Die Geschenkkarte ist abgelaufen.
+    gift_card_mismatched_currency: Geschenkkarte kann nicht mit der aktuellen Währung angewendet werden.
+    gift_card_mismatched_customer: Diese Geschenkkarte ist einem anderen Benutzer zugeordnet.
+    gift_card_not_found: Die Geschenkkarte wurde nicht gefunden.
+    gift_card_removed: Die Geschenkkarte wurde erfolgreich aus Ihrer Bestellung entfernt
+    gift_card_using_store_credit_error: Sie können die Geschenkkarte nicht anwenden, nachdem Sie das Store-Guthaben angewendet haben.
+    gift_cards: Geschenkkarten
+    hide: Ausblenden
+    idempotency_key_reused: Dieser Idempotency-Key wurde bereits mit anderen Anfrageparametern verwendet.
+    immediately: Sofort
+    import: Importieren
+    in_stock: An Lager
+    instagram: Instagram
+    integrations: Integrationen
+    internal_note: Interne Notiz
+    internationalization: Internationalisierung
+    invitation_accepted: Einladung angenommen!
+    invitation_mailer:
+      greeting: Hallo %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} hat Ihre Einladung angenommen, %{resource_name} beizutreten"
+        subject: "%{invitee_name} hat Ihre Einladung angenommen, %{resource_name} beizutreten"
+      invitation_email:
+        body: "%{inviter_name} hat Sie eingeladen, %{resource_name} beizutreten"
+        link_description: 'Um diese Einladung anzunehmen, klicken Sie bitte auf den Link unten:'
+        subject: Einladung, %{resource_name} beizutreten
+      thanks: Vielen Dank,
+    invitations: Einladungen
+    invited_by: Eingeladen von
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Schlüssel
+    kind: Art
+    label: Bezeichnung
+    language: Sprache
+    lastname: Nachname
+    line_item: Position
+    line_items: Positionen
+    link: Link
+    live: Live
+    locale: Sprache
+    locale_not_supported_by_store: wird von diesem Store nicht unterstützt
+    logo: Logo
+    mail_from_address: Absenderadresse
+    mailer_logo: Mailer-Logo (nur JPG- oder PNG-Bilder)
+    make_active_at: Aktiv schalten am
+    manual: Manuell
+    market: Markt
+    market_ids: Märkte
+    markets: Märkte
+    master: Master
+    max: Max
+    max_quantity: Max. Menge
+    me_no_current_user: Diese Anfrage wurde mit keinem Admin-Benutzer authentifiziert
+    media: Medien
+    metafield_definitions: Metafeld-Definitionen
+    metafields: Metafelder
+    min: Min
+    min_quantity: Min. Menge
+    missing_return_authorization: Fehlende Rücksendegenehmigung für %{item_name}.
+    move: Verschieben
+    mutable: Veränderbar
+    navigation: Navigation
+    never: Nie
+    new_address: Neue Adresse
+    new_order_notifications_email: E-Mail für Benachrichtigungen über neue Bestellungen
+    new_price_list: Neue Preisliste
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Hallo,
+        ignore_disclaimer: Falls Sie dies nicht angefordert haben, ignorieren Sie diese E-Mail bitte.
+        instructions: Bitte klicken Sie auf die Schaltfläche unten, um Ihre E-Mail-Adresse zu bestätigen.
+        message_copy_link: 'Falls die Schaltfläche nicht funktioniert, kopieren Sie bitte den folgenden Link und fügen Sie ihn in Ihren Browser ein:'
+        store_team: Team %{store_name}
+        subject: Bestätigen Sie Ihre E-Mail-Adresse
+        thanks: Vielen Dank
+        verify_email_address_link: E-Mail-Adresse bestätigen
+    newsletter_subscribers: Newsletter-Abonnenten
+    no_cc_type: N/A
+    no_report_data: Keine Berichtsdaten
+    number: Nummer
+    ok: OK
+    only_active_products_can_be_added_to_cart: Produkte im Entwurfsstatus oder archivierte Produkte können nicht in den Warenkorb gelegt werden. Bitte markieren Sie das Produkt zuerst als aktiv.
+    option_name: Optionsname
+    order_routing:
+      strategies:
+        legacy: Legacy
+        rules: Regeln (geordnet)
+    origin: Origin
+    other: Andere
+    outstanding_balance: Ausstehender Saldo
+    page: Seite
+    pages: Seiten
+    payment_source: Zahlungsquelle
+    payment_total: Zahlungssumme
+    permissions: Berechtigungen
+    policies: Richtlinien
+    preview: Vorschau
+    price_lists: Preislisten
+    price_rules:
+      customer_group_rule:
+        description: Preise auf bestimmte Kundengruppen anwenden
+    prices: Preise
+    pricing: Preisgestaltung
+    privacy_policy: Datenschutzerklärung
+    processing: Wird verarbeitet
+    product_name: Produktname
+    product_translations: Produktübersetzungen
+    products_cannot_be_shipped: Wir können %{product_names} derzeit nicht an Ihren aktuellen Standort liefern. Bitte ändern Sie Ihre Lieferadresse oder entfernen Sie %{product_names} aus Ihrem Warenkorb.
+    promotion_already_used: Sie können eine Aktion, die bereits angewendet wurde, nicht löschen
+    promotion_category: Aktionskategorie
+    promotion_label: Aktion (%{name})
+    published_at: Veröffentlicht am
+    query: Abfrage
+    refund_amount: Rückerstattungsbetrag
+    remove_gift_card_on_completed_order_error: Sie können die Geschenkkarte nicht entfernen, nachdem die Bestellung aufgegeben wurde
+    report_mailer:
+      greeting: Hallo %{user_name},
+      report_done:
+        message: Bitte verwenden Sie den Link unten, um ihn herunterzuladen.
+        subject: Ihr Bericht %{report_name} ist bereit
+      thanks: Vielen Dank,
+    report_names:
+      products_performance: Produktleistung
+      sales_total: Gesamtumsatz
+    required: "*"
+    required_fields: Pflichtfelder
+    resellable: Wiederverkäuflich
+    resource: Ressource
+    return_authorization_canceled: Rücksendegenehmigung storniert
+    return_item_order_not_completed: Die Bestellung des zurückgesendeten Artikels muss abgeschlossen sein
+    returns_policy: Rückgaberichtlinie
+    role_id: Rollen-ID
+    row: Zeile
+    sale: Aktion
+    saving: Wird gespeichert
+    scopes: Scopes
+    search_by: 'Suchen nach:'
+    security: Sicherheit
+    seed:
+      shipping:
+        categories:
+          default: Standard
+          digital: Digital
+    selected_quantity_not_available: ausgewählte Menge von %{item} ist nicht verfügbar.
+    send_consumer_transactional_emails: Transaktions-E-Mails an Kunden senden
+    seo: SEO
+    seo_title: SEO-Titel
+    ship_to: 'Lieferung an:'
+    shipping_policy: Versandrichtlinie
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (inkl. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Versandzone
+    show_discontinued: Ausgelaufene anzeigen
+    sign_up: Registrieren
+    site_name: Seitenname
+    size: Grösse
+    social: Social Media
+    sort_by: Sortieren nach
+    square_image: Quadratisches Bild
+    starts_at: Beginnt am
+    state_changes: Statusänderungen
+    stock_items: Lagerartikel
+    store_credit_events: Store-Guthaben-Ereignisse
+    store_credit_name: Store-Guthaben
+    store_credit_payment_method:
+      currency_mismatch: Die Währung des Store-Guthabens stimmt nicht mit der Bestellwährung überein
+      insufficient_authorized_amount: Es kann nicht mehr als der autorisierte Betrag erfasst werden
+      insufficient_funds: Das verbleibende Store-Guthaben reicht nicht aus
+      successful_action: Store-Guthaben %{action} erfolgreich
+      unable_to_credit: 'Code kann nicht gutgeschrieben werden: %{auth_code}'
+      unable_to_find: Store-Guthaben konnte nicht gefunden werden
+      unable_to_find_for_action: Store-Guthaben für Auth-Code %{auth_code} für Aktion %{action} konnte nicht gefunden werden
+      unable_to_void: 'Code kann nicht storniert werden: %{auth_code}'
+    store_credits: Store-Guthaben
+    store_default: Standard-Store
+    store_name: Store-Name
+    stores: Stores
+    subscribed: Abonniert
+    support: Support
+    supported_currencies: Unterstützte Währungen
+    supported_locales: Unterstützte Sprachen
+    tags: Tags
+    tax_inclusive: Inkl. Steuern
+    taxes: Steuern
+    taxonomy_brands_name: Marken
+    taxonomy_categories_name: Kategorien
+    taxonomy_collections_name: Kollektionen
+    terms_of_service: Nutzungsbedingungen
+    theme: Theme
+    themes: Themes
+    timezone: Zeitzone
+    title: Titel
+    to: Bis
+    translations: Übersetzungen
+    twitter: Twitter
+    unit: Einheit
+    unit_system: Einheitensystem
+    unlimited: Unbegrenzt
+    updated_at: Aktualisiert am
+    url: URL
+    used: Verwendet
+    user_ids: Benutzer
+    vendor: Lieferant
+    verified: Verifiziert
+    verified_at: Verifiziert am
+    view: Ansehen
+    visibility: Sichtbarkeit
+    webhook_endpoints: Webhook-Endpunkte
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Deaktiviert am
+        heading: Webhook-Endpunkt deaktiviert
+        instructions: Bitte überprüfen Sie die Endpunkt-URL und den Dienst und aktivieren Sie ihn anschliessend unter Einstellungen → Entwickler → Webhooks erneut.
+        message: Der Webhook-Endpunkt "%{endpoint_name}" wurde nach wiederholten Zustellfehlern automatisch deaktiviert.
+        name_label: Name
+        reason_label: Grund
+        subject: 'Webhook-Endpunkt deaktiviert: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhooks
+    weight_unit: Gewichtseinheit
+    wishlist: Wunschliste
+    zipcode_required: PLZ erforderlich
+    zone_ids: Zonen
+    api:
+      cannot_delete: "%{model} kann nicht gelöscht werden"
+      current_password_invalid: Aktuelles Passwort ist ungültig oder fehlt
+      gateway_error: 'Es gab ein Problem mit dem Zahlungs-Gateway: %{text}'
+      invalid_api_key: Ungültiger API-Schlüssel (%{key}) angegeben.
+      invalid_resource: Ungültige Ressource. Bitte beheben Sie die Fehler und versuchen Sie es erneut.
+      invalid_taxonomy_id: Ungültige Taxonomie-ID.
+      must_specify_api_key: Sie müssen einen API-Schlüssel angeben.
+      negative_quantity: Menge ist negativ
+      newsletter_verification_token_invalid: Der Newsletter-Bestätigungstoken ist ungültig oder abgelaufen.
+      order:
+        could_not_transition: Der Status der Bestellung konnte nicht geändert werden. Bitte beheben Sie die Fehler und versuchen Sie es erneut.
+        insufficient_quantity: Ein Artikel in Ihrem Warenkorb ist nicht mehr verfügbar.
+        invalid_shipping_method: Ungültige Versandart angegeben.
+      password_reset_requested: Falls für diese E-Mail-Adresse ein Konto besteht, wurden Anweisungen zum Zurücksetzen des Passworts versendet.
+      password_reset_token_invalid: Der Token zum Zurücksetzen des Passworts ist ungültig oder abgelaufen.
+      payment:
+        credit_over_limit: Diese Zahlung kann nur bis zu %{limit} gutgeschrieben werden. Bitte geben Sie einen Betrag an, der kleiner oder gleich diesem Wert ist.
+        update_forbidden: Diese Zahlung kann nicht aktualisiert werden, da sie %{state} ist.
+      record_not_found: "%{model} nicht gefunden"
+      redirect_url_not_allowed: Die Weiterleitungs-URL stammt nicht von einem für diesen Store erlaubten Origin.
+      resource_not_found: Die gesuchte Ressource konnte nicht gefunden werden.
+      shipment:
+        cannot_ready: Sendung kann nicht versandbereit gemacht werden.
+      shipment_transfer_errors_occurred: 'Bei dieser Aktion sind folgende Fehler aufgetreten:'
+      shipment_transfer_success: Varianten erfolgreich umgelagert
+      stock_location_required: Es muss ein stock_location_id-Parameter angegeben werden, um Lagerbewegungen abzurufen.
+      unauthorized: Sie sind nicht berechtigt, diese Aktion auszuführen.
+      v2:
+        cart:
+          no_coupon_code: Es wurde kein Gutscheincode angegeben und die Bestellung hat keine Gutscheincode-Aktionen angewendet
+          wrong_quantity: Die Menge muss grösser als 0 sein
+        digitals:
+          missing_file: 'Fehlender digitaler Artikel: Anhang'
+          unauthorized: Fehler, Sie sind nicht berechtigt, auf dieses Asset zuzugreifen
+        gift_card:
+          amount_not_valid: Geschenkkartenbetrag ist ungültig
+          not_found: Geschenkkarte wurde nicht gefunden
+        metadata:
+          invalid_params: Öffentliche und private Metadaten-Parameter müssen Objekte sein
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Die Wunschliste konnte nicht gelöscht werden.
+          wrong_quantity: Die Menge muss grösser als 0 sein
+      v3:
+        payments:
+          method_unavailable: Diese Zahlungsart ist für diese Bestellung nicht verfügbar.
+          session_required: Diese Zahlungsart erfordert eine Zahlungssitzung. Verwenden Sie stattdessen den Endpunkt für Zahlungssitzungen.
+      wrong_shipment_target: Die Zielsendung ist dieselbe wie die ursprüngliche Sendung
+  action_text:
+    video_embed:
+      not_found: Mit der angegebenen URL kann kein Video eingebettet werden
+  activemodel:
+    errors:
+      messages:
+        blank: darf nicht leer sein
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: hat nachbestellte Lagereinheiten
+              has_already_been_shipped: wurde bereits versendet
+            desired_shipment:
+              can_not_transfer_within_same_shipment: darf nicht dieselbe wie die aktuelle Sendung sein
+              has_not_enough_stock_at_desired_location: hat nicht genügend Bestand am gewünschten Lagerort
+  address_book:
+    save: Speichern
+    successfully_created: Neue Adresse wurde erfolgreich erstellt
+  number:
+    currency:
+      format:
+        delimiter: "’"
+        separator: "."
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Abschneiden

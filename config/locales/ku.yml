@@ -1,3 +1,4 @@
+---
 ku:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ ku:
         phone: ته‌له‌فۆن
         state: پارێزگا
         zipcode: پۆستاڵ كۆد
+        company: Pargîdanî
+        label: Navê navnîşanê
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ ku:
       spree/option_type:
         name: ناو
         presentation: Presentation
+        filterable: Parzûnbar
+        kind: Cure
       spree/order:
         checkout_complete: Checkout Complete
         completed_at: Completed At
@@ -54,6 +59,8 @@ ku:
         special_instructions: Special Instructions
         state: پارێزگا
         total: گشتی
+        internal_note: Têbîniya Hundirîn
+        item_count: Tişt
       spree/order/bill_address:
         address1: Billing address street
         city: Billing address city
@@ -72,6 +79,7 @@ ku:
         zipcode: Shipping address post code
       spree/payment:
         amount: Amount
+        number: Hejmar
       spree/payment_method:
         name: ناو
       spree/product:
@@ -84,6 +92,10 @@ ku:
         on_hand: On Hand
         shipping_category: Shipping Category
         tax_category: Tax Category
+        discontinue_on: Rawestandin di
+        less_than: Kêmtir ji
+        make_active_at: Çalakkirin di
+        more_than: Zêdetir ji
       spree/promotion:
         advertise: Advertise
         code: Code
@@ -94,8 +106,11 @@ ku:
         path: Path
         starts_at: Starts At
         usage_limit: Usage Limit
+        generate_code: Koda kûponê çêbike
+        promotion_category: Kategoriya Kampanyayê
       spree/promotion_category:
         name:
+        code: Kod
       spree/property:
         name: ناو
         presentation: Presentation
@@ -123,6 +138,16 @@ ku:
         name:
         seo_title:
         url:
+        address: Navnîşan
+        contact_phone: Telefona Têkilî
+        preferred_digital_asset_authorized_clicks: Sînorê tikandinên daxistinê
+        preferred_digital_asset_authorized_days: Sînorê rojên daxistinê
+        preferred_limit_digital_download_count: Sînorê hejmara daxistina lînkên dîjîtal
+        preferred_limit_digital_download_days: Sînorê rojên daxistina lînkên dîjîtal
+        seo_robots: Robotên SEO
+        storefront_custom_code_body_end: Koda Taybet beriya girtina tagê body
+        storefront_custom_code_body_start: Koda Taybet piştî vekirina tagê body
+        storefront_custom_code_head: Koda Taybet di serê rûpelê de
       spree/tax_category:
         description: Description
         name: ناو
@@ -134,12 +159,14 @@ ku:
         name: ناو
         permalink: Permalink
         position: Position
+        sort_order: Rêza Rêzkirinê
       spree/taxonomy:
         name: ناو
       spree/user:
         email: Email
         password: Password
         password_confirmation: Password Confirmation
+        avatar: Avatar
       spree/variant:
         cost_currency: Cost Currency
         cost_price: Cost Price
@@ -152,6 +179,54 @@ ku:
       spree/zone:
         description: Description
         name: ناو
+      spree/customer_group:
+        description: Şirove
+        name: Nav
+      spree/customer_return:
+        stock_location_id: Cihê Embarê
+      spree/gift_card:
+        amount_used: Mîqdara bikaranînî
+        expires_at: Diqede di
+      spree/import:
+        preferred_delimiter: Veqetandek
+      spree/import_mapping:
+        file_column: Stûna Pelê
+        schema_field: Qada Şemayê
+      spree/import_row:
+        row_number: Hejmar
+      spree/invitation:
+        inviter: Vexwendker
+      spree/metafield_definition:
+        namespace: Cihê navan
+      spree/option_value:
+        color_code: Koda Rengê
+        image: Wêneya Nimûnê
+      spree/page_link:
+        open_in_new_tab: Di hilkêşeke nû de veke
+      spree/policy:
+        body: Naverok
+        owner: Polîtîka ji bo
+      spree/price_list:
+        description: Şirove
+        ends_at: Diqede di
+        match_policy: Polîtîkaya Lihevhatinê
+        name: Nav
+        priority: Pêşîn
+        starts_at: Dest pê dike di
+        status: Rewş
+      spree/price_rule:
+        priority: Pêşîn
+        type: Cure
+      spree/shipment:
+        number: Hejmar
+      spree/store_credit:
+        amount_used: Mîqdara bikaranînî
+      spree/store_credit_category:
+        name: Nav
+      user:
+        current_sign_in: Têketina niha di
+        last_sign_in: Têketina dawî di
+        sign_in_count: Hejmara têketinan
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,6 +273,109 @@ ku:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Firotgeha tenê nayê jêbirin.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: divê bingehek be (şema û hostê) bê rê, lêpirsîn an perçe
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Karta diyariyê ya bikaranî nayê jêbirin
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: divê hebe
+              not_allowed_content_type: cureyê naverokê ya destûrdayî nîn e
+        spree/import:
+          attributes:
+            attachment:
+              content_type: cureyê naverokê ya destûrdayî nîn e
+            type:
+              inclusion: di lîsteya cureyên destûrdayî de cih nagire
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: ji bikarhênerek din e
+              deprecated_in_completed_order: di siparîşa temamkirî de betal e
+            ship_address_id:
+              belongs_to_other_user: ji bikarhênerek din e
+              deprecated_in_completed_order: di siparîşa temamkirî de betal e
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Bazara berbijar nayê jêbirin.
+              cannot_destroy_last_market: Bazara tenê nayê jêbirin.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: berê di vê firotgeyê de ji bazarek din re hatiye veqetandin
+              not_in_shipping_zone: ji aliyê tu herêma şandinê ve nayê veguhastin. Ji kerema xwe pêşî herêmek şandinê saz bike.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: ji mîqdara herî zêde ya destûrdayî %{max_amount} mezintir e
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: divê piştî dema destpêkê be
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Berhemên ku li siparîşên hatine danîn zêdekirî nayên jêbirin. Di vî halî de ji kerema xwe wan rawestîne.
+            discontinue_on:
+              invalid_date_range: divê piştî dîroka berdestiyê be
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: divê piştî dîroka weşandinê be
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: divê piştî dîroka destpêkê be
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Divê tu herî kêm kategoriyek şandinê hilbijêrî
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Ji tevahiya krediyan zêdetir e.
+            amount_used:
+              cannot_be_greater_than_amount: Nikare ji mîqdarê mezintir be.
+              greater_than_zero_restrict_delete: ji sifirê mezintir e. Krediya firotgeyê nayê jêbirin.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Kategoriyên krediya firotgeyê piştî ku di krediya firotgeyê de hatin bikaranîn nayên jêbirin.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: cureyê naverokê ya destûrdayî nîn e
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: ji bikarhênerek din e
+              deprecated_in_completed_order: di siparîşa temamkirî de betal e
+            ship_address_id:
+              belongs_to_other_user: ji bikarhênerek din e
+              deprecated_in_completed_order: di siparîşa temamkirî de betal e
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: Guhertoyên ku li siparîşên hatine danîn zêdekirî nayên jêbirin. Di vî halî de ji kerema xwe wan rawestîne.
+              must_supply_price_for_variant_or_master: Divê ji bo guhertoyê bihayek an ji bo berhemê bihayê serekî were dayîn.
+              no_master_variant_found_to_infer_price: Tu guhertoya serekî nehat dîtin ku jê biha were texmînkirin
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: divê li ser navnîşanek torê ya hundirîn an taybet neyê nîşankirin
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Te berê ev tişt li lîsteya xwestekan zêde kir
+      messages:
+        blank: nikare vala be
     models:
       spree/address:
         one: Address
@@ -209,6 +387,8 @@ ku:
         one: Credit Card
         other: Credit Cards
       spree/customer_return:
+        one: Vegera Mişterî
+        other: Vegerên Mişteriyan
       spree/inventory_unit:
         one: Inventory Unit
         other: Inventory Units
@@ -216,7 +396,11 @@ ku:
         one: Line Item
         other: Line Items
       spree/option_type:
+        one: Cureyê Vebijarkê
+        other: Cureyên Vebijarkê
       spree/option_value:
+        one: Nirxa Vebijarkê
+        other: Nirxên Vebijarkê
       spree/order:
         one: Order
         other: Orders
@@ -224,11 +408,17 @@ ku:
         one: Payment
         other: Payments
       spree/payment_method:
+        one: Rêbaza Tediyeyê
+        other: Rêbazên Tediyeyê
       spree/product:
         one: Product
         other: Products
       spree/promotion:
+        one: Kampanya
+        other: Kampanya
       spree/promotion_category:
+        one: Kategoriya Kampanyayê
+        other: Kategoriyên Kampanyayê
       spree/property:
         one: Property
         other: Properties
@@ -236,12 +426,20 @@ ku:
         one: Prototype
         other: Prototypes
       spree/refund_reason:
+        one: Sedema Vegerandina Drav
+        other: Sedemên Vegerandina Drav
       spree/reimbursement:
+        one: Telafîkirin
+        other: Telafîkirin
       spree/reimbursement_type:
+        one: Cureyê Telafîkirinê
+        other: Cureyên Telafîkirinê
       spree/return_authorization:
         one: Return Authorisation
         other: Return Authorisations
       spree/return_authorization_reason:
+        one: Sedema Destûra Vegerandinê
+        other: Sedemên Destûra Vegerandinê
       spree/role:
         one: Roles
         other: Roles
@@ -252,13 +450,23 @@ ku:
         one: Shipping Category
         other: Shipping Categories
       spree/shipping_method:
+        one: Rêbaza Şandinê
+        other: Rêbazên Şandinê
       spree/state:
         one: County
         other: Counties
       spree/state_change:
+        one: Guhertina Rewşê
+        other: Guhertinên Rewşê
       spree/stock_location:
+        one: Cihê Embarê
+        other: Cihên Embarê
       spree/stock_movement:
+        one: Tevgera Embarê
+        other: Tevgerên Embarê
       spree/stock_transfer:
+        one: Veguhastina Embarê
+        other: Veguhastinên Embarê
       spree/tax_category:
         one: Tax Category
         other: Tax Categories
@@ -272,6 +480,8 @@ ku:
         one: Taxonomy
         other: Taxonomies
       spree/tracker:
+        one: Şopîner
+        other: Şopîner
       spree/user:
         one: User
         other: Users
@@ -281,6 +491,66 @@ ku:
       spree/zone:
         one: Zone
         other: Zones
+      spree/classification:
+        one: Dabeşkirin
+        other: Dabeşkirin
+      spree/cms_page:
+        one: Rûpel
+        other: Rûpel
+      spree/cms_section:
+        one: Beş
+        other: Beş
+      spree/customer_group:
+        one: Koma Mişteriyan
+        other: Komên Mişteriyan
+      spree/customer_group_user:
+        one: Bikarhênerê Koma Mişteriyan
+        other: Bikarhênerên Koma Mişteriyan
+      spree/digital:
+        one: Mêlakê dîjîtal
+        other: Mêlakên dîjîtal
+      spree/export:
+        one: Hinardekirin
+        other: Hinardekirin
+      spree/integration:
+        one: Entegrasyon
+        other: Entegrasyon
+      spree/page:
+        one: Rûpel
+        other: Rûpel
+      spree/page_block:
+        one: Bloka Rûpelê
+        other: Blokên Rûpelê
+      spree/page_link:
+        one: Lînka Rûpelê
+        other: Lînkên Rûpelê
+      spree/page_section:
+        one: Beşa Rûpelê
+        other: Beşên Rûpelê
+      spree/price:
+        one: Biha
+        other: Biha
+      spree/price_list:
+        one: Lîsteya Bihayan
+        other: Lîsteyên Bihayan
+      spree/price_rule:
+        one: Rêzika Bihayê
+        other: Rêzikên Bihayê
+      spree/stock_item:
+        one: Tişta Embarê
+        other: Tiştên Embarê
+      spree/store:
+        one: Firotge
+        other: Firotge
+      spree/store_credit:
+        one: Krediya Firotgeyê
+        other: Krediyên Firotgeyê
+      spree/store_credit_category:
+        one: Kategoriya Krediya Firotgeyê
+        other: Kategoriyên Krediya Firotgeyê
+      spree/theme:
+        one: Tema
+        other: Tema
   devise:
     confirmations:
       confirmed: Your account was successfully confirmed. You are now signed in.
@@ -293,6 +563,7 @@ ku:
       timeout: Your session expired, please sign in again to continue.
       unauthenticated: You need to sign in or sign up before continuing.
       unconfirmed: You have to confirm your account before continuing.
+      too_many_attempts: Pir hewldan. Ji kerema xwe demek bisekine û dîsa biceribîne.
     mailer:
       confirmation_instructions:
         subject: Confirmation instructions
@@ -327,9 +598,10 @@ ku:
       not_saved:
         one: '1 error prohibited with %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      not_a_number: ne hejmar e
   spree:
     filter: Filter
-    quick_search: Quick Search . . .
+    quick_search:
     abbreviation: Abbreviation
     accept:
     acceptance_errors:
@@ -350,6 +622,15 @@ ku:
       refund:
       save: Save
       update: Update
+      close: Bigire
+      connect: Girêde
+      discard: Bavêje
+      open: Veke
+      reject: Red bike
+      remove: Rake
+      resend: Dîsa bişîne
+      select_file: Pelê hilbijêre
+      send_invitation: Vexwendinê bişîne
     activate: Activate
     active: Active
     add: Add
@@ -402,6 +683,483 @@ ku:
         order_num:
         orders:
         user_information:
+        last_order_placed: Siparîşa dawî hat dayîn
+        no_store_credit: Xerîdar tu Krêdiya Firotgehê peyda nîne
+      allowed_origins:
+        origin_help: URL-ya tevahî ya jêderka firotgeha xwe binivîse (mînak https://myshop.com). Riyan an rêzikên lêpirsînê tê de neke.
+        origin_settings: Mîhengên Jêderkê
+      amount_spent: Mîqdara xerckirî
+      api_keys:
+        example_request: Daxwaza Mînak
+        key_revoked_message: Ev mifteya API hatiye betalkirin û êdî nayê bikaranîn.
+        key_type_descriptions:
+          publishable: Di koda aliyê xerîdar de mîna sepanên mobîl an gerokan ewle ye ku were bikaranîn.
+          secret: Vê yekê ewle bigire û tenê li aliyê serverê bikar bîne. Tu carî bi awayekî giştî eşkere neke.
+        key_types:
+          publishable: Weşandbar
+          secret: Veşartî
+        last_used_at: Cara dawî hat bikaranîn
+        list: Mifteyên API
+        name_placeholder: mînak Mobile App Production
+        revoke: Betal bike
+        revoke_confirmation: Tu bawer î ku dixwazî vê mifteya API betal bikî? Ev kar nayê vegerandin.
+        revoked: Mifteya API hatiye betalkirin
+        revoked_at: Hat betalkirin di
+        revoked_by: Hat betalkirin ji aliyê
+        scopes: Qadên Destûrê
+        scopes_description: Ji bo mifteyên veşartî hewce ye. Komên qadên herî teng ên ku entegrasyona te jê re hewce ye hilbijêre.
+        scopes_immutable: Qadên destûrê dema ku mifte tê afirandin sabit dimînin. Ji bo guhertina wan, mifteyeke nû bi qadên ku tu jê re hewce ne biafirîne û vê yekê betal bike.
+        secret_key_hidden: Ev mifteya veşartî nayê eşkerekirin. Heke te ew winda kiribe, vê mifteyê betal bike û yeke nû biafirîne.
+        statuses:
+          active: Çalak
+          revoked: Betalkirî
+        token_warning: Vê mifteyê bi awayekî ewle hilîne. Ew dê tenê vê carê were nîşandan.
+        usage: Bikaranîn
+        usage_instructions:
+          publishable: Vê mifteyê ji bo daxwazên aliyê xerîdar bikar bîne. Ew dikare bi ewlehî di koda frontend a te de were tevlîkirin.
+          secret: Vê mifteyê tenê ji bo daxwazên aliyê serverê bikar bîne. Wê veşartî bihêle û tu carî di koda aliyê xerîdar de eşkere neke.
+      audit_log: Tomara Çavdêriyê
+      avg_order_value: Nirxa Navîn a Siparîşê
+      back_to_dashboard: Vegere panela kontrolê
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Tu bawer î ku dixwazî xerîdarên hilbijartî ji vê komê rakî?
+          title:
+            remove: Ji Komê Rake
+        price_list_products:
+          body:
+            remove: Tu bawer î ku dixwazî berhemên hilbijartî ji vê lîsteya bihayê rakî? Ev ê bihayên wan jî rake.
+          title:
+            remove: Ji Lîsteya Bihayê Rake
+        products:
+          body:
+            add_tags: 'Etîketên ku werin zêdekirin ji berheman re hilbijêre:'
+            add_to_taxons: 'Hilbijêre ku berhem li kîjan kategoriyan werin zêdekirin:'
+            remove_from_taxons: 'Hilbijêre ku berhem ji kîjan kategoriyan werin rakirin:'
+            remove_tags: 'Etîketên ku werin rakirin ji berheman re hilbijêre:'
+            set_active: Çalakkirina berheman dê wan berheman li firotgehê peyda bike.
+            set_archived: Arşîvkirina berheman dê wan ji firotgehê veşêre.
+            set_draft: Danîna berheman wek hewîn dê wan ji firotgehê veşêre.
+          title:
+            add_tags: Etîketan zêde bike
+            add_to_taxons: Li kategoriyan zêde bike
+            remove_from_taxons: Ji kategoriyan rake
+            remove_tags: Etîketan rake
+            set_active: Wek Çalak Saz Bike
+            set_archived: Wek Arşîvkirî Saz Bike
+            set_draft: Wek Hewîn Saz Bike
+        users:
+          body:
+            add_tags: 'Etîketên ku werin zêdekirin ji xerîdaran re hilbijêre:'
+            remove_tags: 'Etîketên ku werin rakirin ji xerîdaran re hilbijêre:'
+          title:
+            add_tags: Etîketan zêde bike
+            remove_tags: Etîketan rake
+      channels:
+        code_hint: Nasnameyeke kurt û aram (mînak "online", "pos", "wholesale"). Ji aliyê xerîdarên API ve bi serenavê X-Spree-Channel û ji bo veqetandina siparîşan tê bikaranîn.
+        default: Kanala xwerû
+        default_hint: Tam yek kanal ji bo her firotgehê xwerû ye. Wek vegerê dema ku tu kanal nehatibe hilbijartin û wek armanca otomatîk-weşandinê ji bo berhemên nû tê bikaranîn.
+        order_routing_strategy: Stratejiya rêvekirina siparîşê
+        order_routing_strategy_hint: Stratejiya rêvekirina asta firotgehê ji bo siparîşên ku ji vê kanalê re hatine veqetandin betal dike.
+        order_routing_strategy_inherit: Ji firotgehê mîras bistîne
+      checkout_settings:
+        checkout_links:
+          description: Lînkên van rûpelan dê di binê rûpelê tesdîqkirinê de werin nîşandan.
+          label: Lînkên tesdîqkirinê
+        checkout_message_description: Ji xerîdarên te re li rûpelê tesdîqkirinê di kêlekê de aşkere ye.
+        countries_managed_by_markets_html: Welat û herêmên barkirinê bi rêya %{link} têne birêvebirin.
+        guest_checkout:
+          description: Destûrê bide xerîdaran ku bê afirandina hesabê tesdîq bikin.
+          label: Destûra tesdîqkirina mêvanan bide
+        special_instructions:
+          description: Destûrê bide xerîdaran ku rênimayên taybetî li siparîşa xwe zêde bikin.
+          label: Qada rênimayên taybetî nîşan bide
+      close_sidebar: Kêleka kenarê bigire
+      copied: Hat kopîkirin!
+      copy_payment_link: Lînka Dayînê Kopî Bike
+      copy_to_clipboard: Li panoyê kopî bike
+      coupon_codes:
+        unused: Nehatî bikaranîn
+        used: Hatî bikaranîn
+      created_at: Hat Afirandin Di
+      dashboard:
+        getting_started:
+          description: Her tişta ku divê tu saz bikî da ku dest bi firotinê bikî.
+        hi: Silav
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> ji %{total} gavan qediyane"
+          title: Pêşketina sazkirina te ya giştî
+        top_products: Berhemên herî baş
+        view_report: Rapora bibîne
+        whats_happening_on_html: Va ye îro li ser <strong>%{store_name}</strong> çi diqewime.
+      datetime_field_timezone_help: 'Qada demê: %{zone}'
+      digital_shipment_fulfillment_note: Ev barkirin dê wek pêkanî were nîşankirin gava ku bikarhêner berhema dîjîtal dakêşe
+      display_on_options:
+        back_end: Tenê li panela rêvebirinê
+        both: Hem li panela rêvebirinê hem jî li firotgehê
+        front_end: Tenê li firotgehê
+      documentation: Belgekirin
+      edit_billing_address: Navnîşana fatûreyê biguherîne
+      edit_contact_information: Agahiyên têkiliyê biguherîne
+      edit_profile: Profîlê Biguherîne
+      edit_shipping_address: Navnîşana barkirinê biguherîne
+      edit_theme: Temayê biguherîne
+      errors: Çewtî
+      execution_time: Dema Cîbicîkirinê
+      expand_sidebar: Kêleka kenarê fireh bike
+      export_all: Hemû tomaran derxe (ji bo daneyên mezin dikare hêdî be)
+      export_coupons: Kûponan wek pelê CSV derxe
+      export_created: Derxistina te dest pê kir. Gava amade be tu yê e-nameyek bi lînka daxistinê bistînî!
+      export_only_filtered_records: Tenê tomarên parzûnkirî yên ku bi pîvanên lêgerînê re lihevdihên derxe
+      export_report: Rapora wek pelê CSV derxe
+      filters: Parzûn
+      getting_started: Destpêkirin
+      gift_card_batches:
+        codes_count: Hejmara kodan
+        new_gift_card_batch: Koma Nû ya Kartên Diyariyê
+        prefix: Pêşgir
+      gift_cards:
+        active: Çalak
+        all_statuses: Hemû rewş
+        code_help_text: Heke vala bihêlî, em ê ji te re kodê çêkin
+        redeemed: Hatî bikaranîn
+        usage: Bikaranîn
+      imports:
+        all_required_columns_mapped: Karê baş, hemû stûnên hewce hatine nexşandin!
+        field_required: Qad hewce ye
+        import_done: Her tişt qediya!
+        large_import_background_note: Tu dikarî vê rûpelê bigirî — îthalat dê li paşperdeyê berdewam bike.
+        large_import_message: Ev îthalat %{count} rêzan dihewîne û ji bo nîşandana yek bi yek pir mezin e.
+        large_import_summary: "%{completed} qediyan, %{failed} têk çûn"
+        mapping_required: Ev qad hewce ye
+        please_map_all_required_fields: Ji kerema xwe hemû qadên hewce nexşîne da ku berdewam bikî.
+        waiting_for_file_to_be_processed: Li benda pêvajoykirina pelê...
+      integrations:
+        invalid_integration_type: Ev entegrasyon nayê destûrkirin
+        page_subtitle: Firotgeha xwe bi karûbarên aliyê sêyemîn ve girêde da ku ezmûna xerîdaran baştir bike.
+      json_preview:
+        no_api_response: Ji bo vê çavkaniyê tu bersiva API nehat dîtin
+      manage_markets: Bazaran Birêve Bibe
+      manage_properties: Taybetiyan Birêve Bibe
+      manage_stock_locations: Cihên Stokê Birêve Bibe
+      manage_taxons: Kategoriyan Birêve Bibe
+      manage_zones: Herêman Birêve Bibe
+      markets:
+        edit: Bazarê Biguherîne
+        list: Bazar
+        new: Bazara Nû
+        supported_locales_hint: Lîsteya kodên zimanan ên zêde bi bêhnokê veqetandî (mînak fr,de,es)
+      metafield_definitions:
+        edit_warning: Piştî ku pênase hatiye bikaranîn tu nikarî cureya çavkaniyê an cureya metafieldê biguherînî.
+        used_in: Tê bikaranîn di
+      name: Nav
+      navigation:
+        nested_under: Hêlandî di bin
+      newsletter_subscribers:
+        all: Hemû
+        unverified: Nepejirandî
+        verified: Pejirandî
+      not_tracking_inventory: Şopandina embarê nayê kirin
+      notifications: Agahdarî
+      num_orders: Hejmara Siparîşan
+      oauth_applications:
+        client_id: Client ID
+        client_secret: Veşariya Client
+        last_used: Cara dawî hat bikaranîn
+        list: Mifteyên API
+        never: Tu car
+        new: Mifteya API ya nû
+        read_and_write: Xwendin û Nivîsîn
+        read_only: Tenê Xwendin
+        scopes: Qadên Destûrê
+      order:
+        events:
+          approve: Erê bike
+          cancel: Betal bike
+          resend: Dîsa bişîne
+          resume: Dîsa dest pê bike
+      orders:
+        add_user_to_this_order: Xerîdar li vê siparîşê zêde bike
+        all_orders: Hemû Siparîş
+        canceled: Betalkirî
+        fulfilled: Pêkanî
+        no_email_present: Ji kerema xwe navnîşaneke e-nameyê zêde bike da ku lînka dayînê bişînî
+        orders_to_fulfill: Siparîşên ku divê werin pêkanîn
+        partially_refunded: Bi Beşî Vegerandî
+        payment_link_sent: Lînka dayînê ji xerîdar re hat şandin
+        provide_email: Navnîşaneke e-nameyê peyda bike
+        refunded: Vegerandî
+        remove_user_from_this_order: Xerîdar ji vê siparîşê rake
+        unfulfilled: Nepêkanî
+      page_builder:
+        background_color: Rengê paşperdeyê
+        border_bottom_width: Firehiya kenarê jêr
+        border_color: Rengê kenar
+        border_top_width: Firehiya kenarê jor
+        bottom_padding: Valahiya jêr
+        button_alignment: Rêzkirina bişkojkê
+        button_background_color: Rengê paşperdeya bişkojkê
+        button_style: Şêwaza bişkojkê
+        button_text: Nivîsa bişkojkê
+        button_text_color: Rengê nivîsa bişkojkê
+        category: Kategorî
+        description: Danasîn
+        description_alignment: Rêzkirina danasînê
+        desktop_image_alignment: Rêzkirina wêneyê ji bo sermaseyê
+        desktop_logo_height: Bilindahiya logoyê (sermase)
+        heading: Sernav
+        heading_alignment: Rêzkirina sernavê
+        heading_size: Mezinahiya sernavê
+        height: Bilindahî
+        image_click_hint: Tikandina li ser wêneyê dê bikarhêner bişîne rûpel/URL-ya hilbijartî
+        left_aligned: Bi çepê rêzkirî
+        logo_centered: Logo navendî
+        max_video_width_on_desktop: Firehiya herî zêde ya vîdyoyê li sermaseyê
+        maximum_products_to_show: Hejmara herî zêde ya berhemên ku werin nîşandan
+        nav_centered: Navîgasyon navendî
+        not_set: Nehatî danîn
+        separated: Veqetandî
+        show_more_button: Bişkojka gerîna kategoriyê nîşan bide
+        show_taxon_image: Wêneyê kategoriyê nîşan bide
+        text_color: Rengê nivîsê
+        title: Sernav
+        top_padding: Valahiya jor
+        use_description_from_admin: Danasîna ji rêvebirinê bikar bîne
+        vertical_alignment: Rêzkirina stûnî
+        youtube_video_url: URL-ya vîdyoya Youtube
+      personal_details: Hûrgiliyên Kesane
+      price_lists:
+        activate: Çalak bike
+        activated: Lîsteya bihayê hat çalakkirin
+        confirm_activate: Tu bawer î ku dixwazî vê lîsteya bihayê çalak bikî? Ew ê tavilê bandorê li bihayê bike.
+        confirm_deactivate: Tu bawer î ku dixwazî vê lîsteya bihayê neçalak bikî?
+        confirm_schedule: Tu bawer î ku dixwazî vê lîsteya bihayê plan bikî?
+        confirm_unschedule: Tu bawer î ku dixwazî plana vê lîsteya bihayê rakî?
+        deactivate: Neçalak bike
+        deactivated: Lîsteya bihayê hat neçalakkirin
+        schedule: Plan bike
+        scheduled: Lîsteya bihayê hat plankirin
+        unschedule: Planê rake
+      product_translations:
+        coverage: Pêçana wergerê
+        locale: Ziman
+        manage_markets: Bazaran Birêve Bibe
+        no_locales_description: Bazaran bi zimanên zêde saz bike da ku dest bi wergerandina berhemên xwe bikî.
+        no_locales_title: Tu zimanên zêde nehatine sazkirin
+        progress: Pêşketin
+        total: Bi giştî
+        translated: Wergerandî
+      products:
+        active: Çalak
+        all_statuses: Hemû rewş
+        any_stock: Her stokek
+        archived: Arşîvkirî
+        by_status: Li gor rewşê
+        by_stock: Li gor stokê
+        deleted: Jêbirî
+        draft: Hewîn
+        help_bubble: Berhemên hewîn ji bo kirînê peyda nînin. Berhemên çalak zindî ne.
+        in_stock: Di Stokê de
+        inventory:
+          barcode: Barkod (ISBN, UPC, GTIN, hwd.)
+          sku: SKU (Yekeya Hilanîna Stokê)
+        out_of_stock: Ne di Stokê de
+        paused: Rawestandî
+        search_results:
+          no_products: Me tu berhemên ku bi lêgerîna te re lihev bên nedîtin :(
+        seo:
+          placeholder: Sernavek û danasînek zêde bike da ku bibînî ev berhem dibe ku çawa di lîsteya motora lêgerînê de xuya bibe
+        status_form:
+          status: Berhemên hewîn ji bo kirînê peyda nînin. Berhemên çalak zindî ne.
+        status_options:
+          active: Çalak
+          archived: Arşîvkirî
+          draft: Hewîn
+        stores:
+          choose_stores: Hilbijêre ku ev berhem divê li kîjan firotgehan peyda be
+        variants:
+          option_types_link: Ji bo zêdekirina bêtir cureyên vebijarkê ji kerema xwe biçe <a href="%{link}">Cureyên Vebijarkê</a>
+      publishing:
+        caption_hidden_after: Tê rakirin %{date}
+        caption_live: Niha ji xerîdaran re xuya ye
+        caption_not_available: Veşartî — berhem %{product_status} e
+        caption_scheduled: Dibe zindî %{date}
+        caption_unpublished: Di %{date} de hat veşartin
+        caption_window: Zindî %{start} → %{end}
+        empty: Hîn li tu kanala firotinê nehatiye lîstekirin.
+        inactive_marker: Neçalak
+        manage_cta: Birêve Bibe
+        manage_description: Hilbijêre ku kîjan kanalên firotinê vê berhemê lîste bikin. Kanalek bigire da ku li her derê jê rakî.
+        no_channels: Tu kanalên firotinê peyda nînin. Yekê li Mîheng → Kanalên firotinê biafirîne.
+        published_at_label: Weşandin ji
+        status_hidden: Veşartî
+        status_live: Zindî
+        status_not_available: Peyda nîne
+        status_scheduled: Plankirî
+        title: Weşandin
+        unpublished_at_label: Raveşartin di
+      recommended_size: Mezinahiya pêşniyarkirî
+      report_created: Rapora te tê çêkirin. Gava amade be tu yê e-nameyek bi lînka daxistinê bistînî!
+      reset_digital_link_download_limits: Sînorên daxistinê ji nû ve saz bike
+      response_code: Koda Bersivê
+      selected: hilbijartî
+      send_payment_link: Lînka Dayînê Bişîne
+      shipment:
+        please_provide_tracking_details: Berî ku barkirinê wek hatî şandin nîşan bikî ji kerema xwe hûrgiliyên şopandinê peyda bike
+      shipment_transfer:
+        wrong_destination: Cihê çewt
+      show_json: JSON nîşan bide
+      stock_transfers:
+        add_products_tip: Pêşî divê tu cihê armancê hilbijêrî
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> maye (<strong>%{total}</strong> bi giştî)"
+      store_form:
+        company_field:
+          description: Ew qada şîrketê li ser forma navnîşanê di beşa Hesabê Min de û li gava navnîşanê ya tesdîqkirinê nîşan dide.
+          label: Qada navnîşana şîrketê nîşan bide
+        customer_support_email_help: Ev e-name ji serdanvanên Firotgeha te re di beşa Binî de xuya ye
+        new_order_notifications_email_help: Heke tu dixwazî her cara ku kesek Siparîşek bide agahdariyeke e-nameyê bistînî ji kerema xwe navnîşaneke e-nameyê peyda bike ku ew agahdarî jê re were şandin
+        send_consumer_transactional_emails_help: Gava nehatibe nîşankirin, e-nameyên danûstandinê yên mîna piştrastkirina siparîşê û agahdariyên barkirinê ji xerîdaran re nayên şandin
+      store_setup_tasks:
+        add_billing_address: Navnîşana fatûreyê zêde bike
+        add_products: Berheman zêde bike
+        payment_methods:
+          copy: Ji bo berhevkirina dayînan, ji kerema xwe herî kêm yek pêşkêşkarê dayîna serhêl saz bike.
+          done: Her tişt amade ye! Tu dikarî her gav Rêbazên Dayînê yên xwe li ser <a href="%{link}" data-turbo-frame="_top">vê</a> rûpelê birêve bibî.
+          setup: Rêbazên Dayînê Saz Bike
+          title: Ji kerema xwe Rêbazên Dayînê ji bo firotgeha xwe saz bike
+        set_customer_support_email: E-nameya piştgiriya xerîdaran saz bike
+        setup_taxes_collection: Berhevkirina bacê saz bike
+        taxes:
+          copy: Ji bo berhevkirina bacan, ji kerema xwe rêjeyên bacê yên xwe saz bike.
+          done: Her tişt amade ye! Tu dikarî her gav bacên xwe li ser rûpelê <a href="%{link}" data-turbo-frame="_top">mîhengan</a> birêve bibî.
+          setup: Rêjeyên Bacê Saz Bike
+      storefront: Firotgeh
+      successful: Serketî
+      successfully_reset_digital_links_limit: Sînorên daxistinê hatin ji nû ve sazkirin
+      tables:
+        add_filter: Parzûnê zêde bike
+        add_or_group: Koma OR zêde bike
+        apply: Bi cih bîne
+        apply_filters: Parzûnan Bi Cih Bîne
+        ascending: Hilkişîner
+        clear_all: Hemûyan Pak Bike
+        columns: Stûn
+        descending: Daketî
+        enter_value: Nirxê binivîse...
+        filter_builder: Avakerê Parzûnê
+        filters: Parzûn
+        match: Lihevhatin
+        of_the_following: ji yên jêrîn
+        operators:
+          contains: dihewîne
+          does_not_contain: nahewîne
+          ends_with: bi vê bi dawî dibe
+          equals: wekhev e
+          greater_than: mezintir ji
+          greater_than_or_equal: mezintir an wekhev
+          is_any_of: yek ji van e
+          is_empty: vala ye
+          is_none_of: tu yek ji van nîne
+          is_not_empty: vala nîne
+          less_than: kêmtir ji
+          less_than_or_equal: kêmtir an wekhev
+          not_equals: wekhev nîne
+          starts_with: bi vê dest pê dike
+        order: Rêzbendî
+        reset_to_default: Vegere Xwerû
+        select_field: Qadê hilbijêre...
+        sort_by: Rêz bike li gor
+        visible_columns: Stûnên Xuya
+      taxon_rules:
+        all_conditions: hemû mercan
+        any_condition: her mercek
+        available_on: Peyda di
+        match_policies:
+          contains: dihewîne
+          does_not_contain: nahewîne
+          is_equal_to: wekhev e bi
+          is_not_equal_to: wekhev nîne bi
+        on_sale: Li ser firotinê
+        products_must_match: 'Divê berhem lihev bên:'
+        tag: Etîketa berhemê
+      taxon_type: Cureya kategoriyê
+      taxon_types:
+        automatic: Otomatîk
+        automatic_info: Berheman bi awayekî otomatîk li vê kategoriyê zêde bike heke ew bi rêzikên ku te danîne re lihev bên.
+        manual: Destî
+        manual_info: Berheman bi destî saz bike. Tu dikarî wan bi komî zêde bikî an rakî.
+      translations:
+        no_translations_configured: Tu werger nehatine sazkirin. Ji kerema xwe Bazaran saz bike da ku wergeran bikar bînî.
+      upload_new_asset: Medyaya nû bar bike
+      users:
+        filters:
+          search_placeholder: Xerîdaran bi e-name an nav lê bigere
+      utilities:
+        preview: Pêşdîtin
+      variants:
+        search_results:
+          no_variants: Me tu guhertoyên ku bi lêgerîna te re lihev bên nedîtin :(
+      variants_form:
+        add_option:
+          empty: Vebijarkan mîna mezinahî an reng zêde bike
+          not_empty: Vebijarkeke din zêde bike
+        compare_at_price_description: Ev biha ji bo nîşandana bihayê kêmkirî li ser rûpelê berhemê tê bikaranîn.
+        stock_locations_link: Ji bo zêdekirina bêtir cihên stokê ji kerema xwe biçe <a href="%{link}">Cihên Stokê</a>
+        total_inventory_html: 'Embara giştî li cihê %{stock_location}: %{count} peyda ye'
+      vendors:
+        enterprise_feature: Bazara Pir-Firoşkar di Çapa Enterprise de peyda ye
+      webhook_deliveries:
+        delivered_at: Hat radestkirin di
+        delivery_details: Hûrgiliyên Radestkirinê
+        delivery_info: Agahiyên Radestkirinê
+        endpoint_inactive: Nikare ji nû ve biceribîne - xala dawî neçalak e
+        error_type: Cureya Çewtiyê
+        event: Bûyer
+        execution_time: Dema Cîbicîkirinê
+        failed: Têk çû
+        pending: Li benda
+        redeliver_button: Ji nû ve radest bike
+        redelivered: Webhook bi serketî ji nû ve hat radestkirin.
+        request_errors: Çewtiyên Daxwazê
+        request_payload: Barê Daxwazê
+        response_body: Govdeya Bersivê
+        response_code: Koda Bersivê
+      webhook_endpoints:
+        auto_disabled: Ev xala dawî piştî têkçûnên dubare yên radestkirinê bi awayekî otomatîk hat neçalakkirin.
+        back_to_endpoint: Vegere xala dawî
+        deliveries: Radestkirin
+        endpoint_settings: Mîhengên Xala Dawî
+        event_subscriptions: Abonetiyên Bûyeran
+        event_subscriptions_help: Hilbijêre ku kîjan bûyer divê radestkirineke webhook bo vê xala dawî bidin destpêkirin.
+        events: bûyer
+        failed_deliveries: Radestkirinên Têkçûyî
+        health:
+          degraded: "%{percentage}% serketin"
+          disabled: Neçalak
+          failing: "%{percentage}% serketin"
+          healthy: "%{percentage}% serketin"
+          no_deliveries: Tu dane nîne
+        health_label: Tenduristî
+        new: Xala Dawî ya Webhook a Nû
+        re_enable: Ji nû ve çalak bike
+        secret_key: Mifteya Veşartî
+        secret_key_help: Vê mifteyê bikar bîne da ku îmzayên webhook piştrast bikî. Wê ewle bigire û bi awayekî giştî parve neke.
+        send_test: Testê Bişîne
+        subscriptions: Abonetî
+        successful_deliveries: Radestkirinên Serketî
+        test_failed: Şandina webhook a testê têk çû. Ji kerema xwe sazkirina xala dawî kontrol bike.
+        test_sent: Webhook a testê hat şandin. Ji bo encamê radestkirinan kontrol bike.
+      webhooks_subscribers:
+        all_events: Hemû Bûyer
+        new_webhooks_subscriber: Aboneyê Webhookan ê Nû
+        no_events: Tu Bûyer Nîne
+        select_events: Bûyeran hilbijêre
+        subscribe_to_all_events: Abone bibe ji bo hemû bûyeran
+        subscriptions: Abonetî
+        time_of_last_event: Dema Bûyera Dawî
+        webhooks_events: Bûyerên Webhookan
     administration: Administration
     advertise:
     agree_to_privacy_policy: Agree to Privacy Policy
@@ -432,7 +1190,7 @@ ku:
     are_you_sure: Are you sure
     are_you_sure_delete: Are you sure you want to delete this record?
     associated_adjustment_closed: The associated adjustment is closed, and will not be recalculated. Do you want to open it?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Authorisation Failure
     authorized:
     auto_capture:
@@ -567,7 +1325,6 @@ ku:
     date: Date
     date_completed: Date Completed
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Date Range
@@ -607,6 +1364,7 @@ ku:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: Ev koda kûponê li welatê te ne maqûl e
     email: Email
     empty: Empty
     empty_cart: Empty Basket
@@ -620,6 +1378,17 @@ ku:
         could_not_create_taxon: Could not create taxon
         no_payment_methods_available: No payment methods are configured for this environment
         no_shipping_methods_available: No shipping methods available for selected location, please change your address and try again.
+        cannot_delete_default_channel: Kanala berbijar nayê jêbirin. Pêşî kanalek din wek berbijar dabigire.
+        channel_store_mismatch: divê ji heman firotgeyê be
+        invalid_order_routing_rule: rêzikek qeydkirî ya rêvebirina siparîşan nîn e
+        invalid_order_routing_strategy: stratejiyek qeydkirî ya rêvebirina siparîşan nîn e
+        must_be_origin_only: divê bingehek be (şema û hostê) bê rê, lêpirsîn an perçe
+        store_association_can_not_be_changed: Girêdana firotgeyê nayê guhertin
+        store_is_already_set: Firotge berê hatiye danîn
+      services:
+        get_shipping_rates:
+          no_line_items: Ji bo çêkirina Rêjeyên Şandinê divê tu hin Tiştan li Siparîşê zêde bikî
+          no_shipping_address: Ji bo çêkirina Rêjeyên Şandinê divê Siparîş Navnîşanek Şandinê hebe
     errors_prohibited_this_record_from_being_saved:
       one: 1 error prohibited this record from being saved
       other: "%{count} errors prohibited this record from being saved"
@@ -863,6 +1632,7 @@ ku:
         subject: Cancellation of Order
         subtotal:
         total:
+        thanks: Spas ji bo
       confirm_email:
         dear_customer: Dear Customer,\n
         instructions: Please review and retain the following order information for your records.
@@ -871,6 +1641,20 @@ ku:
         subtotal:
         thanks: Thank you for your business.
         total:
+      payment_link_email:
+        message: Ji kerema xwe ji bo tediyekirina siparîşa xwe bişkoka jêrîn bitikîne.
+        message_copy_link: 'Heke bişkok naxebite ji kerema xwe lînka jêrîn jê bigire û li gerokê pê bike:'
+        pay_for_order: Ji bo siparîşê bide
+        subject: 'Lînka tediyeyê ji bo siparîşa #%{number}'
+      store_owner_notification_email:
+        heading: Siparîşek Nû Hat Wergirtin
+        instructions: Te siparîşek nû wergirtiye.
+        order_summary: Kurteya Siparîşa %{number}
+        subject: "%{store_name} siparîşek nû wergirt"
+        thanks: Spas dikim
+      store_team: Tîma %{store_name}
+      subtotal: 'Bin-tevahî:'
+      total: 'Tevahiya Siparîşê:'
     order_not_found: We couldn't find your order. Please try that action again.
     order_number: Order %{number}
     order_processed_successfully: Your order has been processed successfully
@@ -925,6 +1709,9 @@ ku:
       pending: pending
       processing: processing
       void: void
+      complete: Qediyayî
+      partially_refunded: Bi Beşî Vegerandî
+      refunded: Vegerandî
     payment_updated: Payment Updated
     payments: Payments
     pending:
@@ -1011,6 +1798,24 @@ ku:
       user_logged_in:
         description: Available only to logged in users
         name: User Logged In
+      category:
+        description: Siparîş berhemên di kategoriyên diyarkirî de digire nav xwe
+        name: Kategorî
+      country:
+        description: Bi siparîşên bi navnîşana şandinê ya li welatek diyarkirî sînorkirî
+        name: Welat
+      currency:
+        description: Bi siparîşên bi diravek diyarkirî sînorkirî
+        name: Diravan
+      customer:
+        description: Tenê ji bo mişteriyên diyarkirî berdest e
+        name: Mişterî
+      customer_group:
+        description: Tenê ji bo mişteriyên di koma/komên mişterî yên diyarkirî de berdest e
+        name: Koma/Komên Mişteriyan
+      customer_logged_in:
+        description: Tenê ji bo mişteriyên têketî berdest e
+        name: Tenê mişteriyên têketî
     promotion_uses:
     promotionable:
     promotions: Promotions
@@ -1025,7 +1830,6 @@ ku:
     quantity: Quantity
     quantity_returned: Quantity Returned
     quantity_shipped: Quantity Shipped
-    quick_search:
     rate: Rate
     reason: Reason
     receive: receive
@@ -1053,6 +1857,8 @@ ku:
         refund_summary:
         subject:
         total_refunded:
+        store_team: Tîma %{store_name}
+        thanks: Spas ji bo karûbarê te.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1134,6 +1940,8 @@ ku:
         thanks: Thank you for your business.
         track_information: 'Tracking Information: %{tracking}'
         track_link: 'Tracking Link: %{url}'
+        shipping_method: 'Rêbaza şandinê: %{shipping_method}'
+        store_team: Tîma %{store_name}
     shipment_state: Shipment State
     shipment_states:
       backorder: backorder
@@ -1210,6 +2018,7 @@ ku:
       returned:
       shipped:
       void:
+      shipment: Barkirin
     states: Counties
     states_required: County Required
     status: Status
@@ -1223,7 +2032,11 @@ ku:
     stock_movements: Stock Movements
     stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
     stock_successfully_transferred: Stock was successfully transferred between locations.
-    stock_transfer: Stock Transfer
+    stock_transfer:
+      errors:
+        must_have_variant: Divê tu herî kêm guhertoyek zêde bikî
+        same_location: nikare wek cihê mebestê be
+        variants_unavailable: Hin guherto li %{stock} berdest nînin
     stock_transfers: Stock Transfers
     stop: Stop
     store: Store
@@ -1336,3 +2149,685 @@ ku:
     zipcode: Post Code
     zone: Zone
     zones: Zones
+    add_gift_card: Karta Diyariyê Zêde Bike
+    add_new_address: Navnîşaneke nû zêde bike
+    add_selected: Hilbijartiyan Zêde Bike
+    add_selected_products: Berhemên hilbijartî zêde bike
+    add_selected_variant: Guhertoya hilbijartî zêde bike
+    added_at: Lê Hatiye Zêdekirin
+    adjustment_amount_help: Nirxên erênî bac in, nirxên neyînî krêdî ne.
+    adjustment_closed_description: Sererastkirin girtî ye û dîsa nayê hesibandin.
+    adjustment_open_description: Sererastkirin vekirî ye û dîsa wê were hesibandin.
+    admin_language_help: Zimanê ku panela rêvebirinê ya te pê tê nîşandan. Tenê bandorê li tişta ku tu dibînî dike, ne li firotgehê an karmendên din.
+    admin_locale_help: Zimanê ku ji bo panela rêvebirinê tê bikaranîn. Heke nehatibe danîn, vedigere zimanê sepanê.
+    all_time: Hemû dem
+    apis:
+      admin: API ya Rêvebirinê
+      store: API ya Firotgehê
+    applied_to: Bi cih hat ser
+    assigned_variants: Guhertoyên veqetandî
+    assigned_variants_help: Guhertoyên ku ev wêne wan temsîl dike hilbijêre. Vala bihêle da ku ji bo hemû guhertoyan bê sepandin.
+    automatic_promotion: Otomatîk
+    breadcrumbs: Rêzika rê
+    cancel_order: Siparîşê betal bike
+    cannot_ship: Barkirin nikare bê şandin
+    card_expiration_placeholder: MM/SSSS
+    categorization: Kategorîzekirin
+    change_password: Şîfreyê biguherîne
+    close_sidebar: Kêleka kenarê bigire
+    contact_information: Agahiyên têkiliyê
+    contact_us: Bi me re têkilî daynin
+    continue_selling_when_out_of_stock: Gava stok neman berdewamî firotinê bike
+    copied: Hat kopîkirin!
+    copy_id: ID kopî bike
+    custom_domains: Navperên taybetî
+    customer_could_not_be_removed_from_group: Xerîdar ji komê nehat rakirin
+    customer_group_rule:
+      choose_customer_groups: 'Koma(yên) xerîdaran a ku divê ev pêşkêşî jê re bê sepandin hilbijêre:'
+    customer_removed_from_group: Xerîdar ji komê hat rakirin
+    customers_added_to_group:
+      one: "%{count} xerîdar li komê hat zêdekirin"
+      other: "%{count} xerîdar li komê hatin zêdekirin"
+    customers_removed_from_group:
+      one: "%{count} xerîdar ji komê hat rakirin"
+      other: "%{count} xerîdar ji komê hatin rakirin"
+    days_ago: Roj berê
+    delete_selected: Hilbijartiyan jê bibe
+    digital_assets_help: Berhemên dîjîtal pel in ku piştî kirînê dikarin ji aliyê xerîdaran ve werin daxistin.
+    dimension_units:
+      centimeter: Santîmetre (cm)
+      foot: Ling (ft)
+      inch: Înç (in)
+      millimeter: Mîlîmetre (mm)
+    display_settings: Mîhengên nîşandanê
+    domains: Navper
+    draft_orders: Siparîşên Hewîn
+    edit_address: Navnîşanê biguherîne
+    edit_prices: Bihayan Biguherîne
+    edit_refund: Vegerandinê biguherîne
+    estimated_delivery_time: Dema radestkirinê ya texmînî
+    excerpt: Kurteçirok
+    favicon: Favicon
+    filtered_records: Tomarên parzûnkirî
+    forbidden_message: Tu ji bo gihîştina vê rûpelê ne destûrdar î.
+    general_information: Agahiyên giştî
+    get_back_to_the: Vegere
+    homepage: Rûpela serî
+    internal_server_error: Çewtiya Serverê ya Hundir
+    internal_server_error_message: Server rastî çewtiyeke hundir hat û nikarîbû daxwaza te biqedîne.
+    invitation_expired:
+      body: Ev lînka vexwendinê êdî ne derbasdar e. Ji kerema xwe ji kesê ku tu vexwendî bixwaze ku yeke nû bişîne.
+      heading: Vexwendin nederbasdar an dema wê derbas bûye
+    invitation_resent: Vexwendin dîsa hat şandin!
+    issued_on: Hat Derxistin Di
+    log_in: Têkeve
+    manual_adjustment: Sererastkirina Destî
+    manual_adjustments: Sererastkirinên Destî
+    mark_as_default: Wek xwerû nîşan bike
+    move_variant_to: Guhertoyê bibe
+    new_allowed_origin: Jêderka Destûrkirî ya Nû
+    new_api_key: Mifteya API ya Nû
+    new_balance: Balansa nû
+    new_billing_address: Navnîşana Fatûreyê ya Nû
+    new_channel: Kanala firotinê ya nû
+    new_custom_domain: Navpera Taybetî ya Nû
+    new_customer_group: Koma Xerîdaran a Nû
+    new_digital_asset: Berhema dîjîtal a nû
+    new_domain: Navpera nû
+    new_gift_card: Karta Diyariyê ya Nû
+    new_line_item: Hêmana rêzê zêde bike
+    new_metafield_definition: Pênaseya Metafieldê ya Nû
+    new_nested_taxon: Jêr-kategoriya hêlandî ya nû
+    new_page: Rûpela Nû
+    new_password: Şîfreya nû
+    new_policy: Polîtîkaya Nû
+    new_reimbursement_type: Cureya Vegerandinê ya Nû
+    new_role: Rola Nû
+    new_shipping_address: Navnîşana Barkirinê ya Nû
+    new_store: Firotgeha Nû
+    new_store_credit: Krêdiya Firotgehê ya Nû
+    new_store_credit_category: Kategoriya Krêdiya Firotgehê ya Nû
+    new_webhook_endpoint: Xala Dawî ya Webhook a Nû
+    no_adjustments: Tu sererastkirin nîne
+    no_billing_address_available: Tu navnîşana fatûreyê peyda nîne
+    no_customers_found: Tu xerîdar nehatin dîtin
+    no_email_provided: Tu e-name nehatiye dayîn
+    no_internal_note: Tu nota hundir nîne
+    no_products_added: Tu berhem nehatine zêdekirin
+    no_products_in_price_list: Tu berhem di vê lîsteya bihayê de nîne
+    no_promotions_applied: Tu pêşkêşî nehatiye sepandin
+    no_saved_cards: Tu kartên tomarkirî nîne
+    no_shipping_address_available: Tu navnîşana barkirinê peyda nîne
+    no_taxes: Tu bac nîne
+    no_users_selected: Tu bikarhêner nehatine hilbijartin
+    not_risky: Ne metirsîdar
+    oauth_applications: Sepanên OAuth
+    option_type_filterable_info: Gava cureyek vebijarkê wek Parzûnbar were danîn, ji serdanvanên firotgeha te re vebijarka parzûnkirina taxonek berheman li gor cureya vebijarkê tê pêşkêşkirin. Mînakeke tîpîk a vê dê parzûnkirina cilan li gor mezinahî û reng be.<br><br><b>Ji kerema xwe Bala Xwe Bidin:</b> Parzûn dê tenê di taxonên firotgehê de xuya bibin ên ku berhemên bi vê cureya vebijarkê ya sazkirî dihewînin.
+    option_type_kind_info: Kontrol dike ka vebijark li firotgehê çawa tê nîşandan. Swatchên rengan çembersên rengan nîşan didin, bişkojk çîpên tikandbar nîşan didin, û dropdown menûyeke hilbijartinê nîşan dide.
+    option_type_kinds:
+      buttons: Bişkojk
+      color_swatch: Swatcha Rengê
+      dropdown: Dropdown
+    or_select_other_address: an navnîşaneke din hilbijêre
+    order_email_resent_error: E-nameya piştrastkirina siparîşê tenê ji bo siparîşên qediyayî dikare bê şandin
+    order_line_items: Hêmanên Rêzê yên Siparîşê
+    page_not_found: Bibore! Rûpela ku tu lê digerî nayê dîtin.
+    page_not_found_message: Ev rûpel tenê tune ye.
+    payment_amount: Mîqdara dayînê
+    payment_provider_settings: Mîhengên Pêşkêşkarê Dayînê
+    payment_type: Cureya dayînê
+    payments_gateway_processing_errors: Çewtiyên pêvajoykirina %{payment_method_name}
+    personal_details: Hûrgiliyên kesane
+    previously_used_card: Kartên Berê Hatî Bikaranîn
+    price_list_form:
+      match_policies:
+        all: Bi hemû van rêzikan re lihev bê
+        any: Bi her yek ji van rêzikan re lihev bê
+    price_list_statuses:
+      active: Çalak
+      draft: Hewîn
+      inactive: Neçalak
+      scheduled: Plankirî
+      scheduled_active: Plankirî (Çalak)
+    products_added: Berhem hatin zêdekirin
+    products_removed: Berhem hatin rakirin
+    products_sort_options:
+      best_selling: Herî Pir Firotî
+      manual: Destî
+      name_a_z: Bi alfabeyê, A-Z
+      name_z_a: Bi alfabeyê, Z-A
+      newest_first: Herî nû
+      oldest_first: Herî kevn
+      price_high_to_low: Biha (zêde-kêm)
+      price_low_to_high: Biha (kêm-zêde)
+      relevance: Têkildarî
+    promotion_cloned: Pêşkêşî hat dubarekirin
+    promotion_not_cloned: 'Pêşkêşî nehat dubarekirin. Sedem: %{error}'
+    purchased_quantity: Hejmara Kirîn
+    remove_condition: Mercê rake
+    return_authorization_states:
+      authorized: Destûrkirî
+      canceled: Betalkirî
+    same_as_shipping_address: Wek navnîşana barkirinê
+    search_customers: Li xerîdaran bigere
+    search_engine_listing: Lîsteya motora lêgerînê
+    search_products: Li berheman bigere
+    select_existing_address: Navnîşana heyî hilbijêre
+    select_key_type: Cureya mifteyê hilbijêre
+    select_user: Xerîdar hilbijêre
+    select_vendor: Firoşkar hilbijêre
+    send_payment_link: Lînka dayînê bişîne
+    send_payment_link_title: Lînka dayînê bi e-nameyê ji xerîdar re bişîne. Ew ê bikaribin dayînê paşê biqedînin.
+    service_unavailable: Karûbar Peyda Nîne
+    service_unavailable_message: Server demkî nikare daxwaza te bicih bîne ji ber demxistina lênihêrînê an pirsgirêkên kapasîteyê. Ji kerema xwe paşê dîsa biceribîne.
+    shipment_successfully_shipped: Barkirin bi serketî hat şandin
+    show_details: Hûrgiliyan nîşan bide
+    show_report: Rapora nîşan bide
+    standards_and_formats: Standard û format
+    standards_and_formats_help: Qada demê, pergala yekeya xwerû û yekeya giraniyê ji bo firotgeha xwe saz bike.
+    start_typing_to_search_for_products: Dest bi nivîsînê bike da ku li berheman bigerî
+    start_typing_to_search_for_variants: Dest bi nivîsînê bike da ku li guhertoyan bigerî
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Tu nikarî krêdiya firotgehê ya ku berê hatiye bikaranîn biguherînî
+        unable_to_create: Nikare krêdiya firotgehê biafirîne
+        unable_to_delete: Nikare krêdiya firotgehê jê bibe
+        unable_to_update: Nikare krêdiya firotgehê nû bike
+      remaining: Maye
+      allocated: Hat zêdekirin
+      authorized: Destûrdayî
+      captured: Bikaranî
+      credit: Kredî
+      eligible: Maqûl
+    store_credit_categories: Kategoriyên Krêdiya Firotgehê
+    store_details: Hûrgiliyên firotgehê
+    store_errors:
+      unable_to_update: Nikare firotgehê nû bike.
+    store_form:
+      customer_support_email_help: Ev e-name ji serdanvanên Firotgeha te re di beşa Binî de xuya ye
+      new_order_notifications_email_help: Heke tu dixwazî her cara ku kesek Siparîşek bide agahdariyeke e-nameyê bistînî ji kerema xwe navnîşaneke e-nameyê peyda bike ku ew agahdarî jê re were şandin
+    store_name_help: Ev navê firotgeha te ye. Ew ê di serî û binî de were nîşandan.
+    track_quantity: Hejmarê bişopîne
+    transaction_id_help: Ev ID ya danûstandinê ye ku di dergehê dayînê yê aliyê sêyemîn de hat afirandin.
+    true_label: RAST
+    type_to_search_customers: Binivîse da ku li xerîdaran bigerî
+    type_to_search_products: Binivîse da ku li berheman bigerî
+    unit_system_help: Ev ê wek pergala yekeya xwerû ji bo firotgeha te were bikaranîn. Tu dikarî vê yekê li gor her berhemê biguherînî.
+    unit_systems:
+      imperial_system: Pergala Imperial
+      metric: metrîk
+      metric_system: Pergala Metrîk
+    unprocessable_entity: Hêmana Nepêvajoybar
+    unprocessable_entity_message: Daxwaza te nikarîbû were pêvajoykirin. Ji kerema xwe formê ji bo çewtiyan kontrol bike û dîsa biceribîne.
+    update_address: Navnîşanê nû bike
+    update_billing_address: Navnîşana fatûreyê nû bike
+    update_contact_information: Agahiyên têkiliyê nû bike
+    update_shipping_address: Navnîşana barkirinê nû bike
+    use_shipping_address: Navnîşana Barkirinê Bikar Bîne
+    vendors: Firoşkar
+    view_full_size: Mezinahiya tevahî bibîne
+    view_store: Firotgehê bibîne
+    visits: Serdan
+    weight_unit_help: Ev ê wek yekeya giraniyê ya xwerû ji bo firotgeha te were bikaranîn. Tu dikarî vê yekê li gor her berhemê biguherînî.
+    weight_units:
+      gram: Gram (g)
+      kilogram: Kîlogram (kg)
+      ounce: Ûns (oz)
+      pound: Paund (lb)
+    accepts_email_marketing: Bazarkirina bi e-nameyê qebûl dike
+    add_customers: Mişteriyan Zêde Bike
+    add_products: Berheman Zêde Bike
+    add_store: Firotgeyek Nû
+    add_store_credit: Krediya Firotgeyê Zêde Bike
+    added_to_cart: Bi serfirazî li selikê hat zêdekirin!
+    address: Navnîşan
+    address_book:
+      add_house_number: Heke heye, hejmara malê zêde bike
+    address_not_owned_by_user: Navnîşana diyarkirî ne ji vî bikarhênerî ye.
+    addresses: Navnîşan
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (Di Bihayê de Tê de Ye)"
+    adjustments_deleted: Sererastkirin Hatin Jêbirin
+    admin_locale: Zimanê rêveberiyê
+    all_products: Hemû berhem
+    allowed_origin: Bingeha Destûrdayî
+    allowed_origins: Bingehên Destûrdayî
+    analytics: Analîtîk
+    api_key: Mifteya API
+    api_key_no_current_key: Tu mifteya API ev daxwaz piştrast nekir
+    api_key_scopes_immutable: piştî çêkirina mifteyê nayê guhertin; mifteyek nû bi qadên ku hewce ne çêbike û vê betal bike
+    api_keys: Mifteyên API
+    apply: Bisepîne
+    apply_only_on_full_priced_items: Tenê li ser tiştên bi biha-tam bisepîne
+    apply_store_credit: Krediya Firotgeyê Bisepîne
+    assets: Medya
+    attachments: Pêvek
+    author: Nivîskar
+    availability: berdestî
+    available: Berdest
+    balance: Hesab
+    barcode: Barkod
+    brand: Marka
+    canceled: Hatiye betalkirin
+    cannot_be_destroyed: Siparîş nayê jêbirin.
+    cannot_empty: Siparîş nayê valakirin.
+    cannot_empty_completed_order: Siparîş berê hat pêvajokirin loma nayê valakirin
+    cannot_return_more_than_bought_quantity: Ji mîqdara kirîn zêdetir nayê vegerandin.
+    cart_already_updated: Selik berê hat nûkirin.
+    cart_line_item:
+      discontinued: "%{li_name} hat rakirin ji ber ku rawestiyabû"
+      out_of_stock: "%{li_name} hat rakirin ji ber ku temam bûbû"
+    change: Biguherîne
+    channel: Kanala firotinê
+    channels: Kanalên firotinê
+    checkout_requirements:
+      email_required: Navnîşana e-nameyê pêwîst e
+      line_items_required: Herî kêm tiştek li selika xwe zêde bike
+      payment_required: Rêbazek tediyeyê zêde bike
+      ship_address_required: Navnîşana şandinê pêwîst e
+      shipping_method_required: Ji bo hemû şandinan rêbazek şandinê hilbijêre
+    clear: Paqij bike
+    clear_all: Hemûyan paqij bike
+    closed: Girtî
+    color_code: Koda Rengê
+    colors: Reng
+    compare_at_amount: Mîqdara berawirdkirinê
+    compare_at_price: Bihayê berawirdkirinê
+    contact: Têkilî
+    contact_phone: Telefona têkilî
+    content: Naverok
+    copy: Jê bigire
+    copy_link: Lînkê jê bigire
+    coupon_code_used: Koda kûponê ya ku te têxist berê hat bikaranîn. Ji kerema xwe dîsa biceribîne.
+    coupon_codes: Kodên kûponê
+    create_new: Yeke nû çêbike
+    created_by: Hat çêkirin ji aliyê
+    credit_allowed: Krediya destûrdayî
+    credited: Hat krediyekirin
+    currencies: Diravan
+    currency_not_supported_by_store: ji aliyê vê firotgeyê ve nayê piştevankirin
+    current_password: Şîfreya niha
+    customer_group: Koma Mişteriyan
+    customer_groups: Komên Mişteriyan
+    customer_mailer:
+      password_reset_email:
+        action: Şîfreyê Nû Bike
+        expiry_notice: Ev lînka nûkirina şîfreyê dê di demek kurt de biqede. Heke te ev daxwaz nekiriye, tu kar pêwîst nake.
+        greeting: Silav %{name},
+        ignore_notice: Heke te nûkirina şîfreyê daxwaz nekiriye, tu dikarî bi ewlehî vê e-nameyê piştguh bikî. Şîfreya te nayê guhertin.
+        instructions: Me daxwazek ji bo nûkirina şîfreya te wergirt. Ji bo hilbijartina şîfreyek nû bişkoka jêrîn bitikîne.
+    customer_support_email: E-nameya Piştgiriya Mişterî
+    customers: Mişterî
+    cvv: CVV
+    default_billing_address: Navnîşana fatûreyê ya berbijar
+    default_country: Welatê Berbijar
+    default_currency: Diravê berbijar
+    default_locale: Zimanê berbijar
+    default_shipping_address: Navnîşana şandinê ya berbijar
+    default_stock_location_name: Cihê firotgeyê
+    default_wishlist_name: Lîsteya Xwestekan
+    deleted: Hatiye jêbirin
+    developers: Pêşvebir
+    digital:
+      digital_delivery: Radestkirina Dîjîtal
+    digital_assets: Mêlakên dîjîtal
+    discontinue_on: Rawestandin di
+    discontinued: Rawestandî
+    discontinued_variants_present: Hin tiştên vê siparîşê berhemên wan ên ku êdî berdest nînin hene.
+    discount: Daxistin
+    discounts: Daxistin
+    display_delivery_range: Radestkirin di %{delivery_range} rojên kar de
+    display_on: Nîşan bide li
+    domain: Domên
+    done: Temam
+    download: Daxîne
+    draft: Reşnivîs
+    duplicate: Dubare bike
+    duplicating: Dubarekirin
+    email_marketing: Bazarkirina bi e-nameyê
+    emails: E-name
+    ends_at: Diqede di
+    enter: Têkeve
+    error_user_destroy_with_orders: Bikarhênerê ku bi siparîşan ve girêdayî ye nayê jêbirin
+    error_user_does_not_have_any_store_credits: Bikarhêner tu krediya firotgeyê ya berdest nîn e
+    estimated_transit_business_days: Rojên kar ên texmînî yên veguhastinê
+    existing_address: Navnîşana heyî
+    expired: Qediyaye
+    expires_at: Diqede di
+    export: Hinardekirin
+    export_mailer:
+      export_done:
+        message: Karek baş, hinardekirina te amade ye! Ji kerema xwe ji bo daxistina wê lînka jêrîn bikar bîne.
+        subject: Hinardekirina te %{export_number} bi serfirazî hat pêvajokirin!
+      greeting: Silav %{user_name},
+      thanks: Spas dikim,
+    facebook: Facebook
+    featured_image: Wêneya taybet
+    field: Qad
+    filled: Tijekirî
+    filterable: Parzûnbar
+    firstname: Nav
+    fonts: Tîpan
+    footer: Binî
+    forbidden: Gihîştin hat redkirin
+    free: Belaş
+    from: Ji
+    generate_code: Koda kûponê çêbike
+    gift_card: Karta Diyariyê
+    gift_card_already_redeemed: Karta Diyariyê berê hat bikaranîn.
+    gift_card_applied: Karta Diyariyê bi serfirazî li siparîşa te hat sepandin!
+    gift_card_batch: Koma Kartên Diyariyê
+    gift_card_customer_not_logged_in: Karta Diyariyê bi bikarhênerê mêvan nayê sepandin.
+    gift_card_expired: Karta Diyariyê qediyaye.
+    gift_card_mismatched_currency: Karta Diyariyê bi diravê niha nayê sepandin.
+    gift_card_mismatched_customer: Ev karta diyariyê bi bikarhênerek din ve girêdayî ye.
+    gift_card_not_found: Karta Diyariyê nehat dîtin.
+    gift_card_removed: Karta Diyariyê bi serfirazî ji siparîşa te hat rakirin
+    gift_card_using_store_credit_error: Piştî ku te krediya firotgeyê sepand, tu nikarî Karta Diyariyê bisepînî.
+    gift_cards: Kartên Diyariyê
+    hide: Veşêre
+    idempotency_key_reused: Ev Idempotency-Key berê bi parametreyên daxwazê yên cûda hatiye bikaranîn.
+    immediately: Yekser
+    import: Înport bike
+    in_stock: Di Embarê de
+    instagram: Instagram
+    integrations: Entegrasyon
+    internal_note: Têbîniya Hundirîn
+    internationalization: Navneteweyîkirin
+    invitation_accepted: Vexwendin hat qebûlkirin!
+    invitation_mailer:
+      greeting: Silav %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} vexwendina te ya beşdarbûna %{resource_name} qebûl kir"
+        subject: "%{invitee_name} vexwendina te ya beşdarbûna %{resource_name} qebûl kir"
+      invitation_email:
+        body: "%{inviter_name} tu vexwendî ku beşdarî %{resource_name} bibî"
+        link_description: 'Ji bo qebûlkirina vê vexwendinê, ji kerema xwe lînka jêrîn bitikîne:'
+        subject: Vexwendin ji bo beşdarbûna %{resource_name}
+      thanks: Spas dikim,
+    invitations: Vexwendin
+    invited_by: Hat vexwendin ji aliyê
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Mifte
+    kind: Cure
+    label: Etîket
+    language: Ziman
+    lastname: Paşnav
+    line_item: Tişt
+    line_items: Tişt
+    link: Lînk
+    live: Zindî
+    locale: Ziman
+    locale_not_supported_by_store: ji aliyê vê firotgeyê ve nayê piştevankirin
+    logo: Logo
+    mail_from_address: Navnîşana ji ku e-name tê
+    mailer_logo: Logoya e-nameyê (tenê wêneyên JPG an PNG)
+    make_active_at: Çalakkirin di
+    manual: Bi destan
+    market: Bazar
+    market_ids: Bazaran
+    markets: Bazaran
+    master: Serekî
+    max: Herî zêde
+    max_quantity: Mîqdara Herî Zêde
+    me_no_current_user: Tu bikarhênerê rêveberiyê ev daxwaz piştrast nekir
+    media: Medya
+    metafield_definitions: Pênaseyên Metafield
+    metafields: Metafield
+    min: Herî kêm
+    min_quantity: Mîqdara Herî Kêm
+    missing_return_authorization: Destûra Vegerandinê ji bo %{item_name} kêm e.
+    move: Bigêre
+    mutable: Guhêrbar
+    navigation: Navîgasyon
+    never: Tu carî
+    new_address: Navnîşana nû
+    new_order_notifications_email: E-nameya Agahdariyên Siparîşa Nû
+    new_price_list: Lîsteya Bihayan a Nû
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Silav,
+        ignore_disclaimer: Heke te ev daxwaz nekiriye, ji kerema xwe vê e-nameyê piştguh bike.
+        instructions: Ji kerema xwe ji bo piştrastkirina navnîşana e-nameya xwe bişkoka jêrîn bitikîne.
+        message_copy_link: 'Heke bişkok naxebite ji kerema xwe lînka jêrîn jê bigire û li gerokê pê bike:'
+        store_team: Tîma %{store_name}
+        subject: Navnîşana e-nameya xwe piştrast bike
+        thanks: Spas dikim
+        verify_email_address_link: Navnîşana e-nameyê piştrast bike
+    newsletter_subscribers: Aboneyên Newsletterê
+    no_cc_type: N/A
+    no_report_data: Tu daneya raporê tune
+    number: Hejmar
+    ok: OK
+    only_active_products_can_be_added_to_cart: Berhemên reşnivîs û arşîvkirî nayên li selikê zêdekirin, ji kerema xwe pêşî berhemê wek çalak nîşan bike.
+    option_name: Navê vebijarkê
+    order_routing:
+      strategies:
+        legacy: Kevneşopî
+        rules: Rêzik (bi rêzkirî)
+    origin: Bingeh
+    other: Yên din
+    outstanding_balance: Hesabê Mayî
+    page: Rûpel
+    pages: Rûpel
+    payment_source: Çavkaniya tediyeyê
+    payment_total: Tevahiya Tediyeyê
+    permissions: Destûr
+    policies: Polîtîka
+    preview: Pêşdîtin
+    price_lists: Lîsteyên Bihayan
+    price_rules:
+      customer_group_rule:
+        description: Bihayê li komên mişterî yên diyarkirî bisepîne
+    prices: Biha
+    pricing: Bihadanîn
+    privacy_policy: Polîtîkaya Nepenîtiyê
+    processing: Tê pêvajokirin
+    product_name: Navê Berhemê
+    product_translations: Wergerên Berhemê
+    products_cannot_be_shipped: Em niha nikarin %{product_names} ji cihê te yê niha re bişînin. Ji kerema xwe navnîşana şandinê biguherîne an %{product_names} ji selika xwe rake.
+    promotion_already_used: Tu nikarî kampanyayek ku berê hatiye sepandin jê bibî
+    promotion_category: Kategoriya Kampanyayê
+    promotion_label: Kampanya (%{name})
+    published_at: Hat weşandin di
+    query: Lêpirsîn
+    refund_amount: Mîqdara Vegerandinê
+    remove_gift_card_on_completed_order_error: Piştî ku siparîş hat danîn tu nikarî karta diyariyê rakî
+    report_mailer:
+      greeting: Silav %{user_name},
+      report_done:
+        message: Ji kerema xwe ji bo daxistina wê lînka jêrîn bikar bîne.
+        subject: Raporta te %{report_name} amade ye
+      thanks: Spas dikim,
+    report_names:
+      products_performance: Performansa berheman
+      sales_total: Tevahiya firotinê
+    required: "*"
+    required_fields: qadên pêwîst
+    resellable: Ji nû ve firotbar
+    resource: Çavkanî
+    return_authorization_canceled: Destûra vegerandinê hat betalkirin
+    return_item_order_not_completed: Divê siparîşa tişta vegerandinê temam bûbe
+    returns_policy: Polîtîkaya Vegerandinê
+    role_id: ID ya Rolê
+    row: Rêz
+    sale: Firotin
+    saving: Tomarkirin
+    scopes: Qad
+    search_by: 'Lêgerîn bi:'
+    security: Ewlehî
+    seed:
+      shipping:
+        categories:
+          default: Berbijar
+          digital: Dîjîtal
+    selected_quantity_not_available: ji %{item} ya hilbijartî berdest nîn e.
+    send_consumer_transactional_emails: E-nameyên Danûstandinê yên Mişterî Bişîne
+    seo: SEO
+    seo_title: Sernavê SEO
+    ship_to: 'Şandin ji bo:'
+    shipping_policy: Polîtîkaya Şandinê
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (bi %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Herêma Şandinê
+    show_discontinued: Yên Rawestandî Nîşan Bide
+    sign_up: Tomar Bibe
+    site_name: Navê malperê
+    size: Mezinahî
+    social: Civakî
+    sort_by: Rêz bike li gorî
+    square_image: Wêneya çargoşe
+    starts_at: Dest pê dike di
+    state_changes: Guhertinên Rewşê
+    stock_items: Tiştên Embarê
+    store_credit_events: Bûyerên Krediya Firotgeyê
+    store_credit_name: Krediya Firotgeyê
+    store_credit_payment_method:
+      currency_mismatch: Diravê krediya firotgeyê bi diravê siparîşê re lê nayê
+      insufficient_authorized_amount: Ji mîqdara destûrdayî zêdetir nayê girtin
+      insufficient_funds: Mîqdara mayî ya krediya firotgeyê têra nake
+      successful_action: Krediya firotgeyê ya serfiraz %{action}
+      unable_to_credit: 'Koda nayê krediyekirin: %{auth_code}'
+      unable_to_find: Krediya firotgeyê nehat dîtin
+      unable_to_find_for_action: Krediya firotgeyê ji bo koda destûrê %{auth_code} ji bo kar %{action} nehat dîtin
+      unable_to_void: 'Koda nayê betalkirin: %{auth_code}'
+    store_credits: Krediyên Firotgeyê
+    store_default: Firotgeha berbijar
+    store_name: Navê firotgeyê
+    stores: Firotge
+    subscribed: Aboneyî
+    support: Piştgirî
+    supported_currencies: Diravên Piştevankirî
+    supported_locales: Zimanên Piştevankirî
+    tags: Etîket
+    tax_inclusive: Bi bacê re
+    taxes: Bac
+    taxonomy_brands_name: Marka
+    taxonomy_categories_name: Kategorî
+    taxonomy_collections_name: Berhevok
+    terms_of_service: Mercên Karûbarê
+    theme: Tema
+    themes: Tema
+    timezone: Qada demê
+    title: Sernav
+    to: Bo
+    translations: Werger
+    twitter: Twitter
+    unit: Yeke
+    unit_system: Sîstema yekeyan
+    unlimited: Bêsînor
+    updated_at: Hat nûkirin di
+    url: URL
+    used: Bikaranî
+    user_ids: Bikarhêner
+    vendor: Firoşkar
+    verified: Piştrastkirî
+    verified_at: Hat piştrastkirin di
+    view: Bibîne
+    visibility: Xuyabûn
+    webhook_endpoints: Xalên Dawî yên Webhook
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Hat neçalakkirin di
+        heading: Xala Dawî ya Webhook Hat Neçalakkirin
+        instructions: Ji kerema xwe URL û karûbarê xala dawî kontrol bike, paşê wê di Mîheng → Pêşvebir → Webhook de ji nû ve çalak bike.
+        message: Xala dawî ya webhook "%{endpoint_name}" piştî têkçûnên dubare yên radestkirinê bixweber hat neçalakkirin.
+        name_label: Nav
+        reason_label: Sedem
+        subject: 'Xala dawî ya webhook hat neçalakkirin: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhook
+    weight_unit: Yekeya giraniyê
+    wishlist: Lîsteya Xwestekan
+    zipcode_required: Koda Postê Pêwîst e
+    zone_ids: Herêman
+    api:
+      cannot_delete: "%{model} nayê jêbirin"
+      current_password_invalid: Şîfreya niha nederbasdar e an kêm e
+      gateway_error: 'Pirsgirêkek bi dergehê tediyeyê re çêbû: %{text}'
+      invalid_api_key: Mifteya API ya nederbasdar (%{key}) hat diyarkirin.
+      invalid_resource: Çavkaniya nederbasdar. Ji kerema xwe çewtiyan rast bike û dîsa biceribîne.
+      invalid_taxonomy_id: ID ya taksonomiyê nederbasdar e.
+      must_specify_api_key: Divê tu mifteyek API diyar bikî.
+      negative_quantity: mîqdar neyînî ye
+      newsletter_verification_token_invalid: Tokena piştrastkirina newsletterê nederbasdar e an qediyaye.
+      order:
+        could_not_transition: Siparîş nehat veguhastin. Ji kerema xwe çewtiyan rast bike û dîsa biceribîne.
+        insufficient_quantity: Tiştek di selika te de êdî ne berdest e.
+        invalid_shipping_method: Rêbaza şandinê ya nederbasdar hat diyarkirin.
+      password_reset_requested: Heke ji bo wê e-nameyê hesabek hebe, talîmatên nûkirina şîfreyê hatin şandin.
+      password_reset_token_invalid: Tokena nûkirina şîfreyê nederbasdar e an qediyaye.
+      payment:
+        credit_over_limit: Ev tediye tenê heta %{limit} dikare were krediyekirin. Ji kerema xwe mîqdarek kêmtir an wekhev vê hejmarê diyar bike.
+        update_forbidden: Ev tediye nayê nûkirin ji ber ku ew %{state} ye.
+      record_not_found: "%{model} nehat dîtin"
+      redirect_url_not_allowed: URL ya beralîkirinê ne ji bingehek destûrdayî ya vê firotgeyê ye.
+      resource_not_found: Çavkaniya ku te lê digeriya nehat dîtin.
+      shipment:
+        cannot_ready: Şandin nayê amadekirin.
+      shipment_transfer_errors_occurred: 'Di hewldana vî karî de çewtiyên jêrîn çêbûn:'
+      shipment_transfer_success: Guherto bi serfirazî hatin veguhastin
+      stock_location_required: Ji bo wergirtina tevgerên embarê divê parametreyek stock_location_id were dayîn.
+      unauthorized: Tu ne destûrdar î ku wî karî bikî.
+      v2:
+        cart:
+          no_coupon_code: Tu koda kûponê nehat dayîn û Siparîş tu kampanyaya koda kûponê ya sepandî nîn e
+          wrong_quantity: Divê mîqdar ji 0 mezintir be
+        digitals:
+          missing_file: 'Tişta Dîjîtal Kêm e: pêvek'
+          unauthorized: Çewtî, tu ne destûrdar î ku gihîştina vê mêlakê bikî
+        gift_card:
+          amount_not_valid: Mîqdara karta diyariyê nederbasdar e
+          not_found: Karta diyariyê nehat dîtin
+        metadata:
+          invalid_params: Divê parametreyên metadata yên giştî û taybet obje bin
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: Lîsteya xwestekan nehat jêbirin.
+          wrong_quantity: Divê mîqdar ji 0 mezintir be
+      v3:
+        payments:
+          method_unavailable: Ev rêbaza tediyeyê ji bo vê siparîşê berdest nîn e.
+          session_required: Ev rêbaza tediyeyê danişînek tediyeyê hewce dike. Li şûna wê xala dawî ya danişînên tediyeyê bikar bîne.
+      wrong_shipment_target: şandina mebestê wek şandina orîjînal e
+  action_text:
+    video_embed:
+      not_found: Bi URL-ya hatî dayîn nikare vîdyoyek bi cih bike
+  activemodel:
+    errors:
+      messages:
+        blank: nikare vala be
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: yekeyên embarê yên paş-siparîşkirî hene
+              has_already_been_shipped: berê hatiye şandin
+            desired_shipment:
+              can_not_transfer_within_same_shipment: nikare wek şandina niha be
+              has_not_enough_stock_at_desired_location: li cihê embarê yê xwestî embarê têra nake
+  address_book:
+    save: Tomar bike
+    successfully_created: Navnîşana nû bi serfirazî hat çêkirin
+  number:
+    currency:
+      format:
+        delimiter: ","
+        separator: "."
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Birrîn

@@ -1,3 +1,4 @@
+---
 hu:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ hu:
         phone: Telefonszám
         state: Megye
         zipcode: Irányítószám
+        company: Cég
+        label: Cím elnevezése
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ hu:
       spree/option_type:
         name: Név
         presentation: Bemutatás
+        filterable: Szűrhető
+        kind: Típus
       spree/order:
         checkout_complete: Fizetés kész
         completed_at: Befejezve
@@ -54,6 +59,8 @@ hu:
         special_instructions: Egyéni utasítások
         state: Megye
         total: Végösszeg
+        internal_note: Belső megjegyzés
+        item_count: Tételek
       spree/order/bill_address:
         address1: Számlázási cím, Utca
         city: Számlázási cím, Város
@@ -72,6 +79,7 @@ hu:
         zipcode: Szállítási cím, Irányítószám
       spree/payment:
         amount: Mennyiség
+        number: Szám
       spree/payment_method:
         name: Név
       spree/product:
@@ -84,6 +92,10 @@ hu:
         on_hand: Elérhető
         shipping_category: Szállítási kategória
         tax_category: ÁFA kategória
+        discontinue_on: Forgalmazás vége
+        less_than: Kevesebb mint
+        make_active_at: Aktiválás ekkor
+        more_than: Több mint
       spree/promotion:
         advertise: Hirdet
         code: Kód
@@ -94,8 +106,11 @@ hu:
         path: Útvonal
         starts_at: Kezdődik
         usage_limit: Felhasználási limit
+        generate_code: Kuponkód generálása
+        promotion_category: Promóció kategória
       spree/promotion_category:
         name:
+        code: Kód
       spree/property:
         name: Név
         presentation: A feltűntetett érték
@@ -123,6 +138,16 @@ hu:
         name:
         seo_title:
         url:
+        address: Cím
+        contact_phone: Kapcsolattartási telefonszám
+        preferred_digital_asset_authorized_clicks: Letöltési kattintások korlátja
+        preferred_digital_asset_authorized_days: Letöltési napok korlátja
+        preferred_limit_digital_download_count: Digitális hivatkozások letöltési számának korlátozása
+        preferred_limit_digital_download_days: Digitális hivatkozások letöltési napjainak korlátozása
+        seo_robots: SEO Robots
+        storefront_custom_code_body_end: Egyéni kód a body címke zárása előtt
+        storefront_custom_code_body_start: Egyéni kód a body címke nyitása után
+        storefront_custom_code_head: Egyéni kód az oldal fejlécében
       spree/tax_category:
         description: Leírás
         name: Név
@@ -134,12 +159,14 @@ hu:
         name: Név
         permalink: Permalink
         position: Pozíció
+        sort_order: Rendezési sorrend
       spree/taxonomy:
         name: Név
       spree/user:
         email: Email
         password: Jelszó
         password_confirmation: Jelszó megerősítése
+        avatar: Profilkép
       spree/variant:
         cost_currency: Árfolyam
         cost_price: Átváltási költség
@@ -152,6 +179,54 @@ hu:
       spree/zone:
         description: Leírás
         name: Név
+      spree/customer_group:
+        description: Leírás
+        name: Név
+      spree/customer_return:
+        stock_location_id: Raktárhely
+      spree/gift_card:
+        amount_used: Felhasznált összeg
+        expires_at: Lejárat dátuma
+      spree/import:
+        preferred_delimiter: Elválasztó
+      spree/import_mapping:
+        file_column: Fájloszlop
+        schema_field: Sémamező
+      spree/import_row:
+        row_number: Szám
+      spree/invitation:
+        inviter: Meghívó
+      spree/metafield_definition:
+        namespace: Névtér
+      spree/option_value:
+        color_code: Színkód
+        image: Színminta kép
+      spree/page_link:
+        open_in_new_tab: Megnyitás új lapon
+      spree/policy:
+        body: Tartalom
+        owner: Szabályzat ehhez
+      spree/price_list:
+        description: Leírás
+        ends_at: Befejezés dátuma
+        match_policy: Egyezési szabály
+        name: Név
+        priority: Prioritás
+        starts_at: Kezdés dátuma
+        status: Állapot
+      spree/price_rule:
+        priority: Prioritás
+        type: Típus
+      spree/shipment:
+        number: Szám
+      spree/store_credit:
+        amount_used: Felhasznált összeg
+      spree/store_credit_category:
+        name: Név
+      user:
+        current_sign_in: Jelenlegi bejelentkezés ideje
+        last_sign_in: Utolsó bejelentkezés ideje
+        sign_in_count: Bejelentkezések száma
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,6 +273,109 @@ hu:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: Az egyetlen áruház nem törölhető.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: origin értéknek kell lennie (séma és gazdagép) útvonal, lekérdezés vagy fragment nélkül
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: Felhasznált ajándékkártya nem törölhető
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: kötelező megadni
+              not_allowed_content_type: nem engedélyezett tartalomtípusú
+        spree/import:
+          attributes:
+            attachment:
+              content_type: nem engedélyezett tartalomtípusú
+            type:
+              inclusion: nem szerepel az engedélyezett típusok listájában
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: másik felhasználóhoz tartozik
+              deprecated_in_completed_order: elavult egy befejezett rendelésben
+            ship_address_id:
+              belongs_to_other_user: másik felhasználóhoz tartozik
+              deprecated_in_completed_order: elavult egy befejezett rendelésben
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: Az alapértelmezett piac nem törölhető.
+              cannot_destroy_last_market: Az egyetlen piac nem törölhető.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: már hozzá van rendelve egy másik piachoz ebben az áruházban
+              not_in_shipping_zone: egyetlen szállítási zóna sem fedi le. Kérjük, először állítson be egy szállítási zónát.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: nagyobb, mint a megengedett maximális összeg, ami %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: a kezdés dátuma utáni kell legyen
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: A leadott rendelésekhez hozzáadott termékek nem törölhetők. Ilyen esetekben kérjük, vonja ki őket a forgalomból.
+            discontinue_on:
+              invalid_date_range: a rendelkezésre állás dátuma utáni kell legyen
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: a közzététel dátuma utáni kell legyen
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: a kezdési dátum utáni kell legyen
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Legalább egy szállítási kategóriát ki kell választania
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Meghaladja a teljes jóváírást.
+            amount_used:
+              cannot_be_greater_than_amount: Nem lehet nagyobb az összegnél.
+              greater_than_zero_restrict_delete: nullánál nagyobb. Az áruházi jóváírás nem törölhető.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: Az áruházi jóváírás kategóriák nem törölhetők, ha már használatban vannak egy áruházi jóváírásban.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: nem engedélyezett tartalomtípusú
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: másik felhasználóhoz tartozik
+              deprecated_in_completed_order: elavult egy befejezett rendelésben
+            ship_address_id:
+              belongs_to_other_user: másik felhasználóhoz tartozik
+              deprecated_in_completed_order: elavult egy befejezett rendelésben
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: A leadott rendelésekhez hozzáadott variánsok nem törölhetők. Ilyen esetekben kérjük, vonja ki őket a forgalomból.
+              must_supply_price_for_variant_or_master: Meg kell adni a variáns árát vagy a termék fő árát.
+              no_master_variant_found_to_infer_price: Nem található fő variáns az ár megállapításához
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: nem mutathat belső vagy privát hálózati címre
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Ezt a terméket már hozzáadta a kívánságlistájához
+      messages:
+        blank: nem lehet üres
     models:
       spree/address:
         one: Cím
@@ -209,6 +387,8 @@ hu:
         one: Bankkártya
         other: Bankkártyák
       spree/customer_return:
+        one: Ügyfél visszaküldés
+        other: Ügyfél visszaküldések
       spree/inventory_unit:
         one: Leltári szám
         other: Leltári számok
@@ -216,7 +396,11 @@ hu:
         one: Tétel
         other: Tételek
       spree/option_type:
+        one: Tulajdonságtípus
+        other: Tulajdonságtípusok
       spree/option_value:
+        one: Tulajdonságérték
+        other: Tulajdonságértékek
       spree/order:
         one: Rendelés
         other: Rendelések
@@ -224,11 +408,17 @@ hu:
         one: Kifizetés
         other: Kifizetések
       spree/payment_method:
+        one: Fizetési mód
+        other: Fizetési módok
       spree/product:
         one: Termék
         other: Termékek
       spree/promotion:
+        one: Promóció
+        other: Promóciók
       spree/promotion_category:
+        one: Promóció kategória
+        other: Promóció kategóriák
       spree/property:
         one: Tulajdon
         other: Tulajdonok
@@ -236,12 +426,20 @@ hu:
         one: Prototípus
         other: Prototípusok
       spree/refund_reason:
+        one: Visszatérítés oka
+        other: Visszatérítés okai
       spree/reimbursement:
+        one: Kárenyhítés
+        other: Kárenyhítések
       spree/reimbursement_type:
+        one: Kárenyhítés típusa
+        other: Kárenyhítés típusai
       spree/return_authorization:
         one: Visszatérítési felhatalmazás
         other: Visszatérítési felhatalmazások
       spree/return_authorization_reason:
+        one: Visszaküldés engedélyezésének oka
+        other: Visszaküldés engedélyezésének okai
       spree/role:
         one: Feladat
         other: feladatok
@@ -252,13 +450,23 @@ hu:
         one: Szállítási kategória
         other: Szállítási kategóriák
       spree/shipping_method:
+        one: Szállítási mód
+        other: Szállítási módok
       spree/state:
         one: Megye
         other: Megyék
       spree/state_change:
+        one: Állapotváltozás
+        other: Állapotváltozások
       spree/stock_location:
+        one: Raktárhely
+        other: Raktárhelyek
       spree/stock_movement:
+        one: Készletmozgás
+        other: Készletmozgások
       spree/stock_transfer:
+        one: Készletátmozgatás
+        other: Készletátmozgatások
       spree/tax_category:
         one: ÁFA kategória
         other: ÁFA kategóriák
@@ -272,6 +480,8 @@ hu:
         one: Termék besorolás
         other: Termék besorolások
       spree/tracker:
+        one: Nyomkövető
+        other: Nyomkövetők
       spree/user:
         one: Felhasználó
         other: Felhasználók
@@ -281,6 +491,66 @@ hu:
       spree/zone:
         one: Zóna
         other: Zónák
+      spree/classification:
+        one: Besorolás
+        other: Besorolások
+      spree/cms_page:
+        one: Oldal
+        other: Oldalak
+      spree/cms_section:
+        one: Szakasz
+        other: Szakaszok
+      spree/customer_group:
+        one: Ügyfélcsoport
+        other: Ügyfélcsoportok
+      spree/customer_group_user:
+        one: Ügyfélcsoport felhasználó
+        other: Ügyfélcsoport felhasználók
+      spree/digital:
+        one: Digitális tartalom
+        other: Digitális tartalmak
+      spree/export:
+        one: Exportálás
+        other: Exportálások
+      spree/integration:
+        one: Integráció
+        other: Integrációk
+      spree/page:
+        one: Oldal
+        other: Oldalak
+      spree/page_block:
+        one: Oldalblokk
+        other: Oldalblokkok
+      spree/page_link:
+        one: Oldalhivatkozás
+        other: Oldalhivatkozások
+      spree/page_section:
+        one: Oldalszakasz
+        other: Oldalszakaszok
+      spree/price:
+        one: Ár
+        other: Árak
+      spree/price_list:
+        one: Árlista
+        other: Árlisták
+      spree/price_rule:
+        one: Árszabály
+        other: Árszabályok
+      spree/stock_item:
+        one: Készlettétel
+        other: Készlettételek
+      spree/store:
+        one: Áruház
+        other: Áruházak
+      spree/store_credit:
+        one: Áruházi jóváírás
+        other: Áruházi jóváírások
+      spree/store_credit_category:
+        one: Áruházi jóváírás kategória
+        other: Áruházi jóváírás kategóriák
+      spree/theme:
+        one: Téma
+        other: Témák
   devise:
     confirmations:
       confirmed: A fiókját sikeresen aktiválta! Most már bejelentkezhet.
@@ -293,6 +563,7 @@ hu:
       timeout: A munkamenet lejárt, jelentkezzen be újra a folyatáshoz.
       unauthenticated: Bejelentkezésre, vagy regisztrációra van szükség a folytatáshoz.
       unconfirmed: A folytatáshoz a fiókja hitelesítésére van szükség.
+      too_many_attempts: Túl sok próbálkozás. Kérjük, várjon egy pillanatot, majd próbálja újra.
     mailer:
       confirmation_instructions:
         subject: Aktiválási instrukciók
@@ -327,9 +598,10 @@ hu:
       not_saved:
         one: '1 hiba miatt ezt %{resource} nem lehet elmenteni:'
         other: "%{count} számú hiba megakadályozta %{resource} elmentését:"
+      not_a_number: nem szám
   spree:
     filter: Szűrő
-    quick_search: Gyorskereső . . .
+    quick_search:
     abbreviation: Rövidítés
     accept: Elfogadás
     acceptance_errors: Elfogadási hibák
@@ -350,6 +622,15 @@ hu:
       refund:
       save: Mentés
       update: Frissítés
+      close: Bezárás
+      connect: Csatlakozás
+      discard: Elvetés
+      open: Megnyitás
+      reject: Elutasítás
+      remove: Eltávolítás
+      resend: Újraküldés
+      select_file: Fájl kiválasztása
+      send_invitation: Meghívó küldése
     activate: Aktiválás
     active: Aktív
     add: Hozzáadás
@@ -402,6 +683,483 @@ hu:
         order_num:
         orders:
         user_information:
+        last_order_placed: Utolsó leadott rendelés
+        no_store_credit: A vásárlónak nincs elérhető áruhitele
+      allowed_origins:
+        origin_help: Adja meg a webáruháza teljes origin URL-jét (pl. https://myshop.com). Ne tartalmazzon útvonalakat vagy lekérdezési paramétereket.
+        origin_settings: Origin-beállítások
+      amount_spent: Elköltött összeg
+      api_keys:
+        example_request: Példa kérés
+        key_revoked_message: Ezt az API-kulcsot visszavonták, és többé nem használható.
+        key_type_descriptions:
+          publishable: Biztonságosan használható kliensoldali kódban, például mobilalkalmazásokban vagy böngészőkben.
+          secret: Tartsa biztonságban, és csak szerveroldalon használja. Soha ne tegye nyilvánossá.
+        key_types:
+          publishable: Publikus
+          secret: Titkos
+        last_used_at: Utoljára használva
+        list: API-kulcsok
+        name_placeholder: pl. Mobilalkalmazás éles
+        revoke: Visszavonás
+        revoke_confirmation: Biztosan visszavonja ezt az API-kulcsot? Ez a művelet nem vonható vissza.
+        revoked: Az API-kulcs visszavonva
+        revoked_at: Visszavonva
+        revoked_by: Visszavonta
+        scopes: Hatókörök
+        scopes_description: Titkos kulcsokhoz szükséges. Válassza ki az integrációja által igényelt legszűkebb hatókör-készletet.
+        scopes_immutable: A hatókörök a kulcs létrehozásakor rögzülnek. Módosításukhoz hozzon létre egy új kulcsot a szükséges hatókörökkel, és vonja vissza ezt.
+        secret_key_hidden: Ez a titkos kulcs nem jeleníthető meg. Ha elvesztette, vonja vissza ezt a kulcsot, és hozzon létre egy újat.
+        statuses:
+          active: Aktív
+          revoked: Visszavonva
+        token_warning: Tárolja ezt a kulcsot biztonságosan. Csak egyszer jelenik meg.
+        usage: Használat
+        usage_instructions:
+          publishable: Ezt a kulcsot kliensoldali kérésekhez használja. Biztonságosan beépíthető a frontend kódjába.
+          secret: Ezt a kulcsot csak szerveroldali kérésekhez használja. Tartsa titokban, és soha ne tegye közzé kliensoldali kódban.
+      audit_log: Naplózás
+      avg_order_value: Átl. rendelési érték
+      back_to_dashboard: Vissza az irányítópultra
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Biztosan eltávolítja a kijelölt vásárlókat ebből a csoportból?
+          title:
+            remove: Eltávolítás a csoportból
+        price_list_products:
+          body:
+            remove: Biztosan eltávolítja a kijelölt termékeket erről az árlistáról? Ez az áraikat is eltávolítja.
+          title:
+            remove: Eltávolítás az árlistáról
+        products:
+          body:
+            add_tags: 'Válassza ki a termékekhez hozzáadandó címkéket:'
+            add_to_taxons: 'Válassza ki, mely kategóriákhoz adja hozzá a termékeket:'
+            remove_from_taxons: 'Válassza ki, mely kategóriákból távolítsa el a termékeket:'
+            remove_tags: 'Válassza ki a termékekről eltávolítandó címkéket:'
+            set_active: A termékek aktívra állítása elérhetővé teszi azokat a webáruházban.
+            set_archived: A termékek archiváltra állítása elrejti azokat a webáruházból.
+            set_draft: A termékek piszkozatra állítása elrejti azokat a webáruházból.
+          title:
+            add_tags: Címkék hozzáadása
+            add_to_taxons: Hozzáadás kategóriákhoz
+            remove_from_taxons: Eltávolítás kategóriákból
+            remove_tags: Címkék eltávolítása
+            set_active: Beállítás aktívként
+            set_archived: Beállítás archiváltként
+            set_draft: Beállítás piszkozatként
+        users:
+          body:
+            add_tags: 'Válassza ki a vásárlókhoz hozzáadandó címkéket:'
+            remove_tags: 'Válassza ki a vásárlókról eltávolítandó címkéket:'
+          title:
+            add_tags: Címkék hozzáadása
+            remove_tags: Címkék eltávolítása
+      channels:
+        code_hint: Rövid, állandó azonosító (pl. „online”, „pos”, „wholesale”). Az API-kliensek az X-Spree-Channel fejlécen keresztül használják, valamint a rendelések attribúciójához.
+        default: Alapértelmezett csatorna
+        default_hint: Pontosan egy csatorna lehet alapértelmezett áruházanként. Ez a tartalék, ha nincs csatorna kiválasztva, és az új termékek automatikus közzétételi célja.
+        order_routing_strategy: Rendelés-irányítási stratégia
+        order_routing_strategy_hint: Felülírja az áruház szintű irányítási stratégiát az ehhez a csatornához rendelt rendeléseknél.
+        order_routing_strategy_inherit: Öröklés az áruháztól
+      checkout_settings:
+        checkout_links:
+          description: Ezekre az oldalakra mutató hivatkozások megjelennek a fizetési oldal láblécében.
+          label: Fizetési oldal hivatkozásai
+        checkout_message_description: A vásárlók számára látható a fizetési oldalon a jobb oldali oldalsávban.
+        countries_managed_by_markets_html: Az országokat és szállítási zónákat a(z) %{link} kezeli.
+        guest_checkout:
+          description: Lehetővé teszi a vásárlók számára a fizetést fiók létrehozása nélkül.
+          label: Vendégként történő fizetés engedélyezése
+        special_instructions:
+          description: Lehetővé teszi a vásárlók számára, hogy különleges utasításokat fűzzenek a rendelésükhöz.
+          label: Különleges utasítások mező megjelenítése
+      close_sidebar: Oldalsáv bezárása
+      copied: Másolva!
+      copy_payment_link: Fizetési hivatkozás másolása
+      copy_to_clipboard: Másolás a vágólapra
+      coupon_codes:
+        unused: Felhasználatlan
+        used: Felhasznált
+      created_at: Létrehozva
+      dashboard:
+        getting_started:
+          description: Minden, amit be kell állítania, hogy elkezdhessen értékesíteni.
+        hi: Üdv
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> / %{total} lépés kész"
+          title: A teljes beállítás állapota
+        top_products: Legnépszerűbb termékek
+        view_report: Jelentés megtekintése
+        whats_happening_on_html: Íme, mi történik ma a(z) <strong>%{store_name}</strong> áruházban.
+      datetime_field_timezone_help: 'Időzóna: %{zone}'
+      digital_shipment_fulfillment_note: Ez a szállítmány teljesítettként lesz megjelölve, amint a felhasználó letölti a digitális terméket
+      display_on_options:
+        back_end: Csak az adminfelületen
+        both: Az adminfelületen és a webáruházban is
+        front_end: Csak a webáruházban
+      documentation: Dokumentáció
+      edit_billing_address: Számlázási cím szerkesztése
+      edit_contact_information: Kapcsolattartási adatok szerkesztése
+      edit_profile: Profil szerkesztése
+      edit_shipping_address: Szállítási cím szerkesztése
+      edit_theme: Téma szerkesztése
+      errors: Hibák
+      execution_time: Végrehajtási idő
+      expand_sidebar: Oldalsáv kibontása
+      export_all: Az összes rekord exportálása (nagy adathalmazoknál lassú lehet)
+      export_coupons: Kuponok exportálása CSV-fájlként
+      export_created: Az exportálás elindult. E-mailben kap letöltési hivatkozást, amint elkészül!
+      export_only_filtered_records: Csak a szűrt, a keresési feltételeknek megfelelő rekordok exportálása
+      export_report: Jelentés exportálása CSV-fájlként
+      filters: Szűrők
+      getting_started: Első lépések
+      gift_card_batches:
+        codes_count: Kódok száma
+        new_gift_card_batch: Új ajándékkártya-köteg
+        prefix: Előtag
+      gift_cards:
+        active: Aktív
+        all_statuses: Minden állapot
+        code_help_text: Ha üresen hagyja, mi generálunk Önnek kódot
+        redeemed: Beváltva
+        usage: Használat
+      imports:
+        all_required_columns_mapped: Remek munka, minden kötelező oszlop hozzá van rendelve!
+        field_required: Kötelező mező
+        import_done: Kész!
+        large_import_background_note: Bezárhatja ezt az oldalt – az importálás a háttérben folytatódik.
+        large_import_message: Ez az importálás %{count} sort tartalmaz, és túl nagy az egyenkénti megjelenítéshez.
+        large_import_summary: "%{completed} sikeres, %{failed} sikertelen"
+        mapping_required: Ez a mező kötelező
+        please_map_all_required_fields: A folytatáshoz rendelje hozzá az összes kötelező mezőt.
+        waiting_for_file_to_be_processed: Várakozás a fájl feldolgozására...
+      integrations:
+        invalid_integration_type: Ez az integráció nem engedélyezett
+        page_subtitle: Csatlakoztassa áruházát külső szolgáltatásokhoz a vásárlói élmény fokozása érdekében.
+      json_preview:
+        no_api_response: Nincs API-válasz ehhez az erőforráshoz
+      manage_markets: Piacok kezelése
+      manage_properties: Tulajdonságok kezelése
+      manage_stock_locations: Raktárhelyek kezelése
+      manage_taxons: Kategóriák kezelése
+      manage_zones: Zónák kezelése
+      markets:
+        edit: Piac szerkesztése
+        list: Piacok
+        new: Új piac
+        supported_locales_hint: További nyelvkódok vesszővel elválasztott listája (pl. fr,de,es)
+      metafield_definitions:
+        edit_warning: Nem módosíthatja az erőforrás típusát vagy a metamező típusát, miután a definíciót már használták.
+        used_in: Felhasználva itt
+      name: Név
+      navigation:
+        nested_under: Beágyazva ide
+      newsletter_subscribers:
+        all: Mind
+        unverified: Nem megerősített
+        verified: Megerősített
+      not_tracking_inventory: Készlet nyomon követése kikapcsolva
+      notifications: Értesítések
+      num_orders: Rendelések száma
+      oauth_applications:
+        client_id: Kliens-azonosító
+        client_secret: Kliens titkos kulcsa
+        last_used: Utoljára használva
+        list: API-kulcsok
+        never: Soha
+        new: Új API-kulcs
+        read_and_write: Olvasás és írás
+        read_only: Csak olvasás
+        scopes: Hatókörök
+      order:
+        events:
+          approve: Jóváhagyás
+          cancel: Lemondás
+          resend: Újraküldés
+          resume: Folytatás
+      orders:
+        add_user_to_this_order: Vásárló hozzáadása ehhez a rendeléshez
+        all_orders: Minden rendelés
+        canceled: Lemondva
+        fulfilled: Teljesítve
+        no_email_present: A fizetési hivatkozás küldéséhez adjon meg egy e-mail-címet
+        orders_to_fulfill: Teljesítendő rendelések
+        partially_refunded: Részben visszatérítve
+        payment_link_sent: A fizetési hivatkozást elküldtük a vásárlónak
+        provide_email: Adjon meg egy e-mail-címet
+        refunded: Visszatérítve
+        remove_user_from_this_order: Vásárló eltávolítása erről a rendelésről
+        unfulfilled: Nem teljesített
+      page_builder:
+        background_color: Háttérszín
+        border_bottom_width: Alsó szegély vastagsága
+        border_color: Szegély színe
+        border_top_width: Felső szegély vastagsága
+        bottom_padding: Alsó térköz
+        button_alignment: Gomb igazítása
+        button_background_color: Gomb háttérszíne
+        button_style: Gomb stílusa
+        button_text: Gomb szövege
+        button_text_color: Gomb szövegszíne
+        category: Kategória
+        description: Leírás
+        description_alignment: Leírás igazítása
+        desktop_image_alignment: Kép igazítása asztali nézethez
+        desktop_logo_height: Logó magassága (asztali)
+        heading: Címsor
+        heading_alignment: Címsor igazítása
+        heading_size: Címsor mérete
+        height: Magasság
+        image_click_hint: A képre kattintva a felhasználó a kiválasztott oldalra/URL-re kerül
+        left_aligned: Balra igazítva
+        logo_centered: Logó középre igazítva
+        max_video_width_on_desktop: Maximális videószélesség asztali nézetben
+        maximum_products_to_show: Megjelenítendő termékek maximális száma
+        nav_centered: Navigáció középre igazítva
+        not_set: Nincs beállítva
+        separated: Elválasztva
+        show_more_button: Kategória felfedezése gomb megjelenítése
+        show_taxon_image: Kategóriakép megjelenítése
+        text_color: Szövegszín
+        title: Cím
+        top_padding: Felső térköz
+        use_description_from_admin: Az adminfelületen megadott leírás használata
+        vertical_alignment: Függőleges igazítás
+        youtube_video_url: Youtube-videó URL-je
+      personal_details: Személyes adatok
+      price_lists:
+        activate: Aktiválás
+        activated: Az árlista aktiválva
+        confirm_activate: Biztosan aktiválja ezt az árlistát? Azonnal hatással lesz az árazásra.
+        confirm_deactivate: Biztosan deaktiválja ezt az árlistát?
+        confirm_schedule: Biztosan ütemezi ezt az árlistát?
+        confirm_unschedule: Biztosan visszavonja ennek az árlistának az ütemezését?
+        deactivate: Deaktiválás
+        deactivated: Az árlista deaktiválva
+        schedule: Ütemezés
+        scheduled: Az árlista ütemezve
+        unschedule: Ütemezés visszavonása
+      product_translations:
+        coverage: Fordítás lefedettsége
+        locale: Nyelv
+        manage_markets: Piacok kezelése
+        no_locales_description: Állítson be piacokat további nyelvekkel, hogy elkezdhesse termékei fordítását.
+        no_locales_title: Nincs beállítva további nyelv
+        progress: Folyamat
+        total: Összesen
+        translated: Lefordítva
+      products:
+        active: Aktív
+        all_statuses: Minden állapot
+        any_stock: Bármilyen készlet
+        archived: Archivált
+        by_status: Állapot szerint
+        by_stock: Készlet szerint
+        deleted: Törölve
+        draft: Piszkozat
+        help_bubble: A piszkozat termékek nem vásárolhatók meg. Az aktív termékek élesben elérhetők.
+        in_stock: Készleten
+        inventory:
+          barcode: Vonalkód (ISBN, UPC, GTIN stb.)
+          sku: SKU (cikkszám)
+        out_of_stock: Nincs készleten
+        paused: Szüneteltetve
+        search_results:
+          no_products: Nem találtunk a keresésnek megfelelő terméket :(
+        seo:
+          placeholder: Adjon meg egy címet és leírást, hogy lássa, hogyan jelenhet meg ez a termék egy keresőtalálatban
+        status_form:
+          status: A piszkozat termékek nem vásárolhatók meg. Az aktív termékek élesben elérhetők.
+        status_options:
+          active: Aktív
+          archived: Archivált
+          draft: Piszkozat
+        stores:
+          choose_stores: Válassza ki, mely áruházakban legyen elérhető ez a termék
+        variants:
+          option_types_link: További opciótípusok hozzáadásához lépjen az <a href="%{link}">Opciótípusok</a> oldalra
+      publishing:
+        caption_hidden_after: 'Lekerül ekkor: %{date}'
+        caption_live: Most látható a vásárlók számára
+        caption_not_available: Rejtett – a termék %{product_status}
+        caption_scheduled: 'Élesedik ekkor: %{date}'
+        caption_unpublished: 'Elrejtve ekkor: %{date}'
+        caption_window: Élő %{start} → %{end}
+        empty: Még nincs egyetlen értékesítési csatornán sem listázva.
+        inactive_marker: Inaktív
+        manage_cta: Kezelés
+        manage_description: Válassza ki, mely értékesítési csatornák listázzák ezt a terméket. Kapcsoljon ki egy csatornát, hogy mindenhonnan eltávolítsa a listázásból.
+        no_channels: Nincs elérhető értékesítési csatorna. Hozzon létre egyet a Beállítások → Értékesítési csatornák menüpontban.
+        published_at_label: Közzététel ettől
+        status_hidden: Rejtett
+        status_live: Élő
+        status_not_available: Nem elérhető
+        status_scheduled: Ütemezve
+        title: Közzététel
+        unpublished_at_label: Visszavonás ekkor
+      recommended_size: Ajánlott méret
+      report_created: A jelentés készül. E-mailben kap letöltési hivatkozást, amint elkészül!
+      reset_digital_link_download_limits: Letöltési korlátok visszaállítása
+      response_code: Válaszkód
+      selected: kijelölve
+      send_payment_link: Fizetési hivatkozás küldése
+      shipment:
+        please_provide_tracking_details: A szállítmány feladottként való megjelölése előtt adja meg a nyomonkövetési adatokat
+      shipment_transfer:
+        wrong_destination: Hibás célhely
+      show_json: JSON megjelenítése
+      stock_transfers:
+        add_products_tip: Először ki kell választania egy célhelyet
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> fennmaradt (<strong>%{total}</strong> összesen)"
+      store_form:
+        company_field:
+          description: Megjeleníti a cég mezőt a címűrlapon a Fiókom szakaszban és a fizetés cím lépésében.
+          label: Cég címmező megjelenítése
+        customer_support_email_help: Ez az e-mail-cím látható az áruháza látogatói számára a lábléc szakaszban
+        new_order_notifications_email_help: Ha minden rendelés leadásakor e-mail-értesítést szeretne kapni, adjon meg egy e-mail-címet, amelyre az értesítést küldjük
+        send_consumer_transactional_emails_help: Ha nincs bejelölve, a tranzakciós e-mailek, például a rendelés-visszaigazolások és szállítási értesítések nem kerülnek elküldésre a vásárlóknak
+      store_setup_tasks:
+        add_billing_address: Számlázási cím hozzáadása
+        add_products: Termékek hozzáadása
+        payment_methods:
+          copy: A fizetések fogadásához állítson be legalább egy online fizetési szolgáltatót.
+          done: Minden készen áll! A fizetési módokat bármikor kezelheti <a href="%{link}" data-turbo-frame="_top">ezen</a> az oldalon.
+          setup: Fizetési módok beállítása
+          title: Állítsa be áruháza fizetési módjait
+        set_customer_support_email: Ügyfélszolgálati e-mail-cím beállítása
+        setup_taxes_collection: Adóbeszedés beállítása
+        taxes:
+          copy: Az adók beszedéséhez állítsa be az adókulcsait.
+          done: Minden készen áll! Az adóit bármikor kezelheti a <a href="%{link}" data-turbo-frame="_top">beállítások</a> oldalon.
+          setup: Adókulcsok beállítása
+      storefront: Webáruház
+      successful: Sikeres
+      successfully_reset_digital_links_limit: A letöltési korlátok visszaálltak
+      tables:
+        add_filter: Szűrő hozzáadása
+        add_or_group: VAGY-csoport hozzáadása
+        apply: Alkalmaz
+        apply_filters: Szűrők alkalmazása
+        ascending: Növekvő
+        clear_all: Összes törlése
+        columns: Oszlopok
+        descending: Csökkenő
+        enter_value: Adjon meg egy értéket...
+        filter_builder: Szűrőszerkesztő
+        filters: Szűrők
+        match: Egyezés
+        of_the_following: az alábbiak közül
+        operators:
+          contains: tartalmazza
+          does_not_contain: nem tartalmazza
+          ends_with: végződik erre
+          equals: egyenlő
+          greater_than: nagyobb mint
+          greater_than_or_equal: nagyobb vagy egyenlő
+          is_any_of: bármelyike ezek közül
+          is_empty: üres
+          is_none_of: egyike sem ezek közül
+          is_not_empty: nem üres
+          less_than: kisebb mint
+          less_than_or_equal: kisebb vagy egyenlő
+          not_equals: nem egyenlő
+          starts_with: kezdődik ezzel
+        order: Sorrend
+        reset_to_default: Visszaállítás alapértelmezettre
+        select_field: Válasszon mezőt...
+        sort_by: Rendezés
+        visible_columns: Látható oszlopok
+      taxon_rules:
+        all_conditions: minden feltétel
+        any_condition: bármely feltétel
+        available_on: Elérhető ekkortól
+        match_policies:
+          contains: tartalmazza
+          does_not_contain: nem tartalmazza
+          is_equal_to: egyenlő ezzel
+          is_not_equal_to: nem egyenlő ezzel
+        on_sale: Akciós
+        products_must_match: 'A termékeknek meg kell felelniük:'
+        tag: Termékcímke
+      taxon_type: Kategóriatípus
+      taxon_types:
+        automatic: Automatikus
+        automatic_info: A termékek automatikusan hozzáadódnak ehhez a kategóriához, ha megfelelnek a beállított szabályoknak.
+        manual: Manuális
+        manual_info: Manuálisan válogassa össze a termékeket. Tömegesen hozzáadhatja vagy eltávolíthatja őket.
+      translations:
+        no_translations_configured: Nincsenek beállított fordítások. A fordítások használatához állítson be piacokat.
+      upload_new_asset: Új médiafájl feltöltése
+      users:
+        filters:
+          search_placeholder: Vásárlók keresése e-mail vagy név alapján
+      utilities:
+        preview: Előnézet
+      variants:
+        search_results:
+          no_variants: Nem találtunk a keresésnek megfelelő variánst :(
+      variants_form:
+        add_option:
+          empty: Adjon hozzá opciókat, például méret vagy szín
+          not_empty: Másik opció hozzáadása
+        compare_at_price_description: Ez az ár az áthúzott ár megjelenítésére szolgál a termékoldalon.
+        stock_locations_link: További raktárhelyek hozzáadásához lépjen a <a href="%{link}">Raktárhelyek</a> oldalra
+        total_inventory_html: 'Teljes készlet a(z) %{stock_location} helyen: %{count} elérhető'
+      vendors:
+        enterprise_feature: A többeladós piactér az Enterprise Edition kiadásban érhető el
+      webhook_deliveries:
+        delivered_at: Kézbesítve
+        delivery_details: Kézbesítés részletei
+        delivery_info: Kézbesítési információk
+        endpoint_inactive: Nem próbálható újra – a végpont inaktív
+        error_type: Hibatípus
+        event: Esemény
+        execution_time: Végrehajtási idő
+        failed: Sikertelen
+        pending: Függőben
+        redeliver_button: Újraküldés
+        redelivered: A webhook sikeresen újraküldve.
+        request_errors: Kéréshibák
+        request_payload: Kérés tartalma
+        response_body: Válasz törzse
+        response_code: Válaszkód
+      webhook_endpoints:
+        auto_disabled: Ezt a végpontot ismétlődő kézbesítési hibák után automatikusan letiltottuk.
+        back_to_endpoint: Vissza a végponthoz
+        deliveries: Kézbesítések
+        endpoint_settings: Végpont beállításai
+        event_subscriptions: Eseményfeliratkozások
+        event_subscriptions_help: Válassza ki, mely események váltsanak ki webhook-kézbesítést erre a végpontra.
+        events: esemény
+        failed_deliveries: Sikertelen kézbesítések
+        health:
+          degraded: "%{percentage}% sikeres"
+          disabled: Letiltva
+          failing: "%{percentage}% sikeres"
+          healthy: "%{percentage}% sikeres"
+          no_deliveries: Nincs adat
+        health_label: Állapot
+        new: Új webhook-végpont
+        re_enable: Újbóli engedélyezés
+        secret_key: Titkos kulcs
+        secret_key_help: Ezzel a kulccsal ellenőrizheti a webhook-aláírásokat. Tartsa biztonságban, és ne ossza meg nyilvánosan.
+        send_test: Teszt küldése
+        subscriptions: Feliratkozások
+        successful_deliveries: Sikeres kézbesítések
+        test_failed: A teszt webhook küldése sikertelen. Ellenőrizze a végpont konfigurációját.
+        test_sent: A teszt webhook elküldve. Az eredményért ellenőrizze a kézbesítéseket.
+      webhooks_subscribers:
+        all_events: Minden esemény
+        new_webhooks_subscriber: Új webhook-feliratkozó
+        no_events: Nincs esemény
+        select_events: Események kiválasztása
+        subscribe_to_all_events: Feliratkozás minden eseményre
+        subscriptions: Feliratkozások
+        time_of_last_event: Utolsó esemény ideje
+        webhooks_events: Webhook-események
     administration: Adminisztráció
     advertise:
     agree_to_privacy_policy: Elfogadom az adatvédelmi irányelveket
@@ -432,11 +1190,11 @@ hu:
     are_you_sure: Biztos benne
     are_you_sure_delete: Biztos benne, hogy törölni akarja?
     associated_adjustment_closed: A kapcsolt módosítás lezárva és nem lesz újraszámolva. Meg akarod nyitni?
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Jóváhagyási hiba
     authorized:
     auto_capture:
-    available_on: "Elérhető:"
+    available_on: 'Elérhető:'
     average_order_value:
     avs_response:
     back: Vissza
@@ -607,6 +1365,7 @@ hu:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: Ez a kuponkód nem érvényesíthető az Ön országában
     email: Email
     empty: Üres
     empty_cart: Üres kosár
@@ -620,6 +1379,17 @@ hu:
         could_not_create_taxon: Could not create taxon
         no_payment_methods_available: No payment methods are configured for this environment
         no_shipping_methods_available: No shipping methods available for selected location, please change your address and try again.
+        cannot_delete_default_channel: Az alapértelmezett csatorna nem törölhető. Először állítson be egy másik csatornát alapértelmezettként.
+        channel_store_mismatch: ugyanahhoz az áruházhoz kell tartoznia
+        invalid_order_routing_rule: nem regisztrált rendelésirányítási szabály
+        invalid_order_routing_strategy: nem regisztrált rendelésirányítási stratégia
+        must_be_origin_only: origin értéknek kell lennie (séma és gazdagép) útvonal, lekérdezés vagy fragment nélkül
+        store_association_can_not_be_changed: Az áruház hozzárendelése nem módosítható
+        store_is_already_set: Az áruház már be van állítva
+      services:
+        get_shipping_rates:
+          no_line_items: A szállítási díjak generálásához tételeket kell hozzáadnia a rendeléshez
+          no_shipping_address: A szállítási díjak generálásához a rendelésnek rendelkeznie kell szállítási címmel
     errors_prohibited_this_record_from_being_saved:
       one: 1 hiba megakadályozta a mentést
       other: "%{count} számú hiba megakadályozta a mentést"
@@ -863,6 +1633,7 @@ hu:
         subject: Cancellation of Order
         subtotal:
         total:
+        thanks: Köszönjük, hogy
       confirm_email:
         dear_customer: Dear Customer,\n
         instructions: Please review and retain the following order information for your records.
@@ -871,6 +1642,20 @@ hu:
         subtotal:
         thanks: Thank you for your business.
         total:
+      payment_link_email:
+        message: Kérjük, kattintson az alábbi gombra a rendelése kifizetéséhez.
+        message_copy_link: 'Ha a gomb nem működik, kérjük, másolja be a következő hivatkozást a böngészőjébe:'
+        pay_for_order: Rendelés kifizetése
+        subject: 'Fizetési hivatkozás a(z) #%{number} rendeléshez'
+      store_owner_notification_email:
+        heading: Új rendelés érkezett
+        instructions: Új rendelést kapott.
+        order_summary: "%{number} rendelés összegzése"
+        subject: "%{store_name} új rendelést kapott"
+        thanks: Köszönjük
+      store_team: "%{store_name} csapat"
+      subtotal: 'Részösszeg:'
+      total: 'Rendelés végösszege:'
     order_not_found: We couldn't find your order. Please try that action again.
     order_number: Order %{number}
     order_processed_successfully: Your order has been processed successfully
@@ -925,6 +1710,9 @@ hu:
       pending: pending
       processing: processing
       void: void
+      complete: Teljesítve
+      partially_refunded: Részben visszatérítve
+      refunded: Visszatérítve
     payment_updated: Payment Updated
     payments: Payments
     pending:
@@ -1011,6 +1799,24 @@ hu:
       user_logged_in:
         description: Available only to logged in users
         name: User Logged In
+      category:
+        description: A rendelés meghatározott kategóriákba tartozó termékeket tartalmaz
+        name: Kategóriák
+      country:
+        description: Korlátozás az adott országba történő szállítási címmel rendelkező rendelésekre
+        name: Ország
+      currency:
+        description: Korlátozás egy adott pénznemben leadott rendelésekre
+        name: Pénznem
+      customer:
+        description: Csak a megadott ügyfelek számára elérhető
+        name: Ügyfelek
+      customer_group:
+        description: Csak a megadott ügyfélcsoport(ok)ba tartozó ügyfelek számára elérhető
+        name: Ügyfélcsoport(ok)
+      customer_logged_in:
+        description: Csak bejelentkezett ügyfelek számára elérhető
+        name: Csak bejelentkezett ügyfelek
     promotion_uses:
     promotionable:
     promotions: Promotions
@@ -1025,7 +1831,6 @@ hu:
     quantity: Quantity
     quantity_returned: Quantity Returned
     quantity_shipped: Quantity Shipped
-    quick_search:
     rate: Rate
     reason: Reason
     receive: receive
@@ -1053,6 +1858,8 @@ hu:
         refund_summary:
         subject:
         total_refunded:
+        store_team: "%{store_name} csapat"
+        thanks: Köszönjük, hogy nálunk vásárolt.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1134,6 +1941,8 @@ hu:
         thanks: Thank you for your business.
         track_information: 'Tracking Information: %{tracking}'
         track_link: 'Tracking Link: %{url}'
+        shipping_method: 'Szállítási mód: %{shipping_method}'
+        store_team: "%{store_name} csapat"
     shipment_state: Shipment State
     shipment_states:
       backorder: backorder
@@ -1210,6 +2019,7 @@ hu:
       returned:
       shipped:
       void:
+      shipment: Szállítmány
     states: Counties
     states_required: County Required
     status: Status
@@ -1223,7 +2033,11 @@ hu:
     stock_movements: Stock Movements
     stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
     stock_successfully_transferred: Stock was successfully transferred between locations.
-    stock_transfer: Stock Transfer
+    stock_transfer:
+      errors:
+        must_have_variant: Legalább egy variánst hozzá kell adnia
+        same_location: nem lehet azonos a célhellyel
+        variants_unavailable: 'Egyes variánsok nem érhetők el itt: %{stock}'
     stock_transfers: Stock Transfers
     stop: Stop
     store: Store
@@ -1336,3 +2150,685 @@ hu:
     zipcode: Irányítószám
     zone: Zóna
     zones: Zónák
+    add_gift_card: Ajándékkártya hozzáadása
+    add_new_address: Új cím hozzáadása
+    add_selected: Kijelöltek hozzáadása
+    add_selected_products: Kijelölt termékek hozzáadása
+    add_selected_variant: Kijelölt variáns hozzáadása
+    added_at: Hozzáadva
+    adjustment_amount_help: A pozitív értékek terhelések, a negatív értékek jóváírások.
+    adjustment_closed_description: A korrekció lezárt, és nem kerül újraszámításra.
+    adjustment_open_description: A korrekció nyitott, és újraszámításra kerül.
+    admin_language_help: Az a nyelv, amelyen az adminisztrációs irányítópult megjelenik. Csak az Ön által látottakat befolyásolja, az áruházat vagy a többi munkatársat nem.
+    admin_locale_help: Az adminisztrációs irányítópulthoz használt nyelv. Ha nincs beállítva, az alkalmazás nyelve az alapértelmezett.
+    all_time: Mindenkori
+    apis:
+      admin: Admin API
+      store: Store API
+    applied_to: Alkalmazva erre
+    assigned_variants: Hozzárendelt variánsok
+    assigned_variants_help: Válassza ki, mely variánsokat reprezentálja ez a kép. Hagyja üresen, hogy minden variánsra vonatkozzon.
+    automatic_promotion: Automatikus
+    breadcrumbs: Morzsamenü
+    cancel_order: Rendelés lemondása
+    cannot_ship: A szállítmány nem adható fel
+    card_expiration_placeholder: HH/ÉÉÉÉ
+    categorization: Kategorizálás
+    change_password: Jelszó módosítása
+    close_sidebar: Oldalsáv bezárása
+    contact_information: Kapcsolattartási adatok
+    contact_us: Kapcsolatfelvétel
+    continue_selling_when_out_of_stock: Értékesítés folytatása, ha elfogyott a készlet
+    copied: Másolva!
+    copy_id: Azonosító másolása
+    custom_domains: Egyéni domainek
+    customer_could_not_be_removed_from_group: A vásárlót nem sikerült eltávolítani a csoportból
+    customer_group_rule:
+      choose_customer_groups: 'Válassza ki azokat a vásárlói csoportokat, amelyekre ez az akció vonatkozzon:'
+    customer_removed_from_group: A vásárló eltávolítva a csoportból
+    customers_added_to_group:
+      one: "%{count} vásárló hozzáadva a csoporthoz"
+      other: "%{count} vásárló hozzáadva a csoporthoz"
+    customers_removed_from_group:
+      one: "%{count} vásárló eltávolítva a csoportból"
+      other: "%{count} vásárló eltávolítva a csoportból"
+    days_ago: Napja
+    delete_selected: Kijelöltek törlése
+    digital_assets_help: A digitális tartalmak olyan fájlok, amelyeket a vásárlók a vásárlás után letölthetnek.
+    dimension_units:
+      centimeter: Centiméter (cm)
+      foot: Láb (ft)
+      inch: Hüvelyk (in)
+      millimeter: Milliméter (mm)
+    display_settings: Megjelenítési beállítások
+    domains: Domainek
+    draft_orders: Piszkozat rendelések
+    edit_address: Cím szerkesztése
+    edit_prices: Árak szerkesztése
+    edit_refund: Visszatérítés szerkesztése
+    estimated_delivery_time: Becsült szállítási idő
+    excerpt: Kivonat
+    favicon: Favicon
+    filtered_records: Szűrt rekordok
+    forbidden_message: Nincs jogosultsága az oldal megtekintéséhez.
+    general_information: Általános információk
+    get_back_to_the: 'Vissza ide:'
+    homepage: Kezdőlap
+    internal_server_error: Belső szerverhiba
+    internal_server_error_message: A szerver belső hibába ütközött, és nem tudta teljesíteni a kérését.
+    invitation_expired:
+      body: Ez a meghívó hivatkozás már nem érvényes. Kérje meg az Önt meghívó személyt, hogy küldjön egy újat.
+      heading: Érvénytelen vagy lejárt meghívó
+    invitation_resent: Meghívó újraküldve!
+    issued_on: Kiállítva
+    log_in: Bejelentkezés
+    manual_adjustment: Manuális korrekció
+    manual_adjustments: Manuális korrekciók
+    mark_as_default: Beállítás alapértelmezettként
+    move_variant_to: Variáns áthelyezése ide
+    new_allowed_origin: Új engedélyezett origin
+    new_api_key: Új API-kulcs
+    new_balance: Új egyenleg
+    new_billing_address: Új számlázási cím
+    new_channel: Új értékesítési csatorna
+    new_custom_domain: Új egyéni domain
+    new_customer_group: Új vásárlói csoport
+    new_digital_asset: Új digitális tartalom
+    new_domain: Új domain
+    new_gift_card: Új ajándékkártya
+    new_line_item: Tétel hozzáadása
+    new_metafield_definition: Új metamező-definíció
+    new_nested_taxon: Új beágyazott alkategória
+    new_page: Új oldal
+    new_password: Új jelszó
+    new_policy: Új szabályzat
+    new_reimbursement_type: Új visszatérítési típus
+    new_role: Új szerepkör
+    new_shipping_address: Új szállítási cím
+    new_store: Új áruház
+    new_store_credit: Új áruhitel
+    new_store_credit_category: Új áruhitel-kategória
+    new_webhook_endpoint: Új webhook-végpont
+    no_adjustments: Nincsenek korrekciók
+    no_billing_address_available: Nincs elérhető számlázási cím
+    no_customers_found: Nem található vásárló
+    no_email_provided: Nincs megadva e-mail-cím
+    no_internal_note: Nincs belső megjegyzés
+    no_products_added: Nincs hozzáadott termék
+    no_products_in_price_list: Nincsenek termékek ezen az árlistán
+    no_promotions_applied: Nincs alkalmazott akció
+    no_saved_cards: Nincsenek mentett kártyák
+    no_shipping_address_available: Nincs elérhető szállítási cím
+    no_taxes: Nincsenek adók
+    no_users_selected: Nincs kijelölt felhasználó
+    not_risky: Nem kockázatos
+    oauth_applications: OAuth-alkalmazások
+    option_type_filterable_info: Ha egy opciótípus szűrhetőre van állítva, a webáruháza látogatói lehetőséget kapnak arra, hogy az opciótípus alapján szűrjenek egy termékkategóriát. Erre tipikus példa a ruházati cikkek szűrése méret és szín szerint.<br><br><b>Megjegyzés:</b> A szűrők csak azokban a webáruház-kategóriákban lesznek láthatók, amelyek ezzel az opciótípussal rendelkező termékeket tartalmaznak.
+    option_type_kind_info: Szabályozza, hogyan jelenik meg az opció a webáruházban. A színminták színes köröket, a gombok kattintható chipeket, a legördülő pedig egy választómenüt jelenítenek meg.
+    option_type_kinds:
+      buttons: Gombok
+      color_swatch: Színminta
+      dropdown: Legördülő
+    or_select_other_address: vagy válasszon másik címet
+    order_email_resent_error: A rendelés-visszaigazoló e-mail csak teljesített rendelésekhez küldhető
+    order_line_items: Rendelési tételek
+    page_not_found: Sajnáljuk! A keresett oldal nem található.
+    page_not_found_message: Ez az oldal egyszerűen nem létezik.
+    payment_amount: Fizetési összeg
+    payment_provider_settings: Fizetési szolgáltató beállításai
+    payment_type: Fizetési típus
+    payments_gateway_processing_errors: "%{payment_method_name} feldolgozási hibák"
+    personal_details: Személyes adatok
+    previously_used_card: Korábban használt kártyák
+    price_list_form:
+      match_policies:
+        all: Felel meg mindegyik szabálynak
+        any: Felel meg bármelyik szabálynak
+    price_list_statuses:
+      active: Aktív
+      draft: Piszkozat
+      inactive: Inaktív
+      scheduled: Ütemezve
+      scheduled_active: Ütemezve (aktív)
+    products_added: Termékek hozzáadva
+    products_removed: Termékek eltávolítva
+    products_sort_options:
+      best_selling: Legkelendőbb
+      manual: Manuális
+      name_a_z: Betűrendben, A-Z
+      name_z_a: Betűrendben, Z-A
+      newest_first: Legújabb
+      oldest_first: Legrégebbi
+      price_high_to_low: Ár (magas-alacsony)
+      price_low_to_high: Ár (alacsony-magas)
+      relevance: Relevancia
+    promotion_cloned: Az akció klónozva
+    promotion_not_cloned: 'Az akció nem lett klónozva. Ok: %{error}'
+    purchased_quantity: Vásárolt mennyiség
+    remove_condition: Feltétel eltávolítása
+    return_authorization_states:
+      authorized: Engedélyezve
+      canceled: Lemondva
+    same_as_shipping_address: Megegyezik a szállítási címmel
+    search_customers: Vásárlók keresése
+    search_engine_listing: Keresőtalálat
+    search_products: Termékek keresése
+    select_existing_address: Meglévő cím kiválasztása
+    select_key_type: Válasszon kulcstípust
+    select_user: Válasszon vásárlót
+    select_vendor: Válasszon eladót
+    send_payment_link: Fizetési hivatkozás küldése
+    send_payment_link_title: Fizetési hivatkozás küldése a vásárlónak e-mailben. Később elvégezheti a fizetést.
+    service_unavailable: A szolgáltatás nem érhető el
+    service_unavailable_message: A szerver karbantartási leállás vagy kapacitásproblémák miatt átmenetileg nem tudja kiszolgálni a kérését. Kérjük, próbálja újra később.
+    shipment_successfully_shipped: A szállítmány sikeresen feladva
+    show_details: Részletek megjelenítése
+    show_report: Jelentés megjelenítése
+    standards_and_formats: Szabványok és formátumok
+    standards_and_formats_help: Állítsa be az időzónát, az alapértelmezett mértékegységrendszert és a súlyegységet áruházához.
+    start_typing_to_search_for_products: Kezdjen el gépelni a termékek kereséséhez
+    start_typing_to_search_for_variants: Kezdjen el gépelni a variánsok kereséséhez
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: Nem módosíthat olyan áruhitelt, amelyet már felhasználtak
+        unable_to_create: Az áruhitel létrehozása sikertelen
+        unable_to_delete: Az áruhitel törlése sikertelen
+        unable_to_update: Az áruhitel frissítése sikertelen
+      remaining: Fennmaradt
+      allocated: Hozzáadva
+      authorized: Engedélyezve
+      captured: Felhasználva
+      credit: Jóváírás
+      eligible: Jogosult
+    store_credit_categories: Áruhitel-kategóriák
+    store_details: Áruház adatai
+    store_errors:
+      unable_to_update: Az áruház frissítése sikertelen.
+    store_form:
+      customer_support_email_help: Ez az e-mail-cím látható az áruháza látogatói számára a lábléc szakaszban
+      new_order_notifications_email_help: Ha minden rendelés leadásakor e-mail-értesítést szeretne kapni, adjon meg egy e-mail-címet, amelyre az értesítést küldjük
+    store_name_help: Ez az áruháza neve. A fejlécben és a láblécben jelenik meg.
+    track_quantity: Mennyiség nyomon követése
+    transaction_id_help: Ez a külső fizetési átjáróban létrehozott tranzakció azonosítója.
+    true_label: IGAZ
+    type_to_search_customers: Gépeljen a vásárlók kereséséhez
+    type_to_search_products: Gépeljen a termékek kereséséhez
+    unit_system_help: Ez lesz az áruháza alapértelmezett mértékegységrendszere. Termékenként felülírhatja.
+    unit_systems:
+      imperial_system: Angolszász rendszer
+      metric: metrikus
+      metric_system: Metrikus rendszer
+    unprocessable_entity: Feldolgozhatatlan kérés
+    unprocessable_entity_message: A kérése nem dolgozható fel. Ellenőrizze az űrlapon a hibákat, és próbálja újra.
+    update_address: Cím frissítése
+    update_billing_address: Számlázási cím frissítése
+    update_contact_information: Kapcsolattartási adatok frissítése
+    update_shipping_address: Szállítási cím frissítése
+    use_shipping_address: Szállítási cím használata
+    vendors: Eladók
+    view_full_size: Teljes méret megtekintése
+    view_store: Áruház megtekintése
+    visits: Látogatások
+    weight_unit_help: Ez lesz az áruháza alapértelmezett súlyegysége. Termékenként felülírhatja.
+    weight_units:
+      gram: Gramm (g)
+      kilogram: Kilogramm (kg)
+      ounce: Uncia (oz)
+      pound: Font (lb)
+    accepts_email_marketing: Elfogadja az e-mail marketinget
+    add_customers: Ügyfelek hozzáadása
+    add_products: Termékek hozzáadása
+    add_store: Új áruház
+    add_store_credit: Áruházi jóváírás hozzáadása
+    added_to_cart: Sikeresen a kosárhoz adva!
+    address: Cím
+    address_book:
+      add_house_number: Adja meg a házszámot, ha van
+    address_not_owned_by_user: A megadott cím nem ehhez a felhasználóhoz tartozik.
+    addresses: Címek
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (Az árba foglalva)"
+    adjustments_deleted: Korrekciók törölve
+    admin_locale: Admin nyelvi beállítás
+    all_products: Összes termék
+    allowed_origin: Engedélyezett origin
+    allowed_origins: Engedélyezett originek
+    analytics: Analitika
+    api_key: API-kulcs
+    api_key_no_current_key: Egyetlen API-kulcs sem hitelesítette ezt a kérést
+    api_key_scopes_immutable: a kulcs létrehozása után nem módosítható; hozzon létre egy új kulcsot a szükséges hatókörökkel, és vonja vissza ezt
+    api_keys: API-kulcsok
+    apply: Alkalmaz
+    apply_only_on_full_priced_items: Csak teljes árú tételekre alkalmazza
+    apply_store_credit: Áruházi jóváírás alkalmazása
+    assets: Média
+    attachments: Mellékletek
+    author: Szerző
+    availability: elérhetőség
+    available: Elérhető
+    balance: Egyenleg
+    barcode: Vonalkód
+    brand: Márka
+    canceled: Visszavonva
+    cannot_be_destroyed: A rendelés nem törölhető.
+    cannot_empty: A rendelés nem üríthető ki.
+    cannot_empty_completed_order: A rendelést már feldolgozták, ezért nem üríthető ki
+    cannot_return_more_than_bought_quantity: Nem küldhető vissza több a megvásárolt mennyiségnél.
+    cart_already_updated: A kosár már frissítve lett.
+    cart_line_item:
+      discontinued: "%{li_name} eltávolításra került, mert kivonták a forgalomból"
+      out_of_stock: "%{li_name} eltávolításra került, mert elfogyott"
+    change: Módosítás
+    channel: Értékesítési csatorna
+    channels: Értékesítési csatornák
+    checkout_requirements:
+      email_required: Az e-mail-cím megadása kötelező
+      line_items_required: Adjon legalább egy terméket a kosarához
+      payment_required: Adjon meg egy fizetési módot
+      ship_address_required: A szállítási cím megadása kötelező
+      shipping_method_required: Válasszon szállítási módot minden szállítmányhoz
+    clear: Törlés
+    clear_all: Összes törlése
+    closed: Lezárva
+    color_code: Színkód
+    colors: Színek
+    compare_at_amount: Eredeti összeg
+    compare_at_price: Eredeti ár
+    contact: Kapcsolat
+    contact_phone: Kapcsolattartási telefonszám
+    content: Tartalom
+    copy: Másolás
+    copy_link: Hivatkozás másolása
+    coupon_code_used: A megadott kuponkódot már felhasználták. Kérjük, próbálja újra.
+    coupon_codes: Kuponkódok
+    create_new: Új létrehozása
+    created_by: Létrehozta
+    credit_allowed: Engedélyezett jóváírás
+    credited: Jóváírva
+    currencies: Pénznemek
+    currency_not_supported_by_store: nem támogatott ebben az áruházban
+    current_password: Jelenlegi jelszó
+    customer_group: Ügyfélcsoport
+    customer_groups: Ügyfélcsoportok
+    customer_mailer:
+      password_reset_email:
+        action: Jelszó visszaállítása
+        expiry_notice: Ez a jelszó-visszaállítási hivatkozás hamarosan lejár. Ha nem Ön kezdeményezte, nincs teendője.
+        greeting: Üdv %{name}!
+        ignore_notice: Ha nem kért jelszó-visszaállítást, nyugodtan figyelmen kívül hagyhatja ezt az e-mailt. A jelszava nem fog megváltozni.
+        instructions: Kérést kaptunk a jelszava visszaállítására. Kattintson az alábbi gombra egy új jelszó kiválasztásához.
+    customer_support_email: Ügyféltámogatás e-mail-címe
+    customers: Ügyfelek
+    cvv: CVV
+    default_billing_address: Alapértelmezett számlázási cím
+    default_country: Alapértelmezett ország
+    default_currency: Alapértelmezett pénznem
+    default_locale: Alapértelmezett nyelvi beállítás
+    default_shipping_address: Alapértelmezett szállítási cím
+    default_stock_location_name: Üzlet helye
+    default_wishlist_name: Kívánságlista
+    deleted: Törölve
+    developers: Fejlesztők
+    digital:
+      digital_delivery: Digitális kézbesítés
+    digital_assets: Digitális tartalmak
+    discontinue_on: Forgalmazás vége
+    discontinued: Forgalomból kivonva
+    discontinued_variants_present: Ebben a rendelésben szereplő egyes tételek már nem érhetők el.
+    discount: Kedvezmény
+    discounts: Kedvezmények
+    display_delivery_range: Kézbesítés %{delivery_range} munkanapon belül
+    display_on: Megjelenítés ezen
+    domain: Domain
+    done: Kész
+    download: Letöltés
+    draft: Vázlat
+    duplicate: Duplikálás
+    duplicating: Duplikálás folyamatban
+    email_marketing: E-mail marketing
+    emails: E-mailek
+    ends_at: Befejezés dátuma
+    enter: Megadás
+    error_user_destroy_with_orders: A rendelésekhez kapcsolódó felhasználó nem törölhető
+    error_user_does_not_have_any_store_credits: A felhasználónak nincs elérhető áruházi jóváírása
+    estimated_transit_business_days: Becsült szállítási munkanapok
+    existing_address: Meglévő cím
+    expired: Lejárt
+    expires_at: Lejárat dátuma
+    export: Exportálás
+    export_mailer:
+      export_done:
+        message: Szép munka, az exportálás elkészült! Kérjük, az alábbi hivatkozással töltse le.
+        subject: A(z) %{export_number} exportálás sikeresen feldolgozásra került!
+      greeting: Üdv %{user_name}!
+      thanks: Köszönjük,
+    facebook: Facebook
+    featured_image: Kiemelt kép
+    field: Mező
+    filled: Kitöltve
+    filterable: Szűrhető
+    firstname: Keresztnév
+    fonts: Betűtípusok
+    footer: Lábléc
+    forbidden: Hozzáférés megtagadva
+    free: Ingyenes
+    from: Kezdődátum
+    generate_code: Kuponkód generálása
+    gift_card: Ajándékkártya
+    gift_card_already_redeemed: Az ajándékkártyát már beváltották.
+    gift_card_applied: Az ajándékkártya sikeresen érvényesítésre került a rendelésén!
+    gift_card_batch: Ajándékkártya-köteg
+    gift_card_customer_not_logged_in: Az ajándékkártya vendég felhasználóval nem érvényesíthető.
+    gift_card_expired: Az ajándékkártya lejárt.
+    gift_card_mismatched_currency: Az ajándékkártya az aktuális pénznemmel nem érvényesíthető.
+    gift_card_mismatched_customer: Ez az ajándékkártya egy másik felhasználóhoz tartozik.
+    gift_card_not_found: Az ajándékkártya nem található.
+    gift_card_removed: Az ajándékkártya sikeresen eltávolításra került a rendeléséről
+    gift_card_using_store_credit_error: Az ajándékkártya nem érvényesíthető az áruházi jóváírás alkalmazása után.
+    gift_cards: Ajándékkártyák
+    hide: Elrejtés
+    idempotency_key_reused: Ezt az Idempotency-Key kulcsot már használták eltérő kérési paraméterekkel.
+    immediately: Azonnal
+    import: Importálás
+    in_stock: Készleten
+    instagram: Instagram
+    integrations: Integrációk
+    internal_note: Belső megjegyzés
+    internationalization: Nemzetköziesítés
+    invitation_accepted: Meghívás elfogadva!
+    invitation_mailer:
+      greeting: Üdv %{user_name}!
+      invitation_accepted:
+        body: "%{invitee_name} elfogadta a meghívását, hogy csatlakozzon ehhez: %{resource_name}"
+        subject: "%{invitee_name} elfogadta a meghívását, hogy csatlakozzon ehhez: %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} meghívta Önt, hogy csatlakozzon ehhez: %{resource_name}"
+        link_description: 'A meghívás elfogadásához kattintson az alábbi hivatkozásra:'
+        subject: Meghívás a(z) %{resource_name} csatlakozásra
+      thanks: Köszönjük,
+    invitations: Meghívások
+    invited_by: Meghívta
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Kulcs
+    kind: Típus
+    label: Címke
+    language: Nyelv
+    lastname: Vezetéknév
+    line_item: Rendelési tétel
+    line_items: Rendelési tételek
+    link: Hivatkozás
+    live: Élő
+    locale: Nyelvi beállítás
+    locale_not_supported_by_store: nem támogatott ebben az áruházban
+    logo: Logó
+    mail_from_address: Feladó e-mail-címe
+    mailer_logo: E-mail logó (csak JPG vagy PNG képek)
+    make_active_at: Aktiválás ekkor
+    manual: Kézi
+    market: Piac
+    market_ids: Piacok
+    markets: Piacok
+    master: Fő
+    max: Max.
+    max_quantity: Maximális mennyiség
+    me_no_current_user: Egyetlen adminisztrátor sem hitelesítette ezt a kérést
+    media: Média
+    metafield_definitions: Metamező-definíciók
+    metafields: Metamezők
+    min: Min.
+    min_quantity: Minimális mennyiség
+    missing_return_authorization: 'Hiányzó visszaküldési engedély ehhez: %{item_name}.'
+    move: Áthelyezés
+    mutable: Módosítható
+    navigation: Navigáció
+    never: Soha
+    new_address: Új cím
+    new_order_notifications_email: Új rendelés értesítő e-mail-cím
+    new_price_list: Új árlista
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Üdv,
+        ignore_disclaimer: Ha nem Ön kérte ezt, kérjük, hagyja figyelmen kívül ezt az e-mailt.
+        instructions: Kérjük, kattintson az alábbi gombra az e-mail-címe megerősítéséhez.
+        message_copy_link: 'Ha a gomb nem működik, kérjük, másolja be a következő hivatkozást a böngészőjébe:'
+        store_team: "%{store_name} csapat"
+        subject: Erősítse meg az e-mail-címét
+        thanks: Köszönjük
+        verify_email_address_link: E-mail-cím megerősítése
+    newsletter_subscribers: Hírlevél-feliratkozók
+    no_cc_type: N/A
+    no_report_data: Nincs jelentésadat
+    number: Szám
+    ok: OK
+    only_active_products_can_be_added_to_cart: Vázlat és archivált termékek nem adhatók a kosárhoz, kérjük, előbb jelölje meg a terméket aktívként.
+    option_name: Tulajdonság neve
+    order_routing:
+      strategies:
+        legacy: Örökölt
+        rules: Szabályok (rendezett)
+    origin: Origin
+    other: Egyéb
+    outstanding_balance: Fennálló egyenleg
+    page: Oldal
+    pages: Oldalak
+    payment_source: Fizetési forrás
+    payment_total: Fizetés összesen
+    permissions: Engedélyek
+    policies: Szabályzatok
+    preview: Előnézet
+    price_lists: Árlisták
+    price_rules:
+      customer_group_rule:
+        description: Árazás alkalmazása meghatározott ügyfélcsoportokra
+    prices: Árak
+    pricing: Árazás
+    privacy_policy: Adatvédelmi szabályzat
+    processing: Feldolgozás
+    product_name: Termék neve
+    product_translations: Termékfordítások
+    products_cannot_be_shipped: 'Jelenleg nem tudjuk a következő termékeket az Ön aktuális helyére szállítani: %{product_names}. Kérjük, módosítsa a szállítási címét, vagy távolítsa el a kosarából: %{product_names}.'
+    promotion_already_used: Nem törölhet olyan promóciót, amelyet már érvényesítettek
+    promotion_category: Promóció kategória
+    promotion_label: Promóció (%{name})
+    published_at: Közzététel ideje
+    query: Lekérdezés
+    refund_amount: Visszatérítés összege
+    remove_gift_card_on_completed_order_error: Az ajándékkártya nem távolítható el a rendelés leadása után
+    report_mailer:
+      greeting: Üdv %{user_name}!
+      report_done:
+        message: Kérjük, az alábbi hivatkozással töltse le.
+        subject: A(z) %{report_name} jelentése elkészült
+      thanks: Köszönjük,
+    report_names:
+      products_performance: Termékek teljesítménye
+      sales_total: Értékesítés összesen
+    required: "*"
+    required_fields: kötelező mezők
+    resellable: Továbbértékesíthető
+    resource: Erőforrás
+    return_authorization_canceled: Visszaküldési engedély visszavonva
+    return_item_order_not_completed: A visszaküldött tétel rendelésének befejezettnek kell lennie
+    returns_policy: Visszaküldési szabályzat
+    role_id: Szerep azonosítója
+    row: Sor
+    sale: Akció
+    saving: Mentés
+    scopes: Hatókörök
+    search_by: 'Keresés szerint:'
+    security: Biztonság
+    seed:
+      shipping:
+        categories:
+          default: Alapértelmezett
+          digital: Digitális
+    selected_quantity_not_available: 'kiválasztva ennyiből: %{item} nem elérhető.'
+    send_consumer_transactional_emails: Ügyfél tranzakciós e-mailek küldése
+    seo: SEO
+    seo_title: SEO cím
+    ship_to: 'Szállítás ide:'
+    shipping_policy: Szállítási szabályzat
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (tartalmazza: %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Szállítási zóna
+    show_discontinued: Forgalomból kivontak megjelenítése
+    sign_up: Regisztráció
+    site_name: Webhely neve
+    size: Méret
+    social: Közösségi
+    sort_by: Rendezés szerint
+    square_image: Négyzetes kép
+    starts_at: Kezdés dátuma
+    state_changes: Állapotváltozások
+    stock_items: Készlettételek
+    store_credit_events: Áruházi jóváírás események
+    store_credit_name: Áruházi jóváírás
+    store_credit_payment_method:
+      currency_mismatch: Az áruházi jóváírás pénzneme nem egyezik a rendelés pénznemével
+      insufficient_authorized_amount: Az engedélyezett összegnél többet nem lehet terhelni
+      insufficient_funds: A fennmaradó áruházi jóváírás összege nem elegendő
+      successful_action: Sikeres áruházi jóváírás %{action}
+      unable_to_credit: 'Nem lehet jóváírni a kódot: %{auth_code}'
+      unable_to_find: Az áruházi jóváírás nem található
+      unable_to_find_for_action: 'Nem található áruházi jóváírás a következő hitelesítési kódhoz: %{auth_code}, művelethez: %{action}'
+      unable_to_void: 'Nem lehet érvényteleníteni a kódot: %{auth_code}'
+    store_credits: Áruházi jóváírások
+    store_default: Alapértelmezett áruház
+    store_name: Áruház neve
+    stores: Áruházak
+    subscribed: Feliratkozva
+    support: Támogatás
+    supported_currencies: Támogatott pénznemek
+    supported_locales: Támogatott nyelvi beállítások
+    tags: Címkék
+    tax_inclusive: Adóval együtt
+    taxes: Adók
+    taxonomy_brands_name: Márkák
+    taxonomy_categories_name: Kategóriák
+    taxonomy_collections_name: Kollekciók
+    terms_of_service: Felhasználási feltételek
+    theme: Téma
+    themes: Témák
+    timezone: Időzóna
+    title: Cím
+    to: Végdátum
+    translations: Fordítások
+    twitter: Twitter
+    unit: Egység
+    unit_system: Mértékegységrendszer
+    unlimited: Korlátlan
+    updated_at: Frissítés ideje
+    url: URL
+    used: Felhasználva
+    user_ids: Felhasználók
+    vendor: Beszállító
+    verified: Ellenőrizve
+    verified_at: Ellenőrzés ideje
+    view: Megtekintés
+    visibility: Láthatóság
+    webhook_endpoints: Webhook végpontok
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Letiltva ekkor
+        heading: Webhook végpont letiltva
+        instructions: 'Kérjük, ellenőrizze a végpont URL-jét és a szolgáltatást, majd engedélyezze újra itt: Beállítások → Fejlesztők → Webhookok.'
+        message: A(z) „%{endpoint_name}” webhook végpont automatikusan letiltásra került ismételt kézbesítési hibák után.
+        name_label: Név
+        reason_label: Indok
+        subject: 'Webhook végpont letiltva: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhookok
+    weight_unit: Tömegegység
+    wishlist: Kívánságlista
+    zipcode_required: Irányítószám kötelező
+    zone_ids: Zónák
+    api:
+      cannot_delete: "%{model} nem törölhető"
+      current_password_invalid: A jelenlegi jelszó érvénytelen vagy hiányzik
+      gateway_error: 'Probléma történt a fizetési átjáróval: %{text}'
+      invalid_api_key: Érvénytelen API-kulcs (%{key}) lett megadva.
+      invalid_resource: Érvénytelen erőforrás. Kérjük, javítsa a hibákat, és próbálja újra.
+      invalid_taxonomy_id: Érvénytelen taxonómia azonosító.
+      must_specify_api_key: Meg kell adnia egy API-kulcsot.
+      negative_quantity: a mennyiség negatív
+      newsletter_verification_token_invalid: A hírlevél megerősítő tokenje érvénytelen vagy lejárt.
+      order:
+        could_not_transition: A rendelés állapota nem volt módosítható. Kérjük, javítsa a hibákat, és próbálja újra.
+        insufficient_quantity: A kosarában lévő egyik tétel elérhetetlenné vált.
+        invalid_shipping_method: Érvénytelen szállítási mód lett megadva.
+      password_reset_requested: Ha létezik fiók ezzel az e-mail-címmel, elküldtük a jelszó-visszaállítási utasításokat.
+      password_reset_token_invalid: A jelszó-visszaállítási token érvénytelen vagy lejárt.
+      payment:
+        credit_over_limit: Ez a fizetés legfeljebb %{limit} értékig írható jóvá. Kérjük, adjon meg ennél kisebb vagy ezzel egyenlő összeget.
+        update_forbidden: 'Ez a fizetés nem frissíthető, mert a következő állapotban van: %{state}.'
+      record_not_found: "%{model} nem található"
+      redirect_url_not_allowed: Az átirányítási URL nem ennek az áruháznak az engedélyezett originjéből származik.
+      resource_not_found: A keresett erőforrás nem található.
+      shipment:
+        cannot_ready: A szállítmány nem készíthető elő.
+      shipment_transfer_errors_occurred: 'A művelet végrehajtása során a következő hibák léptek fel:'
+      shipment_transfer_success: A variánsok sikeresen átmozgatásra kerültek
+      stock_location_required: A készletmozgások lekérdezéséhez meg kell adni egy stock_location_id paramétert.
+      unauthorized: Nincs jogosultsága a művelet végrehajtásához.
+      v2:
+        cart:
+          no_coupon_code: Nem adott meg kuponkódot, és a rendeléshez nincs alkalmazott kuponkódos promóció
+          wrong_quantity: A mennyiségnek nagyobbnak kell lennie 0-nál
+        digitals:
+          missing_file: 'Hiányzó digitális tétel: melléklet'
+          unauthorized: Hiba, nincs jogosultsága hozzáférni ehhez a tartalomhoz
+        gift_card:
+          amount_not_valid: Az ajándékkártya összege érvénytelen
+          not_found: Az ajándékkártya nem található
+        metadata:
+          invalid_params: A nyilvános és privát metaadat paramétereknek objektumoknak kell lenniük
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: A kívánságlista nem törölhető.
+          wrong_quantity: A mennyiségnek nagyobbnak kell lennie 0-nál
+      v3:
+        payments:
+          method_unavailable: Ez a fizetési mód nem érhető el ehhez a rendeléshez.
+          session_required: Ez a fizetési mód fizetési munkamenetet igényel. Használja helyette a fizetési munkamenetek végpontot.
+      wrong_shipment_target: a célszállítmány azonos az eredeti szállítmánnyal
+  action_text:
+    video_embed:
+      not_found: A megadott URL alapján nem ágyazható be videó
+  activemodel:
+    errors:
+      messages:
+        blank: nem lehet üres
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: utánrendelt készletegységeket tartalmaz
+              has_already_been_shipped: már kiszállításra került
+            desired_shipment:
+              can_not_transfer_within_same_shipment: nem lehet azonos a jelenlegi szállítmánnyal
+              has_not_enough_stock_at_desired_location: nincs elegendő készlet a kívánt raktárhelyen
+  address_book:
+    save: Mentés
+    successfully_created: Az új cím sikeresen létrejött
+  number:
+    currency:
+      format:
+        delimiter: " "
+        separator: ","
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Csonkítás

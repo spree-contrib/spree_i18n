@@ -12,6 +12,8 @@ ar:
         phone: " هاتف "
         state: " مقاطعة "
         zipcode: " الرمز البريدي "
+        company: الشركة
+        label: اسم العنوان
       spree/calculator/tiered_flat_rate:
         preferred_base_amount: " المبلغ الأساسي "
         preferred_tiers: " المستويات "
@@ -40,6 +42,8 @@ ar:
       spree/option_type:
         name: " الاسم "
         presentation: " التقديم "
+        filterable: قابل للتصفية
+        kind: النوع
       spree/order:
         checkout_complete: " اكتمال الخروج "
         completed_at: تاريخ الإكمال
@@ -55,6 +59,8 @@ ar:
         special_instructions: تعليمات خاصة
         state: " مقاطعة "
         total: " الإجمالي "
+        internal_note: ملاحظة داخلية
+        item_count: العناصر
       spree/order/bill_address:
         address1: " شارع عنوان الفواتير "
         city: " مدينة عنوان إرسال الفواتير "
@@ -73,6 +79,7 @@ ar:
         zipcode: " الرمز البريدي لعنوان الشحن "
       spree/payment:
         amount: " كمية "
+        number: الرقم
       spree/payment_method:
         name: " اسم "
       spree/product:
@@ -85,6 +92,10 @@ ar:
         on_hand: " في اليد "
         shipping_category: " فئة الشحن "
         tax_category: " فئة الضريبة "
+        discontinue_on: إيقاف في
+        less_than: أقل من
+        make_active_at: تفعيل في
+        more_than: أكثر من
       spree/promotion:
         advertise: " أعلن "
         code: " الرمز "
@@ -95,8 +106,11 @@ ar:
         path: " مسار "
         starts_at: يبدأ في
         usage_limit: " حد الاستخدام "
+        generate_code: إنشاء رمز القسيمة
+        promotion_category: فئة العرض الترويجي
       spree/promotion_category:
         name: " اسم "
+        code: الرمز
       spree/property:
         name: " اسم "
         presentation: " عرض "
@@ -124,6 +138,16 @@ ar:
         name: " اسم الموقع "
         seo_title:
         url:
+        address: العنوان
+        contact_phone: هاتف التواصل
+        preferred_digital_asset_authorized_clicks: حد نقرات التنزيل
+        preferred_digital_asset_authorized_days: حد أيام التنزيل
+        preferred_limit_digital_download_count: تحديد عدد مرات تنزيل الروابط الرقمية
+        preferred_limit_digital_download_days: تحديد أيام تنزيل الروابط الرقمية
+        seo_robots: روبوتات تحسين محركات البحث (SEO)
+        storefront_custom_code_body_end: رمز مخصص قبل وسم إغلاق body
+        storefront_custom_code_body_start: رمز مخصص بعد وسم فتح body
+        storefront_custom_code_head: رمز مخصص في رأس الصفحة
       spree/tax_category:
         description: " وصف "
         name: " اسم "
@@ -135,12 +159,14 @@ ar:
         name: " اسم "
         permalink: " الرابط الثابت "
         position: " موضع "
+        sort_order: ترتيب الفرز
       spree/taxonomy:
         name: " اسم "
       spree/user:
         email: " البريد الإلكتروني "
         password: " كلمه المرور "
         password_confirmation: " تأكيد كلمة المرور "
+        avatar: الصورة الرمزية
       spree/variant:
         cost_currency: " عملة التكلفة "
         cost_price: " سعر الكلفة "
@@ -155,6 +181,7 @@ ar:
         name: " اسم "
       spree/gift_card:
         amount_used: المبلغ المستخدم
+        expires_at: تنتهي في
       spree/import_mapping:
         file_column: عمود الملف
         schema_field: حقل المخطط
@@ -166,6 +193,40 @@ ar:
         current_sign_in: تسجيل الدخول الحالي
         last_sign_in: آخر تسجيل دخول
         sign_in_count: عدد تسجيلات الدخول
+      spree/customer_group:
+        description: الوصف
+        name: الاسم
+      spree/customer_return:
+        stock_location_id: موقع المخزون
+      spree/import:
+        preferred_delimiter: الفاصل
+      spree/metafield_definition:
+        namespace: مساحة الاسم
+      spree/option_value:
+        color_code: رمز اللون
+        image: صورة العينة
+      spree/page_link:
+        open_in_new_tab: فتح في علامة تبويب جديدة
+      spree/policy:
+        body: النص
+        owner: السياسة الخاصة بـ
+      spree/price_list:
+        description: الوصف
+        ends_at: ينتهي في
+        match_policy: سياسة المطابقة
+        name: الاسم
+        priority: الأولوية
+        starts_at: يبدأ في
+        status: الحالة
+      spree/price_rule:
+        priority: الأولوية
+        type: النوع
+      spree/shipment:
+        number: الرقم
+      spree/store_credit:
+        amount_used: المبلغ المستخدم
+      spree/store_credit_category:
+        name: الاسم
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -212,6 +273,109 @@ ar:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: لا يمكن حذف المتجر الوحيد.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: يجب أن يكون أصلًا (المخطط والمضيف) بدون مسار أو استعلام أو جزء
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: لا يمكن حذف بطاقة هدية مستخدمة
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: يجب أن يكون موجودًا
+              not_allowed_content_type: يحتوي على نوع محتوى غير مسموح به
+        spree/import:
+          attributes:
+            attachment:
+              content_type: يحتوي على نوع محتوى غير مسموح به
+            type:
+              inclusion: غير مُدرج في قائمة الأنواع المسموح بها
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: يخص مستخدمًا آخر
+              deprecated_in_completed_order: مهمل في طلب مكتمل
+            ship_address_id:
+              belongs_to_other_user: يخص مستخدمًا آخر
+              deprecated_in_completed_order: مهمل في طلب مكتمل
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: لا يمكن حذف السوق الافتراضي.
+              cannot_destroy_last_market: لا يمكن حذف السوق الوحيد.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: مُخصّص بالفعل لسوق آخر في هذا المتجر
+              not_in_shipping_zone: غير مشمول بأي منطقة شحن. يُرجى إعداد منطقة شحن أولًا.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: أكبر من الحد الأقصى المسموح به وهو %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: يجب أن يكون بعد تاريخ البدء
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: لا يمكن حذف المنتجات المضافة إلى طلبات تم تقديمها. في هذه الحالات، يُرجى إيقافها.
+            discontinue_on:
+              invalid_date_range: يجب أن يكون بعد تاريخ التوفر
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: يجب أن يكون بعد تاريخ النشر
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: يجب أن يكون بعد تاريخ البدء
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: يجب اختيار فئة شحن واحدة على الأقل
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: يتجاوز إجمالي الأرصدة.
+            amount_used:
+              cannot_be_greater_than_amount: لا يمكن أن يكون أكبر من المبلغ.
+              greater_than_zero_restrict_delete: أكبر من الصفر. لا يمكن حذف رصيد المتجر.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: لا يمكن حذف فئات رصيد المتجر بمجرد استخدامها في رصيد المتجر.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: يحتوي على نوع محتوى غير مسموح به
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: يخص مستخدمًا آخر
+              deprecated_in_completed_order: مهمل في طلب مكتمل
+            ship_address_id:
+              belongs_to_other_user: يخص مستخدمًا آخر
+              deprecated_in_completed_order: مهمل في طلب مكتمل
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: لا يمكن حذف المتغيرات المضافة إلى طلبات تم تقديمها. في هذه الحالات، يُرجى إيقافها.
+              must_supply_price_for_variant_or_master: يجب توفير سعر للمتغير أو السعر الأساسي للمنتج.
+              no_master_variant_found_to_infer_price: لم يتم العثور على متغير رئيسي لاستنتاج السعر
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: يجب ألا يشير إلى عنوان شبكة داخلية أو خاصة
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: لقد أضفت هذا العنصر بالفعل إلى قائمة أمنياتك
+      messages:
+        blank: لا يمكن أن يكون فارغًا
     models:
       spree/address:
         one: " عنوان "
@@ -223,6 +387,8 @@ ar:
         one: " بطاقة الائتمان "
         other: " بطاقات الائتمان "
       spree/customer_return:
+        one: إرجاع عميل
+        other: إرجاعات العملاء
       spree/inventory_unit:
         one: " وحدة الجرد "
         other: " وحدات الجرد "
@@ -230,7 +396,11 @@ ar:
         one: " خط سلعة "
         other: " البنود "
       spree/option_type:
+        one: نوع خيار
+        other: أنواع الخيارات
       spree/option_value:
+        one: قيمة خيار
+        other: قيم الخيارات
       spree/order:
         one: " طلب "
         other: " أوامر "
@@ -238,11 +408,17 @@ ar:
         one: " دفع "
         other: " المدفوعات "
       spree/payment_method:
+        one: طريقة دفع
+        other: طرق الدفع
       spree/product:
         one: " المنتج "
         other: " منتجات "
       spree/promotion:
+        one: عرض ترويجي
+        other: العروض الترويجية
       spree/promotion_category:
+        one: فئة عرض ترويجي
+        other: فئات العروض الترويجية
       spree/property:
         one: " خاصية "
         other: " الخصائص "
@@ -250,12 +426,20 @@ ar:
         one: " النموذج المبدئي "
         other: " النماذج الأولية "
       spree/refund_reason:
+        one: سبب استرداد
+        other: أسباب الاسترداد
       spree/reimbursement:
+        one: تعويض
+        other: التعويضات
       spree/reimbursement_type:
+        one: نوع تعويض
+        other: أنواع التعويضات
       spree/return_authorization:
         one: " إذن العودة "
         other: " أذون الإرجاع "
       spree/return_authorization_reason:
+        one: سبب تفويض الإرجاع
+        other: أسباب تفويض الإرجاع
       spree/role:
         one: " الأدوار "
         other: " الأدوار "
@@ -266,13 +450,23 @@ ar:
         one: " فئة الشحن "
         other: " فئات الشحن "
       spree/shipping_method:
+        one: طريقة شحن
+        other: طرق الشحن
       spree/state:
         one: " مقاطعة "
         other: " المقاطعات "
       spree/state_change:
+        one: تغيير حالة
+        other: تغييرات الحالة
       spree/stock_location:
+        one: موقع مخزون
+        other: مواقع المخزون
       spree/stock_movement:
+        one: حركة مخزون
+        other: حركات المخزون
       spree/stock_transfer:
+        one: نقل مخزون
+        other: عمليات نقل المخزون
       spree/tax_category:
         one: " فئة الضريبة "
         other: " فئات الضرائب "
@@ -286,6 +480,8 @@ ar:
         one: " التصنيف "
         other: " التصنيفات "
       spree/tracker:
+        one: أداة تتبع
+        other: أدوات التتبع
       spree/user:
         one: " المستخدم "
         other: " المستخدمون "
@@ -295,6 +491,66 @@ ar:
       spree/zone:
         one: " منطقة "
         other: " المناطق "
+      spree/classification:
+        one: تصنيف
+        other: التصنيفات
+      spree/cms_page:
+        one: صفحة
+        other: الصفحات
+      spree/cms_section:
+        one: قسم
+        other: الأقسام
+      spree/customer_group:
+        one: مجموعة عملاء
+        other: مجموعات العملاء
+      spree/customer_group_user:
+        one: مستخدم مجموعة العملاء
+        other: مستخدمو مجموعات العملاء
+      spree/digital:
+        one: أصل رقمي
+        other: أصول رقمية
+      spree/export:
+        one: تصدير
+        other: عمليات التصدير
+      spree/integration:
+        one: تكامل
+        other: عمليات التكامل
+      spree/page:
+        one: صفحة
+        other: الصفحات
+      spree/page_block:
+        one: كتلة صفحة
+        other: كتل الصفحات
+      spree/page_link:
+        one: رابط صفحة
+        other: روابط الصفحات
+      spree/page_section:
+        one: قسم صفحة
+        other: أقسام الصفحات
+      spree/price:
+        one: سعر
+        other: الأسعار
+      spree/price_list:
+        one: قائمة أسعار
+        other: قوائم الأسعار
+      spree/price_rule:
+        one: قاعدة سعر
+        other: قواعد الأسعار
+      spree/stock_item:
+        one: عنصر مخزون
+        other: عناصر المخزون
+      spree/store:
+        one: متجر
+        other: المتاجر
+      spree/store_credit:
+        one: رصيد متجر
+        other: أرصدة المتجر
+      spree/store_credit_category:
+        one: فئة رصيد متجر
+        other: فئات رصيد المتجر
+      spree/theme:
+        one: سمة
+        other: السمات
   devise:
     confirmations:
       confirmed: " تم تأكيد حسابك بنجاح. انت الآن مسجل دخولك "
@@ -342,6 +598,7 @@ ar:
       not_saved:
         one: " حدث خطأ أثناء منع حفظ %{resource}: "
         other: " أدت أخطاء %{count} إلى منع حفظ %{resource} هذا: "
+      not_a_number: ليس رقمًا
   spree:
     filter: " فلتر "
     quick_search: " .. بحث سريع "
@@ -1109,6 +1366,7 @@ ar:
         no_user_or_email_specified: " تحتاج إلى تسجيل الدخول أو تقديم بريدك الإلكتروني قبل تطبيق رمز القسيمة "
         no_user_specified: " تحتاج إلى تسجيل الدخول قبل تطبيق رمز القسيمة هذا "
         not_first_order: " لا يمكن تطبيق رمز القسيمة إلا على طلبك الأول "
+        wrong_country: رمز القسيمة هذا غير صالح في بلدك
     email: البريد الإلكتروني
     empty: " فارغ "
     empty_cart: " عربة فارغة "
@@ -1122,6 +1380,17 @@ ar:
         could_not_create_taxon: " تعذر إنشاء الصنف "
         no_payment_methods_available: " لم يتم تكوين طرق دفع لهذه البيئة "
         no_shipping_methods_available: " لا توجد طرق شحن متاحة للموقع المحدد ، يرجى تغيير عنوانك والمحاولة مرة أخرى "
+        cannot_delete_default_channel: لا يمكن حذف القناة الافتراضية. قم بترقية قناة أخرى لتصبح افتراضية أولًا.
+        channel_store_mismatch: يجب أن ينتمي إلى المتجر نفسه
+        invalid_order_routing_rule: ليست قاعدة توجيه طلبات مسجلة
+        invalid_order_routing_strategy: ليست استراتيجية توجيه طلبات مسجلة
+        must_be_origin_only: يجب أن يكون أصلًا (المخطط والمضيف) بدون مسار أو استعلام أو جزء
+        store_association_can_not_be_changed: لا يمكن تغيير ارتباط المتجر
+        store_is_already_set: تم تعيين المتجر بالفعل
+      services:
+        get_shipping_rates:
+          no_line_items: لإنشاء أسعار الشحن، يجب إضافة بعض العناصر إلى الطلب
+          no_shipping_address: لإنشاء أسعار الشحن، يجب أن يحتوي الطلب على عنوان شحن
     errors_prohibited_this_record_from_being_saved:
       one: خطأ واحد منع حفظ هذا السجل
       other: "%{count} أخطاء منعت حفظ هذا السجل"
@@ -1369,6 +1638,7 @@ ar:
         subject: " إلغاء الطلب "
         subtotal:
         total:
+        thanks: شكرًا لك على
       confirm_email:
         dear_customer: "  عزيزي %{name}، "
         instructions: " يرجى مراجعة معلومات الطلب التالية والاحتفاظ بها لسجلاتك "
@@ -1377,6 +1647,20 @@ ar:
         subtotal:
         thanks: " شكرا لعملك "
         total:
+      payment_link_email:
+        message: يُرجى النقر على الزر أدناه لدفع قيمة طلبك.
+        message_copy_link: 'إذا لم يعمل الزر، يُرجى نسخ الرابط التالي ولصقه في متصفحك:'
+        pay_for_order: ادفع قيمة الطلب
+        subject: رابط الدفع للطلب رقم %{number}
+      store_owner_notification_email:
+        heading: تم استلام طلب جديد
+        instructions: لقد تلقيت طلبًا جديدًا.
+        order_summary: ملخص الطلب %{number}
+        subject: استلم %{store_name} طلبًا جديدًا
+        thanks: شكرًا لك
+      store_team: فريق %{store_name}
+      subtotal: 'المجموع الفرعي:'
+      total: 'إجمالي الطلب:'
     order_not_found: " تعذر العثور على طلبك. يرجى المحاولة هذا الإجراء مرة أخرى "
     order_number: " %{number} (رقم (الطلب "
     order_processed_successfully: " تمت معالجة طلبك بنجاح "
@@ -1433,6 +1717,7 @@ ar:
       void: ملغى
       partially_refunded: مُسترد جزئياً
       refunded: مُسترد
+      complete: مكتمل
     payment_updated: تم تحديث الدفع
     payments: المدفوعات
     pending: قيد الانتظار
@@ -1519,6 +1804,24 @@ ar:
       user_logged_in:
         description: " متاح فقط للمستخدمين المسجلين "
         name: " دخول المستخدم "
+      category:
+        description: يتضمن الطلب منتجات في فئات محددة
+        name: الفئات
+      country:
+        description: اقتصار على الطلبات ذات عنوان الشحن في دولة محددة
+        name: الدولة
+      currency:
+        description: اقتصار على الطلبات بعملة محددة
+        name: العملة
+      customer:
+        description: متاح فقط للعملاء المحددين
+        name: العملاء
+      customer_group:
+        description: متاح فقط للعملاء في مجموعة (مجموعات) عملاء محددة
+        name: مجموعة (مجموعات) العملاء
+      customer_logged_in:
+        description: متاح فقط للعملاء الذين سجّلوا الدخول
+        name: العملاء الذين سجّلوا الدخول فقط
     promotion_uses: " يستخدم الترويج "
     promotionable:
     promotions: العروض الترويجية
@@ -1560,6 +1863,8 @@ ar:
         refund_summary:
         subject:
         total_refunded:
+        store_team: فريق %{store_name}
+        thanks: شكرًا لتعاملك معنا.
     reimbursement_perform_failed:
     reimbursement_status: حالة الاسترداد
     reimbursement_type: نوع الاسترداد
@@ -1641,6 +1946,8 @@ ar:
         thanks: " شكرا لعملك "
         track_information: 'Tracking Information: %{tracking}'
         track_link: 'Tracking Link: %{url}'
+        shipping_method: 'طريقة الشحن: %{shipping_method}'
+        store_team: فريق %{store_name}
     shipment_state: " دولة الشحن "
     shipment_states:
       backorder: " تأجيل "
@@ -1717,6 +2024,7 @@ ar:
       returned:
       shipped:
       void:
+      shipment: الشحنة
     states: الولايات/المقاطعات
     states_required: " المحافظات المطلوبة "
     status: الحالة
@@ -1730,7 +2038,11 @@ ar:
     stock_movements: حركات المخزون
     stock_movements_for_stock_location: Stock Movements for %{stock_location_name}
     stock_successfully_transferred: " تم نقل المخزون بنجاح بين المواقع "
-    stock_transfer: " نقل المخزون "
+    stock_transfer:
+      errors:
+        must_have_variant: يجب إضافة متغير واحد على الأقل
+        same_location: لا يمكن أن يكون مماثلًا لموقع الوجهة
+        variants_unavailable: بعض المتغيرات غير متوفرة في %{stock}
     stock_transfers: تحويلات المخزون
     stop: Stop
     store: " المتجر "
@@ -2093,6 +2405,8 @@ ar:
         unable_to_delete: تعذر حذف رصيد المتجر
         unable_to_update: تعذر تحديث رصيد المتجر
       remaining: المتبقي
+      credit: رصيد
+      eligible: مؤهل
     store_credit_events: أحداث رصيد المتجر
     store_credit_name: رصيد المتجر
     store_credits: أرصدة المتجر
@@ -2117,6 +2431,7 @@ ar:
     unit_systems:
       imperial_system: النظام الإمبراطوري
       metric_system: النظام المتري
+      metric: متري
     unlimited: غير محدود
     unprocessable_entity: كيان غير قابل للمعالجة
     unprocessable_entity_message: تعذرت معالجة طلبك. يرجى التحقق من النموذج بحثاً عن أخطاء والمحاولة مرة أخرى.
@@ -2142,6 +2457,359 @@ ar:
       kilogram: كيلوغرام (kg)
       ounce: أونصة (oz)
       pound: رطل (lb)
+    added_at: أُضيف في
+    breadcrumbs: مسار التنقل
+    close_sidebar: إغلاق الشريط الجانبي
+    custom_domains: النطاقات المخصصة
+    domains: النطاقات
+    edit_address: تعديل العنوان
+    estimated_delivery_time: وقت التسليم المقدّر
+    excerpt: مقتطف
+    favicon: أيقونة الموقع
+    homepage: الصفحة الرئيسية
+    mark_as_default: تعيين كافتراضي
+    new_balance: الرصيد الجديد
+    new_custom_domain: نطاق مخصص جديد
+    new_domain: نطاق جديد
+    new_page: صفحة جديدة
+    new_password: كلمة المرور الجديدة
+    oauth_applications: تطبيقات OAuth
+    option_type_kinds:
+      buttons: أزرار
+      color_swatch: عينة لون
+      dropdown: قائمة منسدلة
+    order_line_items: بنود الطلب
+    payment_type: نوع الدفع
+    personal_details: البيانات الشخصية
+    price_list_form:
+      match_policies:
+        all: مطابقة جميع هذه القواعد
+        any: مطابقة أي من هذه القواعد
+    price_list_statuses:
+      active: نشط
+      draft: مسودة
+      inactive: غير نشط
+      scheduled: مجدول
+      scheduled_active: مجدول (نشط)
+    products_sort_options:
+      best_selling: الأكثر مبيعًا
+      manual: يدوي
+      name_a_z: أبجديًا، من أ إلى ي
+      name_z_a: أبجديًا، من ي إلى أ
+      newest_first: الأحدث
+      oldest_first: الأقدم
+      price_high_to_low: السعر (من الأعلى إلى الأدنى)
+      price_low_to_high: السعر (من الأدنى إلى الأعلى)
+      relevance: الصلة
+    return_authorization_states:
+      authorized: مُصرّح به
+      canceled: ملغى
+    send_payment_link: إرسال رابط الدفع
+    store_credit_categories: فئات رصيد المتجر
+    store_form:
+      customer_support_email_help: هذا البريد الإلكتروني مرئي لزوّار متجرك في قسم تذييل الصفحة
+      new_order_notifications_email_help: إذا كنت ترغب في تلقّي إشعار بالبريد الإلكتروني في كل مرة يقوم فيها شخص ما بإنشاء طلب، يرجى تقديم عنوان بريد إلكتروني لإرسال الإشعار إليه
+    vendors: المورّدون
+    accepts_email_marketing: يقبل التسويق عبر البريد الإلكتروني
+    add_store: متجر جديد
+    added_to_cart: تمت الإضافة إلى السلة بنجاح!
+    address_book:
+      add_house_number: أضف رقم المنزل إن وُجد
+    address_not_owned_by_user: العنوان المحدد لا يخص هذا المستخدم.
+    addresses: العناوين
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (مشمول في السعر)"
+    adjustments_deleted: تم حذف التعديلات
+    all_products: جميع المنتجات
+    allowed_origin: الأصل المسموح به
+    api_key_no_current_key: لم يقم أي مفتاح API بمصادقة هذا الطلب
+    api_key_scopes_immutable: لا يمكن تغييرها بعد إنشاء المفتاح؛ أنشئ مفتاحًا جديدًا بالنطاقات التي تحتاجها وقم بإلغاء هذا المفتاح
+    apply_only_on_full_priced_items: تطبيق على العناصر بالسعر الكامل فقط
+    apply_store_credit: تطبيق رصيد المتجر
+    assets: الوسائط
+    attachments: المرفقات
+    author: المؤلف
+    availability: التوفر
+    available: متوفر
+    balance: الرصيد
+    brand: العلامة التجارية
+    canceled: ملغى
+    cannot_be_destroyed: لا يمكن حذف الطلب.
+    cannot_empty: لا يمكن إفراغ الطلب.
+    cannot_empty_completed_order: تمت معالجة الطلب بالفعل لذا لا يمكن إفراغه
+    cannot_return_more_than_bought_quantity: لا يمكن إرجاع كمية أكبر من الكمية المشتراة.
+    cart_already_updated: تم تحديث السلة بالفعل.
+    cart_line_item:
+      discontinued: تمت إزالة %{li_name} لأنه تم إيقافه
+      out_of_stock: تمت إزالة %{li_name} لأنه نفد من المخزون
+    change: تغيير
+    checkout_requirements:
+      email_required: البريد الإلكتروني مطلوب
+      line_items_required: أضف عنصرًا واحدًا على الأقل إلى سلتك
+      payment_required: أضف طريقة دفع
+      ship_address_required: عنوان الشحن مطلوب
+      shipping_method_required: اختر طريقة شحن لجميع الشحنات
+    clear: مسح
+    clear_all: مسح الكل
+    colors: الألوان
+    contact: تواصل
+    contact_phone: هاتف التواصل
+    content: المحتوى
+    copy: نسخ
+    coupon_code_used: رمز القسيمة الذي أدخلته تم استخدامه من قبل. يُرجى المحاولة مرة أخرى.
+    credited: مُضاف كرصيد
+    currency_not_supported_by_store: غير مدعومة من قبل هذا المتجر
+    current_password: كلمة المرور الحالية
+    customer_group: مجموعة العملاء
+    customer_mailer:
+      password_reset_email:
+        action: إعادة تعيين كلمة المرور
+        expiry_notice: ستنتهي صلاحية رابط إعادة تعيين كلمة المرور هذا قريبًا. إذا لم تطلب ذلك، فلا داعي لاتخاذ أي إجراء.
+        greeting: مرحبًا %{name}،
+        ignore_notice: إذا لم تطلب إعادة تعيين كلمة المرور، فيمكنك تجاهل هذا البريد الإلكتروني بأمان. لن يتم تغيير كلمة مرورك.
+        instructions: تلقينا طلبًا لإعادة تعيين كلمة مرورك. انقر على الزر أدناه لاختيار كلمة مرور جديدة.
+    cvv: CVV
+    default_billing_address: عنوان الفوترة الافتراضي
+    default_country: الدولة الافتراضية
+    default_currency: العملة الافتراضية
+    default_locale: اللغة الافتراضية
+    default_shipping_address: عنوان الشحن الافتراضي
+    default_stock_location_name: موقع المتجر
+    default_wishlist_name: قائمة الأمنيات
+    digital:
+      digital_delivery: التسليم الرقمي
+    discontinue_on: إيقاف في
+    discontinued: متوقف
+    discontinued_variants_present: بعض العناصر في هذا الطلب تحتوي على منتجات لم تعد متوفرة.
+    discounts: الخصومات
+    display_delivery_range: التسليم خلال %{delivery_range} أيام عمل
+    domain: النطاق
+    draft: مسودة
+    duplicate: تكرار
+    duplicating: جارٍ التكرار
+    enter: إدخال
+    error_user_does_not_have_any_store_credits: لا يملك المستخدم أي أرصدة متجر متاحة
+    export_mailer:
+      export_done:
+        message: عمل رائع، التصدير جاهز! يُرجى استخدام الرابط أدناه لتنزيله.
+        subject: تمت معالجة التصدير %{export_number} بنجاح!
+      greeting: مرحبًا %{user_name}،
+      thanks: شكرًا لك،
+    facebook: فيسبوك
+    featured_image: الصورة المميزة
+    field: الحقل
+    filled: مملوء
+    filterable: قابل للتصفية
+    firstname: الاسم الأول
+    fonts: الخطوط
+    footer: التذييل
+    free: مجاني
+    from: من
+    generate_code: إنشاء رمز القسيمة
+    gift_card_already_redeemed: تم استبدال بطاقة الهدية بالفعل.
+    gift_card_applied: تم تطبيق بطاقة الهدية على طلبك بنجاح!
+    gift_card_customer_not_logged_in: لا يمكن تطبيق بطاقة الهدية مع مستخدم ضيف.
+    gift_card_expired: انتهت صلاحية بطاقة الهدية.
+    gift_card_mismatched_currency: لا يمكن تطبيق بطاقة الهدية مع العملة الحالية.
+    gift_card_mismatched_customer: بطاقة الهدية هذه مرتبطة بمستخدم آخر.
+    gift_card_not_found: لم يتم العثور على بطاقة الهدية.
+    gift_card_removed: تمت إزالة بطاقة الهدية من طلبك بنجاح
+    gift_card_using_store_credit_error: لا يمكنك تطبيق بطاقة الهدية بعد تطبيق رصيد المتجر.
+    hide: إخفاء
+    idempotency_key_reused: تم استخدام مفتاح Idempotency-Key هذا بالفعل مع معلمات طلب مختلفة.
+    instagram: إنستغرام
+    internationalization: التدويل
+    invitation_mailer:
+      greeting: مرحبًا %{user_name}،
+      invitation_accepted:
+        body: قبل %{invitee_name} دعوتك للانضمام إلى %{resource_name}
+        subject: قبل %{invitee_name} دعوتك للانضمام إلى %{resource_name}
+      invitation_email:
+        body: دعاك %{inviter_name} للانضمام إلى %{resource_name}
+        link_description: 'لقبول هذه الدعوة، يُرجى النقر على الرابط أدناه:'
+        subject: دعوة للانضمام إلى %{resource_name}
+      thanks: شكرًا لك،
+    invitations: الدعوات
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: المفتاح
+    lastname: اسم العائلة
+    link: رابط
+    live: مباشر
+    locale_not_supported_by_store: غير مدعومة من قبل هذا المتجر
+    mail_from_address: عنوان المُرسِل
+    mailer_logo: شعار البريد (صور JPG أو PNG فقط)
+    make_active_at: تفعيل في
+    market_ids: الأسواق
+    master: رئيسي
+    me_no_current_user: لم يقم أي مستخدم مسؤول بمصادقة هذا الطلب
+    missing_return_authorization: تفويض الإرجاع مفقود لـ %{item_name}.
+    new_address: عنوان جديد
+    new_order_notifications_email: البريد الإلكتروني لإشعارات الطلبات الجديدة
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: مرحبًا،
+        ignore_disclaimer: إذا لم تطلب ذلك، يُرجى تجاهل هذا البريد الإلكتروني.
+        instructions: يُرجى النقر على الزر أدناه للتحقق من عنوان بريدك الإلكتروني.
+        message_copy_link: 'إذا لم يعمل الزر، يُرجى نسخ الرابط التالي ولصقه في متصفحك:'
+        store_team: فريق %{store_name}
+        subject: تحقق من عنوان بريدك الإلكتروني
+        thanks: شكرًا لك
+        verify_email_address_link: تحقق من عنوان البريد الإلكتروني
+    no_cc_type: غير متاح
+    ok: موافق
+    only_active_products_can_be_added_to_cart: لا يمكن إضافة المنتجات المسودة والمؤرشفة إلى السلة، يُرجى تعيين المنتج كنشط أولًا.
+    order_routing:
+      strategies:
+        legacy: القديم
+        rules: القواعد (مرتبة)
+    other: أخرى
+    page: صفحة
+    pages: الصفحات
+    price_rules:
+      customer_group_rule:
+        description: تطبيق التسعير على مجموعات عملاء محددة
+    privacy_policy: سياسة الخصوصية
+    product_name: اسم المنتج
+    product_translations: ترجمات المنتج
+    products_cannot_be_shipped: لا يمكننا شحن %{product_names} إلى موقعك الحالي في الوقت الراهن. يُرجى تغيير عنوان الشحن أو إزالة %{product_names} من سلتك.
+    promotion_already_used: لا يمكنك حذف عرض ترويجي تم تطبيقه بالفعل
+    promotion_category: فئة العرض الترويجي
+    promotion_label: عرض ترويجي (%{name})
+    published_at: تاريخ النشر
+    remove_gift_card_on_completed_order_error: لا يمكنك إزالة بطاقة الهدية بعد تقديم الطلب
+    report_mailer:
+      greeting: مرحبًا %{user_name}،
+      report_done:
+        message: يُرجى استخدام الرابط أدناه لتنزيله.
+        subject: تقريرك %{report_name} جاهز
+      thanks: شكرًا لك،
+    report_names:
+      products_performance: أداء المنتجات
+      sales_total: إجمالي المبيعات
+    required: "*"
+    required_fields: الحقول المطلوبة
+    return_item_order_not_completed: يجب أن يكون طلب العنصر المرتجع مكتملًا
+    returns_policy: سياسة الإرجاع
+    sale: تخفيضات
+    saving: جارٍ الحفظ
+    scopes: النطاقات
+    search_by: 'البحث حسب:'
+    security: الأمان
+    seed:
+      shipping:
+        categories:
+          default: افتراضي
+          digital: رقمي
+    selected_quantity_not_available: الكمية المختارة من %{item} غير متوفرة.
+    seo: تحسين محركات البحث (SEO)
+    seo_title: عنوان SEO
+    ship_to: 'الشحن إلى:'
+    shipping_policy: سياسة الشحن
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (شامل %{tax_amount} %{tax_rate_name})"
+    shipping_zone: منطقة الشحن
+    show_discontinued: إظهار المتوقفة
+    sign_up: إنشاء حساب
+    site_name: اسم الموقع
+    social: وسائل التواصل الاجتماعي
+    sort_by: الترتيب حسب
+    square_image: صورة مربعة
+    state_changes: تغييرات الحالة
+    store_credit_payment_method:
+      currency_mismatch: عملة رصيد المتجر لا تطابق عملة الطلب
+      insufficient_authorized_amount: لا يمكن تحصيل مبلغ أكبر من المبلغ المُصرّح به
+      insufficient_funds: رصيد المتجر المتبقي غير كافٍ
+      successful_action: نجحت عملية %{action} لرصيد المتجر
+      unable_to_credit: 'تعذّر إضافة الرصيد للرمز: %{auth_code}'
+      unable_to_find: تعذّر العثور على رصيد المتجر
+      unable_to_find_for_action: 'تعذّر العثور على رصيد المتجر لرمز التفويض: %{auth_code} للإجراء: %{action}'
+      unable_to_void: 'تعذّر إلغاء الرمز: %{auth_code}'
+    store_default: المتجر الافتراضي
+    store_name: اسم المتجر
+    stores: المتاجر
+    subscribed: مشترك
+    supported_currencies: العملات المدعومة
+    supported_locales: اللغات المدعومة
+    tax_inclusive: شامل الضريبة
+    taxonomy_brands_name: العلامات التجارية
+    taxonomy_categories_name: الفئات
+    taxonomy_collections_name: المجموعات
+    terms_of_service: شروط الخدمة
+    theme: السمة
+    themes: السمات
+    to: إلى
+    twitter: تويتر
+    user_ids: المستخدمون
+    verified: تم التحقق
+    verified_at: تاريخ التحقق
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: تم التعطيل في
+        heading: تم تعطيل نقطة نهاية الويب هوك
+        instructions: يُرجى التحقق من عنوان URL لنقطة النهاية والخدمة، ثم أعد تفعيلها من الإعدادات ← المطورون ← الويب هوك.
+        message: تم تعطيل نقطة نهاية الويب هوك "%{endpoint_name}" تلقائيًا بعد فشل التسليم المتكرر.
+        name_label: الاسم
+        reason_label: السبب
+        subject: 'تم تعطيل نقطة نهاية الويب هوك: %{endpoint_name}'
+        url_label: URL
+    webhooks: الويب هوك
+    wishlist: قائمة الأمنيات
+    zipcode_required: الرمز البريدي مطلوب
+    zone_ids: المناطق
+    api:
+      cannot_delete: لا يمكن حذف %{model}
+      current_password_invalid: كلمة المرور الحالية غير صحيحة أو مفقودة
+      gateway_error: 'حدثت مشكلة في بوابة الدفع: %{text}'
+      invalid_api_key: مفتاح API غير صالح (%{key}) تم تحديده.
+      invalid_resource: مورد غير صالح. يُرجى إصلاح الأخطاء والمحاولة مرة أخرى.
+      invalid_taxonomy_id: معرّف التصنيف غير صالح.
+      must_specify_api_key: يجب تحديد مفتاح API.
+      negative_quantity: الكمية سالبة
+      newsletter_verification_token_invalid: رمز التحقق من النشرة الإخبارية غير صالح أو انتهت صلاحيته.
+      order:
+        could_not_transition: تعذّر نقل الطلب إلى الحالة التالية. يُرجى إصلاح الأخطاء والمحاولة مرة أخرى.
+        insufficient_quantity: أصبح أحد العناصر في سلتك غير متوفر.
+        invalid_shipping_method: طريقة الشحن المحددة غير صالحة.
+      password_reset_requested: إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فقد تم إرسال تعليمات إعادة تعيين كلمة المرور.
+      password_reset_token_invalid: رمز إعادة تعيين كلمة المرور غير صالح أو انتهت صلاحيته.
+      payment:
+        credit_over_limit: لا يمكن رد قيمة هذه الدفعة إلا حتى %{limit}. يُرجى تحديد مبلغ أقل من أو يساوي هذا الرقم.
+        update_forbidden: لا يمكن تحديث هذه الدفعة لأنها في حالة %{state}.
+      record_not_found: "%{model} غير موجود"
+      redirect_url_not_allowed: عنوان URL لإعادة التوجيه ليس من أصل مسموح به لهذا المتجر.
+      resource_not_found: تعذّر العثور على المورد الذي تبحث عنه.
+      shipment:
+        cannot_ready: لا يمكن تجهيز الشحنة.
+      shipment_transfer_errors_occurred: 'حدثت الأخطاء التالية أثناء محاولة هذا الإجراء:'
+      shipment_transfer_success: تم نقل المتغيرات بنجاح
+      stock_location_required: يجب توفير معلمة stock_location_id لاسترجاع حركات المخزون.
+      unauthorized: أنت غير مخوّل لتنفيذ هذا الإجراء.
+      v2:
+        cart:
+          no_coupon_code: لم يتم توفير رمز قسيمة ولا يحتوي الطلب على أي عروض ترويجية برمز قسيمة مطبقة
+          wrong_quantity: يجب أن تكون الكمية أكبر من 0
+        digitals:
+          missing_file: 'عنصر رقمي مفقود: المرفق'
+          unauthorized: خطأ، أنت غير مخوّل للوصول إلى هذا الأصل
+        gift_card:
+          amount_not_valid: مبلغ بطاقة الهدية غير صالح
+          not_found: بطاقة الهدية غير موجودة
+        metadata:
+          invalid_params: يجب أن تكون معلمات البيانات الوصفية العامة والخاصة كائنات
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: تعذّر حذف قائمة الأمنيات.
+          wrong_quantity: يجب أن تكون الكمية أكبر من 0
+      v3:
+        payments:
+          method_unavailable: طريقة الدفع هذه غير متاحة لهذا الطلب.
+          session_required: تتطلب طريقة الدفع هذه جلسة دفع. استخدم نقطة نهاية جلسات الدفع بدلًا من ذلك.
+      wrong_shipment_target: الشحنة المستهدفة هي نفس الشحنة الأصلية
   action_text:
     video_embed:
       not_found: لا يمكن تضمين فيديو باستخدام عنوان URL المُقدَّم
@@ -2150,3 +2818,31 @@ ar:
       format:
         delimiter: "."
         separator: ","
+    percentage:
+      format:
+        precision: 1
+  activemodel:
+    errors:
+      messages:
+        blank: لا يمكن أن يكون فارغًا
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: يحتوي على وحدات مخزون مطلوبة مسبقًا
+              has_already_been_shipped: تم شحنه بالفعل
+            desired_shipment:
+              can_not_transfer_within_same_shipment: لا يمكن أن يكون مماثلًا للشحنة الحالية
+              has_not_enough_stock_at_desired_location: لا يوجد مخزون كافٍ في موقع المخزون المطلوب
+  address_book:
+    save: حفظ
+    successfully_created: تم إنشاء العنوان الجديد بنجاح
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: اقتطاع

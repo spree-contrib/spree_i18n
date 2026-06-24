@@ -1,3 +1,4 @@
+---
 ca:
   activerecord:
     attributes:
@@ -11,6 +12,8 @@ ca:
         phone: Telèfon
         state: Estat
         zipcode: Codi postal
+        company: Empresa
+        label: Nom de l'adreça
       spree/calculator/tiered_flat_rate:
         preferred_base_amount:
         preferred_tiers:
@@ -39,6 +42,8 @@ ca:
       spree/option_type:
         name:
         presentation:
+        filterable: Filtrable
+        kind: Tipus
       spree/order:
         checkout_complete: Comanda completada
         completed_at: Completat el
@@ -54,6 +59,8 @@ ca:
         special_instructions: Instruccions especials
         state: Estat
         total: Total
+        internal_note: Nota interna
+        item_count: Articles
       spree/order/bill_address:
         address1:
         city:
@@ -72,6 +79,7 @@ ca:
         zipcode:
       spree/payment:
         amount:
+        number: Número
       spree/payment_method:
         name:
       spree/product:
@@ -84,6 +92,10 @@ ca:
         on_hand: Disponibles
         shipping_category: Categoria d'enviament
         tax_category: Categoria d'impostos
+        discontinue_on: Descatalogar el
+        less_than: Menys de
+        make_active_at: Activar el
+        more_than: Més de
       spree/promotion:
         advertise: Advertise
         code: Codi
@@ -94,8 +106,11 @@ ca:
         path: Path
         starts_at: Comença el
         usage_limit: Límit d'ús
+        generate_code: Genera un codi de cupó
+        promotion_category: Categoria de promoció
       spree/promotion_category:
         name:
+        code: Codi
       spree/property:
         name: Nom
         presentation: Presentació
@@ -123,6 +138,16 @@ ca:
         name:
         seo_title:
         url:
+        address: Adreça
+        contact_phone: Telèfon de contacte
+        preferred_digital_asset_authorized_clicks: Límit de clics de descàrrega
+        preferred_digital_asset_authorized_days: Límit de dies de descàrrega
+        preferred_limit_digital_download_count: Limita el nombre de descàrregues d'enllaços digitals
+        preferred_limit_digital_download_days: Limita els dies de descàrrega d'enllaços digitals
+        seo_robots: Robots SEO
+        storefront_custom_code_body_end: Codi personalitzat abans de tancar l'etiqueta body
+        storefront_custom_code_body_start: Codi personalitzat després d'obrir l'etiqueta body
+        storefront_custom_code_head: Codi personalitzat a la capçalera de la pàgina
       spree/tax_category:
         description: Descripció
         name: Nom
@@ -134,12 +159,14 @@ ca:
         name: Nom
         permalink: Enllaç permanent
         position: Posició
+        sort_order: Ordre de classificació
       spree/taxonomy:
         name: Nom
       spree/user:
         email: Email
         password: Password
         password_confirmation: Password Confirmation
+        avatar: Avatar
       spree/variant:
         cost_currency: Cost Moneda
         cost_price: Preu de cost
@@ -152,6 +179,54 @@ ca:
       spree/zone:
         description: Descripció
         name: Nom
+      spree/customer_group:
+        description: Descripció
+        name: Nom
+      spree/customer_return:
+        stock_location_id: Ubicació d'estoc
+      spree/gift_card:
+        amount_used: Import utilitzat
+        expires_at: Caduca el
+      spree/import:
+        preferred_delimiter: Delimitador
+      spree/import_mapping:
+        file_column: Columna del fitxer
+        schema_field: Camp de l'esquema
+      spree/import_row:
+        row_number: Número
+      spree/invitation:
+        inviter: Convidant
+      spree/metafield_definition:
+        namespace: Espai de noms
+      spree/option_value:
+        color_code: Codi de color
+        image: Imatge de mostra
+      spree/page_link:
+        open_in_new_tab: Obre en una pestanya nova
+      spree/policy:
+        body: Cos
+        owner: Política per a
+      spree/price_list:
+        description: Descripció
+        ends_at: Finalitza el
+        match_policy: Política de coincidència
+        name: Nom
+        priority: Prioritat
+        starts_at: Comença el
+        status: Estat
+      spree/price_rule:
+        priority: Prioritat
+        type: Tipus
+      spree/shipment:
+        number: Número
+      spree/store_credit:
+        amount_used: Import utilitzat
+      spree/store_credit_category:
+        name: Nom
+      user:
+        current_sign_in: Sessió actual iniciada el
+        last_sign_in: Última sessió iniciada el
+        sign_in_count: Nombre d'inicis de sessió
     errors:
       models:
         spree/calculator/tiered_flat_rate:
@@ -198,6 +273,109 @@ ca:
           attributes:
             base:
               cannot_destroy_default_store:
+              cannot_destroy_only_store: No es pot eliminar l'única botiga.
+        spree/allowed_origin:
+          attributes:
+            origin:
+              must_be_origin_only: ha de ser un origen (esquema i amfitrió) sense ruta, consulta ni fragment
+        spree/gift_card:
+          attributes:
+            base:
+              cannot_destroy_used_gift_card: No es pot eliminar una targeta de regal utilitzada
+        spree/image:
+          attributes:
+            attachment:
+              attachment_must_be_present: ha d'estar present
+              not_allowed_content_type: té un tipus de contingut no permès
+        spree/import:
+          attributes:
+            attachment:
+              content_type: té un tipus de contingut no permès
+            type:
+              inclusion: no està inclòs a la llista de tipus permesos
+        spree/legacy_user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: pertany a un altre usuari
+              deprecated_in_completed_order: obsolet en una comanda completada
+            ship_address_id:
+              belongs_to_other_user: pertany a un altre usuari
+              deprecated_in_completed_order: obsolet en una comanda completada
+        spree/market:
+          attributes:
+            base:
+              cannot_destroy_default_market: No es pot eliminar el mercat per defecte.
+              cannot_destroy_last_market: No es pot eliminar l'únic mercat.
+        spree/market_country:
+          attributes:
+            country:
+              already_in_market: ja està assignat a un altre mercat d'aquesta botiga
+              not_in_shipping_zone: no està cobert per cap zona d'enviament. Configureu primer una zona d'enviament.
+        spree/payment:
+          attributes:
+            amount:
+              greater_than_max_amount: és superior a l'import màxim permès de %{max_amount}
+        spree/price_list:
+          attributes:
+            ends_at:
+              must_be_after_starts_at: ha de ser posterior a la data d'inici
+        spree/product:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: No es poden eliminar productes que s'han afegit a comandes realitzades. En aquests casos, descatalogueu-los.
+            discontinue_on:
+              invalid_date_range: ha de ser posterior a la data de disponibilitat
+        spree/product_publication:
+          attributes:
+            unpublished_at:
+              must_be_after_published_at: ha de ser posterior a la data de publicació
+        spree/promotion:
+          attributes:
+            expires_at:
+              invalid_date_range: ha de ser posterior a la data d'inici
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: Heu de seleccionar com a mínim una categoria d'enviament
+        spree/store_credit:
+          attributes:
+            amount_authorized:
+              exceeds_total_credits: Supera el total de crèdits.
+            amount_used:
+              cannot_be_greater_than_amount: No pot ser superior a l'import.
+              greater_than_zero_restrict_delete: és superior a zero. No es pot eliminar el crèdit de botiga.
+        spree/store_credit_category:
+          attributes:
+            base:
+              cannot_destroy_if_used_in_store_credit: No es poden eliminar categories de crèdit de botiga un cop s'han utilitzat en un crèdit de botiga.
+        spree/taxon_image:
+          attributes:
+            attachment:
+              not_allowed_content_type: té un tipus de contingut no permès
+        spree/user:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: pertany a un altre usuari
+              deprecated_in_completed_order: obsolet en una comanda completada
+            ship_address_id:
+              belongs_to_other_user: pertany a un altre usuari
+              deprecated_in_completed_order: obsolet en una comanda completada
+        spree/variant:
+          attributes:
+            base:
+              cannot_destroy_if_attached_to_line_items: No es poden eliminar variants que s'han afegit a comandes realitzades. En aquests casos, descatalogueu-les.
+              must_supply_price_for_variant_or_master: Cal indicar un preu per a la variant o un preu mestre per al producte.
+              no_master_variant_found_to_infer_price: No s'ha trobat cap variant mestra per inferir el preu
+        spree/webhook_endpoint:
+          attributes:
+            url:
+              internal_address_not_allowed: no ha d'apuntar a una adreça de xarxa interna o privada
+        spree/wished_item:
+          attributes:
+            variant:
+              taken: Ja heu afegit aquest article a la vostra llista de desitjos
+      messages:
+        blank: no pot estar en blanc
     models:
       spree/address:
         one: Adreça
@@ -209,6 +387,8 @@ ca:
         one: Targeta de crèdit
         other: Targetes de crèdit
       spree/customer_return:
+        one: Devolució de client
+        other: Devolucions de clients
       spree/inventory_unit:
         one: Unitat en inventari
         other: Unitats en inventari
@@ -216,7 +396,11 @@ ca:
         one: Article
         other: Articles
       spree/option_type:
+        one: Tipus d'opció
+        other: Tipus d'opció
       spree/option_value:
+        one: Valor d'opció
+        other: Valors d'opció
       spree/order:
         one: Comanda
         other: Comandes
@@ -224,11 +408,17 @@ ca:
         one: Pagament
         other: Pagaments
       spree/payment_method:
+        one: Mètode de pagament
+        other: Mètodes de pagament
       spree/product:
         one: Producte
         other: Productes
       spree/promotion:
+        one: Promoció
+        other: Promocions
       spree/promotion_category:
+        one: Categoria de promoció
+        other: Categories de promoció
       spree/property:
         one: Propietat
         other: Propietats
@@ -236,12 +426,20 @@ ca:
         one: Prototip
         other: Prototips
       spree/refund_reason:
+        one: Motiu de reemborsament
+        other: Motius de reemborsament
       spree/reimbursement:
+        one: Reemborsament
+        other: Reemborsaments
       spree/reimbursement_type:
+        one: Tipus de reemborsament
+        other: Tipus de reemborsament
       spree/return_authorization:
         one: Autorització de devolució
         other: Autoritzacions de devolució
       spree/return_authorization_reason:
+        one: Motiu d'autorització de devolució
+        other: Motius d'autorització de devolució
       spree/role:
         one: Funció
         other: Funcions
@@ -252,13 +450,23 @@ ca:
         one: Categoria d'enviament
         other: Categories de enviament
       spree/shipping_method:
+        one: Mètode d'enviament
+        other: Mètodes d'enviament
       spree/state:
         one: Estat
         other: Estats
       spree/state_change:
+        one: Canvi d'estat
+        other: Canvis d'estat
       spree/stock_location:
+        one: Ubicació d'estoc
+        other: Ubicacions d'estoc
       spree/stock_movement:
+        one: Moviment d'estoc
+        other: Moviments d'estoc
       spree/stock_transfer:
+        one: Transferència d'estoc
+        other: Transferències d'estoc
       spree/tax_category:
         one: Categoria d'impostos
         other: Categories d'impostos
@@ -272,6 +480,8 @@ ca:
         one: Propietat
         other: Propietats
       spree/tracker:
+        one: Rastrejador
+        other: Rastrejadors
       spree/user:
         one: Usuari
         other: Usuaris
@@ -281,6 +491,66 @@ ca:
       spree/zone:
         one: Zona
         other:
+      spree/classification:
+        one: Classificació
+        other: Classificacions
+      spree/cms_page:
+        one: Pàgina
+        other: Pàgines
+      spree/cms_section:
+        one: Secció
+        other: Seccions
+      spree/customer_group:
+        one: Grup de clients
+        other: Grups de clients
+      spree/customer_group_user:
+        one: Usuari del grup de clients
+        other: Usuaris del grup de clients
+      spree/digital:
+        one: Recurs digital
+        other: Recursos digitals
+      spree/export:
+        one: Exportació
+        other: Exportacions
+      spree/integration:
+        one: Integració
+        other: Integracions
+      spree/page:
+        one: Pàgina
+        other: Pàgines
+      spree/page_block:
+        one: Bloc de pàgina
+        other: Blocs de pàgina
+      spree/page_link:
+        one: Enllaç de pàgina
+        other: Enllaços de pàgina
+      spree/page_section:
+        one: Secció de pàgina
+        other: Seccions de pàgina
+      spree/price:
+        one: Preu
+        other: Preus
+      spree/price_list:
+        one: Llista de preus
+        other: Llistes de preus
+      spree/price_rule:
+        one: Regla de preu
+        other: Regles de preu
+      spree/stock_item:
+        one: Article d'estoc
+        other: Articles d'estoc
+      spree/store:
+        one: Botiga
+        other: Botigues
+      spree/store_credit:
+        one: Crèdit de botiga
+        other: Crèdits de botiga
+      spree/store_credit_category:
+        one: Categoria de crèdit de botiga
+        other: Categories de crèdit de botiga
+      spree/theme:
+        one: Tema
+        other: Temes
   devise:
     confirmations:
       confirmed:
@@ -293,6 +563,7 @@ ca:
       timeout:
       unauthenticated:
       unconfirmed:
+      too_many_attempts: Massa intents. Espereu un moment i torneu-ho a provar.
     mailer:
       confirmation_instructions:
         subject:
@@ -325,6 +596,9 @@ ca:
       not_found: no trobat
       not_locked:
       not_saved:
+        one: '1 error ha impedit desar aquest %{resource}:'
+        other: "%{count} errors han impedit desar aquest %{resource}:"
+      not_a_number: no és un número
   spree:
     abbreviation: Abreviatura
     accept:
@@ -346,6 +620,15 @@ ca:
       refund:
       save:
       update: Actualitzar
+      close: Tanca
+      connect: Connecta
+      discard: Descarta
+      open: Obre
+      reject: Rebutja
+      remove: Elimina
+      resend: Torna a enviar
+      select_file: Selecciona un fitxer
+      send_invitation: Envia la invitació
     activate: Activate
     active: Actiu
     add: Afegir
@@ -398,6 +681,483 @@ ca:
         order_num:
         orders:
         user_information:
+        last_order_placed: Darrera comanda feta
+        no_store_credit: El client no té crèdit de botiga disponible
+      allowed_origins:
+        origin_help: Introduïu l'URL d'origen completa de la vostra botiga (p. ex. https://myshop.com). No hi incloeu rutes ni cadenes de consulta.
+        origin_settings: Configuració d'origen
+      amount_spent: Import gastat
+      api_keys:
+        example_request: Exemple de sol·licitud
+        key_revoked_message: Aquesta clau API s'ha revocat i ja no es pot utilitzar.
+        key_type_descriptions:
+          publishable: És segura per utilitzar-la en codi del costat del client com ara aplicacions mòbils o navegadors.
+          secret: Manteniu-la segura i utilitzeu-la només al servidor. No l'exposeu mai públicament.
+        key_types:
+          publishable: Publicable
+          secret: Secreta
+        last_used_at: Darrer ús
+        list: Claus API
+        name_placeholder: p. ex. Aplicació mòbil producció
+        revoke: Revoca
+        revoke_confirmation: Segur que voleu revocar aquesta clau API? Aquesta acció no es pot desfer.
+        revoked: La clau API s'ha revocat
+        revoked_at: Revocada el
+        revoked_by: Revocada per
+        scopes: Àmbits
+        scopes_description: Obligatori per a les claus secretes. Trieu el conjunt d'àmbits més reduït que necessiti la vostra integració.
+        scopes_immutable: Els àmbits es fixen quan es crea la clau. Per canviar-los, creeu una clau nova amb els àmbits que necessiteu i revoqueu aquesta.
+        secret_key_hidden: Aquesta clau secreta no es pot mostrar. Si l'heu perduda, revoqueu aquesta clau i creeu-ne una de nova.
+        statuses:
+          active: Activa
+          revoked: Revocada
+        token_warning: Deseu aquesta clau de manera segura. Només es mostrarà aquesta vegada.
+        usage: Ús
+        usage_instructions:
+          publishable: Utilitzeu aquesta clau per a sol·licituds del costat del client. Es pot incloure de manera segura al codi del vostre frontend.
+          secret: Utilitzeu aquesta clau només per a sol·licituds del costat del servidor. Manteniu-la confidencial i no l'exposeu mai en codi del costat del client.
+      audit_log: Registre d'auditoria
+      avg_order_value: Valor mitjà de comanda
+      back_to_dashboard: Torna al tauler
+      bulk_ops:
+        customer_group_users:
+          body:
+            remove: Segur que voleu eliminar els clients seleccionats d'aquest grup?
+          title:
+            remove: Elimina del grup
+        price_list_products:
+          body:
+            remove: Segur que voleu eliminar els productes seleccionats d'aquesta llista de preus? També se n'eliminaran els preus.
+          title:
+            remove: Elimina de la llista de preus
+        products:
+          body:
+            add_tags: 'Seleccioneu les etiquetes que voleu afegir als productes:'
+            add_to_taxons: 'Seleccioneu a quines categories voleu afegir els productes:'
+            remove_from_taxons: 'Seleccioneu de quines categories voleu eliminar els productes:'
+            remove_tags: 'Seleccioneu les etiquetes que voleu eliminar dels productes:'
+            set_active: Establir els productes com a actius els farà disponibles a la botiga.
+            set_archived: Establir els productes com a arxivats els ocultarà de la botiga.
+            set_draft: Establir els productes com a esborrany els ocultarà de la botiga.
+          title:
+            add_tags: Afegeix etiquetes
+            add_to_taxons: Afegeix a categories
+            remove_from_taxons: Elimina de categories
+            remove_tags: Elimina etiquetes
+            set_active: Estableix com a actiu
+            set_archived: Estableix com a arxivat
+            set_draft: Estableix com a esborrany
+        users:
+          body:
+            add_tags: 'Seleccioneu les etiquetes que voleu afegir als clients:'
+            remove_tags: 'Seleccioneu les etiquetes que voleu eliminar dels clients:'
+          title:
+            add_tags: Afegeix etiquetes
+            remove_tags: Elimina etiquetes
+      channels:
+        code_hint: Un identificador curt i estable (p. ex. "online", "pos", "wholesale"). L'utilitzen els clients de l'API mitjançant la capçalera X-Spree-Channel i per a l'atribució de comandes.
+        default: Canal per defecte
+        default_hint: Exactament un canal per botiga és el predeterminat. S'utilitza com a reserva quan no se selecciona cap canal i com a destinació de publicació automàtica per als productes nous.
+        order_routing_strategy: Estratègia d'enrutament de comandes
+        order_routing_strategy_hint: Sobreescriu l'estratègia d'enrutament a nivell de botiga per a les comandes atribuïdes a aquest canal.
+        order_routing_strategy_inherit: Hereta de la botiga
+      checkout_settings:
+        checkout_links:
+          description: Els enllaços a aquestes pàgines es mostraran al peu de pàgina de la compra.
+          label: Enllaços de la compra
+        checkout_message_description: Visible per als vostres clients a la pàgina de compra, a la barra lateral dreta.
+        countries_managed_by_markets_html: Els països i les zones d'enviament es gestionen a través de %{link}.
+        guest_checkout:
+          description: Permet als clients fer la compra sense crear un compte.
+          label: Permet la compra com a convidat
+        special_instructions:
+          description: Permet als clients afegir instruccions especials a la seva comanda.
+          label: Mostra el camp d'instruccions especials
+      close_sidebar: Tanca la barra lateral
+      copied: Copiat!
+      copy_payment_link: Copia l'enllaç de pagament
+      copy_to_clipboard: Copia al porta-retalls
+      coupon_codes:
+        unused: Sense utilitzar
+        used: Utilitzat
+      created_at: Creat el
+      dashboard:
+        getting_started:
+          description: Tot el que heu de configurar per començar a vendre.
+        hi: Hola
+        setup_progress:
+          steps_done_html: "<strong>%{done}</strong> de %{total} passos completats"
+          title: El vostre progrés de configuració global
+        top_products: Productes destacats
+        view_report: Mostra l'informe
+        whats_happening_on_html: Això és el que passa a <strong>%{store_name}</strong> avui.
+      datetime_field_timezone_help: 'Zona horària: %{zone}'
+      digital_shipment_fulfillment_note: Aquest enviament es marcarà com a complert un cop l'usuari descarregui el producte digital
+      display_on_options:
+        back_end: Només al tauler d'administració
+        both: Tant al tauler d'administració com a la botiga
+        front_end: Només a la botiga
+      documentation: Documentació
+      edit_billing_address: Edita l'adreça de facturació
+      edit_contact_information: Edita la informació de contacte
+      edit_profile: Edita el perfil
+      edit_shipping_address: Edita l'adreça d'enviament
+      edit_theme: Edita el tema
+      errors: Errors
+      execution_time: Temps d'execució
+      expand_sidebar: Desplega la barra lateral
+      export_all: Exporta tots els registres (pot ser lent per a conjunts de dades grans)
+      export_coupons: Exporta els cupons com a fitxer CSV
+      export_created: L'exportació s'ha iniciat. Rebreu un correu electrònic amb un enllaç de descàrrega quan estigui llesta!
+      export_only_filtered_records: Exporta només els registres filtrats que coincideixin amb els criteris de cerca
+      export_report: Exporta l'informe com a fitxer CSV
+      filters: Filtres
+      getting_started: Primers passos
+      gift_card_batches:
+        codes_count: Nombre de codis
+        new_gift_card_batch: Nou lot de targetes regal
+        prefix: Prefix
+      gift_cards:
+        active: Activa
+        all_statuses: Tots els estats
+        code_help_text: Si ho deixeu en blanc, generarem un codi per vós
+        redeemed: Bescanviada
+        usage: Ús
+      imports:
+        all_required_columns_mapped: Ben fet, totes les columnes obligatòries estan mapejades!
+        field_required: Camp obligatori
+        import_done: Tot llest!
+        large_import_background_note: 'Podeu tancar aquesta pàgina: la importació continuarà en segon pla.'
+        large_import_message: Aquesta importació conté %{count} files i és massa gran per mostrar-la individualment.
+        large_import_summary: "%{completed} completades, %{failed} fallides"
+        mapping_required: Aquest camp és obligatori
+        please_map_all_required_fields: Mapeu tots els camps obligatoris per continuar.
+        waiting_for_file_to_be_processed: S'està esperant que es processi el fitxer...
+      integrations:
+        invalid_integration_type: Aquesta integració no està permesa
+        page_subtitle: Connecteu la vostra botiga a serveis de tercers per millorar l'experiència del client.
+      json_preview:
+        no_api_response: No s'ha trobat cap resposta de l'API per a aquest recurs
+      manage_markets: Gestiona els mercats
+      manage_properties: Gestiona les propietats
+      manage_stock_locations: Gestiona les ubicacions d'estoc
+      manage_taxons: Gestiona les categories
+      manage_zones: Gestiona les zones
+      markets:
+        edit: Edita el mercat
+        list: Mercats
+        new: Nou mercat
+        supported_locales_hint: Llista separada per comes de codis d'idioma addicionals (p. ex. fr,de,es)
+      metafield_definitions:
+        edit_warning: No podeu canviar el tipus de recurs ni el tipus de metacamp un cop s'ha utilitzat la definició.
+        used_in: Utilitzat a
+      name: Nom
+      navigation:
+        nested_under: Imbricat sota
+      newsletter_subscribers:
+        all: Tots
+        unverified: No verificats
+        verified: Verificats
+      not_tracking_inventory: No es fa seguiment de l'inventari
+      notifications: Notificacions
+      num_orders: Nre. de comandes
+      oauth_applications:
+        client_id: ID de client
+        client_secret: Secret de client
+        last_used: Darrer ús
+        list: Claus API
+        never: Mai
+        new: Nova clau API
+        read_and_write: Lectura i escriptura
+        read_only: Només lectura
+        scopes: Àmbits
+      order:
+        events:
+          approve: Aprova
+          cancel: Cancel·la
+          resend: Torna a enviar
+          resume: Reprèn
+      orders:
+        add_user_to_this_order: Afegeix el client a aquesta comanda
+        all_orders: Totes les comandes
+        canceled: Cancel·lada
+        fulfilled: Complerta
+        no_email_present: Afegiu una adreça de correu electrònic per enviar l'enllaç de pagament
+        orders_to_fulfill: Comandes per complir
+        partially_refunded: Reemborsada parcialment
+        payment_link_sent: L'enllaç de pagament s'ha enviat al client
+        provide_email: Indiqueu una adreça de correu electrònic
+        refunded: Reemborsada
+        remove_user_from_this_order: Elimina el client d'aquesta comanda
+        unfulfilled: No complerta
+      page_builder:
+        background_color: Color de fons
+        border_bottom_width: Amplada de la vora inferior
+        border_color: Color de la vora
+        border_top_width: Amplada de la vora superior
+        bottom_padding: Marge interior inferior
+        button_alignment: Alineació del botó
+        button_background_color: Color de fons del botó
+        button_style: Estil del botó
+        button_text: Text del botó
+        button_text_color: Color del text del botó
+        category: Categoria
+        description: Descripció
+        description_alignment: Alineació de la descripció
+        desktop_image_alignment: Alineació de la imatge per a ordinador
+        desktop_logo_height: Alçada del logotip (ordinador)
+        heading: Encapçalament
+        heading_alignment: Alineació de l'encapçalament
+        heading_size: Mida de l'encapçalament
+        height: Alçada
+        image_click_hint: En fer clic a la imatge, l'usuari es dirigirà a la pàgina/URL seleccionada
+        left_aligned: Alineat a l'esquerra
+        logo_centered: Logotip centrat
+        max_video_width_on_desktop: Amplada màxima del vídeo en ordinador
+        maximum_products_to_show: Nombre màxim de productes a mostrar
+        nav_centered: Navegació centrada
+        not_set: Sense definir
+        separated: Separat
+        show_more_button: Mostra el botó d'explorar la categoria
+        show_taxon_image: Mostra la imatge de la categoria
+        text_color: Color del text
+        title: Títol
+        top_padding: Marge interior superior
+        use_description_from_admin: Utilitza la descripció de l'administració
+        vertical_alignment: Alineació vertical
+        youtube_video_url: URL del vídeo de YouTube
+      personal_details: Dades personals
+      price_lists:
+        activate: Activa
+        activated: La llista de preus s'ha activat
+        confirm_activate: Segur que voleu activar aquesta llista de preus? Afectarà els preus immediatament.
+        confirm_deactivate: Segur que voleu desactivar aquesta llista de preus?
+        confirm_schedule: Segur que voleu programar aquesta llista de preus?
+        confirm_unschedule: Segur que voleu desprogramar aquesta llista de preus?
+        deactivate: Desactiva
+        deactivated: La llista de preus s'ha desactivat
+        schedule: Programa
+        scheduled: La llista de preus s'ha programat
+        unschedule: Desprograma
+      product_translations:
+        coverage: Cobertura de traducció
+        locale: Idioma
+        manage_markets: Gestiona els mercats
+        no_locales_description: Configureu mercats amb idiomes addicionals per començar a traduir els vostres productes.
+        no_locales_title: No hi ha cap idioma addicional configurat
+        progress: Progrés
+        total: Total
+        translated: Traduït
+      products:
+        active: Actiu
+        all_statuses: Tots els estats
+        any_stock: Qualsevol estoc
+        archived: Arxivat
+        by_status: Per estat
+        by_stock: Per estoc
+        deleted: Suprimit
+        draft: Esborrany
+        help_bubble: Els productes en esborrany no estan disponibles per a la compra. Els productes actius estan publicats.
+        in_stock: En estoc
+        inventory:
+          barcode: Codi de barres (ISBN, UPC, GTIN, etc.)
+          sku: SKU (Stock Keeping Unit)
+        out_of_stock: Esgotat
+        paused: En pausa
+        search_results:
+          no_products: No hem trobat cap producte que coincideixi amb la cerca :(
+        seo:
+          placeholder: Afegiu un títol i una descripció per veure com podria aparèixer aquest producte en una llista d'un motor de cerca
+        status_form:
+          status: Els productes en esborrany no estan disponibles per a la compra. Els productes actius estan publicats.
+        status_options:
+          active: Actiu
+          archived: Arxivat
+          draft: Esborrany
+        stores:
+          choose_stores: Trieu en quines botigues hauria d'estar disponible aquest producte
+        variants:
+          option_types_link: Per afegir més tipus d'opció aneu a <a href="%{link}">Tipus d'opció</a>
+      publishing:
+        caption_hidden_after: Es retira el %{date}
+        caption_live: Visible per als clients ara
+        caption_not_available: Ocult — el producte està %{product_status}
+        caption_scheduled: Es publica el %{date}
+        caption_unpublished: Es va ocultar el %{date}
+        caption_window: Actiu del %{start} al %{end}
+        empty: Encara no està publicat en cap canal de venda.
+        inactive_marker: Inactiu
+        manage_cta: Gestiona
+        manage_description: Trieu quins canals de venda publiquen aquest producte. Desactiveu un canal per deixar-lo de publicar a tot arreu.
+        no_channels: No hi ha cap canal de venda disponible. Creeu-ne un a Configuració → Canals de venda.
+        published_at_label: Publica a partir de
+        status_hidden: Ocult
+        status_live: Publicat
+        status_not_available: No disponible
+        status_scheduled: Programat
+        title: Publicació
+        unpublished_at_label: Deixa de publicar el
+      recommended_size: Mida recomanada
+      report_created: S'està generant el vostre informe. Rebreu un correu electrònic amb un enllaç de descàrrega quan estigui llest!
+      reset_digital_link_download_limits: Restableix els límits de descàrrega
+      response_code: Codi de resposta
+      selected: seleccionat
+      send_payment_link: Envia l'enllaç de pagament
+      shipment:
+        please_provide_tracking_details: Abans de marcar l'enviament com a enviat, indiqueu les dades de seguiment
+      shipment_transfer:
+        wrong_destination: Destinació incorrecta
+      show_json: Mostra el JSON
+      stock_transfers:
+        add_products_tip: Primer heu de seleccionar una ubicació de destinació
+      store_credit:
+        amount_remaining_of_total: "<strong>%{amount}</strong> restants (<strong>%{total}</strong> en total)"
+      store_form:
+        company_field:
+          description: Mostra el camp d'empresa al formulari d'adreça de la secció El meu compte i al pas d'adreça de la compra.
+          label: Mostra el camp d'adreça de l'empresa
+        customer_support_email_help: Aquest correu electrònic és visible per als visitants de la vostra botiga a la secció del peu de pàgina
+        new_order_notifications_email_help: Si voleu rebre una notificació per correu electrònic cada vegada que algú faci una comanda, indiqueu una adreça de correu electrònic a la qual s'enviarà aquesta notificació
+        send_consumer_transactional_emails_help: Si es desmarca, els correus transaccionals com ara les confirmacions de comanda i les notificacions d'enviament no s'enviaran als clients
+      store_setup_tasks:
+        add_billing_address: Afegeix l'adreça de facturació
+        add_products: Afegeix productes
+        payment_methods:
+          copy: Per cobrar pagaments, configureu almenys un proveïdor de pagament en línia.
+          done: Tot a punt! Sempre podeu gestionar els vostres mètodes de pagament en <a href="%{link}" data-turbo-frame="_top">aquesta</a> pàgina.
+          setup: Configura els mètodes de pagament
+          title: Configureu els mètodes de pagament de la vostra botiga
+        set_customer_support_email: Defineix el correu d'atenció al client
+        setup_taxes_collection: Configura la recaptació d'impostos
+        taxes:
+          copy: Per recaptar impostos, configureu els vostres tipus impositius.
+          done: Tot a punt! Sempre podeu gestionar els vostres impostos a la pàgina de <a href="%{link}" data-turbo-frame="_top">configuració</a>.
+          setup: Configura els tipus impositius
+      storefront: Botiga
+      successful: Correcte
+      successfully_reset_digital_links_limit: Els límits de descàrrega s'han restablert
+      tables:
+        add_filter: Afegeix un filtre
+        add_or_group: Afegeix un grup O
+        apply: Aplica
+        apply_filters: Aplica els filtres
+        ascending: Ascendent
+        clear_all: Esborra-ho tot
+        columns: Columnes
+        descending: Descendent
+        enter_value: Introduïu un valor...
+        filter_builder: Constructor de filtres
+        filters: Filtres
+        match: Coincideix amb
+        of_the_following: del següent
+        operators:
+          contains: conté
+          does_not_contain: no conté
+          ends_with: acaba amb
+          equals: és igual a
+          greater_than: més gran que
+          greater_than_or_equal: més gran o igual que
+          is_any_of: és qualsevol de
+          is_empty: és buit
+          is_none_of: no és cap de
+          is_not_empty: no és buit
+          less_than: més petit que
+          less_than_or_equal: més petit o igual que
+          not_equals: no és igual a
+          starts_with: comença amb
+        order: Ordre
+        reset_to_default: Restableix als valors per defecte
+        select_field: Seleccioneu un camp...
+        sort_by: Ordena per
+        visible_columns: Columnes visibles
+      taxon_rules:
+        all_conditions: totes les condicions
+        any_condition: qualsevol condició
+        available_on: Disponible a
+        match_policies:
+          contains: conté
+          does_not_contain: no conté
+          is_equal_to: és igual a
+          is_not_equal_to: no és igual a
+        on_sale: En oferta
+        products_must_match: 'Els productes han de coincidir amb:'
+        tag: Etiqueta de producte
+      taxon_type: Tipus de categoria
+      taxon_types:
+        automatic: Automàtic
+        automatic_info: Afegeix automàticament productes a aquesta categoria si coincideixen amb les regles que establiu.
+        manual: Manual
+        manual_info: Selecciona els productes manualment. Els podeu afegir o eliminar de manera massiva.
+      translations:
+        no_translations_configured: No hi ha cap traducció configurada. Configureu els mercats per utilitzar traduccions.
+      upload_new_asset: Carrega un nou element multimèdia
+      users:
+        filters:
+          search_placeholder: Cerca clients per correu electrònic o nom
+      utilities:
+        preview: Vista prèvia
+      variants:
+        search_results:
+          no_variants: No hem trobat cap variant que coincideixi amb la cerca :(
+      variants_form:
+        add_option:
+          empty: Afegeix opcions com ara mida o color
+          not_empty: Afegeix una altra opció
+        compare_at_price_description: Aquest preu s'utilitza per mostrar el preu rebaixat a la pàgina del producte.
+        stock_locations_link: Per afegir més ubicacions d'estoc aneu a <a href="%{link}">Ubicacions d'estoc</a>
+        total_inventory_html: 'Inventari total a la ubicació %{stock_location}: %{count} disponibles'
+      vendors:
+        enterprise_feature: El mercat multivenedor està disponible a l'edició Enterprise
+      webhook_deliveries:
+        delivered_at: Lliurat el
+        delivery_details: Detalls del lliurament
+        delivery_info: Informació del lliurament
+        endpoint_inactive: 'No es pot reintentar: l''extrem està inactiu'
+        error_type: Tipus d'error
+        event: Esdeveniment
+        execution_time: Temps d'execució
+        failed: Fallit
+        pending: Pendent
+        redeliver_button: Torna a lliurar
+        redelivered: El webhook s'ha tornat a lliurar correctament.
+        request_errors: Errors de la sol·licitud
+        request_payload: Càrrega de la sol·licitud
+        response_body: Cos de la resposta
+        response_code: Codi de resposta
+      webhook_endpoints:
+        auto_disabled: Aquest extrem s'ha desactivat automàticament després de repetits errors de lliurament.
+        back_to_endpoint: Torna a l'extrem
+        deliveries: Lliuraments
+        endpoint_settings: Configuració de l'extrem
+        event_subscriptions: Subscripcions a esdeveniments
+        event_subscriptions_help: Seleccioneu quins esdeveniments han d'activar un lliurament de webhook a aquest extrem.
+        events: esdeveniments
+        failed_deliveries: Lliuraments fallits
+        health:
+          degraded: "%{percentage}% d'èxit"
+          disabled: Desactivat
+          failing: "%{percentage}% d'èxit"
+          healthy: "%{percentage}% d'èxit"
+          no_deliveries: Sense dades
+        health_label: Estat
+        new: Nou extrem de webhook
+        re_enable: Torna a activar
+        secret_key: Clau secreta
+        secret_key_help: Utilitzeu aquesta clau per verificar les signatures dels webhooks. Manteniu-la segura i no la compartiu públicament.
+        send_test: Envia una prova
+        subscriptions: Subscripcions
+        successful_deliveries: Lliuraments correctes
+        test_failed: No s'ha pogut enviar el webhook de prova. Comproveu la configuració de l'extrem.
+        test_sent: S'ha enviat el webhook de prova. Comproveu els lliuraments per veure'n el resultat.
+      webhooks_subscribers:
+        all_events: Tots els esdeveniments
+        new_webhooks_subscriber: Nou subscriptor de webhooks
+        no_events: Cap esdeveniment
+        select_events: Selecciona esdeveniments
+        subscribe_to_all_events: Subscriu-te a tots els esdeveniments
+        subscriptions: Subscripcions
+        time_of_last_event: Hora del darrer esdeveniment
+        webhooks_events: Esdeveniments de webhooks
     administration: Administració
     advertise:
     agree_to_privacy_policy:
@@ -428,7 +1188,7 @@ ca:
     are_you_sure: Està segur?
     are_you_sure_delete: Està segur que vol eliminar aquesta entrada?
     associated_adjustment_closed:
-    at_symbol: '@'
+    at_symbol: "@"
     authorization_failure: Fallada d'autorització
     authorized:
     auto_capture:
@@ -563,7 +1323,6 @@ ca:
     date: Data
     date_completed:
     date_picker:
-      # FlatPickr human friendly formatting
       fpr_human_friendly_date_format: M j, Y
       fpr_human_friendly_date_time_format: M j, Y - H:i
     date_range: Rang de Data
@@ -603,6 +1362,7 @@ ca:
         no_user_or_email_specified:
         no_user_specified:
         not_first_order:
+        wrong_country: Aquest codi de cupó no és vàlid al vostre país
     email: Correu Electrònic
     empty: Buit
     empty_cart: Buidar carret
@@ -616,6 +1376,17 @@ ca:
         could_not_create_taxon: no va poder crear-se la categoria
         no_payment_methods_available: No payment methods are configured for this environment
         no_shipping_methods_available: No hi ha mètodes d'enviament disponibles per a la localitat seleccionada. Per favor, canviï l'adreça i torni a intentar-ho.
+        cannot_delete_default_channel: No es pot eliminar el canal per defecte. Promociona primer un altre canal com a predeterminat.
+        channel_store_mismatch: ha de pertànyer a la mateixa botiga
+        invalid_order_routing_rule: no és una regla d'encaminament de comandes registrada
+        invalid_order_routing_strategy: no és una estratègia d'encaminament de comandes registrada
+        must_be_origin_only: ha de ser un origen (esquema i amfitrió) sense ruta, consulta ni fragment
+        store_association_can_not_be_changed: L'associació de botiga no es pot canviar
+        store_is_already_set: La botiga ja està definida
+      services:
+        get_shipping_rates:
+          no_line_items: Per generar tarifes d'enviament heu d'afegir alguns articles a la comanda
+          no_shipping_address: Per generar tarifes d'enviament la comanda ha de tenir una adreça d'enviament
     errors_prohibited_this_record_from_being_saved:
       one: 1 error va impedir que no pogués guardar-se el registre
       other: "%{count} errors van impedir que no pogués guardar-se el registre"
@@ -859,6 +1630,7 @@ ca:
         subject: Cancel·lació de comanda
         subtotal:
         total:
+        thanks: Gràcies per
       confirm_email:
         dear_customer:
         instructions:
@@ -867,6 +1639,20 @@ ca:
         subtotal:
         thanks:
         total:
+      payment_link_email:
+        message: Feu clic al botó de sota per pagar la vostra comanda.
+        message_copy_link: 'Si el botó no funciona, copieu i enganxeu l''enllaç següent al vostre navegador:'
+        pay_for_order: Paga la comanda
+        subject: 'Enllaç de pagament per a la comanda #%{number}'
+      store_owner_notification_email:
+        heading: Nova comanda rebuda
+        instructions: Heu rebut una comanda nova.
+        order_summary: Resum de la comanda %{number}
+        subject: "%{store_name} ha rebut una comanda nova"
+        thanks: Gràcies
+      store_team: Equip de %{store_name}
+      subtotal: 'Subtotal:'
+      total: 'Total de la comanda:'
     order_not_found:
     order_number:
     order_processed_successfully: La seva comanda s'ha processat correctament
@@ -921,6 +1707,9 @@ ca:
       pending: pendent
       processing: processant
       void: buit
+      complete: Completat
+      partially_refunded: Reemborsat parcialment
+      refunded: Reemborsat
     payment_updated: Pagament actualitzat
     payments: Pagaments
     pending:
@@ -1007,6 +1796,24 @@ ca:
       user_logged_in:
         description:
         name:
+      category:
+        description: La comanda inclou productes de categories especificades
+        name: Categories
+      country:
+        description: Limita a comandes amb adreça d'enviament en un país específic
+        name: País
+      currency:
+        description: Limita a comandes en una divisa específica
+        name: Divisa
+      customer:
+        description: Disponible només per als clients especificats
+        name: Clients
+      customer_group:
+        description: Disponible només per a clients dels grups de clients especificats
+        name: Grup(s) de clients
+      customer_logged_in:
+        description: Disponible només per a clients amb la sessió iniciada
+        name: Només clients amb la sessió iniciada
     promotion_uses:
     promotionable:
     promotions: Promocions
@@ -1049,6 +1856,8 @@ ca:
         refund_summary:
         subject:
         total_refunded:
+        store_team: Equip de %{store_name}
+        thanks: Gràcies per la vostra confiança.
     reimbursement_perform_failed:
     reimbursement_status:
     reimbursement_type:
@@ -1130,6 +1939,8 @@ ca:
         thanks:
         track_information:
         track_link:
+        shipping_method: 'Mètode d''enviament: %{shipping_method}'
+        store_team: Equip de %{store_name}
     shipment_state: Estat de l'enviament
     shipment_states:
       backorder:
@@ -1206,6 +2017,7 @@ ca:
       returned:
       shipped:
       void:
+      shipment: Enviament
     states: Províncies
     states_required:
     status: Estat
@@ -1220,6 +2032,10 @@ ca:
     stock_movements_for_stock_location:
     stock_successfully_transferred:
     stock_transfer:
+      errors:
+        must_have_variant: Heu d'afegir com a mínim una variant
+        same_location: no pot ser la mateixa que la ubicació de destinació
+        variants_unavailable: Algunes variants no estan disponibles a %{stock}
     stock_transfers:
     stop: Fins a
     store: Tenda
@@ -1310,7 +2126,7 @@ ca:
       cannot_be_less_than_shipped_units: no pot ser menys que el nombre d'unitats enviades.
       cannot_destroy_line_item_as_inventory_units_have_shipped:
       exceeds_available_stock:
-      is_too_large: "és massa gran -- no hi ha suficients productes disponibles per a aquesta quantitat"
+      is_too_large: és massa gran -- no hi ha suficients productes disponibles per a aquesta quantitat
       must_be_int: ha de ser un sencer
       must_be_non_negative: ha de ser un valor no negatiu
       unpaid_amount_not_zero:
@@ -1332,3 +2148,686 @@ ca:
     zipcode: Codi Postal
     zone: Zona
     zones: Zones
+    add_gift_card: Afegeix una targeta regal
+    add_new_address: Afegeix una adreça nova
+    add_selected: Afegeix els seleccionats
+    add_selected_products: Afegeix els productes seleccionats
+    add_selected_variant: Afegeix la variant seleccionada
+    added_at: Afegit el
+    adjustment_amount_help: Els valors positius són càrrecs, els valors negatius són crèdits.
+    adjustment_closed_description: L'ajust està tancat i no es tornarà a calcular.
+    adjustment_open_description: L'ajust està obert i es tornarà a calcular.
+    admin_language_help: L'idioma en què es mostra el vostre tauler d'administració. Només afecta el que veieu vós, no la botiga ni la resta de personal.
+    admin_locale_help: L'idioma utilitzat per al tauler d'administració. Si no s'estableix, s'utilitza l'idioma de l'aplicació per defecte.
+    all_time: Tot el temps
+    apis:
+      admin: API d'administració
+      store: API de la botiga
+    applied_to: Aplicat a
+    assigned_variants: Variants assignades
+    assigned_variants_help: Trieu les variants que representa aquesta imatge. Deixeu-ho en blanc per aplicar-la a totes les variants.
+    automatic_promotion: Automàtica
+    breadcrumbs: Ruta de navegació
+    cancel_order: Cancel·la la comanda
+    cannot_ship: L'enviament no es pot enviar
+    card_expiration_placeholder: MM/AAAA
+    categorization: Categorització
+    change_password: Canvia la contrasenya
+    close_sidebar: Tanca la barra lateral
+    contact_information: Informació de contacte
+    contact_us: Contacteu amb nosaltres
+    continue_selling_when_out_of_stock: Continua venent quan no hi hagi estoc
+    copied: Copiat!
+    copy_id: Copia l'ID
+    custom_domains: Dominis personalitzats
+    customer_could_not_be_removed_from_group: No s'ha pogut eliminar el client del grup
+    customer_group_rule:
+      choose_customer_groups: 'Seleccioneu el grup o grups de clients als quals s''ha d''aplicar aquesta promoció:'
+    customer_removed_from_group: Client eliminat del grup
+    customers_added_to_group:
+      one: "%{count} client afegit al grup"
+      other: "%{count} clients afegits al grup"
+    customers_removed_from_group:
+      one: "%{count} client eliminat del grup"
+      other: "%{count} clients eliminats del grup"
+    days_ago: Fa dies
+    delete_selected: Suprimeix els seleccionats
+    digital_assets_help: Els elements digitals són fitxers que els clients poden descarregar després de la compra.
+    dimension_units:
+      centimeter: Centímetre (cm)
+      foot: Peu (ft)
+      inch: Polzada (in)
+      millimeter: Mil·límetre (mm)
+    display_settings: Configuració de visualització
+    domains: Dominis
+    draft_orders: Comandes en esborrany
+    edit_address: Edita l'adreça
+    edit_prices: Edita els preus
+    edit_refund: Edita el reemborsament
+    estimated_delivery_time: Temps de lliurament estimat
+    excerpt: Extracte
+    favicon: Favicon
+    filtered_records: Registres filtrats
+    forbidden_message: No teniu autorització per accedir a aquesta pàgina.
+    general_information: Informació general
+    get_back_to_the: Torna a la
+    homepage: Pàgina d'inici
+    internal_server_error: Error intern del servidor
+    internal_server_error_message: El servidor ha trobat un error intern i no ha pogut completar la vostra sol·licitud.
+    invitation_expired:
+      body: Aquest enllaç d'invitació ja no és vàlid. Demaneu a la persona que us va convidar que us n'enviï un de nou.
+      heading: Invitació no vàlida o caducada
+    invitation_resent: Invitació reenviada!
+    issued_on: Emès el
+    log_in: Inicia la sessió
+    manual_adjustment: Ajust manual
+    manual_adjustments: Ajustos manuals
+    mark_as_default: Marca com a predeterminada
+    move_variant_to: Mou la variant a
+    new_allowed_origin: Nou origen permès
+    new_api_key: Nova clau API
+    new_balance: Nou saldo
+    new_billing_address: Nova adreça de facturació
+    new_channel: Nou canal de venda
+    new_custom_domain: Nou domini personalitzat
+    new_customer_group: Nou grup de clients
+    new_digital_asset: Nou element digital
+    new_domain: Nou domini
+    new_gift_card: Nova targeta regal
+    new_line_item: Afegeix una línia de comanda
+    new_metafield_definition: Nova definició de metacamp
+    new_nested_taxon: Nova subcategoria imbricada
+    new_page: Nova pàgina
+    new_password: Nova contrasenya
+    new_policy: Nova política
+    new_reimbursement_type: Nou tipus de reemborsament
+    new_role: Nou rol
+    new_shipping_address: Nova adreça d'enviament
+    new_store: Nova botiga
+    new_store_credit: Nou crèdit de botiga
+    new_store_credit_category: Nova categoria de crèdit de botiga
+    new_webhook_endpoint: Nou extrem de webhook
+    no_adjustments: Cap ajust
+    no_billing_address_available: No hi ha cap adreça de facturació disponible
+    no_customers_found: No s'ha trobat cap client
+    no_email_provided: No s'ha indicat cap correu electrònic
+    no_internal_note: Cap nota interna
+    no_products_added: No s'ha afegit cap producte
+    no_products_in_price_list: No hi ha cap producte en aquesta llista de preus
+    no_promotions_applied: No s'ha aplicat cap promoció
+    no_saved_cards: No hi ha cap targeta desada
+    no_shipping_address_available: No hi ha cap adreça d'enviament disponible
+    no_taxes: Cap impost
+    no_users_selected: No s'ha seleccionat cap usuari
+    not_risky: No arriscat
+    oauth_applications: Aplicacions OAuth
+    option_type_filterable_info: Quan un tipus d'opció s'estableix com a filtrable, els visitants de la vostra botiga poden filtrar una categoria de productes segons el tipus d'opció. Un exemple típic seria filtrar la roba per mida i color.<br><br><b>Tingueu en compte:</b> Els filtres només seran visibles a les categories de la botiga que continguin productes amb aquest tipus d'opció establert.
+    option_type_kind_info: Controla com es mostra l'opció a la botiga. Les mostres de color mostren cercles de color, els botons mostren xips clicables i el desplegable mostra un menú de selecció.
+    option_type_kinds:
+      buttons: Botons
+      color_swatch: Mostra de color
+      dropdown: Desplegable
+    or_select_other_address: o seleccioneu una altra adreça
+    order_email_resent_error: El correu de confirmació de comanda només es pot enviar per a comandes completades
+    order_line_items: Línies de comanda
+    page_not_found: Ho sentim! No es pot trobar la pàgina que cerqueu.
+    page_not_found_message: Aquesta pàgina simplement no existeix.
+    payment_amount: Import del pagament
+    payment_provider_settings: Configuració del proveïdor de pagament
+    payment_type: Tipus de pagament
+    payments_gateway_processing_errors: Errors de processament de %{payment_method_name}
+    personal_details: Dades personals
+    previously_used_card: Targetes utilitzades anteriorment
+    price_list_form:
+      match_policies:
+        all: Coincideix amb totes aquestes regles
+        any: Coincideix amb qualsevol d'aquestes regles
+    price_list_statuses:
+      active: Activa
+      draft: Esborrany
+      inactive: Inactiva
+      scheduled: Programada
+      scheduled_active: Programada (activa)
+    products_added: Productes afegits
+    products_removed: Productes eliminats
+    products_sort_options:
+      best_selling: Més venuts
+      manual: Manual
+      name_a_z: Alfabèticament, A-Z
+      name_z_a: Alfabèticament, Z-A
+      newest_first: Més nous
+      oldest_first: Més antics
+      price_high_to_low: Preu (de més alt a més baix)
+      price_low_to_high: Preu (de més baix a més alt)
+      relevance: Rellevància
+    promotion_cloned: La promoció s'ha clonat
+    promotion_not_cloned: 'La promoció no s''ha clonat. Motiu: %{error}'
+    purchased_quantity: Quantitat comprada
+    remove_condition: Elimina la condició
+    return_authorization_states:
+      authorized: Autoritzada
+      canceled: Cancel·lada
+    same_as_shipping_address: Igual que l'adreça d'enviament
+    search_customers: Cerca clients
+    search_engine_listing: Llista del motor de cerca
+    search_products: Cerca productes
+    select_existing_address: Selecciona una adreça existent
+    select_key_type: Selecciona el tipus de clau
+    select_user: Selecciona un client
+    select_vendor: Selecciona un venedor
+    send_payment_link: Envia l'enllaç de pagament
+    send_payment_link_title: Envia l'enllaç de pagament al client per correu electrònic. Podrà completar el pagament més tard.
+    service_unavailable: Servei no disponible
+    service_unavailable_message: El servidor no pot atendre temporalment la vostra sol·licitud per tasques de manteniment o problemes de capacitat. Torneu-ho a provar més tard.
+    shipment_successfully_shipped: L'enviament s'ha enviat correctament
+    show_details: Mostra els detalls
+    show_report: Mostra l'informe
+    standards_and_formats: Estàndards i formats
+    standards_and_formats_help: Definiu la zona horària, el sistema d'unitats per defecte i la unitat de pes de la vostra botiga.
+    start_typing_to_search_for_products: Comenceu a escriure per cercar productes
+    start_typing_to_search_for_variants: Comenceu a escriure per cercar variants
+    store_credit:
+      errors:
+        cannot_change_used_store_credit: No podeu canviar un crèdit de botiga que ja s'ha utilitzat
+        unable_to_create: No s'ha pogut crear el crèdit de botiga
+        unable_to_delete: No s'ha pogut suprimir el crèdit de botiga
+        unable_to_update: No s'ha pogut actualitzar el crèdit de botiga
+      remaining: Restant
+      allocated: Afegit
+      authorized: Autoritzat
+      captured: Utilitzat
+      credit: Crèdit
+      eligible: Elegible
+    store_credit_categories: Categories de crèdit de botiga
+    store_details: Detalls de la botiga
+    store_errors:
+      unable_to_update: No s'ha pogut actualitzar la botiga.
+    store_form:
+      customer_support_email_help: Aquest correu electrònic és visible per als visitants de la vostra botiga a la secció del peu de pàgina
+      new_order_notifications_email_help: Si voleu rebre una notificació per correu electrònic cada vegada que algú faci una comanda, indiqueu una adreça de correu electrònic a la qual s'enviarà aquesta notificació
+    store_name_help: Aquest és el nom de la vostra botiga. Es mostrarà a la capçalera i al peu de pàgina.
+    track_quantity: Fes seguiment de la quantitat
+    transaction_id_help: Aquest és l'ID de la transacció que s'ha creat a la passarel·la de pagament de tercers.
+    true_label: CERT
+    type_to_search_customers: Escriviu per cercar clients
+    type_to_search_products: Escriviu per cercar productes
+    unit_system_help: S'utilitzarà com a sistema d'unitats per defecte de la vostra botiga. Ho podeu sobreescriure per a cada producte.
+    unit_systems:
+      imperial_system: Sistema imperial
+      metric: mètric
+      metric_system: Sistema mètric
+    unprocessable_entity: Entitat no processable
+    unprocessable_entity_message: No s'ha pogut processar la vostra sol·licitud. Comproveu si hi ha errors al formulari i torneu-ho a provar.
+    update_address: Actualitza l'adreça
+    update_billing_address: Actualitza l'adreça de facturació
+    update_contact_information: Actualitza la informació de contacte
+    update_shipping_address: Actualitza l'adreça d'enviament
+    use_shipping_address: Utilitza l'adreça d'enviament
+    vendors: Venedors
+    view_full_size: Mostra a mida completa
+    view_store: Mostra la botiga
+    visits: Visites
+    weight_unit_help: S'utilitzarà com a unitat de pes per defecte de la vostra botiga. Ho podeu sobreescriure per a cada producte.
+    weight_units:
+      gram: Gram (g)
+      kilogram: Quilogram (kg)
+      ounce: Unça (oz)
+      pound: Lliura (lb)
+    accepts_email_marketing: Accepta màrqueting per correu electrònic
+    add_customers: Afegeix clients
+    add_products: Afegeix productes
+    add_store: Botiga nova
+    add_store_credit: Afegeix crèdit de botiga
+    added_to_cart: Afegit a la cistella correctament!
+    address: Adreça
+    address_book:
+      add_house_number: Afegiu un número de casa si en teniu
+    address_not_owned_by_user: L'adreça especificada no pertany a aquest usuari.
+    addresses: Adreces
+    adjustment_labels:
+      tax_rates:
+        excluding_tax: "%{name}%{amount}"
+        including_tax: "%{name}%{amount} (Inclòs en el preu)"
+    adjustments_deleted: Ajustaments eliminats
+    admin_locale: Configuració regional de l'administració
+    all_products: Tots els productes
+    allowed_origin: Origen permès
+    allowed_origins: Orígens permesos
+    analytics: Analítica
+    api_key: Clau API
+    api_key_no_current_key: Cap clau API ha autenticat aquesta sol·licitud
+    api_key_scopes_immutable: no es pot canviar després de crear la clau; creeu una clau nova amb els abasts que necessiteu i revoqueu aquesta
+    api_keys: Claus API
+    apply: Aplica
+    apply_only_on_full_priced_items: Aplica només als articles a preu complet
+    apply_store_credit: Aplica el crèdit de botiga
+    assets: Mitjans
+    attachments: Adjunts
+    author: Autor
+    availability: disponibilitat
+    available: Disponible
+    balance: Saldo
+    barcode: Codi de barres
+    brand: Marca
+    canceled: Cancel·lat
+    cannot_be_destroyed: No es pot eliminar la comanda.
+    cannot_empty: No es pot buidar la comanda.
+    cannot_empty_completed_order: La comanda ja s'ha processat, de manera que no es pot buidar
+    cannot_return_more_than_bought_quantity: No es pot tornar més quantitat de la comprada.
+    cart_already_updated: La cistella ja s'ha actualitzat.
+    cart_line_item:
+      discontinued: "%{li_name} s'ha eliminat perquè s'ha descatalogat"
+      out_of_stock: "%{li_name} s'ha eliminat perquè s'ha esgotat"
+    change: Canvia
+    channel: Canal de venda
+    channels: Canals de venda
+    checkout_requirements:
+      email_required: L'adreça de correu electrònic és obligatòria
+      line_items_required: Afegiu com a mínim un article a la cistella
+      payment_required: Afegiu un mètode de pagament
+      ship_address_required: L'adreça d'enviament és obligatòria
+      shipping_method_required: Seleccioneu un mètode d'enviament per a tots els enviaments
+    clear: Esborra
+    clear_all: Esborra-ho tot
+    closed: Tancat
+    color_code: Codi de color
+    colors: Colors
+    compare_at_amount: Import de comparació
+    compare_at_price: Preu de comparació
+    contact: Contacte
+    contact_phone: Telèfon de contacte
+    content: Contingut
+    copy: Copia
+    copy_link: Copia l'enllaç
+    coupon_code_used: El codi de cupó que heu introduït ja s'ha utilitzat. Torneu-ho a provar.
+    coupon_codes: Codis de cupó
+    create_new: Crea'n un de nou
+    created_by: Creat per
+    credit_allowed: Crèdit permès
+    credited: Acreditat
+    currencies: Divises
+    currency_not_supported_by_store: no és compatible amb aquesta botiga
+    current_password: Contrasenya actual
+    customer_group: Grup de clients
+    customer_groups: Grups de clients
+    customer_mailer:
+      password_reset_email:
+        action: Restableix la contrasenya
+        expiry_notice: Aquest enllaç per restablir la contrasenya caducarà aviat. Si no ho heu sol·licitat, no cal fer res.
+        greeting: Hola %{name},
+        ignore_notice: Si no heu sol·licitat restablir la contrasenya, podeu ignorar aquest correu electrònic amb tota tranquil·litat. La vostra contrasenya no es canviarà.
+        instructions: Hem rebut una sol·licitud per restablir la vostra contrasenya. Feu clic al botó de sota per triar-ne una de nova.
+    customer_support_email: Correu electrònic d'atenció al client
+    customers: Clients
+    cvv: CVV
+    default_billing_address: Adreça de facturació per defecte
+    default_country: País per defecte
+    default_currency: Divisa per defecte
+    default_locale: Configuració regional per defecte
+    default_shipping_address: Adreça d'enviament per defecte
+    default_stock_location_name: Ubicació de la botiga
+    default_wishlist_name: Llista de desitjos
+    deleted: Eliminat
+    developers: Desenvolupadors
+    digital:
+      digital_delivery: Lliurament digital
+    digital_assets: Recursos digitals
+    discontinue_on: Descatalogar el
+    discontinued: Descatalogat
+    discontinued_variants_present: Alguns articles d'aquesta comanda tenen productes que ja no estan disponibles.
+    discount: Descompte
+    discounts: Descomptes
+    display_delivery_range: Lliurament en %{delivery_range} dies laborables
+    display_on: Mostra a
+    domain: Domini
+    done: Fet
+    download: Descarrega
+    draft: Esborrany
+    duplicate: Duplica
+    duplicating: S'està duplicant
+    email_marketing: Màrqueting per correu electrònic
+    emails: Correus electrònics
+    ends_at: Finalitza el
+    enter: Introdueix
+    error_user_destroy_with_orders: No es pot eliminar un usuari associat a comandes
+    error_user_does_not_have_any_store_credits: L'usuari no té cap crèdit de botiga disponible
+    estimated_transit_business_days: Dies laborables de trànsit estimats
+    existing_address: Adreça existent
+    expired: Caducat
+    expires_at: Caduca el
+    export: Exporta
+    export_mailer:
+      export_done:
+        message: Bona feina, la vostra exportació està a punt! Utilitzeu l'enllaç de sota per descarregar-la.
+        subject: La vostra exportació %{export_number} s'ha processat correctament!
+      greeting: Hola %{user_name},
+      thanks: Gràcies,
+    facebook: Facebook
+    featured_image: Imatge destacada
+    field: Camp
+    filled: Emplenat
+    filter: Filtra
+    filterable: Filtrable
+    firstname: Nom
+    fonts: Tipus de lletra
+    footer: Peu de pàgina
+    forbidden: Accés denegat
+    free: Gratuït
+    from: Des de
+    generate_code: Genera un codi de cupó
+    gift_card: Targeta de regal
+    gift_card_already_redeemed: La targeta de regal ja s'ha bestreta.
+    gift_card_applied: La targeta de regal s'ha aplicat correctament a la vostra comanda!
+    gift_card_batch: Lot de targetes de regal
+    gift_card_customer_not_logged_in: La targeta de regal no es pot aplicar amb un usuari convidat.
+    gift_card_expired: La targeta de regal ha caducat.
+    gift_card_mismatched_currency: La targeta de regal no es pot aplicar amb la divisa actual.
+    gift_card_mismatched_customer: Aquesta targeta de regal està associada a un altre usuari.
+    gift_card_not_found: No s'ha trobat la targeta de regal.
+    gift_card_removed: La targeta de regal s'ha eliminat correctament de la vostra comanda
+    gift_card_using_store_credit_error: No podeu aplicar la targeta de regal després d'haver aplicat el crèdit de botiga.
+    gift_cards: Targetes de regal
+    hide: Amaga
+    idempotency_key_reused: Aquesta Idempotency-Key ja s'ha utilitzat amb paràmetres de sol·licitud diferents.
+    immediately: Immediatament
+    import: Importa
+    in_stock: En estoc
+    instagram: Instagram
+    integrations: Integracions
+    internal_note: Nota interna
+    internationalization: Internacionalització
+    invitation_accepted: Invitació acceptada!
+    invitation_mailer:
+      greeting: Hola %{user_name},
+      invitation_accepted:
+        body: "%{invitee_name} ha acceptat la vostra invitació per unir-se a %{resource_name}"
+        subject: "%{invitee_name} ha acceptat la vostra invitació per unir-se a %{resource_name}"
+      invitation_email:
+        body: "%{inviter_name} us ha convidat a unir-vos a %{resource_name}"
+        link_description: 'Per acceptar aquesta invitació, feu clic a l''enllaç de sota:'
+        subject: Invitació per unir-se a %{resource_name}
+      thanks: Gràcies,
+    invitations: Invitacions
+    invited_by: Convidat per
+    iso: ISO Alpha-2
+    iso3: ISO Alpha-3
+    key: Clau
+    kind: Tipus
+    label: Etiqueta
+    language: Idioma
+    lastname: Cognoms
+    line_item: Línia d'article
+    line_items: Línies d'article
+    link: Enllaç
+    live: En directe
+    locale: Configuració regional
+    locale_not_supported_by_store: no és compatible amb aquesta botiga
+    logo: Logotip
+    mail_from_address: Adreça del remitent del correu
+    mailer_logo: Logotip del correu (només imatges JPG o PNG)
+    make_active_at: Activar el
+    manual: Manual
+    market: Mercat
+    market_ids: Mercats
+    markets: Mercats
+    master: Mestre
+    max: Màx.
+    max_quantity: Quantitat màxima
+    me_no_current_user: Cap usuari administrador ha autenticat aquesta sol·licitud
+    media: Mitjans
+    metafield_definitions: Definicions de metacamps
+    metafields: Metacamps
+    min: Mín.
+    min_quantity: Quantitat mínima
+    missing_return_authorization: Falta l'autorització de devolució per a %{item_name}.
+    move: Mou
+    mutable: Modificable
+    navigation: Navegació
+    never: Mai
+    new_address: Adreça nova
+    new_order_notifications_email: Correu electrònic de notificacions de comandes noves
+    new_price_list: Nova llista de preus
+    newsletter_mailer:
+      email_confirmation:
+        dear_customer: Hola,
+        ignore_disclaimer: Si no ho heu sol·licitat, ignoreu aquest correu electrònic.
+        instructions: Feu clic al botó de sota per verificar la vostra adreça de correu electrònic.
+        message_copy_link: 'Si el botó no funciona, copieu i enganxeu l''enllaç següent al vostre navegador:'
+        store_team: Equip de %{store_name}
+        subject: Verifiqueu la vostra adreça de correu electrònic
+        thanks: Gràcies
+        verify_email_address_link: Verifica l'adreça de correu electrònic
+    newsletter_subscribers: Subscriptors del butlletí
+    no_cc_type: N/D
+    no_report_data: Sense dades d'informe
+    number: Número
+    ok: D'acord
+    only_active_products_can_be_added_to_cart: Els productes en esborrany i arxivats no es poden afegir a la cistella; marqueu primer el producte com a actiu.
+    option_name: Nom de l'opció
+    order_routing:
+      strategies:
+        legacy: Antic
+        rules: Regles (ordenades)
+    origin: Origen
+    other: Altres
+    outstanding_balance: Saldo pendent
+    page: Pàgina
+    pages: Pàgines
+    payment_source: Font de pagament
+    payment_total: Total de pagament
+    permissions: Permisos
+    policies: Polítiques
+    preview: Previsualització
+    price_lists: Llistes de preus
+    price_rules:
+      customer_group_rule:
+        description: Aplica preus a grups de clients específics
+    prices: Preus
+    pricing: Preus
+    privacy_policy: Política de privadesa
+    processing: S'està processant
+    product_name: Nom del producte
+    product_translations: Traduccions del producte
+    products_cannot_be_shipped: De moment no podem enviar %{product_names} a la vostra ubicació actual. Canvieu la vostra adreça d'enviament o elimineu %{product_names} de la vostra cistella.
+    promotion_already_used: No podeu eliminar una promoció que ja s'ha aplicat
+    promotion_category: Categoria de promoció
+    promotion_label: Promoció (%{name})
+    published_at: Publicat el
+    query: Consulta
+    refund_amount: Import del reemborsament
+    remove_gift_card_on_completed_order_error: No podeu eliminar la targeta de regal després de fer la comanda
+    report_mailer:
+      greeting: Hola %{user_name},
+      report_done:
+        message: Utilitzeu l'enllaç de sota per descarregar-lo.
+        subject: El vostre informe %{report_name} està a punt
+      thanks: Gràcies,
+    report_names:
+      products_performance: Rendiment dels productes
+      sales_total: Total de vendes
+    required: "*"
+    required_fields: camps obligatoris
+    resellable: Revendible
+    resource: Recurs
+    return_authorization_canceled: Autorització de devolució cancel·lada
+    return_item_order_not_completed: La comanda de l'article de devolució ha d'estar completada
+    returns_policy: Política de devolucions
+    role_id: ID de rol
+    row: Fila
+    sale: Rebaixa
+    saving: S'està desant
+    scopes: Abasts
+    search_by: 'Cerca per:'
+    security: Seguretat
+    seed:
+      shipping:
+        categories:
+          default: Per defecte
+          digital: Digital
+    selected_quantity_not_available: seleccionat de %{item} no està disponible.
+    send_consumer_transactional_emails: Envia correus electrònics transaccionals als clients
+    seo: SEO
+    seo_title: Títol SEO
+    ship_to: 'Enviar a:'
+    shipping_policy: Política d'enviament
+    shipping_rates:
+      display_price:
+        excluding_tax: "%{price} (+ %{tax_amount} %{tax_rate_name})"
+        including_tax: "%{price} (incl. %{tax_amount} %{tax_rate_name})"
+    shipping_zone: Zona d'enviament
+    show_discontinued: Mostra els descatalogats
+    sign_up: Registra't
+    site_name: Nom del lloc
+    size: Mida
+    social: Xarxes socials
+    sort_by: Ordena per
+    square_image: Imatge quadrada
+    starts_at: Comença el
+    state_changes: Canvis d'estat
+    stock_items: Articles d'estoc
+    store_credit_events: Esdeveniments de crèdit de botiga
+    store_credit_name: Crèdit de botiga
+    store_credit_payment_method:
+      currency_mismatch: La divisa del crèdit de botiga no coincideix amb la divisa de la comanda
+      insufficient_authorized_amount: No es pot capturar més de l'import autoritzat
+      insufficient_funds: L'import restant del crèdit de botiga no és suficient
+      successful_action: "%{action} de crèdit de botiga correcte"
+      unable_to_credit: 'No s''ha pogut acreditar el codi: %{auth_code}'
+      unable_to_find: No s'ha pogut trobar el crèdit de botiga
+      unable_to_find_for_action: 'No s''ha pogut trobar el crèdit de botiga per al codi d''autorització: %{auth_code} per a l''acció: %{action}'
+      unable_to_void: 'No s''ha pogut anul·lar el codi: %{auth_code}'
+    store_credits: Crèdits de botiga
+    store_default: Botiga per defecte
+    store_name: Nom de la botiga
+    stores: Botigues
+    subscribed: Subscrit
+    support: Suport
+    supported_currencies: Divises admeses
+    supported_locales: Configuracions regionals admeses
+    tags: Etiquetes
+    tax_inclusive: Impostos inclosos
+    taxes: Impostos
+    taxonomy_brands_name: Marques
+    taxonomy_categories_name: Categories
+    taxonomy_collections_name: Col·leccions
+    terms_of_service: Condicions del servei
+    theme: Tema
+    themes: Temes
+    timezone: Zona horària
+    title: Títol
+    to: A
+    translations: Traduccions
+    twitter: Twitter
+    unit: Unitat
+    unit_system: Sistema d'unitats
+    unlimited: Il·limitat
+    updated_at: Actualitzat el
+    url: URL
+    used: Utilitzat
+    user_ids: Usuaris
+    vendor: Proveïdor
+    verified: Verificat
+    verified_at: Verificat el
+    view: Visualitza
+    visibility: Visibilitat
+    webhook_endpoints: Punts de connexió de webhook
+    webhook_mailer:
+      endpoint_disabled:
+        disabled_at_label: Desactivat el
+        heading: Punt de connexió de webhook desactivat
+        instructions: Comproveu l'URL del punt de connexió i el servei, i torneu-lo a activar a Configuració → Desenvolupadors → Webhooks.
+        message: El punt de connexió de webhook "%{endpoint_name}" s'ha desactivat automàticament després de fallades de lliurament repetides.
+        name_label: Nom
+        reason_label: Motiu
+        subject: 'Punt de connexió de webhook desactivat: %{endpoint_name}'
+        url_label: URL
+    webhooks: Webhooks
+    weight_unit: Unitat de pes
+    wishlist: Llista de desitjos
+    zipcode_required: Codi postal obligatori
+    zone_ids: Zones
+    api:
+      cannot_delete: No es pot eliminar %{model}
+      current_password_invalid: La contrasenya actual no és vàlida o falta
+      gateway_error: 'Hi ha hagut un problema amb la passarel·la de pagament: %{text}'
+      invalid_api_key: S'ha especificat una clau API no vàlida (%{key}).
+      invalid_resource: Recurs no vàlid. Corregiu els errors i torneu-ho a provar.
+      invalid_taxonomy_id: ID de taxonomia no vàlid.
+      must_specify_api_key: Heu d'especificar una clau API.
+      negative_quantity: la quantitat és negativa
+      newsletter_verification_token_invalid: El token de verificació del butlletí no és vàlid o ha caducat.
+      order:
+        could_not_transition: No s'ha pogut fer la transició de la comanda. Corregiu els errors i torneu-ho a provar.
+        insufficient_quantity: Un article de la vostra cistella ha deixat d'estar disponible.
+        invalid_shipping_method: S'ha especificat un mètode d'enviament no vàlid.
+      password_reset_requested: Si existeix un compte per a aquest correu electrònic, s'han enviat les instruccions per restablir la contrasenya.
+      password_reset_token_invalid: El token de restabliment de contrasenya no és vàlid o ha caducat.
+      payment:
+        credit_over_limit: Aquest pagament només es pot acreditar fins a %{limit}. Especifiqueu un import inferior o igual a aquest nombre.
+        update_forbidden: Aquest pagament no es pot actualitzar perquè està %{state}.
+      record_not_found: No s'ha trobat %{model}
+      redirect_url_not_allowed: L'URL de redirecció no prové d'un origen permès per a aquesta botiga.
+      resource_not_found: No s'ha pogut trobar el recurs que cercàveu.
+      shipment:
+        cannot_ready: No es pot preparar l'enviament.
+      shipment_transfer_errors_occurred: 'S''han produït els errors següents en intentar aquesta acció:'
+      shipment_transfer_success: Variants transferides correctament
+      stock_location_required: Cal proporcionar un paràmetre stock_location_id per recuperar els moviments d'estoc.
+      unauthorized: No teniu autorització per dur a terme aquesta acció.
+      v2:
+        cart:
+          no_coupon_code: No s'ha proporcionat cap codi de cupó i la comanda no té aplicada cap promoció de codi de cupó
+          wrong_quantity: La quantitat ha de ser superior a 0
+        digitals:
+          missing_file: 'Falta l''article digital: adjunt'
+          unauthorized: Error, no teniu autorització per accedir a aquest recurs
+        gift_card:
+          amount_not_valid: L'import de la targeta de regal no és vàlid
+          not_found: No s'ha trobat la targeta de regal
+        metadata:
+          invalid_params: Els paràmetres de metadades públiques i privades han de ser objectes
+        wishlist:
+          errors:
+            the_wishlist_could_not_be_destroyed: No s'ha pogut eliminar la llista de desitjos.
+          wrong_quantity: La quantitat ha de ser superior a 0
+      v3:
+        payments:
+          method_unavailable: Aquest mètode de pagament no està disponible per a aquesta comanda.
+          session_required: Aquest mètode de pagament requereix una sessió de pagament. Utilitzeu el punt de connexió de sessions de pagament.
+      wrong_shipment_target: l'enviament de destinació és el mateix que l'enviament original
+  action_text:
+    video_embed:
+      not_found: No es pot incrustar cap vídeo amb l'URL proporcionada
+  activemodel:
+    errors:
+      messages:
+        blank: no pot estar en blanc
+      models:
+        spree/fulfilment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: té unitats d'inventari en reserva
+              has_already_been_shipped: ja s'ha enviat
+            desired_shipment:
+              can_not_transfer_within_same_shipment: no pot ser el mateix que l'enviament actual
+              has_not_enough_stock_at_desired_location: no té prou estoc a la ubicació d'estoc desitjada
+  address_book:
+    save: Desa
+    successfully_created: L'adreça nova s'ha creat correctament
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
+    percentage:
+      format:
+        precision: 1
+  pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    next: "&rsaquo;"
+    previous: "&lsaquo;"
+    truncate: "&hellip;"
+  views:
+    pagination:
+      truncate: Trunca
