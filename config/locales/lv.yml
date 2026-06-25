@@ -792,6 +792,17 @@ lv:
         top_products: Populārākie produkti
         view_report: Skatīt pārskatu
         whats_happening_on_html: Lūk, kas šodien notiek veikalā <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} ir pieejama."
+          current_version_html: Jūsu pašreizējā versija ir %{version}.
+          view_release_notes: Skatīt laidiena piezīmes
+        visits:
+          referrers_title: No kurienes nāk apmeklētāji?
+          landing_pages_title: Populārākās galvenās lapas
+          locations_title: Apmeklētāju atrašanās vietas
+          devices_title: Apmeklētāju ierīces
+          no_data: Nav datu
+          no_data_for_period: Šim periodam nav pieejami dati.
       datetime_field_timezone_help: 'Laika josla: %{zone}'
       digital_shipment_fulfillment_note: Šis sūtījums tiks atzīmēts kā izpildīts, tiklīdz lietotājs lejupielādēs digitālo produktu
       display_on_options:
@@ -818,6 +829,7 @@ lv:
         codes_count: Kodu skaits
         new_gift_card_batch: Jauna dāvanu karšu partija
         prefix: Prefikss
+        expires_at_help: Dāvanu kartes zaudēs derīgumu pēc šī datuma.
       gift_cards:
         active: Aktīva
         all_statuses: Visi statusi
@@ -834,9 +846,19 @@ lv:
         mapping_required: Šis lauks ir obligāts
         please_map_all_required_fields: Lūdzu, kartējiet visus obligātos laukus, lai turpinātu.
         waiting_for_file_to_be_processed: Gaida faila apstrādi...
+        steps:
+          map_fields: 1. Kartējiet laukus
+          process_rows: 2. Apstrādājiet rindas
+          complete: 3. Pabeidziet
+        rows_processed: Apstrādātas %{processed} / %{total} rindas
+        please_select_a_column: Lūdzu, atlasiet kolonnu
+        json: JSON
+        schema: Shēma
       integrations:
         invalid_integration_type: Šī integrācija nav atļauta
         page_subtitle: Savienojiet savu veikalu ar trešo pušu pakalpojumiem, lai uzlabotu klientu pieredzi.
+        find_more_html: Atrodiet vairāk integrāciju %{integrations_link}
+        none_installed_html: Vēl nav instalēta neviena integrācija. Atrodiet integrācijas %{integrations_link}
       json_preview:
         no_api_response: Šim resursam netika atrasta neviena API atbilde
       manage_markets: Pārvaldīt tirgus
@@ -891,6 +913,45 @@ lv:
         refunded: Atmaksāts
         remove_user_from_this_order: Noņemt klientu no šī pasūtījuma
         unfulfilled: Neizpildīts
+        placed_by_guest: Šo pasūtījumu veica viesa klients.
+        orders_count:
+          one: "%{count} pasūtījums"
+          other: "%{count} pasūtījumi"
+        repeat_customer_summary_html: Šis ir atkārtots klients, kurš kopā ir iztērējis %{amount} %{count} laikā, vidēji %{average} par pasūtījumu.
+        avs_responses:
+          a: Ielas adrese sakrīt, bet 5 ciparu un 9 ciparu pasta indekss nesakrīt.
+          b: Ielas adrese sakrīt, bet pasta indekss nav pārbaudīts.
+          c: Ielas adrese un pasta indekss nesakrīt.
+          d: Ielas adrese un pasta indekss sakrīt.
+          e: AVS dati nav derīgi vai AVS nav atļauts šī veida kartei.
+          f: Kartes turētāja vārds nesakrīt, bet norēķinu pasta indekss sakrīt.
+          g: Ne U.S. izsniedzēja banka neatbalsta AVS.
+          h: Kartes turētāja vārds nesakrīt. Ielas adrese un pasta indekss sakrīt.
+          i: Adrese nav pārbaudīta.
+          j: Kartes turētāja vārds, norēķinu adrese un pasta indekss sakrīt.
+          k: Kartes turētāja vārds sakrīt, bet norēķinu adrese un norēķinu pasta indekss nesakrīt.
+          l: Kartes turētāja vārds un norēķinu pasta indekss sakrīt, bet norēķinu adrese nesakrīt.
+          m: Ielas adrese un pasta indekss sakrīt.
+          "n": Ielas adrese un pasta indekss nesakrīt.
+          o: Kartes turētāja vārds un norēķinu adrese sakrīt, bet norēķinu pasta indekss nesakrīt.
+          p: Pasta indekss sakrīt, bet ielas adrese nav pārbaudīta.
+          q: Kartes turētāja vārds, norēķinu adrese un pasta indekss sakrīt.
+          r: Sistēma nav pieejama.
+          s: Banka neatbalsta AVS.
+          t: Kartes turētāja vārds nesakrīt, bet ielas adrese sakrīt.
+          u: Adreses informācija nav pieejama. Tiek atgriezta, ja U.S. banka neatbalsta ne U.S. AVS vai ja AVS U.S. bankā nedarbojas pareizi.
+          v: Kartes turētāja vārds, norēķinu adrese un norēķinu pasta indekss sakrīt.
+          w: Ielas adrese nesakrīt, bet 9 ciparu pasta indekss sakrīt.
+          x: Ielas adrese un 9 ciparu pasta indekss sakrīt.
+          "y": Ielas adrese un 5 ciparu pasta indekss sakrīt.
+          z: Ielas adrese nesakrīt, bet 5 ciparu pasta indekss sakrīt.
+        cvv_responses:
+          m: CVV2 sakrīt
+          "n": CVV2 nesakrīt
+          p: Nav apstrādāts
+          s: Izsniedzējs norāda, ka CVV2 datiem vajadzētu būt uz kartes, bet tirgotājs ir norādījis, ka dati uz kartes nav
+          u: Izsniedzējs nav sertificēts CVV2 vai izsniedzējs nav nodrošinājis Visa ar CVV2 šifrēšanas atslēgām
+          blank: Darījums neizdevās, jo tika ievadīts nepareizs CVV2 numurs vai netika ievadīts CVV2 numurs
       page_builder:
         background_color: Fona krāsa
         border_bottom_width: Apakšējās malas platums
@@ -940,6 +1001,8 @@ lv:
         schedule: Ieplānot
         scheduled: Cenrādis ir ieplānots
         unschedule: Atcelt plānojumu
+        page_info: Cenrāži ir spēcīgs rīks cenu noteikšanas stratēģiju pārvaldībai, pamatojoties uz klientu grupām, precēm vai citiem kritērijiem.
+        learn_more: Uzziniet vairāk par cenrāžiem
       product_translations:
         coverage: Tulkojuma pārklājums
         locale: Lokāle
@@ -979,6 +1042,7 @@ lv:
           choose_stores: Izvēlieties, kuros veikalos šim produktam jābūt pieejamam
         variants:
           option_types_link: Lai pievienotu vairāk opciju veidu, lūdzu, dodieties uz <a href="%{link}">Opciju veidi</a>
+        learn_more: Uzziniet vairāk par preču pārvaldību
       publishing:
         caption_hidden_after: Tiek noņemts %{date}
         caption_live: Tagad redzams klientiem
@@ -1020,6 +1084,12 @@ lv:
         customer_support_email_help: Šis e-pasts ir redzams jūsu veikala apmeklētājiem kājenes sadaļā
         new_order_notifications_email_help: Ja vēlaties saņemt e-pasta paziņojumu katru reizi, kad kāds veic pasūtījumu, lūdzu, norādiet e-pasta adresi, uz kuru sūtīt šo paziņojumu
         send_consumer_transactional_emails_help: Ja atzīme noņemta, darījumu e-pasti, piemēram, pasūtījumu apstiprinājumi un sūtījumu paziņojumi, klientiem netiks sūtīti
+        logo_help: Izmanto administrēšanas panelī
+        currencies_managed_by_markets_html: Valūtas un lokalizācijas tagad pārvalda %{markets_link}.
+        email_addresses: E-pasta adreses
+        mail_from_address_help: Lūdzu, norādiet e-pasta adresi, kas tiks izmantota kā sūtītājs visiem no jūsu veikala sūtītajiem e-pastiem.
+        mailer_logo_help: Šis logotips tiek iekļauts visos e-pasta paziņojumos, piemēram, pasūtījuma apstiprinājumā
+        mailer_logo_format_hint: Mēs iesakām attēlus ar caurspīdīgu fonu. Tiek atbalstīti tikai JPEG un PNG formāti.
       store_setup_tasks:
         add_billing_address: Pievienot rēķina adresi
         add_products: Pievienot produktus
@@ -1034,6 +1104,15 @@ lv:
           copy: Lai iekasētu nodokļus, lūdzu, iestatiet savas nodokļu likmes.
           done: Viss ir kārtībā! Savus nodokļus vienmēr varat pārvaldīt <a href="%{link}" data-turbo-frame="_top">iestatījumu</a> lapā.
           setup: Iestatīt nodokļu likmes
+        add_products_task:
+          done_title: Lieliski, jūs pievienojāt preces savam veikalam!
+          done_subtitle: Atcerieties, ka vienmēr varat pievienot vairāk!
+          copy: Pievienojiet preces savam veikalam — savas vai uzaiciniet trešo pušu pārdevējus pārdot kopā.
+          import_hint: Jūs varat arī masveidā importēt preces no CSV vai Excel faila.
+        customer_support_email_task:
+          copy: Mums ir nepieciešams jūsu klientu atbalsta e-pasts, lai to parādītu jūsu veikalā. Šis e-pasts darbosies kā kontaktpunkts, lai jūsu klienti varētu sazināties ar jums par jebkuriem jautājumiem vai atbalstu.
+          current_html: Jūsu klientu atbalsta e-pasts ir %{email}.
+          label: Klientu atbalsta e-pasts
       storefront: Veikals
       successful: Veiksmīgi
       successfully_reset_digital_links_limit: Lejupielādes ierobežojumi ir atiestatīti
@@ -1095,11 +1174,15 @@ lv:
       users:
         filters:
           search_placeholder: Meklēt klientus pēc e-pasta vai vārda
+        timeline: Laika josla
       utilities:
         preview: Priekšskatījums
       variants:
         search_results:
           no_variants: Mēs neatradām nevienu variantu, kas atbilst jūsu meklējumam :(
+        count_at_location:
+          one: "%{count} atrašanās vietā"
+          other: "%{count} atrašanās vietā"
       variants_form:
         add_option:
           empty: Pievienojiet opcijas, piemēram, izmēru vai krāsu
@@ -1150,6 +1233,8 @@ lv:
         successful_deliveries: Veiksmīgās piegādes
         test_failed: Neizdevās nosūtīt testa tīmekļa āķi. Lūdzu, pārbaudiet galapunkta konfigurāciju.
         test_sent: Testa tīmekļa āķis nosūtīts. Pārbaudiet piegādes, lai redzētu rezultātu.
+        name_placeholder: piem. Veikala e-pasti, Izpildes pakalpojums
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Visi notikumi
         new_webhooks_subscriber: Jauns tīmekļa āķu abonents
@@ -1159,6 +1244,88 @@ lv:
         subscriptions: Abonementi
         time_of_last_event: Pēdējā notikuma laiks
         webhooks_events: Tīmekļa āķu notikumi
+      assistant: Asistents
+      total_orders: Pasūtījumu kopskaits
+      sign_ups: Reģistrācijas
+      previous_page: Iepriekšējā lapa
+      next_page: Nākamā lapa
+      no_change: Bez izmaiņām
+      integrations_directory: Integrāciju katalogs
+      option_types:
+        presentation_help: To izmanto, lai parādītu opcijas tipu veikalā.
+        name_help_html: To izmanto iekšēji, lai identificētu opcijas tipu. <strong>Tam jābūt unikālam.</strong>
+        value_count:
+          one: "%{count} vērtība"
+          other: "%{count} vērtības"
+        showing_pagination: Rāda %{from}-%{to} no %{total}
+        intro_help: Opcijas izmanto, lai grupētu noteiktus atribūtus. Piemēram, jūs varat izveidot opciju ar nosaukumu “krekla izmērs” un pēc tam izveidot šai opcijai opcijas vērtības ar nosaukumu “mazs” un “vidējs”.
+        learn_more: Uzziniet vairāk par opcijām
+      taxons:
+        square_image_help: Izmanto izceltajam attēlam sākumlapā.
+        seo:
+          placeholder: Pievienojiet nosaukumu un aprakstu, lai redzētu, kā šī kategorija varētu parādīties meklētājprogrammas sarakstā
+      promotions:
+        name_help: Klienti to redzēs savā grozā un norēķinoties.
+        next_step_info: Nākamajā solī jūs varēsiet pievienot darbības un noteikumus savai akcijai
+        coupon_code_placeholder: Jūsu kupona kods
+        code_prefix_placeholder: Kupona prefikss (neobligāti)
+        code_prefix_example_html: piem. %{example}
+        number_of_codes_placeholder: Kodu skaits
+        number_of_codes_help: Cik kodus vēlaties ģenerēt.
+        add_more_codes_help: Lai pievienotu vairāk kodu, vienkārši palieliniet šo skaitli
+        usage_limit_help: Atstājiet šo lauku tukšu neierobežotai izmantošanai.
+        expires_at_help: 'Atstājiet šo lauku tukšu, ja nav derīguma termiņa. Laika josla: %{zone}'
+        kind:
+          one_code_label: Viens kods visiem klientiem
+          one_code_help: Jūs varat ierobežot, cik reižu šo kodu var izmantot.
+          multi_codes_label: Ģenerēt unikālus kodus
+          multi_codes_help: Šie kodi tiek ģenerēti automātiski, un tos var lejupielādēt kā CSV failu. Kodi ir unikāli, un tos var izmantot tikai vienu reizi.
+          automatic_help: Šī akcija tiks automātiski piemērota visiem atbilstošajiem pasūtījumiem.
+      shipping_methods:
+        checkout_info: Piegādes metodes ir opcijas, ko klients redz, sasniedzot norēķinu, tie ir pārvadātāji un pakalpojumi, ko izmanto jūsu preču nosūtīšanai.
+        name_help: Tas tiks parādīts klientiem
+        admin_name_help: Tas tiks parādīts administratoriem
+        estimated_transit_business_days_help: Šis ir aptuvenais darba dienu skaits, kas būs nepieciešams, lai sūtījums sasniegtu klienta adresi. Tas tiks parādīts norēķinu lapā.
+        tracking_url_token_help: tiks aizstāts ar izsekošanas numuru.
+      zones:
+        info: Zonas ir ģeogrāfiski grupējumi, tās attēlo štatu vai valstu kopas.
+      shipments:
+        stock_location_option: "%{name} (%{count} noliktavā)"
+      payment_methods:
+        name_help: Šis nosaukums tiks izmantots, lai identificētu maksājuma metodi veikalā
+        available_payment_methods: Pieejamās maksājuma metodes
+        find_more_payment_methods_html: Atrodiet vairāk maksājuma metožu %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Audita žurnāls ir daļa no Spree Enterprise piedāvājuma.
+        upgrade_to_enterprise: Jaunināt uz Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} ir uzaicinājis jūs pievienoties %{resource}"
+        expires_at: Derīgs līdz
+        email_placeholder: piem. steve@apple.com
+      user_sessions:
+        welcome_back: Laipni lūdzam atpakaļ
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Paldies, ka izmantojat Spree Community Edition! Lūdzu, apsveriet iespēju jaunināt uz Enterprise Edition, lai piekļūtu visām funkcijām un atbalstam.
+        upgrade: Jaunināt
+      metafields:
+        none_configured_for: Resursam %{resource} nav konfigurēta neviena metalauka definīcija.
+      table:
+        operators:
+          eq: vienāds
+          not_eq: nav vienāds
+          cont: satur
+          not_cont: nesatur
+          start: sākas ar
+          end: beidzas ar
+          gt: lielāks par
+          gteq: lielāks vai vienāds
+          lt: mazāks par
+          lteq: mazāks vai vienāds
+          in: ir kāds no
+          not_in: nav neviens no
+          'null': ir tukšs
+          not_null: nav tukšs
     administration: Administrēšana
     advertise:
     agree_to_privacy_policy:
@@ -1487,6 +1654,7 @@ lv:
         gte:
         lt:
         lte:
+      max_amount_help: Atstājiet šo lauku tukšu, lai neierobežotu maksimālo summu.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2796,6 +2964,8 @@ lv:
           method_unavailable: Šī maksājuma metode šim pasūtījumam nav pieejama.
           session_required: Šai maksājuma metodei ir nepieciešama maksājuma sesija. Tā vietā izmantojiet maksājuma sesiju galapunktu.
       wrong_shipment_target: mērķa sūtījums ir tāds pats kā sākotnējais sūtījums
+    copy_number: Kopēt numuru
+    remaining: Atlikušais
   action_text:
     video_embed:
       not_found: Nevar iegult video, izmantojot norādīto URL

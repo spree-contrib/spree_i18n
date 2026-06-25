@@ -791,6 +791,17 @@ ko:
         top_products: 인기 상품
         view_report: 리포트 보기
         whats_happening_on_html: 오늘 <strong>%{store_name}</strong>에서 일어나고 있는 일입니다.
+        updater:
+          available_html: "%{version}을(를) 사용할 수 있습니다."
+          current_version_html: 현재 버전은 %{version}입니다.
+          view_release_notes: 릴리스 노트 보기
+        visits:
+          referrers_title: 방문자는 어디에서 오나요?
+          landing_pages_title: 상위 랜딩 페이지
+          locations_title: 방문자 위치
+          devices_title: 방문자 기기
+          no_data: 데이터 없음
+          no_data_for_period: 이 기간에 사용 가능한 데이터가 없습니다.
       datetime_field_timezone_help: '시간대: %{zone}'
       digital_shipment_fulfillment_note: 사용자가 디지털 상품을 다운로드하면 이 배송은 이행 완료로 표시됩니다
       display_on_options:
@@ -817,6 +828,7 @@ ko:
         codes_count: 코드 개수
         new_gift_card_batch: 새 기프트 카드 배치
         prefix: 접두사
+        expires_at_help: 기프트 카드는 이 날짜 이후에 만료됩니다.
       gift_cards:
         active: 활성
         all_statuses: 모든 상태
@@ -833,9 +845,19 @@ ko:
         mapping_required: 이 항목은 필수입니다
         please_map_all_required_fields: 계속하려면 모든 필수 항목을 매핑하세요.
         waiting_for_file_to_be_processed: 파일 처리를 기다리는 중...
+        steps:
+          map_fields: 1. 필드 매핑
+          process_rows: 2. 행 처리
+          complete: 3. 완료
+        rows_processed: "%{total}개 행 중 %{processed}개 처리됨"
+        please_select_a_column: 열을 선택하세요.
+        json: JSON
+        schema: 스키마
       integrations:
         invalid_integration_type: 이 통합은 허용되지 않습니다
         page_subtitle: 스토어를 타사 서비스에 연결하여 고객 경험을 향상하세요.
+        find_more_html: '더 많은 통합 찾기: %{integrations_link}'
+        none_installed_html: '아직 설치된 통합이 없습니다. 통합 찾기: %{integrations_link}'
       json_preview:
         no_api_response: 이 리소스에 대한 API 응답을 찾을 수 없습니다
       manage_markets: 마켓 관리
@@ -890,6 +912,45 @@ ko:
         refunded: 환불됨
         remove_user_from_this_order: 이 주문에서 고객 제거
         unfulfilled: 미이행
+        placed_by_guest: 이 주문은 비회원 고객이 진행했습니다.
+        orders_count:
+          one: 주문 %{count}건
+          other: 주문 %{count}건
+        repeat_customer_summary_html: 이 고객은 재구매 고객으로 %{count}에 걸쳐 총 %{amount}을(를) 지출했으며 주문당 평균 %{average}입니다.
+        avs_responses:
+          a: 도로명 주소는 일치하지만 5자리 및 9자리 우편번호가 일치하지 않습니다.
+          b: 도로명 주소는 일치하지만 우편번호가 확인되지 않았습니다.
+          c: 도로명 주소와 우편번호가 일치하지 않습니다.
+          d: 도로명 주소와 우편번호가 일치합니다.
+          e: AVS 데이터가 유효하지 않거나 이 카드 종류에서는 AVS가 허용되지 않습니다.
+          f: 카드 소유자의 이름은 일치하지 않지만 청구지 우편번호는 일치합니다.
+          g: U.S. 외 발급 은행은 AVS를 지원하지 않습니다.
+          h: 카드 소유자의 이름이 일치하지 않습니다. 도로명 주소와 우편번호는 일치합니다.
+          i: 주소가 확인되지 않았습니다.
+          j: 카드 소유자의 이름, 청구지 주소, 우편번호가 일치합니다.
+          k: 카드 소유자의 이름은 일치하지만 청구지 주소와 청구지 우편번호가 일치하지 않습니다.
+          l: 카드 소유자의 이름과 청구지 우편번호는 일치하지만 청구지 주소가 일치하지 않습니다.
+          m: 도로명 주소와 우편번호가 일치합니다.
+          "n": 도로명 주소와 우편번호가 일치하지 않습니다.
+          o: 카드 소유자의 이름과 청구지 주소는 일치하지만 청구지 우편번호가 일치하지 않습니다.
+          p: 우편번호는 일치하지만 도로명 주소가 확인되지 않았습니다.
+          q: 카드 소유자의 이름, 청구지 주소, 우편번호가 일치합니다.
+          r: 시스템을 사용할 수 없습니다.
+          s: 은행이 AVS를 지원하지 않습니다.
+          t: 카드 소유자의 이름은 일치하지 않지만 도로명 주소는 일치합니다.
+          u: 주소 정보를 사용할 수 없습니다. U.S. 은행이 U.S. 외 AVS를 지원하지 않거나 U.S. 은행의 AVS가 제대로 작동하지 않는 경우 반환됩니다.
+          v: 카드 소유자의 이름, 청구지 주소, 청구지 우편번호가 일치합니다.
+          w: 도로명 주소는 일치하지 않지만 9자리 우편번호는 일치합니다.
+          x: 도로명 주소와 9자리 우편번호가 일치합니다.
+          "y": 도로명 주소와 5자리 우편번호가 일치합니다.
+          z: 도로명 주소는 일치하지 않지만 5자리 우편번호는 일치합니다.
+        cvv_responses:
+          m: CVV2 일치
+          "n": CVV2 불일치
+          p: 처리되지 않음
+          s: 발급사는 CVV2 데이터가 카드에 있어야 한다고 표시했지만 가맹점은 카드에 데이터가 없다고 표시했습니다.
+          u: 발급사가 CVV2 인증을 받지 않았거나 발급사가 Visa에 CVV2 암호화 키를 제공하지 않았습니다.
+          blank: 잘못된 CVV2 번호가 입력되었거나 CVV2 번호가 입력되지 않아 거래에 실패했습니다.
       page_builder:
         background_color: 배경색
         border_bottom_width: 하단 테두리 두께
@@ -939,6 +1000,8 @@ ko:
         schedule: 예약
         scheduled: 가격표가 예약되었습니다
         unschedule: 예약 취소
+        page_info: 가격표는 고객 그룹, 상품 또는 기타 기준에 따라 가격 전략을 관리하는 강력한 도구입니다.
+        learn_more: 가격표에 대해 자세히 알아보기
       product_translations:
         coverage: 번역 적용 범위
         locale: 로캘
@@ -978,6 +1041,7 @@ ko:
           choose_stores: 이 상품을 판매할 스토어를 선택하세요
         variants:
           option_types_link: 옵션 유형을 더 추가하려면 <a href="%{link}">옵션 유형</a>으로 이동하세요
+        learn_more: 상품 관리에 대해 자세히 알아보기
       publishing:
         caption_hidden_after: "%{date}에 내려감"
         caption_live: 지금 고객에게 표시 중
@@ -1019,6 +1083,12 @@ ko:
         customer_support_email_help: 이 이메일은 푸터 섹션에서 스토어 방문자에게 표시됩니다
         new_order_notifications_email_help: 주문이 접수될 때마다 이메일 알림을 받으려면 알림을 받을 이메일 주소를 입력하세요
         send_consumer_transactional_emails_help: 선택을 해제하면 주문 확인이나 배송 알림 같은 거래 이메일이 고객에게 전송되지 않습니다
+        logo_help: 관리 대시보드에서 사용됩니다.
+        currencies_managed_by_markets_html: 통화와 로케일은 이제 %{markets_link}에서 관리됩니다.
+        email_addresses: 이메일 주소
+        mail_from_address_help: 스토어에서 발송되는 모든 이메일의 발신자로 사용될 이메일 주소를 입력하세요.
+        mailer_logo_help: 이 로고는 주문 확인과 같은 모든 이메일 알림에 포함됩니다.
+        mailer_logo_format_hint: 배경이 투명한 이미지를 권장합니다. JPEG 및 PNG 형식만 지원됩니다.
       store_setup_tasks:
         add_billing_address: 청구 주소 추가
         add_products: 상품 추가
@@ -1033,6 +1103,15 @@ ko:
           copy: 세금을 징수하려면 세율을 설정하세요.
           done: 모든 설정이 완료되었습니다! 세금은 언제든지 <a href="%{link}" data-turbo-frame="_top">설정</a> 페이지에서 관리할 수 있습니다.
           setup: 세율 설정
+        add_products_task:
+          done_title: 잘하셨습니다. 스토어에 상품을 추가했습니다!
+          done_subtitle: 언제든지 더 추가할 수 있다는 점을 기억하세요!
+          copy: 직접 보유한 상품을 추가하거나 제3자 판매자를 초대하여 함께 판매하세요.
+          import_hint: CSV 또는 Excel 파일에서 상품을 대량으로 가져올 수도 있습니다.
+        customer_support_email_task:
+          copy: 스토어프론트에 표시하기 위해 고객 지원 이메일이 필요합니다. 이 이메일은 고객이 문의나 지원을 위해 연락할 수 있는 연락 창구로 작동합니다.
+          current_html: 고객 지원 이메일은 %{email}입니다.
+          label: 고객 지원 이메일
       storefront: 스토어프론트
       successful: 성공
       successfully_reset_digital_links_limit: 다운로드 한도가 초기화되었습니다
@@ -1094,11 +1173,15 @@ ko:
       users:
         filters:
           search_placeholder: 이메일이나 이름으로 고객 검색
+        timeline: 타임라인
       utilities:
         preview: 미리 보기
       variants:
         search_results:
           no_variants: 검색과 일치하는 옵션을 찾을 수 없습니다 :(
+        count_at_location:
+          one: 위치에 %{count}개
+          other: 위치에 %{count}개
       variants_form:
         add_option:
           empty: 크기나 색상 같은 옵션을 추가하세요
@@ -1149,6 +1232,8 @@ ko:
         successful_deliveries: 성공한 전송
         test_failed: 테스트 웹훅 전송에 실패했습니다. 엔드포인트 구성을 확인하세요.
         test_sent: 테스트 웹훅이 전송되었습니다. 결과는 전송 내역에서 확인하세요.
+        name_placeholder: '예: 스토어프론트 이메일, 풀필먼트 서비스'
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: 모든 이벤트
         new_webhooks_subscriber: 새 웹훅 구독자
@@ -1158,6 +1243,88 @@ ko:
         subscriptions: 구독
         time_of_last_event: 마지막 이벤트 시각
         webhooks_events: 웹훅 이벤트
+      assistant: 어시스턴트
+      total_orders: 총 주문 수
+      sign_ups: 가입
+      previous_page: 이전 페이지
+      next_page: 다음 페이지
+      no_change: 변경 없음
+      integrations_directory: 통합 디렉터리
+      option_types:
+        presentation_help: 이것은 스토어프론트에 옵션 유형을 표시하는 데 사용됩니다.
+        name_help_html: 이것은 옵션 유형을 식별하기 위해 내부적으로 사용됩니다. <strong>고유해야 합니다.</strong>
+        value_count:
+          one: 값 %{count}개
+          other: 값 %{count}개
+        showing_pagination: 전체 %{total}개 중 %{from}-%{to} 표시
+        intro_help: 옵션은 특정 속성을 그룹화하는 데 사용됩니다. 예를 들어 "셔츠 사이즈"라는 옵션을 만든 다음 이 옵션에 대해 "스몰"과 "미디엄"이라는 옵션 값을 만들 수 있습니다.
+        learn_more: 옵션에 대해 자세히 알아보기
+      taxons:
+        square_image_help: 홈페이지의 대표 이미지에 사용됩니다.
+        seo:
+          placeholder: 제목과 설명을 추가하여 이 분류가 검색 엔진 목록에 어떻게 표시되는지 확인하세요.
+      promotions:
+        name_help: 고객은 장바구니와 결제 시 이것을 보게 됩니다.
+        next_step_info: 다음 단계에서 프로모션에 작업과 규칙을 추가할 수 있습니다.
+        coupon_code_placeholder: 쿠폰 코드
+        code_prefix_placeholder: 쿠폰 접두사(선택 사항)
+        code_prefix_example_html: '예: %{example}'
+        number_of_codes_placeholder: 코드 수
+        number_of_codes_help: 생성하려는 코드 수입니다.
+        add_more_codes_help: 코드를 더 추가하려면 이 숫자를 늘리기만 하면 됩니다.
+        usage_limit_help: 사용 횟수를 무제한으로 하려면 이 필드를 비워 두세요.
+        expires_at_help: '만료 기한을 두지 않으려면 이 필드를 비워 두세요. 시간대: %{zone}'
+        kind:
+          one_code_label: 모든 고객을 위한 하나의 코드
+          one_code_help: 이 코드를 사용할 수 있는 횟수를 제한할 수 있습니다.
+          multi_codes_label: 고유한 코드 생성
+          multi_codes_help: 이러한 코드는 자동으로 생성되며 CSV 파일로 다운로드할 수 있습니다. 코드는 고유하며 한 번만 사용할 수 있습니다.
+          automatic_help: 이 프로모션은 모든 대상 주문에 자동으로 적용됩니다.
+      shipping_methods:
+        checkout_info: 배송 방법은 고객이 결제 단계에 도달했을 때 보게 되는 옵션으로, 상품을 발송하는 데 사용되는 운송업체 및 서비스입니다.
+        name_help: 이것은 고객에게 표시됩니다.
+        admin_name_help: 이것은 관리자에게 표시됩니다.
+        estimated_transit_business_days_help: 이것은 소포가 고객의 주소에 도착하는 데 걸리는 예상 영업일 수입니다. 결제 페이지에 표시됩니다.
+        tracking_url_token_help: 추적 번호로 대체됩니다.
+      zones:
+        info: 구역은 지리적 그룹으로, 주 또는 국가의 모음을 나타냅니다.
+      shipments:
+        stock_location_option: "%{name}(재고 %{count}개)"
+      payment_methods:
+        name_help: 이 이름은 스토어프론트에서 결제 방법을 식별하는 데 사용됩니다.
+        available_payment_methods: 사용 가능한 결제 방법
+        find_more_payment_methods_html: '더 많은 결제 방법 찾기: %{integrations_link}'
+      admin_users:
+        audit_log_enterprise_notice: 감사 로그는 Spree Enterprise 제공 항목의 일부입니다.
+        upgrade_to_enterprise: Spree Enterprise로 업그레이드
+      invitations:
+        invited_you_to_join_html: "%{inviter}님이 %{resource}에 참여하도록 귀하를 초대했습니다."
+        expires_at: 만료 시점
+        email_placeholder: '예: steve@apple.com'
+      user_sessions:
+        welcome_back: 다시 오신 것을 환영합니다
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Spree Community Edition을 사용해 주셔서 감사합니다! 모든 기능과 지원을 이용하시려면 Enterprise Edition으로 업그레이드하는 것을 고려해 보세요.
+        upgrade: 업그레이드
+      metafields:
+        none_configured_for: "%{resource}에 대해 구성된 메타필드 정의가 없습니다."
+      table:
+        operators:
+          eq: 같음
+          not_eq: 같지 않음
+          cont: 포함
+          not_cont: 포함하지 않음
+          start: 다음으로 시작
+          end: 다음으로 끝남
+          gt: 초과
+          gteq: 이상
+          lt: 미만
+          lteq: 이하
+          in: 다음 중 하나
+          not_in: 다음 중 없음
+          'null': 비어 있음
+          not_null: 비어 있지 않음
     administration: 관리
     advertise:
     agree_to_privacy_policy:
@@ -1486,6 +1653,7 @@ ko:
         gte: 보다 크거나 같은
         lt:
         lte:
+      max_amount_help: 최대 금액을 제한하지 않으려면 이 필드를 비워 두세요.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2799,6 +2967,8 @@ ko:
           method_unavailable: 이 결제 수단은 이 주문에 사용할 수 없습니다.
           session_required: 이 결제 수단에는 결제 세션이 필요합니다. 대신 결제 세션 엔드포인트를 사용하세요.
       wrong_shipment_target: 대상 배송이 원래 배송과 동일합니다
+    copy_number: 번호 복사
+    remaining: 남음
   action_text:
     video_embed:
       not_found: 제공된 URL로 동영상을 삽입할 수 없습니다

@@ -835,6 +835,17 @@ lt:
         top_products: Populiariausi produktai
         view_report: Peržiūrėti ataskaitą
         whats_happening_on_html: Štai kas šiandien vyksta parduotuvėje <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} jau prieinama."
+          current_version_html: Jūsų dabartinė versija yra %{version}.
+          view_release_notes: Peržiūrėti leidimo pastabas
+        visits:
+          referrers_title: Iš kur ateina lankytojai?
+          landing_pages_title: Populiariausi nukreipimo puslapiai
+          locations_title: Lankytojų vietos
+          devices_title: Lankytojų įrenginiai
+          no_data: Nėra duomenų
+          no_data_for_period: Šiam laikotarpiui duomenų nėra.
       datetime_field_timezone_help: 'Laiko juosta: %{zone}'
       digital_shipment_fulfillment_note: Ši siunta bus pažymėta kaip įvykdyta, kai naudotojas atsisiųs skaitmeninį produktą
       display_on_options:
@@ -861,6 +872,7 @@ lt:
         codes_count: Kodų skaičius
         new_gift_card_batch: Nauja dovanų kortelių partija
         prefix: Priešdėlis
+        expires_at_help: Dovanų kortelės nustos galioti po šios datos.
       gift_cards:
         active: Aktyvi
         all_statuses: Visos būsenos
@@ -877,9 +889,19 @@ lt:
         mapping_required: Šis laukas privalomas
         please_map_all_required_fields: Norėdami tęsti, susiekite visus privalomus laukus.
         waiting_for_file_to_be_processed: Laukiama, kol failas bus apdorotas...
+        steps:
+          map_fields: 1. Susiekite laukus
+          process_rows: 2. Apdorokite eilutes
+          complete: 3. Užbaikite
+        rows_processed: Apdorota %{processed} / %{total} eilučių
+        please_select_a_column: Pasirinkite stulpelį
+        json: JSON
+        schema: Schema
       integrations:
         invalid_integration_type: Ši integracija neleidžiama
         page_subtitle: Prijunkite savo parduotuvę prie trečiųjų šalių paslaugų, kad pagerintumėte klientų patirtį.
+        find_more_html: Raskite daugiau integracijų %{integrations_link}
+        none_installed_html: Dar neįdiegta jokių integracijų. Raskite integracijų %{integrations_link}
       json_preview:
         no_api_response: Šiam ištekliui API atsakymo nerasta
       manage_markets: Tvarkyti rinkas
@@ -928,6 +950,45 @@ lt:
         refunded: Grąžinta
         remove_user_from_this_order: Pašalinti klientą iš šio užsakymo
         unfulfilled: Neįvykdyta
+        placed_by_guest: Šį užsakymą pateikė svečias pirkėjas.
+        orders_count:
+          one: "%{count} užsakymas"
+          other: "%{count} užsakymų"
+        repeat_customer_summary_html: Tai nuolatinis pirkėjas, kuris iš viso išleido %{amount} per %{count}, vidutiniškai po %{average} vienam užsakymui.
+        avs_responses:
+          a: Gatvės adresas sutampa, bet 5 ir 9 skaitmenų pašto kodai nesutampa.
+          b: Gatvės adresas sutampa, bet pašto kodas nepatvirtintas.
+          c: Gatvės adresas ir pašto kodas nesutampa.
+          d: Gatvės adresas ir pašto kodas sutampa.
+          e: AVS duomenys netinkami arba AVS neleidžiamas šio tipo kortelei.
+          f: Kortelės turėtojo vardas nesutampa, bet atsiskaitymo pašto kodas sutampa.
+          g: Ne U.S. išduodantis bankas nepalaiko AVS.
+          h: Kortelės turėtojo vardas nesutampa. Gatvės adresas ir pašto kodas sutampa.
+          i: Adresas nepatvirtintas.
+          j: Kortelės turėtojo vardas, atsiskaitymo adresas ir pašto kodas sutampa.
+          k: Kortelės turėtojo vardas sutampa, bet atsiskaitymo adresas ir atsiskaitymo pašto kodas nesutampa.
+          l: Kortelės turėtojo vardas ir atsiskaitymo pašto kodas sutampa, bet atsiskaitymo adresas nesutampa.
+          m: Gatvės adresas ir pašto kodas sutampa.
+          "n": Gatvės adresas ir pašto kodas nesutampa.
+          o: Kortelės turėtojo vardas ir atsiskaitymo adresas sutampa, bet atsiskaitymo pašto kodas nesutampa.
+          p: Pašto kodas sutampa, bet gatvės adresas nepatvirtintas.
+          q: Kortelės turėtojo vardas, atsiskaitymo adresas ir pašto kodas sutampa.
+          r: Sistema neprieinama.
+          s: Bankas nepalaiko AVS.
+          t: Kortelės turėtojo vardas nesutampa, bet gatvės adresas sutampa.
+          u: Adreso informacija neprieinama. Grąžinama, jei U.S. bankas nepalaiko ne U.S. AVS arba jei AVS U.S. banke veikia netinkamai.
+          v: Kortelės turėtojo vardas, atsiskaitymo adresas ir atsiskaitymo pašto kodas sutampa.
+          w: Gatvės adresas nesutampa, bet 9 skaitmenų pašto kodas sutampa.
+          x: Gatvės adresas ir 9 skaitmenų pašto kodas sutampa.
+          "y": Gatvės adresas ir 5 skaitmenų pašto kodas sutampa.
+          z: Gatvės adresas nesutampa, bet 5 skaitmenų pašto kodas sutampa.
+        cvv_responses:
+          m: CVV2 sutampa
+          "n": CVV2 nesutampa
+          p: Neapdorota
+          s: Išdavėjas nurodo, kad CVV2 duomenys turėtų būti ant kortelės, bet prekybininkas nurodė, kad duomenų ant kortelės nėra
+          u: Išdavėjas nėra sertifikuotas CVV2 arba išdavėjas nepateikė Visa CVV2 šifravimo raktų
+          blank: Operacija nepavyko, nes buvo įvestas neteisingas CVV2 numeris arba CVV2 numeris nebuvo įvestas
       page_builder:
         background_color: Fono spalva
         border_bottom_width: Apatinio rėmelio plotis
@@ -977,6 +1038,8 @@ lt:
         schedule: Suplanuoti
         scheduled: Kainoraštis suplanuotas
         unschedule: Atšaukti planavimą
+        page_info: Kainoraščiai yra galingas įrankis kainodaros strategijoms valdyti pagal pirkėjų grupes, prekes ar kitus kriterijus.
+        learn_more: Sužinokite daugiau apie kainoraščius
       product_translations:
         coverage: Vertimo aprėptis
         locale: Lokalė
@@ -1016,6 +1079,7 @@ lt:
           choose_stores: Pasirinkite, kuriose parduotuvėse šis produktas turėtų būti prieinamas
         variants:
           option_types_link: Norėdami pridėti daugiau parinkčių tipų, eikite į <a href="%{link}">Parinkčių tipus</a>
+        learn_more: Sužinokite daugiau apie prekių valdymą
       publishing:
         caption_hidden_after: Nustoja galioti %{date}
         caption_live: Matoma klientams dabar
@@ -1057,6 +1121,12 @@ lt:
         customer_support_email_help: Šis el. paštas matomas jūsų parduotuvės lankytojams poraštės skiltyje
         new_order_notifications_email_help: Jei norite gauti el. pašto pranešimą kaskart, kai kas nors pateikia užsakymą, nurodykite el. pašto adresą, kuriuo bus siunčiamas pranešimas
         send_consumer_transactional_emails_help: Kai nepažymėta, transakciniai el. laiškai, pvz., užsakymų patvirtinimai ir siuntimo pranešimai, klientams nebus siunčiami
+        logo_help: Naudojama administravimo skydelyje
+        currencies_managed_by_markets_html: Valiutas ir lokales dabar tvarko %{markets_link}.
+        email_addresses: El. pašto adresai
+        mail_from_address_help: Nurodykite el. pašto adresą, kuris bus naudojamas kaip visų iš jūsų parduotuvės siunčiamų el. laiškų siuntėjas.
+        mailer_logo_help: Šis logotipas įtraukiamas į visus el. pašto pranešimus, tokius kaip užsakymo patvirtinimas
+        mailer_logo_format_hint: Rekomenduojame vaizdus su skaidriu fonu. Palaikomi tik JPEG ir PNG formatai.
       store_setup_tasks:
         add_billing_address: Pridėti atsiskaitymo adresą
         add_products: Pridėti produktus
@@ -1071,6 +1141,15 @@ lt:
           copy: Norėdami rinkti mokesčius, nustatykite savo mokesčių tarifus.
           done: Viskas paruošta! Mokesčius visada galite tvarkyti <a href="%{link}" data-turbo-frame="_top">nustatymų</a> puslapyje.
           setup: Nustatyti mokesčių tarifus
+        add_products_task:
+          done_title: Puiku, pridėjote prekių į savo parduotuvę!
+          done_subtitle: Atminkite, visada galite pridėti daugiau!
+          copy: Pridėkite prekių į savo parduotuvę – savo pačių arba pakvieskite trečiųjų šalių pardavėjus prekiauti kartu.
+          import_hint: Taip pat galite masiškai importuoti prekes iš CSV arba Excel failo.
+        customer_support_email_task:
+          copy: Mums reikia jūsų klientų aptarnavimo el. pašto, kad jį parodytume jūsų elektroninėje parduotuvėje. Šis el. paštas bus kontaktinis taškas, kuriuo jūsų pirkėjai galės kreiptis į jus dėl bet kokių klausimų ar pagalbos.
+          current_html: Jūsų klientų aptarnavimo el. paštas yra %{email}.
+          label: Klientų aptarnavimo el. paštas
       storefront: Parduotuvė
       successful: Sėkminga
       successfully_reset_digital_links_limit: Atsisiuntimų limitai atstatyti
@@ -1132,11 +1211,15 @@ lt:
       users:
         filters:
           search_placeholder: Ieškoti klientų pagal el. paštą ar vardą
+        timeline: Laiko juosta
       utilities:
         preview: Peržiūra
       variants:
         search_results:
           no_variants: Nepavyko rasti jūsų paiešką atitinkančių variantų :(
+        count_at_location:
+          one: "%{count} vietoje"
+          other: "%{count} vietoje"
       variants_form:
         add_option:
           empty: Pridėkite parinktis, pvz., dydį ar spalvą
@@ -1187,6 +1270,8 @@ lt:
         successful_deliveries: Sėkmingi pristatymai
         test_failed: Nepavyko išsiųsti bandomojo saityno. Patikrinkite galinio taško konfigūraciją.
         test_sent: Bandomasis saitynas išsiųstas. Rezultatą patikrinkite pristatymuose.
+        name_placeholder: pvz. Parduotuvės el. laiškai, Užsakymų vykdymo paslauga
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Visi įvykiai
         new_webhooks_subscriber: Naujas saitynų prenumeratorius
@@ -1196,6 +1281,88 @@ lt:
         subscriptions: Prenumeratos
         time_of_last_event: Paskutinio įvykio laikas
         webhooks_events: Saitynų įvykiai
+      assistant: Asistentas
+      total_orders: Iš viso užsakymų
+      sign_ups: Registracijos
+      previous_page: Ankstesnis puslapis
+      next_page: Kitas puslapis
+      no_change: Be pakeitimų
+      integrations_directory: Integracijų katalogas
+      option_types:
+        presentation_help: Tai naudojama parinkties tipui parodyti elektroninėje parduotuvėje.
+        name_help_html: Tai naudojama viduje parinkties tipui identifikuoti. <strong>Jis turi būti unikalus.</strong>
+        value_count:
+          one: "%{count} reikšmė"
+          other: "%{count} reikšmių"
+        showing_pagination: Rodoma %{from}-%{to} iš %{total}
+        intro_help: Parinktys naudojamos tam tikriems atributams sugrupuoti. Pavyzdžiui, galite sukurti parinktį pavadinimu „marškinėlių dydis“, o tada šiai parinkčiai sukurti parinkties reikšmes pavadinimu „mažas“ ir „vidutinis“.
+        learn_more: Sužinokite daugiau apie parinktis
+      taxons:
+        square_image_help: Naudojama pagrindiniam vaizdui pradžios puslapyje.
+        seo:
+          placeholder: Pridėkite pavadinimą ir aprašymą, kad pamatytumėte, kaip ši kategorija galėtų atrodyti paieškos sistemos rezultatuose
+      promotions:
+        name_help: Pirkėjai tai matys savo krepšelyje ir atsiskaitydami.
+        next_step_info: Kitame žingsnyje galėsite pridėti veiksmų ir taisyklių prie savo akcijos
+        coupon_code_placeholder: Jūsų kupono kodas
+        code_prefix_placeholder: Kupono priešdėlis (neprivaloma)
+        code_prefix_example_html: pvz. %{example}
+        number_of_codes_placeholder: Kodų skaičius
+        number_of_codes_help: Kiek kodų norite sugeneruoti.
+        add_more_codes_help: Norėdami pridėti daugiau kodų, tiesiog padidinkite šį skaičių
+        usage_limit_help: Palikite šį lauką tuščią neribotam naudojimui.
+        expires_at_help: 'Palikite šį lauką tuščią, jei nenorite galiojimo pabaigos. Laiko juosta: %{zone}'
+        kind:
+          one_code_label: Vienas kodas visiems pirkėjams
+          one_code_help: Galite apriboti, kiek kartų šis kodas gali būti panaudotas.
+          multi_codes_label: Generuoti unikalius kodus
+          multi_codes_help: Šie kodai generuojami automatiškai ir gali būti atsisiųsti kaip CSV failas. Kodai yra unikalūs ir gali būti panaudoti tik vieną kartą.
+          automatic_help: Ši akcija bus automatiškai taikoma visiems tinkamiems užsakymams.
+      shipping_methods:
+        checkout_info: Pristatymo būdai yra parinktys, kurias pirkėjas mato pasiekęs atsiskaitymą, tai vežėjai ir paslaugos, naudojamos jūsų prekėms išsiųsti.
+        name_help: Tai bus rodoma pirkėjams
+        admin_name_help: Tai bus rodoma administratoriams
+        estimated_transit_business_days_help: Tai yra apytikslis darbo dienų skaičius, per kurį siunta pasieks pirkėjo adresą. Jis bus rodomas atsiskaitymo puslapyje.
+        tracking_url_token_help: bus pakeistas sekimo numeriu.
+      zones:
+        info: Zonos yra geografiniai grupavimai, jos atspindi valstijų arba šalių rinkinius.
+      shipments:
+        stock_location_option: "%{name} (%{count} sandėlyje)"
+      payment_methods:
+        name_help: Šis pavadinimas bus naudojamas mokėjimo būdui identifikuoti elektroninėje parduotuvėje
+        available_payment_methods: Galimi mokėjimo būdai
+        find_more_payment_methods_html: Raskite daugiau mokėjimo būdų %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Audito žurnalas yra Spree Enterprise pasiūlymo dalis.
+        upgrade_to_enterprise: Atnaujinti į Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} pakvietė jus prisijungti prie %{resource}"
+        expires_at: Galioja iki
+        email_placeholder: pvz. steve@apple.com
+      user_sessions:
+        welcome_back: Sveiki sugrįžę
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Dėkojame, kad naudojate Spree Community Edition! Apsvarstykite galimybę atnaujinti į Enterprise Edition, kad gautumėte prieigą prie visų funkcijų ir palaikymo.
+        upgrade: Atnaujinti
+      metafields:
+        none_configured_for: Ištekliui %{resource} nesukonfigūruota jokių metalaukų apibrėžčių.
+      table:
+        operators:
+          eq: lygu
+          not_eq: nelygu
+          cont: yra
+          not_cont: nėra
+          start: prasideda
+          end: baigiasi
+          gt: daugiau nei
+          gteq: daugiau arba lygu
+          lt: mažiau nei
+          lteq: mažiau arba lygu
+          in: yra vienas iš
+          not_in: nėra nė vienas iš
+          'null': tuščia
+          not_null: netuščia
     administration: Administravimas
     advertise: Rodyti parduotuvėje
     agree_to_privacy_policy: Sutinku su privatumo politika
@@ -1609,6 +1776,7 @@ lt:
         gte: daugiau arba lygu
         lt: mažiau nei
         lte: mažiau arba lygu
+      max_amount_help: Palikite šį lauką tuščią, jei nenorite riboti didžiausios sumos.
     items_cannot_be_shipped: Deja, negalime pristatyti pasirinktų prekių jūsų nurodytu adresu. Pasirinkite kitą adresą.
     items_in_rmas:
     items_reimbursed: Kompensuotos prekės
@@ -2878,6 +3046,8 @@ lt:
     wishlist: Pageidavimų sąrašas
     zipcode_required: Reikalingas pašto kodas
     zone_ids: Zonos
+    copy_number: Kopijuoti numerį
+    remaining: Liko
   action_text:
     video_embed:
       not_found: Nepavyko įterpti vaizdo įrašo naudojant pateiktą URL

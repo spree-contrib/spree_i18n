@@ -791,6 +791,17 @@ et:
         top_products: Enimmüüdud tooted
         view_report: Vaata aruannet
         whats_happening_on_html: Vaata, mis täna poes <strong>%{store_name}</strong> toimub.
+        updater:
+          available_html: "%{version} on saadaval."
+          current_version_html: Teie praegune versioon on %{version}.
+          view_release_notes: Vaata väljalaskemärkmeid
+        visits:
+          referrers_title: Kust külastajad tulevad?
+          landing_pages_title: Populaarseimad sihtlehed
+          locations_title: Külastajate asukohad
+          devices_title: Külastajate seadmed
+          no_data: Andmed puuduvad
+          no_data_for_period: Selle perioodi kohta andmed puuduvad.
       datetime_field_timezone_help: 'Ajavöönd: %{zone}'
       digital_shipment_fulfillment_note: See saadetis märgitakse täidetuks, kui kasutaja digitaalse toote alla laadib
       display_on_options:
@@ -817,6 +828,7 @@ et:
         codes_count: Koodide arv
         new_gift_card_batch: Uus kinkekaartide partii
         prefix: Eesliide
+        expires_at_help: Kinkekaardid aeguvad pärast seda kuupäeva.
       gift_cards:
         active: Aktiivne
         all_statuses: Kõik olekud
@@ -833,9 +845,19 @@ et:
         mapping_required: See väli on nõutud
         please_map_all_required_fields: Jätkamiseks vastenda kõik nõutud väljad.
         waiting_for_file_to_be_processed: Faili töötlemise ootel...
+        steps:
+          map_fields: 1. Vastenda väljad
+          process_rows: 2. Töötle ridu
+          complete: 3. Valmis
+        rows_processed: "%{processed} / %{total} rida töödeldud"
+        please_select_a_column: Palun valige veerg
+        json: JSON
+        schema: Skeem
       integrations:
         invalid_integration_type: See integratsioon ei ole lubatud
         page_subtitle: Ühenda oma pood kolmandate osapoolte teenustega, et parandada kliendikogemust.
+        find_more_html: Leidke rohkem integratsioone siit %{integrations_link}
+        none_installed_html: Ühtegi integratsiooni pole veel paigaldatud. Leidke integratsioone siit %{integrations_link}
       json_preview:
         no_api_response: Selle ressursi jaoks API-vastust ei leitud
       manage_markets: Halda turge
@@ -890,6 +912,45 @@ et:
         refunded: Tagastatud
         remove_user_from_this_order: Eemalda klient sellelt tellimuselt
         unfulfilled: Täitmata
+        placed_by_guest: Selle tellimuse esitas külalisklient
+        orders_count:
+          one: "%{count} tellimus"
+          other: "%{count} tellimust"
+        repeat_customer_summary_html: See on korduvklient, kes on kulutanud kokku %{amount} %{count} jooksul, keskmiselt %{average} tellimuse kohta.
+        avs_responses:
+          a: Tänavaaadress kattub, kuid 5- ja 9-kohaline postiindeks ei kattu.
+          b: Tänavaaadress kattub, kuid postiindeks ei ole kinnitatud.
+          c: Tänavaaadress ja postiindeks ei kattu.
+          d: Tänavaaadress ja postiindeks kattuvad.
+          e: AVS-i andmed on kehtetud või AVS ei ole selle kaarditüübi puhul lubatud.
+          f: Kaardiomaniku nimi ei kattu, kuid arve postiindeks kattub.
+          g: Väljaspool U.S. asuv väljastav pank ei toeta AVS-i.
+          h: Kaardiomaniku nimi ei kattu. Tänavaaadress ja postiindeks kattuvad.
+          i: Aadress ei ole kinnitatud.
+          j: Kaardiomaniku nimi, arveaadress ja postiindeks kattuvad.
+          k: Kaardiomaniku nimi kattub, kuid arveaadress ja arve postiindeks ei kattu.
+          l: Kaardiomaniku nimi ja arve postiindeks kattuvad, kuid arveaadress ei kattu.
+          m: Tänavaaadress ja postiindeks kattuvad.
+          "n": Tänavaaadress ja postiindeks ei kattu.
+          o: Kaardiomaniku nimi ja arveaadress kattuvad, kuid arve postiindeks ei kattu.
+          p: Postiindeks kattub, kuid tänavaaadress ei ole kinnitatud.
+          q: Kaardiomaniku nimi, arveaadress ja postiindeks kattuvad.
+          r: Süsteem pole saadaval.
+          s: Pank ei toeta AVS-i.
+          t: Kaardiomaniku nimi ei kattu, kuid tänavaaadress kattub.
+          u: Aadressiteave pole saadaval. Tagastatakse, kui U.S. pank ei toeta väljaspool U.S. asuvat AVS-i või kui U.S. panga AVS ei tööta korralikult.
+          v: Kaardiomaniku nimi, arveaadress ja arve postiindeks kattuvad.
+          w: Tänavaaadress ei kattu, kuid 9-kohaline postiindeks kattub.
+          x: Tänavaaadress ja 9-kohaline postiindeks kattuvad.
+          "y": Tänavaaadress ja 5-kohaline postiindeks kattuvad.
+          z: Tänavaaadress ei kattu, kuid 5-kohaline postiindeks kattub.
+        cvv_responses:
+          m: CVV2 kattub
+          "n": CVV2 ei kattu
+          p: Töötlemata
+          s: Väljastaja märgib, et CVV2 andmed peaksid kaardil olema, kuid kaupmees on märkinud, et andmeid kaardil ei ole
+          u: Väljastaja ei ole CVV2 jaoks sertifitseeritud või väljastaja ei ole edastanud Visale CVV2 krüpteerimisvõtmeid
+          blank: Tehing ebaõnnestus, kuna sisestati vale CVV2 number või CVV2 numbrit ei sisestatud
       page_builder:
         background_color: Taustavärv
         border_bottom_width: Alumise äärise laius
@@ -939,6 +1000,8 @@ et:
         schedule: Ajasta
         scheduled: Hinnakiri on ajastatud
         unschedule: Tühista ajastus
+        page_info: Hinnakirjad on võimas tööriist hinnastrateegiate haldamiseks kliendirühmade, toodete või muude kriteeriumide alusel.
+        learn_more: Lisateave hinnakirjade kohta
       product_translations:
         coverage: Tõlgete katvus
         locale: Lokaat
@@ -978,6 +1041,7 @@ et:
           choose_stores: Vali, millistes poodides see toode peaks olema saadaval
         variants:
           option_types_link: Rohkemate valikutüüpide lisamiseks mine lehele <a href="%{link}">Valikutüübid</a>
+        learn_more: Lisateave toodete haldamise kohta
       publishing:
         caption_hidden_after: Eemaldatakse %{date}
         caption_live: Praegu klientidele nähtav
@@ -1019,6 +1083,12 @@ et:
         customer_support_email_help: See e-posti aadress on nähtav sinu poe külastajatele jaluse jaotises
         new_order_notifications_email_help: Kui soovid saada e-posti teavituse iga kord, kui keegi tellimuse esitab, sisesta e-posti aadress, kuhu see teavitus saata
         send_consumer_transactional_emails_help: Kui see on märkimata, ei saadeta klientidele tehingulisi e-kirju, näiteks tellimuse kinnitusi ja saadetiste teavitusi
+        logo_help: Kasutatakse administraatori töölaual
+        currencies_managed_by_markets_html: Valuutasid ja keeli haldab nüüd %{markets_link}.
+        email_addresses: E-posti aadressid
+        mail_from_address_help: Palun sisestage e-posti aadress, mida kasutatakse kõigi teie poest saadetavate e-kirjade saatjana.
+        mailer_logo_help: See logo lisatakse kõigile e-posti teavitustele, näiteks tellimuse kinnitusele
+        mailer_logo_format_hint: Soovitame läbipaistva taustaga pilte. Toetatud on ainult JPEG- ja PNG-vormingud.
       store_setup_tasks:
         add_billing_address: Lisa arveldusaadress
         add_products: Lisa tooted
@@ -1033,6 +1103,15 @@ et:
           copy: Maksude kogumiseks seadista oma maksumäärad.
           done: Kõik on valmis! Saad oma makse alati hallata <a href="%{link}" data-turbo-frame="_top">seadete</a> lehel.
           setup: Seadista maksumäärad
+        add_products_task:
+          done_title: Tubli töö, olete lisanud oma poodi tooteid!
+          done_subtitle: Pidage meeles, et saate alati rohkem lisada!
+          copy: Lisage oma poodi tooteid, kas enda omasid või kutsuge kolmandate osapoolte müüjaid koos müüma.
+          import_hint: Samuti saate tooteid hulgi importida CSV- või Excel-failist.
+        customer_support_email_task:
+          copy: Vajame teie klienditoe e-posti aadressi, et seda teie poes kuvada. See e-posti aadress toimib kontaktpunktina, mille kaudu teie kliendid saavad teiega päringute või toe saamiseks ühendust võtta.
+          current_html: Teie klienditoe e-posti aadress on %{email}.
+          label: Klienditoe e-posti aadress
       storefront: Pood
       successful: Õnnestunud
       successfully_reset_digital_links_limit: Allalaadimispiirangud on lähtestatud
@@ -1094,11 +1173,15 @@ et:
       users:
         filters:
           search_placeholder: Otsi kliente e-posti või nime järgi
+        timeline: Ajajoon
       utilities:
         preview: Eelvaade
       variants:
         search_results:
           no_variants: Sinu otsingule vastavaid variante ei leitud :(
+        count_at_location:
+          one: "%{count} asukohas"
+          other: "%{count} asukohas"
       variants_form:
         add_option:
           empty: Lisa valikud, näiteks suurus või värv
@@ -1149,6 +1232,8 @@ et:
         successful_deliveries: Õnnestunud edastused
         test_failed: Testveebihaagi saatmine ebaõnnestus. Kontrolli lõpp-punkti seadistust.
         test_sent: Testveebihaak saadetud. Tulemuse leiad edastuste alt.
+        name_placeholder: nt poe e-kirjad, täitmisteenus
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Kõik sündmused
         new_webhooks_subscriber: Uus veebihaakide tellija
@@ -1158,6 +1243,88 @@ et:
         subscriptions: Tellimused
         time_of_last_event: Viimase sündmuse aeg
         webhooks_events: Veebihaakide sündmused
+      assistant: Assistent
+      total_orders: Tellimusi kokku
+      sign_ups: Registreerumised
+      previous_page: Eelmine leht
+      next_page: Järgmine leht
+      no_change: Muutusteta
+      integrations_directory: Integratsioonide kataloog
+      option_types:
+        presentation_help: Seda kasutatakse valikutüübi kuvamiseks poes.
+        name_help_html: Seda kasutatakse sisemiselt valikutüübi tuvastamiseks. <strong>See peab olema kordumatu.</strong>
+        value_count:
+          one: "%{count} väärtus"
+          other: "%{count} väärtust"
+        showing_pagination: Kuvatakse %{from}-%{to} / %{total}
+        intro_help: Valikuid kasutatakse teatud atribuutide rühmitamiseks. Näiteks saate luua valiku nimega "särgi suurus" ja seejärel luua selle valiku jaoks valikuväärtused nimega "väike" ja "keskmine".
+        learn_more: Lisateave valikute kohta
+      taxons:
+        square_image_help: Kasutatakse esiletõstetud pildina avalehel.
+        seo:
+          placeholder: Lisage pealkiri ja kirjeldus, et näha, kuidas see takson võiks otsingumootori tulemustes ilmuda
+      promotions:
+        name_help: Kliendid näevad seda oma ostukorvis ja kassas.
+        next_step_info: Järgmises etapis saate oma kampaaniale lisada toiminguid ja reegleid
+        coupon_code_placeholder: Teie kupongikood
+        code_prefix_placeholder: Kupongi eesliide (valikuline)
+        code_prefix_example_html: nt %{example}
+        number_of_codes_placeholder: Koodide arv
+        number_of_codes_help: Mitu koodi soovite genereerida.
+        add_more_codes_help: Rohkemate koodide lisamiseks lihtsalt suurendage seda arvu
+        usage_limit_help: Piiramatu kasutamise korral jätke see väli tühjaks.
+        expires_at_help: 'Aegumiseta korral jätke see väli tühjaks. Ajavöönd: %{zone}'
+        kind:
+          one_code_label: Üks kood kõigile klientidele
+          one_code_help: Saate piirata, mitu korda seda koodi saab kasutada.
+          multi_codes_label: Genereeri kordumatud koodid
+          multi_codes_help: Need koodid genereeritakse automaatselt ja neid saab alla laadida CSV-failina. Koodid on kordumatud ja neid saab kasutada ainult üks kord.
+          automatic_help: See kampaania rakendatakse automaatselt kõigile sobivatele tellimustele.
+      shipping_methods:
+        checkout_info: Tarneviisid on valikud, mida klient näeb kassa juurde jõudes; need on teie toodete saatmiseks kasutatavad vedajad ja teenused.
+        name_help: Seda kuvatakse klientidele
+        admin_name_help: Seda kuvatakse administraatoritele
+        estimated_transit_business_days_help: See on hinnanguline tööpäevade arv, mis kulub paki jõudmiseks kliendi aadressile. Seda kuvatakse kassa lehel.
+        tracking_url_token_help: asendatakse jälgimisnumbriga.
+      zones:
+        info: Tsoonid on geograafilised rühmitused; need esindavad kas osariikide või riikide kogumeid.
+      shipments:
+        stock_location_option: "%{name} (%{count} laos)"
+      payment_methods:
+        name_help: Seda nime kasutatakse makseviisi tuvastamiseks poes
+        available_payment_methods: Saadaolevad makseviisid
+        find_more_payment_methods_html: Leidke rohkem makseviise siit %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Auditilogi on osa Spree Enterprise pakkumisest.
+        upgrade_to_enterprise: Uuendage versioonile Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} on kutsunud teid liituma: %{resource}"
+        expires_at: Aegub
+        email_placeholder: nt steve@apple.com
+      user_sessions:
+        welcome_back: Tere tulemast tagasi
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Täname, et kasutate Spree Community Edition'i! Kaaluge uuendamist Enterprise Edition'ile, et pääseda ligi kõigile funktsioonidele ja toele.
+        upgrade: Uuenda
+      metafields:
+        none_configured_for: Ressursi %{resource} jaoks pole metavälja definitsioone seadistatud.
+      table:
+        operators:
+          eq: võrdub
+          not_eq: ei võrdu
+          cont: sisaldab
+          not_cont: ei sisalda
+          start: algab
+          end: lõpeb
+          gt: suurem kui
+          gteq: suurem või võrdne
+          lt: väiksem kui
+          lteq: väiksem või võrdne
+          in: on üks järgmistest
+          not_in: ei ole ükski järgmistest
+          'null': on tühi
+          not_null: ei ole tühi
     administration: Administreerimisliides
     advertise:
     agree_to_privacy_policy:
@@ -1486,6 +1653,7 @@ et:
         gte:
         lt:
         lte:
+      max_amount_help: Jätke see väli tühjaks, et mitte piirata maksimaalset summat.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2795,6 +2963,8 @@ et:
           method_unavailable: See makseviis ei ole selle tellimuse jaoks saadaval.
           session_required: See makseviis nõuab makseseanssi. Kasutage selle asemel makseseansside lõpp-punkti.
       wrong_shipment_target: sihtsaadetis on sama mis algne saadetis
+    copy_number: Koopia number
+    remaining: Järelejäänud
   action_text:
     video_embed:
       not_found: Esitatud URL-i abil ei õnnestu videot manustada

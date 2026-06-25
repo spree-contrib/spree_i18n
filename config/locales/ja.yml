@@ -792,6 +792,17 @@ ja:
         top_products: 売れ筋商品
         view_report: レポートを表示
         whats_happening_on_html: 本日の<strong>%{store_name}</strong>の状況です。
+        updater:
+          available_html: "%{version}が利用可能です。"
+          current_version_html: 現在のバージョンは%{version}です。
+          view_release_notes: リリースノートを見る
+        visits:
+          referrers_title: 訪問者はどこから来ていますか？
+          landing_pages_title: 上位のランディングページ
+          locations_title: 訪問者の所在地
+          devices_title: 訪問者のデバイス
+          no_data: データなし
+          no_data_for_period: この期間に利用できるデータはありません。
       datetime_field_timezone_help: タイムゾーン：%{zone}
       digital_shipment_fulfillment_note: この配送は、ユーザーがデジタル商品をダウンロードした時点で履行済みとしてマークされます
       display_on_options:
@@ -818,6 +829,7 @@ ja:
         codes_count: コード数
         new_gift_card_batch: 新しいギフトカードバッチ
         prefix: プレフィックス
+        expires_at_help: ギフトカードはこの日付を過ぎると失効します。
       gift_cards:
         active: 有効
         all_statuses: すべてのステータス
@@ -834,9 +846,19 @@ ja:
         mapping_required: このフィールドは必須です
         please_map_all_required_fields: 続行するには、すべての必須フィールドをマッピングしてください。
         waiting_for_file_to_be_processed: ファイルの処理を待っています...
+        steps:
+          map_fields: 1. フィールドの対応付け
+          process_rows: 2. 行の処理
+          complete: 3. 完了
+        rows_processed: "%{total}行中%{processed}行を処理しました"
+        please_select_a_column: 列を選択してください。
+        json: JSON
+        schema: スキーマ
       integrations:
         invalid_integration_type: この連携は許可されていません
         page_subtitle: ストアをサードパーティサービスに接続して、顧客体験を向上させましょう。
+        find_more_html: 'その他の連携を探す: %{integrations_link}'
+        none_installed_html: 'まだ連携がインストールされていません。連携を探す: %{integrations_link}'
       json_preview:
         no_api_response: このリソースのAPIレスポンスが見つかりません
       manage_markets: マーケットを管理
@@ -891,6 +913,45 @@ ja:
         refunded: 返金済み
         remove_user_from_this_order: この注文から顧客を削除
         unfulfilled: 未履行
+        placed_by_guest: この注文はゲスト顧客によって行われました。
+        orders_count:
+          one: "%{count}件の注文"
+          other: "%{count}件の注文"
+        repeat_customer_summary_html: こちらはリピーターのお客様で、%{count}回にわたり合計%{amount}をご利用いただき、1注文あたり平均%{average}となっています。
+        avs_responses:
+          a: 番地は一致しますが、5桁および9桁の郵便番号が一致しません。
+          b: 番地は一致しますが、郵便番号は確認されていません。
+          c: 番地と郵便番号が一致しません。
+          d: 番地と郵便番号が一致します。
+          e: AVSデータが無効であるか、このカード種類ではAVSが許可されていません。
+          f: カード名義人の氏名は一致しませんが、請求先の郵便番号は一致します。
+          g: U.S.以外の発行銀行はAVSに対応していません。
+          h: カード名義人の氏名が一致しません。番地と郵便番号は一致します。
+          i: 住所が確認されていません。
+          j: カード名義人の氏名、請求先住所、郵便番号が一致します。
+          k: カード名義人の氏名は一致しますが、請求先住所と請求先の郵便番号が一致しません。
+          l: カード名義人の氏名と請求先の郵便番号は一致しますが、請求先住所が一致しません。
+          m: 番地と郵便番号が一致します。
+          "n": 番地と郵便番号が一致しません。
+          o: カード名義人の氏名と請求先住所は一致しますが、請求先の郵便番号が一致しません。
+          p: 郵便番号は一致しますが、番地は確認されていません。
+          q: カード名義人の氏名、請求先住所、郵便番号が一致します。
+          r: システムが利用できません。
+          s: 銀行はAVSに対応していません。
+          t: カード名義人の氏名は一致しませんが、番地は一致します。
+          u: 住所情報が利用できません。U.S.の銀行がU.S.以外のAVSに対応していない場合、またはU.S.の銀行のAVSが正常に機能していない場合に返されます。
+          v: カード名義人の氏名、請求先住所、請求先の郵便番号が一致します。
+          w: 番地は一致しませんが、9桁の郵便番号は一致します。
+          x: 番地と9桁の郵便番号が一致します。
+          "y": 番地と5桁の郵便番号が一致します。
+          z: 番地は一致しませんが、5桁の郵便番号は一致します。
+        cvv_responses:
+          m: CVV2一致
+          "n": CVV2不一致
+          p: 未処理
+          s: 発行者はCVV2データがカードに記載されているべきだとしていますが、加盟店はカードにデータが記載されていないとしています。
+          u: 発行者がCVV2の認証を受けていないか、発行者がVisaにCVV2の暗号化キーを提供していません。
+          blank: 誤ったCVV2番号が入力されたか、CVV2番号が入力されなかったため、取引に失敗しました。
       page_builder:
         background_color: 背景色
         border_bottom_width: 下罫線の太さ
@@ -940,6 +1001,8 @@ ja:
         schedule: スケジュール設定
         scheduled: 価格表をスケジュール設定しました
         unschedule: スケジュール解除
+        page_info: 価格表は、顧客グループ、商品、その他の基準に基づいて価格戦略を管理するための強力なツールです。
+        learn_more: 価格表について詳しく見る
       product_translations:
         coverage: 翻訳カバー率
         locale: ロケール
@@ -979,6 +1042,7 @@ ja:
           choose_stores: この商品を販売するストアを選択してください
         variants:
           option_types_link: オプションタイプを追加するには<a href="%{link}">オプションタイプ</a>に移動してください
+        learn_more: 商品管理について詳しく見る
       publishing:
         caption_hidden_after: "%{date}に非公開"
         caption_live: 現在、顧客に表示されています
@@ -1020,6 +1084,12 @@ ja:
         customer_support_email_help: このメールアドレスはフッターセクションでストアの訪問者に表示されます
         new_order_notifications_email_help: 誰かが注文するたびにメール通知を受け取りたい場合は、その通知を送信するメールアドレスを入力してください
         send_consumer_transactional_emails_help: チェックを外すと、注文確認や配送通知などの取引メールが顧客に送信されなくなります
+        logo_help: 管理ダッシュボードで使用されます。
+        currencies_managed_by_markets_html: 通貨とロケールは%{markets_link}によって管理されるようになりました。
+        email_addresses: メールアドレス
+        mail_from_address_help: ストアから送信されるすべてのメールの送信者として使用されるメールアドレスをご入力ください。
+        mailer_logo_help: このロゴは、注文確認などすべてのメール通知に含まれます。
+        mailer_logo_format_hint: 背景が透明な画像を推奨します。JPEGおよびPNG形式のみ対応しています。
       store_setup_tasks:
         add_billing_address: 請求先住所を追加
         add_products: 商品を追加
@@ -1034,6 +1104,15 @@ ja:
           copy: 税を徴収するには、税率を設定してください。
           done: 設定完了です！税はいつでも<a href="%{link}" data-turbo-frame="_top">設定</a>ページで管理できます。
           setup: 税率を設定
+        add_products_task:
+          done_title: お見事です。ストアに商品を追加しました！
+          done_subtitle: いつでもさらに追加できることをお忘れなく！
+          copy: ご自身の商品を追加するか、サードパーティの販売者を招待して一緒に販売しましょう。
+          import_hint: CSVまたはExcelファイルから商品を一括でインポートすることもできます。
+        customer_support_email_task:
+          copy: ストアフロントに表示するため、カスタマーサポートのメールアドレスが必要です。このメールアドレスは、顧客が問い合わせやサポートのために連絡する窓口として機能します。
+          current_html: カスタマーサポートのメールアドレスは%{email}です。
+          label: カスタマーサポートのメールアドレス
       storefront: ストアフロント
       successful: 成功
       successfully_reset_digital_links_limit: ダウンロード制限をリセットしました
@@ -1095,11 +1174,15 @@ ja:
       users:
         filters:
           search_placeholder: メールアドレスまたは名前で顧客を検索
+        timeline: タイムライン
       utilities:
         preview: プレビュー
       variants:
         search_results:
           no_variants: 検索条件に一致するバリエーションが見つかりませんでした :(
+        count_at_location:
+          one: ロケーションに%{count}個
+          other: ロケーションに%{count}個
       variants_form:
         add_option:
           empty: サイズや色などのオプションを追加
@@ -1150,6 +1233,8 @@ ja:
         successful_deliveries: 成功した配信
         test_failed: テストウェブフックの送信に失敗しました。エンドポイントの設定を確認してください。
         test_sent: テストウェブフックを送信しました。結果は配信を確認してください。
+        name_placeholder: '例: ストアフロントメール、フルフィルメントサービス'
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: すべてのイベント
         new_webhooks_subscriber: 新しいウェブフック購読者
@@ -1159,6 +1244,88 @@ ja:
         subscriptions: 購読
         time_of_last_event: 最後のイベントの時刻
         webhooks_events: ウェブフックイベント
+      assistant: アシスタント
+      total_orders: 注文総数
+      sign_ups: 新規登録
+      previous_page: 前のページ
+      next_page: 次のページ
+      no_change: 変更なし
+      integrations_directory: 連携ディレクトリ
+      option_types:
+        presentation_help: これはストアフロントにオプションタイプを表示するために使用されます。
+        name_help_html: これはオプションタイプを識別するために内部で使用されます。<strong>一意である必要があります。</strong>
+        value_count:
+          one: "%{count}個の値"
+          other: "%{count}個の値"
+        showing_pagination: "%{total}件中%{from}〜%{to}件を表示"
+        intro_help: オプションは特定の属性をグループ化するために使用されます。たとえば、「シャツのサイズ」という名前のオプションを作成し、そのオプションに「S」と「M」という名前のオプション値を作成できます。
+        learn_more: オプションについて詳しく見る
+      taxons:
+        square_image_help: ホームページの注目画像に使用されます。
+        seo:
+          placeholder: タイトルと説明を追加して、この分類が検索エンジンの検索結果でどのように表示されるかを確認してください。
+      promotions:
+        name_help: 顧客はカートおよびチェックアウト時にこれを目にします。
+        next_step_info: 次のステップでは、プロモーションにアクションとルールを追加できます。
+        coupon_code_placeholder: クーポンコード
+        code_prefix_placeholder: クーポンの接頭辞（任意）
+        code_prefix_example_html: '例: %{example}'
+        number_of_codes_placeholder: コードの数
+        number_of_codes_help: 生成したいコードの数。
+        add_more_codes_help: コードを追加するには、この数を増やすだけです。
+        usage_limit_help: 使用回数を無制限にする場合は、この欄を空欄のままにしてください。
+        expires_at_help: 有効期限を設けない場合は、この欄を空欄のままにしてください。 タイムゾーン：%{zone}
+        kind:
+          one_code_label: 全顧客共通の1つのコード
+          one_code_help: このコードを使用できる回数を制限できます。
+          multi_codes_label: 一意のコードを生成
+          multi_codes_help: これらのコードは自動的に生成され、CSVファイルとしてダウンロードできます。コードは一意であり、1回のみ使用できます。
+          automatic_help: このプロモーションは、対象となるすべての注文に自動的に適用されます。
+      shipping_methods:
+        checkout_info: 配送方法は、顧客がチェックアウトに進んだ際に表示される選択肢で、商品の発送に使用される配送業者およびサービスです。
+        name_help: これは顧客に表示されます。
+        admin_name_help: これは管理者に表示されます。
+        estimated_transit_business_days_help: これは荷物が顧客の住所に到着するまでにかかると見込まれる営業日数です。チェックアウトページに表示されます。
+        tracking_url_token_help: 追跡番号に置き換えられます。
+      zones:
+        info: ゾーンは地理的なグループ分けであり、州または国のいずれかの集まりを表します。
+      shipments:
+        stock_location_option: "%{name}（在庫%{count}個）"
+      payment_methods:
+        name_help: この名前は、ストアフロントで決済方法を識別するために使用されます。
+        available_payment_methods: 利用可能な決済方法
+        find_more_payment_methods_html: 'その他の決済方法を探す: %{integrations_link}'
+      admin_users:
+        audit_log_enterprise_notice: 監査ログはSpree Enterpriseの提供内容に含まれます。
+        upgrade_to_enterprise: Spree Enterpriseにアップグレード
+      invitations:
+        invited_you_to_join_html: "%{inviter}があなたを%{resource}への参加に招待しました。"
+        expires_at: 有効期限
+        email_placeholder: '例: steve@apple.com'
+      user_sessions:
+        welcome_back: おかえりなさい
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Spree Community Editionをご利用いただきありがとうございます。すべての機能とサポートをご利用いただくために、Enterprise Editionへのアップグレードをご検討ください。
+        upgrade: アップグレード
+      metafields:
+        none_configured_for: "%{resource}に対して設定されたメタフィールド定義はありません。"
+      table:
+        operators:
+          eq: 等しい
+          not_eq: 等しくない
+          cont: 次を含む
+          not_cont: 次を含まない
+          start: 次で始まる
+          end: 次で終わる
+          gt: より大きい
+          gteq: 以上
+          lt: より小さい
+          lteq: 以下
+          in: いずれかである
+          not_in: いずれでもない
+          'null': 空である
+          not_null: 空でない
     administration: 管理
     advertise:
     agree_to_privacy_policy:
@@ -1488,6 +1655,7 @@ ja:
         gte:
         lt:
         lte:
+      max_amount_help: 上限金額を設けない場合は、この欄を空欄のままにしてください。
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2796,6 +2964,8 @@ ja:
           method_unavailable: この支払い方法はこの注文では利用できません。
           session_required: この支払い方法には支払いセッションが必要です。代わりに支払いセッションのエンドポイントを使用してください。
       wrong_shipment_target: 転送先の出荷が元の出荷と同じです
+    copy_number: 番号をコピー
+    remaining: 残り
   action_text:
     video_embed:
       not_found: 指定されたURLでは動画を埋め込めません

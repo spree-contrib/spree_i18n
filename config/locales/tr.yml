@@ -791,6 +791,17 @@ tr:
         top_products: En çok satan ürünler
         view_report: Raporu görüntüle
         whats_happening_on_html: İşte bugün <strong>%{store_name}</strong> mağazanızda olup bitenler.
+        updater:
+          available_html: "%{version} mevcut."
+          current_version_html: Mevcut sürümünüz %{version}.
+          view_release_notes: Sürüm notlarını görüntüle
+        visits:
+          referrers_title: Ziyaretçiler nereden geliyor?
+          landing_pages_title: En çok ziyaret edilen açılış sayfaları
+          locations_title: Ziyaretçi konumları
+          devices_title: Ziyaretçi cihazları
+          no_data: Veri yok
+          no_data_for_period: Bu dönem için veri bulunmuyor.
       datetime_field_timezone_help: 'Saat dilimi: %{zone}'
       digital_shipment_fulfillment_note: Kullanıcı dijital ürünü indirdiğinde bu kargo tamamlandı olarak işaretlenecektir
       display_on_options:
@@ -817,6 +828,7 @@ tr:
         codes_count: Kod sayısı
         new_gift_card_batch: Yeni Hediye Kartı Partisi
         prefix: Ön ek
+        expires_at_help: Hediye kartları bu tarihten sonra geçerliliğini yitirecektir.
       gift_cards:
         active: Etkin
         all_statuses: Tüm durumlar
@@ -833,9 +845,19 @@ tr:
         mapping_required: Bu alan zorunludur
         please_map_all_required_fields: Devam etmek için lütfen tüm gerekli alanları eşleyin.
         waiting_for_file_to_be_processed: Dosyanın işlenmesi bekleniyor...
+        steps:
+          map_fields: 1. Alanları eşle
+          process_rows: 2. Satırları işle
+          complete: 3. Tamamla
+        rows_processed: "%{total} satırdan %{processed} tanesi işlendi"
+        please_select_a_column: Lütfen bir sütun seçin
+        json: JSON
+        schema: Şema
       integrations:
         invalid_integration_type: Bu entegrasyona izin verilmiyor
         page_subtitle: Müşteri deneyimini geliştirmek için mağazanızı üçüncü taraf hizmetlere bağlayın.
+        find_more_html: Daha fazla entegrasyonu şurada bulun %{integrations_link}
+        none_installed_html: Henüz hiçbir entegrasyon yüklenmedi. Entegrasyonları şurada bulun %{integrations_link}
       json_preview:
         no_api_response: Bu kaynak için API yanıtı bulunamadı
       manage_markets: Pazarları Yönet
@@ -890,6 +912,45 @@ tr:
         refunded: İade Edildi
         remove_user_from_this_order: Müşteriyi bu siparişten kaldır
         unfulfilled: Tamamlanmamış
+        placed_by_guest: Bu sipariş bir misafir müşteri tarafından verildi
+        orders_count:
+          one: "%{count} sipariş"
+          other: "%{count} sipariş"
+        repeat_customer_summary_html: Bu, %{count} boyunca toplam %{amount} harcayan ve sipariş başına ortalama %{average} olan tekrar eden bir müşteridir.
+        avs_responses:
+          a: Açık adres eşleşiyor, ancak 5 haneli ve 9 haneli posta kodu eşleşmiyor.
+          b: Açık adres eşleşiyor, ancak posta kodu doğrulanmadı.
+          c: Açık adres ve posta kodu eşleşmiyor.
+          d: Açık adres ve posta kodu eşleşiyor.
+          e: AVS verileri geçersiz veya bu kart türü için AVS'ye izin verilmiyor.
+          f: Kart sahibinin adı eşleşmiyor, ancak fatura posta kodu eşleşiyor.
+          g: U.S. dışındaki kart çıkaran banka AVS'yi desteklemiyor.
+          h: Kart sahibinin adı eşleşmiyor. Açık adres ve posta kodu eşleşiyor.
+          i: Adres doğrulanmadı.
+          j: Kart sahibinin adı, fatura adresi ve posta kodu eşleşiyor.
+          k: Kart sahibinin adı eşleşiyor, ancak fatura adresi ve fatura posta kodu eşleşmiyor.
+          l: Kart sahibinin adı ve fatura posta kodu eşleşiyor, ancak fatura adresi eşleşmiyor.
+          m: Açık adres ve posta kodu eşleşiyor.
+          "n": Açık adres ve posta kodu eşleşmiyor.
+          o: Kart sahibinin adı ve fatura adresi eşleşiyor, ancak fatura posta kodu eşleşmiyor.
+          p: Posta kodu eşleşiyor, ancak açık adres doğrulanmadı.
+          q: Kart sahibinin adı, fatura adresi ve posta kodu eşleşiyor.
+          r: Sistem kullanılamıyor.
+          s: Banka AVS'yi desteklemiyor.
+          t: Kart sahibinin adı eşleşmiyor, ancak açık adres eşleşiyor.
+          u: Adres bilgileri kullanılamıyor. U.S. bankası U.S. dışı AVS'yi desteklemiyorsa veya U.S. bankasındaki AVS düzgün çalışmıyorsa döndürülür.
+          v: Kart sahibinin adı, fatura adresi ve fatura posta kodu eşleşiyor.
+          w: Açık adres eşleşmiyor, ancak 9 haneli posta kodu eşleşiyor.
+          x: Açık adres ve 9 haneli posta kodu eşleşiyor.
+          "y": Açık adres ve 5 haneli posta kodu eşleşiyor.
+          z: Açık adres eşleşmiyor, ancak 5 haneli posta kodu eşleşiyor.
+        cvv_responses:
+          m: CVV2 Eşleşti
+          "n": CVV2 Eşleşmedi
+          p: İşlenmedi
+          s: Kart çıkaran, kartta CVV2 verisinin bulunması gerektiğini belirtiyor, ancak satıcı verinin kartta bulunmadığını belirtti
+          u: Kart çıkaran CVV2 için sertifika almadı veya kart çıkaran Visa'ya CVV2 şifreleme anahtarlarını sağlamadı
+          blank: Yanlış CVV2 numarası girildiği veya hiç CVV2 numarası girilmediği için işlem başarısız oldu
       page_builder:
         background_color: Arka plan rengi
         border_bottom_width: Alt kenarlık genişliği
@@ -939,6 +1000,8 @@ tr:
         schedule: Zamanla
         scheduled: Fiyat listesi zamanlandı
         unschedule: Zamanlamayı kaldır
+        page_info: Fiyat listeleri, müşteri gruplarına, ürünlere veya diğer kriterlere göre fiyatlandırma stratejilerini yönetmek için güçlü bir araçtır.
+        learn_more: Fiyat listeleri hakkında daha fazla bilgi edinin
       product_translations:
         coverage: Çeviri kapsamı
         locale: Yerel ayar
@@ -978,6 +1041,7 @@ tr:
           choose_stores: Bu ürünün hangi mağazalarda kullanılabilir olacağını seçin
         variants:
           option_types_link: Daha fazla seçenek türü eklemek için lütfen <a href="%{link}">Seçenek Türleri</a> sayfasına gidin
+        learn_more: Ürün yönetimi hakkında daha fazla bilgi edinin
       publishing:
         caption_hidden_after: "%{date} tarihinde kaldırılır"
         caption_live: Şu anda müşterilere görünür
@@ -1019,6 +1083,12 @@ tr:
         customer_support_email_help: Bu e-posta, Alt Bilgi bölümünde Mağaza ziyaretçilerinize görünür
         new_order_notifications_email_help: Birisi her Sipariş verdiğinde e-posta bildirimi almak istiyorsanız, lütfen bu bildirimin gönderileceği bir e-posta adresi girin
         send_consumer_transactional_emails_help: İşaret kaldırıldığında, sipariş onayları ve kargo bildirimleri gibi işlemsel e-postalar müşterilere gönderilmeyecektir
+        logo_help: Yönetici panosunda kullanılır
+        currencies_managed_by_markets_html: Para birimleri ve diller artık %{markets_link} tarafından yönetilmektedir.
+        email_addresses: E-posta adresleri
+        mail_from_address_help: Lütfen mağazanızdan gönderilen tüm e-postaların göndereni olarak kullanılacak e-posta adresini girin.
+        mailer_logo_help: Bu logo, sipariş onayı gibi tüm e-posta bildirimlerine dahil edilir
+        mailer_logo_format_hint: Şeffaf arka plana sahip görseller öneririz. Yalnızca JPEG ve PNG formatları desteklenir.
       store_setup_tasks:
         add_billing_address: Fatura adresi ekle
         add_products: Ürün ekle
@@ -1033,6 +1103,15 @@ tr:
           copy: Vergi tahsil etmek için lütfen vergi oranlarınızı ayarlayın.
           done: Hazırsınız! Vergilerinizi her zaman <a href="%{link}" data-turbo-frame="_top">ayarlar</a> sayfasında yönetebilirsiniz.
           setup: Vergi Oranlarını Ayarla
+        add_products_task:
+          done_title: Tebrikler, mağazanıza ürünler eklediniz!
+          done_subtitle: Unutmayın, her zaman daha fazlasını ekleyebilirsiniz!
+          copy: Mağazanıza kendi ürünlerinizi ekleyin veya birlikte satış yapmak için 3. taraf satıcıları davet edin.
+          import_hint: Ürünleri toplu olarak bir CSV veya Excel dosyasından da içe aktarabilirsiniz.
+        customer_support_email_task:
+          copy: Mağaza vitrininizde görüntülemek için müşteri destek e-postanıza ihtiyacımız var. Bu e-posta, müşterilerinizin sorularına veya destek taleplerine ulaşması için bir iletişim noktası olarak çalışacaktır.
+          current_html: Müşteri destek e-postanız %{email}.
+          label: Müşteri destek e-postası
       storefront: Mağaza
       successful: Başarılı
       successfully_reset_digital_links_limit: İndirme limitleri sıfırlandı
@@ -1094,11 +1173,15 @@ tr:
       users:
         filters:
           search_placeholder: Müşterileri e-posta veya ada göre ara
+        timeline: Zaman Çizelgesi
       utilities:
         preview: Önizleme
       variants:
         search_results:
           no_variants: Aramanızla eşleşen herhangi bir varyant bulamadık :(
+        count_at_location:
+          one: Konumda %{count}
+          other: Konumda %{count}
       variants_form:
         add_option:
           empty: Beden veya renk gibi seçenekler ekleyin
@@ -1149,6 +1232,8 @@ tr:
         successful_deliveries: Başarılı Teslimatlar
         test_failed: Test webhook'u gönderilemedi. Lütfen uç nokta yapılandırmasını kontrol edin.
         test_sent: Test webhook'u gönderildi. Sonuç için teslimatları kontrol edin.
+        name_placeholder: örn. Mağaza vitrini e-postaları, Sipariş karşılama hizmeti
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Tüm Olaylar
         new_webhooks_subscriber: Yeni Webhooks Abonesi
@@ -1158,6 +1243,88 @@ tr:
         subscriptions: Abonelikler
         time_of_last_event: Son Olayın Zamanı
         webhooks_events: Webhook Olayları
+      assistant: Asistan
+      total_orders: Toplam Sipariş
+      sign_ups: Kayıtlar
+      previous_page: Önceki sayfa
+      next_page: Sonraki sayfa
+      no_change: Değişiklik yok
+      integrations_directory: Entegrasyon Dizini
+      option_types:
+        presentation_help: Bu, seçenek türünü mağaza vitrininde göstermek için kullanılır.
+        name_help_html: Bu, seçenek türünü dahili olarak tanımlamak için kullanılır. <strong>Benzersiz olmalıdır.</strong>
+        value_count:
+          one: "%{count} değer"
+          other: "%{count} değer"
+        showing_pagination: "%{total} öğeden %{from}-%{to} arası gösteriliyor"
+        intro_help: Seçenekler, belirli özellikleri gruplamak için kullanılır. Örneğin, "gömlek bedeni" adında bir seçenek oluşturabilir, ardından bu seçenek için "küçük" ve "orta" adında seçenek değerleri oluşturabilirsiniz.
+        learn_more: Seçenekler hakkında daha fazla bilgi edinin
+      taxons:
+        square_image_help: Ana sayfadaki öne çıkan görsel için kullanılır.
+        seo:
+          placeholder: Bu taksonun bir arama motoru listesinde nasıl görünebileceğini görmek için bir başlık ve açıklama ekleyin
+      promotions:
+        name_help: Müşteriler bunu sepetlerinde ve ödeme sırasında görecektir.
+        next_step_info: Bir sonraki adımda promosyonunuza eylemler ve kurallar ekleyebileceksiniz
+        coupon_code_placeholder: Kupon kodunuz
+        code_prefix_placeholder: Kupon Öneki (isteğe bağlı)
+        code_prefix_example_html: örn. %{example}
+        number_of_codes_placeholder: Kod sayısı
+        number_of_codes_help: Kaç tane kod oluşturmak istediğiniz.
+        add_more_codes_help: Daha fazla kod eklemek için bu sayıyı artırmanız yeterlidir
+        usage_limit_help: Sınırsız kullanım için bu alanı boş bırakın.
+        expires_at_help: 'Son kullanma tarihi olmaması için bu alanı boş bırakın. Saat dilimi: %{zone}'
+        kind:
+          one_code_label: Tüm müşteriler için tek kod
+          one_code_help: Bu kodun kaç kez kullanılabileceğini sınırlayabilirsiniz.
+          multi_codes_label: Benzersiz kodlar oluştur
+          multi_codes_help: Bu kodlar otomatik olarak oluşturulur ve CSV dosyası olarak indirilebilir. Kodlar benzersizdir ve yalnızca bir kez kullanılabilir.
+          automatic_help: Bu promosyon, uygun tüm siparişlere otomatik olarak uygulanacaktır.
+      shipping_methods:
+        checkout_info: Kargo yöntemleri, müşterinin ödeme aşamasına geldiğinde gördüğü seçeneklerdir; ürünlerinizi göndermek için kullanılan taşıyıcılar ve hizmetlerdir.
+        name_help: Bu müşterilere gösterilecektir
+        admin_name_help: Bu yöneticilere gösterilecektir
+        estimated_transit_business_days_help: Bu, paketin müşterinin adresine ulaşması için tahmini iş günü sayısıdır. Ödeme sayfasında gösterilecektir.
+        tracking_url_token_help: takip numarasıyla değiştirilecektir.
+      zones:
+        info: Bölgeler coğrafi gruplandırmalardır; eyaletlerin veya ülkelerin koleksiyonlarını temsil ederler.
+      shipments:
+        stock_location_option: "%{name} (stokta %{count})"
+      payment_methods:
+        name_help: Bu ad, ödeme yöntemini mağaza vitrininde tanımlamak için kullanılacaktır
+        available_payment_methods: Mevcut Ödeme Yöntemleri
+        find_more_payment_methods_html: Daha fazla ödeme yöntemini şurada bulun %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Denetim günlüğü, Spree Enterprise teklifinin bir parçasıdır.
+        upgrade_to_enterprise: Spree Enterprise'a yükseltin
+      invitations:
+        invited_you_to_join_html: "%{inviter} sizi %{resource} grubuna katılmaya davet etti"
+        expires_at: Son kullanma tarihi
+        email_placeholder: örn. steve@apple.com
+      user_sessions:
+        welcome_back: Tekrar hoş geldiniz
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Spree Community Edition kullandığınız için teşekkür ederiz! Tüm özelliklere ve desteğe erişmek için Enterprise Edition'a yükseltmeyi düşünün.
+        upgrade: Yükselt
+      metafields:
+        none_configured_for: "%{resource} için yapılandırılmış metaalan tanımı yok."
+      table:
+        operators:
+          eq: eşittir
+          not_eq: eşit değildir
+          cont: içerir
+          not_cont: içermez
+          start: ile başlar
+          end: ile biter
+          gt: büyüktür
+          gteq: büyük veya eşittir
+          lt: küçüktür
+          lteq: küçük veya eşittir
+          in: herhangi biridir
+          not_in: hiçbiri değildir
+          'null': boştur
+          not_null: boş değildir
     administration: Yönetim
     advertise:
     agree_to_privacy_policy: Gizlilik Politikasını kabul ediyorum
@@ -1486,6 +1653,7 @@ tr:
         gte: büyük eşittir
         lt: küçüktür
         lte: küçük eşittir
+      max_amount_help: Maksimum tutarı sınırlamamak için bu alanı boş bırakın.
     items_cannot_be_shipped: Seçtiğiniz ülkeye gönderim yapılamamaktadır
     items_in_rmas:
     items_reimbursed:
@@ -2801,6 +2969,8 @@ tr:
           method_unavailable: Bu ödeme yöntemi bu sipariş için kullanılamaz.
           session_required: Bu ödeme yöntemi bir ödeme oturumu gerektirir. Bunun yerine ödeme oturumları uç noktasını kullanın.
       wrong_shipment_target: hedef kargo orijinal kargoyla aynı
+    copy_number: Numarayı kopyala
+    remaining: Kalan
   action_text:
     video_embed:
       not_found: Verilen URL kullanılarak video gömülemiyor

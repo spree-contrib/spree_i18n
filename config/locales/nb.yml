@@ -753,6 +753,45 @@ nb:
         refunded: Refundert
         remove_user_from_this_order: Fjern kunde fra denne ordren
         unfulfilled: Ikke oppfylt
+        placed_by_guest: Denne bestillingen ble lagt inn av en gjestekunde
+        orders_count:
+          one: "%{count} bestilling"
+          other: "%{count} bestillinger"
+        repeat_customer_summary_html: Dette er en gjentakende kunde som har brukt totalt %{amount} fordelt på %{count}, med et gjennomsnitt på %{average} per bestilling.
+        avs_responses:
+          a: Gateadressen samsvarer, men 5-sifret og 9-sifret postnummer samsvarer ikke.
+          b: Gateadressen samsvarer, men postnummeret er ikke verifisert.
+          c: Gateadressen og postnummeret samsvarer ikke.
+          d: Gateadressen og postnummeret samsvarer.
+          e: AVS-data er ugyldige, eller AVS er ikke tillatt for denne korttypen.
+          f: Kortinnehaverens navn samsvarer ikke, men faktureringspostnummeret samsvarer.
+          g: Utstedende bank utenfor U.S. støtter ikke AVS.
+          h: Kortinnehaverens navn samsvarer ikke. Gateadressen og postnummeret samsvarer.
+          i: Adressen er ikke verifisert.
+          j: Kortinnehaverens navn, faktureringsadresse og postnummer samsvarer.
+          k: Kortinnehaverens navn samsvarer, men faktureringsadressen og faktureringspostnummeret samsvarer ikke.
+          l: Kortinnehaverens navn og faktureringspostnummer samsvarer, men faktureringsadressen samsvarer ikke.
+          m: Gateadressen og postnummeret samsvarer.
+          "n": Gateadressen og postnummeret samsvarer ikke.
+          o: Kortinnehaverens navn og faktureringsadresse samsvarer, men faktureringspostnummeret samsvarer ikke.
+          p: Postnummeret samsvarer, men gateadressen er ikke verifisert.
+          q: Kortinnehaverens navn, faktureringsadresse og postnummer samsvarer.
+          r: Systemet er utilgjengelig.
+          s: Banken støtter ikke AVS.
+          t: Kortinnehaverens navn samsvarer ikke, men gateadressen samsvarer.
+          u: Adresseinformasjon er utilgjengelig. Returneres hvis U.S.-banken ikke støtter AVS utenfor U.S., eller hvis AVS i en U.S.-bank ikke fungerer som den skal.
+          v: Kortinnehaverens navn, faktureringsadresse og faktureringspostnummer samsvarer.
+          w: Gateadressen samsvarer ikke, men 9-sifret postnummer samsvarer.
+          x: Gateadressen og 9-sifret postnummer samsvarer.
+          "y": Gateadressen og 5-sifret postnummer samsvarer.
+          z: Gateadressen samsvarer ikke, men 5-sifret postnummer samsvarer.
+        cvv_responses:
+          m: CVV2 samsvarer
+          "n": CVV2 samsvarer ikke
+          p: Ikke behandlet
+          s: Utstederen indikerer at CVV2-data skal være til stede på kortet, men forhandleren har angitt at data ikke er til stede på kortet
+          u: Utstederen er ikke sertifisert for CVV2, eller utstederen har ikke gitt Visa CVV2-krypteringsnøklene
+          blank: Transaksjonen mislyktes fordi feil CVV2-nummer ble oppgitt, eller fordi det ikke ble oppgitt noe CVV2-nummer
       return_authorization:
         product: Produkt
       allowed_origins:
@@ -863,6 +902,17 @@ nb:
         top_products: Toppprodukter
         view_report: Vis rapport
         whats_happening_on_html: Her er hva som skjer på <strong>%{store_name}</strong> i dag.
+        updater:
+          available_html: "%{version} er tilgjengelig."
+          current_version_html: Din nåværende versjon er %{version}.
+          view_release_notes: Vis versjonsmerknader
+        visits:
+          referrers_title: Hvor kommer de besøkende fra?
+          landing_pages_title: Mest besøkte landingssider
+          locations_title: Besøkendes plasseringer
+          devices_title: Besøkendes enheter
+          no_data: Ingen data
+          no_data_for_period: Ingen data tilgjengelig for denne perioden.
       datetime_field_timezone_help: 'Tidssone: %{zone}'
       digital_shipment_fulfillment_note: Denne forsendelsen markeres som oppfylt når brukeren laster ned det digitale produktet
       display_on_options:
@@ -889,6 +939,7 @@ nb:
         codes_count: Antall koder
         new_gift_card_batch: Ny gavekortgruppe
         prefix: Prefiks
+        expires_at_help: Gavekort utløper etter denne datoen.
       gift_cards:
         active: Aktiv
         all_statuses: Alle statuser
@@ -905,9 +956,19 @@ nb:
         mapping_required: Dette feltet er påkrevd
         please_map_all_required_fields: Tilordne alle de påkrevde feltene for å fortsette.
         waiting_for_file_to_be_processed: Venter på at filen skal behandles ...
+        steps:
+          map_fields: 1. Tilordne felter
+          process_rows: 2. Behandle rader
+          complete: 3. Fullfør
+        rows_processed: "%{processed} / %{total} rader behandlet"
+        please_select_a_column: Velg en kolonne
+        json: JSON
+        schema: Skjema
       integrations:
         invalid_integration_type: Denne integrasjonen er ikke tillatt
         page_subtitle: Koble butikken din til tredjepartstjenester for å forbedre kundeopplevelsen.
+        find_more_html: Finn flere integrasjoner i %{integrations_link}
+        none_installed_html: Ingen integrasjoner er installert ennå. Finn integrasjoner i %{integrations_link}
       json_preview:
         no_api_response: Ingen API-respons funnet for denne ressursen
       manage_markets: Administrer markeder
@@ -992,6 +1053,8 @@ nb:
         schedule: Planlegg
         scheduled: Prislisten er planlagt
         unschedule: Opphev planlegging
+        page_info: Prislister er et kraftig verktøy for å håndtere prisstrategier basert på kundegrupper, produkter eller andre kriterier.
+        learn_more: Lær mer om prislister
       product_translations:
         coverage: Oversettelsesdekning
         locale: Språk
@@ -1031,6 +1094,7 @@ nb:
           choose_stores: Velg hvilke butikker dette produktet skal være tilgjengelig i
         variants:
           option_types_link: For å legge til flere alternativtyper, gå til <a href="%{link}">Alternativtyper</a>
+        learn_more: Lær mer om å administrere produkter
       publishing:
         caption_hidden_after: Tas ned %{date}
         caption_live: Synlig for kunder nå
@@ -1072,6 +1136,12 @@ nb:
         customer_support_email_help: Denne e-postadressen er synlig for butikkens besøkende i bunntekstseksjonen
         new_order_notifications_email_help: Hvis du vil motta et e-postvarsel hver gang noen legger inn en ordre, oppgi en e-postadresse som varselet skal sendes til
         send_consumer_transactional_emails_help: Når dette ikke er avkrysset, sendes ikke transaksjons-e-poster som ordrebekreftelser og forsendelsesvarsler til kunder
+        logo_help: Brukes i administrasjonspanelet
+        currencies_managed_by_markets_html: Valutaer og språk administreres nå av %{markets_link}.
+        email_addresses: E-postadresser
+        mail_from_address_help: Oppgi e-postadressen som skal brukes som avsender av alle e-poster som sendes fra butikken din.
+        mailer_logo_help: Denne logoen inkluderes i alle e-postvarsler, for eksempel ordrebekreftelse
+        mailer_logo_format_hint: Vi anbefaler bilder med gjennomsiktig bakgrunn. Kun JPEG- og PNG-formater støttes.
       store_setup_tasks:
         add_billing_address: Legg til faktureringsadresse
         add_products: Legg til produkter
@@ -1086,6 +1156,15 @@ nb:
           copy: For å kunne kreve inn avgifter, sett opp avgiftssatsene dine.
           done: Alt er klart! Du kan alltid administrere avgiftene dine på <a href="%{link}" data-turbo-frame="_top">innstillinger</a>-siden.
           setup: Sett opp avgiftssatser
+        add_products_task:
+          done_title: Godt jobbet, du har lagt til produkter i butikken din!
+          done_subtitle: Husk at du alltid kan legge til flere!
+          copy: Legg til produkter i butikken din, enten dine egne eller inviter tredjepartsleverandører til å selge sammen.
+          import_hint: Du kan også importere produkter i bulk fra en CSV- eller Excel-fil.
+        customer_support_email_task:
+          copy: Vi trenger e-postadressen til kundestøtten din for å vise den i butikkfronten. Denne e-postadressen fungerer som et kontaktpunkt for kundene dine, slik at de kan ta kontakt med deg ved spørsmål eller behov for support.
+          current_html: E-postadressen til kundestøtten din er %{email}.
+          label: E-postadresse til kundestøtte
       storefront: Nettbutikk
       successful: Vellykket
       successfully_reset_digital_links_limit: Nedlastingsgrenser er tilbakestilt
@@ -1147,11 +1226,15 @@ nb:
       users:
         filters:
           search_placeholder: Søk etter kunder på e-post eller navn
+        timeline: Tidslinje
       utilities:
         preview: Forhåndsvisning
       variants:
         search_results:
           no_variants: Vi fant ingen varianter som samsvarer med søket ditt :(
+        count_at_location:
+          one: "%{count} på lokasjon"
+          other: "%{count} på lokasjon"
       variants_form:
         add_option:
           empty: Legg til alternativer som størrelse eller farge
@@ -1202,6 +1285,8 @@ nb:
         successful_deliveries: Vellykkede leveringer
         test_failed: Kunne ikke sende test-webhook. Sjekk endepunktskonfigurasjonen.
         test_sent: Test-webhook sendt. Sjekk leveringene for resultatet.
+        name_placeholder: f.eks. Butikkfront-e-poster, Oppfyllelsestjeneste
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Alle hendelser
         new_webhooks_subscriber: Ny webhook-abonnent
@@ -1211,6 +1296,88 @@ nb:
         subscriptions: Abonnementer
         time_of_last_event: Tidspunkt for siste hendelse
         webhooks_events: Webhook-hendelser
+      assistant: Assistent
+      total_orders: Totalt antall bestillinger
+      sign_ups: Registreringer
+      previous_page: Forrige side
+      next_page: Neste side
+      no_change: Ingen endring
+      integrations_directory: Integrasjonskatalog
+      option_types:
+        presentation_help: Dette brukes til å vise alternativtypen i butikkfronten.
+        name_help_html: Dette brukes internt for å identifisere alternativtypen. <strong>Det må være unikt.</strong>
+        value_count:
+          one: "%{count} verdi"
+          other: "%{count} verdier"
+        showing_pagination: Viser %{from}-%{to} av %{total}
+        intro_help: Alternativer brukes til å gruppere bestemte attributter. Du kan for eksempel opprette et alternativ kalt "skjortestørrelse" og deretter opprette alternativverdiene "liten" og "medium" for dette alternativet.
+        learn_more: Lær mer om alternativer
+      taxons:
+        square_image_help: Brukes til det fremhevede bildet på hjemmesiden.
+        seo:
+          placeholder: Legg til en tittel og en beskrivelse for å se hvordan denne taksonen kan vises i en søkemotoroppføring
+      promotions:
+        name_help: Kundene vil se dette i handlekurven og ved utsjekking.
+        next_step_info: I neste trinn kan du legge til handlinger og regler i kampanjen din
+        coupon_code_placeholder: Rabattkoden din
+        code_prefix_placeholder: Kupongprefiks (valgfritt)
+        code_prefix_example_html: f.eks. %{example}
+        number_of_codes_placeholder: Antall koder
+        number_of_codes_help: Hvor mange koder du vil generere.
+        add_more_codes_help: For å legge til flere koder øker du bare dette tallet
+        usage_limit_help: La dette feltet stå tomt for ubegrenset bruk.
+        expires_at_help: 'La dette feltet stå tomt for ingen utløpsdato. Tidssone: %{zone}'
+        kind:
+          one_code_label: Én kode for alle kunder
+          one_code_help: Du kan begrense antall ganger denne koden kan brukes.
+          multi_codes_label: Generer unike koder
+          multi_codes_help: Disse kodene genereres automatisk og kan lastes ned som en CSV-fil. Kodene er unike og kan bare brukes én gang.
+          automatic_help: Denne kampanjen vil automatisk bli brukt på alle kvalifiserte bestillinger.
+      shipping_methods:
+        checkout_info: Fraktmetoder er alternativer som kunden ser når de kommer til utsjekkingen. De er transportørene og tjenestene som brukes til å sende produktene dine.
+        name_help: Dette vil vises til kundene
+        admin_name_help: Dette vil vises til administratorer
+        estimated_transit_business_days_help: Dette er det estimerte antallet virkedager det vil ta før pakken ankommer kundens adresse. Det vil vises på utsjekkingssiden.
+        tracking_url_token_help: vil bli erstattet med sporingsnummeret.
+      zones:
+        info: Soner er geografiske grupperinger; de representerer samlinger av enten delstater eller land.
+      shipments:
+        stock_location_option: "%{name} (%{count} på lager)"
+      payment_methods:
+        name_help: Dette navnet vil bli brukt til å identifisere betalingsmetoden i butikkfronten
+        available_payment_methods: Tilgjengelige betalingsmetoder
+        find_more_payment_methods_html: Finn flere betalingsmetoder i %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Revisjonslogg er en del av Spree Enterprise-tilbudet.
+        upgrade_to_enterprise: Oppgrader til Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} har invitert deg til å bli med i %{resource}"
+        expires_at: Utløper
+        email_placeholder: f.eks. steve@apple.com
+      user_sessions:
+        welcome_back: Velkommen tilbake
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Takk for at du bruker Spree Community Edition! Vurder å oppgradere til Enterprise Edition for å få tilgang til alle funksjoner og support.
+        upgrade: Oppgrader
+      metafields:
+        none_configured_for: Ingen metafelt-definisjoner er konfigurert for %{resource}.
+      table:
+        operators:
+          eq: er lik
+          not_eq: er ikke lik
+          cont: inneholder
+          not_cont: inneholder ikke
+          start: begynner med
+          end: slutter med
+          gt: større enn
+          gteq: større enn eller lik
+          lt: mindre enn
+          lteq: mindre enn eller lik
+          in: er en av
+          not_in: er ingen av
+          'null': er tom
+          not_null: er ikke tom
     administration: Administrasjon
     advertise: Reklamere
     agree_to_privacy_policy: Godta personvernsregler
@@ -1617,6 +1784,7 @@ nb:
         gte: større enn, eller er lik
         lt: mindre enn
         lte: mindre enn eller lik
+      max_amount_help: La dette feltet stå tomt for ikke å begrense det maksimale beløpet.
     items_cannot_be_shipped: Varene kan ikke sendes!
     items_in_rmas: Varer i returautorisasjoner
     items_reimbursed: Varene refunderes
@@ -2971,6 +3139,8 @@ nb:
           method_unavailable: Denne betalingsmåten er ikke tilgjengelig for denne ordren.
           session_required: Denne betalingsmåten krever en betalingsøkt. Bruk endepunktet for betalingsøkter i stedet.
       wrong_shipment_target: målforsendelsen er den samme som den opprinnelige forsendelsen
+    copy_number: Kopier nummer
+    remaining: Gjenstående
   action_text:
     video_embed:
       not_found: Kan ikke bygge inn en video med den angitte URL-en

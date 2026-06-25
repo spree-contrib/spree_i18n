@@ -793,6 +793,17 @@ hu:
         top_products: Legnépszerűbb termékek
         view_report: Jelentés megtekintése
         whats_happening_on_html: Íme, mi történik ma a(z) <strong>%{store_name}</strong> áruházban.
+        updater:
+          available_html: "%{version} elérhető."
+          current_version_html: 'A jelenlegi verziód: %{version}.'
+          view_release_notes: Kiadási megjegyzések megtekintése
+        visits:
+          referrers_title: Honnan érkeznek a látogatók?
+          landing_pages_title: Legnépszerűbb céloldalak
+          locations_title: Látogatók helyszínei
+          devices_title: Látogatók eszközei
+          no_data: Nincs adat
+          no_data_for_period: Ehhez az időszakhoz nem érhető el adat.
       datetime_field_timezone_help: 'Időzóna: %{zone}'
       digital_shipment_fulfillment_note: Ez a szállítmány teljesítettként lesz megjelölve, amint a felhasználó letölti a digitális terméket
       display_on_options:
@@ -819,6 +830,7 @@ hu:
         codes_count: Kódok száma
         new_gift_card_batch: Új ajándékkártya-köteg
         prefix: Előtag
+        expires_at_help: Az ajándékkártyák ezen dátum után járnak le.
       gift_cards:
         active: Aktív
         all_statuses: Minden állapot
@@ -835,9 +847,19 @@ hu:
         mapping_required: Ez a mező kötelező
         please_map_all_required_fields: A folytatáshoz rendelje hozzá az összes kötelező mezőt.
         waiting_for_file_to_be_processed: Várakozás a fájl feldolgozására...
+        steps:
+          map_fields: 1. Mezők megfeleltetése
+          process_rows: 2. Sorok feldolgozása
+          complete: 3. Befejezés
+        rows_processed: "%{processed} / %{total} sor feldolgozva"
+        please_select_a_column: Válassz egy oszlopot
+        json: JSON
+        schema: Séma
       integrations:
         invalid_integration_type: Ez az integráció nem engedélyezett
         page_subtitle: Csatlakoztassa áruházát külső szolgáltatásokhoz a vásárlói élmény fokozása érdekében.
+        find_more_html: 'Találj további integrációkat itt: %{integrations_link}'
+        none_installed_html: 'Még nincs telepített integráció. Találj integrációkat itt: %{integrations_link}'
       json_preview:
         no_api_response: Nincs API-válasz ehhez az erőforráshoz
       manage_markets: Piacok kezelése
@@ -892,6 +914,45 @@ hu:
         refunded: Visszatérítve
         remove_user_from_this_order: Vásárló eltávolítása erről a rendelésről
         unfulfilled: Nem teljesített
+        placed_by_guest: Ezt a rendelést vendég vásárló adta le
+        orders_count:
+          one: "%{count} rendelés"
+          other: "%{count} rendelés"
+        repeat_customer_summary_html: Ez egy visszatérő vásárló, aki összesen %{amount} összeget költött %{count} alatt, átlagosan %{average} rendelésenként.
+        avs_responses:
+          a: Az utcacím egyezik, de az 5 és 9 számjegyű irányítószám nem egyezik.
+          b: Az utcacím egyezik, de az irányítószám nincs ellenőrizve.
+          c: Az utcacím és az irányítószám nem egyezik.
+          d: Az utcacím és az irányítószám egyezik.
+          e: Az AVS-adatok érvénytelenek, vagy az AVS nem engedélyezett ehhez a kártyatípushoz.
+          f: A kártyabirtokos neve nem egyezik, de a számlázási irányítószám egyezik.
+          g: A nem U.S. kibocsátó bank nem támogatja az AVS-t.
+          h: A kártyabirtokos neve nem egyezik. Az utcacím és az irányítószám egyezik.
+          i: A cím nincs ellenőrizve.
+          j: A kártyabirtokos neve, a számlázási cím és az irányítószám egyezik.
+          k: A kártyabirtokos neve egyezik, de a számlázási cím és a számlázási irányítószám nem egyezik.
+          l: A kártyabirtokos neve és a számlázási irányítószám egyezik, de a számlázási cím nem egyezik.
+          m: Az utcacím és az irányítószám egyezik.
+          "n": Az utcacím és az irányítószám nem egyezik.
+          o: A kártyabirtokos neve és a számlázási cím egyezik, de a számlázási irányítószám nem egyezik.
+          p: Az irányítószám egyezik, de az utcacím nincs ellenőrizve.
+          q: A kártyabirtokos neve, a számlázási cím és az irányítószám egyezik.
+          r: A rendszer nem érhető el.
+          s: A bank nem támogatja az AVS-t.
+          t: A kártyabirtokos neve nem egyezik, de az utcacím egyezik.
+          u: A címinformáció nem érhető el. Akkor adja vissza, ha az U.S. bank nem támogatja a nem U.S. AVS-t, vagy ha egy U.S. bankban az AVS nem működik megfelelően.
+          v: A kártyabirtokos neve, a számlázási cím és a számlázási irányítószám egyezik.
+          w: Az utcacím nem egyezik, de a 9 számjegyű irányítószám egyezik.
+          x: Az utcacím és a 9 számjegyű irányítószám egyezik.
+          "y": Az utcacím és az 5 számjegyű irányítószám egyezik.
+          z: Az utcacím nem egyezik, de az 5 számjegyű irányítószám egyezik.
+        cvv_responses:
+          m: CVV2 egyezés
+          "n": Nincs CVV2 egyezés
+          p: Nincs feldolgozva
+          s: A kibocsátó jelzi, hogy a CVV2-adatoknak szerepelniük kellene a kártyán, de a kereskedő jelezte, hogy az adatok nem szerepelnek a kártyán
+          u: A kibocsátó nem rendelkezik CVV2-tanúsítvánnyal, vagy a kibocsátó nem adta meg a Visának a CVV2 titkosítási kulcsokat
+          blank: A tranzakció sikertelen volt, mert rossz CVV2-számot adtak meg, vagy nem adtak meg CVV2-számot
       page_builder:
         background_color: Háttérszín
         border_bottom_width: Alsó szegély vastagsága
@@ -941,6 +1002,8 @@ hu:
         schedule: Ütemezés
         scheduled: Az árlista ütemezve
         unschedule: Ütemezés visszavonása
+        page_info: Az árlisták hatékony eszközei az árazási stratégiák kezelésének vásárlói csoportok, termékek vagy egyéb feltételek alapján.
+        learn_more: Tudj meg többet az árlistákról
       product_translations:
         coverage: Fordítás lefedettsége
         locale: Nyelv
@@ -980,6 +1043,7 @@ hu:
           choose_stores: Válassza ki, mely áruházakban legyen elérhető ez a termék
         variants:
           option_types_link: További opciótípusok hozzáadásához lépjen az <a href="%{link}">Opciótípusok</a> oldalra
+        learn_more: Tudj meg többet a termékek kezeléséről
       publishing:
         caption_hidden_after: 'Lekerül ekkor: %{date}'
         caption_live: Most látható a vásárlók számára
@@ -1021,6 +1085,12 @@ hu:
         customer_support_email_help: Ez az e-mail-cím látható az áruháza látogatói számára a lábléc szakaszban
         new_order_notifications_email_help: Ha minden rendelés leadásakor e-mail-értesítést szeretne kapni, adjon meg egy e-mail-címet, amelyre az értesítést küldjük
         send_consumer_transactional_emails_help: Ha nincs bejelölve, a tranzakciós e-mailek, például a rendelés-visszaigazolások és szállítási értesítések nem kerülnek elküldésre a vásárlóknak
+        logo_help: Az admin irányítópulton használatos
+        currencies_managed_by_markets_html: A pénznemeket és a nyelveket mostantól a(z) %{markets_link} kezeli.
+        email_addresses: E-mail-címek
+        mail_from_address_help: Add meg az e-mail-címet, amelyet az áruházadból küldött összes e-mail feladójaként használunk.
+        mailer_logo_help: Ez a logó minden e-mail-értesítésben szerepel, például a rendelés-visszaigazolásban
+        mailer_logo_format_hint: Átlátszó hátterű képeket ajánlunk. Csak a JPEG és PNG formátumok támogatottak.
       store_setup_tasks:
         add_billing_address: Számlázási cím hozzáadása
         add_products: Termékek hozzáadása
@@ -1035,6 +1105,15 @@ hu:
           copy: Az adók beszedéséhez állítsa be az adókulcsait.
           done: Minden készen áll! Az adóit bármikor kezelheti a <a href="%{link}" data-turbo-frame="_top">beállítások</a> oldalon.
           setup: Adókulcsok beállítása
+        add_products_task:
+          done_title: Szép munka, termékeket adtál hozzá az áruházadhoz!
+          done_subtitle: Ne feledd, bármikor hozzáadhatsz továbbiakat!
+          copy: Adj hozzá termékeket az áruházadhoz, akár sajátjaidat, akár hívj meg harmadik féltől származó eladókat, hogy együtt értékesítsetek.
+          import_hint: Termékeket tömegesen is importálhatsz CSV- vagy Excel-fájlból.
+        customer_support_email_task:
+          copy: Szükségünk van az ügyfélszolgálati e-mail-címedre, hogy megjelenítsük a webáruházadban. Ez az e-mail-cím kapcsolattartási pontként szolgál, amelyen keresztül a vásárlóid felvehetik veled a kapcsolatot bármilyen kérdéssel vagy támogatási igénnyel.
+          current_html: 'Az ügyfélszolgálati e-mail-címed: %{email}.'
+          label: Ügyfélszolgálati e-mail-cím
       storefront: Webáruház
       successful: Sikeres
       successfully_reset_digital_links_limit: A letöltési korlátok visszaálltak
@@ -1096,11 +1175,15 @@ hu:
       users:
         filters:
           search_placeholder: Vásárlók keresése e-mail vagy név alapján
+        timeline: Idővonal
       utilities:
         preview: Előnézet
       variants:
         search_results:
           no_variants: Nem találtunk a keresésnek megfelelő variánst :(
+        count_at_location:
+          one: "%{count} a helyszínen"
+          other: "%{count} a helyszínen"
       variants_form:
         add_option:
           empty: Adjon hozzá opciókat, például méret vagy szín
@@ -1151,6 +1234,8 @@ hu:
         successful_deliveries: Sikeres kézbesítések
         test_failed: A teszt webhook küldése sikertelen. Ellenőrizze a végpont konfigurációját.
         test_sent: A teszt webhook elküldve. Az eredményért ellenőrizze a kézbesítéseket.
+        name_placeholder: pl. Webáruház e-mailek, Teljesítési szolgáltatás
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Minden esemény
         new_webhooks_subscriber: Új webhook-feliratkozó
@@ -1160,6 +1245,88 @@ hu:
         subscriptions: Feliratkozások
         time_of_last_event: Utolsó esemény ideje
         webhooks_events: Webhook-események
+      assistant: Asszisztens
+      total_orders: Összes rendelés
+      sign_ups: Regisztrációk
+      previous_page: Előző oldal
+      next_page: Következő oldal
+      no_change: Nincs változás
+      integrations_directory: Integrációs katalógus
+      option_types:
+        presentation_help: Ez az opciótípus megjelenítésére szolgál a webáruházban.
+        name_help_html: Ez belsőleg az opciótípus azonosítására szolgál. <strong>Egyedinek kell lennie.</strong>
+        value_count:
+          one: "%{count} érték"
+          other: "%{count} érték"
+        showing_pagination: "%{from}-%{to} megjelenítése a következőből: %{total}"
+        intro_help: Az opciók bizonyos attribútumok csoportosítására szolgálnak. Létrehozhatsz például egy „ing mérete” nevű opciót, majd ehhez az opcióhoz létrehozhatsz egy „kicsi” és „közepes” nevű opcióértéket.
+        learn_more: Tudj meg többet az opciókról
+      taxons:
+        square_image_help: A kezdőlap kiemelt képeként használatos.
+        seo:
+          placeholder: Adj hozzá címet és leírást, hogy lásd, hogyan jelenhet meg ez a taxon egy keresőmotor találati listájában
+      promotions:
+        name_help: A vásárlók ezt látják a kosarukban és a fizetésnél.
+        next_step_info: A következő lépésben műveleteket és szabályokat adhatsz hozzá a promócióhoz
+        coupon_code_placeholder: A kuponkódod
+        code_prefix_placeholder: Kupon előtag (opcionális)
+        code_prefix_example_html: pl. %{example}
+        number_of_codes_placeholder: Kódok száma
+        number_of_codes_help: Hány kódot szeretnél létrehozni.
+        add_more_codes_help: További kódok hozzáadásához egyszerűen növeld ezt a számot
+        usage_limit_help: Hagyd üresen ezt a mezőt a korlátlan használathoz.
+        expires_at_help: 'Hagyd üresen ezt a mezőt, ha nincs lejárat. Időzóna: %{zone}'
+        kind:
+          one_code_label: Egy kód minden vásárló számára
+          one_code_help: Korlátozhatod, hányszor használható fel ez a kód.
+          multi_codes_label: Egyedi kódok létrehozása
+          multi_codes_help: Ezeket a kódokat automatikusan hozzuk létre, és CSV-fájlként letölthetők. A kódok egyediek, és csak egyszer használhatók fel.
+          automatic_help: Ez a promóció automatikusan alkalmazásra kerül minden jogosult rendelésre.
+      shipping_methods:
+        checkout_info: A szállítási módok olyan lehetőségek, amelyeket a vásárló a fizetéshez érve lát; ezek a termékeid kiszállításához használt fuvarozók és szolgáltatások.
+        name_help: Ez a vásárlóknak jelenik meg
+        admin_name_help: Ez az adminisztrátoroknak jelenik meg
+        estimated_transit_business_days_help: Ez a becsült munkanapok száma, amennyi idő alatt a csomag megérkezik a vásárló címére. A fizetési oldalon jelenik meg.
+        tracking_url_token_help: a nyomon követési számra lesz cserélve.
+      zones:
+        info: A zónák földrajzi csoportosítások; államok vagy országok gyűjteményeit jelentik.
+      shipments:
+        stock_location_option: "%{name} (%{count} készleten)"
+      payment_methods:
+        name_help: Ez a név a fizetési mód azonosítására szolgál a webáruházban
+        available_payment_methods: Elérhető fizetési módok
+        find_more_payment_methods_html: 'Találj további fizetési módokat itt: %{integrations_link}'
+      admin_users:
+        audit_log_enterprise_notice: Az auditnapló a Spree Enterprise ajánlat része.
+        upgrade_to_enterprise: Frissítés Spree Enterprise-ra
+      invitations:
+        invited_you_to_join_html: "%{inviter} meghívott, hogy csatlakozz ide: %{resource}"
+        expires_at: Lejár
+        email_placeholder: pl. steve@apple.com
+      user_sessions:
+        welcome_back: Üdv újra
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Köszönjük, hogy a Spree Community Editiont használod! Fontold meg a frissítést az Enterprise Editionra, hogy hozzáférj minden funkcióhoz és támogatáshoz.
+        upgrade: Frissítés
+      metafields:
+        none_configured_for: 'Nincs metamező-meghatározás beállítva ehhez: %{resource}.'
+      table:
+        operators:
+          eq: egyenlő
+          not_eq: nem egyenlő
+          cont: tartalmazza
+          not_cont: nem tartalmazza
+          start: ezzel kezdődik
+          end: erre végződik
+          gt: nagyobb mint
+          gteq: nagyobb vagy egyenlő
+          lt: kisebb mint
+          lteq: kisebb vagy egyenlő
+          in: egyike a következőknek
+          not_in: egyike sem a következőknek
+          'null': üres
+          not_null: nem üres
     administration: Adminisztráció
     advertise:
     agree_to_privacy_policy: Elfogadom az adatvédelmi irányelveket
@@ -1489,6 +1656,7 @@ hu:
         gte: greater than or equal to
         lt:
         lte:
+      max_amount_help: Hagyd üresen ezt a mezőt, ha nem akarod korlátozni a maximális összeget.
     items_cannot_be_shipped: We are unable to ship the selected items to your shipping address. Please choose another shipping address.
     items_in_rmas:
     items_reimbursed:
@@ -2796,6 +2964,8 @@ hu:
           method_unavailable: Ez a fizetési mód nem érhető el ehhez a rendeléshez.
           session_required: Ez a fizetési mód fizetési munkamenetet igényel. Használja helyette a fizetési munkamenetek végpontot.
       wrong_shipment_target: a célszállítmány azonos az eredeti szállítmánnyal
+    copy_number: Szám másolása
+    remaining: Hátralévő
   action_text:
     video_embed:
       not_found: A megadott URL alapján nem ágyazható be videó

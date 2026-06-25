@@ -795,6 +795,17 @@ ar:
         top_products: أفضل المنتجات
         view_report: عرض التقرير
         whats_happening_on_html: إليك ما يحدث اليوم على <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} متاح."
+          current_version_html: إصدارك الحالي هو %{version}.
+          view_release_notes: عرض ملاحظات الإصدار
+        visits:
+          referrers_title: من أين يأتي الزوار؟
+          landing_pages_title: أهم الصفحات المقصودة
+          locations_title: مواقع الزوار
+          devices_title: أجهزة الزائر
+          no_data: لا توجد بيانات
+          no_data_for_period: لا توجد بيانات متاحة لهذه الفترة.
       datetime_field_timezone_help: 'المنطقة الزمنية: %{zone}'
       digital_shipment_fulfillment_note: سيُعلَّم هذا الشحن كمُنجَز بمجرد قيام المستخدم بتنزيل المنتج الرقمي
       display_on_options:
@@ -821,6 +832,7 @@ ar:
         codes_count: عدد الأكواد
         new_gift_card_batch: دفعة بطاقات هدايا جديدة
         prefix: البادئة
+        expires_at_help: ستنتهي صلاحية بطاقات الهدايا بعد هذا التاريخ.
       gift_cards:
         active: نشط
         all_statuses: جميع الحالات
@@ -837,9 +849,19 @@ ar:
         mapping_required: هذا الحقل مطلوب
         please_map_all_required_fields: يرجى ربط جميع الحقول المطلوبة للمتابعة.
         waiting_for_file_to_be_processed: في انتظار معالجة الملف...
+        steps:
+          map_fields: 1. تعيين الحقول
+          process_rows: 2. معالجة الصفوف
+          complete: 3. اكتمال
+        rows_processed: تمت معالجة %{processed} / %{total} صفوف
+        please_select_a_column: يرجى تحديد عمود
+        json: JSON
+        schema: المخطط
       integrations:
         invalid_integration_type: هذا التكامل غير مسموح
         page_subtitle: اربط متجرك بخدمات خارجية لتحسين تجربة العملاء.
+        find_more_html: اعثر على المزيد من التكاملات في %{integrations_link}
+        none_installed_html: لم يتم تثبيت أي تكاملات بعد. اعثر على التكاملات في %{integrations_link}
       json_preview:
         no_api_response: لم يُعثَر على استجابة API لهذا المورد
       manage_markets: إدارة الأسواق
@@ -894,6 +916,45 @@ ar:
         refunded: مُسترد
         remove_user_from_this_order: إزالة العميل من هذا الطلب
         unfulfilled: غير مُنجَز
+        placed_by_guest: تم إنشاء هذا الطلب بواسطة عميل زائر
+        orders_count:
+          one: "%{count} طلب"
+          other: "%{count} طلبات"
+        repeat_customer_summary_html: هذا عميل متكرر أنفق ما مجموعه %{amount} عبر %{count}، بمتوسط %{average} لكل طلب.
+        avs_responses:
+          a: عنوان الشارع متطابق، لكن الرمز البريدي المكوّن من 5 أرقام و9 أرقام غير متطابق.
+          b: عنوان الشارع متطابق، لكن لم يتم التحقق من الرمز البريدي.
+          c: عنوان الشارع والرمز البريدي غير متطابقين.
+          d: عنوان الشارع والرمز البريدي متطابقان.
+          e: بيانات AVS غير صالحة أو AVS غير مسموح به لهذا النوع من البطاقات.
+          f: اسم حامل البطاقة غير متطابق، لكن الرمز البريدي للفوترة متطابق.
+          g: البنك المُصدِر خارج U.S. لا يدعم AVS.
+          h: اسم حامل البطاقة غير متطابق. عنوان الشارع والرمز البريدي متطابقان.
+          i: لم يتم التحقق من العنوان.
+          j: اسم حامل البطاقة وعنوان الفوترة والرمز البريدي متطابقة.
+          k: اسم حامل البطاقة متطابق لكن عنوان الفوترة والرمز البريدي للفوترة غير متطابقين.
+          l: اسم حامل البطاقة والرمز البريدي للفوترة متطابقان، لكن عنوان الفوترة غير متطابق.
+          m: عنوان الشارع والرمز البريدي متطابقان.
+          "n": عنوان الشارع والرمز البريدي غير متطابقين.
+          o: اسم حامل البطاقة وعنوان الفوترة متطابقان، لكن الرمز البريدي للفوترة غير متطابق.
+          p: الرمز البريدي متطابق، لكن لم يتم التحقق من عنوان الشارع.
+          q: اسم حامل البطاقة وعنوان الفوترة والرمز البريدي متطابقة.
+          r: النظام غير متاح.
+          s: البنك لا يدعم AVS.
+          t: اسم حامل البطاقة غير متطابق، لكن عنوان الشارع متطابق.
+          u: معلومات العنوان غير متاحة. تُرجَع إذا كان البنك في U.S. لا يدعم AVS خارج U.S. أو إذا كان AVS في بنك U.S. لا يعمل بشكل صحيح.
+          v: اسم حامل البطاقة وعنوان الفوترة والرمز البريدي للفوترة متطابقة.
+          w: عنوان الشارع غير متطابق، لكن الرمز البريدي المكوّن من 9 أرقام متطابق.
+          x: عنوان الشارع والرمز البريدي المكوّن من 9 أرقام متطابقان.
+          "y": عنوان الشارع والرمز البريدي المكوّن من 5 أرقام متطابقان.
+          z: عنوان الشارع غير متطابق، لكن الرمز البريدي المكوّن من 5 أرقام متطابق.
+        cvv_responses:
+          m: تطابق CVV2
+          "n": عدم تطابق CVV2
+          p: لم تتم المعالجة
+          s: يشير المُصدِر إلى أن بيانات CVV2 يجب أن تكون موجودة على البطاقة، لكن التاجر أشار إلى أن البيانات غير موجودة على البطاقة
+          u: لم يعتمد المُصدِر CVV2 أو لم يزوّد المُصدِر Visa بمفاتيح تشفير CVV2
+          blank: فشلت المعاملة لأنه تم إدخال رقم CVV2 خاطئ أو لم يتم إدخال رقم CVV2
       page_builder:
         background_color: لون الخلفية
         border_bottom_width: عرض الحد السفلي
@@ -943,6 +1004,8 @@ ar:
         schedule: جدولة
         scheduled: تمت جدولة قائمة الأسعار
         unschedule: إلغاء الجدولة
+        page_info: قوائم الأسعار أداة قوية لإدارة استراتيجيات التسعير بناءً على مجموعات العملاء أو المنتجات أو معايير أخرى.
+        learn_more: تعرّف على المزيد حول قوائم الأسعار
       product_translations:
         coverage: تغطية الترجمة
         locale: اللغة
@@ -982,6 +1045,7 @@ ar:
           choose_stores: اختر المتاجر التي يجب أن يكون هذا المنتج متاحاً فيها
         variants:
           option_types_link: لإضافة المزيد من أنواع الخيارات يرجى الانتقال إلى <a href="%{link}">أنواع الخيارات</a>
+        learn_more: تعرّف على المزيد حول إدارة المنتجات
       publishing:
         caption_hidden_after: يُخفى في %{date}
         caption_live: مرئي للعملاء الآن
@@ -1023,6 +1087,12 @@ ar:
         customer_support_email_help: هذا البريد الإلكتروني مرئي لزوار متجرك في قسم التذييل
         new_order_notifications_email_help: إذا أردت تلقي إشعار بريد إلكتروني في كل مرة يقدّم فيها أحد طلباً، يرجى تقديم عنوان بريد إلكتروني لإرسال هذا الإشعار إليه
         send_consumer_transactional_emails_help: عند إلغاء التحديد، لن تُرسَل رسائل المعاملات مثل تأكيدات الطلبات وإشعارات الشحن إلى العملاء
+        logo_help: يُستخدم في لوحة تحكم المسؤول
+        currencies_managed_by_markets_html: تتم الآن إدارة العملات واللغات بواسطة %{markets_link}.
+        email_addresses: عناوين البريد الإلكتروني
+        mail_from_address_help: يرجى تقديم عنوان البريد الإلكتروني الذي سيُستخدم كمُرسِل لجميع رسائل البريد الإلكتروني المرسلة من متجرك.
+        mailer_logo_help: يتم تضمين هذا الشعار في جميع إشعارات البريد الإلكتروني مثل تأكيد الطلب
+        mailer_logo_format_hint: نوصي بالصور ذات الخلفية الشفافة. يتم دعم تنسيقي JPEG وPNG فقط.
       store_setup_tasks:
         add_billing_address: إضافة عنوان الفوترة
         add_products: إضافة منتجات
@@ -1037,6 +1107,15 @@ ar:
           copy: لتحصيل الضرائب، يرجى إعداد معدلات الضريبة.
           done: أنت جاهز! يمكنك دائماً إدارة الضرائب في صفحة <a href="%{link}" data-turbo-frame="_top">الإعدادات</a>.
           setup: إعداد معدلات الضريبة
+        add_products_task:
+          done_title: أحسنت، لقد أضفت منتجات إلى متجرك!
+          done_subtitle: تذكّر أنه يمكنك دائمًا إضافة المزيد!
+          copy: أضف منتجات إلى متجرك، سواء كانت منتجاتك الخاصة أو ادعُ بائعين خارجيين للبيع معًا.
+          import_hint: يمكنك أيضًا استيراد المنتجات بكميات كبيرة من ملف CSV أو Excel.
+        customer_support_email_task:
+          copy: نحتاج إلى بريد دعم العملاء الخاص بك لعرضه على واجهة متجرك. سيعمل هذا البريد كنقطة اتصال لعملائك للتواصل معك لأي استفسارات أو دعم.
+          current_html: بريد دعم العملاء الخاص بك هو %{email}.
+          label: بريد دعم العملاء
       storefront: المتجر
       successful: ناجح
       successfully_reset_digital_links_limit: تمت إعادة تعيين حدود التنزيل
@@ -1098,11 +1177,15 @@ ar:
       users:
         filters:
           search_placeholder: البحث عن العملاء بالبريد الإلكتروني أو الاسم
+        timeline: الجدول الزمني
       utilities:
         preview: معاينة
       variants:
         search_results:
           no_variants: لم نجد أي متغيرات تطابق بحثك :(
+        count_at_location:
+          one: "%{count} في الموقع"
+          other: "%{count} في الموقع"
       variants_form:
         add_option:
           empty: أضف خيارات مثل الحجم أو اللون
@@ -1153,6 +1236,8 @@ ar:
         successful_deliveries: عمليات التسليم الناجحة
         test_failed: فشل إرسال Webhook الاختباري. يرجى التحقق من إعدادات نقطة النهاية.
         test_sent: أُرسِل Webhook الاختباري. راجع عمليات التسليم للنتيجة.
+        name_placeholder: 'مثال: رسائل واجهة المتجر، خدمة التنفيذ'
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: جميع الأحداث
         new_webhooks_subscriber: مشترك Webhooks جديد
@@ -1162,6 +1247,88 @@ ar:
         subscriptions: الاشتراكات
         time_of_last_event: وقت آخر حدث
         webhooks_events: أحداث Webhooks
+      assistant: المساعد
+      total_orders: إجمالي الطلبات
+      sign_ups: التسجيلات
+      previous_page: الصفحة السابقة
+      next_page: الصفحة التالية
+      no_change: لا تغيير
+      integrations_directory: دليل التكاملات
+      option_types:
+        presentation_help: يُستخدم هذا لعرض نوع الخيار في واجهة المتجر.
+        name_help_html: يُستخدم هذا داخليًا لتحديد نوع الخيار. <strong>يجب أن يكون فريدًا.</strong>
+        value_count:
+          one: "%{count} قيمة"
+          other: "%{count} قيم"
+        showing_pagination: عرض %{from}-%{to} من %{total}
+        intro_help: تُستخدم الخيارات لتجميع سمات معينة. على سبيل المثال، يمكنك إنشاء خيار باسم "مقاس القميص" ثم إنشاء قيمة خيار باسم "صغير" و"متوسط" لهذا الخيار.
+        learn_more: تعرّف على المزيد حول الخيارات
+      taxons:
+        square_image_help: يُستخدم للصورة المميزة على الصفحة الرئيسية.
+        seo:
+          placeholder: أضف عنوانًا ووصفًا لمعرفة كيف قد يظهر هذا التصنيف في قائمة محرك البحث
+      promotions:
+        name_help: سيرى العملاء هذا في سلتهم وعند الدفع.
+        next_step_info: في الخطوة التالية ستتمكن من إضافة إجراءات وقواعد إلى عرضك الترويجي
+        coupon_code_placeholder: رمز القسيمة الخاص بك
+        code_prefix_placeholder: بادئة القسيمة (اختياري)
+        code_prefix_example_html: 'مثال: %{example}'
+        number_of_codes_placeholder: عدد الرموز
+        number_of_codes_help: عدد الرموز التي تريد إنشاءها.
+        add_more_codes_help: لإضافة المزيد من الرموز ما عليك سوى زيادة هذا الرقم
+        usage_limit_help: اترك هذا الحقل فارغًا للاستخدام غير المحدود.
+        expires_at_help: 'اترك هذا الحقل فارغًا لعدم وجود انتهاء صلاحية. المنطقة الزمنية: %{zone}'
+        kind:
+          one_code_label: رمز واحد لجميع العملاء
+          one_code_help: يمكنك تحديد عدد المرات التي يمكن فيها استخدام هذا الرمز.
+          multi_codes_label: إنشاء رموز فريدة
+          multi_codes_help: يتم إنشاء هذه الرموز تلقائيًا ويمكن تنزيلها كملف CSV. الرموز فريدة ويمكن استخدامها مرة واحدة فقط.
+          automatic_help: سيتم تطبيق هذا العرض الترويجي تلقائيًا على جميع الطلبات المؤهلة.
+      shipping_methods:
+        checkout_info: طرق الشحن هي خيارات يراها العميل عند الوصول إلى صفحة الدفع، وهي شركات النقل والخدمات المستخدمة لإرسال منتجاتك.
+        name_help: سيتم عرض هذا للعملاء
+        admin_name_help: سيتم عرض هذا للمسؤولين
+        estimated_transit_business_days_help: هذا هو العدد التقديري لأيام العمل التي سيستغرقها وصول الطرد إلى عنوان العميل. سيتم عرضه على صفحة الدفع.
+        tracking_url_token_help: سيتم استبداله برقم التتبع.
+      zones:
+        info: المناطق هي تجميعات جغرافية، وهي تمثل مجموعات من الولايات أو الدول.
+      shipments:
+        stock_location_option: "%{name} (%{count} متوفر)"
+      payment_methods:
+        name_help: سيتم استخدام هذا الاسم لتحديد طريقة الدفع في واجهة المتجر
+        available_payment_methods: طرق الدفع المتاحة
+        find_more_payment_methods_html: اعثر على المزيد من طرق الدفع في %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: سجل التدقيق جزء من عرض Spree Enterprise.
+        upgrade_to_enterprise: الترقية إلى Spree Enterprise
+      invitations:
+        invited_you_to_join_html: دعاك %{inviter} للانضمام إلى %{resource}
+        expires_at: تنتهي الصلاحية في
+        email_placeholder: 'مثال: steve@apple.com'
+      user_sessions:
+        welcome_back: مرحبًا بعودتك
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: شكرًا لاستخدامك Spree Community Edition! يرجى التفكير في الترقية إلى Enterprise Edition للوصول إلى جميع الميزات والدعم.
+        upgrade: ترقية
+      metafields:
+        none_configured_for: لم يتم تكوين أي تعريفات حقول وصفية لـ %{resource}.
+      table:
+        operators:
+          eq: يساوي
+          not_eq: لا يساوي
+          cont: يحتوي على
+          not_cont: لا يحتوي على
+          start: يبدأ بـ
+          end: ينتهي بـ
+          gt: أكبر من
+          gteq: أكبر من أو يساوي
+          lt: أصغر من
+          lteq: أصغر من أو يساوي
+          in: أحد القيم التالية
+          not_in: ليس أيًا من القيم التالية
+          'null': فارغ
+          not_null: غير فارغ
     administration: " الإدارة "
     advertise:
     agree_to_privacy_policy: " أوافق على سياسة الخصوصية "
@@ -1494,6 +1661,7 @@ ar:
         gte: " أكبر من أو يساوي "
         lt: " أقل من "
         lte: " أقل من أو يساوي "
+      max_amount_help: اترك هذا الحقل فارغًا لعدم تحديد الحد الأقصى للمبلغ.
     items_cannot_be_shipped: " يتعذر علينا شحن العناصر المحددة إلى عنوان الشحن الخاص بك. يرجى اختيار عنوان شحن آخر. "
     items_in_rmas: عناصر في تصاريح الإرجاع
     items_reimbursed: عناصر مُستردة
@@ -2810,6 +2978,8 @@ ar:
           method_unavailable: طريقة الدفع هذه غير متاحة لهذا الطلب.
           session_required: تتطلب طريقة الدفع هذه جلسة دفع. استخدم نقطة نهاية جلسات الدفع بدلًا من ذلك.
       wrong_shipment_target: الشحنة المستهدفة هي نفس الشحنة الأصلية
+    copy_number: نسخ الرقم
+    remaining: المتبقي
   action_text:
     video_embed:
       not_found: لا يمكن تضمين فيديو باستخدام عنوان URL المُقدَّم

@@ -791,6 +791,17 @@ nl:
         top_products: Topproducten
         view_report: Rapport bekijken
         whats_happening_on_html: Dit gebeurt er vandaag op <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} is beschikbaar."
+          current_version_html: Uw huidige versie is %{version}.
+          view_release_notes: Releaseopmerkingen bekijken
+        visits:
+          referrers_title: Waar komen bezoekers vandaan?
+          landing_pages_title: Beste landingspagina's
+          locations_title: Bezoekerslocaties
+          devices_title: Apparaten van bezoekers
+          no_data: Geen gegevens
+          no_data_for_period: Geen gegevens beschikbaar voor deze periode.
       datetime_field_timezone_help: 'Tijdzone: %{zone}'
       digital_shipment_fulfillment_note: Deze zending wordt gemarkeerd als afgehandeld zodra de gebruiker het digitale product downloadt
       display_on_options:
@@ -817,6 +828,7 @@ nl:
         codes_count: Aantal codes
         new_gift_card_batch: Nieuwe cadeaukaartenbatch
         prefix: Voorvoegsel
+        expires_at_help: Cadeaubonnen verlopen na deze datum.
       gift_cards:
         active: Actief
         all_statuses: Alle statussen
@@ -833,9 +845,19 @@ nl:
         mapping_required: Dit veld is vereist
         please_map_all_required_fields: Koppel alle vereiste velden om door te gaan.
         waiting_for_file_to_be_processed: Wachten tot het bestand is verwerkt...
+        steps:
+          map_fields: 1. Velden toewijzen
+          process_rows: 2. Rijen verwerken
+          complete: 3. Voltooien
+        rows_processed: "%{processed} / %{total} rijen verwerkt"
+        please_select_a_column: Selecteer een kolom
+        json: JSON
+        schema: Schema
       integrations:
         invalid_integration_type: Deze integratie is niet toegestaan
         page_subtitle: Verbind je winkel met externe diensten om de klantervaring te verbeteren.
+        find_more_html: Vind meer integraties in %{integrations_link}
+        none_installed_html: Er zijn nog geen integraties geïnstalleerd. Vind integraties in %{integrations_link}
       json_preview:
         no_api_response: Geen API-respons gevonden voor deze resource
       manage_markets: Markten beheren
@@ -890,6 +912,45 @@ nl:
         refunded: Terugbetaald
         remove_user_from_this_order: Klant uit deze order verwijderen
         unfulfilled: Niet afgehandeld
+        placed_by_guest: Deze bestelling is geplaatst door een gastklant
+        orders_count:
+          one: "%{count} bestelling"
+          other: "%{count} bestellingen"
+        repeat_customer_summary_html: Dit is een terugkerende klant die in totaal %{amount} heeft besteed over %{count}, met een gemiddelde van %{average} per bestelling.
+        avs_responses:
+          a: Straatadres komt overeen, maar de 5-cijferige en 9-cijferige postcode komen niet overeen.
+          b: Straatadres komt overeen, maar postcode is niet geverifieerd.
+          c: Straatadres en postcode komen niet overeen.
+          d: Straatadres en postcode komen overeen.
+          e: AVS-gegevens zijn ongeldig of AVS is niet toegestaan voor dit kaarttype.
+          f: Naam van de kaarthouder komt niet overeen, maar de factuurpostcode komt overeen.
+          g: Uitgevende bank buiten de U.S. ondersteunt AVS niet.
+          h: Naam van de kaarthouder komt niet overeen. Straatadres en postcode komen overeen.
+          i: Adres niet geverifieerd.
+          j: Naam van de kaarthouder, factuuradres en postcode komen overeen.
+          k: Naam van de kaarthouder komt overeen, maar factuuradres en factuurpostcode komen niet overeen.
+          l: Naam van de kaarthouder en factuurpostcode komen overeen, maar het factuuradres komt niet overeen.
+          m: Straatadres en postcode komen overeen.
+          "n": Straatadres en postcode komen niet overeen.
+          o: Naam van de kaarthouder en factuuradres komen overeen, maar de factuurpostcode komt niet overeen.
+          p: Postcode komt overeen, maar straatadres is niet geverifieerd.
+          q: Naam van de kaarthouder, factuuradres en postcode komen overeen.
+          r: Systeem niet beschikbaar.
+          s: Bank ondersteunt AVS niet.
+          t: Naam van de kaarthouder komt niet overeen, maar het straatadres komt overeen.
+          u: Adresgegevens niet beschikbaar. Wordt geretourneerd als de U.S.-bank geen AVS buiten de U.S. ondersteunt of als de AVS in een U.S.-bank niet goed functioneert.
+          v: Naam van de kaarthouder, factuuradres en factuurpostcode komen overeen.
+          w: Straatadres komt niet overeen, maar de 9-cijferige postcode komt overeen.
+          x: Straatadres en 9-cijferige postcode komen overeen.
+          "y": Straatadres en 5-cijferige postcode komen overeen.
+          z: Straatadres komt niet overeen, maar de 5-cijferige postcode komt overeen.
+        cvv_responses:
+          m: CVV2 komt overeen
+          "n": CVV2 komt niet overeen
+          p: Niet verwerkt
+          s: De uitgever geeft aan dat CVV2-gegevens op de kaart aanwezig zouden moeten zijn, maar de verkoper heeft aangegeven dat de gegevens niet op de kaart aanwezig zijn
+          u: De uitgever is niet gecertificeerd voor CVV2 of de uitgever heeft Visa de CVV2-versleutelingssleutels niet verstrekt
+          blank: Transactie mislukt omdat een verkeerd CVV2-nummer is ingevoerd of er geen CVV2-nummer is ingevoerd
       page_builder:
         background_color: Achtergrondkleur
         border_bottom_width: Breedte onderrand
@@ -939,6 +1000,8 @@ nl:
         schedule: Inplannen
         scheduled: Prijslijst is ingepland
         unschedule: Planning verwijderen
+        page_info: Prijslijsten zijn een krachtig hulpmiddel voor het beheren van prijsstrategieën op basis van klantgroepen, producten of andere criteria.
+        learn_more: Meer informatie over prijslijsten
       product_translations:
         coverage: Vertaaldekking
         locale: Taal
@@ -978,6 +1041,7 @@ nl:
           choose_stores: Kies in welke winkels dit product beschikbaar moet zijn
         variants:
           option_types_link: Om meer optietypes toe te voegen, ga je naar <a href="%{link}">Optietypes</a>
+        learn_more: Meer informatie over het beheren van producten
       publishing:
         caption_hidden_after: Verdwijnt op %{date}
         caption_live: Nu zichtbaar voor klanten
@@ -1019,6 +1083,12 @@ nl:
         customer_support_email_help: Dit e-mailadres is zichtbaar voor je winkelbezoekers in de footer
         new_order_notifications_email_help: Als je een e-mailmelding wilt ontvangen telkens wanneer iemand een order plaatst, geef dan een e-mailadres op waarnaar die melding moet worden verzonden
         send_consumer_transactional_emails_help: Wanneer dit is uitgeschakeld, worden transactionele e-mails zoals orderbevestigingen en verzendmeldingen niet naar klanten verzonden
+        logo_help: Gebruikt in het beheerdersdashboard
+        currencies_managed_by_markets_html: Valuta's en talen worden nu beheerd door %{markets_link}.
+        email_addresses: E-mailadressen
+        mail_from_address_help: Geef het e-mailadres op dat wordt gebruikt als afzender van alle e-mails die vanuit uw winkel worden verzonden.
+        mailer_logo_help: Dit logo wordt opgenomen in alle e-mailmeldingen, zoals de orderbevestiging
+        mailer_logo_format_hint: We raden afbeeldingen met een transparante achtergrond aan. Alleen JPEG- en PNG-formaten worden ondersteund.
       store_setup_tasks:
         add_billing_address: Factuuradres toevoegen
         add_products: Producten toevoegen
@@ -1033,6 +1103,15 @@ nl:
           copy: Om belastingen te innen, moet je je belastingtarieven instellen.
           done: Je bent helemaal klaar! Je kunt je belastingen altijd beheren op de <a href="%{link}" data-turbo-frame="_top">instellingen</a>pagina.
           setup: Belastingtarieven instellen
+        add_products_task:
+          done_title: Goed gedaan, u hebt producten aan uw winkel toegevoegd!
+          done_subtitle: Onthoud dat u altijd meer kunt toevoegen!
+          copy: Voeg producten toe aan uw winkel, hetzij uw eigen producten, hetzij nodig externe leveranciers uit om samen te verkopen.
+          import_hint: U kunt ook producten in bulk importeren vanuit een CSV- of Excel-bestand.
+        customer_support_email_task:
+          copy: We hebben uw e-mailadres voor klantenondersteuning nodig om dit op uw storefront weer te geven. Dit e-mailadres fungeert als contactpunt voor uw klanten om contact met u op te nemen voor vragen of ondersteuning.
+          current_html: Uw e-mailadres voor klantenondersteuning is %{email}.
+          label: E-mailadres voor klantenondersteuning
       storefront: Storefront
       successful: Geslaagd
       successfully_reset_digital_links_limit: Downloadlimieten zijn gereset
@@ -1094,11 +1173,15 @@ nl:
       users:
         filters:
           search_placeholder: Zoek klanten op e-mail of naam
+        timeline: Tijdlijn
       utilities:
         preview: Voorbeeld
       variants:
         search_results:
           no_variants: We konden geen varianten vinden die overeenkomen met je zoekopdracht :(
+        count_at_location:
+          one: "%{count} op locatie"
+          other: "%{count} op locatie"
       variants_form:
         add_option:
           empty: Voeg opties toe zoals maat of kleur
@@ -1149,6 +1232,8 @@ nl:
         successful_deliveries: Geslaagde afleveringen
         test_failed: Verzenden van test-webhook mislukt. Controleer de endpointconfiguratie.
         test_sent: Test-webhook verzonden. Controleer de afleveringen voor het resultaat.
+        name_placeholder: bijv. Storefront-e-mails, Fulfilmentdienst
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Alle gebeurtenissen
         new_webhooks_subscriber: Nieuwe webhook-abonnee
@@ -1158,6 +1243,88 @@ nl:
         subscriptions: Abonnementen
         time_of_last_event: Tijd van laatste gebeurtenis
         webhooks_events: Webhook-gebeurtenissen
+      assistant: Assistent
+      total_orders: Totaal aantal bestellingen
+      sign_ups: Aanmeldingen
+      previous_page: Vorige pagina
+      next_page: Volgende pagina
+      no_change: Geen wijziging
+      integrations_directory: Integratiemap
+      option_types:
+        presentation_help: Dit wordt gebruikt om het optietype in de storefront weer te geven.
+        name_help_html: Dit wordt intern gebruikt om het optietype te identificeren. <strong>Het moet uniek zijn.</strong>
+        value_count:
+          one: "%{count} waarde"
+          other: "%{count} waarden"
+        showing_pagination: "%{from}-%{to} van %{total} weergegeven"
+        intro_help: Opties worden gebruikt om bepaalde kenmerken te groeperen. U kunt bijvoorbeeld een optie met de naam "shirtmaat" maken en vervolgens optiewaarden met de naam "klein" en "medium" voor deze optie aanmaken.
+        learn_more: Meer informatie over opties
+      taxons:
+        square_image_help: Gebruikt voor de uitgelichte afbeelding op de homepage.
+        seo:
+          placeholder: Voeg een titel en beschrijving toe om te zien hoe dit taxon kan verschijnen in een zoekmachinevermelding
+      promotions:
+        name_help: Klanten zien dit in hun winkelwagen en bij het afrekenen.
+        next_step_info: In de volgende stap kunt u acties en regels aan uw promotie toevoegen
+        coupon_code_placeholder: Uw kortingscode
+        code_prefix_placeholder: Couponvoorvoegsel (optioneel)
+        code_prefix_example_html: bijv. %{example}
+        number_of_codes_placeholder: Aantal codes
+        number_of_codes_help: Hoeveel codes u wilt genereren.
+        add_more_codes_help: Om meer codes toe te voegen, verhoogt u gewoon dit aantal
+        usage_limit_help: Laat dit veld leeg voor onbeperkt gebruik.
+        expires_at_help: 'Laat dit veld leeg voor geen vervaldatum. Tijdzone: %{zone}'
+        kind:
+          one_code_label: Eén code voor alle klanten
+          one_code_help: U kunt het aantal keren dat deze code kan worden gebruikt beperken.
+          multi_codes_label: Unieke codes genereren
+          multi_codes_help: Deze codes worden automatisch gegenereerd en kunnen worden gedownload als een CSV-bestand. Codes zijn uniek en kunnen slechts eenmaal worden gebruikt.
+          automatic_help: Deze promotie wordt automatisch toegepast op alle in aanmerking komende bestellingen.
+      shipping_methods:
+        checkout_info: Verzendmethoden zijn opties die de klant ziet wanneer hij bij het afrekenen komt; het zijn de vervoerders en diensten die worden gebruikt om uw producten te verzenden.
+        name_help: Dit wordt aan klanten getoond
+        admin_name_help: Dit wordt aan beheerders getoond
+        estimated_transit_business_days_help: Dit is het geschatte aantal werkdagen dat het pakket nodig heeft om bij het adres van de klant aan te komen. Het wordt weergegeven op de afrekenpagina.
+        tracking_url_token_help: wordt vervangen door het trackingnummer.
+      zones:
+        info: Zones zijn geografische groeperingen; ze vertegenwoordigen verzamelingen van staten of landen.
+      shipments:
+        stock_location_option: "%{name} (%{count} op voorraad)"
+      payment_methods:
+        name_help: Deze naam wordt gebruikt om de betaalmethode in de storefront te identificeren
+        available_payment_methods: Beschikbare betaalmethoden
+        find_more_payment_methods_html: Vind meer betaalmethoden in %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Het auditlogboek maakt deel uit van het Spree Enterprise-aanbod.
+        upgrade_to_enterprise: Upgraden naar Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} heeft u uitgenodigd om lid te worden van %{resource}"
+        expires_at: Verloopt op
+        email_placeholder: bijv. steve@apple.com
+      user_sessions:
+        welcome_back: Welkom terug
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Bedankt voor het gebruik van Spree Community Edition! Overweeg om te upgraden naar Enterprise Edition voor toegang tot alle functies en ondersteuning.
+        upgrade: Upgraden
+      metafields:
+        none_configured_for: Geen metaveld-definities geconfigureerd voor %{resource}.
+      table:
+        operators:
+          eq: is gelijk aan
+          not_eq: is niet gelijk aan
+          cont: bevat
+          not_cont: bevat niet
+          start: begint met
+          end: eindigt met
+          gt: groter dan
+          gteq: groter dan of gelijk aan
+          lt: kleiner dan
+          lteq: kleiner dan of gelijk aan
+          in: is een van
+          not_in: is geen van
+          'null': is leeg
+          not_null: is niet leeg
     administration: Administratie
     advertise: Adverteren
     agree_to_privacy_policy: Akkoord met privacy beleid
@@ -1488,6 +1655,7 @@ nl:
         gte: groter dan of gelijk aan
         lt: minder dan
         lte: minder dan of gelijk aan
+      max_amount_help: Laat dit veld leeg om het maximumbedrag niet te beperken.
     items_cannot_be_shipped: Items kunnen niet worden verstuurd
     items_in_rmas: Items in RMA
     items_reimbursed: Items vergoed
@@ -2797,6 +2965,8 @@ nl:
           method_unavailable: Deze betaalmethode is niet beschikbaar voor deze bestelling.
           session_required: Deze betaalmethode vereist een betaalsessie. Gebruik in plaats daarvan het endpoint voor betaalsessies.
       wrong_shipment_target: doelzending is dezelfde als de oorspronkelijke zending
+    copy_number: Nummer kopiëren
+    remaining: Resterend
   action_text:
     video_embed:
       not_found: Kan geen video insluiten met de opgegeven URL

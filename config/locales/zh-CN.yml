@@ -798,6 +798,17 @@ zh-CN:
         top_products: 热门商品
         view_report: 查看报告
         whats_happening_on_html: 以下是今天 <strong>%{store_name}</strong> 的动态。
+        updater:
+          available_html: "%{version} 现已推出。"
+          current_version_html: 您当前的版本是 %{version}。
+          view_release_notes: 查看发行说明
+        visits:
+          referrers_title: 访客从何而来？
+          landing_pages_title: 热门着陆页
+          locations_title: 访客位置
+          devices_title: 访客设备
+          no_data: 无数据
+          no_data_for_period: 此时间段没有可用数据。
       datetime_field_timezone_help: 时区：%{zone}
       digital_shipment_fulfillment_note: 一旦用户下载该数字商品，此发货将被标记为已履行
       display_on_options:
@@ -824,6 +835,7 @@ zh-CN:
         codes_count: 代码数量
         new_gift_card_batch: 新建礼品卡批次
         prefix: 前缀
+        expires_at_help: 礼品卡将在此日期之后过期。
       gift_cards:
         active: 已启用
         all_statuses: 所有状态
@@ -840,9 +852,19 @@ zh-CN:
         mapping_required: 此字段为必填项
         please_map_all_required_fields: 请映射所有必填字段以继续。
         waiting_for_file_to_be_processed: 正在等待文件处理……
+        steps:
+          map_fields: 1. 映射字段
+          process_rows: 2. 处理行
+          complete: 3. 完成
+        rows_processed: 已处理 %{processed} / %{total} 行
+        please_select_a_column: 请选择一列
+        json: JSON
+        schema: 架构
       integrations:
         invalid_integration_type: 不允许此集成
         page_subtitle: 将您的店铺连接到第三方服务，以提升客户体验。
+        find_more_html: 查找更多集成于 %{integrations_link}
+        none_installed_html: 尚未安装任何集成。查找集成于 %{integrations_link}
       json_preview:
         no_api_response: 未找到此资源的 API 响应
       manage_markets: 管理市场
@@ -897,6 +919,45 @@ zh-CN:
         refunded: 已退款
         remove_user_from_this_order: 从此订单中移除客户
         unfulfilled: 未履行
+        placed_by_guest: 此订单由访客顾客下单
+        orders_count:
+          one: "%{count} 个订单"
+          other: "%{count} 个订单"
+        repeat_customer_summary_html: 这是一位回头客，在 %{count} 中共消费 %{amount}，平均每笔订单 %{average}。
+        avs_responses:
+          a: 街道地址匹配，但 5 位和 9 位邮政编码不匹配。
+          b: 街道地址匹配，但邮政编码未验证。
+          c: 街道地址和邮政编码不匹配。
+          d: 街道地址和邮政编码匹配。
+          e: AVS 数据无效，或此卡类型不允许使用 AVS。
+          f: 持卡人姓名不匹配，但账单邮政编码匹配。
+          g: 非 U.S. 发卡银行不支持 AVS。
+          h: 持卡人姓名不匹配。街道地址和邮政编码匹配。
+          i: 地址未验证。
+          j: 持卡人姓名、账单地址和邮政编码匹配。
+          k: 持卡人姓名匹配，但账单地址和账单邮政编码不匹配。
+          l: 持卡人姓名和账单邮政编码匹配，但账单地址不匹配。
+          m: 街道地址和邮政编码匹配。
+          "n": 街道地址和邮政编码不匹配。
+          o: 持卡人姓名和账单地址匹配，但账单邮政编码不匹配。
+          p: 邮政编码匹配，但街道地址未验证。
+          q: 持卡人姓名、账单地址和邮政编码匹配。
+          r: 系统不可用。
+          s: 银行不支持 AVS。
+          t: 持卡人姓名不匹配，但街道地址匹配。
+          u: 地址信息不可用。如果 U.S. 银行不支持非 U.S. 的 AVS，或 U.S. 银行的 AVS 无法正常运行，则会返回此结果。
+          v: 持卡人姓名、账单地址和账单邮政编码匹配。
+          w: 街道地址不匹配，但 9 位邮政编码匹配。
+          x: 街道地址和 9 位邮政编码匹配。
+          "y": 街道地址和 5 位邮政编码匹配。
+          z: 街道地址不匹配，但 5 位邮政编码匹配。
+        cvv_responses:
+          m: CVV2 匹配
+          "n": CVV2 不匹配
+          p: 未处理
+          s: 发卡机构指示卡上应存在 CVV2 数据，但商户指示卡上不存在该数据
+          u: 发卡机构未获得 CVV2 认证，或发卡机构未向 Visa 提供 CVV2 加密密钥
+          blank: 由于输入了错误的 CVV2 号码或未输入 CVV2 号码，交易失败
       page_builder:
         background_color: 背景颜色
         border_bottom_width: 下边框宽度
@@ -946,6 +1007,8 @@ zh-CN:
         schedule: 设置排期
         scheduled: 价目表已设置排期
         unschedule: 取消排期
+        page_info: 价格表是一种强大的工具，可根据顾客群体、产品或其他条件来管理定价策略。
+        learn_more: 了解有关价格表的更多信息
       product_translations:
         coverage: 翻译覆盖率
         locale: 语言区域
@@ -985,6 +1048,7 @@ zh-CN:
           choose_stores: 选择此商品应在哪些店铺中销售
         variants:
           option_types_link: 要添加更多选项类型，请前往 <a href="%{link}">选项类型</a>
+        learn_more: 了解有关管理产品的更多信息
       publishing:
         caption_hidden_after: 于 %{date} 下架
         caption_live: 现在对客户可见
@@ -1026,6 +1090,12 @@ zh-CN:
         customer_support_email_help: 此电子邮件会在页脚部分对您的店铺访客可见
         new_order_notifications_email_help: 如果您希望每次有人下单时都收到电子邮件通知，请提供用于接收该通知的电子邮件地址
         send_consumer_transactional_emails_help: 取消勾选后，订单确认和发货通知等交易类邮件将不会发送给客户
+        logo_help: 用于管理后台
+        currencies_managed_by_markets_html: 货币和语言区域现在由 %{markets_link} 管理。
+        email_addresses: 电子邮件地址
+        mail_from_address_help: 请提供将用作您商店发送的所有电子邮件发件人的电子邮件地址。
+        mailer_logo_help: 此徽标包含在所有电子邮件通知中，例如订单确认
+        mailer_logo_format_hint: 我们建议使用透明背景的图片。仅支持 JPEG 和 PNG 格式。
       store_setup_tasks:
         add_billing_address: 添加账单地址
         add_products: 添加商品
@@ -1040,6 +1110,15 @@ zh-CN:
           copy: 为收取税费，请设置您的税率。
           done: 一切就绪！您可以随时在<a href="%{link}" data-turbo-frame="_top">设置</a>页面管理您的税费。
           setup: 设置税率
+        add_products_task:
+          done_title: 做得好，您已经向商店添加了产品！
+          done_subtitle: 请记住，您随时可以添加更多！
+          copy: 向您的商店添加产品，可以是您自己的产品，也可以邀请第三方供应商共同销售。
+          import_hint: 您也可以从 CSV 或 Excel 文件批量导入产品。
+        customer_support_email_task:
+          copy: 我们需要您的客户支持邮箱以在您的店面上显示。此邮箱将作为联系点，供您的顾客就任何疑问或支持事宜与您联系。
+          current_html: 您的客户支持邮箱是 %{email}。
+          label: 客户支持邮箱
       storefront: 店铺前台
       successful: 成功
       successfully_reset_digital_links_limit: 下载次数限制已重置
@@ -1101,11 +1180,15 @@ zh-CN:
       users:
         filters:
           search_placeholder: 按电子邮件或姓名搜索客户
+        timeline: 时间线
       utilities:
         preview: 预览
       variants:
         search_results:
           no_variants: 我们找不到与您的搜索匹配的款式 :(
+        count_at_location:
+          one: 在该地点 %{count} 件
+          other: 在该地点 %{count} 件
       variants_form:
         add_option:
           empty: 添加诸如尺寸或颜色的选项
@@ -1156,6 +1239,8 @@ zh-CN:
         successful_deliveries: 成功的投递
         test_failed: 发送测试 Webhook 失败。请检查端点配置。
         test_sent: 测试 Webhook 已发送。请查看投递记录以获取结果。
+        name_placeholder: 例如 店面电子邮件、订单履行服务
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: 所有事件
         new_webhooks_subscriber: 新建 Webhook 订阅者
@@ -1165,6 +1250,88 @@ zh-CN:
         subscriptions: 订阅
         time_of_last_event: 上次事件时间
         webhooks_events: Webhook 事件
+      assistant: 助手
+      total_orders: 订单总数
+      sign_ups: 注册数
+      previous_page: 上一页
+      next_page: 下一页
+      no_change: 无变化
+      integrations_directory: 集成目录
+      option_types:
+        presentation_help: 此项用于在店面上显示选项类型。
+        name_help_html: 此项在内部用于标识选项类型。<strong>必须唯一。</strong>
+        value_count:
+          one: "%{count} 个值"
+          other: "%{count} 个值"
+        showing_pagination: 显示第 %{from}-%{to} 项，共 %{total} 项
+        intro_help: 选项用于对某些属性进行分组。例如，您可以创建一个名为“衬衫尺码”的选项，然后为此选项创建名为“小”和“中”的选项值。
+        learn_more: 了解有关选项的更多信息
+      taxons:
+        square_image_help: 用于首页上的精选图片。
+        seo:
+          placeholder: 添加标题和描述，查看此分类在搜索引擎列表中可能的显示效果
+      promotions:
+        name_help: 顾客将在其购物车中和结账时看到此内容。
+        next_step_info: 在下一步中，您将能够为您的促销添加操作和规则
+        coupon_code_placeholder: 您的优惠券代码
+        code_prefix_placeholder: 优惠券前缀（可选）
+        code_prefix_example_html: 例如 %{example}
+        number_of_codes_placeholder: 代码数量
+        number_of_codes_help: 您想要生成的代码数量。
+        add_more_codes_help: 若要添加更多代码，只需增加此数字
+        usage_limit_help: 将此字段留空表示无限制使用。
+        expires_at_help: 将此字段留空表示无到期日期。 时区：%{zone}
+        kind:
+          one_code_label: 面向所有顾客的单一代码
+          one_code_help: 您可以限制此代码的使用次数。
+          multi_codes_label: 生成唯一代码
+          multi_codes_help: 这些代码自动生成，可以下载为 CSV 文件。代码是唯一的，且只能使用一次。
+          automatic_help: 此促销将自动应用于所有符合条件的订单。
+      shipping_methods:
+        checkout_info: 配送方式是顾客到达结账时看到的选项，它们是用于发送您产品的承运商和服务。
+        name_help: 此内容将向顾客显示
+        admin_name_help: 此内容将向管理员显示
+        estimated_transit_business_days_help: 这是包裹送达顾客地址所需的预计工作日数。它将显示在结账页面上。
+        tracking_url_token_help: 将被替换为追踪号码。
+      zones:
+        info: 区域是地理分组，它们代表州或国家/地区的集合。
+      shipments:
+        stock_location_option: "%{name}（现货 %{count} 件）"
+      payment_methods:
+        name_help: 此名称将用于在店面上标识支付方式
+        available_payment_methods: 可用支付方式
+        find_more_payment_methods_html: 查找更多支付方式于 %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: 审计日志是 Spree Enterprise 产品的一部分。
+        upgrade_to_enterprise: 升级到 Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} 已邀请您加入 %{resource}"
+        expires_at: 到期时间
+        email_placeholder: 例如 steve@apple.com
+      user_sessions:
+        welcome_back: 欢迎回来
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: 感谢您使用 Spree Community Edition！请考虑升级到 Enterprise Edition，以使用所有功能并获得支持。
+        upgrade: 升级
+      metafields:
+        none_configured_for: 尚未为 %{resource} 配置任何元字段定义。
+      table:
+        operators:
+          eq: 等于
+          not_eq: 不等于
+          cont: 包含
+          not_cont: 不包含
+          start: 开头为
+          end: 结尾为
+          gt: 大于
+          gteq: 大于或等于
+          lt: 小于
+          lteq: 小于或等于
+          in: 是其中之一
+          not_in: 不是其中任何一个
+          'null': 为空
+          not_null: 不为空
     administration: 管理
     advertise: 推广
     agree_to_privacy_policy: 同意隐私政策
@@ -1498,6 +1665,7 @@ zh-CN:
         gte: 大于或等于
         lt: 小于
         lte: 小于或等于
+      max_amount_help: 将此字段留空表示不限制最大金额。
     items_cannot_be_shipped: 商品无法发货
     items_in_rmas: 商品
     items_reimbursed:
@@ -2799,6 +2967,8 @@ zh-CN:
           method_unavailable: 此支付方式不适用于此订单。
           session_required: 此支付方式需要支付会话。请改用支付会话端点。
       wrong_shipment_target: 目标发货与原始发货相同
+    copy_number: 复制编号
+    remaining: 剩余
   action_text:
     video_embed:
       not_found: 无法使用所提供的 URL 嵌入视频

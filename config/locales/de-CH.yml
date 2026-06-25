@@ -791,6 +791,17 @@ de-CH:
         top_products: Top-Produkte
         view_report: Bericht ansehen
         whats_happening_on_html: Das passiert heute auf <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} ist verfügbar."
+          current_version_html: Ihre aktuelle Version ist %{version}.
+          view_release_notes: Versionshinweise anzeigen
+        visits:
+          referrers_title: Woher kommen die Besucher?
+          landing_pages_title: Top-Landingpages
+          locations_title: Besucherstandorte
+          devices_title: Besuchergeräte
+          no_data: Keine Daten
+          no_data_for_period: Für diesen Zeitraum sind keine Daten verfügbar.
       datetime_field_timezone_help: 'Zeitzone: %{zone}'
       digital_shipment_fulfillment_note: Diese Sendung wird als erfüllt markiert, sobald der Benutzer das digitale Produkt heruntergeladen hat
       display_on_options:
@@ -817,6 +828,7 @@ de-CH:
         codes_count: Anzahl Codes
         new_gift_card_batch: Neuer Geschenkkarten-Stapel
         prefix: Präfix
+        expires_at_help: Geschenkkarten verfallen nach diesem Datum.
       gift_cards:
         active: Aktiv
         all_statuses: Alle Status
@@ -833,9 +845,19 @@ de-CH:
         mapping_required: Dieses Feld ist erforderlich
         please_map_all_required_fields: Bitte ordnen Sie alle erforderlichen Felder zu, um fortzufahren.
         waiting_for_file_to_be_processed: Warten auf die Verarbeitung der Datei...
+        steps:
+          map_fields: 1. Felder zuordnen
+          process_rows: 2. Zeilen verarbeiten
+          complete: 3. Abschliessen
+        rows_processed: "%{processed} / %{total} Zeilen verarbeitet"
+        please_select_a_column: Bitte wählen Sie eine Spalte aus
+        json: JSON
+        schema: Schema
       integrations:
         invalid_integration_type: Diese Integration ist nicht erlaubt
         page_subtitle: Verbinden Sie Ihren Store mit Drittanbieterdiensten, um das Kundenerlebnis zu verbessern.
+        find_more_html: Weitere Integrationen finden Sie in %{integrations_link}
+        none_installed_html: Noch keine Integrationen installiert. Integrationen finden Sie in %{integrations_link}
       json_preview:
         no_api_response: Keine API-Antwort für diese Ressource gefunden
       manage_markets: Märkte verwalten
@@ -890,6 +912,45 @@ de-CH:
         refunded: Erstattet
         remove_user_from_this_order: Kunde aus dieser Bestellung entfernen
         unfulfilled: Nicht erfüllt
+        placed_by_guest: Diese Bestellung wurde von einem Gastkunden aufgegeben
+        orders_count:
+          one: "%{count} Bestellung"
+          other: "%{count} Bestellungen"
+        repeat_customer_summary_html: Dies ist ein Stammkunde, der insgesamt %{amount} über %{count} ausgegeben hat, durchschnittlich %{average} pro Bestellung.
+        avs_responses:
+          a: Die Strassenadresse stimmt überein, aber die 5-stellige und 9-stellige Postleitzahl stimmen nicht überein.
+          b: Die Strassenadresse stimmt überein, aber die Postleitzahl wurde nicht verifiziert.
+          c: Strassenadresse und Postleitzahl stimmen nicht überein.
+          d: Strassenadresse und Postleitzahl stimmen überein.
+          e: Die AVS-Daten sind ungültig oder AVS ist für diesen Kartentyp nicht zulässig.
+          f: Der Name des Karteninhabers stimmt nicht überein, aber die Rechnungspostleitzahl stimmt überein.
+          g: Die ausstellende Bank ausserhalb der U.S. unterstützt AVS nicht.
+          h: Der Name des Karteninhabers stimmt nicht überein. Strassenadresse und Postleitzahl stimmen überein.
+          i: Adresse nicht verifiziert.
+          j: Name des Karteninhabers, Rechnungsadresse und Postleitzahl stimmen überein.
+          k: Der Name des Karteninhabers stimmt überein, aber Rechnungsadresse und Rechnungspostleitzahl stimmen nicht überein.
+          l: Name des Karteninhabers und Rechnungspostleitzahl stimmen überein, aber die Rechnungsadresse stimmt nicht überein.
+          m: Strassenadresse und Postleitzahl stimmen überein.
+          "n": Strassenadresse und Postleitzahl stimmen nicht überein.
+          o: Name des Karteninhabers und Rechnungsadresse stimmen überein, aber die Rechnungspostleitzahl stimmt nicht überein.
+          p: Die Postleitzahl stimmt überein, aber die Strassenadresse wurde nicht verifiziert.
+          q: Name des Karteninhabers, Rechnungsadresse und Postleitzahl stimmen überein.
+          r: System nicht verfügbar.
+          s: Die Bank unterstützt AVS nicht.
+          t: Der Name des Karteninhabers stimmt nicht überein, aber die Strassenadresse stimmt überein.
+          u: Adressinformationen nicht verfügbar. Wird zurückgegeben, wenn die U.S.-Bank kein AVS ausserhalb der U.S. unterstützt oder wenn das AVS einer U.S.-Bank nicht ordnungsgemäss funktioniert.
+          v: Name des Karteninhabers, Rechnungsadresse und Rechnungspostleitzahl stimmen überein.
+          w: Die Strassenadresse stimmt nicht überein, aber die 9-stellige Postleitzahl stimmt überein.
+          x: Strassenadresse und 9-stellige Postleitzahl stimmen überein.
+          "y": Strassenadresse und 5-stellige Postleitzahl stimmen überein.
+          z: Die Strassenadresse stimmt nicht überein, aber die 5-stellige Postleitzahl stimmt überein.
+        cvv_responses:
+          m: CVV2 stimmt überein
+          "n": CVV2 stimmt nicht überein
+          p: Nicht verarbeitet
+          s: Der Aussteller gibt an, dass CVV2-Daten auf der Karte vorhanden sein sollten, aber der Händler hat angegeben, dass keine Daten auf der Karte vorhanden sind
+          u: Der Aussteller ist nicht für CVV2 zertifiziert oder der Aussteller hat Visa nicht die CVV2-Verschlüsselungsschlüssel bereitgestellt
+          blank: Die Transaktion ist fehlgeschlagen, weil eine falsche CVV2-Nummer oder keine CVV2-Nummer eingegeben wurde
       page_builder:
         background_color: Hintergrundfarbe
         border_bottom_width: Rahmenbreite unten
@@ -939,6 +1000,8 @@ de-CH:
         schedule: Planen
         scheduled: Preisliste wurde geplant
         unschedule: Planung aufheben
+        page_info: Preislisten sind ein leistungsstarkes Werkzeug zur Verwaltung von Preisstrategien auf Basis von Kundengruppen, Produkten oder anderen Kriterien.
+        learn_more: Mehr über Preislisten erfahren
       product_translations:
         coverage: Übersetzungsabdeckung
         locale: Sprache
@@ -978,6 +1041,7 @@ de-CH:
           choose_stores: Wählen Sie aus, in welchen Stores dieses Produkt verfügbar sein soll
         variants:
           option_types_link: Um weitere Optionstypen hinzuzufügen, gehen Sie bitte zu <a href="%{link}">Optionstypen</a>
+        learn_more: Mehr über die Verwaltung von Produkten erfahren
       publishing:
         caption_hidden_after: Wird am %{date} entfernt
         caption_live: Jetzt für Kunden sichtbar
@@ -1019,6 +1083,12 @@ de-CH:
         customer_support_email_help: Diese E-Mail-Adresse ist für Ihre Store-Besucher in der Fusszeile sichtbar
         new_order_notifications_email_help: Wenn Sie bei jeder Bestellung eine E-Mail-Benachrichtigung erhalten möchten, geben Sie bitte eine E-Mail-Adresse an, an die diese Benachrichtigung gesendet werden soll
         send_consumer_transactional_emails_help: Wenn diese Option deaktiviert ist, werden transaktionale E-Mails wie Bestellbestätigungen und Versandbenachrichtigungen nicht an Kunden gesendet
+        logo_help: Wird im Admin-Dashboard verwendet
+        currencies_managed_by_markets_html: Währungen und Sprachen werden jetzt von %{markets_link} verwaltet.
+        email_addresses: E-Mail-Adressen
+        mail_from_address_help: Bitte geben Sie die E-Mail-Adresse an, die als Absender aller von Ihrem Shop versendeten E-Mails verwendet wird.
+        mailer_logo_help: Dieses Logo wird in alle E-Mail-Benachrichtigungen wie z.B. die Bestellbestätigung eingefügt
+        mailer_logo_format_hint: Wir empfehlen Bilder mit transparentem Hintergrund. Es werden nur die Formate JPEG und PNG unterstützt.
       store_setup_tasks:
         add_billing_address: Rechnungsadresse hinzufügen
         add_products: Produkte hinzufügen
@@ -1033,6 +1103,15 @@ de-CH:
           copy: Um Steuern zu erheben, richten Sie bitte Ihre Steuersätze ein.
           done: Alles erledigt! Sie können Ihre Steuern jederzeit auf der <a href="%{link}" data-turbo-frame="_top">Einstellungsseite</a> verwalten.
           setup: Steuersätze einrichten
+        add_products_task:
+          done_title: Gut gemacht, Sie haben Produkte zu Ihrem Shop hinzugefügt!
+          done_subtitle: Denken Sie daran, dass Sie jederzeit weitere hinzufügen können!
+          copy: Fügen Sie Produkte zu Ihrem Shop hinzu, entweder Ihre eigenen, oder laden Sie Drittanbieter ein, um gemeinsam zu verkaufen.
+          import_hint: Sie können Produkte auch im Bulk-Verfahren aus einer CSV- oder Excel-Datei importieren.
+        customer_support_email_task:
+          copy: Wir benötigen Ihre Kundensupport-E-Mail-Adresse, um sie in Ihrem Storefront anzuzeigen. Diese E-Mail-Adresse dient als Kontaktstelle, an die sich Ihre Kunden bei Fragen oder Support wenden können.
+          current_html: Ihre Kundensupport-E-Mail-Adresse ist %{email}.
+          label: Kundensupport-E-Mail-Adresse
       storefront: Storefront
       successful: Erfolgreich
       successfully_reset_digital_links_limit: Die Download-Limits wurden zurückgesetzt
@@ -1094,11 +1173,15 @@ de-CH:
       users:
         filters:
           search_placeholder: Kunden nach E-Mail oder Name suchen
+        timeline: Verlauf
       utilities:
         preview: Vorschau
       variants:
         search_results:
           no_variants: Wir konnten keine Varianten finden, die Ihrer Suche entsprechen :(
+        count_at_location:
+          one: "%{count} am Standort"
+          other: "%{count} am Standort"
       variants_form:
         add_option:
           empty: Fügen Sie Optionen wie Grösse oder Farbe hinzu
@@ -1149,6 +1232,8 @@ de-CH:
         successful_deliveries: Erfolgreiche Zustellungen
         test_failed: Senden des Test-Webhooks fehlgeschlagen. Bitte überprüfen Sie die Endpunkt-Konfiguration.
         test_sent: Test-Webhook gesendet. Prüfen Sie die Zustellungen für das Ergebnis.
+        name_placeholder: z.B. Storefront-E-Mails, Fulfillment-Dienst
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Alle Ereignisse
         new_webhooks_subscriber: Neuer Webhooks-Abonnent
@@ -1158,6 +1243,88 @@ de-CH:
         subscriptions: Abonnements
         time_of_last_event: Zeitpunkt des letzten Ereignisses
         webhooks_events: Webhooks-Ereignisse
+      assistant: Assistent
+      total_orders: Bestellungen gesamt
+      sign_ups: Registrierungen
+      previous_page: Vorherige Seite
+      next_page: Nächste Seite
+      no_change: Keine Änderung
+      integrations_directory: Integrationsverzeichnis
+      option_types:
+        presentation_help: Dies wird verwendet, um den Optionstyp im Storefront anzuzeigen.
+        name_help_html: Dies wird intern verwendet, um den Optionstyp zu identifizieren. <strong>Er muss eindeutig sein.</strong>
+        value_count:
+          one: "%{count} Wert"
+          other: "%{count} Werte"
+        showing_pagination: "%{from}-%{to} von %{total} werden angezeigt"
+        intro_help: Optionen werden verwendet, um bestimmte Attribute zu gruppieren. Sie können zum Beispiel eine Option mit dem Namen "Hemdgrösse" erstellen und dann für diese Option Optionswerte mit den Namen "klein" und "mittel" erstellen.
+        learn_more: Mehr über Optionen erfahren
+      taxons:
+        square_image_help: Wird für das Hauptbild auf der Startseite verwendet.
+        seo:
+          placeholder: Fügen Sie einen Titel und eine Beschreibung hinzu, um zu sehen, wie dieses Taxon in einer Suchmaschinen-Auflistung erscheinen könnte
+      promotions:
+        name_help: Kunden sehen dies in ihrem Warenkorb und an der Kasse.
+        next_step_info: Im nächsten Schritt können Sie Ihrer Aktion Aktionen und Regeln hinzufügen
+        coupon_code_placeholder: Ihr Gutscheincode
+        code_prefix_placeholder: Gutschein-Präfix (optional)
+        code_prefix_example_html: z.B. %{example}
+        number_of_codes_placeholder: Anzahl der Codes
+        number_of_codes_help: Wie viele Codes Sie generieren möchten.
+        add_more_codes_help: Um weitere Codes hinzuzufügen, erhöhen Sie einfach diese Zahl
+        usage_limit_help: Lassen Sie dieses Feld für unbegrenzte Nutzung leer.
+        expires_at_help: 'Lassen Sie dieses Feld leer, damit kein Ablaufdatum gilt. Zeitzone: %{zone}'
+        kind:
+          one_code_label: Ein Code für alle Kunden
+          one_code_help: Sie können die Anzahl der Verwendungen dieses Codes begrenzen.
+          multi_codes_label: Eindeutige Codes generieren
+          multi_codes_help: Diese Codes werden automatisch generiert und können als CSV-Datei heruntergeladen werden. Die Codes sind eindeutig und können nur einmal verwendet werden.
+          automatic_help: Diese Aktion wird automatisch auf alle berechtigten Bestellungen angewendet.
+      shipping_methods:
+        checkout_info: Versandarten sind Optionen, die der Kunde sieht, wenn er zur Kasse gelangt; es sind die Versanddienstleister und Dienste, die zum Versand Ihrer Produkte verwendet werden.
+        name_help: Dies wird den Kunden angezeigt
+        admin_name_help: Dies wird den Administratoren angezeigt
+        estimated_transit_business_days_help: Dies ist die geschätzte Anzahl an Werktagen, die das Paket benötigt, um an der Adresse des Kunden anzukommen. Sie wird auf der Kassenseite angezeigt.
+        tracking_url_token_help: wird durch die Sendungsnummer ersetzt.
+      zones:
+        info: Zonen sind geografische Gruppierungen; sie stellen Sammlungen von entweder Kantonen oder Ländern dar.
+      shipments:
+        stock_location_option: "%{name} (%{count} auf Lager)"
+      payment_methods:
+        name_help: Dieser Name wird verwendet, um die Zahlungsmethode im Storefront zu identifizieren
+        available_payment_methods: Verfügbare Zahlungsmethoden
+        find_more_payment_methods_html: Weitere Zahlungsmethoden finden Sie in %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Das Audit-Protokoll ist Teil des Spree Enterprise-Angebots.
+        upgrade_to_enterprise: Auf Spree Enterprise upgraden
+      invitations:
+        invited_you_to_join_html: "%{inviter} hat Sie eingeladen, %{resource} beizutreten"
+        expires_at: Läuft ab am
+        email_placeholder: z.B. steve@apple.com
+      user_sessions:
+        welcome_back: Willkommen zurück
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Vielen Dank, dass Sie Spree Community Edition verwenden! Bitte erwägen Sie ein Upgrade auf die Enterprise Edition, um Zugriff auf alle Funktionen und Support zu erhalten.
+        upgrade: Upgrade
+      metafields:
+        none_configured_for: Keine Metafeld-Definitionen für %{resource} konfiguriert.
+      table:
+        operators:
+          eq: ist gleich
+          not_eq: ist ungleich
+          cont: enthält
+          not_cont: enthält nicht
+          start: beginnt mit
+          end: endet mit
+          gt: ist grösser als
+          gteq: ist grösser oder gleich
+          lt: ist kleiner als
+          lteq: ist kleiner oder gleich
+          in: ist eines von
+          not_in: ist keines von
+          'null': ist leer
+          not_null: ist nicht leer
     administration: Verwaltung
     advertise:
     agree_to_privacy_policy:
@@ -1486,6 +1653,7 @@ de-CH:
         gte:
         lt:
         lte:
+      max_amount_help: Lassen Sie dieses Feld leer, um den Maximalbetrag nicht zu begrenzen.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2795,6 +2963,8 @@ de-CH:
           method_unavailable: Diese Zahlungsart ist für diese Bestellung nicht verfügbar.
           session_required: Diese Zahlungsart erfordert eine Zahlungssitzung. Verwenden Sie stattdessen den Endpunkt für Zahlungssitzungen.
       wrong_shipment_target: Die Zielsendung ist dieselbe wie die ursprüngliche Sendung
+    copy_number: Nummer kopieren
+    remaining: Verbleibend
   action_text:
     video_embed:
       not_found: Mit der angegebenen URL kann kein Video eingebettet werden

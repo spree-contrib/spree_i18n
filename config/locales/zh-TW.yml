@@ -838,6 +838,45 @@ zh-TW:
         refunded: 已退款
         remove_user_from_this_order: 從此訂單中移除顧客
         unfulfilled: 未履行
+        placed_by_guest: 此訂單由訪客顧客下單
+        orders_count:
+          one: "%{count} 筆訂單"
+          other: "%{count} 筆訂單"
+        repeat_customer_summary_html: 這是一位回頭客，在 %{count} 中共消費 %{amount}，平均每筆訂單 %{average}。
+        avs_responses:
+          a: 街道地址相符，但 5 碼和 9 碼郵遞區號不相符。
+          b: 街道地址相符，但郵遞區號未驗證。
+          c: 街道地址和郵遞區號不相符。
+          d: 街道地址和郵遞區號相符。
+          e: AVS 資料無效，或此卡類型不允許使用 AVS。
+          f: 持卡人姓名不相符，但帳單郵遞區號相符。
+          g: 非 U.S. 發卡銀行不支援 AVS。
+          h: 持卡人姓名不相符。街道地址和郵遞區號相符。
+          i: 地址未驗證。
+          j: 持卡人姓名、帳單地址和郵遞區號相符。
+          k: 持卡人姓名相符，但帳單地址和帳單郵遞區號不相符。
+          l: 持卡人姓名和帳單郵遞區號相符，但帳單地址不相符。
+          m: 街道地址和郵遞區號相符。
+          "n": 街道地址和郵遞區號不相符。
+          o: 持卡人姓名和帳單地址相符，但帳單郵遞區號不相符。
+          p: 郵遞區號相符，但街道地址未驗證。
+          q: 持卡人姓名、帳單地址和郵遞區號相符。
+          r: 系統無法使用。
+          s: 銀行不支援 AVS。
+          t: 持卡人姓名不相符，但街道地址相符。
+          u: 地址資訊無法使用。若 U.S. 銀行不支援非 U.S. 的 AVS，或 U.S. 銀行的 AVS 無法正常運作，則會傳回此結果。
+          v: 持卡人姓名、帳單地址和帳單郵遞區號相符。
+          w: 街道地址不相符，但 9 碼郵遞區號相符。
+          x: 街道地址和 9 碼郵遞區號相符。
+          "y": 街道地址和 5 碼郵遞區號相符。
+          z: 街道地址不相符，但 5 碼郵遞區號相符。
+        cvv_responses:
+          m: CVV2 相符
+          "n": CVV2 不相符
+          p: 未處理
+          s: 發卡機構指示卡上應有 CVV2 資料，但商家指示卡上沒有該資料
+          u: 發卡機構未取得 CVV2 認證，或發卡機構未向 Visa 提供 CVV2 加密金鑰
+          blank: 由於輸入了錯誤的 CVV2 號碼或未輸入 CVV2 號碼，交易失敗
       return_authorization:
         product: 商品
       user:
@@ -962,6 +1001,17 @@ zh-TW:
         top_products: 熱門商品
         view_report: 檢視報表
         whats_happening_on_html: 以下是 <strong>%{store_name}</strong> 今天的最新動態。
+        updater:
+          available_html: "%{version} 現已推出。"
+          current_version_html: 您目前的版本是 %{version}。
+          view_release_notes: 檢視發行說明
+        visits:
+          referrers_title: 訪客從何而來？
+          landing_pages_title: 熱門到達網頁
+          locations_title: 訪客位置
+          devices_title: 訪客裝置
+          no_data: 無資料
+          no_data_for_period: 此時間段沒有可用資料。
       datetime_field_timezone_help: 時區：%{zone}
       digital_shipment_fulfillment_note: 當使用者下載數位商品後，此貨件將標記為已履行
       display_on_options:
@@ -988,6 +1038,7 @@ zh-TW:
         codes_count: 代碼數量
         new_gift_card_batch: 新增禮品卡批次
         prefix: 前綴
+        expires_at_help: 禮品卡將在此日期之後到期。
       gift_cards:
         active: 啟用中
         all_statuses: 所有狀態
@@ -1004,9 +1055,19 @@ zh-TW:
         mapping_required: 此欄位為必填
         please_map_all_required_fields: 請對應所有必填欄位以繼續。
         waiting_for_file_to_be_processed: 正在等待檔案處理中…
+        steps:
+          map_fields: 1. 對應欄位
+          process_rows: 2. 處理列
+          complete: 3. 完成
+        rows_processed: 已處理 %{processed} / %{total} 列
+        please_select_a_column: 請選擇一欄
+        json: JSON
+        schema: 結構
       integrations:
         invalid_integration_type: 不允許此整合
         page_subtitle: 將您的商店連接至第三方服務，以提升顧客體驗。
+        find_more_html: 尋找更多整合於 %{integrations_link}
+        none_installed_html: 尚未安裝任何整合。尋找整合於 %{integrations_link}
       json_preview:
         no_api_response: 找不到此資源的 API 回應
       manage_markets: 管理市場
@@ -1091,6 +1152,8 @@ zh-TW:
         schedule: 排程
         scheduled: 價目表已排程
         unschedule: 取消排程
+        page_info: 價格表是一種強大的工具，可根據顧客群組、產品或其他條件來管理定價策略。
+        learn_more: 瞭解有關價格表的更多資訊
       product_translations:
         coverage: 翻譯涵蓋率
         locale: 語系
@@ -1130,6 +1193,7 @@ zh-TW:
           choose_stores: 選擇此商品應在哪些商店上架
         variants:
           option_types_link: 若要新增更多選項類型，請前往 <a href="%{link}">選項類型</a>
+        learn_more: 瞭解有關管理產品的更多資訊
       publishing:
         caption_hidden_after: 於 %{date} 下架
         caption_live: 現正對顧客顯示
@@ -1171,6 +1235,12 @@ zh-TW:
         customer_support_email_help: 此電子郵件會在頁尾區段向您的商店訪客顯示
         new_order_notifications_email_help: 若您希望每次有人下單時都收到電子郵件通知，請提供接收該通知的電子郵件地址
         send_consumer_transactional_emails_help: 取消勾選時，將不會向顧客傳送如訂單確認與出貨通知等交易電子郵件
+        logo_help: 用於管理後台
+        currencies_managed_by_markets_html: 貨幣和語言環境現在由 %{markets_link} 管理。
+        email_addresses: 電子郵件地址
+        mail_from_address_help: 請提供將用作您商店寄送的所有電子郵件寄件者的電子郵件地址。
+        mailer_logo_help: 此標誌包含在所有電子郵件通知中，例如訂單確認
+        mailer_logo_format_hint: 我們建議使用透明背景的圖片。僅支援 JPEG 和 PNG 格式。
       store_setup_tasks:
         add_billing_address: 新增帳單地址
         add_products: 新增商品
@@ -1185,6 +1255,15 @@ zh-TW:
           copy: 為了收取稅金，請設定您的稅率。
           done: 您已全部設定完成！您隨時可以在<a href="%{link}" data-turbo-frame="_top">設定</a>頁面管理您的稅金。
           setup: 設定稅率
+        add_products_task:
+          done_title: 做得好，您已經向商店新增了產品！
+          done_subtitle: 請記住，您隨時可以新增更多！
+          copy: 向您的商店新增產品，可以是您自己的產品，也可以邀請第三方供應商共同銷售。
+          import_hint: 您也可以從 CSV 或 Excel 檔案批次匯入產品。
+        customer_support_email_task:
+          copy: 我們需要您的客戶支援電子郵件以在您的店面上顯示。此電子郵件將作為聯絡點，供您的顧客就任何疑問或支援事宜與您聯絡。
+          current_html: 您的客戶支援電子郵件是 %{email}。
+          label: 客戶支援電子郵件
       storefront: 店面
       successful: 成功
       successfully_reset_digital_links_limit: 下載次數限制已重設
@@ -1246,11 +1325,15 @@ zh-TW:
       users:
         filters:
           search_placeholder: 依電子郵件或名稱搜尋顧客
+        timeline: 時間軸
       utilities:
         preview: 預覽
       variants:
         search_results:
           no_variants: 我們找不到符合您搜尋條件的款式 :(
+        count_at_location:
+          one: 在該地點 %{count} 件
+          other: 在該地點 %{count} 件
       variants_form:
         add_option:
           empty: 新增如尺寸或顏色等選項
@@ -1301,6 +1384,8 @@ zh-TW:
         successful_deliveries: 成功的傳遞
         test_failed: 傳送測試 webhook 失敗。請檢查端點設定。
         test_sent: 測試 webhook 已傳送。請查看傳遞以了解結果。
+        name_placeholder: 例如 店面電子郵件、訂單履行服務
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: 所有事件
         new_webhooks_subscriber: 新增 Webhook 訂閱者
@@ -1310,6 +1395,88 @@ zh-TW:
         subscriptions: 訂閱
         time_of_last_event: 最後事件時間
         webhooks_events: Webhook 事件
+      assistant: 助理
+      total_orders: 訂單總數
+      sign_ups: 註冊數
+      previous_page: 上一頁
+      next_page: 下一頁
+      no_change: 無變化
+      integrations_directory: 整合目錄
+      option_types:
+        presentation_help: 此項用於在店面上顯示選項類型。
+        name_help_html: 此項在內部用於識別選項類型。<strong>必須是唯一的。</strong>
+        value_count:
+          one: "%{count} 個值"
+          other: "%{count} 個值"
+        showing_pagination: 顯示第 %{from}-%{to} 項，共 %{total} 項
+        intro_help: 選項用於將某些屬性分組。例如，您可以建立一個名為「襯衫尺寸」的選項，然後為此選項建立名為「小」和「中」的選項值。
+        learn_more: 瞭解有關選項的更多資訊
+      taxons:
+        square_image_help: 用於首頁上的精選圖片。
+        seo:
+          placeholder: 新增標題和描述，查看此分類在搜尋引擎列表中可能的顯示效果
+      promotions:
+        name_help: 顧客將在其購物車中和結帳時看到此內容。
+        next_step_info: 在下一步中，您將能夠為您的促銷新增動作和規則
+        coupon_code_placeholder: 您的優惠券代碼
+        code_prefix_placeholder: 優惠券前綴（選填）
+        code_prefix_example_html: 例如 %{example}
+        number_of_codes_placeholder: 代碼數量
+        number_of_codes_help: 您想要產生的代碼數量。
+        add_more_codes_help: 若要新增更多代碼，只需增加此數字
+        usage_limit_help: 將此欄位留空表示無限制使用。
+        expires_at_help: 將此欄位留空表示無到期日期。 時區：%{zone}
+        kind:
+          one_code_label: 面向所有顧客的單一代碼
+          one_code_help: 您可以限制此代碼的使用次數。
+          multi_codes_label: 產生唯一代碼
+          multi_codes_help: 這些代碼會自動產生，可以下載為 CSV 檔案。代碼是唯一的，且只能使用一次。
+          automatic_help: 此促銷將自動套用於所有符合條件的訂單。
+      shipping_methods:
+        checkout_info: 運送方式是顧客到達結帳時看到的選項，它們是用於寄送您產品的承運商和服務。
+        name_help: 此內容將向顧客顯示
+        admin_name_help: 此內容將向管理員顯示
+        estimated_transit_business_days_help: 這是包裹送達顧客地址所需的預計工作天數。它將顯示在結帳頁面上。
+        tracking_url_token_help: 將被替換為追蹤號碼。
+      zones:
+        info: 區域是地理分組，它們代表州或國家/地區的集合。
+      shipments:
+        stock_location_option: "%{name}（現貨 %{count} 件）"
+      payment_methods:
+        name_help: 此名稱將用於在店面上識別付款方式
+        available_payment_methods: 可用付款方式
+        find_more_payment_methods_html: 尋找更多付款方式於 %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: 稽核日誌是 Spree Enterprise 產品的一部分。
+        upgrade_to_enterprise: 升級至 Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} 已邀請您加入 %{resource}"
+        expires_at: 到期時間
+        email_placeholder: 例如 steve@apple.com
+      user_sessions:
+        welcome_back: 歡迎回來
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: 感謝您使用 Spree Community Edition！請考慮升級至 Enterprise Edition，以使用所有功能並獲得支援。
+        upgrade: 升級
+      metafields:
+        none_configured_for: 尚未為 %{resource} 設定任何中繼欄位定義。
+      table:
+        operators:
+          eq: 等於
+          not_eq: 不等於
+          cont: 包含
+          not_cont: 不包含
+          start: 開頭為
+          end: 結尾為
+          gt: 大於
+          gteq: 大於或等於
+          lt: 小於
+          lteq: 小於或等於
+          in: 是其中之一
+          not_in: 不是其中任何一個
+          'null': 為空
+          not_null: 不為空
     administration: 管理
     advertise: 廣告行銷
     agree_to_privacy_policy: 同意隱私權條款
@@ -1706,6 +1873,7 @@ zh-TW:
         gte: 大於或等於
         lt: 小於
         lte: 小於或等於
+      max_amount_help: 將此欄位留空表示不限制最大金額。
     items_cannot_be_shipped: 我們無法計算您所選的項目的運費。
     items_in_rmas: 項目在退貨授權中
     items_to_be_reimbursed: 項目在核銷中
@@ -3058,6 +3226,8 @@ zh-TW:
           method_unavailable: 此付款方式不適用於此訂單。
           session_required: 此付款方式需要付款工作階段。請改用付款工作階段端點。
       wrong_shipment_target: 目標貨件與原始貨件相同
+    copy_number: 複製編號
+    remaining: 剩餘
   action_text:
     video_embed:
       not_found: 無法使用提供的 URL 嵌入影片

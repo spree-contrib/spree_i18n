@@ -791,6 +791,17 @@ fi:
         top_products: Suosituimmat tuotteet
         view_report: Näytä raportti
         whats_happening_on_html: Tässä on, mitä kaupassa <strong>%{store_name}</strong> tapahtuu tänään.
+        updater:
+          available_html: "%{version} on saatavilla."
+          current_version_html: Nykyinen versiosi on %{version}.
+          view_release_notes: Näytä julkaisutiedot
+        visits:
+          referrers_title: Mistä kävijät tulevat?
+          landing_pages_title: Suosituimmat laskeutumissivut
+          locations_title: Kävijöiden sijainnit
+          devices_title: Kävijöiden laitteet
+          no_data: Ei tietoja
+          no_data_for_period: Tälle ajanjaksolle ei ole saatavilla tietoja.
       datetime_field_timezone_help: 'Aikavyöhyke: %{zone}'
       digital_shipment_fulfillment_note: Tämä toimitus merkitään toimitetuksi, kun käyttäjä lataa digitaalisen tuotteen
       display_on_options:
@@ -817,6 +828,7 @@ fi:
         codes_count: Koodien määrä
         new_gift_card_batch: Uusi lahjakorttierä
         prefix: Etuliite
+        expires_at_help: Lahjakortit vanhenevat tämän päivämäärän jälkeen.
       gift_cards:
         active: Aktiivinen
         all_statuses: Kaikki tilat
@@ -833,9 +845,19 @@ fi:
         mapping_required: Tämä kenttä on pakollinen
         please_map_all_required_fields: Määritä kaikki pakolliset kentät jatkaaksesi.
         waiting_for_file_to_be_processed: Odotetaan tiedoston käsittelyä...
+        steps:
+          map_fields: 1. Yhdistä kentät
+          process_rows: 2. Käsittele rivit
+          complete: 3. Valmis
+        rows_processed: "%{processed} / %{total} riviä käsitelty"
+        please_select_a_column: Valitse sarake
+        json: JSON
+        schema: Skeema
       integrations:
         invalid_integration_type: Tämä integraatio ei ole sallittu
         page_subtitle: Yhdistä kauppasi kolmannen osapuolen palveluihin parantaaksesi asiakaskokemusta.
+        find_more_html: Löydä lisää integraatioita kohteesta %{integrations_link}
+        none_installed_html: Integraatioita ei ole vielä asennettu. Löydä integraatioita kohteesta %{integrations_link}
       json_preview:
         no_api_response: API-vastausta ei löytynyt tälle resurssille
       manage_markets: Hallitse markkinoita
@@ -890,6 +912,45 @@ fi:
         refunded: Hyvitetty
         remove_user_from_this_order: Poista asiakas tästä tilauksesta
         unfulfilled: Toimittamatta
+        placed_by_guest: Tämän tilauksen teki vieraskäyttäjä
+        orders_count:
+          one: "%{count} tilaus"
+          other: "%{count} tilausta"
+        repeat_customer_summary_html: Tämä on kanta-asiakas, joka on käyttänyt yhteensä %{amount} %{count} aikana, keskimäärin %{average} tilausta kohden.
+        avs_responses:
+          a: Katuosoite täsmää, mutta 5- ja 9-numeroinen postinumero eivät täsmää.
+          b: Katuosoite täsmää, mutta postinumeroa ei vahvistettu.
+          c: Katuosoite ja postinumero eivät täsmää.
+          d: Katuosoite ja postinumero täsmäävät.
+          e: AVS-tiedot ovat virheellisiä tai AVS ei ole sallittu tälle korttityypille.
+          f: Kortinhaltijan nimi ei täsmää, mutta laskutuksen postinumero täsmää.
+          g: U.S.-maan ulkopuolinen myöntäjäpankki ei tue AVS:ää.
+          h: Kortinhaltijan nimi ei täsmää. Katuosoite ja postinumero täsmäävät.
+          i: Osoitetta ei vahvistettu.
+          j: Kortinhaltijan nimi, laskutusosoite ja postinumero täsmäävät.
+          k: Kortinhaltijan nimi täsmää, mutta laskutusosoite ja laskutuksen postinumero eivät täsmää.
+          l: Kortinhaltijan nimi ja laskutuksen postinumero täsmäävät, mutta laskutusosoite ei täsmää.
+          m: Katuosoite ja postinumero täsmäävät.
+          "n": Katuosoite ja postinumero eivät täsmää.
+          o: Kortinhaltijan nimi ja laskutusosoite täsmäävät, mutta laskutuksen postinumero ei täsmää.
+          p: Postinumero täsmää, mutta katuosoitetta ei vahvistettu.
+          q: Kortinhaltijan nimi, laskutusosoite ja postinumero täsmäävät.
+          r: Järjestelmä ei ole käytettävissä.
+          s: Pankki ei tue AVS:ää.
+          t: Kortinhaltijan nimi ei täsmää, mutta katuosoite täsmää.
+          u: Osoitetiedot eivät ole käytettävissä. Palautetaan, jos U.S.-pankki ei tue U.S.-maan ulkopuolista AVS:ää tai jos U.S.-pankin AVS ei toimi oikein.
+          v: Kortinhaltijan nimi, laskutusosoite ja laskutuksen postinumero täsmäävät.
+          w: Katuosoite ei täsmää, mutta 9-numeroinen postinumero täsmää.
+          x: Katuosoite ja 9-numeroinen postinumero täsmäävät.
+          "y": Katuosoite ja 5-numeroinen postinumero täsmäävät.
+          z: Katuosoite ei täsmää, mutta 5-numeroinen postinumero täsmää.
+        cvv_responses:
+          m: CVV2-osuma
+          "n": Ei CVV2-osumaa
+          p: Ei käsitelty
+          s: Myöntäjä ilmoittaa, että CVV2-tietojen tulisi olla kortissa, mutta kauppias on ilmoittanut, ettei tietoja ole kortissa
+          u: Myöntäjää ei ole sertifioitu CVV2:ta varten tai myöntäjä ei ole toimittanut Visalle CVV2-salausavaimia
+          blank: Tapahtuma epäonnistui, koska syötettiin väärä CVV2-numero tai CVV2-numeroa ei syötetty lainkaan
       page_builder:
         background_color: Taustaväri
         border_bottom_width: Alareunan reunaleveys
@@ -939,6 +1000,8 @@ fi:
         schedule: Ajasta
         scheduled: Hinnasto on ajastettu
         unschedule: Poista ajastus
+        page_info: Hinnastot ovat tehokas työkalu hinnoittelustrategioiden hallintaan asiakasryhmien, tuotteiden tai muiden kriteerien perusteella.
+        learn_more: Lue lisää hinnastoista
       product_translations:
         coverage: Käännöskattavuus
         locale: Kieli
@@ -978,6 +1041,7 @@ fi:
           choose_stores: Valitse, missä kaupoissa tämä tuote on saatavilla
         variants:
           option_types_link: Lisätäksesi uusia valintatyyppejä siirry kohtaan <a href="%{link}">Valintatyypit</a>
+        learn_more: Lue lisää tuotteiden hallinnasta
       publishing:
         caption_hidden_after: Poistuu %{date}
         caption_live: Näkyy asiakkaille nyt
@@ -1019,6 +1083,12 @@ fi:
         customer_support_email_help: Tämä sähköposti näkyy kaupan kävijöille alatunnisteosiossa
         new_order_notifications_email_help: Jos haluat saada sähköposti-ilmoituksen aina, kun joku tekee tilauksen, anna sähköpostiosoite, johon ilmoitus lähetetään
         send_consumer_transactional_emails_help: Kun tätä ei ole valittu, tapahtumasähköposteja, kuten tilausvahvistuksia ja toimitusilmoituksia, ei lähetetä asiakkaille
+        logo_help: Käytetään ylläpidon hallintapaneelissa
+        currencies_managed_by_markets_html: Valuuttoja ja kieliä hallinnoi nyt %{markets_link}.
+        email_addresses: Sähköpostiosoitteet
+        mail_from_address_help: Anna sähköpostiosoite, jota käytetään kaikkien kaupastasi lähetettävien sähköpostien lähettäjänä.
+        mailer_logo_help: Tämä logo sisältyy kaikkiin sähköposti-ilmoituksiin, kuten tilausvahvistukseen
+        mailer_logo_format_hint: Suosittelemme kuvia, joilla on läpinäkyvä tausta. Vain JPEG- ja PNG-muotoja tuetaan.
       store_setup_tasks:
         add_billing_address: Lisää laskutusosoite
         add_products: Lisää tuotteita
@@ -1033,6 +1103,15 @@ fi:
           copy: Kerätäksesi veroja määritä verokantasi.
           done: Kaikki on valmista! Voit aina hallita verojasi <a href="%{link}" data-turbo-frame="_top">asetukset</a>-sivulla.
           setup: Määritä verokannat
+        add_products_task:
+          done_title: Hienoa työtä, olet lisännyt tuotteita kauppaasi!
+          done_subtitle: Muista, että voit aina lisätä lisää!
+          copy: Lisää tuotteita kauppaasi, joko omiasi tai kutsu kolmannen osapuolen myyjiä myymään yhdessä.
+          import_hint: Voit myös tuoda tuotteita joukkona CSV- tai Excel-tiedostosta.
+        customer_support_email_task:
+          copy: Tarvitsemme asiakaspalvelusähköpostiosoitteesi näytettäväksi verkkokaupassasi. Tämä sähköpostiosoite toimii yhteyspisteenä, jonka kautta asiakkaasi voivat ottaa sinuun yhteyttä kysymyksissä tai tukea koskien.
+          current_html: Asiakaspalvelusähköpostiosoitteesi on %{email}.
+          label: Asiakaspalvelun sähköposti
       storefront: Verkkokauppa
       successful: Onnistui
       successfully_reset_digital_links_limit: Latausrajat on nollattu
@@ -1094,11 +1173,15 @@ fi:
       users:
         filters:
           search_placeholder: Hae asiakkaita sähköpostin tai nimen mukaan
+        timeline: Aikajana
       utilities:
         preview: Esikatselu
       variants:
         search_results:
           no_variants: Hakuasi vastaavia variantteja ei löytynyt :(
+        count_at_location:
+          one: "%{count} sijainnissa"
+          other: "%{count} sijainnissa"
       variants_form:
         add_option:
           empty: Lisää valintoja, kuten koko tai väri
@@ -1149,6 +1232,8 @@ fi:
         successful_deliveries: Onnistuneet toimitukset
         test_failed: Testiwebhookin lähettäminen epäonnistui. Tarkista päätepisteen määritykset.
         test_sent: Testiwebhook lähetetty. Tarkista tulos toimituksista.
+        name_placeholder: esim. Verkkokaupan sähköpostit, Toimituspalvelu
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Kaikki tapahtumat
         new_webhooks_subscriber: Uusi webhook-tilaaja
@@ -1158,6 +1243,88 @@ fi:
         subscriptions: Tilaukset
         time_of_last_event: Viimeisimmän tapahtuman aika
         webhooks_events: Webhook-tapahtumat
+      assistant: Avustaja
+      total_orders: Tilauksia yhteensä
+      sign_ups: Rekisteröitymiset
+      previous_page: Edellinen sivu
+      next_page: Seuraava sivu
+      no_change: Ei muutosta
+      integrations_directory: Integraatiohakemisto
+      option_types:
+        presentation_help: Tätä käytetään optiotyypin näyttämiseen verkkokaupassa.
+        name_help_html: Tätä käytetään sisäisesti optiotyypin tunnistamiseen. <strong>Sen on oltava yksilöllinen.</strong>
+        value_count:
+          one: "%{count} arvo"
+          other: "%{count} arvoa"
+        showing_pagination: Näytetään %{from}-%{to} / %{total}
+        intro_help: Optioita käytetään tiettyjen ominaisuuksien ryhmittelyyn. Voit esimerkiksi luoda option nimeltä ”paidan koko” ja luoda sitten tälle optiolle option arvot nimeltä ”pieni” ja ”keskikokoinen”.
+        learn_more: Lue lisää optioista
+      taxons:
+        square_image_help: Käytetään etusivun esittelykuvana.
+        seo:
+          placeholder: Lisää otsikko ja kuvaus nähdäksesi, miltä tämä taksoni saattaa näyttää hakukoneen hakutuloksissa
+      promotions:
+        name_help: Asiakkaat näkevät tämän ostoskorissaan ja kassalla.
+        next_step_info: Seuraavassa vaiheessa voit lisätä kampanjaasi toimintoja ja sääntöjä
+        coupon_code_placeholder: Kuponkikoodisi
+        code_prefix_placeholder: Kupongin etuliite (valinnainen)
+        code_prefix_example_html: esim. %{example}
+        number_of_codes_placeholder: Koodien määrä
+        number_of_codes_help: Kuinka monta koodia haluat luoda.
+        add_more_codes_help: Lisätäksesi enemmän koodeja kasvata vain tätä lukua
+        usage_limit_help: Jätä tämä kenttä tyhjäksi rajoittamatonta käyttöä varten.
+        expires_at_help: 'Jätä tämä kenttä tyhjäksi, jos haluat, ettei kampanja vanhene. Aikavyöhyke: %{zone}'
+        kind:
+          one_code_label: Yksi koodi kaikille asiakkaille
+          one_code_help: Voit rajoittaa, kuinka monta kertaa tätä koodia voidaan käyttää.
+          multi_codes_label: Luo yksilölliset koodit
+          multi_codes_help: Nämä koodit luodaan automaattisesti, ja ne voidaan ladata CSV-tiedostona. Koodit ovat yksilöllisiä ja niitä voi käyttää vain kerran.
+          automatic_help: Tämä kampanja sovelletaan automaattisesti kaikkiin ehdot täyttäviin tilauksiin.
+      shipping_methods:
+        checkout_info: Toimitustavat ovat vaihtoehtoja, jotka asiakas näkee saapuessaan kassalle; ne ovat kuljettajia ja palveluita, joita käytetään tuotteidesi lähettämiseen.
+        name_help: Tämä näytetään asiakkaille
+        admin_name_help: Tämä näytetään ylläpitäjille
+        estimated_transit_business_days_help: Tämä on arvioitu työpäivien määrä, jonka kuluessa paketti saapuu asiakkaan osoitteeseen. Se näytetään kassasivulla.
+        tracking_url_token_help: korvataan seurantanumerolla.
+      zones:
+        info: Vyöhykkeet ovat maantieteellisiä ryhmittymiä; ne edustavat osavaltioiden tai maiden kokoelmia.
+      shipments:
+        stock_location_option: "%{name} (%{count} varastossa)"
+      payment_methods:
+        name_help: Tätä nimeä käytetään maksutavan tunnistamiseen verkkokaupassa
+        available_payment_methods: Käytettävissä olevat maksutavat
+        find_more_payment_methods_html: Löydä lisää maksutapoja kohteesta %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Auditointiloki on osa Spree Enterprise -tarjontaa.
+        upgrade_to_enterprise: Päivitä Spree Enterpriseen
+      invitations:
+        invited_you_to_join_html: "%{inviter} on kutsunut sinut liittymään kohteeseen %{resource}"
+        expires_at: Vanhenee
+        email_placeholder: esim. steve@apple.com
+      user_sessions:
+        welcome_back: Tervetuloa takaisin
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Kiitos, että käytät Spree Community Editionia! Harkitse päivittämistä Enterprise Editioniin saadaksesi käyttöösi kaikki ominaisuudet ja tuen.
+        upgrade: Päivitä
+      metafields:
+        none_configured_for: Kohteelle %{resource} ei ole määritetty metakenttämäärityksiä.
+      table:
+        operators:
+          eq: on yhtä kuin
+          not_eq: ei ole yhtä kuin
+          cont: sisältää
+          not_cont: ei sisällä
+          start: alkaa
+          end: päättyy
+          gt: suurempi kuin
+          gteq: suurempi tai yhtä suuri kuin
+          lt: pienempi kuin
+          lteq: pienempi tai yhtä suuri kuin
+          in: on jokin seuraavista
+          not_in: ei ole mikään seuraavista
+          'null': on tyhjä
+          not_null: ei ole tyhjä
     administration: Hallinnointi
     advertise:
     agree_to_privacy_policy: Hyväksy rekisteriselosteen ehdot
@@ -1495,6 +1662,7 @@ fi:
         gte: suurempi tai yhtäsuuri kuin
         lt:
         lte:
+      max_amount_help: Jätä tämä kenttä tyhjäksi, jos et halua rajoittaa enimmäismäärää.
     items_cannot_be_shipped: Toimituskulujen laskeminen näille tuotteille ei onnistunut.
     items_in_rmas:
     items_reimbursed:
@@ -2810,6 +2978,8 @@ fi:
           method_unavailable: Tämä maksutapa ei ole saatavilla tälle tilaukselle.
           session_required: Tämä maksutapa vaatii maksuistunnon. Käytä sen sijaan maksuistuntojen päätepistettä.
       wrong_shipment_target: kohdelähetys on sama kuin alkuperäinen lähetys
+    copy_number: Kopioi numero
+    remaining: Jäljellä
   action_text:
     video_embed:
       not_found: Videota ei voi upottaa annetulla URL-osoitteella

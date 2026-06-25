@@ -810,6 +810,17 @@ sk:
         top_products: Najpredávanejšie produkty
         view_report: Zobraziť report
         whats_happening_on_html: Tu je prehľad, čo sa dnes deje v obchode <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} je dostupná."
+          current_version_html: Vaša aktuálna verzia je %{version}.
+          view_release_notes: Zobraziť poznámky k vydaniu
+        visits:
+          referrers_title: Odkiaľ prichádzajú návštevníci?
+          landing_pages_title: Najlepšie vstupné stránky
+          locations_title: Lokality návštevníkov
+          devices_title: Zariadenia návštevníkov
+          no_data: Žiadne údaje
+          no_data_for_period: Pre toto obdobie nie sú dostupné žiadne údaje.
       datetime_field_timezone_help: 'Časové pásmo: %{zone}'
       digital_shipment_fulfillment_note: Táto zásielka bude označená ako vybavená, keď si používateľ stiahne digitálny produkt
       display_on_options:
@@ -836,6 +847,7 @@ sk:
         codes_count: Počet kódov
         new_gift_card_batch: Nová dávka darčekových kariet
         prefix: Predpona
+        expires_at_help: Darčekové karty po tomto dátume vypršia.
       gift_cards:
         active: Aktívne
         all_statuses: Všetky stavy
@@ -852,9 +864,19 @@ sk:
         mapping_required: Toto pole je povinné
         please_map_all_required_fields: Pre pokračovanie namapujte všetky povinné polia.
         waiting_for_file_to_be_processed: Čaká sa na spracovanie súboru...
+        steps:
+          map_fields: 1. Namapovať polia
+          process_rows: 2. Spracovať riadky
+          complete: 3. Dokončiť
+        rows_processed: "%{processed} / %{total} riadkov spracovaných"
+        please_select_a_column: Vyberte prosím stĺpec
+        json: JSON
+        schema: Schéma
       integrations:
         invalid_integration_type: Táto integrácia nie je povolená
         page_subtitle: Prepojte svoj obchod so službami tretích strán a vylepšite zákaznícku skúsenosť.
+        find_more_html: Nájdite viac integrácií v %{integrations_link}
+        none_installed_html: Zatiaľ nie sú nainštalované žiadne integrácie. Nájdite integrácie v %{integrations_link}
       json_preview:
         no_api_response: Pre tento zdroj sa nenašla žiadna odpoveď API
       manage_markets: Spravovať trhy
@@ -909,6 +931,45 @@ sk:
         refunded: Refundované
         remove_user_from_this_order: Odstrániť zákazníka z tejto objednávky
         unfulfilled: Nevybavené
+        placed_by_guest: Túto objednávku zadal hosťujúci zákazník
+        orders_count:
+          one: "%{count} objednávka"
+          other: "%{count} objednávok"
+        repeat_customer_summary_html: Toto je vracajúci sa zákazník, ktorý celkovo minul %{amount} za %{count}, v priemere %{average} na objednávku.
+        avs_responses:
+          a: Ulica sa zhoduje, ale 5-miestne a 9-miestne PSČ sa nezhodujú.
+          b: Ulica sa zhoduje, ale PSČ nebolo overené.
+          c: Ulica a PSČ sa nezhodujú.
+          d: Ulica a PSČ sa zhodujú.
+          e: Údaje AVS sú neplatné alebo AVS nie je povolené pre tento typ karty.
+          f: Meno držiteľa karty sa nezhoduje, ale fakturačné PSČ sa zhoduje.
+          g: Vydávajúca banka mimo U.S. nepodporuje AVS.
+          h: Meno držiteľa karty sa nezhoduje. Ulica a PSČ sa zhodujú.
+          i: Adresa nebola overená.
+          j: Meno držiteľa karty, fakturačná adresa a PSČ sa zhodujú.
+          k: Meno držiteľa karty sa zhoduje, ale fakturačná adresa a fakturačné PSČ sa nezhodujú.
+          l: Meno držiteľa karty a fakturačné PSČ sa zhodujú, ale fakturačná adresa sa nezhoduje.
+          m: Ulica a PSČ sa zhodujú.
+          "n": Ulica a PSČ sa nezhodujú.
+          o: Meno držiteľa karty a fakturačná adresa sa zhodujú, ale fakturačné PSČ sa nezhoduje.
+          p: PSČ sa zhoduje, ale ulica nebola overená.
+          q: Meno držiteľa karty, fakturačná adresa a PSČ sa zhodujú.
+          r: Systém nedostupný.
+          s: Banka nepodporuje AVS.
+          t: Meno držiteľa karty sa nezhoduje, ale ulica sa zhoduje.
+          u: Informácie o adrese nie sú dostupné. Vráti sa, ak banka v U.S. nepodporuje AVS mimo U.S. alebo ak AVS v banke v U.S. nefunguje správne.
+          v: Meno držiteľa karty, fakturačná adresa a fakturačné PSČ sa zhodujú.
+          w: Ulica sa nezhoduje, ale 9-miestne PSČ sa zhoduje.
+          x: Ulica a 9-miestne PSČ sa zhodujú.
+          "y": Ulica a 5-miestne PSČ sa zhodujú.
+          z: Ulica sa nezhoduje, ale 5-miestne PSČ sa zhoduje.
+        cvv_responses:
+          m: CVV2 sa zhoduje
+          "n": CVV2 sa nezhoduje
+          p: Nespracované
+          s: Vydavateľ uvádza, že údaje CVV2 by mali byť na karte prítomné, ale obchodník uviedol, že údaje na karte nie sú prítomné
+          u: Vydavateľ nie je certifikovaný pre CVV2 alebo vydavateľ neposkytol Visa šifrovacie kľúče CVV2
+          blank: Transakcia zlyhala, pretože bolo zadané nesprávne číslo CVV2 alebo nebolo zadané žiadne číslo CVV2
       page_builder:
         background_color: Farba pozadia
         border_bottom_width: Šírka spodného okraja
@@ -958,6 +1019,8 @@ sk:
         schedule: Naplánovať
         scheduled: Cenník bol naplánovaný
         unschedule: Zrušiť naplánovanie
+        page_info: Cenníky sú výkonným nástrojom na správu cenových stratégií na základe skupín zákazníkov, produktov alebo iných kritérií.
+        learn_more: Zistite viac o cenníkoch
       product_translations:
         coverage: Pokrytie prekladu
         locale: Jazyk
@@ -997,6 +1060,7 @@ sk:
           choose_stores: Vyberte, v ktorých obchodoch by mal byť tento produkt dostupný
         variants:
           option_types_link: Ak chcete pridať ďalšie typy možností, prejdite na <a href="%{link}">Typy možností</a>
+        learn_more: Zistite viac o správe produktov
       publishing:
         caption_hidden_after: Stiahne sa %{date}
         caption_live: Teraz viditeľné pre zákazníkov
@@ -1038,6 +1102,12 @@ sk:
         customer_support_email_help: Tento e-mail je viditeľný pre návštevníkov vášho obchodu v pätičke
         new_order_notifications_email_help: Ak chcete dostávať e-mailové upozornenie zakaždým, keď niekto zadá objednávku, zadajte e-mailovú adresu, na ktorú sa má toto upozornenie posielať
         send_consumer_transactional_emails_help: Keď nie je zaškrtnuté, transakčné e-maily ako potvrdenia objednávok a upozornenia na zásielky sa zákazníkom nebudú posielať
+        logo_help: Používa sa v paneli administrátora
+        currencies_managed_by_markets_html: Meny a jazyky sú teraz spravované cez %{markets_link}.
+        email_addresses: E-mailové adresy
+        mail_from_address_help: Uveďte prosím e-mailovú adresu, ktorá sa použije ako odosielateľ všetkých e-mailov odoslaných z vášho obchodu.
+        mailer_logo_help: Toto logo je súčasťou všetkých e-mailových upozornení, ako je potvrdenie objednávky
+        mailer_logo_format_hint: Odporúčame obrázky s priehľadným pozadím. Podporované sú iba formáty JPEG a PNG.
       store_setup_tasks:
         add_billing_address: Pridať fakturačnú adresu
         add_products: Pridať produkty
@@ -1052,6 +1122,15 @@ sk:
           copy: Na výber daní nastavte svoje daňové sadzby.
           done: Všetko je pripravené! Svoje dane môžete kedykoľvek spravovať na stránke <a href="%{link}" data-turbo-frame="_top">nastavení</a>.
           setup: Nastaviť daňové sadzby
+        add_products_task:
+          done_title: Dobrá práca, pridali ste produkty do svojho obchodu!
+          done_subtitle: Nezabudnite, že vždy môžete pridať ďalšie!
+          copy: Pridajte produkty do svojho obchodu, buď vlastné, alebo pozvite predajcov tretích strán, aby predávali spoločne.
+          import_hint: Produkty môžete tiež hromadne importovať zo súboru CSV alebo Excel.
+        customer_support_email_task:
+          copy: Potrebujeme váš e-mail zákazníckej podpory na zobrazenie vo výklade vášho obchodu. Tento e-mail bude slúžiť ako kontaktný bod pre vašich zákazníkov, aby vás mohli kontaktovať s akýmikoľvek otázkami alebo žiadosťami o podporu.
+          current_html: Váš e-mail zákazníckej podpory je %{email}.
+          label: E-mail zákazníckej podpory
       storefront: Obchod
       successful: Úspešné
       successfully_reset_digital_links_limit: Limity sťahovania boli obnovené
@@ -1113,11 +1192,15 @@ sk:
       users:
         filters:
           search_placeholder: Hľadať zákazníkov podľa e-mailu alebo mena
+        timeline: Časová os
       utilities:
         preview: Náhľad
       variants:
         search_results:
           no_variants: Nenašli sme žiadne varianty zodpovedajúce vášmu vyhľadávaniu :(
+        count_at_location:
+          one: "%{count} na mieste"
+          other: "%{count} na mieste"
       variants_form:
         add_option:
           empty: Pridajte možnosti ako veľkosť alebo farba
@@ -1168,6 +1251,8 @@ sk:
         successful_deliveries: Úspešné doručenia
         test_failed: Odoslanie testovacieho webhooku zlyhalo. Skontrolujte konfiguráciu koncového bodu.
         test_sent: Testovací webhook bol odoslaný. Výsledok skontrolujte v doručeniach.
+        name_placeholder: napr. E-maily výkladu, Služba vybavenia objednávok
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Všetky udalosti
         new_webhooks_subscriber: Nový odberateľ webhookov
@@ -1177,6 +1262,88 @@ sk:
         subscriptions: Odbery
         time_of_last_event: Čas poslednej udalosti
         webhooks_events: Udalosti webhookov
+      assistant: Asistent
+      total_orders: Celkový počet objednávok
+      sign_ups: Registrácie
+      previous_page: Predchádzajúca strana
+      next_page: Ďalšia strana
+      no_change: Bez zmeny
+      integrations_directory: Adresár integrácií
+      option_types:
+        presentation_help: Toto sa používa na zobrazenie typu možnosti vo výklade obchodu.
+        name_help_html: Toto sa používa interne na identifikáciu typu možnosti. <strong>Musí byť jedinečný.</strong>
+        value_count:
+          one: "%{count} hodnota"
+          other: "%{count} hodnôt"
+        showing_pagination: Zobrazuje sa %{from}-%{to} z %{total}
+        intro_help: Možnosti sa používajú na zoskupenie určitých atribútov. Napríklad môžete vytvoriť možnosť s názvom „veľkosť trička“ a potom vytvoriť hodnotu možnosti s názvom „malé“ a „stredné“ pre túto možnosť.
+        learn_more: Zistite viac o možnostiach
+      taxons:
+        square_image_help: Používa sa pre hlavný obrázok na domovskej stránke.
+        seo:
+          placeholder: Pridajte názov a popis, aby ste videli, ako sa môže tento taxón zobraziť vo výpise vyhľadávača
+      promotions:
+        name_help: Zákazníci to uvidia vo svojom košíku a pri pokladni.
+        next_step_info: V ďalšom kroku budete môcť pridať akcie a pravidlá k vašej promócii
+        coupon_code_placeholder: Váš kód kupónu
+        code_prefix_placeholder: Predpona kupónu (voliteľné)
+        code_prefix_example_html: napr. %{example}
+        number_of_codes_placeholder: Počet kódov
+        number_of_codes_help: Koľko kódov chcete vygenerovať.
+        add_more_codes_help: Ak chcete pridať viac kódov, jednoducho zvýšte toto číslo
+        usage_limit_help: Ponechajte toto pole prázdne pre neobmedzené použitie.
+        expires_at_help: 'Ponechajte toto pole prázdne, aby nemalo platnosť. Časové pásmo: %{zone}'
+        kind:
+          one_code_label: Jeden kód pre všetkých zákazníkov
+          one_code_help: Môžete obmedziť, koľkokrát je možné tento kód použiť.
+          multi_codes_label: Vygenerovať jedinečné kódy
+          multi_codes_help: Tieto kódy sa generujú automaticky a možno ich stiahnuť ako súbor CSV. Kódy sú jedinečné a možno ich použiť iba raz.
+          automatic_help: Táto promócia sa automaticky uplatní na všetky oprávnené objednávky.
+      shipping_methods:
+        checkout_info: Spôsoby dopravy sú možnosti, ktoré zákazník vidí, keď sa dostane k pokladni, sú to prepravcovia a služby používané na odoslanie vašich produktov.
+        name_help: Toto sa zobrazí zákazníkom
+        admin_name_help: Toto sa zobrazí administrátorom
+        estimated_transit_business_days_help: Toto je odhadovaný počet pracovných dní, ktoré bude trvať, kým balík dorazí na adresu zákazníka. Zobrazí sa na stránke pokladne.
+        tracking_url_token_help: bude nahradené číslom sledovania.
+      zones:
+        info: Zóny sú geografické zoskupenia, predstavujú kolekcie buď štátov, alebo krajín.
+      shipments:
+        stock_location_option: "%{name} (%{count} na sklade)"
+      payment_methods:
+        name_help: Tento názov sa použije na identifikáciu platobnej metódy vo výklade obchodu
+        available_payment_methods: Dostupné platobné metódy
+        find_more_payment_methods_html: Nájdite viac platobných metód v %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Protokol auditu je súčasťou ponuky Spree Enterprise.
+        upgrade_to_enterprise: Prejsť na Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} vás pozval, aby ste sa pripojili k %{resource}"
+        expires_at: Vyprší o
+        email_placeholder: napr. steve@apple.com
+      user_sessions:
+        welcome_back: Vitajte späť
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Ďakujeme, že používate Spree Community Edition! Zvážte prosím prechod na Enterprise Edition pre prístup ku všetkým funkciám a podpore.
+        upgrade: Inovovať
+      metafields:
+        none_configured_for: Pre %{resource} nie sú nakonfigurované žiadne definície metapolí.
+      table:
+        operators:
+          eq: rovná sa
+          not_eq: nerovná sa
+          cont: obsahuje
+          not_cont: neobsahuje
+          start: začína na
+          end: končí na
+          gt: väčšie ako
+          gteq: väčšie alebo rovné
+          lt: menšie ako
+          lteq: menšie alebo rovné
+          in: je niektoré z
+          not_in: nie je žiadne z
+          'null': je prázdne
+          not_null: nie je prázdne
     administration: Administrácia
     advertise:
     agree_to_privacy_policy:
@@ -1506,6 +1673,7 @@ sk:
         gte: väčšie ako alebo rovné
         lt: menšie ako
         lte: menšie ako alebo rovné
+      max_amount_help: Ponechajte toto pole prázdne, aby ste neobmedzili maximálnu sumu.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2815,6 +2983,8 @@ sk:
           method_unavailable: Tento spôsob platby nie je pre túto objednávku dostupný.
           session_required: Tento spôsob platby vyžaduje platobnú reláciu. Použite namiesto toho koncový bod platobných relácií.
       wrong_shipment_target: cieľová zásielka je rovnaká ako pôvodná zásielka
+    copy_number: Kopírovať číslo
+    remaining: Zostáva
   action_text:
     video_embed:
       not_found: Pomocou zadanej URL adresy sa nedá vložiť video

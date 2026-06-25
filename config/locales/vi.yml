@@ -700,6 +700,45 @@ vi:
         provide_email: Cung cấp địa chỉ email
         refunded: Đã hoàn tiền
         remove_user_from_this_order: Xóa khách hàng khỏi đơn hàng này
+        placed_by_guest: Đơn hàng này được đặt bởi một khách hàng vãng lai
+        orders_count:
+          one: "%{count} đơn hàng"
+          other: "%{count} đơn hàng"
+        repeat_customer_summary_html: Đây là khách hàng quay lại đã chi tổng cộng %{amount} qua %{count}, trung bình %{average} mỗi đơn hàng.
+        avs_responses:
+          a: Địa chỉ đường phố khớp, nhưng mã bưu chính 5 chữ số và 9 chữ số không khớp.
+          b: Địa chỉ đường phố khớp, nhưng mã bưu chính chưa được xác minh.
+          c: Địa chỉ đường phố và mã bưu chính không khớp.
+          d: Địa chỉ đường phố và mã bưu chính khớp.
+          e: Dữ liệu AVS không hợp lệ hoặc AVS không được phép đối với loại thẻ này.
+          f: Tên chủ thẻ không khớp, nhưng mã bưu chính thanh toán khớp.
+          g: Ngân hàng phát hành ngoài U.S. không hỗ trợ AVS.
+          h: Tên chủ thẻ không khớp. Địa chỉ đường phố và mã bưu chính khớp.
+          i: Địa chỉ chưa được xác minh.
+          j: Tên chủ thẻ, địa chỉ thanh toán và mã bưu chính khớp.
+          k: Tên chủ thẻ khớp nhưng địa chỉ thanh toán và mã bưu chính thanh toán không khớp.
+          l: Tên chủ thẻ và mã bưu chính thanh toán khớp, nhưng địa chỉ thanh toán không khớp.
+          m: Địa chỉ đường phố và mã bưu chính khớp.
+          "n": Địa chỉ đường phố và mã bưu chính không khớp.
+          o: Tên chủ thẻ và địa chỉ thanh toán khớp, nhưng mã bưu chính thanh toán không khớp.
+          p: Mã bưu chính khớp, nhưng địa chỉ đường phố chưa được xác minh.
+          q: Tên chủ thẻ, địa chỉ thanh toán và mã bưu chính khớp.
+          r: Hệ thống không khả dụng.
+          s: Ngân hàng không hỗ trợ AVS.
+          t: Tên chủ thẻ không khớp, nhưng địa chỉ đường phố khớp.
+          u: Thông tin địa chỉ không khả dụng. Được trả về nếu ngân hàng U.S. không hỗ trợ AVS ngoài U.S. hoặc nếu AVS tại ngân hàng U.S. không hoạt động đúng cách.
+          v: Tên chủ thẻ, địa chỉ thanh toán và mã bưu chính thanh toán khớp.
+          w: Địa chỉ đường phố không khớp, nhưng mã bưu chính 9 chữ số khớp.
+          x: Địa chỉ đường phố và mã bưu chính 9 chữ số khớp.
+          "y": Địa chỉ đường phố và mã bưu chính 5 chữ số khớp.
+          z: Địa chỉ đường phố không khớp, nhưng mã bưu chính 5 chữ số khớp.
+        cvv_responses:
+          m: CVV2 khớp
+          "n": CVV2 không khớp
+          p: Chưa được xử lý
+          s: Đơn vị phát hành cho biết dữ liệu CVV2 phải có trên thẻ, nhưng người bán đã cho biết dữ liệu không có trên thẻ
+          u: Đơn vị phát hành chưa được chứng nhận cho CVV2 hoặc Đơn vị phát hành chưa cung cấp cho Visa khóa mã hóa CVV2
+          blank: Giao dịch thất bại vì đã nhập sai số CVV2 hoặc không nhập số CVV2
       product:
         active: Đang Hoạt Động
         all: Tất Cả
@@ -719,6 +758,11 @@ vi:
           description: Nó hiển thị trường công ty trên biểu mẫu địa chỉ trong mục Tài khoản của tôi và ở bước nhập địa chỉ khi thanh toán.
           label: Hiển thị trường địa chỉ công ty
         send_consumer_transactional_emails_help: Khi bỏ chọn, các email giao dịch như xác nhận đơn hàng và thông báo giao hàng sẽ không được gửi đến khách hàng
+        logo_help: Được dùng trong bảng điều khiển quản trị
+        currencies_managed_by_markets_html: Tiền tệ và ngôn ngữ giờ đây được quản lý bởi %{markets_link}.
+        email_addresses: Địa chỉ email
+        mailer_logo_help: Logo này được bao gồm trong tất cả thông báo email như xác nhận đơn hàng
+        mailer_logo_format_hint: Chúng tôi khuyến nghị hình ảnh có nền trong suốt. Chỉ hỗ trợ định dạng JPEG và PNG.
       tab:
         configuration: Cấu hình
         content: Nội Dung
@@ -856,6 +900,17 @@ vi:
         top_products: Sản phẩm hàng đầu
         view_report: Xem báo cáo
         whats_happening_on_html: Đây là những gì đang diễn ra trên <strong>%{store_name}</strong> hôm nay.
+        updater:
+          available_html: "%{version} đã có sẵn."
+          current_version_html: Phiên bản hiện tại của bạn là %{version}.
+          view_release_notes: Xem ghi chú phát hành
+        visits:
+          referrers_title: Khách truy cập đến từ đâu?
+          landing_pages_title: Trang đích hàng đầu
+          locations_title: Vị trí khách truy cập
+          devices_title: Thiết bị khách truy cập
+          no_data: Không có dữ liệu
+          no_data_for_period: Không có dữ liệu cho giai đoạn này.
       datetime_field_timezone_help: 'Múi giờ: %{zone}'
       digital_shipment_fulfillment_note: Lô hàng này sẽ được đánh dấu là đã hoàn thành khi người dùng tải xuống sản phẩm số
       display_on_options:
@@ -882,6 +937,7 @@ vi:
         codes_count: Số lượng mã
         new_gift_card_batch: Lô thẻ quà tặng mới
         prefix: Tiền tố
+        expires_at_help: Thẻ quà tặng sẽ hết hạn sau ngày này.
       gift_cards:
         active: Đang hoạt động
         all_statuses: Tất cả trạng thái
@@ -898,9 +954,19 @@ vi:
         mapping_required: Trường này là bắt buộc
         please_map_all_required_fields: Vui lòng ánh xạ tất cả các trường bắt buộc để tiếp tục.
         waiting_for_file_to_be_processed: Đang chờ tệp được xử lý...
+        steps:
+          map_fields: 1. Ánh xạ trường
+          process_rows: 2. Xử lý các hàng
+          complete: 3. Hoàn tất
+        rows_processed: Đã xử lý %{processed} / %{total} hàng
+        please_select_a_column: Vui lòng chọn một cột
+        json: JSON
+        schema: Schema
       integrations:
         invalid_integration_type: Tích hợp này không được phép
         page_subtitle: Kết nối cửa hàng của bạn với các dịch vụ bên thứ ba để nâng cao trải nghiệm khách hàng.
+        find_more_html: Tìm thêm tích hợp tại %{integrations_link}
+        none_installed_html: Chưa cài đặt tích hợp nào. Tìm tích hợp tại %{integrations_link}
       json_preview:
         no_api_response: Không tìm thấy phản hồi API cho tài nguyên này
       manage_markets: Quản lý thị trường
@@ -979,6 +1045,8 @@ vi:
         schedule: Lên lịch
         scheduled: Bảng giá đã được lên lịch
         unschedule: Hủy lịch
+        page_info: Bảng giá là công cụ mạnh mẽ để quản lý chiến lược giá dựa trên nhóm khách hàng, sản phẩm hoặc các tiêu chí khác.
+        learn_more: Tìm hiểu thêm về bảng giá
       product_translations:
         coverage: Mức độ bao phủ bản dịch
         locale: Ngôn ngữ
@@ -1018,6 +1086,7 @@ vi:
           choose_stores: Chọn cửa hàng mà sản phẩm này sẽ hiển thị
         variants:
           option_types_link: Để thêm các loại tùy chọn vui lòng truy cập <a href="%{link}">Loại tùy chọn</a>
+        learn_more: Tìm hiểu thêm về quản lý sản phẩm
       publishing:
         caption_hidden_after: Gỡ xuống vào %{date}
         caption_live: Hiển thị với khách hàng ngay bây giờ
@@ -1066,6 +1135,15 @@ vi:
           copy: Để thu thuế, vui lòng thiết lập các mức thuế của bạn.
           done: Bạn đã sẵn sàng! Bạn luôn có thể quản lý thuế trên trang <a href="%{link}" data-turbo-frame="_top">cài đặt</a>.
           setup: Thiết lập mức thuế
+        add_products_task:
+          done_title: Làm tốt lắm, bạn đã thêm sản phẩm vào cửa hàng!
+          done_subtitle: Hãy nhớ rằng bạn luôn có thể thêm nhiều hơn!
+          copy: Thêm sản phẩm vào cửa hàng của bạn, hoặc sản phẩm của riêng bạn hoặc mời các nhà cung cấp bên thứ ba cùng bán.
+          import_hint: Bạn cũng có thể nhập sản phẩm hàng loạt từ tệp CSV hoặc Excel.
+        customer_support_email_task:
+          copy: Chúng tôi cần email hỗ trợ khách hàng của bạn để hiển thị trên cửa hàng. Email này sẽ là điểm liên hệ để khách hàng của bạn tiếp cận bạn cho bất kỳ thắc mắc hoặc hỗ trợ nào.
+          current_html: Email hỗ trợ khách hàng của bạn là %{email}.
+          label: Email hỗ trợ khách hàng
       storefront: Cửa hàng
       successful: Thành công
       successfully_reset_digital_links_limit: Giới hạn tải xuống đã được đặt lại
@@ -1127,11 +1205,15 @@ vi:
       users:
         filters:
           search_placeholder: Tìm khách hàng theo email hoặc tên
+        timeline: Dòng thời gian
       utilities:
         preview: Xem trước
       variants:
         search_results:
           no_variants: Chúng tôi không tìm thấy biến thể nào khớp với tìm kiếm của bạn :(
+        count_at_location:
+          one: "%{count} tại địa điểm"
+          other: "%{count} tại địa điểm"
       variants_form:
         add_option:
           empty: Thêm tùy chọn như kích cỡ hoặc màu sắc
@@ -1182,6 +1264,8 @@ vi:
         successful_deliveries: Lần gửi thành công
         test_failed: Không thể gửi webhook thử nghiệm. Vui lòng kiểm tra cấu hình endpoint.
         test_sent: Đã gửi webhook thử nghiệm. Kiểm tra mục lần gửi để xem kết quả.
+        name_placeholder: vd. Email cửa hàng, Dịch vụ xử lý đơn hàng
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Tất cả sự kiện
         new_webhooks_subscriber: Người đăng ký webhook mới
@@ -1191,6 +1275,88 @@ vi:
         subscriptions: Đăng ký
         time_of_last_event: Thời gian sự kiện cuối
         webhooks_events: Sự kiện webhook
+      assistant: Trợ lý
+      total_orders: Tổng số đơn hàng
+      sign_ups: Lượt đăng ký
+      previous_page: Trang trước
+      next_page: Trang sau
+      no_change: Không thay đổi
+      integrations_directory: Thư mục tích hợp
+      option_types:
+        presentation_help: Mục này được dùng để hiển thị loại tùy chọn trên cửa hàng.
+        name_help_html: Mục này được dùng nội bộ để nhận diện loại tùy chọn. <strong>Phải là duy nhất.</strong>
+        value_count:
+          one: "%{count} giá trị"
+          other: "%{count} giá trị"
+        showing_pagination: Hiển thị %{from}-%{to} trong %{total}
+        intro_help: Tùy chọn được dùng để nhóm một số thuộc tính nhất định. Ví dụ, bạn có thể tạo một tùy chọn có tên "kích cỡ áo" rồi tạo các giá trị tùy chọn có tên "nhỏ" và "vừa" cho tùy chọn này.
+        learn_more: Tìm hiểu thêm về tùy chọn
+      taxons:
+        square_image_help: Được dùng cho hình ảnh nổi bật trên trang chủ.
+        seo:
+          placeholder: Thêm tiêu đề và mô tả để xem danh mục này có thể xuất hiện như thế nào trong danh sách kết quả của công cụ tìm kiếm
+      promotions:
+        name_help: Khách hàng sẽ thấy nội dung này trong giỏ hàng và khi thanh toán.
+        next_step_info: Ở bước tiếp theo, bạn sẽ có thể thêm hành động và quy tắc vào chương trình khuyến mãi của mình
+        coupon_code_placeholder: Mã giảm giá của bạn
+        code_prefix_placeholder: Tiền tố mã giảm giá (tùy chọn)
+        code_prefix_example_html: vd. %{example}
+        number_of_codes_placeholder: Số lượng mã
+        number_of_codes_help: Số lượng mã bạn muốn tạo.
+        add_more_codes_help: Để thêm mã, chỉ cần tăng con số này
+        usage_limit_help: Để trống trường này để sử dụng không giới hạn.
+        expires_at_help: 'Để trống trường này để không có ngày hết hạn. Múi giờ: %{zone}'
+        kind:
+          one_code_label: Một mã cho tất cả khách hàng
+          one_code_help: Bạn có thể giới hạn số lần mã này được sử dụng.
+          multi_codes_label: Tạo các mã duy nhất
+          multi_codes_help: Các mã này được tạo tự động và có thể tải xuống dưới dạng tệp CSV. Các mã là duy nhất và chỉ có thể được sử dụng một lần.
+          automatic_help: Chương trình khuyến mãi này sẽ tự động được áp dụng cho tất cả các đơn hàng đủ điều kiện.
+      shipping_methods:
+        checkout_info: Phương thức vận chuyển là các tùy chọn mà khách hàng thấy khi đến bước thanh toán, đó là các đơn vị vận chuyển và dịch vụ được dùng để gửi sản phẩm của bạn.
+        name_help: Nội dung này sẽ được hiển thị cho khách hàng
+        admin_name_help: Nội dung này sẽ được hiển thị cho quản trị viên
+        estimated_transit_business_days_help: Đây là số ngày làm việc ước tính để gói hàng đến địa chỉ của khách hàng. Nó sẽ được hiển thị trên trang thanh toán.
+        tracking_url_token_help: sẽ được thay thế bằng số theo dõi.
+      zones:
+        info: Khu vực là các nhóm địa lý, chúng đại diện cho tập hợp các bang hoặc quốc gia.
+      shipments:
+        stock_location_option: "%{name} (%{count} có sẵn)"
+      payment_methods:
+        name_help: Tên này sẽ được dùng để nhận diện phương thức thanh toán trên cửa hàng
+        available_payment_methods: Phương thức thanh toán có sẵn
+        find_more_payment_methods_html: Tìm thêm phương thức thanh toán tại %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Nhật ký kiểm toán là một phần của gói Spree Enterprise.
+        upgrade_to_enterprise: Nâng cấp lên Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} đã mời bạn tham gia %{resource}"
+        expires_at: Hết hạn vào
+        email_placeholder: vd. steve@apple.com
+      user_sessions:
+        welcome_back: Chào mừng trở lại
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Cảm ơn bạn đã sử dụng Spree Community Edition! Vui lòng cân nhắc nâng cấp lên Enterprise Edition để truy cập tất cả tính năng và được hỗ trợ.
+        upgrade: Nâng cấp
+      metafields:
+        none_configured_for: Không có định nghĩa metafield nào được cấu hình cho %{resource}.
+      table:
+        operators:
+          eq: bằng
+          not_eq: không bằng
+          cont: chứa
+          not_cont: không chứa
+          start: bắt đầu bằng
+          end: kết thúc bằng
+          gt: lớn hơn
+          gteq: lớn hơn hoặc bằng
+          lt: nhỏ hơn
+          lteq: nhỏ hơn hoặc bằng
+          in: là một trong
+          not_in: không là bất kỳ
+          'null': trống
+          not_null: không trống
     administration: Quản trị
     advertise:
     agree_to_privacy_policy: Đồng ý với Điều khoản riêng tư
@@ -1529,6 +1695,7 @@ vi:
         gte: lớn hơn hoặc bằng
         lt: Nhỏ Hơn
         lte: Nhỏ Hơn Hoặc Bằng
+      max_amount_help: Để trống trường này để không giới hạn số tiền tối đa.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2838,6 +3005,8 @@ vi:
           method_unavailable: Phương thức thanh toán này không khả dụng cho đơn hàng này.
           session_required: Phương thức thanh toán này yêu cầu một phiên thanh toán. Vui lòng dùng điểm cuối phiên thanh toán thay thế.
       wrong_shipment_target: lô hàng đích trùng với lô hàng gốc
+    copy_number: Sao chép số
+    remaining: Còn lại
   action_text:
     video_embed:
       not_found: Không thể nhúng video bằng URL đã cung cấp

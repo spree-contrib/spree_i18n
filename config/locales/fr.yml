@@ -1017,6 +1017,45 @@ fr:
         provide_email: Indiquez une adresse e-mail
         refunded: Remboursée
         remove_user_from_this_order: Retirer le client de cette commande
+        placed_by_guest: Cette commande a été passée par un client invité
+        orders_count:
+          one: "%{count} commande"
+          other: "%{count} commandes"
+        repeat_customer_summary_html: Il s'agit d'un client fidèle qui a dépensé un total de %{amount} sur %{count}, soit une moyenne de %{average} par commande.
+        avs_responses:
+          a: L'adresse postale correspond, mais les codes postaux à 5 et 9 chiffres ne correspondent pas.
+          b: L'adresse postale correspond, mais le code postal n'est pas vérifié.
+          c: L'adresse postale et le code postal ne correspondent pas.
+          d: L'adresse postale et le code postal correspondent.
+          e: Les données AVS sont invalides ou AVS n'est pas autorisé pour ce type de carte.
+          f: Le nom du titulaire de la carte ne correspond pas, mais le code postal de facturation correspond.
+          g: La banque émettrice hors U.S. ne prend pas en charge AVS.
+          h: Le nom du titulaire de la carte ne correspond pas. L'adresse postale et le code postal correspondent.
+          i: Adresse non vérifiée.
+          j: Le nom du titulaire de la carte, l'adresse de facturation et le code postal correspondent.
+          k: Le nom du titulaire de la carte correspond, mais l'adresse de facturation et le code postal de facturation ne correspondent pas.
+          l: Le nom du titulaire de la carte et le code postal de facturation correspondent, mais l'adresse de facturation ne correspond pas.
+          m: L'adresse postale et le code postal correspondent.
+          "n": L'adresse postale et le code postal ne correspondent pas.
+          o: Le nom du titulaire de la carte et l'adresse de facturation correspondent, mais le code postal de facturation ne correspond pas.
+          p: Le code postal correspond, mais l'adresse postale n'est pas vérifiée.
+          q: Le nom du titulaire de la carte, l'adresse de facturation et le code postal correspondent.
+          r: Système indisponible.
+          s: La banque ne prend pas en charge AVS.
+          t: Le nom du titulaire de la carte ne correspond pas, mais l'adresse postale correspond.
+          u: Informations d'adresse indisponibles. Renvoyé si la banque U.S. ne prend pas en charge l'AVS hors U.S. ou si l'AVS d'une banque U.S. ne fonctionne pas correctement.
+          v: Le nom du titulaire de la carte, l'adresse de facturation et le code postal de facturation correspondent.
+          w: L'adresse postale ne correspond pas, mais le code postal à 9 chiffres correspond.
+          x: L'adresse postale et le code postal à 9 chiffres correspondent.
+          "y": L'adresse postale et le code postal à 5 chiffres correspondent.
+          z: L'adresse postale ne correspond pas, mais le code postal à 5 chiffres correspond.
+        cvv_responses:
+          m: Correspondance CVV2
+          "n": Aucune correspondance CVV2
+          p: Non traité
+          s: L'émetteur indique que les données CVV2 devraient figurer sur la carte, mais le commerçant a indiqué que ces données ne sont pas présentes sur la carte
+          u: L'émetteur n'est pas certifié pour CVV2 ou n'a pas fourni à Visa les clés de chiffrement CVV2
+          blank: La transaction a échoué car un mauvais numéro CVV2 a été saisi ou aucun numéro CVV2 n'a été saisi
       product:
         all: Tous
         active: Actif
@@ -1175,6 +1214,17 @@ fr:
         top_products: Meilleurs produits
         view_report: Voir le rapport
         whats_happening_on_html: Voici ce qui se passe sur <strong>%{store_name}</strong> aujourd'hui.
+        updater:
+          available_html: "%{version} est disponible."
+          current_version_html: Votre version actuelle est %{version}.
+          view_release_notes: Voir les notes de version
+        visits:
+          referrers_title: D'où viennent les visiteurs ?
+          landing_pages_title: Principales pages de destination
+          locations_title: Emplacements des visiteurs
+          devices_title: Appareils des visiteurs
+          no_data: Aucune donnée
+          no_data_for_period: Aucune donnée disponible pour cette période.
       datetime_field_timezone_help: 'Fuseau horaire : %{zone}'
       digital_shipment_fulfillment_note: Cette expédition sera marquée comme honorée une fois que l'utilisateur aura téléchargé le produit numérique
       display_on_options:
@@ -1199,6 +1249,7 @@ fr:
         codes_count: Nombre de codes
         new_gift_card_batch: Nouveau lot de cartes cadeaux
         prefix: Préfixe
+        expires_at_help: Les cartes-cadeaux expireront après cette date.
       gift_cards:
         active: Active
         all_statuses: Tous les statuts
@@ -1215,9 +1266,19 @@ fr:
         mapping_required: Ce champ est requis
         please_map_all_required_fields: Veuillez associer tous les champs requis pour continuer.
         waiting_for_file_to_be_processed: En attente du traitement du fichier...
+        steps:
+          map_fields: 1. Mapper les champs
+          process_rows: 2. Traiter les lignes
+          complete: 3. Terminer
+        rows_processed: "%{processed} / %{total} lignes traitées"
+        please_select_a_column: Veuillez sélectionner une colonne
+        json: JSON
+        schema: Schéma
       integrations:
         invalid_integration_type: Cette intégration n'est pas autorisée
         page_subtitle: Connectez votre boutique à des services tiers pour améliorer l'expérience client.
+        find_more_html: Trouvez d'autres intégrations dans %{integrations_link}
+        none_installed_html: Aucune intégration installée pour le moment. Trouvez des intégrations dans %{integrations_link}
       json_preview:
         no_api_response: Aucune réponse API trouvée pour cette ressource
       manage_markets: Gérer les marchés
@@ -1301,6 +1362,8 @@ fr:
         schedule: Programmer
         scheduled: La liste de prix a été programmée
         unschedule: Annuler la programmation
+        page_info: Les listes de prix sont un outil puissant pour gérer les stratégies tarifaires en fonction des groupes de clients, des produits ou d'autres critères.
+        learn_more: En savoir plus sur les listes de prix
       product_translations:
         coverage: Couverture de traduction
         locale: Langue
@@ -1340,6 +1403,7 @@ fr:
           choose_stores: Choisissez dans quelles boutiques ce produit doit être disponible
         variants:
           option_types_link: Pour ajouter d'autres types d'options, rendez-vous sur <a href="%{link}">Types d'options</a>
+        learn_more: En savoir plus sur la gestion des produits
       publishing:
         caption_hidden_after: Retiré le %{date}
         caption_live: Visible par les clients dès maintenant
@@ -1380,6 +1444,12 @@ fr:
         customer_support_email_help: Cet e-mail est visible par les visiteurs de votre boutique dans le pied de page
         new_order_notifications_email_help: Si vous souhaitez recevoir une notification par e-mail à chaque commande passée, veuillez indiquer une adresse e-mail à laquelle cette notification doit être envoyée
         send_consumer_transactional_emails_help: Lorsque cette case est décochée, les e-mails transactionnels comme les confirmations de commande et les notifications d'expédition ne seront pas envoyés aux clients
+        logo_help: Utilisé dans le tableau de bord d'administration
+        currencies_managed_by_markets_html: Les devises et les langues sont désormais gérées par %{markets_link}.
+        email_addresses: Adresses e-mail
+        mail_from_address_help: Veuillez fournir l'adresse e-mail qui sera utilisée comme expéditeur de tous les e-mails envoyés depuis votre boutique.
+        mailer_logo_help: Ce logo est inclus dans toutes les notifications par e-mail, telles que la confirmation de commande
+        mailer_logo_format_hint: Nous recommandons des images avec un arrière-plan transparent. Seuls les formats JPEG et PNG sont pris en charge.
       store_setup_tasks:
         add_billing_address: Ajouter l'adresse de facturation
         add_products: Ajouter des produits
@@ -1394,6 +1464,15 @@ fr:
           copy: Pour collecter des taxes, veuillez configurer vos taux de taxe.
           done: Tout est prêt ! Vous pouvez toujours gérer vos taxes sur la page des <a href="%{link}" data-turbo-frame="_top">paramètres</a>.
           setup: Configurer les taux de taxe
+        add_products_task:
+          done_title: Bravo, vous avez ajouté des produits à votre boutique !
+          done_subtitle: N'oubliez pas que vous pouvez toujours en ajouter d'autres !
+          copy: Ajoutez des produits à votre boutique, les vôtres ou invitez des vendeurs tiers à vendre ensemble.
+          import_hint: Vous pouvez également importer des produits en masse depuis un fichier CSV ou Excel.
+        customer_support_email_task:
+          copy: Nous avons besoin de votre e-mail de support client pour l'afficher sur votre boutique. Cet e-mail servira de point de contact pour que vos clients puissent vous joindre pour toute question ou demande de support.
+          current_html: Votre e-mail de support client est %{email}.
+          label: E-mail de support client
       storefront: Boutique
       successfully_reset_digital_links_limit: Les limites de téléchargement ont été réinitialisées
       tables:
@@ -1454,11 +1533,15 @@ fr:
       users:
         filters:
           search_placeholder: Rechercher des clients par e-mail ou nom
+        timeline: Chronologie
       utilities:
         preview: Aperçu
       variants:
         search_results:
           no_variants: Nous n'avons trouvé aucune variante correspondant à votre recherche :(
+        count_at_location:
+          one: "%{count} à l'emplacement"
+          other: "%{count} à l'emplacement"
       variants_form:
         add_option:
           empty: Ajoutez des options comme la taille ou la couleur
@@ -1509,6 +1592,8 @@ fr:
         successful_deliveries: Livraisons réussies
         test_failed: Échec de l'envoi du webhook de test. Veuillez vérifier la configuration du point de terminaison.
         test_sent: Webhook de test envoyé. Consultez les livraisons pour le résultat.
+        name_placeholder: p. ex. E-mails de la boutique, Service d'exécution des commandes
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Tous les événements
         new_webhooks_subscriber: Nouvel abonné aux webhooks
@@ -1518,6 +1603,88 @@ fr:
         subscriptions: Abonnements
         time_of_last_event: Heure du dernier événement
         webhooks_events: Événements de webhooks
+      assistant: Assistant
+      total_orders: Total des commandes
+      sign_ups: Inscriptions
+      previous_page: Page précédente
+      next_page: Page suivante
+      no_change: Aucun changement
+      integrations_directory: Répertoire des intégrations
+      option_types:
+        presentation_help: Ceci est utilisé pour afficher le type d'option sur la boutique.
+        name_help_html: Ceci est utilisé en interne pour identifier le type d'option. <strong>Il doit être unique.</strong>
+        value_count:
+          one: "%{count} valeur"
+          other: "%{count} valeurs"
+        showing_pagination: Affichage de %{from}-%{to} sur %{total}
+        intro_help: Les options servent à regrouper certains attributs. Par exemple, vous pouvez créer une option nommée « taille de chemise » puis créer une valeur d'option nommée « petit » et « moyen » pour cette option.
+        learn_more: En savoir plus sur les options
+      taxons:
+        square_image_help: Utilisé pour l'image à la une sur la page d'accueil.
+        seo:
+          placeholder: Ajoutez un titre et une description pour voir comment ce taxon pourrait apparaître dans une liste de résultats de moteur de recherche
+      promotions:
+        name_help: Les clients verront ceci dans leur panier et lors du paiement.
+        next_step_info: À l'étape suivante, vous pourrez ajouter des actions et des règles à votre promotion
+        coupon_code_placeholder: Votre code promo
+        code_prefix_placeholder: Préfixe du coupon (facultatif)
+        code_prefix_example_html: p. ex. %{example}
+        number_of_codes_placeholder: Nombre de codes
+        number_of_codes_help: Combien de codes vous souhaitez générer.
+        add_more_codes_help: Pour ajouter d'autres codes, augmentez simplement ce nombre
+        usage_limit_help: Laissez ce champ vide pour une utilisation illimitée.
+        expires_at_help: 'Laissez ce champ vide pour aucune expiration. Fuseau horaire : %{zone}'
+        kind:
+          one_code_label: Un code pour tous les clients
+          one_code_help: Vous pouvez limiter le nombre de fois où ce code peut être utilisé.
+          multi_codes_label: Générer des codes uniques
+          multi_codes_help: Ces codes sont générés automatiquement et peuvent être téléchargés sous forme de fichier CSV. Les codes sont uniques et ne peuvent être utilisés qu'une seule fois.
+          automatic_help: Cette promotion sera automatiquement appliquée à toutes les commandes éligibles.
+      shipping_methods:
+        checkout_info: Les méthodes d'expédition sont des options que le client voit lorsqu'il arrive au paiement ; ce sont les transporteurs et les services utilisés pour envoyer vos produits.
+        name_help: Ceci sera affiché aux clients
+        admin_name_help: Ceci sera affiché aux administrateurs
+        estimated_transit_business_days_help: Il s'agit du nombre estimé de jours ouvrés nécessaires pour que le colis arrive à l'adresse du client. Il sera affiché sur la page de paiement.
+        tracking_url_token_help: sera remplacé par le numéro de suivi.
+      zones:
+        info: Les zones sont des regroupements géographiques ; elles représentent des ensembles d'états ou de pays.
+      shipments:
+        stock_location_option: "%{name} (%{count} en stock)"
+      payment_methods:
+        name_help: Ce nom sera utilisé pour identifier le mode de paiement sur la boutique
+        available_payment_methods: Modes de paiement disponibles
+        find_more_payment_methods_html: Trouvez d'autres modes de paiement dans %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Le journal d'audit fait partie de l'offre Spree Enterprise.
+        upgrade_to_enterprise: Passer à Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} vous a invité à rejoindre %{resource}"
+        expires_at: Expire le
+        email_placeholder: p. ex. steve@apple.com
+      user_sessions:
+        welcome_back: Bon retour
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Merci d'utiliser Spree Community Edition ! Envisagez de passer à Enterprise Edition pour accéder à toutes les fonctionnalités et au support.
+        upgrade: Mettre à niveau
+      metafields:
+        none_configured_for: Aucune définition de métachamp configurée pour %{resource}.
+      table:
+        operators:
+          eq: est égal à
+          not_eq: n'est pas égal à
+          cont: contient
+          not_cont: ne contient pas
+          start: commence par
+          end: se termine par
+          gt: supérieur à
+          gteq: supérieur ou égal à
+          lt: inférieur à
+          lteq: inférieur ou égal à
+          in: fait partie de
+          not_in: ne fait pas partie de
+          'null': est vide
+          not_null: n'est pas vide
     administration: Administration
     advertise: Publiciser
     agree_to_privacy_policy: Accepter l'Engagement de Confidentialité
@@ -2036,6 +2203,7 @@ fr:
         gte: égal ou plus grand que
         lt: plus petit que
         lte: égal ou plus petit que
+      max_amount_help: Laissez ce champ vide pour ne pas limiter le montant maximum.
     items_cannot_be_shipped: Il nous est impossible de livrer l'article sélectionné à votre adresse de livraison. Veuillez choisir une autre adresse de livraison.
     items_in_rmas:
     items_reimbursed: Articles remboursés
@@ -3389,6 +3557,8 @@ fr:
     weight_unit: Unité de poids
     wishlist: Liste de souhaits
     zone_ids: Zones
+    copy_number: Copier le numéro
+    remaining: Restant
   action_text:
     video_embed:
       not_found: Impossible d'intégrer une vidéo avec l'URL fournie

@@ -780,6 +780,45 @@ sv:
         refunded: Återbetald
         remove_user_from_this_order: Ta bort kund från den här ordern
         unfulfilled: Ej uppfylld
+        placed_by_guest: Den här beställningen lades av en gästkund
+        orders_count:
+          one: "%{count} beställning"
+          other: "%{count} beställningar"
+        repeat_customer_summary_html: Detta är en återkommande kund som har spenderat totalt %{amount} över %{count}, i genomsnitt %{average} per beställning.
+        avs_responses:
+          a: Gatuadressen matchar, men 5-siffrigt och 9-siffrigt postnummer matchar inte.
+          b: Gatuadressen matchar, men postnumret är inte verifierat.
+          c: Gatuadress och postnummer matchar inte.
+          d: Gatuadress och postnummer matchar.
+          e: AVS-data är ogiltiga eller AVS är inte tillåtet för den här korttypen.
+          f: Kortinnehavarens namn matchar inte, men faktureringspostnumret matchar.
+          g: Utfärdande bank utanför U.S. stöder inte AVS.
+          h: Kortinnehavarens namn matchar inte. Gatuadress och postnummer matchar.
+          i: Adressen är inte verifierad.
+          j: Kortinnehavarens namn, faktureringsadress och postnummer matchar.
+          k: Kortinnehavarens namn matchar, men faktureringsadress och faktureringspostnummer matchar inte.
+          l: Kortinnehavarens namn och faktureringspostnummer matchar, men faktureringsadressen matchar inte.
+          m: Gatuadress och postnummer matchar.
+          "n": Gatuadress och postnummer matchar inte.
+          o: Kortinnehavarens namn och faktureringsadress matchar, men faktureringspostnumret matchar inte.
+          p: Postnumret matchar, men gatuadressen är inte verifierad.
+          q: Kortinnehavarens namn, faktureringsadress och postnummer matchar.
+          r: Systemet är inte tillgängligt.
+          s: Banken stöder inte AVS.
+          t: Kortinnehavarens namn matchar inte, men gatuadressen matchar.
+          u: Adressinformation är inte tillgänglig. Returneras om U.S.-banken inte stöder AVS utanför U.S. eller om AVS i en U.S.-bank inte fungerar korrekt.
+          v: Kortinnehavarens namn, faktureringsadress och faktureringspostnummer matchar.
+          w: Gatuadressen matchar inte, men 9-siffrigt postnummer matchar.
+          x: Gatuadress och 9-siffrigt postnummer matchar.
+          "y": Gatuadress och 5-siffrigt postnummer matchar.
+          z: Gatuadressen matchar inte, men 5-siffrigt postnummer matchar.
+        cvv_responses:
+          m: CVV2 matchar
+          "n": CVV2 matchar inte
+          p: Inte behandlad
+          s: Utfärdaren anger att CVV2-data ska finnas på kortet, men handlaren har angett att data inte finns på kortet
+          u: Utfärdaren är inte certifierad för CVV2 eller utfärdaren har inte försett Visa med CVV2-krypteringsnycklarna
+          blank: Transaktionen misslyckades eftersom fel CVV2-nummer angavs eller inget CVV2-nummer angavs
       return_authorization:
         product: vara
       allowed_origins:
@@ -890,6 +929,17 @@ sv:
         top_products: Toppprodukter
         view_report: Visa rapport
         whats_happening_on_html: Här är vad som händer i <strong>%{store_name}</strong> idag.
+        updater:
+          available_html: "%{version} är tillgänglig."
+          current_version_html: Din nuvarande version är %{version}.
+          view_release_notes: Visa versionsinformation
+        visits:
+          referrers_title: Var kommer besökarna ifrån?
+          landing_pages_title: Toppmålsidor
+          locations_title: Besökarnas platser
+          devices_title: Besökarnas enheter
+          no_data: Inga data
+          no_data_for_period: Inga data tillgängliga för den här perioden.
       datetime_field_timezone_help: 'Tidszon: %{zone}'
       digital_shipment_fulfillment_note: Den här försändelsen markeras som uppfylld när användaren laddar ner den digitala produkten
       display_on_options:
@@ -916,6 +966,7 @@ sv:
         codes_count: Antal koder
         new_gift_card_batch: Ny presentkortssats
         prefix: Prefix
+        expires_at_help: Presentkort upphör att gälla efter detta datum.
       gift_cards:
         active: Aktiv
         all_statuses: Alla statusar
@@ -932,9 +983,19 @@ sv:
         mapping_required: Det här fältet är obligatoriskt
         please_map_all_required_fields: Mappa alla obligatoriska fält för att fortsätta.
         waiting_for_file_to_be_processed: Väntar på att filen ska bearbetas...
+        steps:
+          map_fields: 1. Mappa fält
+          process_rows: 2. Bearbeta rader
+          complete: 3. Slutför
+        rows_processed: "%{processed} / %{total} rader bearbetade"
+        please_select_a_column: Välj en kolumn
+        json: JSON
+        schema: Schema
       integrations:
         invalid_integration_type: Den här integrationen är inte tillåten
         page_subtitle: Anslut din butik till tredjepartstjänster för att förbättra kundupplevelsen.
+        find_more_html: Hitta fler integrationer i %{integrations_link}
+        none_installed_html: Inga integrationer installerade ännu. Hitta integrationer i %{integrations_link}
       json_preview:
         no_api_response: Inget API-svar hittades för den här resursen
       manage_markets: Hantera marknader
@@ -1019,6 +1080,8 @@ sv:
         schedule: Schemalägg
         scheduled: Prislistan har schemalagts
         unschedule: Avschemalägg
+        page_info: Prislistor är ett kraftfullt verktyg för att hantera prisstrategier baserade på kundgrupper, produkter eller andra kriterier.
+        learn_more: Läs mer om prislistor
       product_translations:
         coverage: Översättningstäckning
         locale: Språk
@@ -1058,6 +1121,7 @@ sv:
           choose_stores: Välj i vilka butiker den här produkten ska vara tillgänglig
         variants:
           option_types_link: För att lägga till fler alternativtyper, gå till <a href="%{link}">Alternativtyper</a>
+        learn_more: Läs mer om att hantera produkter
       publishing:
         caption_hidden_after: Tas ner %{date}
         caption_live: Synlig för kunder nu
@@ -1099,6 +1163,12 @@ sv:
         customer_support_email_help: Den här e-postadressen är synlig för dina butiksbesökare i sidfoten
         new_order_notifications_email_help: Om du vill få en e-postavisering varje gång någon lägger en order, ange en e-postadress dit aviseringen ska skickas
         send_consumer_transactional_emails_help: När detta är avmarkerat skickas inte transaktionsmejl som orderbekräftelser och leveransaviseringar till kunder
+        logo_help: Används i administratörspanelen
+        currencies_managed_by_markets_html: Valutor och språk hanteras nu av %{markets_link}.
+        email_addresses: E-postadresser
+        mail_from_address_help: Ange den e-postadress som ska användas som avsändare av alla e-postmeddelanden som skickas från din butik.
+        mailer_logo_help: Den här logotypen ingår i alla e-postaviseringar, till exempel orderbekräftelser
+        mailer_logo_format_hint: Vi rekommenderar bilder med transparent bakgrund. Endast JPEG- och PNG-format stöds.
       store_setup_tasks:
         add_billing_address: Lägg till faktureringsadress
         add_products: Lägg till produkter
@@ -1113,6 +1183,15 @@ sv:
           copy: För att kunna ta ut skatter, konfigurera dina skattesatser.
           done: Allt klart! Du kan alltid hantera dina skatter på sidan <a href="%{link}" data-turbo-frame="_top">inställningar</a>.
           setup: Konfigurera skattesatser
+        add_products_task:
+          done_title: Bra jobbat, du har lagt till produkter i din butik!
+          done_subtitle: Kom ihåg att du alltid kan lägga till fler!
+          copy: Lägg till produkter i din butik, antingen dina egna eller bjud in tredjepartsleverantörer att sälja tillsammans.
+          import_hint: Du kan också importera produkter i bulk från en CSV- eller Excel-fil.
+        customer_support_email_task:
+          copy: Vi behöver din e-postadress för kundsupport för att visa den i din butik. Den här e-postadressen fungerar som en kontaktpunkt där dina kunder kan nå dig med frågor eller support.
+          current_html: Din e-postadress för kundsupport är %{email}.
+          label: E-postadress för kundsupport
       storefront: Butik
       successful: Lyckades
       successfully_reset_digital_links_limit: Nedladdningsgränserna har återställts
@@ -1174,11 +1253,15 @@ sv:
       users:
         filters:
           search_placeholder: Sök kunder efter e-post eller namn
+        timeline: Tidslinje
       utilities:
         preview: Förhandsgranska
       variants:
         search_results:
           no_variants: Vi kunde inte hitta några varianter som matchar din sökning :(
+        count_at_location:
+          one: "%{count} på plats"
+          other: "%{count} på plats"
       variants_form:
         add_option:
           empty: Lägg till alternativ som storlek eller färg
@@ -1229,6 +1312,8 @@ sv:
         successful_deliveries: Lyckade leveranser
         test_failed: Misslyckades att skicka testwebhook. Kontrollera slutpunktskonfigurationen.
         test_sent: Testwebhook skickad. Kontrollera leveranser för resultatet.
+        name_placeholder: t.ex. Butiks-e-post, Orderhanteringstjänst
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Alla händelser
         new_webhooks_subscriber: Ny webhook-prenumerant
@@ -1238,6 +1323,88 @@ sv:
         subscriptions: Prenumerationer
         time_of_last_event: Tid för senaste händelse
         webhooks_events: Webhook-händelser
+      assistant: Assistent
+      total_orders: Totalt antal beställningar
+      sign_ups: Registreringar
+      previous_page: Föregående sida
+      next_page: Nästa sida
+      no_change: Ingen ändring
+      integrations_directory: Integrationskatalog
+      option_types:
+        presentation_help: Detta används för att visa alternativtypen i butiken.
+        name_help_html: Detta används internt för att identifiera alternativtypen. <strong>Den måste vara unik.</strong>
+        value_count:
+          one: "%{count} värde"
+          other: "%{count} värden"
+        showing_pagination: Visar %{from}-%{to} av %{total}
+        intro_help: Alternativ används för att gruppera vissa attribut. Du kan till exempel skapa ett alternativ som heter ”skjortstorlek” och sedan skapa ett alternativvärde som heter ”liten” och ”medium” för det här alternativet.
+        learn_more: Läs mer om alternativ
+      taxons:
+        square_image_help: Används för den utvalda bilden på startsidan.
+        seo:
+          placeholder: Lägg till en titel och en beskrivning för att se hur den här taxonen kan visas i en sökmotorlista
+      promotions:
+        name_help: Kunderna ser detta i sin varukorg och i kassan.
+        next_step_info: I nästa steg kan du lägga till åtgärder och regler i din kampanj
+        coupon_code_placeholder: Din kupongkod
+        code_prefix_placeholder: Kupongprefix (valfritt)
+        code_prefix_example_html: t.ex. %{example}
+        number_of_codes_placeholder: Antal koder
+        number_of_codes_help: Hur många koder du vill generera.
+        add_more_codes_help: För att lägga till fler koder ökar du bara det här numret
+        usage_limit_help: Lämna det här fältet tomt för obegränsad användning.
+        expires_at_help: 'Lämna det här fältet tomt för ingen utgång. Tidszon: %{zone}'
+        kind:
+          one_code_label: En kod för alla kunder
+          one_code_help: Du kan begränsa hur många gånger den här koden kan användas.
+          multi_codes_label: Generera unika koder
+          multi_codes_help: Dessa koder genereras automatiskt och kan laddas ner som en CSV-fil. Koderna är unika och kan endast användas en gång.
+          automatic_help: Den här kampanjen tillämpas automatiskt på alla berättigade beställningar.
+      shipping_methods:
+        checkout_info: Fraktmetoder är de alternativ som kunden ser när de når kassan, det är de transportörer och tjänster som används för att skicka dina produkter.
+        name_help: Detta visas för kunderna
+        admin_name_help: Detta visas för administratörer
+        estimated_transit_business_days_help: Detta är det uppskattade antalet arbetsdagar det tar för paketet att anlända till kundens adress. Det visas på kassasidan.
+        tracking_url_token_help: kommer att ersättas med spårningsnumret.
+      zones:
+        info: Zoner är geografiska grupperingar, de representerar samlingar av antingen delstater eller länder.
+      shipments:
+        stock_location_option: "%{name} (%{count} i lager)"
+      payment_methods:
+        name_help: Detta namn används för att identifiera betalningsmetoden i butiken
+        available_payment_methods: Tillgängliga betalningsmetoder
+        find_more_payment_methods_html: Hitta fler betalningsmetoder i %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Granskningsloggen är en del av Spree Enterprise-erbjudandet.
+        upgrade_to_enterprise: Uppgradera till Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} har bjudit in dig att gå med i %{resource}"
+        expires_at: Upphör att gälla
+        email_placeholder: t.ex. steve@apple.com
+      user_sessions:
+        welcome_back: Välkommen tillbaka
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Tack för att du använder Spree Community Edition! Överväg att uppgradera till Enterprise Edition för åtkomst till alla funktioner och support.
+        upgrade: Uppgradera
+      metafields:
+        none_configured_for: Inga metafältsdefinitioner konfigurerade för %{resource}.
+      table:
+        operators:
+          eq: är lika med
+          not_eq: är inte lika med
+          cont: innehåller
+          not_cont: innehåller inte
+          start: börjar med
+          end: slutar med
+          gt: större än
+          gteq: större än eller lika med
+          lt: mindre än
+          lteq: mindre än eller lika med
+          in: är någon av
+          not_in: är ingen av
+          'null': är tom
+          not_null: är inte tom
     administration: Administration
     advertise: Marknadsför
     agree_to_privacy_policy: Acceptera privatpolicyn
@@ -1725,6 +1892,7 @@ sv:
         gte: större än eller lika med
         lt: mindre än
         lte: mindre än eller lika med
+      max_amount_help: Lämna det här fältet tomt för att inte begränsa det maximala beloppet.
     items_cannot_be_shipped: Vi kan inte skicka till den angivna adressen. Var vänlig välj en annan adress.
     items_in_rmas: Artikel i byte
     items_reimbursed: Ersatta artiklar
@@ -3038,6 +3206,8 @@ sv:
     weight_unit: Viktenhet
     wishlist: Önskelista
     zone_ids: Zoner
+    copy_number: Kopiera nummer
+    remaining: Återstående
   action_text:
     video_embed:
       not_found: Kan inte bädda in en video med den angivna URL:en

@@ -791,6 +791,17 @@ da:
         top_products: Topprodukter
         view_report: Se rapport
         whats_happening_on_html: Her er hvad der sker på <strong>%{store_name}</strong> i dag.
+        updater:
+          available_html: "%{version} er tilgængelig."
+          current_version_html: Din nuværende version er %{version}.
+          view_release_notes: Se udgivelsesnoter
+        visits:
+          referrers_title: Hvor kommer de besøgende fra?
+          landing_pages_title: Bedste landingssider
+          locations_title: Besøgendes placeringer
+          devices_title: Besøgendes enheder
+          no_data: Ingen data
+          no_data_for_period: Ingen data tilgængelige for denne periode.
       datetime_field_timezone_help: 'Tidszone: %{zone}'
       digital_shipment_fulfillment_note: Denne forsendelse markeres som opfyldt, når brugeren downloader det digitale produkt
       display_on_options:
@@ -817,6 +828,7 @@ da:
         codes_count: Antal koder
         new_gift_card_batch: Nyt gavekortparti
         prefix: Præfiks
+        expires_at_help: Gavekort udløber efter denne dato.
       gift_cards:
         active: Aktiv
         all_statuses: Alle statusser
@@ -833,9 +845,19 @@ da:
         mapping_required: Dette felt er påkrævet
         please_map_all_required_fields: Tilknyt venligst alle de påkrævede felter for at fortsætte.
         waiting_for_file_to_be_processed: Venter på, at filen behandles...
+        steps:
+          map_fields: 1. Tilknyt felter
+          process_rows: 2. Behandl rækker
+          complete: 3. Færdig
+        rows_processed: "%{processed} / %{total} rækker behandlet"
+        please_select_a_column: Vælg en kolonne
+        json: JSON
+        schema: Skema
       integrations:
         invalid_integration_type: Denne integration er ikke tilladt
         page_subtitle: Forbind din butik til tredjepartstjenester for at forbedre kundeoplevelsen.
+        find_more_html: Find flere integrationer i %{integrations_link}
+        none_installed_html: Ingen integrationer er installeret endnu. Find integrationer i %{integrations_link}
       json_preview:
         no_api_response: Ingen API-respons fundet for denne ressource
       manage_markets: Administrer markeder
@@ -890,6 +912,45 @@ da:
         refunded: Refunderet
         remove_user_from_this_order: Fjern kunde fra denne ordre
         unfulfilled: Ikke opfyldt
+        placed_by_guest: Denne ordre blev afgivet af en gæstekunde
+        orders_count:
+          one: "%{count} ordre"
+          other: "%{count} ordrer"
+        repeat_customer_summary_html: Dette er en tilbagevendende kunde, der har brugt i alt %{amount} på %{count}, i gennemsnit %{average} pr. ordre.
+        avs_responses:
+          a: Gadeadressen stemmer overens, men det 5-cifrede og 9-cifrede postnummer stemmer ikke overens.
+          b: Gadeadressen stemmer overens, men postnummeret er ikke verificeret.
+          c: Gadeadresse og postnummer stemmer ikke overens.
+          d: Gadeadresse og postnummer stemmer overens.
+          e: AVS-data er ugyldige, eller AVS er ikke tilladt for denne korttype.
+          f: Kortindehaverens navn stemmer ikke overens, men faktureringspostnummeret stemmer overens.
+          g: Den udstedende bank uden for U.S. understøtter ikke AVS.
+          h: Kortindehaverens navn stemmer ikke overens. Gadeadresse og postnummer stemmer overens.
+          i: Adresse ikke verificeret.
+          j: Kortindehaverens navn, faktureringsadresse og postnummer stemmer overens.
+          k: Kortindehaverens navn stemmer overens, men faktureringsadresse og faktureringspostnummer stemmer ikke overens.
+          l: Kortindehaverens navn og faktureringspostnummer stemmer overens, men faktureringsadressen stemmer ikke overens.
+          m: Gadeadresse og postnummer stemmer overens.
+          "n": Gadeadresse og postnummer stemmer ikke overens.
+          o: Kortindehaverens navn og faktureringsadresse stemmer overens, men faktureringspostnummeret stemmer ikke overens.
+          p: Postnummeret stemmer overens, men gadeadressen er ikke verificeret.
+          q: Kortindehaverens navn, faktureringsadresse og postnummer stemmer overens.
+          r: Systemet er ikke tilgængeligt.
+          s: Banken understøtter ikke AVS.
+          t: Kortindehaverens navn stemmer ikke overens, men gadeadressen stemmer overens.
+          u: Adresseoplysninger er ikke tilgængelige. Returneres, hvis U.S.-banken ikke understøtter AVS uden for U.S., eller hvis AVS i en U.S.-bank ikke fungerer korrekt.
+          v: Kortindehaverens navn, faktureringsadresse og faktureringspostnummer stemmer overens.
+          w: Gadeadressen stemmer ikke overens, men det 9-cifrede postnummer stemmer overens.
+          x: Gadeadresse og 9-cifret postnummer stemmer overens.
+          "y": Gadeadresse og 5-cifret postnummer stemmer overens.
+          z: Gadeadressen stemmer ikke overens, men det 5-cifrede postnummer stemmer overens.
+        cvv_responses:
+          m: CVV2-match
+          "n": Intet CVV2-match
+          p: Ikke behandlet
+          s: Udstederen angiver, at CVV2-data bør være til stede på kortet, men forhandleren har angivet, at data ikke er til stede på kortet
+          u: Udstederen er ikke certificeret til CVV2, eller udstederen har ikke leveret CVV2-krypteringsnøglerne til Visa
+          blank: Transaktionen mislykkedes, fordi der blev indtastet et forkert CVV2-nummer, eller fordi der ikke blev indtastet noget CVV2-nummer
       page_builder:
         background_color: Baggrundsfarve
         border_bottom_width: Kantbredde nederst
@@ -939,6 +1000,8 @@ da:
         schedule: Planlæg
         scheduled: Prislisten er blevet planlagt
         unschedule: Fjern planlægning
+        page_info: Prislister er et effektivt værktøj til at administrere prisstrategier baseret på kundegrupper, produkter eller andre kriterier.
+        learn_more: Få mere at vide om prislister
       product_translations:
         coverage: Oversættelsesdækning
         locale: Sprog
@@ -978,6 +1041,7 @@ da:
           choose_stores: Vælg hvilke butikker dette produkt skal være tilgængeligt i
         variants:
           option_types_link: For at tilføje flere indstillingstyper, gå venligst til <a href="%{link}">Indstillingstyper</a>
+        learn_more: Få mere at vide om håndtering af produkter
       publishing:
         caption_hidden_after: Tages ned %{date}
         caption_live: Synlig for kunder nu
@@ -1019,6 +1083,12 @@ da:
         customer_support_email_help: Denne e-mail er synlig for dine butiksbesøgende i sidefoden
         new_order_notifications_email_help: Hvis du ønsker at modtage en e-mailnotifikation, hver gang nogen afgiver en ordre, skal du angive en e-mailadresse, som notifikationen skal sendes til
         send_consumer_transactional_emails_help: Når dette er fravalgt, sendes transaktionsmails som ordrebekræftelser og forsendelsesnotifikationer ikke til kunderne
+        logo_help: Bruges i administrationspanelet
+        currencies_managed_by_markets_html: Valutaer og sprogindstillinger administreres nu af %{markets_link}.
+        email_addresses: E-mailadresser
+        mail_from_address_help: Angiv den e-mailadresse, der skal bruges som afsender af alle e-mails sendt fra din butik.
+        mailer_logo_help: Dette logo er inkluderet i alle e-mailnotifikationer, såsom ordrebekræftelse
+        mailer_logo_format_hint: Vi anbefaler billeder med en gennemsigtig baggrund. Kun JPEG- og PNG-formater understøttes.
       store_setup_tasks:
         add_billing_address: Tilføj faktureringsadresse
         add_products: Tilføj produkter
@@ -1033,6 +1103,15 @@ da:
           copy: For at kunne opkræve moms skal du opsætte dine momssatser.
           done: Du er klar! Du kan altid administrere din moms på <a href="%{link}" data-turbo-frame="_top">indstillingssiden</a>.
           setup: Opsæt momssatser
+        add_products_task:
+          done_title: Godt klaret, du har tilføjet produkter til din butik!
+          done_subtitle: Husk, at du altid kan tilføje flere!
+          copy: Tilføj produkter til din butik, enten dine egne eller inviter tredjepartssælgere til at sælge sammen.
+          import_hint: Du kan også importere produkter i bulk fra en CSV- eller Excel-fil.
+        customer_support_email_task:
+          copy: Vi har brug for din e-mail til kundesupport for at vise den i din butik. Denne e-mail fungerer som kontaktpunkt, hvor dine kunder kan kontakte dig med spørgsmål eller for support.
+          current_html: Din e-mail til kundesupport er %{email}.
+          label: E-mail til kundesupport
       storefront: Webshop
       successful: Vellykket
       successfully_reset_digital_links_limit: Downloadgrænserne er blevet nulstillet
@@ -1094,11 +1173,15 @@ da:
       users:
         filters:
           search_placeholder: Søg kunder efter e-mail eller navn
+        timeline: Tidslinje
       utilities:
         preview: Forhåndsvisning
       variants:
         search_results:
           no_variants: Vi kunne ikke finde nogen varianter, der matcher din søgning :(
+        count_at_location:
+          one: "%{count} på lokation"
+          other: "%{count} på lokation"
       variants_form:
         add_option:
           empty: Tilføj indstillinger som størrelse eller farve
@@ -1149,6 +1232,8 @@ da:
         successful_deliveries: Vellykkede leveringer
         test_failed: Kunne ikke sende test-webhook. Kontrollér venligst endpoint-konfigurationen.
         test_sent: Test-webhook sendt. Tjek leveringer for resultatet.
+        name_placeholder: f.eks. Butiks-e-mails, Fulfilment-tjeneste
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Alle hændelser
         new_webhooks_subscriber: Ny webhook-abonnent
@@ -1158,6 +1243,88 @@ da:
         subscriptions: Abonnementer
         time_of_last_event: Tidspunkt for seneste hændelse
         webhooks_events: Webhook-hændelser
+      assistant: Assistent
+      total_orders: Samlede ordrer
+      sign_ups: Tilmeldinger
+      previous_page: Forrige side
+      next_page: Næste side
+      no_change: Ingen ændring
+      integrations_directory: Integrationskatalog
+      option_types:
+        presentation_help: Dette bruges til at vise indstillingstypen i butikken.
+        name_help_html: Dette bruges internt til at identificere indstillingstypen. <strong>Det skal være unikt.</strong>
+        value_count:
+          one: "%{count} værdi"
+          other: "%{count} værdier"
+        showing_pagination: Viser %{from}-%{to} af %{total}
+        intro_help: Indstillinger bruges til at gruppere bestemte attributter. Du kan f.eks. oprette en indstilling med navnet "trøjestørrelse" og derefter oprette indstillingsværdier med navnet "lille" og "medium" for denne indstilling.
+        learn_more: Få mere at vide om indstillinger
+      taxons:
+        square_image_help: Bruges til det fremhævede billede på forsiden.
+        seo:
+          placeholder: Tilføj en titel og beskrivelse for at se, hvordan denne taxon kan vises i en søgemaskineliste
+      promotions:
+        name_help: Kunder vil se dette i deres kurv og ved kassen.
+        next_step_info: I næste trin kan du tilføje handlinger og regler til din kampagne
+        coupon_code_placeholder: Din rabatkode
+        code_prefix_placeholder: Rabatkodepræfiks (valgfrit)
+        code_prefix_example_html: f.eks. %{example}
+        number_of_codes_placeholder: Antal koder
+        number_of_codes_help: Hvor mange koder du vil generere.
+        add_more_codes_help: For at tilføje flere koder skal du blot øge dette tal
+        usage_limit_help: Lad dette felt være tomt for ubegrænset brug.
+        expires_at_help: 'Lad dette felt være tomt for ingen udløb. Tidszone: %{zone}'
+        kind:
+          one_code_label: Én kode til alle kunder
+          one_code_help: Du kan begrænse antallet af gange, denne kode kan bruges.
+          multi_codes_label: Generer unikke koder
+          multi_codes_help: Disse koder genereres automatisk og kan downloades som en CSV-fil. Koderne er unikke og kan kun bruges én gang.
+          automatic_help: Denne kampagne anvendes automatisk på alle berettigede ordrer.
+      shipping_methods:
+        checkout_info: Forsendelsesmetoder er muligheder, som kunden ser, når de når kassen; det er de fragtfirmaer og tjenester, der bruges til at sende dine produkter.
+        name_help: Dette vises til kunder
+        admin_name_help: Dette vises til administratorer
+        estimated_transit_business_days_help: Dette er det anslåede antal hverdage, det tager for pakken at ankomme til kundens adresse. Det vises på kassesiden.
+        tracking_url_token_help: vil blive erstattet med sporingsnummeret.
+      zones:
+        info: Zoner er geografiske grupperinger, de repræsenterer samlinger af enten stater eller lande.
+      shipments:
+        stock_location_option: "%{name} (%{count} på lager)"
+      payment_methods:
+        name_help: Dette navn bruges til at identificere betalingsmetoden i butikken
+        available_payment_methods: Tilgængelige betalingsmetoder
+        find_more_payment_methods_html: Find flere betalingsmetoder i %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Revisionslog er en del af Spree Enterprise-tilbuddet.
+        upgrade_to_enterprise: Opgrader til Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} har inviteret dig til at deltage i %{resource}"
+        expires_at: Udløber den
+        email_placeholder: f.eks. steve@apple.com
+      user_sessions:
+        welcome_back: Velkommen tilbage
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Tak, fordi du bruger Spree Community Edition! Overvej at opgradere til Enterprise Edition for at få adgang til alle funktioner og support.
+        upgrade: Opgrader
+      metafields:
+        none_configured_for: Ingen metafeltdefinitioner er konfigureret for %{resource}.
+      table:
+        operators:
+          eq: er lig med
+          not_eq: er ikke lig med
+          cont: indeholder
+          not_cont: indeholder ikke
+          start: begynder med
+          end: slutter med
+          gt: større end
+          gteq: større end eller lig med
+          lt: mindre end
+          lteq: mindre end eller lig med
+          in: er en af
+          not_in: er ingen af
+          'null': er tom
+          not_null: er ikke tom
     administration: Administration
     advertise:
     agree_to_privacy_policy: Godkend vores privatlivs-betingelser
@@ -1486,6 +1653,7 @@ da:
         gte: større end eller lig med
         lt: mindre end
         lte: mindre end eller lig med
+      max_amount_help: Lad dette felt være tomt for ikke at begrænse det maksimale beløb.
     items_cannot_be_shipped: Vi kan ikke levere til adressen. Vælg venlist en anden adresse.
     items_in_rmas:
     items_reimbursed:
@@ -2795,6 +2963,8 @@ da:
           method_unavailable: Denne betalingsmetode er ikke tilgængelig for denne ordre.
           session_required: Denne betalingsmetode kræver en betalingssession. Brug i stedet endepunktet for betalingssessioner.
       wrong_shipment_target: målforsendelsen er den samme som den oprindelige forsendelse
+    copy_number: Kopiér nummer
+    remaining: Tilbage
   action_text:
     video_embed:
       not_found: Kan ikke indlejre en video med den angivne URL

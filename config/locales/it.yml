@@ -792,6 +792,17 @@ it:
         top_products: Prodotti più venduti
         view_report: Visualizza report
         whats_happening_on_html: Ecco cosa sta succedendo su <strong>%{store_name}</strong> oggi.
+        updater:
+          available_html: "%{version} è disponibile."
+          current_version_html: La tua versione attuale è %{version}.
+          view_release_notes: Visualizza le note di rilascio
+        visits:
+          referrers_title: Da dove provengono i visitatori?
+          landing_pages_title: Principali pagine di destinazione
+          locations_title: Posizioni dei visitatori
+          devices_title: Dispositivi dei visitatori
+          no_data: Nessun dato
+          no_data_for_period: Nessun dato disponibile per questo periodo.
       datetime_field_timezone_help: 'Fuso orario: %{zone}'
       digital_shipment_fulfillment_note: Questa spedizione verrà contrassegnata come evasa una volta che l'utente avrà scaricato il prodotto digitale
       display_on_options:
@@ -818,6 +829,7 @@ it:
         codes_count: Numero di codici
         new_gift_card_batch: Nuovo lotto di gift card
         prefix: Prefisso
+        expires_at_help: Le carte regalo scadranno dopo questa data.
       gift_cards:
         active: Attiva
         all_statuses: Tutti gli stati
@@ -834,9 +846,19 @@ it:
         mapping_required: Questo campo è obbligatorio
         please_map_all_required_fields: Mappa tutti i campi obbligatori per continuare.
         waiting_for_file_to_be_processed: In attesa dell'elaborazione del file...
+        steps:
+          map_fields: 1. Mappa i campi
+          process_rows: 2. Elabora le righe
+          complete: 3. Completa
+        rows_processed: "%{processed} / %{total} righe elaborate"
+        please_select_a_column: Seleziona una colonna
+        json: JSON
+        schema: Schema
       integrations:
         invalid_integration_type: Questa integrazione non è consentita
         page_subtitle: Connetti il tuo negozio a servizi di terze parti per migliorare l'esperienza del cliente.
+        find_more_html: Trova altre integrazioni in %{integrations_link}
+        none_installed_html: Nessuna integrazione ancora installata. Trova integrazioni in %{integrations_link}
       json_preview:
         no_api_response: Nessuna risposta API trovata per questa risorsa
       manage_markets: Gestisci mercati
@@ -891,6 +913,45 @@ it:
         refunded: Rimborsato
         remove_user_from_this_order: Rimuovi cliente da questo ordine
         unfulfilled: Non evaso
+        placed_by_guest: Questo ordine è stato effettuato da un cliente ospite
+        orders_count:
+          one: "%{count} ordine"
+          other: "%{count} ordini"
+        repeat_customer_summary_html: Questo è un cliente abituale che ha speso un totale di %{amount} su %{count}, con una media di %{average} per ordine.
+        avs_responses:
+          a: L'indirizzo corrisponde, ma i codici postali a 5 e 9 cifre non corrispondono.
+          b: L'indirizzo corrisponde, ma il codice postale non è verificato.
+          c: L'indirizzo e il codice postale non corrispondono.
+          d: L'indirizzo e il codice postale corrispondono.
+          e: I dati AVS non sono validi oppure AVS non è consentito per questo tipo di carta.
+          f: Il nome del titolare della carta non corrisponde, ma il codice postale di fatturazione corrisponde.
+          g: La banca emittente non statunitense non supporta AVS.
+          h: Il nome del titolare della carta non corrisponde. L'indirizzo e il codice postale corrispondono.
+          i: Indirizzo non verificato.
+          j: Il nome del titolare della carta, l'indirizzo di fatturazione e il codice postale corrispondono.
+          k: Il nome del titolare della carta corrisponde, ma l'indirizzo di fatturazione e il codice postale di fatturazione non corrispondono.
+          l: Il nome del titolare della carta e il codice postale di fatturazione corrispondono, ma l'indirizzo di fatturazione non corrisponde.
+          m: L'indirizzo e il codice postale corrispondono.
+          "n": L'indirizzo e il codice postale non corrispondono.
+          o: Il nome del titolare della carta e l'indirizzo di fatturazione corrispondono, ma il codice postale di fatturazione non corrisponde.
+          p: Il codice postale corrisponde, ma l'indirizzo non è verificato.
+          q: Il nome del titolare della carta, l'indirizzo di fatturazione e il codice postale corrispondono.
+          r: Sistema non disponibile.
+          s: La banca non supporta AVS.
+          t: Il nome del titolare della carta non corrisponde, ma l'indirizzo corrisponde.
+          u: Informazioni sull'indirizzo non disponibili. Restituito se la banca U.S. non supporta l'AVS non statunitense o se l'AVS in una banca U.S. non funziona correttamente.
+          v: Il nome del titolare della carta, l'indirizzo di fatturazione e il codice postale di fatturazione corrispondono.
+          w: L'indirizzo non corrisponde, ma il codice postale a 9 cifre corrisponde.
+          x: L'indirizzo e il codice postale a 9 cifre corrispondono.
+          "y": L'indirizzo e il codice postale a 5 cifre corrispondono.
+          z: L'indirizzo non corrisponde, ma il codice postale a 5 cifre corrisponde.
+        cvv_responses:
+          m: Corrispondenza CVV2
+          "n": Nessuna corrispondenza CVV2
+          p: Non elaborato
+          s: L'emittente indica che i dati CVV2 dovrebbero essere presenti sulla carta, ma l'esercente ha indicato che tali dati non sono presenti sulla carta
+          u: L'emittente non è certificato per CVV2 oppure non ha fornito a Visa le chiavi di crittografia CVV2
+          blank: Transazione non riuscita perché è stato inserito un numero CVV2 errato o non è stato inserito alcun numero CVV2
       page_builder:
         background_color: Colore di sfondo
         border_bottom_width: Larghezza bordo inferiore
@@ -940,6 +1001,8 @@ it:
         schedule: Programma
         scheduled: Il listino prezzi è stato programmato
         unschedule: Annulla programmazione
+        page_info: I listini prezzi sono uno strumento potente per gestire le strategie di prezzo in base a gruppi di clienti, prodotti o altri criteri.
+        learn_more: Scopri di più sui listini prezzi
       product_translations:
         coverage: Copertura traduzioni
         locale: Locale
@@ -979,6 +1042,7 @@ it:
           choose_stores: Scegli in quali negozi questo prodotto deve essere disponibile
         variants:
           option_types_link: Per aggiungere altri tipi di opzione vai a <a href="%{link}">Tipi di opzione</a>
+        learn_more: Scopri di più sulla gestione dei prodotti
       publishing:
         caption_hidden_after: Si nasconde il %{date}
         caption_live: Visibile ai clienti ora
@@ -1020,6 +1084,12 @@ it:
         customer_support_email_help: Questa email è visibile ai visitatori del tuo negozio nella sezione footer
         new_order_notifications_email_help: Se vuoi ricevere una notifica via email ogni volta che qualcuno effettua un ordine, fornisci un indirizzo email a cui inviare tale notifica
         send_consumer_transactional_emails_help: Se deselezionato, le email transazionali come le conferme d'ordine e le notifiche di spedizione non verranno inviate ai clienti
+        logo_help: Utilizzato nella dashboard di amministrazione
+        currencies_managed_by_markets_html: Le valute e le lingue sono ora gestite da %{markets_link}.
+        email_addresses: Indirizzi email
+        mail_from_address_help: Indichi l'indirizzo email che verrà utilizzato come mittente di tutte le email inviate dal tuo negozio.
+        mailer_logo_help: Questo logo è incluso in tutte le notifiche email, come la conferma dell'ordine
+        mailer_logo_format_hint: Consigliamo immagini con sfondo trasparente. Sono supportati solo i formati JPEG e PNG.
       store_setup_tasks:
         add_billing_address: Aggiungi indirizzo di fatturazione
         add_products: Aggiungi prodotti
@@ -1034,6 +1104,15 @@ it:
           copy: Per riscuotere le imposte, configura le tue aliquote fiscali.
           done: È tutto pronto! Puoi sempre gestire le tue imposte nella pagina delle <a href="%{link}" data-turbo-frame="_top">impostazioni</a>.
           setup: Configura aliquote fiscali
+        add_products_task:
+          done_title: Ottimo lavoro, hai aggiunto prodotti al tuo negozio!
+          done_subtitle: Ricorda che puoi sempre aggiungerne altri!
+          copy: Aggiungi prodotti al tuo negozio, i tuoi oppure invita venditori terzi a vendere insieme.
+          import_hint: Puoi anche importare prodotti in blocco da un file CSV o Excel.
+        customer_support_email_task:
+          copy: Abbiamo bisogno della tua email di assistenza clienti da mostrare nella tua vetrina. Questa email fungerà da punto di contatto per i tuoi clienti che desiderano contattarti per qualsiasi domanda o richiesta di assistenza.
+          current_html: La tua email di assistenza clienti è %{email}.
+          label: Email di assistenza clienti
       storefront: Storefront
       successful: Riuscito
       successfully_reset_digital_links_limit: I limiti di download sono stati reimpostati
@@ -1095,11 +1174,15 @@ it:
       users:
         filters:
           search_placeholder: Cerca clienti per email o nome
+        timeline: Cronologia
       utilities:
         preview: Anteprima
       variants:
         search_results:
           no_variants: Non abbiamo trovato varianti corrispondenti alla tua ricerca :(
+        count_at_location:
+          one: "%{count} presso la sede"
+          other: "%{count} presso la sede"
       variants_form:
         add_option:
           empty: Aggiungi opzioni come taglia o colore
@@ -1150,6 +1233,8 @@ it:
         successful_deliveries: Consegne riuscite
         test_failed: Invio del webhook di test fallito. Controlla la configurazione dell'endpoint.
         test_sent: Webhook di test inviato. Controlla le consegne per il risultato.
+        name_placeholder: es. Email della vetrina, Servizio di evasione ordini
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Tutti gli eventi
         new_webhooks_subscriber: Nuovo sottoscrittore webhook
@@ -1159,6 +1244,88 @@ it:
         subscriptions: Sottoscrizioni
         time_of_last_event: Ora dell'ultimo evento
         webhooks_events: Eventi webhook
+      assistant: Assistente
+      total_orders: Totale ordini
+      sign_ups: Registrazioni
+      previous_page: Pagina precedente
+      next_page: Pagina successiva
+      no_change: Nessuna variazione
+      integrations_directory: Directory delle integrazioni
+      option_types:
+        presentation_help: Viene utilizzato per visualizzare il tipo di opzione nella vetrina.
+        name_help_html: Viene utilizzato internamente per identificare il tipo di opzione. <strong>Deve essere univoco.</strong>
+        value_count:
+          one: "%{count} valore"
+          other: "%{count} valori"
+        showing_pagination: Visualizzazione di %{from}-%{to} di %{total}
+        intro_help: Le opzioni vengono utilizzate per raggruppare determinati attributi. Ad esempio, puoi creare un'opzione denominata «taglia camicia» e poi creare un valore di opzione denominato «small» e «medium» per questa opzione.
+        learn_more: Scopri di più sulle opzioni
+      taxons:
+        square_image_help: Utilizzata per l'immagine in evidenza nella homepage.
+        seo:
+          placeholder: Aggiungi un titolo e una descrizione per vedere come questo taxon potrebbe apparire in un elenco di risultati di un motore di ricerca
+      promotions:
+        name_help: I clienti lo vedranno nel carrello e al momento del pagamento.
+        next_step_info: Nel passaggio successivo potrai aggiungere azioni e regole alla tua promozione
+        coupon_code_placeholder: Il tuo codice coupon
+        code_prefix_placeholder: Prefisso coupon (facoltativo)
+        code_prefix_example_html: es. %{example}
+        number_of_codes_placeholder: Numero di codici
+        number_of_codes_help: Quanti codici vuoi generare.
+        add_more_codes_help: Per aggiungere altri codici, aumenta semplicemente questo numero
+        usage_limit_help: Lascia vuoto questo campo per un utilizzo illimitato.
+        expires_at_help: 'Lascia vuoto questo campo per nessuna scadenza. Fuso orario: %{zone}'
+        kind:
+          one_code_label: Un codice per tutti i clienti
+          one_code_help: Puoi limitare il numero di volte in cui questo codice può essere utilizzato.
+          multi_codes_label: Genera codici univoci
+          multi_codes_help: Questi codici vengono generati automaticamente e possono essere scaricati come file CSV. I codici sono univoci e possono essere utilizzati una sola volta.
+          automatic_help: Questa promozione verrà applicata automaticamente a tutti gli ordini idonei.
+      shipping_methods:
+        checkout_info: I metodi di spedizione sono opzioni che il cliente vede quando raggiunge il pagamento; sono i corrieri e i servizi utilizzati per inviare i tuoi prodotti.
+        name_help: Verrà mostrato ai clienti
+        admin_name_help: Verrà mostrato agli amministratori
+        estimated_transit_business_days_help: È il numero stimato di giorni lavorativi necessari affinché il pacco arrivi all'indirizzo del cliente. Verrà mostrato nella pagina di pagamento.
+        tracking_url_token_help: verrà sostituito con il numero di tracciamento.
+      zones:
+        info: Le zone sono raggruppamenti geografici; rappresentano insiemi di stati o paesi.
+      shipments:
+        stock_location_option: "%{name} (%{count} disponibili)"
+      payment_methods:
+        name_help: Questo nome verrà utilizzato per identificare il metodo di pagamento nella vetrina
+        available_payment_methods: Metodi di pagamento disponibili
+        find_more_payment_methods_html: Trova altri metodi di pagamento in %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Il registro di controllo fa parte dell'offerta Spree Enterprise.
+        upgrade_to_enterprise: Passa a Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} ti ha invitato a unirti a %{resource}"
+        expires_at: Scade il
+        email_placeholder: es. steve@apple.com
+      user_sessions:
+        welcome_back: Bentornato
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Grazie per aver utilizzato Spree Community Edition! Valuti l'aggiornamento a Enterprise Edition per accedere a tutte le funzionalità e all'assistenza.
+        upgrade: Aggiorna
+      metafields:
+        none_configured_for: Nessuna definizione di metacampo configurata per %{resource}.
+      table:
+        operators:
+          eq: è uguale a
+          not_eq: è diverso da
+          cont: contiene
+          not_cont: non contiene
+          start: inizia con
+          end: finisce con
+          gt: maggiore di
+          gteq: maggiore o uguale a
+          lt: minore di
+          lteq: minore o uguale a
+          in: è uno tra
+          not_in: non è nessuno tra
+          'null': è vuoto
+          not_null: non è vuoto
     administration: Amministrazione
     advertise: Promuovi
     agree_to_privacy_policy: Accetta Politica di Privacy
@@ -1555,6 +1722,7 @@ it:
         gte: maggiore o uguale di
         lt: minore di
         lte: minore o uguale di
+      max_amount_help: Lascia vuoto questo campo per non limitare l'importo massimo.
     items_cannot_be_shipped: Non siamo in grado di spedire l'articolo selezionato al tuo indirizzo. Per favore scegli un altro indirizzo di spedizione.
     items_in_rmas: Articoli in RMA
     items_reimbursed: Articoli Rimborsati
@@ -2821,6 +2989,8 @@ it:
     wishlist: Lista dei desideri
     zipcode_required: CAP obbligatorio
     zone_ids: Zone
+    copy_number: Copia numero
+    remaining: Rimanente
   action_text:
     video_embed:
       not_found: Impossibile incorporare un video utilizzando l'URL fornito

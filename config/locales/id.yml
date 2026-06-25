@@ -790,6 +790,17 @@ id:
         top_products: Produk teratas
         view_report: Lihat laporan
         whats_happening_on_html: Berikut yang terjadi di <strong>%{store_name}</strong> hari ini.
+        updater:
+          available_html: "%{version} tersedia."
+          current_version_html: Versi Anda saat ini adalah %{version}.
+          view_release_notes: Lihat catatan rilis
+        visits:
+          referrers_title: Dari mana pengunjung berasal?
+          landing_pages_title: Halaman arahan teratas
+          locations_title: Lokasi pengunjung
+          devices_title: Perangkat pengunjung
+          no_data: Tidak ada data
+          no_data_for_period: Tidak ada data tersedia untuk periode ini.
       datetime_field_timezone_help: 'Zona waktu: %{zone}'
       digital_shipment_fulfillment_note: Pengiriman ini akan ditandai sebagai terpenuhi setelah pengguna mengunduh produk digital
       display_on_options:
@@ -816,6 +827,7 @@ id:
         codes_count: Jumlah kode
         new_gift_card_batch: Batch Kartu Hadiah Baru
         prefix: Awalan
+        expires_at_help: Kartu hadiah akan kedaluwarsa setelah tanggal ini.
       gift_cards:
         active: Aktif
         all_statuses: Semua status
@@ -832,9 +844,19 @@ id:
         mapping_required: Kolom ini wajib diisi
         please_map_all_required_fields: Petakan semua kolom yang wajib untuk melanjutkan.
         waiting_for_file_to_be_processed: Menunggu file diproses...
+        steps:
+          map_fields: 1. Petakan bidang
+          process_rows: 2. Proses baris
+          complete: 3. Selesai
+        rows_processed: "%{processed} / %{total} baris diproses"
+        please_select_a_column: Silakan pilih kolom
+        json: JSON
+        schema: Skema
       integrations:
         invalid_integration_type: Integrasi ini tidak diizinkan
         page_subtitle: Hubungkan toko Anda ke layanan pihak ketiga untuk meningkatkan pengalaman pelanggan.
+        find_more_html: Temukan lebih banyak integrasi di %{integrations_link}
+        none_installed_html: Belum ada integrasi yang terpasang. Temukan integrasi di %{integrations_link}
       json_preview:
         no_api_response: Tidak ada respons API yang ditemukan untuk sumber daya ini
       manage_markets: Kelola Pasar
@@ -889,6 +911,45 @@ id:
         refunded: Dikembalikan
         remove_user_from_this_order: Hapus pelanggan dari pesanan ini
         unfulfilled: Belum terpenuhi
+        placed_by_guest: Pesanan ini dibuat oleh pelanggan tamu
+        orders_count:
+          one: "%{count} pesanan"
+          other: "%{count} pesanan"
+        repeat_customer_summary_html: Ini adalah pelanggan berulang yang telah membelanjakan total %{amount} dalam %{count}, dengan rata-rata %{average} per pesanan.
+        avs_responses:
+          a: Alamat jalan cocok, tetapi kode pos 5 digit dan 9 digit tidak cocok.
+          b: Alamat jalan cocok, tetapi kode pos tidak terverifikasi.
+          c: Alamat jalan dan kode pos tidak cocok.
+          d: Alamat jalan dan kode pos cocok.
+          e: Data AVS tidak valid atau AVS tidak diizinkan untuk jenis kartu ini.
+          f: Nama pemegang kartu tidak cocok, tetapi kode pos penagihan cocok.
+          g: Bank penerbit non-U.S. tidak mendukung AVS.
+          h: Nama pemegang kartu tidak cocok. Alamat jalan dan kode pos cocok.
+          i: Alamat tidak terverifikasi.
+          j: Nama pemegang kartu, alamat penagihan, dan kode pos cocok.
+          k: Nama pemegang kartu cocok, tetapi alamat penagihan dan kode pos penagihan tidak cocok.
+          l: Nama pemegang kartu dan kode pos penagihan cocok, tetapi alamat penagihan tidak cocok.
+          m: Alamat jalan dan kode pos cocok.
+          "n": Alamat jalan dan kode pos tidak cocok.
+          o: Nama pemegang kartu dan alamat penagihan cocok, tetapi kode pos penagihan tidak cocok.
+          p: Kode pos cocok, tetapi alamat jalan tidak terverifikasi.
+          q: Nama pemegang kartu, alamat penagihan, dan kode pos cocok.
+          r: Sistem tidak tersedia.
+          s: Bank tidak mendukung AVS.
+          t: Nama pemegang kartu tidak cocok, tetapi alamat jalan cocok.
+          u: Informasi alamat tidak tersedia. Dikembalikan jika bank U.S. tidak mendukung AVS non-U.S. atau jika AVS pada bank U.S. tidak berfungsi dengan benar.
+          v: Nama pemegang kartu, alamat penagihan, dan kode pos penagihan cocok.
+          w: Alamat jalan tidak cocok, tetapi kode pos 9 digit cocok.
+          x: Alamat jalan dan kode pos 9 digit cocok.
+          "y": Alamat jalan dan kode pos 5 digit cocok.
+          z: Alamat jalan tidak cocok, tetapi kode pos 5 digit cocok.
+        cvv_responses:
+          m: CVV2 Cocok
+          "n": CVV2 Tidak Cocok
+          p: Tidak Diproses
+          s: Penerbit menunjukkan bahwa data CVV2 seharusnya ada pada kartu, tetapi pedagang telah menunjukkan bahwa data tidak ada pada kartu
+          u: Penerbit belum tersertifikasi untuk CVV2 atau Penerbit belum memberikan kunci enkripsi CVV2 kepada Visa
+          blank: Transaksi gagal karena nomor CVV2 yang salah dimasukkan atau tidak ada nomor CVV2 yang dimasukkan
       page_builder:
         background_color: Warna latar belakang
         border_bottom_width: Lebar batas bawah
@@ -938,6 +999,8 @@ id:
         schedule: Jadwalkan
         scheduled: Daftar harga telah dijadwalkan
         unschedule: Batalkan jadwal
+        page_info: Daftar harga adalah alat yang ampuh untuk mengelola strategi penetapan harga berdasarkan grup pelanggan, produk, atau kriteria lainnya.
+        learn_more: Pelajari lebih lanjut tentang daftar harga
       product_translations:
         coverage: Cakupan terjemahan
         locale: Locale
@@ -977,6 +1040,7 @@ id:
           choose_stores: Pilih toko mana saja yang akan menyediakan produk ini
         variants:
           option_types_link: Untuk menambahkan tipe opsi lainnya, silakan buka <a href="%{link}">Tipe Opsi</a>
+        learn_more: Pelajari lebih lanjut tentang pengelolaan produk
       publishing:
         caption_hidden_after: Berakhir %{date}
         caption_live: Terlihat oleh pelanggan sekarang
@@ -1018,6 +1082,12 @@ id:
         customer_support_email_help: Email ini terlihat oleh pengunjung Toko Anda di bagian Footer
         new_order_notifications_email_help: Jika Anda ingin menerima notifikasi email setiap kali seseorang membuat Pesanan, harap berikan alamat email tujuan notifikasi tersebut dikirim
         send_consumer_transactional_emails_help: Jika tidak dicentang, email transaksional seperti konfirmasi pesanan dan notifikasi pengiriman tidak akan dikirim ke pelanggan
+        logo_help: Digunakan di dasbor admin
+        currencies_managed_by_markets_html: Mata uang dan bahasa kini dikelola oleh %{markets_link}.
+        email_addresses: Alamat email
+        mail_from_address_help: Harap berikan alamat email yang akan digunakan sebagai pengirim semua email yang dikirim dari toko Anda.
+        mailer_logo_help: Logo ini disertakan dalam semua notifikasi email seperti konfirmasi pesanan
+        mailer_logo_format_hint: Kami merekomendasikan gambar dengan latar belakang transparan. Hanya format JPEG dan PNG yang didukung.
       store_setup_tasks:
         add_billing_address: Tambah alamat penagihan
         add_products: Tambah produk
@@ -1032,6 +1102,15 @@ id:
           copy: Untuk memungut pajak, harap siapkan tarif pajak Anda.
           done: Semuanya sudah siap! Anda selalu dapat mengelola pajak Anda di halaman <a href="%{link}" data-turbo-frame="_top">pengaturan</a>.
           setup: Siapkan Tarif Pajak
+        add_products_task:
+          done_title: Kerja bagus, Anda telah menambahkan produk ke toko Anda!
+          done_subtitle: Ingat, Anda selalu dapat menambahkan lebih banyak!
+          copy: Tambahkan produk ke toko Anda, baik milik Anda sendiri maupun undang penjual pihak ketiga untuk berjualan bersama.
+          import_hint: Anda juga dapat mengimpor produk secara massal dari file CSV atau Excel.
+        customer_support_email_task:
+          copy: Kami memerlukan email dukungan pelanggan Anda untuk ditampilkan di etalase Anda. Email ini akan berfungsi sebagai titik kontak bagi pelanggan Anda untuk menghubungi Anda terkait pertanyaan atau dukungan apa pun.
+          current_html: Email dukungan pelanggan Anda adalah %{email}.
+          label: Email dukungan pelanggan
       storefront: Etalase Toko
       successful: Berhasil
       successfully_reset_digital_links_limit: Batas unduhan telah diatur ulang
@@ -1093,11 +1172,15 @@ id:
       users:
         filters:
           search_placeholder: Cari pelanggan berdasarkan email atau nama
+        timeline: Linimasa
       utilities:
         preview: Pratinjau
       variants:
         search_results:
           no_variants: Kami tidak dapat menemukan varian yang cocok dengan pencarian Anda :(
+        count_at_location:
+          one: "%{count} di lokasi"
+          other: "%{count} di lokasi"
       variants_form:
         add_option:
           empty: Tambah opsi seperti ukuran atau warna
@@ -1148,6 +1231,8 @@ id:
         successful_deliveries: Pengiriman Berhasil
         test_failed: Gagal mengirim webhook uji. Harap periksa konfigurasi endpoint.
         test_sent: Webhook uji terkirim. Periksa pengiriman untuk hasilnya.
+        name_placeholder: mis. Email etalase, Layanan pemenuhan
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Semua Peristiwa
         new_webhooks_subscriber: Pelanggan Webhook Baru
@@ -1157,6 +1242,88 @@ id:
         subscriptions: Langganan
         time_of_last_event: Waktu Peristiwa Terakhir
         webhooks_events: Peristiwa Webhook
+      assistant: Asisten
+      total_orders: Total Pesanan
+      sign_ups: Pendaftaran
+      previous_page: Halaman sebelumnya
+      next_page: Halaman berikutnya
+      no_change: Tidak ada perubahan
+      integrations_directory: Direktori Integrasi
+      option_types:
+        presentation_help: Ini digunakan untuk menampilkan jenis opsi di etalase.
+        name_help_html: Ini digunakan secara internal untuk mengidentifikasi jenis opsi. <strong>Harus unik.</strong>
+        value_count:
+          one: "%{count} nilai"
+          other: "%{count} nilai"
+        showing_pagination: Menampilkan %{from}-%{to} dari %{total}
+        intro_help: Opsi digunakan untuk mengelompokkan atribut tertentu. Misalnya, Anda dapat membuat opsi bernama "ukuran kemeja" lalu membuat nilai opsi bernama "kecil" dan "sedang" untuk opsi ini.
+        learn_more: Pelajari lebih lanjut tentang opsi
+      taxons:
+        square_image_help: Digunakan untuk gambar unggulan di beranda.
+        seo:
+          placeholder: Tambahkan judul dan deskripsi untuk melihat bagaimana taxon ini mungkin muncul di daftar hasil mesin pencari
+      promotions:
+        name_help: Pelanggan akan melihat ini di keranjang mereka dan saat checkout.
+        next_step_info: Pada langkah berikutnya Anda akan dapat menambahkan tindakan dan aturan ke promosi Anda
+        coupon_code_placeholder: Kode kupon Anda
+        code_prefix_placeholder: Prefiks Kupon (opsional)
+        code_prefix_example_html: mis. %{example}
+        number_of_codes_placeholder: Jumlah kode
+        number_of_codes_help: Berapa banyak kode yang ingin Anda buat.
+        add_more_codes_help: Untuk menambahkan lebih banyak kode, cukup tingkatkan angka ini
+        usage_limit_help: Biarkan bidang ini kosong untuk penggunaan tanpa batas.
+        expires_at_help: 'Biarkan bidang ini kosong agar tidak ada kedaluwarsa. Zona waktu: %{zone}'
+        kind:
+          one_code_label: Satu kode untuk semua pelanggan
+          one_code_help: Anda dapat membatasi berapa kali kode ini dapat digunakan.
+          multi_codes_label: Buat kode unik
+          multi_codes_help: Kode-kode ini dibuat secara otomatis dan dapat diunduh sebagai file CSV. Kode bersifat unik dan hanya dapat digunakan sekali.
+          automatic_help: Promosi ini akan diterapkan secara otomatis ke semua pesanan yang memenuhi syarat.
+      shipping_methods:
+        checkout_info: Metode pengiriman adalah opsi yang dilihat pelanggan saat mereka mencapai checkout, yaitu kurir dan layanan yang digunakan untuk mengirim produk Anda.
+        name_help: Ini akan ditampilkan kepada pelanggan
+        admin_name_help: Ini akan ditampilkan kepada admin
+        estimated_transit_business_days_help: Ini adalah perkiraan jumlah hari kerja yang dibutuhkan agar paket sampai di alamat pelanggan. Ini akan ditampilkan di halaman checkout.
+        tracking_url_token_help: akan diganti dengan nomor pelacakan.
+      zones:
+        info: Zona adalah pengelompokan geografis, yang mewakili kumpulan negara bagian atau negara.
+      shipments:
+        stock_location_option: "%{name} (%{count} tersedia)"
+      payment_methods:
+        name_help: Nama ini akan digunakan untuk mengidentifikasi metode pembayaran di etalase
+        available_payment_methods: Metode Pembayaran yang Tersedia
+        find_more_payment_methods_html: Temukan lebih banyak metode pembayaran di %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Log audit adalah bagian dari penawaran Spree Enterprise.
+        upgrade_to_enterprise: Tingkatkan ke Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} telah mengundang Anda untuk bergabung dengan %{resource}"
+        expires_at: Kedaluwarsa pada
+        email_placeholder: mis. steve@apple.com
+      user_sessions:
+        welcome_back: Selamat datang kembali
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Terima kasih telah menggunakan Spree Community Edition! Pertimbangkan untuk meningkatkan ke Enterprise Edition guna mengakses semua fitur dan dukungan.
+        upgrade: Tingkatkan
+      metafields:
+        none_configured_for: Tidak ada definisi metafield yang dikonfigurasi untuk %{resource}.
+      table:
+        operators:
+          eq: sama dengan
+          not_eq: tidak sama dengan
+          cont: mengandung
+          not_cont: tidak mengandung
+          start: diawali dengan
+          end: diakhiri dengan
+          gt: lebih besar dari
+          gteq: lebih besar dari atau sama dengan
+          lt: lebih kecil dari
+          lteq: lebih kecil dari atau sama dengan
+          in: salah satu dari
+          not_in: bukan salah satu dari
+          'null': kosong
+          not_null: tidak kosong
     administration: Administrasi
     advertise:
     agree_to_privacy_policy: Setuju kepada Kebijakan Privasi
@@ -1485,6 +1652,7 @@ id:
         gte: lebih besar dari atau sama dengan
         lt:
         lte:
+      max_amount_help: Biarkan bidang ini kosong agar tidak membatasi jumlah maksimum.
     items_cannot_be_shipped:
     items_in_rmas:
     items_reimbursed:
@@ -2797,6 +2965,8 @@ id:
           method_unavailable: Metode pembayaran ini tidak tersedia untuk pesanan ini.
           session_required: Metode pembayaran ini memerlukan sesi pembayaran. Gunakan endpoint sesi pembayaran sebagai gantinya.
       wrong_shipment_target: pengiriman target sama dengan pengiriman asli
+    copy_number: Salin nomor
+    remaining: Tersisa
   action_text:
     video_embed:
       not_found: Tidak dapat menyematkan video menggunakan URL yang diberikan

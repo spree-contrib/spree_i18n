@@ -754,6 +754,45 @@ pl:
         refunded: Zwrócone
         remove_user_from_this_order: Usuń klienta z tego zamówienia
         unfulfilled: Niezrealizowane
+        placed_by_guest: To zamówienie zostało złożone przez klienta gościa
+        orders_count:
+          one: "%{count} zamówienie"
+          other: "%{count} zamówień"
+        repeat_customer_summary_html: To stały klient, który wydał łącznie %{amount} w ramach %{count}, średnio %{average} na zamówienie.
+        avs_responses:
+          a: Adres ulicy jest zgodny, ale 5-cyfrowy i 9-cyfrowy kod pocztowy nie są zgodne.
+          b: Adres ulicy jest zgodny, ale kod pocztowy nie został zweryfikowany.
+          c: Adres ulicy i kod pocztowy nie są zgodne.
+          d: Adres ulicy i kod pocztowy są zgodne.
+          e: Dane AVS są nieprawidłowe lub AVS nie jest dozwolony dla tego typu karty.
+          f: Imię i nazwisko posiadacza karty nie są zgodne, ale rozliczeniowy kod pocztowy jest zgodny.
+          g: Bank wydający spoza U.S. nie obsługuje AVS.
+          h: Imię i nazwisko posiadacza karty nie są zgodne. Adres ulicy i kod pocztowy są zgodne.
+          i: Adres niezweryfikowany.
+          j: Imię i nazwisko posiadacza karty, adres rozliczeniowy oraz kod pocztowy są zgodne.
+          k: Imię i nazwisko posiadacza karty są zgodne, ale adres rozliczeniowy i rozliczeniowy kod pocztowy nie są zgodne.
+          l: Imię i nazwisko posiadacza karty oraz rozliczeniowy kod pocztowy są zgodne, ale adres rozliczeniowy nie jest zgodny.
+          m: Adres ulicy i kod pocztowy są zgodne.
+          "n": Adres ulicy i kod pocztowy nie są zgodne.
+          o: Imię i nazwisko posiadacza karty oraz adres rozliczeniowy są zgodne, ale rozliczeniowy kod pocztowy nie jest zgodny.
+          p: Kod pocztowy jest zgodny, ale adres ulicy nie został zweryfikowany.
+          q: Imię i nazwisko posiadacza karty, adres rozliczeniowy oraz kod pocztowy są zgodne.
+          r: System niedostępny.
+          s: Bank nie obsługuje AVS.
+          t: Imię i nazwisko posiadacza karty nie są zgodne, ale adres ulicy jest zgodny.
+          u: Informacje o adresie niedostępne. Zwracane, jeśli bank w U.S. nie obsługuje AVS spoza U.S. lub jeśli AVS w banku w U.S. nie działa prawidłowo.
+          v: Imię i nazwisko posiadacza karty, adres rozliczeniowy oraz rozliczeniowy kod pocztowy są zgodne.
+          w: Adres ulicy nie jest zgodny, ale 9-cyfrowy kod pocztowy jest zgodny.
+          x: Adres ulicy i 9-cyfrowy kod pocztowy są zgodne.
+          "y": Adres ulicy i 5-cyfrowy kod pocztowy są zgodne.
+          z: Adres ulicy nie jest zgodny, ale 5-cyfrowy kod pocztowy jest zgodny.
+        cvv_responses:
+          m: Zgodność CVV2
+          "n": Brak zgodności CVV2
+          p: Nieprzetworzone
+          s: Wydawca wskazuje, że dane CVV2 powinny znajdować się na karcie, ale sprzedawca wskazał, że dane nie znajdują się na karcie
+          u: Wydawca nie posiada certyfikatu dla CVV2 lub wydawca nie dostarczył firmie Visa kluczy szyfrujących CVV2
+          blank: Transakcja nie powiodła się, ponieważ wprowadzono nieprawidłowy numer CVV2 lub nie wprowadzono żadnego numeru CVV2
       return_authorization:
         product: Produkt
       user:
@@ -878,6 +917,17 @@ pl:
         top_products: Najlepsze produkty
         view_report: Zobacz raport
         whats_happening_on_html: Oto co dzieje się dzisiaj w <strong>%{store_name}</strong>.
+        updater:
+          available_html: "%{version} jest dostępna."
+          current_version_html: Twoja bieżąca wersja to %{version}.
+          view_release_notes: Zobacz informacje o wydaniu
+        visits:
+          referrers_title: Skąd przychodzą odwiedzający?
+          landing_pages_title: Najpopularniejsze strony docelowe
+          locations_title: Lokalizacje odwiedzających
+          devices_title: Urządzenia odwiedzających
+          no_data: Brak danych
+          no_data_for_period: Brak danych dostępnych dla tego okresu.
       datetime_field_timezone_help: 'Strefa czasowa: %{zone}'
       digital_shipment_fulfillment_note: Ta przesyłka zostanie oznaczona jako zrealizowana po pobraniu produktu cyfrowego przez użytkownika
       display_on_options:
@@ -904,6 +954,7 @@ pl:
         codes_count: Liczba kodów
         new_gift_card_batch: Nowa partia kart podarunkowych
         prefix: Prefiks
+        expires_at_help: Karty podarunkowe wygasną po tej dacie.
       gift_cards:
         active: Aktywna
         all_statuses: Wszystkie statusy
@@ -920,9 +971,19 @@ pl:
         mapping_required: To pole jest wymagane
         please_map_all_required_fields: Aby kontynuować, zmapuj wszystkie wymagane pola.
         waiting_for_file_to_be_processed: Oczekiwanie na przetworzenie pliku...
+        steps:
+          map_fields: 1. Mapuj pola
+          process_rows: 2. Przetwórz wiersze
+          complete: 3. Zakończ
+        rows_processed: Przetworzono %{processed} / %{total} wierszy
+        please_select_a_column: Wybierz kolumnę
+        json: JSON
+        schema: Schemat
       integrations:
         invalid_integration_type: Ta integracja jest niedozwolona
         page_subtitle: Połącz swój sklep z usługami zewnętrznymi, aby poprawić doświadczenie klientów.
+        find_more_html: Znajdź więcej integracji w %{integrations_link}
+        none_installed_html: Nie zainstalowano jeszcze żadnych integracji. Znajdź integracje w %{integrations_link}
       json_preview:
         no_api_response: Nie znaleziono odpowiedzi API dla tego zasobu
       manage_markets: Zarządzaj rynkami
@@ -1007,6 +1068,8 @@ pl:
         schedule: Zaplanuj
         scheduled: Cennik został zaplanowany
         unschedule: Anuluj zaplanowanie
+        page_info: Cenniki to potężne narzędzie do zarządzania strategiami cenowymi w oparciu o grupy klientów, produkty lub inne kryteria.
+        learn_more: Dowiedz się więcej o cennikach
       product_translations:
         coverage: Pokrycie tłumaczeń
         locale: Język
@@ -1046,6 +1109,7 @@ pl:
           choose_stores: Wybierz, w których sklepach ten produkt ma być dostępny
         variants:
           option_types_link: Aby dodać więcej typów opcji, przejdź do <a href="%{link}">Typów opcji</a>
+        learn_more: Dowiedz się więcej o zarządzaniu produktami
       publishing:
         caption_hidden_after: Znika %{date}
         caption_live: Widoczny dla klientów teraz
@@ -1087,6 +1151,12 @@ pl:
         customer_support_email_help: Ten adres e-mail jest widoczny dla odwiedzających Twój sklep w sekcji stopki
         new_order_notifications_email_help: Jeśli chcesz otrzymywać powiadomienie e-mail za każdym razem, gdy ktoś złoży zamówienie, podaj adres e-mail, na który ma być wysyłane to powiadomienie
         send_consumer_transactional_emails_help: Po odznaczeniu wiadomości transakcyjne, takie jak potwierdzenia zamówień i powiadomienia o wysyłce, nie będą wysyłane do klientów
+        logo_help: Używane w panelu administracyjnym
+        currencies_managed_by_markets_html: Walutami i ustawieniami regionalnymi zarządza teraz %{markets_link}.
+        email_addresses: Adresy e-mail
+        mail_from_address_help: Podaj adres e-mail, który będzie używany jako nadawca wszystkich wiadomości e-mail wysyłanych z Twojego sklepu.
+        mailer_logo_help: To logo jest dołączane do wszystkich powiadomień e-mail, takich jak potwierdzenie zamówienia
+        mailer_logo_format_hint: Zalecamy obrazy z przezroczystym tłem. Obsługiwane są tylko formaty JPEG i PNG.
       store_setup_tasks:
         add_billing_address: Dodaj adres rozliczeniowy
         add_products: Dodaj produkty
@@ -1101,6 +1171,15 @@ pl:
           copy: Aby pobierać podatki, skonfiguruj swoje stawki podatkowe.
           done: Wszystko gotowe! Swoimi podatkami możesz zawsze zarządzać na stronie <a href="%{link}" data-turbo-frame="_top">ustawień</a>.
           setup: Skonfiguruj stawki podatkowe
+        add_products_task:
+          done_title: Dobra robota, dodałeś produkty do swojego sklepu!
+          done_subtitle: Pamiętaj, że zawsze możesz dodać więcej!
+          copy: Dodaj produkty do swojego sklepu, własne lub zaproś zewnętrznych sprzedawców do wspólnej sprzedaży.
+          import_hint: Możesz również importować produkty zbiorczo z pliku CSV lub Excel.
+        customer_support_email_task:
+          copy: Potrzebujemy adresu e-mail Twojego działu obsługi klienta, aby wyświetlić go w witrynie sklepu. Ten adres e-mail będzie służył jako punkt kontaktowy dla Twoich klientów, którzy mogą się z Tobą skontaktować w razie pytań lub potrzeby wsparcia.
+          current_html: Adres e-mail Twojego działu obsługi klienta to %{email}.
+          label: Adres e-mail obsługi klienta
       storefront: Sklep
       successful: Pomyślnie
       successfully_reset_digital_links_limit: Limity pobrań zostały zresetowane
@@ -1162,11 +1241,15 @@ pl:
       users:
         filters:
           search_placeholder: Szukaj klientów według adresu e-mail lub nazwy
+        timeline: Oś czasu
       utilities:
         preview: Podgląd
       variants:
         search_results:
           no_variants: Nie znaleźliśmy żadnych wariantów pasujących do Twojego wyszukiwania :(
+        count_at_location:
+          one: "%{count} w lokalizacji"
+          other: "%{count} w lokalizacji"
       variants_form:
         add_option:
           empty: Dodaj opcje, takie jak rozmiar lub kolor
@@ -1217,6 +1300,8 @@ pl:
         successful_deliveries: Udane dostarczenia
         test_failed: Nie udało się wysłać testowego webhooka. Sprawdź konfigurację punktu końcowego.
         test_sent: Testowy webhook wysłany. Sprawdź dostarczenia, aby zobaczyć wynik.
+        name_placeholder: np. E-maile witryny sklepu, Usługa realizacji zamówień
+        url_placeholder: https://example.com/webhooks
       webhooks_subscribers:
         all_events: Wszystkie zdarzenia
         new_webhooks_subscriber: Nowy subskrybent webhooków
@@ -1226,6 +1311,88 @@ pl:
         subscriptions: Subskrypcje
         time_of_last_event: Czas ostatniego zdarzenia
         webhooks_events: Zdarzenia webhooków
+      assistant: Asystent
+      total_orders: Łączna liczba zamówień
+      sign_ups: Rejestracje
+      previous_page: Poprzednia strona
+      next_page: Następna strona
+      no_change: Bez zmian
+      integrations_directory: Katalog integracji
+      option_types:
+        presentation_help: Służy do wyświetlania typu opcji w witrynie sklepu.
+        name_help_html: Służy wewnętrznie do identyfikacji typu opcji. <strong>Musi być unikalny.</strong>
+        value_count:
+          one: "%{count} wartość"
+          other: "%{count} wartości"
+        showing_pagination: Wyświetlanie %{from}-%{to} z %{total}
+        intro_help: Opcje służą do grupowania określonych atrybutów. Na przykład możesz utworzyć opcję o nazwie "rozmiar koszuli", a następnie utworzyć dla niej wartości opcji o nazwie "mały" i "średni".
+        learn_more: Dowiedz się więcej o opcjach
+      taxons:
+        square_image_help: Używane do wyróżnionego obrazu na stronie głównej.
+        seo:
+          placeholder: Dodaj tytuł i opis, aby zobaczyć, jak ten takson może pojawić się w wynikach wyszukiwarki
+      promotions:
+        name_help: Klienci zobaczą to w swoim koszyku i podczas finalizacji zakupu.
+        next_step_info: W następnym kroku będziesz mógł dodać akcje i reguły do swojej promocji
+        coupon_code_placeholder: Twój kod rabatowy
+        code_prefix_placeholder: Prefiks kuponu (opcjonalnie)
+        code_prefix_example_html: np. %{example}
+        number_of_codes_placeholder: Liczba kodów
+        number_of_codes_help: Ile kodów chcesz wygenerować.
+        add_more_codes_help: Aby dodać więcej kodów, po prostu zwiększ tę liczbę
+        usage_limit_help: Pozostaw to pole puste, aby umożliwić nieograniczone użycie.
+        expires_at_help: 'Pozostaw to pole puste, aby nie ustawiać daty wygaśnięcia. Strefa czasowa: %{zone}'
+        kind:
+          one_code_label: Jeden kod dla wszystkich klientów
+          one_code_help: Możesz ograniczyć liczbę użyć tego kodu.
+          multi_codes_label: Generuj unikalne kody
+          multi_codes_help: Te kody są generowane automatycznie i można je pobrać jako plik CSV. Kody są unikalne i można ich użyć tylko raz.
+          automatic_help: Ta promocja zostanie automatycznie zastosowana do wszystkich kwalifikujących się zamówień.
+      shipping_methods:
+        checkout_info: Metody wysyłki to opcje, które klient widzi po przejściu do finalizacji zakupu; są to przewoźnicy i usługi używane do wysyłki Twoich produktów.
+        name_help: To będzie wyświetlane klientom
+        admin_name_help: To będzie wyświetlane administratorom
+        estimated_transit_business_days_help: Jest to szacowana liczba dni roboczych, jakiej potrzeba na dotarcie paczki pod adres klienta. Będzie ona wyświetlana na stronie finalizacji zakupu.
+        tracking_url_token_help: zostanie zastąpione numerem śledzenia.
+      zones:
+        info: Strefy to grupy geograficzne; reprezentują zbiory stanów lub krajów.
+      shipments:
+        stock_location_option: "%{name} (%{count} na stanie)"
+      payment_methods:
+        name_help: Ta nazwa będzie używana do identyfikacji metody płatności w witrynie sklepu
+        available_payment_methods: Dostępne metody płatności
+        find_more_payment_methods_html: Znajdź więcej metod płatności w %{integrations_link}
+      admin_users:
+        audit_log_enterprise_notice: Dziennik audytu jest częścią oferty Spree Enterprise.
+        upgrade_to_enterprise: Przejdź na Spree Enterprise
+      invitations:
+        invited_you_to_join_html: "%{inviter} zaprosił Cię do dołączenia do %{resource}"
+        expires_at: Wygasa
+        email_placeholder: np. steve@apple.com
+      user_sessions:
+        welcome_back: Witaj ponownie
+        email_placeholder: steve@getvendo.com
+      enterprise_edition_notice:
+        body: Dziękujemy za korzystanie ze Spree Community Edition! Rozważ przejście na Enterprise Edition, aby uzyskać dostęp do wszystkich funkcji i wsparcia.
+        upgrade: Przejdź na wyższą wersję
+      metafields:
+        none_configured_for: Brak skonfigurowanych definicji metapól dla %{resource}.
+      table:
+        operators:
+          eq: równa się
+          not_eq: różne od
+          cont: zawiera
+          not_cont: nie zawiera
+          start: zaczyna się od
+          end: kończy się na
+          gt: większe niż
+          gteq: większe lub równe
+          lt: mniejsze niż
+          lteq: mniejsze lub równe
+          in: jest jednym z
+          not_in: nie jest żadnym z
+          'null': jest puste
+          not_null: nie jest puste
     administration: Administracja
     advertise:
     agree_to_privacy_policy: Zgoda na politykę prywatności
@@ -1610,6 +1777,7 @@ pl:
         gte: większy lub równy
         lt: mniej niż
         lte: mniejszy lub równy
+      max_amount_help: Pozostaw to pole puste, aby nie ograniczać maksymalnej kwoty.
     items_cannot_be_shipped: Nie można było obliczyć stawek wysyłki dla wybranych pozycji.
     items_in_rmas: Pozycje w autoryzacjach zwrotu
     items_to_be_reimbursed: Pozycje do zwrotu
@@ -2957,6 +3125,8 @@ pl:
           method_unavailable: Ta metoda płatności jest niedostępna dla tego zamówienia.
           session_required: Ta metoda płatności wymaga sesji płatności. Użyj zamiast tego punktu końcowego sesji płatności.
       wrong_shipment_target: przesyłka docelowa jest taka sama jak przesyłka źródłowa
+    copy_number: Kopiuj numer
+    remaining: Pozostało
   action_text:
     video_embed:
       not_found: Nie można osadzić wideo przy użyciu podanego adresu URL
