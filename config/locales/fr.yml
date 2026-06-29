@@ -1724,6 +1724,7 @@ fr:
       current_password_invalid: Le mot de passe actuel est invalide ou manquant
       gateway_error: 'Un problème est survenu avec la passerelle de paiement : %{text}'
       invalid_api_key: Clé API (%{key}) spécifiée invalide.
+      invalid_position: new_position doit être un entier
       invalid_resource: Ressource invalide. Veuillez corriger les erreurs et réessayer.
       invalid_taxonomy_id: Identifiant de taxonomie invalide.
       must_specify_api_key: Vous devez spécifier une clé API.
@@ -2009,6 +2010,8 @@ fr:
         missing_product: Les bons produits manquent dans le panier pour ce code de bon.
         missing_taxon: Pour ce code de bon d'achat, les produits de la catégorie correcte doivent être dans le panier.
         no_applicable_products: Le produit correspondant au code de bon ne se trouve pas dans le panier.
+        no_matching_channel: Ce code de réduction n'est pas valable pour ce canal de vente.
+        no_matching_market: Ce code de réduction n'est pas valable sur votre marché.
         no_matching_taxons: Pour ce code de bon, le produit de la catégorie correspondante doit être dans le panier.
         no_user_or_email_specified: Vous devez être inscrit / connecté pour ajouter le code du bon.
         no_user_specified: Vous devez être connecté pour ajouter le code du bon.
@@ -2118,24 +2121,7 @@ fr:
     hide_cents: Cacher les centimes
     hide_from_subcategories_nav: Masquer de la navigation dans les sous-catégories
     home: Accueil
-    homepage:
-      bestsellers: BEST-SELLER
-      fashion_trends: TENDANCES DE LA MODE
-      fashion_trends_note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-      men: POUR DES HOMMES
-      new: NOUVEAU
-      new_collection: NOUVELLE COLLECTION
-      read_more: CONTINUER LA LECTURE
-      shoes: CHAUSSURES
-      shop_now: ACHETER MAINTENANT
-      sportswear: VETEMENTS DE SPORT
-      streetstyle: STREETSTYLE
-      summer_2019: Été 2019
-      summer_collection: Collection d'été
-      summer_sale: SOLDE D'ÉTÉ
-      trending: TENDANCE
-      up_to_60: JUSQU'À 60%
-      women: DAMES
+    homepage: Page d'accueil
     help_center: Centre d'aide
     i18n:
       available_locales: Paramètres régionaux disponibles
@@ -2593,6 +2579,9 @@ fr:
     promotion_not_cloned: 'La promotion n''a pas pu être résolue. Raison: %{error}'
     promotion_rule: Règle de promotion
     promotion_rule_types:
+      channel:
+        description: Limiter aux commandes passées via le ou les canaux spécifiés
+        name: Canal(aux)
       country:
         description: La commande a été envoyée dans le bon pays (ou par défaut)
         name: Pays
@@ -2605,6 +2594,9 @@ fr:
       landing_page:
         description: Le client doit avoir visité la page spécifiée
         name: Page de destination
+      market:
+        description: Limiter aux commandes passées sur le ou les marchés spécifiés
+        name: Marché(s)
       one_use_per_user:
         description: Une utilisation par client
         name: Utilisation unique
@@ -3134,6 +3126,13 @@ fr:
     customers_removed_from_group:
       one: "%{count} client retiré du groupe"
       other: "%{count} clients retirés du groupe"
+    date_range_presets:
+      last_30_days: 30 derniers jours
+      last_7_days: 7 derniers jours
+      last_month: Le mois dernier
+      this_month: Ce mois-ci
+      today: Aujourd'hui
+      yesterday: Hier
     days_ago: Il y a (jours)
     delete_selected: Supprimer la sélection
     digital_assets_help: Les ressources numériques sont des fichiers que les clients peuvent télécharger après l'achat.
@@ -3305,9 +3304,11 @@ fr:
     cannot_empty: Impossible de vider la commande.
     cart_already_updated: Le panier a déjà été mis à jour.
     cart_line_item:
+      delivery_unavailable: "%{li_name} ne peut pas être livré à l'adresse sélectionnée"
       discontinued: "%{li_name} a été retiré car il a été abandonné"
       out_of_stock: "%{li_name} a été retiré car il est en rupture de stock"
     change: Modifier
+    channel_ids: Canaux de vente
     channels: Canaux de vente
     checkout_requirements:
       email_required: L'adresse e-mail est requise
@@ -3472,6 +3473,8 @@ fr:
     preview: Aperçu
     price_lists: Listes de prix
     price_rules:
+      channel_rule:
+        description: Appliquer une tarification en fonction du canal de vente
       customer_group_rule:
         description: Appliquer la tarification à des groupes de clients spécifiques
     prices: Prix

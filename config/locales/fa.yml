@@ -1884,6 +1884,9 @@ fa:
       landing_page:
         description:
         name:
+      market:
+        description: محدود کردن به سفارش‌های ثبت‌شده در بازار(های) مشخص‌شده
+        name: بازار(ها)
       one_use_per_user:
         description:
         name:
@@ -1905,6 +1908,9 @@ fa:
       category:
         description: سفارش شامل محصولاتی در دسته‌بندی‌های مشخص است
         name: دسته‌بندی‌ها
+      channel:
+        description: محدود کردن به سفارش‌های ثبت‌شده از طریق کانال‌(های) مشخص‌شده
+        name: کانال(ها)
       country:
         description: محدود به سفارش‌هایی با آدرس ارسال در یک کشور خاص
         name: کشور
@@ -2209,6 +2215,13 @@ fa:
     customers_removed_from_group:
       one: "%{count} مشتری از گروه حذف شد"
       other: "%{count} مشتری از گروه حذف شدند"
+    date_range_presets:
+      last_30_days: ۳۰ روز گذشته
+      last_7_days: ۷ روز گذشته
+      last_month: ماه گذشته
+      this_month: این ماه
+      today: امروز
+      yesterday: دیروز
     days_ago: روز پیش
     delete_selected: حذف موارد انتخاب‌شده
     digital_assets_help: دارایی‌های دیجیتال فایل‌هایی هستند که مشتریان می‌توانند پس از خرید دانلود کنند.
@@ -2513,10 +2526,12 @@ fa:
     capture_events: رویدادهای دریافت
     cart_already_updated: سبد خرید قبلاً به‌روزرسانی شده است.
     cart_line_item:
+      delivery_unavailable: "%{li_name} قابل ارسال به نشانی انتخاب‌شده نیست"
       discontinued: "%{li_name} به دلیل توقف عرضه حذف شد"
       out_of_stock: "%{li_name} به دلیل اتمام موجودی حذف شد"
     change: تغییر
     channel: کانال فروش
+    channel_ids: کانال‌های فروش
     channels: کانال‌های فروش
     charged: دریافت‌شده
     checkout_requirements:
@@ -2608,6 +2623,8 @@ fa:
         missing_product: این کد تخفیف قابل اعمال نیست زیرا همه محصولات لازم را در سبد خرید خود ندارید.
         missing_taxon: پیش از اعمال این کد تخفیف باید محصولی از همه دسته‌بندی‌های مرتبط اضافه کنید.
         no_applicable_products: پیش از اعمال این کد تخفیف باید یک محصول مرتبط اضافه کنید.
+        no_matching_channel: این کد تخفیف برای این کانال فروش معتبر نیست.
+        no_matching_market: این کد تخفیف در بازار شما معتبر نیست.
         no_matching_taxons: پیش از اعمال این کد تخفیف باید محصولی از یک دسته‌بندی مرتبط اضافه کنید.
         no_user_or_email_specified: پیش از اعمال این کد تخفیف باید وارد شوید یا ایمیل خود را وارد کنید.
         no_user_specified: پیش از اعمال این کد تخفیف باید وارد شوید.
@@ -2771,6 +2788,8 @@ fa:
     preview: پیش‌نمایش
     price_lists: فهرست‌های قیمت
     price_rules:
+      channel_rule:
+        description: اعمال قیمت‌گذاری بر اساس کانال فروش
       customer_group_rule:
         description: اعمال قیمت‌گذاری برای گروه‌های مشتری مشخص
     prices: قیمت‌ها
@@ -2948,6 +2967,7 @@ fa:
       current_password_invalid: گذرواژه فعلی نامعتبر یا وارد نشده است
       gateway_error: 'مشکلی در درگاه پرداخت رخ داد: %{text}'
       invalid_api_key: کلید API نامعتبر (%{key}) مشخص شده است.
+      invalid_position: new_position باید یک عدد صحیح باشد
       invalid_resource: منبع نامعتبر است. لطفاً خطاها را برطرف کرده و دوباره تلاش کنید.
       invalid_taxonomy_id: شناسه طبقه‌بندی نامعتبر است.
       must_specify_api_key: باید یک کلید API مشخص کنید.

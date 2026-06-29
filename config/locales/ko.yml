@@ -1525,6 +1525,8 @@ ko:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: 이 쿠폰 코드는 해당 판매 채널에서 사용할 수 없습니다.
+        no_matching_market: 이 쿠폰 코드는 고객님의 마켓에서 사용할 수 없습니다.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1950,6 +1952,9 @@ ko:
       landing_page:
         description:
         name:
+      market:
+        description: 지정된 마켓에서 접수된 주문으로 제한
+        name: 마켓
       one_use_per_user:
         description:
         name:
@@ -1971,6 +1976,9 @@ ko:
       category:
         description: 지정된 카테고리의 상품이 주문에 포함됨
         name: 카테고리
+      channel:
+        description: 지정된 채널을 통해 접수된 주문으로 제한
+        name: 채널
       country:
         description: 특정 국가의 배송 주소가 있는 주문으로 제한
         name: 국가
@@ -2362,6 +2370,13 @@ ko:
     customers_removed_from_group:
       one: 고객 %{count}명이 그룹에서 제거되었습니다
       other: 고객 %{count}명이 그룹에서 제거되었습니다
+    date_range_presets:
+      last_30_days: 최근 30일
+      last_7_days: 최근 7일
+      last_month: 지난달
+      this_month: 이번 달
+      today: 오늘
+      yesterday: 어제
     days_ago: 일 전
     delete_selected: 선택 항목 삭제
     digital_assets_help: 디지털 자산은 구매 후 고객이 다운로드할 수 있는 파일입니다.
@@ -2588,10 +2603,12 @@ ko:
     cannot_return_more_than_bought_quantity: 구매한 수량보다 많이 반품할 수 없습니다.
     cart_already_updated: 장바구니가 이미 업데이트되었습니다.
     cart_line_item:
+      delivery_unavailable: "%{li_name} 항목은 선택한 주소로 배송할 수 없습니다"
       discontinued: "%{li_name}이(가) 단종되어 제거되었습니다"
       out_of_stock: "%{li_name}이(가) 품절되어 제거되었습니다"
     change: 변경
     channel: 판매 채널
+    channel_ids: 판매 채널
     channels: 판매 채널
     checkout_requirements:
       email_required: 이메일 주소는 필수입니다
@@ -2792,6 +2809,8 @@ ko:
     preview: 미리보기
     price_lists: 가격표
     price_rules:
+      channel_rule:
+        description: 판매 채널에 따라 가격을 적용합니다
       customer_group_rule:
         description: 특정 고객 그룹에 가격 적용
     prices: 가격
@@ -2923,6 +2942,7 @@ ko:
       current_password_invalid: 현재 비밀번호가 올바르지 않거나 입력되지 않았습니다
       gateway_error: '결제 게이트웨이에 문제가 발생했습니다: %{text}'
       invalid_api_key: 지정한 API 키(%{key})가 유효하지 않습니다.
+      invalid_position: new_position은 정수여야 합니다
       invalid_resource: 유효하지 않은 리소스입니다. 오류를 수정한 후 다시 시도해 주세요.
       invalid_taxonomy_id: 유효하지 않은 분류 ID입니다.
       must_specify_api_key: API 키를 지정해야 합니다.

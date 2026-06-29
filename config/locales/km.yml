@@ -1530,6 +1530,8 @@ km:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: កូដប័ណ្ណបញ្ចុះតម្លៃនេះមិនអាចប្រើបានសម្រាប់ឆានែលលក់នេះទេ។
+        no_matching_market: កូដប័ណ្ណបញ្ចុះតម្លៃនេះមិនអាចប្រើបាននៅក្នុងទីផ្សាររបស់អ្នកទេ។
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1951,6 +1953,9 @@ km:
       landing_page:
         description: អតិថិជន​ត្រូវតែទៅកាន់ទំព័រជាក់ស្ដែងណាមួយ
         name: ទំព័រមេ
+      market:
+        description: កំណត់ត្រឹមការបញ្ជាទិញដែលធ្វើឡើងនៅក្នុងទីផ្សារដែលបានបញ្ជាក់
+        name: ទីផ្សារ
       one_use_per_user:
         description: អ្នកប្រើប្រាស់មួយ​ប្រើបាន​តែមួយដងតែប៉ុណ្ណោះ
         name: ម្នាក់បានតែម្ដង
@@ -1972,6 +1977,9 @@ km:
       category:
         description: ការបញ្ជាទិញរួមមានផលិតផលក្នុងប្រភេទដែលបានបញ្ជាក់
         name: ប្រភេទ
+      channel:
+        description: កំណត់ត្រឹមការបញ្ជាទិញដែលធ្វើឡើងតាមរយៈឆានែលដែលបានបញ្ជាក់
+        name: ឆានែល
       country:
         description: កំណត់ត្រឹមការបញ្ជាទិញដែលមានអាសយដ្ឋានដឹកជញ្ជូននៅក្នុងប្រទេសជាក់លាក់
         name: ប្រទេស
@@ -2377,6 +2385,13 @@ km:
     customers_removed_from_group:
       one: បានដកអតិថិជន %{count} នាក់ចេញពីក្រុម
       other: បានដកអតិថិជន %{count} នាក់ចេញពីក្រុម
+    date_range_presets:
+      last_30_days: ៣០ ថ្ងៃចុងក្រោយ
+      last_7_days: ៧ ថ្ងៃចុងក្រោយ
+      last_month: ខែមុន
+      this_month: ខែនេះ
+      today: ថ្ងៃនេះ
+      yesterday: ម្សិលមិញ
     days_ago: ថ្ងៃមុន
     delete_selected: លុបអ្វីដែលបានជ្រើស
     digital_assets_help: ទ្រព្យសម្បត្តិឌីជីថលគឺជាឯកសារដែលអាចទាញយកបានដោយអតិថិជនបន្ទាប់ពីការទិញ។
@@ -2602,10 +2617,12 @@ km:
     cannot_return_more_than_bought_quantity: មិនអាចប្រគល់ត្រឡប់ច្រើនជាងបរិមាណដែលបានទិញបានទេ។
     cart_already_updated: រទេះត្រូវបានធ្វើបច្ចុប្បន្នភាពរួចហើយ។
     cart_line_item:
+      delivery_unavailable: "%{li_name} មិនអាចដឹកជញ្ជូនទៅអាសយដ្ឋានដែលបានជ្រើសរើសបានទេ"
       discontinued: "%{li_name} ត្រូវបានដកចេញ ដោយសារវាត្រូវបានឈប់លក់"
       out_of_stock: "%{li_name} ត្រូវបានដកចេញ ដោយសារវាលក់អស់"
     change: ផ្លាស់ប្តូរ
     channel: ឆានែលលក់
+    channel_ids: ឆានែលលក់
     channels: ឆានែលលក់
     checkout_requirements:
       email_required: តម្រូវឱ្យមានអាសយដ្ឋានអ៊ីមែល
@@ -2805,6 +2822,8 @@ km:
     preview: មើលជាមុន
     price_lists: បញ្ជីតម្លៃ
     price_rules:
+      channel_rule:
+        description: កំណត់តម្លៃផ្អែកលើឆានែលលក់
       customer_group_rule:
         description: អនុវត្តតម្លៃទៅក្រុមអតិថិជនជាក់លាក់
     prices: តម្លៃ
@@ -2925,6 +2944,7 @@ km:
       current_password_invalid: ពាក្យសម្ងាត់បច្ចុប្បន្នមិនត្រឹមត្រូវ ឬបាត់
       gateway_error: មានបញ្ហាជាមួយ gateway បង់ប្រាក់៖ %{text}
       invalid_api_key: API key (%{key}) ដែលបានបញ្ជាក់មិនត្រឹមត្រូវ។
+      invalid_position: new_position ត្រូវតែជាចំនួនគត់
       invalid_resource: ធនធានមិនត្រឹមត្រូវ។ សូមកែកំហុស ហើយព្យាយាមម្តងទៀត។
       invalid_taxonomy_id: taxonomy id មិនត្រឹមត្រូវ។
       must_specify_api_key: អ្នកត្រូវតែបញ្ជាក់ API key។

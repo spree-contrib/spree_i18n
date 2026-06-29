@@ -1525,6 +1525,8 @@ tr:
         missing_product: Ürün bulunamadı
         missing_taxon: Sınıflandırma bulunamadı
         no_applicable_products:
+        no_matching_channel: Bu kupon kodu bu satış kanalı için geçerli değildir.
+        no_matching_market: Bu kupon kodu pazarınızda geçerli değildir.
         no_matching_taxons: Eşleşen ürün yok
         no_user_or_email_specified:
         no_user_specified:
@@ -1950,6 +1952,9 @@ tr:
       landing_page:
         description: Müşteri tanımlanmış olan bir sayfayı ziyaret etmelidir
         name: Açılış Sayfası
+      market:
+        description: Belirtilen pazar(lar)da verilen siparişlerle sınırla
+        name: Pazar(lar)
       one_use_per_user:
         description:
         name:
@@ -1971,6 +1976,9 @@ tr:
       category:
         description: Sipariş belirtilen kategorilerdeki ürünleri içeriyor
         name: Kategoriler
+      channel:
+        description: Belirtilen kanal(lar) üzerinden verilen siparişlerle sınırla
+        name: Kanal(lar)
       country:
         description: Belirli bir ülkede kargo adresi olan siparişlerle sınırla
         name: Ülke
@@ -2364,6 +2372,13 @@ tr:
     customers_removed_from_group:
       one: "%{count} müşteri gruptan kaldırıldı"
       other: "%{count} müşteri gruptan kaldırıldı"
+    date_range_presets:
+      last_30_days: Son 30 Gün
+      last_7_days: Son 7 Gün
+      last_month: Geçen Ay
+      this_month: Bu Ay
+      today: Bugün
+      yesterday: Dün
     days_ago: Gün önce
     delete_selected: Seçilenleri sil
     digital_assets_help: Dijital varlıklar, müşteriler tarafından satın alma sonrasında indirilebilen dosyalardır.
@@ -2590,10 +2605,12 @@ tr:
     cannot_return_more_than_bought_quantity: Satın alınan miktardan fazlası iade edilemez.
     cart_already_updated: Sepet zaten güncellendi.
     cart_line_item:
+      delivery_unavailable: "%{li_name} seçilen adrese teslim edilemiyor"
       discontinued: "%{li_name} üretimden kaldırıldığı için çıkarıldı"
       out_of_stock: "%{li_name} stokta kalmadığı için çıkarıldı"
     change: Değiştir
     channel: Satış kanalı
+    channel_ids: Satış kanalları
     channels: Satış kanalları
     checkout_requirements:
       email_required: E-posta adresi gereklidir
@@ -2794,6 +2811,8 @@ tr:
     preview: Önizleme
     price_lists: Fiyat Listeleri
     price_rules:
+      channel_rule:
+        description: Satış kanalına göre fiyatlandırma uygulayın
       customer_group_rule:
         description: Belirli müşteri gruplarına fiyatlandırma uygula
     prices: Fiyatlar
@@ -2925,6 +2944,7 @@ tr:
       current_password_invalid: Mevcut parola geçersiz veya eksik
       gateway_error: 'Ödeme ağ geçidiyle ilgili bir sorun oluştu: %{text}'
       invalid_api_key: Geçersiz API anahtarı (%{key}) belirtildi.
+      invalid_position: new_position bir tam sayı olmalıdır
       invalid_resource: Geçersiz kaynak. Lütfen hataları düzeltip tekrar deneyin.
       invalid_taxonomy_id: Geçersiz taksonomi kimliği.
       must_specify_api_key: Bir API anahtarı belirtmelisiniz.

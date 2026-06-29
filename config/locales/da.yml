@@ -1525,6 +1525,8 @@ da:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Denne rabatkode kan ikke bruges på denne salgskanal.
+        no_matching_market: Denne rabatkode kan ikke bruges på dit marked.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ da:
       landing_page:
         description: Kunde skal have besøgt the angivne side
         name: Landingsside
+      market:
+        description: Begræns til ordrer afgivet på valgte marked(er)
+        name: Marked(er)
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ da:
       category:
         description: Ordren indeholder produkter i bestemte kategorier
         name: Kategorier
+      channel:
+        description: Begræns til ordrer afgivet via valgte kanal(er)
+        name: Kanal(er)
       country:
         description: Begræns til ordrer med leveringsadresse i et bestemt land
         name: Land
@@ -2359,6 +2367,13 @@ da:
     customers_removed_from_group:
       one: "%{count} kunde fjernet fra gruppen"
       other: "%{count} kunder fjernet fra gruppen"
+    date_range_presets:
+      last_30_days: Sidste 30 dage
+      last_7_days: Sidste 7 dage
+      last_month: Sidste måned
+      this_month: Denne måned
+      today: I dag
+      yesterday: I går
     days_ago: Dage siden
     delete_selected: Slet valgte
     digital_assets_help: Digitale aktiver er filer, som kunderne kan downloade efter køb.
@@ -2585,10 +2600,12 @@ da:
     cannot_return_more_than_bought_quantity: Kan ikke returnere mere end den købte mængde.
     cart_already_updated: Kurven er allerede blevet opdateret.
     cart_line_item:
+      delivery_unavailable: "%{li_name} kan ikke leveres til den valgte adresse"
       discontinued: "%{li_name} blev fjernet, fordi den er udgået"
       out_of_stock: "%{li_name} blev fjernet, fordi den var udsolgt"
     change: Skift
     channel: Salgskanal
+    channel_ids: Salgskanaler
     channels: Salgskanaler
     checkout_requirements:
       email_required: E-mailadresse er påkrævet
@@ -2789,6 +2806,8 @@ da:
     preview: Forhåndsvisning
     price_lists: Prislister
     price_rules:
+      channel_rule:
+        description: Anvend prissætning baseret på salgskanalen
       customer_group_rule:
         description: Anvend priser på bestemte kundegrupper
     prices: Priser
@@ -2919,6 +2938,7 @@ da:
       current_password_invalid: Den nuværende adgangskode er ugyldig eller mangler
       gateway_error: 'Der opstod et problem med betalingsgatewayen: %{text}'
       invalid_api_key: Ugyldig API-nøgle (%{key}) angivet.
+      invalid_position: new_position skal være et heltal
       invalid_resource: Ugyldig ressource. Ret venligst fejlene, og prøv igen.
       invalid_taxonomy_id: Ugyldigt taksonomi-id.
       must_specify_api_key: Du skal angive en API-nøgle.

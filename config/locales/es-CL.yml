@@ -1552,6 +1552,8 @@ es-CL:
         missing_product: Este cupón no se puede aplicar porque no tiene todos los productos necesarios en su carrito.
         missing_taxon: Es necesario añadir un producto de todas las clasificaciónes aplicables antes de utilizar un cupón.
         no_applicable_products: Usted necesita agregar un producto antes de usar un cupón.
+        no_matching_channel: Este código de cupón no es válido para este canal de venta.
+        no_matching_market: Este código de cupón no es válido en tu mercado.
         no_matching_taxons: Usted necesita agregar un producto a partir de una clasificaciónes aplicable antes de la utilización de este cupón.
         no_user_or_email_specified: Tienes que iniciar sesión o proporcionar su correo electrónico antes de usar este cupón.
         no_user_specified: Usted tiene que iniciar sesión antes de usar un cupón.
@@ -1976,6 +1978,9 @@ es-CL:
       landing_page:
         description: El cliente debe haber visitado la página especificada
         name: Landing Page
+      market:
+        description: Limitar a los pedidos realizados en los mercados especificados
+        name: Mercado(s)
       one_use_per_user:
         description: Uno por usuario
         name: Uno por usuario
@@ -1997,6 +2002,9 @@ es-CL:
       category:
         description: El pedido incluye productos de categorías específicas
         name: Categorías
+      channel:
+        description: Limitar a los pedidos realizados a través de los canales especificados
+        name: Canal(es)
       country:
         description: Limitar a pedidos con dirección de envío en un país específico
         name: País
@@ -2398,6 +2406,13 @@ es-CL:
     customers_removed_from_group:
       one: "%{count} cliente eliminado del grupo"
       other: "%{count} clientes eliminados del grupo"
+    date_range_presets:
+      last_30_days: Últimos 30 días
+      last_7_days: Últimos 7 días
+      last_month: Mes pasado
+      this_month: Este mes
+      today: Hoy
+      yesterday: Ayer
     days_ago: Hace días
     delete_selected: Eliminar seleccionados
     digital_assets_help: Los archivos digitales son archivos que los clientes pueden descargar después de la compra.
@@ -2617,10 +2632,12 @@ es-CL:
     cannot_return_more_than_bought_quantity: No se puede devolver más que la cantidad comprada.
     cart_already_updated: El carro ya fue actualizado.
     cart_line_item:
+      delivery_unavailable: "%{li_name} no se puede enviar a la dirección seleccionada"
       discontinued: "%{li_name} se eliminó porque fue descontinuado"
       out_of_stock: "%{li_name} se eliminó porque se agotó"
     change: Cambiar
     channel: Canal de venta
+    channel_ids: Canales de venta
     channels: Canales de venta
     checkout_requirements:
       email_required: El correo electrónico es obligatorio
@@ -2820,6 +2837,8 @@ es-CL:
     preview: Vista previa
     price_lists: Listas de precios
     price_rules:
+      channel_rule:
+        description: Aplicar precios según el canal de venta
       customer_group_rule:
         description: Aplicar precios a grupos de clientes específicos
     prices: Precios
@@ -2941,6 +2960,7 @@ es-CL:
       current_password_invalid: La contraseña actual no es válida o falta
       gateway_error: 'Hubo un problema con la pasarela de pago: %{text}'
       invalid_api_key: La clave API especificada (%{key}) no es válida.
+      invalid_position: new_position debe ser un número entero
       invalid_resource: Recurso no válido. Corrige los errores e inténtalo de nuevo.
       invalid_taxonomy_id: Id de taxonomía no válido.
       must_specify_api_key: Debes especificar una clave API.

@@ -1525,6 +1525,8 @@ th:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: รหัสคูปองนี้ใช้ไม่ได้กับช่องทางการขายนี้
+        no_matching_market: รหัสคูปองนี้ใช้ไม่ได้ในตลาดของคุณ
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ th:
       landing_page:
         description: ลูกค้าต้องไปยังหน้าที่กำหนด
         name: Landing Page
+      market:
+        description: จำกัดเฉพาะคำสั่งซื้อที่ทำในตลาดที่ระบุ
+        name: ตลาด
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ th:
       category:
         description: คำสั่งซื้อมีสินค้าในหมวดหมู่ที่ระบุ
         name: หมวดหมู่
+      channel:
+        description: จำกัดเฉพาะคำสั่งซื้อที่ทำผ่านช่องทางที่ระบุ
+        name: ช่องทางการขาย
       country:
         description: จำกัดเฉพาะคำสั่งซื้อที่มีที่อยู่จัดส่งในประเทศที่ระบุ
         name: ประเทศ
@@ -2358,6 +2366,13 @@ th:
     customers_removed_from_group:
       one: ลบลูกค้า %{count} รายออกจากกลุ่มแล้ว
       other: ลบลูกค้า %{count} รายออกจากกลุ่มแล้ว
+    date_range_presets:
+      last_30_days: 30 วันที่ผ่านมา
+      last_7_days: 7 วันที่ผ่านมา
+      last_month: เดือนที่แล้ว
+      this_month: เดือนนี้
+      today: วันนี้
+      yesterday: เมื่อวาน
     days_ago: วันก่อน
     delete_selected: ลบรายการที่เลือก
     digital_assets_help: สินทรัพย์ดิจิทัลคือไฟล์ที่ลูกค้าสามารถดาวน์โหลดได้หลังจากซื้อ
@@ -2584,10 +2599,12 @@ th:
     cannot_return_more_than_bought_quantity: ไม่สามารถคืนสินค้าได้มากกว่าจำนวนที่ซื้อ
     cart_already_updated: ตะกร้าได้รับการอัปเดตแล้ว
     cart_line_item:
+      delivery_unavailable: ไม่สามารถจัดส่ง %{li_name} ไปยังที่อยู่ที่เลือกได้
       discontinued: "%{li_name} ถูกนำออกเนื่องจากเลิกจำหน่ายแล้ว"
       out_of_stock: "%{li_name} ถูกนำออกเนื่องจากสินค้าหมด"
     change: เปลี่ยนแปลง
     channel: ช่องทางการขาย
+    channel_ids: ช่องทางการขาย
     channels: ช่องทางการขาย
     checkout_requirements:
       email_required: จำเป็นต้องระบุที่อยู่อีเมล
@@ -2788,6 +2805,8 @@ th:
     preview: ดูตัวอย่าง
     price_lists: รายการราคา
     price_rules:
+      channel_rule:
+        description: กำหนดราคาตามช่องทางการขาย
       customer_group_rule:
         description: ใช้การกำหนดราคากับกลุ่มลูกค้าที่ระบุ
     prices: ราคา
@@ -2919,6 +2938,7 @@ th:
       current_password_invalid: รหัสผ่านปัจจุบันไม่ถูกต้องหรือไม่ได้ระบุ
       gateway_error: 'เกิดปัญหากับเกตเวย์การชำระเงิน: %{text}'
       invalid_api_key: API key ที่ระบุ (%{key}) ไม่ถูกต้อง
+      invalid_position: new_position ต้องเป็นจำนวนเต็ม
       invalid_resource: ทรัพยากรไม่ถูกต้อง กรุณาแก้ไขข้อผิดพลาดแล้วลองใหม่อีกครั้ง
       invalid_taxonomy_id: รหัสหมวดหมู่ไม่ถูกต้อง
       must_specify_api_key: คุณต้องระบุ API key

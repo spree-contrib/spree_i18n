@@ -1612,6 +1612,8 @@ pl:
         missing_product: Nie można zastosować tego kodu kuponu, ponieważ nie masz w koszyku wszystkich potrzebnych produktów.
         missing_taxon: Musisz dodać produkt ze wszystkich odpowiednich kategorii przed zastosowaniem tego kodu kuponu.
         no_applicable_products: Przed zastosowaniem tego kodu kuponu musisz dodać odpowiedni produkt.
+        no_matching_channel: Ten kod kuponu nie jest ważny dla tego kanału sprzedaży.
+        no_matching_market: Ten kod kuponu nie jest ważny na Twoim rynku.
         no_matching_taxons: Przed zastosowaniem tego kodu kuponu musisz dodać produkt z odpowiedniej kategorii.
         no_user_or_email_specified: Musisz się zalogować lub podać swój adres e-mail przed zastosowaniem tego kodu kuponu.
         no_user_specified: Musisz się zalogować przed zastosowaniem tego kodu kuponu.
@@ -1703,24 +1705,7 @@ pl:
     height: Wysokość
     hide_from_subcategories_nav: Ukryj w nawigacji podkategorii
     home: Strona Główna
-    homepage:
-      bestsellers: BESTSELLERY
-      fashion_trends: TRENDY W MODZIE
-      fashion_trends_note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-      men: MĘŻCZYZNA
-      new: NOWE
-      new_collection: NOWA KOLEKCJA
-      read_more: DOWIEDZ SIĘ WIĘCEJ
-      shoes: BUTY
-      shop_now: KUP TERAZ
-      sportswear: UBRANIA SPORTOWE
-      streetstyle: STYL ULICZNY
-      summer_2019: Lato 2019
-      summer_collection: Kolekcja letnia
-      summer_sale: LETNIA WYPRZEDAŻ
-      trending: POPULARNE
-      up_to_60: AŻ DO 60%
-      women: KOBIETA
+    homepage: Strona główna
     help_center: Centrum Pomocy
     i18n:
       available_locales: Dostępne ustawienia regionalne
@@ -2132,6 +2117,9 @@ pl:
     promotion_label: Propocja (%{name})
     promotion_rule: Reguła promocji
     promotion_rule_types:
+      channel:
+        description: Ogranicz do zamówień złożonych przez wybrany kanał(y)
+        name: Kanał(y)
       country:
         description: Zamówienie jest wysyłane do właściwego (lub domyślnego) kraju
         name: Państwo
@@ -2141,6 +2129,9 @@ pl:
       item_total:
         description: Całkowita wartość zamówienia spełnia te kryteria
         name: Wartość całkowita
+      market:
+        description: Ogranicz do zamówień złożonych na wybranym rynku(ach)
+        name: Rynek(i)
       one_use_per_user:
         description: Tylko jedno użycie na użytkownika
         name: Jedno użycie na użytkownika
@@ -2619,6 +2610,13 @@ pl:
     customers_removed_from_group:
       one: Usunięto %{count} klienta z grupy
       other: Usunięto %{count} klientów z grupy
+    date_range_presets:
+      last_30_days: Ostatnie 30 dni
+      last_7_days: Ostatnie 7 dni
+      last_month: Poprzedni miesiąc
+      this_month: Bieżący miesiąc
+      today: Dzisiaj
+      yesterday: Wczoraj
     days_ago: Dni temu
     delete_selected: Usuń wybrane
     digital_assets_help: Zasoby cyfrowe to pliki, które klienci mogą pobrać po zakupie.
@@ -2799,9 +2797,11 @@ pl:
     cannot_empty: Nie można opróżnić zamówienia.
     cart_already_updated: Koszyk został już zaktualizowany.
     cart_line_item:
+      delivery_unavailable: Produkt %{li_name} nie może zostać dostarczony pod wybrany adres
       discontinued: "%{li_name} został usunięty, ponieważ został wycofany"
       out_of_stock: "%{li_name} został usunięty, ponieważ został wyprzedany"
     change: Zmień
+    channel_ids: Kanały sprzedaży
     channels: Kanały sprzedaży
     checkout_requirements:
       email_required: Adres e-mail jest wymagany
@@ -2985,6 +2985,8 @@ pl:
     preview: Podgląd
     price_lists: Cenniki
     price_rules:
+      channel_rule:
+        description: Zastosuj ceny w zależności od kanału sprzedaży
       customer_group_rule:
         description: Zastosuj ceny do określonych grup klientów
     prices: Ceny
@@ -3081,6 +3083,7 @@ pl:
       current_password_invalid: Bieżące hasło jest nieprawidłowe lub go brakuje
       gateway_error: 'Wystąpił problem z bramką płatności: %{text}'
       invalid_api_key: Podano nieprawidłowy klucz API (%{key}).
+      invalid_position: new_position musi być liczbą całkowitą
       invalid_resource: Nieprawidłowy zasób. Popraw błędy i spróbuj ponownie.
       invalid_taxonomy_id: Nieprawidłowy identyfikator taksonomii.
       must_specify_api_key: Musisz podać klucz API.

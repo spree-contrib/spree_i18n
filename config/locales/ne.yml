@@ -1528,6 +1528,8 @@ ne:
         missing_product: हराइरहेको उत्पाद
         missing_taxon: हराइरहेको ट्याक्सन
         no_applicable_products: कुनै लागू उत्पादहरू छैनन्
+        no_matching_channel: यो कुपन कोड यस बिक्री च्यानलका लागि योग्य छैन।
+        no_matching_market: यो कुपन कोड तपाईंको मार्केटमा योग्य छैन।
         no_matching_taxons: कुनै मेल खाने ट्याक्सनहरू
         no_user_or_email_specified: कुनै प्रयोगकर्ता वा ईमेल निर्दिष्ट गरिएको छैन
         no_user_specified: कुनै प्रयोगकर्ता निर्दिष्ट गरिएको छैन
@@ -1949,6 +1951,9 @@ ne:
       landing_page:
         description: ग्राहकले निर्दिष्ट पृष्ठ भ्रमण गरेको हुनुपर्छ
         name: अवतरण पृष्ठ
+      market:
+        description: तोकिएको मार्केट (हरू) मा राखिएका अर्डरहरूमा सीमित गर्नुहोस्
+        name: मार्केट (हरू)
       one_use_per_user:
         description: वर्णन
         name: नाम
@@ -1970,6 +1975,9 @@ ne:
       category:
         description: अर्डरमा तोकिएका कोटिहरूका उत्पादनहरू समावेश छन्
         name: कोटिहरू
+      channel:
+        description: तोकिएको च्यानल (हरू) मार्फत राखिएका अर्डरहरूमा सीमित गर्नुहोस्
+        name: च्यानल (हरू)
       country:
         description: विशिष्ट देशमा शिपिङ ठेगाना भएका अर्डरहरूमा मात्र सीमित
         name: देश
@@ -2360,6 +2368,13 @@ ne:
     customers_removed_from_group:
       one: "%{count} ग्राहक समूहबाट हटाइयो"
       other: "%{count} ग्राहकहरू समूहबाट हटाइए"
+    date_range_presets:
+      last_30_days: पछिल्लो ३० दिन
+      last_7_days: पछिल्लो ७ दिन
+      last_month: गत महिना
+      this_month: यो महिना
+      today: आज
+      yesterday: हिजो
     days_ago: दिन अघि
     delete_selected: छानिएको मेट्नुहोस्
     digital_assets_help: डिजिटल एसेटहरू खरिदपछि ग्राहकहरूले डाउनलोड गर्न सक्ने फाइलहरू हुन्।
@@ -2586,10 +2601,12 @@ ne:
     cannot_return_more_than_bought_quantity: किनिएको परिमाणभन्दा बढी फिर्ता गर्न सकिँदैन।
     cart_already_updated: कार्ट पहिले नै अपडेट भइसकेको छ।
     cart_line_item:
+      delivery_unavailable: "%{li_name} छानिएको ठेगानामा डेलिभर गर्न सकिँदैन"
       discontinued: "%{li_name} बन्द गरिएकोले हटाइयो"
       out_of_stock: "%{li_name} बिक्री भइसकेकोले हटाइयो"
     change: परिवर्तन गर्नुहोस्
     channel: बिक्री च्यानल
+    channel_ids: बिक्री च्यानलहरू
     channels: बिक्री च्यानलहरू
     checkout_requirements:
       email_required: इमेल ठेगाना आवश्यक छ
@@ -2789,6 +2806,8 @@ ne:
     preview: पूर्वावलोकन
     price_lists: मूल्य सूचीहरू
     price_rules:
+      channel_rule:
+        description: बिक्री च्यानलको आधारमा मूल्य निर्धारण लागू गर्नुहोस्
       customer_group_rule:
         description: विशिष्ट ग्राहक समूहहरूमा मूल्य लागू गर्नुहोस्
     prices: मूल्यहरू
@@ -2920,6 +2939,7 @@ ne:
       current_password_invalid: हालको पासवर्ड अमान्य छ वा छुटेको छ
       gateway_error: 'भुक्तानी गेटवेमा समस्या आयो: %{text}'
       invalid_api_key: अमान्य API कुञ्जी (%{key}) तोकिएको छ।
+      invalid_position: new_position पूर्णांक हुनुपर्छ
       invalid_resource: अमान्य स्रोत। कृपया त्रुटिहरू सच्याएर फेरि प्रयास गर्नुहोस्।
       invalid_taxonomy_id: अमान्य ट्याक्सोनोमी ID।
       must_specify_api_key: तपाईंले API कुञ्जी तोक्नैपर्छ।

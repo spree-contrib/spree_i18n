@@ -1529,6 +1529,8 @@ ar:
         missing_product: " لا يمكن تطبيق رمز القسيمة هذا لأنه ليس لديك جميع المنتجات الضرورية في سلة التسوق الخاصة بك "
         missing_taxon: " تحتاج إلى إضافة منتج من جميع الفئات القابلة للتطبيق قبل تطبيق رمز القسيمة هذا "
         no_applicable_products: " تحتاج إلى إضافة منتج قابل للتطبيق قبل تطبيق رمز القسيمة هذا "
+        no_matching_channel: رمز القسيمة هذا غير صالح لقناة البيع هذه.
+        no_matching_market: رمز القسيمة هذا غير صالح في السوق الخاص بك.
         no_matching_taxons: " تحتاج إلى إضافة منتج من فئة قابلة للتطبيق قبل تطبيق رمز القسيمة هذا "
         no_user_or_email_specified: " تحتاج إلى تسجيل الدخول أو تقديم بريدك الإلكتروني قبل تطبيق رمز القسيمة "
         no_user_specified: " تحتاج إلى تسجيل الدخول قبل تطبيق رمز القسيمة هذا "
@@ -1954,6 +1956,9 @@ ar:
       landing_page:
         description: " يجب أن يكون العميل قد زار الصفحة المحددة "
         name: " الصفحة المقصودة "
+      market:
+        description: تقييد الطلبات المقدمة في السوق (الأسواق) المحددة
+        name: السوق (الأسواق)
       one_use_per_user:
         description: " استخدام واحد فقط لكل مستخدم "
         name: " استخدام واحد لكل مستخدم "
@@ -1975,6 +1980,9 @@ ar:
       category:
         description: يتضمن الطلب منتجات في فئات محددة
         name: الفئات
+      channel:
+        description: تقييد الطلبات المقدمة عبر القناة (القنوات) المحددة
+        name: القناة (القنوات)
       country:
         description: اقتصار على الطلبات ذات عنوان الشحن في دولة محددة
         name: الدولة
@@ -2359,6 +2367,7 @@ ar:
     categorization: التصنيف
     change_password: تغيير كلمة المرور
     channel: قناة المبيعات
+    channel_ids: قنوات البيع
     channels: قنوات المبيعات
     closed: مغلق
     color_code: كود اللون
@@ -2396,6 +2405,13 @@ ar:
       other: تمت إزالة %{count} عميل من المجموعة
       two: تمت إزالة عميلين من المجموعة
       zero: لم تتم إزالة أي عميل من المجموعة
+    date_range_presets:
+      last_30_days: آخر 30 يومًا
+      last_7_days: آخر 7 أيام
+      last_month: الشهر الماضي
+      this_month: هذا الشهر
+      today: اليوم
+      yesterday: أمس
     days_ago: منذ أيام
     delete_selected: حذف المحدد
     deleted: محذوف
@@ -2710,6 +2726,7 @@ ar:
     cannot_return_more_than_bought_quantity: لا يمكن إرجاع كمية أكبر من الكمية المشتراة.
     cart_already_updated: تم تحديث السلة بالفعل.
     cart_line_item:
+      delivery_unavailable: لا يمكن توصيل %{li_name} إلى العنوان المحدد
       discontinued: تمت إزالة %{li_name} لأنه تم إيقافه
       out_of_stock: تمت إزالة %{li_name} لأنه نفد من المخزون
     change: تغيير
@@ -2837,6 +2854,8 @@ ar:
     page: صفحة
     pages: الصفحات
     price_rules:
+      channel_rule:
+        description: تطبيق التسعير بناءً على قناة البيع
       customer_group_rule:
         description: تطبيق التسعير على مجموعات عملاء محددة
     privacy_policy: سياسة الخصوصية
@@ -2934,6 +2953,7 @@ ar:
       current_password_invalid: كلمة المرور الحالية غير صحيحة أو مفقودة
       gateway_error: 'حدثت مشكلة في بوابة الدفع: %{text}'
       invalid_api_key: مفتاح API غير صالح (%{key}) تم تحديده.
+      invalid_position: يجب أن يكون new_position رقمًا صحيحًا
       invalid_resource: مورد غير صالح. يُرجى إصلاح الأخطاء والمحاولة مرة أخرى.
       invalid_taxonomy_id: معرّف التصنيف غير صالح.
       must_specify_api_key: يجب تحديد مفتاح API.

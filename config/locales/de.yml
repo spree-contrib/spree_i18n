@@ -1636,6 +1636,7 @@ de:
       current_password_invalid: Aktuelles Passwort ist ungültig oder fehlt
       gateway_error: 'Es gab ein Problem mit dem Zahlungsgateway: %{text}'
       invalid_api_key: Ungültiger API-Schlüssel (%{key}) angegeben.
+      invalid_position: new_position muss eine Ganzzahl sein
       invalid_resource: Ungültige Ressource. Bitte beheben Sie die Fehler und versuchen Sie es erneut.
       invalid_taxonomy_id: Ungültige Taxonomie-ID.
       must_specify_api_key: Sie müssen einen API-Schlüssel angeben.
@@ -1923,6 +1924,8 @@ de:
         missing_product: Für diesen Gutschein-Code fehlen die richtigen Produkte im Warenkorb.
         missing_taxon: Für diesen Gutschein-Code müssen die Produkte der richtigen Kategorie im Warenkorb liegen.
         no_applicable_products: Das entsprechende Produkt des Gutschein-Codes liegt nicht im Warenkorb.
+        no_matching_channel: Dieser Gutscheincode ist für diesen Vertriebskanal nicht gültig.
+        no_matching_market: Dieser Gutscheincode ist in Ihrem Markt nicht gültig.
         no_matching_taxons: Für diesen Gutschein-Code muss das Produkt der entsprechenden Kategorie im Warenkorb liegen.
         no_user_or_email_specified: Für das Hinzufügen des Gutschein-Codes müssen Sie angemeldet/eingeloggt sein.
         no_user_specified: Für das Hinzufügen des Gutschein-Codes müssen sie eingeloggt sein.
@@ -2032,24 +2035,7 @@ de:
     hide_from_subcategories_nav: Aus der Unterkategorien-Navigation ausblenden
     home: Startseite
     home_page: Startseite
-    homepage:
-      bestsellers: BESTSELLER
-      fashion_trends: MODETRENDS
-      fashion_trends_note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-      men: HERREN
-      new: NEU
-      new_collection: NEUE KOLLEKTION
-      read_more: WEITERLESEN
-      shoes: SCHUHE
-      shop_now: JETZT KAUFEN
-      sportswear: SPORTBEKLEIDUNG
-      streetstyle: STREETSTYLE
-      summer_2019: Sommer 2019
-      summer_collection: Sommer Kollektion
-      summer_sale: SUMMER SALE
-      trending: TRENDING
-      up_to_60: BIS ZUM 60%
-      women: DAMEN
+    homepage: Startseite
     help_center: Hilfezentrum
     i18n:
       available_locales: Verfügbare Locales
@@ -2509,6 +2495,9 @@ de:
     promotion_not_cloned: 'Werbeaktion konnte nicht gekolnt werden. Grund: %{error}'
     promotion_rule: Werbeaktions-Regel
     promotion_rule_types:
+      channel:
+        description: Auf Bestellungen über bestimmte Kanäle beschränken
+        name: Kanal/Kanäle
       country:
         description: Die Bestellung wurde in das richtige (oder Standard-) Land versendet
         name: Land
@@ -2521,6 +2510,9 @@ de:
       landing_page:
         description: Der Kunde muss die angegebene Seite besucht haben
         name: Spezifische Seite
+      market:
+        description: Auf Bestellungen in bestimmten Märkten beschränken
+        name: Markt/Märkte
       one_use_per_user:
         description: Darf pro Benutzer nur einmal verwendet werden
         name: 1x pro Benutzer
@@ -3048,6 +3040,13 @@ de:
     customers_removed_from_group:
       one: "%{count} Kunde aus Gruppe entfernt"
       other: "%{count} Kunden aus Gruppe entfernt"
+    date_range_presets:
+      last_30_days: Letzte 30 Tage
+      last_7_days: Letzte 7 Tage
+      last_month: Letzter Monat
+      this_month: Aktueller Monat
+      today: Heute
+      yesterday: Gestern
     days_ago: Vor Tagen
     delete_selected: Auswahl löschen
     digital_assets_help: Digitale Assets sind Dateien, die von Kunden nach dem Kauf heruntergeladen werden können.
@@ -3219,9 +3218,11 @@ de:
     cannot_empty: Bestellung kann nicht geleert werden.
     cart_already_updated: Der Warenkorb wurde bereits aktualisiert.
     cart_line_item:
+      delivery_unavailable: "%{li_name} kann nicht an die ausgewählte Adresse geliefert werden"
       discontinued: "%{li_name} wurde entfernt, da der Artikel ausgelaufen ist"
       out_of_stock: "%{li_name} wurde entfernt, da der Artikel ausverkauft ist"
     change: Ändern
+    channel_ids: Vertriebskanäle
     channels: Vertriebskanäle
     checkout_requirements:
       email_required: E-Mail-Adresse ist erforderlich
@@ -3388,6 +3389,8 @@ de:
     preview: Vorschau
     price_lists: Preislisten
     price_rules:
+      channel_rule:
+        description: Preise basierend auf dem Vertriebskanal anwenden
       customer_group_rule:
         description: Preise auf bestimmte Kundengruppen anwenden
     pricing: Preisgestaltung

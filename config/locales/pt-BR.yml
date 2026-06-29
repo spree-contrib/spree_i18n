@@ -1557,6 +1557,8 @@ pt-BR:
         missing_product: Este cupom não pode ser aplicado porque não há todos os produtos necessários no carrinho.
         missing_taxon: É necessário adicionar um produto de uma categoria válida antes de aplicar este cupom.
         no_applicable_products: É necessário adicionar um produto válido antes de aplicar este código de produto.
+        no_matching_channel: Este cupom não é válido para este canal de venda.
+        no_matching_market: Este cupom não é válido no seu mercado.
         no_matching_taxons: É necessário adicionar um produto de uma categoria válida antes de aplicar este cupom.
         no_user_or_email_specified: É necessário fazer login ou fornecer seu email antes de aplicar este código de cupom.
         no_user_specified: É necessário fazer login antes de aplicar este código de cupom.
@@ -1988,6 +1990,9 @@ pt-BR:
     promotion_label: Promoção (%{name})
     promotion_rule: Regras da Promoção
     promotion_rule_types:
+      channel:
+        description: Limitar a pedidos feitos pelo(s) canal(is) especificado(s)
+        name: Canal(is)
       country:
         description: Pedido é enviado para o mesmo país
         name: País
@@ -1997,6 +2002,9 @@ pt-BR:
       item_total:
         description: Total do pedido fecha com estes critérios
         name: Total do Item
+      market:
+        description: Limitar a pedidos feitos no(s) mercado(s) especificado(s)
+        name: Mercado(s)
       one_use_per_user:
         description: Apenas um por usuário
         name: Um por usuário
@@ -2463,6 +2471,13 @@ pt-BR:
     customers_removed_from_group:
       one: "%{count} cliente removido do grupo"
       other: "%{count} clientes removidos do grupo"
+    date_range_presets:
+      last_30_days: Últimos 30 dias
+      last_7_days: Últimos 7 dias
+      last_month: Mês passado
+      this_month: Este mês
+      today: Hoje
+      yesterday: Ontem
     days_ago: Dias atrás
     delete_selected: Excluir selecionados
     digital_assets_help: Ativos digitais são arquivos que podem ser baixados pelos clientes após a compra.
@@ -2655,10 +2670,12 @@ pt-BR:
     cannot_empty: Não é possível esvaziar o pedido.
     cart_already_updated: O carrinho já foi atualizado.
     cart_line_item:
+      delivery_unavailable: "%{li_name} não pode ser entregue no endereço selecionado"
       discontinued: "%{li_name} foi removido porque foi descontinuado"
       out_of_stock: "%{li_name} foi removido porque foi esgotado"
     change: Alterar
     channel: Canal de vendas
+    channel_ids: Canais de venda
     channels: Canais de vendas
     checkout_requirements:
       email_required: O endereço de e-mail é obrigatório
@@ -2848,6 +2865,8 @@ pt-BR:
     preview: Pré-visualização
     price_lists: Listas de preços
     price_rules:
+      channel_rule:
+        description: Aplicar preços com base no canal de venda
       customer_group_rule:
         description: Aplicar preços a grupos de clientes específicos
     prices: Preços
@@ -2953,6 +2972,7 @@ pt-BR:
       current_password_invalid: A senha atual é inválida ou está ausente
       gateway_error: 'Houve um problema com o gateway de pagamento: %{text}'
       invalid_api_key: Chave de API inválida (%{key}) especificada.
+      invalid_position: new_position deve ser um número inteiro
       invalid_resource: Recurso inválido. Corrija os erros e tente novamente.
       invalid_taxonomy_id: ID de taxonomia inválido.
       must_specify_api_key: Você deve especificar uma chave de API.

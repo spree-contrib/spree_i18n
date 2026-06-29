@@ -1561,6 +1561,8 @@ vi:
         missing_product: Thiếu Sản Phẩm
         missing_taxon: Thiếu Phân Loại
         no_applicable_products: Không Có Sản Phẩm Áp Dụng
+        no_matching_channel: Mã giảm giá này không áp dụng cho kênh bán hàng này.
+        no_matching_market: Mã giảm giá này không áp dụng tại thị trường của bạn.
         no_matching_taxons: Không Có Phân Loại Phù Hợp
         no_user_or_email_specified: Không Có Người Dùng Hoặc Email Được Chỉ Định
         no_user_specified: Không Có Người Dùng Được Chỉ Định
@@ -1996,6 +1998,9 @@ vi:
       landing_page:
         description:
         name:
+      market:
+        description: Giới hạn cho các đơn hàng được đặt tại (các) thị trường được chỉ định
+        name: Thị trường
       one_use_per_user:
         description:
         name:
@@ -2017,6 +2022,9 @@ vi:
       category:
         description: Đơn hàng bao gồm sản phẩm trong các danh mục được chỉ định
         name: Danh mục
+      channel:
+        description: Giới hạn cho các đơn hàng được đặt qua (các) kênh được chỉ định
+        name: Kênh bán hàng
       country:
         description: Giới hạn cho các đơn hàng có địa chỉ giao hàng tại một quốc gia cụ thể
         name: Quốc gia
@@ -2418,6 +2426,13 @@ vi:
     customers_removed_from_group:
       one: Đã xóa %{count} khách hàng khỏi nhóm
       other: Đã xóa %{count} khách hàng khỏi nhóm
+    date_range_presets:
+      last_30_days: 30 ngày qua
+      last_7_days: 7 ngày qua
+      last_month: Tháng trước
+      this_month: Tháng này
+      today: Hôm nay
+      yesterday: Hôm qua
     days_ago: Ngày trước
     delete_selected: Xóa mục đã chọn
     digital_assets_help: Tài sản số là các tệp mà khách hàng có thể tải xuống sau khi mua.
@@ -2640,10 +2655,12 @@ vi:
     cannot_return_more_than_bought_quantity: Không thể trả nhiều hơn số lượng đã mua.
     cart_already_updated: Giỏ hàng đã được cập nhật.
     cart_line_item:
+      delivery_unavailable: "%{li_name} không thể giao đến địa chỉ đã chọn"
       discontinued: "%{li_name} đã bị xóa vì đã ngừng kinh doanh"
       out_of_stock: "%{li_name} đã bị xóa vì đã hết hàng"
     change: Thay đổi
     channel: Kênh bán hàng
+    channel_ids: Kênh bán hàng
     channels: Kênh bán hàng
     checkout_requirements:
       email_required: Bắt buộc nhập địa chỉ email
@@ -2836,6 +2853,8 @@ vi:
     preview: Xem trước
     price_lists: Bảng giá
     price_rules:
+      channel_rule:
+        description: Áp dụng giá theo kênh bán hàng
       customer_group_rule:
         description: Áp dụng giá cho các nhóm khách hàng cụ thể
     prices: Giá
@@ -2961,6 +2980,7 @@ vi:
       current_password_invalid: Mật khẩu hiện tại không hợp lệ hoặc bị thiếu
       gateway_error: 'Đã xảy ra sự cố với cổng thanh toán: %{text}'
       invalid_api_key: Khóa API được chỉ định (%{key}) không hợp lệ.
+      invalid_position: new_position phải là số nguyên
       invalid_resource: Tài nguyên không hợp lệ. Vui lòng sửa lỗi và thử lại.
       invalid_taxonomy_id: ID phân loại không hợp lệ.
       must_specify_api_key: Bạn phải chỉ định một khóa API.

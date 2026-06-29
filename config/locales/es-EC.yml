@@ -1544,6 +1544,8 @@ es-EC:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Este código de cupón no es válido para este canal de venta.
+        no_matching_market: Este código de cupón no es válido en tu mercado.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1965,6 +1967,9 @@ es-EC:
       landing_page:
         description: El ciente debe haber visitado la página especificada
         name: Página de destino
+      market:
+        description: Limitar a pedidos realizados en los mercados especificados
+        name: Mercado(s)
       one_use_per_user:
         description:
         name:
@@ -1986,6 +1991,9 @@ es-EC:
       category:
         description: El pedido incluye productos de categorías específicas
         name: Categorías
+      channel:
+        description: Limitar a pedidos realizados a través de los canales especificados
+        name: Canal(es)
       country:
         description: Limitar a pedidos con dirección de envío en un país específico
         name: País
@@ -2377,6 +2385,13 @@ es-EC:
     customers_removed_from_group:
       one: "%{count} cliente quitado del grupo"
       other: "%{count} clientes quitados del grupo"
+    date_range_presets:
+      last_30_days: Últimos 30 días
+      last_7_days: Últimos 7 días
+      last_month: Mes anterior
+      this_month: Este mes
+      today: Hoy
+      yesterday: Ayer
     days_ago: Días atrás
     delete_selected: Eliminar seleccionados
     digital_assets_help: Los activos digitales son archivos que los clientes pueden descargar después de la compra.
@@ -2603,10 +2618,12 @@ es-EC:
     cannot_return_more_than_bought_quantity: No se puede devolver más de la cantidad comprada.
     cart_already_updated: El carrito ya fue actualizado.
     cart_line_item:
+      delivery_unavailable: "%{li_name} no se puede enviar a la dirección seleccionada"
       discontinued: "%{li_name} fue eliminado porque fue descontinuado"
       out_of_stock: "%{li_name} fue eliminado porque se agotó"
     change: Cambiar
     channel: Canal de ventas
+    channel_ids: Canales de venta
     channels: Canales de ventas
     checkout_requirements:
       email_required: El correo electrónico es obligatorio
@@ -2807,6 +2824,8 @@ es-EC:
     preview: Vista previa
     price_lists: Listas de precios
     price_rules:
+      channel_rule:
+        description: Aplicar precios según el canal de venta
       customer_group_rule:
         description: Aplicar precios a grupos de clientes específicos
     prices: Precios
@@ -2938,6 +2957,7 @@ es-EC:
       current_password_invalid: La contraseña actual no es válida o falta
       gateway_error: 'Hubo un problema con la pasarela de pago: %{text}'
       invalid_api_key: La clave API especificada (%{key}) no es válida.
+      invalid_position: new_position debe ser un número entero
       invalid_resource: Recurso no válido. Por favor, corrige los errores e inténtalo de nuevo.
       invalid_taxonomy_id: ID de taxonomía no válido.
       must_specify_api_key: Debes especificar una clave API.

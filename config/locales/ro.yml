@@ -1525,6 +1525,8 @@ ro:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Acest cod de cupon nu este valabil pentru acest canal de vânzare.
+        no_matching_market: Acest cod de cupon nu este valabil pe piața dumneavoastră.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1945,6 +1947,9 @@ ro:
       landing_page:
         description: Clientul trebuie să fi vizitat pagina specificată
         name: Pagina de aterizare
+      market:
+        description: Limitează la comenzile plasate pe piața (piețele) specificată(e)
+        name: Piață (Piețe)
       one_use_per_user:
         description:
         name:
@@ -1966,6 +1971,9 @@ ro:
       category:
         description: Comanda include produse din categoriile specificate
         name: Categorii
+      channel:
+        description: Limitează la comenzile plasate prin canalul (canalele) specificat(e)
+        name: Canal(e)
       country:
         description: Limitează la comenzile cu adresă de livrare într-o anumită țară
         name: Țară
@@ -2357,6 +2365,13 @@ ro:
     customers_removed_from_group:
       one: "%{count} client eliminat din grup"
       other: "%{count} de clienți eliminați din grup"
+    date_range_presets:
+      last_30_days: Ultimele 30 de zile
+      last_7_days: Ultimele 7 zile
+      last_month: Luna trecută
+      this_month: Luna aceasta
+      today: Astăzi
+      yesterday: Ieri
     days_ago: Cu zile în urmă
     delete_selected: Șterge selecția
     digital_assets_help: Resursele digitale sunt fișiere care pot fi descărcate de clienți după achiziție.
@@ -2583,10 +2598,12 @@ ro:
     cannot_return_more_than_bought_quantity: Nu se poate returna mai mult decât cantitatea cumpărată.
     cart_already_updated: Coșul a fost deja actualizat.
     cart_line_item:
+      delivery_unavailable: "%{li_name} nu poate fi livrat la adresa selectată"
       discontinued: "%{li_name} a fost eliminat deoarece a fost întrerupt"
       out_of_stock: "%{li_name} a fost eliminat deoarece s-a epuizat"
     change: Modifică
     channel: Canal de vânzare
+    channel_ids: Canale de vânzare
     channels: Canale de vânzare
     checkout_requirements:
       email_required: Adresa de e-mail este obligatorie
@@ -2788,6 +2805,8 @@ ro:
     preview: Previzualizare
     price_lists: Liste de prețuri
     price_rules:
+      channel_rule:
+        description: Aplică prețuri în funcție de canalul de vânzare
       customer_group_rule:
         description: Aplică prețuri pentru grupuri specifice de clienți
     prices: Prețuri
@@ -2919,6 +2938,7 @@ ro:
       current_password_invalid: Parola curentă este invalidă sau lipsește
       gateway_error: 'A apărut o problemă cu gateway-ul de plată: %{text}'
       invalid_api_key: Cheie API invalidă (%{key}) specificată.
+      invalid_position: new_position trebuie să fie un număr întreg
       invalid_resource: Resursă invalidă. Vă rugăm să corectați erorile și să încercați din nou.
       invalid_taxonomy_id: ID taxonomie invalid.
       must_specify_api_key: Trebuie să specificați o cheie API.

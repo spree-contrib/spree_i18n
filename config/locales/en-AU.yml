@@ -1525,6 +1525,8 @@ en-AU:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: This coupon code is not eligible for this sales channel.
+        no_matching_market: This coupon code is not eligible in your market.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ en-AU:
       landing_page:
         description: Customer must have visited the specified page
         name: Landing Page
+      market:
+        description: Limit to orders placed in specified market(s)
+        name: Market(s)
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ en-AU:
       category:
         description: Order includes products in specified categories
         name: Categories
+      channel:
+        description: Limit to orders placed through specified channel(s)
+        name: Channel(s)
       country:
         description: Limit to orders with shipping address in a specific country
         name: Country
@@ -2358,6 +2366,13 @@ en-AU:
     customers_removed_from_group:
       one: "%{count} customer removed from group"
       other: "%{count} customers removed from group"
+    date_range_presets:
+      last_30_days: Last 30 Days
+      last_7_days: Last 7 Days
+      last_month: Last Month
+      this_month: This Month
+      today: Today
+      yesterday: Yesterday
     days_ago: Days ago
     delete_selected: Delete selected
     digital_assets_help: Digital assets are files that can be downloaded by customers after purchase.
@@ -2584,10 +2599,12 @@ en-AU:
     cannot_return_more_than_bought_quantity: Cannot return more than bought quantity.
     cart_already_updated: The cart has already been updated.
     cart_line_item:
+      delivery_unavailable: "%{li_name} cannot be delivered to the selected address"
       discontinued: "%{li_name} was removed because it was discontinued"
       out_of_stock: "%{li_name} was removed because it was sold out"
     change: Change
     channel: Sales channel
+    channel_ids: Sales channels
     channels: Sales channels
     checkout_requirements:
       email_required: Email address is required
@@ -2788,6 +2805,8 @@ en-AU:
     preview: Preview
     price_lists: Price Lists
     price_rules:
+      channel_rule:
+        description: Apply pricing based on the sales channel
       customer_group_rule:
         description: Apply pricing to specific customer groups
     prices: Prices
@@ -2919,6 +2938,7 @@ en-AU:
       current_password_invalid: Current password is invalid or missing
       gateway_error: 'There was a problem with the payment gateway: %{text}'
       invalid_api_key: Invalid API key (%{key}) specified.
+      invalid_position: new_position must be an integer
       invalid_resource: Invalid resource. Please fix errors and try again.
       invalid_taxonomy_id: Invalid taxonomy id.
       must_specify_api_key: You must specify an API key.

@@ -1632,6 +1632,8 @@ nb:
         missing_product: Denne kupongkoden kan ikke brukes fordi du ikke har alle nødvendige produkter i handlekurven.
         missing_taxon: Du må legge til et produkt fra alle gjeldende kategorier før du bruker denne kupongkoden.
         no_applicable_products: Du må legge til et aktuelt produkt før du bruker denne kupongkoden.
+        no_matching_channel: Denne kupongkoden gjelder ikke for denne salgskanalen.
+        no_matching_market: Denne kupongkoden gjelder ikke i ditt marked.
         no_matching_taxons: Du må legge til et produkt fra en gjeldende kategori før du bruker denne kupongkoden.
         no_user_or_email_specified: Du må logge på eller oppgi e-posten din før du bruker denne kupongkoden.
         no_user_specified: Du må logge på før du bruker denne kupongkoden.
@@ -2140,6 +2142,9 @@ nb:
     promotion_category: Kampanjekategori
     promotion_label: Kampanje (%{name})
     promotion_rule_types:
+      channel:
+        description: Begrens til ordrer plassert gjennom angitte kanal(er)
+        name: Kanal(er)
       country:
         description: Bestillingen sendes til riktig (eller standard) land
         name: Gratis frakt
@@ -2152,6 +2157,9 @@ nb:
       landing_page:
         description: Kunden må ha besøkt den spesifiserte siden
         name: Landingsiden
+      market:
+        description: Begrens til ordrer plassert i angitte marked(er)
+        name: Marked(er)
       one_use_per_user:
         description: Bare ett bruk per bruker
         name: Én bruk per bruker
@@ -2648,6 +2656,13 @@ nb:
     customers_removed_from_group:
       one: "%{count} kunde fjernet fra gruppen"
       other: "%{count} kunder fjernet fra gruppen"
+    date_range_presets:
+      last_30_days: Siste 30 dager
+      last_7_days: Siste 7 dager
+      last_month: Forrige måned
+      this_month: Denne måneden
+      today: I dag
+      yesterday: I går
     days_ago: Dager siden
     delete_selected: Slett valgte
     digital_assets_help: Digitale ressurser er filer som kan lastes ned av kunder etter kjøp.
@@ -2830,9 +2845,11 @@ nb:
     cannot_empty: Kan ikke tømme ordren.
     cart_already_updated: Handlekurven er allerede oppdatert.
     cart_line_item:
+      delivery_unavailable: "%{li_name} kan ikke leveres til den valgte adressen"
       discontinued: "%{li_name} ble fjernet fordi den er utgått"
       out_of_stock: "%{li_name} ble fjernet fordi den er utsolgt"
     change: Endre
+    channel_ids: Salgskanaler
     channels: Salgskanaler
     checkout_requirements:
       email_required: E-postadresse er påkrevd
@@ -3002,6 +3019,8 @@ nb:
     preview: Forhåndsvis
     price_lists: Prislister
     price_rules:
+      channel_rule:
+        description: Bruk prising basert på salgskanalen
       customer_group_rule:
         description: Bruk prissetting på bestemte kundegrupper
     prices: Priser
@@ -3095,6 +3114,7 @@ nb:
       current_password_invalid: Gjeldende passord er ugyldig eller mangler
       gateway_error: 'Det oppstod et problem med betalingsgatewayen: %{text}'
       invalid_api_key: Ugyldig API-nøkkel (%{key}) angitt.
+      invalid_position: new_position må være et heltall
       invalid_resource: Ugyldig ressurs. Rett opp feilene og prøv igjen.
       invalid_taxonomy_id: Ugyldig taksonomi-ID.
       must_specify_api_key: Du må angi en API-nøkkel.

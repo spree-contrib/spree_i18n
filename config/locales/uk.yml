@@ -1840,6 +1840,8 @@ uk:
         missing_product: Цей промокод не можна застосувати, оскільки в вашому кошику відсутні всі необхідні товари.
         missing_taxon: Перш ніж застосувати цей промокод, потрібно додати товар з усіх відповідних категорій.
         no_applicable_products: Перш ніж застосувати цей промокод, потрібно додати відповідний товар.
+        no_matching_channel: Цей промокод не діє для цього каналу продажів.
+        no_matching_market: Цей промокод не діє на вашому ринку.
         no_matching_taxons: Перш ніж застосувати цей промокод, потрібно додати товар з відповідної категорії.
         no_user_or_email_specified: Перш ніж застосувати цей промокод, вам потрібно увійти або вказати свою електронну адресу.
         no_user_specified: Перш ніж застосувати цей промокод, вам потрібно увійти.
@@ -2413,6 +2415,9 @@ uk:
     promotion_label: Промоакція (%{name})
     promotion_rule: Правило промоакції
     promotion_rule_types:
+      channel:
+        description: Обмежити замовленнями, оформленими через вказані канали
+        name: Канали
       country:
         description: Замовлення відправляється в відповідну (або типову) країну
         name: Країна
@@ -2425,6 +2430,9 @@ uk:
       landing_page:
         description: Користувач повинен відвідати вказану сторінку
         name: Сорінка лендінгу
+      market:
+        description: Обмежити замовленнями, оформленими на вказаних ринках
+        name: Ринки
       one_use_per_user:
         description: Тільки один використання на користувача
         name: Один використання на користувача
@@ -2953,6 +2961,13 @@ uk:
     customers_removed_from_group:
       one: "%{count} клієнта видалено з групи"
       other: "%{count} клієнтів видалено з групи"
+    date_range_presets:
+      last_30_days: Останні 30 днів
+      last_7_days: Останні 7 днів
+      last_month: Минулий місяць
+      this_month: Цей місяць
+      today: Сьогодні
+      yesterday: Вчора
     days_ago: Днів тому
     delete_selected: Видалити вибране
     digital_assets_help: Цифрові ресурси — це файли, які клієнти можуть завантажити після покупки.
@@ -3123,9 +3138,11 @@ uk:
     brand: Бренд
     cart_already_updated: Кошик вже оновлено.
     cart_line_item:
+      delivery_unavailable: "%{li_name} не може бути доставлено на вибрану адресу"
       discontinued: "%{li_name} видалено, оскільки товар знято з продажу"
       out_of_stock: "%{li_name} видалено, оскільки товар розпродано"
     change: Змінити
+    channel_ids: Канали продажів
     channels: Канали продажу
     checkout_requirements:
       email_required: Потрібна адреса електронної пошти
@@ -3277,6 +3294,8 @@ uk:
     preview: Попередній перегляд
     price_lists: Прайс-листи
     price_rules:
+      channel_rule:
+        description: Застосовувати ціни залежно від каналу продажів
       customer_group_rule:
         description: Застосовувати ціноутворення до певних груп клієнтів
     pricing: Ціноутворення
@@ -3354,6 +3373,7 @@ uk:
       current_password_invalid: Поточний пароль недійсний або відсутній
       gateway_error: 'Виникла проблема з платіжним шлюзом: %{text}'
       invalid_api_key: Вказано недійсний API-ключ (%{key}).
+      invalid_position: new_position має бути цілим числом
       invalid_resource: Недійсний ресурс. Виправте помилки та спробуйте ще раз.
       invalid_taxonomy_id: Недійсний ідентифікатор таксономії.
       must_specify_api_key: Необхідно вказати API-ключ.

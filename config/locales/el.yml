@@ -1380,6 +1380,7 @@ el:
       current_password_invalid: Ο τρέχων κωδικός πρόσβασης είναι μη έγκυρος ή λείπει
       gateway_error: 'Παρουσιάστηκε πρόβλημα με την πύλη πληρωμών: %{text}'
       invalid_api_key: Καθορίστηκε μη έγκυρο κλειδί API (%{key}).
+      invalid_position: Το new_position πρέπει να είναι ακέραιος αριθμός
       invalid_resource: Μη έγκυρος πόρος. Παρακαλούμε διορθώστε τα σφάλματα και δοκιμάστε ξανά.
       invalid_taxonomy_id: Μη έγκυρο αναγνωριστικό ταξινομίας.
       must_specify_api_key: Πρέπει να καθορίσετε ένα κλειδί API.
@@ -1612,6 +1613,8 @@ el:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Αυτός ο κωδικός κουπονιού δεν ισχύει για αυτό το κανάλι πωλήσεων.
+        no_matching_market: Αυτός ο κωδικός κουπονιού δεν ισχύει στην αγορά σας.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -2077,6 +2080,9 @@ el:
       landing_page:
         description: Customer must have visited the specified page
         name: Αρχική Σελίδα
+      market:
+        description: Περιορισμός στις παραγγελίες που γίνονται σε συγκεκριμένες αγορές
+        name: Αγορά(ές)
       one_use_per_user:
         description: Περιγραφή
         name: Όνομα
@@ -2098,6 +2104,9 @@ el:
       category:
         description: Η παραγγελία περιλαμβάνει προϊόντα σε συγκεκριμένες κατηγορίες
         name: Κατηγορίες
+      channel:
+        description: Περιορισμός στις παραγγελίες που γίνονται μέσω συγκεκριμένων καναλιών
+        name: Κανάλι(α)
       country:
         description: Περιορισμός σε παραγγελίες με διεύθυνση αποστολής σε συγκεκριμένη χώρα
         name: Χώρα
@@ -2524,6 +2533,13 @@ el:
     customers_removed_from_group:
       one: "%{count} πελάτης αφαιρέθηκε από την ομάδα"
       other: "%{count} πελάτες αφαιρέθηκαν από την ομάδα"
+    date_range_presets:
+      last_30_days: Τελευταίες 30 ημέρες
+      last_7_days: Τελευταίες 7 ημέρες
+      last_month: Προηγούμενος μήνας
+      this_month: Τρέχων μήνας
+      today: Σήμερα
+      yesterday: Χθες
     days_ago: Πριν από ημέρες
     delete_selected: Διαγραφή επιλεγμένων
     digital_assets_help: Τα ψηφιακά στοιχεία είναι αρχεία που μπορούν να κατεβάσουν οι πελάτες μετά την αγορά.
@@ -2737,9 +2753,11 @@ el:
     cannot_return_more_than_bought_quantity: Δεν μπορείτε να επιστρέψετε περισσότερα από την αγορασμένη ποσότητα.
     cart_already_updated: Το καλάθι έχει ήδη ενημερωθεί.
     cart_line_item:
+      delivery_unavailable: Το %{li_name} δεν μπορεί να παραδοθεί στην επιλεγμένη διεύθυνση
       discontinued: Το %{li_name} αφαιρέθηκε επειδή διακόπηκε
       out_of_stock: Το %{li_name} αφαιρέθηκε επειδή εξαντλήθηκε
     change: Αλλαγή
+    channel_ids: Κανάλια πωλήσεων
     channels: Κανάλια πωλήσεων
     checkout_requirements:
       email_required: Απαιτείται διεύθυνση email
@@ -2919,6 +2937,8 @@ el:
     preview: Προεπισκόπηση
     price_lists: Τιμοκατάλογοι
     price_rules:
+      channel_rule:
+        description: Εφαρμογή τιμολόγησης με βάση το κανάλι πωλήσεων
       customer_group_rule:
         description: Εφαρμογή τιμολόγησης σε συγκεκριμένες ομάδες πελατών
     pricing: Τιμολόγηση

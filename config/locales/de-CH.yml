@@ -1525,6 +1525,8 @@ de-CH:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Dieser Gutscheincode ist für diesen Verkaufskanal nicht gültig.
+        no_matching_market: Dieser Gutscheincode ist in Ihrem Markt nicht gültig.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ de-CH:
       landing_page:
         description:
         name:
+      market:
+        description: Auf Bestellungen beschränken, die in bestimmten Märkten aufgegeben werden
+        name: Märkte
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ de-CH:
       category:
         description: Bestellung enthält Produkte aus bestimmten Kategorien
         name: Kategorien
+      channel:
+        description: Auf Bestellungen beschränken, die über bestimmte Kanäle aufgegeben werden
+        name: Kanäle
       country:
         description: Auf Bestellungen mit Lieferadresse in einem bestimmten Land beschränken
         name: Land
@@ -2358,6 +2366,13 @@ de-CH:
     customers_removed_from_group:
       one: "%{count} Kunde aus der Gruppe entfernt"
       other: "%{count} Kunden aus der Gruppe entfernt"
+    date_range_presets:
+      last_30_days: Letzte 30 Tage
+      last_7_days: Letzte 7 Tage
+      last_month: Letzter Monat
+      this_month: Dieser Monat
+      today: Heute
+      yesterday: Gestern
     days_ago: Tage her
     delete_selected: Ausgewählte löschen
     digital_assets_help: Digitale Assets sind Dateien, die von Kunden nach dem Kauf heruntergeladen werden können.
@@ -2584,10 +2599,12 @@ de-CH:
     cannot_return_more_than_bought_quantity: Es kann nicht mehr als die gekaufte Menge zurückgegeben werden.
     cart_already_updated: Der Warenkorb wurde bereits aktualisiert.
     cart_line_item:
+      delivery_unavailable: "%{li_name} kann nicht an die gewählte Adresse geliefert werden"
       discontinued: "%{li_name} wurde entfernt, da der Artikel ausläuft"
       out_of_stock: "%{li_name} wurde entfernt, da der Artikel ausverkauft ist"
     change: Ändern
     channel: Vertriebskanal
+    channel_ids: Verkaufskanäle
     channels: Vertriebskanäle
     checkout_requirements:
       email_required: E-Mail-Adresse ist erforderlich
@@ -2788,6 +2805,8 @@ de-CH:
     preview: Vorschau
     price_lists: Preislisten
     price_rules:
+      channel_rule:
+        description: Preise basierend auf dem Verkaufskanal anwenden
       customer_group_rule:
         description: Preise auf bestimmte Kundengruppen anwenden
     prices: Preise
@@ -2919,6 +2938,7 @@ de-CH:
       current_password_invalid: Aktuelles Passwort ist ungültig oder fehlt
       gateway_error: 'Es gab ein Problem mit dem Zahlungs-Gateway: %{text}'
       invalid_api_key: Ungültiger API-Schlüssel (%{key}) angegeben.
+      invalid_position: new_position muss eine ganze Zahl sein
       invalid_resource: Ungültige Ressource. Bitte beheben Sie die Fehler und versuchen Sie es erneut.
       invalid_taxonomy_id: Ungültige Taxonomie-ID.
       must_specify_api_key: Sie müssen einen API-Schlüssel angeben.

@@ -1525,6 +1525,8 @@ pt:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Este código de cupom não é válido para este canal de venda.
+        no_matching_market: Este código de cupom não é válido no seu mercado.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ pt:
       landing_page:
         description:
         name:
+      market:
+        description: Limitar a pedidos feitos no(s) mercado(s) especificado(s)
+        name: Mercado(s)
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ pt:
       category:
         description: A encomenda inclui produtos das categorias especificadas
         name: Categorias
+      channel:
+        description: Limitar a pedidos feitos através do(s) canal(is) especificado(s)
+        name: Canal(is)
       country:
         description: Limitar a encomendas com morada de envio num país específico
         name: País
@@ -2358,6 +2366,13 @@ pt:
     customers_removed_from_group:
       one: "%{count} cliente removido do grupo"
       other: "%{count} clientes removidos do grupo"
+    date_range_presets:
+      last_30_days: Últimos 30 dias
+      last_7_days: Últimos 7 dias
+      last_month: Mês passado
+      this_month: Este mês
+      today: Hoje
+      yesterday: Ontem
     days_ago: Há dias
     delete_selected: Eliminar selecionados
     digital_assets_help: Os recursos digitais são ficheiros que os clientes podem transferir após a compra.
@@ -2584,10 +2599,12 @@ pt:
     cannot_return_more_than_bought_quantity: Não é possível devolver mais do que a quantidade comprada.
     cart_already_updated: O carrinho já foi atualizado.
     cart_line_item:
+      delivery_unavailable: "%{li_name} não pode ser entregue no endereço selecionado"
       discontinued: "%{li_name} foi removido porque foi descontinuado"
       out_of_stock: "%{li_name} foi removido porque esgotou"
     change: Alterar
     channel: Canal de vendas
+    channel_ids: Canais de venda
     channels: Canais de vendas
     checkout_requirements:
       email_required: O endereço de e-mail é obrigatório
@@ -2788,6 +2805,8 @@ pt:
     preview: Pré-visualizar
     price_lists: Listas de preços
     price_rules:
+      channel_rule:
+        description: Aplicar preços com base no canal de venda
       customer_group_rule:
         description: Aplicar preços a grupos de clientes específicos
     prices: Preços
@@ -2919,6 +2938,7 @@ pt:
       current_password_invalid: A palavra-passe atual é inválida ou está em falta
       gateway_error: 'Ocorreu um problema com o gateway de pagamento: %{text}'
       invalid_api_key: Chave de API inválida (%{key}) especificada.
+      invalid_position: new_position deve ser um número inteiro
       invalid_resource: Recurso inválido. Corrija os erros e tente novamente.
       invalid_taxonomy_id: ID de taxonomia inválido.
       must_specify_api_key: Deve especificar uma chave de API.

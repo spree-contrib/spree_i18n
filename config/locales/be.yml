@@ -1564,6 +1564,8 @@ be:
         missing_product: Гэты код купона нельга прымяніць, таму што ў кошыку няма ўсіх неабходных тавараў.
         missing_taxon: Неабходна дадаць тавар усіх акцыйных катэгорый, каб прымяніць гэты код купона.
         no_applicable_products: Трэба дадаць акцыйны тавар, каб прымяніць код купона.
+        no_matching_channel: Гэты прамакод не дзейнічае для дадзенага канала продажаў.
+        no_matching_market: Гэты прамакод не дзейнічае на вашым рынку.
         no_matching_taxons: Дадайце тавар з акцыйнай катэгорыі, каб прымяніць гэты код купона.
         no_user_or_email_specified: Увайдзiце або увядзіце e-mail, каб прымяніць гэты код купона.
         no_user_specified: Каб прымяніць гэты купон.
@@ -1990,6 +1992,9 @@ be:
       landing_page:
         description: Пакупнік павінен быў трапіць на гэтую старонку
         name: Старонка
+      market:
+        description: Абмежаваць заказамі, аформленымі на ўказаных рынках
+        name: Рынкі
       one_use_per_user:
         description: Толькі адна на карыстальніка
         name: Адна на карыстальніка
@@ -2011,6 +2016,9 @@ be:
       category:
         description: Заказ уключае тавары з указаных катэгорый
         name: Катэгорыі
+      channel:
+        description: Абмежаваць заказамі, аформленымі праз указаныя каналы
+        name: Каналы
       country:
         description: Абмежаваць заказамі з адрасам дастаўкі ў пэўнай краіне
         name: Краіна
@@ -2402,6 +2410,13 @@ be:
     customers_removed_from_group:
       one: "%{count} кліент выдалены з групы"
       other: "%{count} кліентаў выдалена з групы"
+    date_range_presets:
+      last_30_days: Апошнія 30 дзён
+      last_7_days: Апошнія 7 дзён
+      last_month: Мінулы месяц
+      this_month: Бягучы месяц
+      today: Сёння
+      yesterday: Учора
     days_ago: Дзён таму
     delete_selected: Выдаліць выбранае
     digital_assets_help: Лічбавыя файлы — гэта файлы, якія кліенты могуць спампаваць пасля куплі.
@@ -2633,10 +2648,12 @@ be:
     cannot_return_more_than_bought_quantity: Немагчыма вярнуць больш, чым было набыта.
     cart_already_updated: Кошык ужо абноўлены.
     cart_line_item:
+      delivery_unavailable: "%{li_name} не можа быць дастаўлены на абраны адрас"
       discontinued: "%{li_name} быў выдалены, бо яго продаж спынены"
       out_of_stock: "%{li_name} быў выдалены, бо ён распрададзены"
     change: Змяніць
     channel: Канал продажаў
+    channel_ids: Каналы продажаў
     channels: Каналы продажаў
     checkout_requirements:
       email_required: Неабходны адрас электроннай пошты
@@ -2839,6 +2856,8 @@ be:
     preview: Папярэдні прагляд
     price_lists: Прайс-лісты
     price_rules:
+      channel_rule:
+        description: Прымяняць цэнаўтварэнне ў залежнасці ад канала продажаў
       customer_group_rule:
         description: Прымяняць цэны да пэўных груп кліентаў
     prices: Цэны
@@ -2970,6 +2989,7 @@ be:
       current_password_invalid: Бягучы пароль няправільны або адсутнічае
       gateway_error: 'Узнікла праблема з плацёжным шлюзам: %{text}'
       invalid_api_key: Указаны няправільны API-ключ (%{key}).
+      invalid_position: new_position павінна быць цэлым лікам
       invalid_resource: Няправільны рэсурс. Калі ласка, выправіце памылкі і паспрабуйце зноў.
       invalid_taxonomy_id: Няправільны ідэнтыфікатар таксаноміі.
       must_specify_api_key: Вы павінны ўказаць API-ключ.

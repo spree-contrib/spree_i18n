@@ -1544,6 +1544,8 @@ sk:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Tento zľavový kód nie je platný pre tento predajný kanál.
+        no_matching_market: Tento zľavový kód nie je platný vo vašom trhu.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1966,6 +1968,9 @@ sk:
       landing_page:
         description:
         name:
+      market:
+        description: Obmedziť na objednávky uskutočnené v určených trhoch
+        name: Trhy
       one_use_per_user:
         description:
         name:
@@ -1987,6 +1992,9 @@ sk:
       category:
         description: Objednávka obsahuje produkty v určených kategóriách
         name: Kategórie
+      channel:
+        description: Obmedziť na objednávky uskutočnené cez určené kanály
+        name: Kanály
       country:
         description: Obmedziť na objednávky s dodacou adresou v konkrétnej krajine
         name: Krajina
@@ -2378,6 +2386,13 @@ sk:
     customers_removed_from_group:
       one: "%{count} zákazník odstránený zo skupiny"
       other: "%{count} zákazníkov odstránených zo skupiny"
+    date_range_presets:
+      last_30_days: Posledných 30 dní
+      last_7_days: Posledných 7 dní
+      last_month: Minulý mesiac
+      this_month: Tento mesiac
+      today: Dnes
+      yesterday: Včera
     days_ago: Pred dňami
     delete_selected: Odstrániť vybrané
     digital_assets_help: Digitálne médiá sú súbory, ktoré si zákazníci môžu stiahnuť po nákupe.
@@ -2604,10 +2619,12 @@ sk:
     cannot_return_more_than_bought_quantity: Nie je možné vrátiť viac, ako bolo zakúpené.
     cart_already_updated: Košík už bol aktualizovaný.
     cart_line_item:
+      delivery_unavailable: Položku %{li_name} nie je možné doručiť na vybranú adresu
       discontinued: "%{li_name} bol odstránený, pretože bol ukončený"
       out_of_stock: "%{li_name} bol odstránený, pretože bol vypredaný"
     change: Zmeniť
     channel: Predajný kanál
+    channel_ids: Predajné kanály
     channels: Predajné kanály
     checkout_requirements:
       email_required: E-mailová adresa je povinná
@@ -2808,6 +2825,8 @@ sk:
     preview: Náhľad
     price_lists: Cenníky
     price_rules:
+      channel_rule:
+        description: Použiť ceny na základe predajného kanála
       customer_group_rule:
         description: Uplatniť ceny na konkrétne skupiny zákazníkov
     prices: Ceny
@@ -2939,6 +2958,7 @@ sk:
       current_password_invalid: Aktuálne heslo je neplatné alebo chýba
       gateway_error: 'Vyskytol sa problém s platobnou bránou: %{text}'
       invalid_api_key: Zadaný neplatný API kľúč (%{key}).
+      invalid_position: new_position musí byť celé číslo
       invalid_resource: Neplatný zdroj. Opravte prosím chyby a skúste to znova.
       invalid_taxonomy_id: Neplatné ID taxonómie.
       must_specify_api_key: Musíte zadať API kľúč.

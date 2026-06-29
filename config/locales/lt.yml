@@ -1400,6 +1400,7 @@ lt:
       current_password_invalid: Dabartinis slaptažodis neteisingas arba nenurodytas
       gateway_error: 'Įvyko mokėjimo tarpininko klaida: %{text}'
       invalid_api_key: Nurodytas neteisingas API raktas (%{key}).
+      invalid_position: new_position turi būti sveikasis skaičius
       invalid_resource: Neteisingas išteklius. Ištaisykite klaidas ir bandykite dar kartą.
       invalid_taxonomy_id: Neteisingas taksonomijos ID.
       must_specify_api_key: Turite nurodyti API raktą.
@@ -1634,6 +1635,8 @@ lt:
         missing_product: nerasta prekė
         missing_taxon: nerasta prekių kategorija
         no_applicable_products: Krepšelyje nėra prekių, kurioms taikoma nuolaida.
+        no_matching_channel: Šis nuolaidos kodas negalioja šiam pardavimo kanalui.
+        no_matching_market: Šis nuolaidos kodas negalioja jūsų rinkoje.
         no_matching_taxons: Krepšelyje nėra prekių kategorijų, kurioms taikoma nuolaida.
         no_user_or_email_specified: nepasirinktas vartotojas ar el. paštas
         no_user_specified: nepasirinktas vartotojas
@@ -2089,6 +2092,9 @@ lt:
       landing_page:
         description: Klientas privalo būti aplankęs šį puslapį
         name: Pagrindinis
+      market:
+        description: Apriboti užsakymais, pateiktais nurodytose rinkose
+        name: Rinkos
       one_use_per_user:
         description: Suteikiamas tik vieną kartą vienam vartotojui
         name: 1x vartotojui
@@ -2110,6 +2116,9 @@ lt:
       category:
         description: Užsakyme yra produktų iš nurodytų kategorijų
         name: Kategorijos
+      channel:
+        description: Apriboti užsakymais, pateiktais per nurodytus kanalus
+        name: Kanalai
       country:
         description: Taikyti tik užsakymams su pristatymo adresu konkrečioje šalyje
         name: Šalis
@@ -2525,6 +2534,13 @@ lt:
     customers_removed_from_group:
       one: "%{count} klientas pašalintas iš grupės"
       other: "%{count} klientai (-ų) pašalinti iš grupės"
+    date_range_presets:
+      last_30_days: Paskutinės 30 dienų
+      last_7_days: Paskutinės 7 dienos
+      last_month: Praėjęs mėnuo
+      this_month: Šis mėnuo
+      today: Šiandien
+      yesterday: Vakar
     days_ago: Prieš dienų
     delete_selected: Ištrinti pasirinktus
     digital_assets_help: Skaitmeninis turinys – tai failai, kuriuos klientai gali atsisiųsti po pirkimo.
@@ -2738,10 +2754,12 @@ lt:
     cannot_return_more_than_bought_quantity: Negalima grąžinti daugiau nei nupirkta.
     cart_already_updated: Krepšelis jau atnaujintas.
     cart_line_item:
+      delivery_unavailable: "%{li_name} negali būti pristatyta pasirinktu adresu"
       discontinued: "%{li_name} pašalinta, nes nebeparduodama"
       out_of_stock: "%{li_name} pašalinta, nes išparduota"
     change: Keisti
     channel: Pardavimo kanalas
+    channel_ids: Pardavimo kanalai
     channels: Pardavimo kanalai
     checkout_requirements:
       email_required: El. pašto adresas privalomas
@@ -2933,6 +2951,8 @@ lt:
     preview: Peržiūra
     price_lists: Kainoraščiai
     price_rules:
+      channel_rule:
+        description: Taikyti kainodarą pagal pardavimo kanalą
       customer_group_rule:
         description: Taikyti kainodarą konkrečioms klientų grupėms
     prices: Kainos

@@ -1704,6 +1704,8 @@ zh-TW:
         missing_product: 此優惠代碼無法使用，購物車內的商品沒有滿足優惠條件。
         missing_taxon: 你必須有商品來自適用此活動的類別於購物車，才能使用此優惠代碼
         no_applicable_products: 你必須有適用此活動的商品於購物車內，才能使用此優惠代碼
+        no_matching_channel: 此優惠券代碼不適用於此銷售管道。
+        no_matching_market: 此優惠券代碼不適用於您的市場。
         no_matching_taxons: 你必須有商品來自適用此活動的類別於購物車，才能使用此優惠代碼
         no_user_or_email_specified: 你必須登入或是提供 Email ，才能使用此優惠代碼
         no_user_specified: 你必須登入才能使用此優惠代碼
@@ -1799,24 +1801,7 @@ zh-TW:
     height: 高度
     hide_from_subcategories_nav: 於子類別隱藏
     home: 首頁
-    homepage:
-      bestsellers: BESTSELLERS
-      fashion_trends: FASHION TRENDS
-      fashion_trends_note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-      men: MEN
-      new: NEW
-      new_collection: NEW COLLECTION
-      read_more: READ MORE
-      shoes: SHOES
-      shop_now: SHOP NOW
-      sportswear: SPORTSWEAR
-      streetstyle: STREETSTYLE
-      summer_2019: Summer 2019
-      summer_collection: Summer Collection
-      summer_sale: SUMMER SALE
-      trending: TRENDING
-      up_to_60: UP TO 60%
-      women: WOMEN
+    homepage: 首頁
     help_center: 幫助中心
     i18n:
       available_locales: 支援的語言
@@ -2238,6 +2223,9 @@ zh-TW:
     promotion_label: 優惠活動：%{name}
     promotion_rule: 優惠規則
     promotion_rule_types:
+      channel:
+        description: 限定透過指定管道下單的訂單
+        name: 管道(s)
       country:
         description: 訂單要被寄去指定（或是預設）的國家
         name: 國家
@@ -2247,6 +2235,9 @@ zh-TW:
       item_total:
         description: 商品總價符合條件
         name: 商品總價
+      market:
+        description: 限定在指定市場下單的訂單
+        name: 市場(s)
       one_use_per_user:
         description: 每人只可使用一次
         name: 每人一次
@@ -2731,6 +2722,13 @@ zh-TW:
     customers_removed_from_group:
       one: 已將 %{count} 位顧客從群組中移除
       other: 已將 %{count} 位顧客從群組中移除
+    date_range_presets:
+      last_30_days: 最近 30 天
+      last_7_days: 最近 7 天
+      last_month: 上個月
+      this_month: 本月
+      today: 今天
+      yesterday: 昨天
     days_ago: 天前
     delete_selected: 刪除所選項目
     digital_assets_help: 數位資產是顧客購買後可下載的檔案。
@@ -2909,9 +2907,11 @@ zh-TW:
     cannot_empty: 無法清空訂單。
     cart_already_updated: 購物車已更新。
     cart_line_item:
+      delivery_unavailable: "%{li_name} 無法配送至所選地址"
       discontinued: "%{li_name} 已下架，因此被移除"
       out_of_stock: "%{li_name} 已售完，因此被移除"
     change: 變更
+    channel_ids: 銷售管道
     channels: 銷售通路
     checkout_requirements:
       email_required: 電子郵件地址為必填
@@ -3089,6 +3089,8 @@ zh-TW:
     preview: 預覽
     price_lists: 價目表
     price_rules:
+      channel_rule:
+        description: 依銷售管道套用定價
       customer_group_rule:
         description: 將定價套用至特定顧客群組
     pricing: 定價
@@ -3182,6 +3184,7 @@ zh-TW:
       current_password_invalid: 目前的密碼無效或未提供
       gateway_error: 付款閘道發生問題：%{text}
       invalid_api_key: 指定的 API 金鑰 (%{key}) 無效。
+      invalid_position: new_position 必須為整數
       invalid_resource: 資源無效。請修正錯誤後再試一次。
       invalid_taxonomy_id: 分類法 ID 無效。
       must_specify_api_key: 您必須指定 API 金鑰。

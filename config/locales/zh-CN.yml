@@ -1535,6 +1535,8 @@ zh-CN:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: 此优惠码不适用于该销售渠道。
+        no_matching_market: 此优惠码在您所在的市场不可用。
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1961,6 +1963,9 @@ zh-CN:
       landing_page:
         description: 客户必须访问了指定的页面
         name: 登录页面
+      market:
+        description: 限定为在指定市场下达的订单
+        name: 市场
       one_use_per_user:
         description: 每人只可使用一次
         name: 每人一次
@@ -1982,6 +1987,9 @@ zh-CN:
       category:
         description: 订单包含指定分类中的商品
         name: 分类
+      channel:
+        description: 限定为通过指定销售渠道下达的订单
+        name: 销售渠道
       country:
         description: 仅限收货地址在特定国家/地区的订单
         name: 国家/地区
@@ -2376,6 +2384,13 @@ zh-CN:
     customers_removed_from_group:
       one: "%{count} 位客户已从群组中移除"
       other: "%{count} 位客户已从群组中移除"
+    date_range_presets:
+      last_30_days: 最近 30 天
+      last_7_days: 最近 7 天
+      last_month: 上个月
+      this_month: 本月
+      today: 今天
+      yesterday: 昨天
     days_ago: 天前
     delete_selected: 删除所选
     digital_assets_help: 数字资源是客户购买后可以下载的文件。
@@ -2592,10 +2607,12 @@ zh-CN:
     cannot_return_more_than_bought_quantity: 退货数量不能超过购买数量。
     cart_already_updated: 购物车已更新。
     cart_line_item:
+      delivery_unavailable: "%{li_name} 无法配送至所选地址"
       discontinued: "%{li_name} 因已停售而被移除"
       out_of_stock: "%{li_name} 因已售罄而被移除"
     change: 更改
     channel: 销售渠道
+    channel_ids: 销售渠道
     channels: 销售渠道
     checkout_requirements:
       email_required: 需要填写电子邮箱地址
@@ -2793,6 +2810,8 @@ zh-CN:
     preview: 预览
     price_lists: 价格表
     price_rules:
+      channel_rule:
+        description: 根据销售渠道设定定价
       customer_group_rule:
         description: 对特定客户群组应用定价
     prices: 价格
@@ -2923,6 +2942,7 @@ zh-CN:
       current_password_invalid: 当前密码无效或缺失
       gateway_error: 支付网关出现问题：%{text}
       invalid_api_key: 指定的 API 密钥（%{key}）无效。
+      invalid_position: new_position 必须为整数
       invalid_resource: 资源无效。请修正错误后重试。
       invalid_taxonomy_id: 分类法 ID 无效。
       must_specify_api_key: 您必须指定 API 密钥。

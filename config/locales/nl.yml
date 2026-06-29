@@ -1525,6 +1525,8 @@ nl:
         missing_product: Deze kortingscode kan niet worden toegepast omdat niet alle benodigde producten in de winkelwagen zitten.
         missing_taxon: Er moet producten worden toegevoegd uit alle opgegeven productcategorieën voordat deze kortingscode gebruikt kan worden.
         no_applicable_products: Er moet een artikel worden toegevoegd voordat deze kortingscode gebruikt kan worden.
+        no_matching_channel: Deze couponcode is niet geldig voor dit verkoopkanaal.
+        no_matching_market: Deze couponcode is niet geldig in uw markt.
         no_matching_taxons: Er moet een artikel uit een van opgegeven productcategoriën worden toegevoegd voordat deze kortingscode kan worden gebruikt.
         no_user_or_email_specified: Login of e-mail moet worden opgegeven voordat deze kortingscode kan worden gebruikt.
         no_user_specified: Login is noodzakelijk om deze kortingscode te kunenn gebruiken
@@ -1949,6 +1951,9 @@ nl:
       landing_page:
         description: Klant moet een specifieke pagina bezocht hebben
         name: Landings Pagina
+      market:
+        description: Beperken tot bestellingen die in opgegeven markt(en) zijn geplaatst
+        name: Markt(en)
       one_use_per_user:
         description: Een per gebruiker
         name: Een per gebruiker
@@ -1970,6 +1975,9 @@ nl:
       category:
         description: Bestelling bevat producten in opgegeven categorieën
         name: Categorieën
+      channel:
+        description: Beperken tot bestellingen die via opgegeven kanaal/kanalen zijn geplaatst
+        name: Kanaal/kanalen
       country:
         description: Beperk tot bestellingen met een verzendadres in een specifiek land
         name: Land
@@ -2361,6 +2369,13 @@ nl:
     customers_removed_from_group:
       one: "%{count} klant verwijderd uit groep"
       other: "%{count} klanten verwijderd uit groep"
+    date_range_presets:
+      last_30_days: Laatste 30 dagen
+      last_7_days: Laatste 7 dagen
+      last_month: Vorige maand
+      this_month: Deze maand
+      today: Vandaag
+      yesterday: Gisteren
     days_ago: Dagen geleden
     delete_selected: Geselecteerde verwijderen
     digital_assets_help: Digitale assets zijn bestanden die klanten na aankoop kunnen downloaden.
@@ -2587,10 +2602,12 @@ nl:
     cannot_return_more_than_bought_quantity: Kan niet meer retourneren dan de gekochte hoeveelheid.
     cart_already_updated: De winkelwagen is al bijgewerkt.
     cart_line_item:
+      delivery_unavailable: "%{li_name} kan niet worden bezorgd op het geselecteerde adres"
       discontinued: "%{li_name} is verwijderd omdat het uit het assortiment is gehaald"
       out_of_stock: "%{li_name} is verwijderd omdat het was uitverkocht"
     change: Wijzigen
     channel: Verkoopkanaal
+    channel_ids: Verkoopkanalen
     channels: Verkoopkanalen
     checkout_requirements:
       email_required: E-mailadres is verplicht
@@ -2791,6 +2808,8 @@ nl:
     preview: Voorbeeld
     price_lists: Prijslijsten
     price_rules:
+      channel_rule:
+        description: Pas prijzen toe op basis van het verkoopkanaal
       customer_group_rule:
         description: Prijzen toepassen op specifieke klantgroepen
     prices: Prijzen
@@ -2921,6 +2940,7 @@ nl:
       current_password_invalid: Huidig wachtwoord is ongeldig of ontbreekt
       gateway_error: 'Er was een probleem met de betaalgateway: %{text}'
       invalid_api_key: Ongeldige API-sleutel (%{key}) opgegeven.
+      invalid_position: new_position moet een geheel getal zijn
       invalid_resource: Ongeldige bron. Corrigeer de fouten en probeer het opnieuw.
       invalid_taxonomy_id: Ongeldige taxonomie-id.
       must_specify_api_key: Je moet een API-sleutel opgeven.

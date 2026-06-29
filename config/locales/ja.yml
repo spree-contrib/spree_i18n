@@ -1526,6 +1526,8 @@ ja:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: このクーポンコードはこの販売チャネルではご利用いただけません。
+        no_matching_market: このクーポンコードはお客様のマーケットではご利用いただけません。
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1948,6 +1950,9 @@ ja:
       landing_page:
         description: お客様が特定のページを訪問済みである
         name: ランディングページ
+      market:
+        description: 指定したマーケットで行われた注文に限定します
+        name: マーケット
       one_use_per_user:
         description:
         name:
@@ -1969,6 +1974,9 @@ ja:
       category:
         description: 指定したカテゴリーの商品が注文に含まれている
         name: カテゴリー
+      channel:
+        description: 指定した販売チャネル経由で行われた注文に限定します
+        name: 販売チャネル
       country:
         description: 特定の国への配送先住所を持つ注文に限定する
         name: 国
@@ -2360,6 +2368,13 @@ ja:
     customers_removed_from_group:
       one: "%{count}件の顧客をグループから削除しました"
       other: "%{count}件の顧客をグループから削除しました"
+    date_range_presets:
+      last_30_days: 過去30日間
+      last_7_days: 過去7日間
+      last_month: 先月
+      this_month: 今月
+      today: 今日
+      yesterday: 昨日
     days_ago: 日前
     delete_selected: 選択項目を削除
     digital_assets_help: デジタルアセットは、購入後に顧客がダウンロードできるファイルです。
@@ -2586,10 +2601,12 @@ ja:
     cannot_return_more_than_bought_quantity: 購入数量を超えて返品することはできません。
     cart_already_updated: カートはすでに更新されています。
     cart_line_item:
+      delivery_unavailable: "%{li_name} は選択された住所へお届けできません"
       discontinued: "%{li_name}は販売終了のため削除されました"
       out_of_stock: "%{li_name}は売り切れのため削除されました"
     change: 変更
     channel: 販売チャネル
+    channel_ids: 販売チャネル
     channels: 販売チャネル
     checkout_requirements:
       email_required: メールアドレスは必須です
@@ -2789,6 +2806,8 @@ ja:
     preview: プレビュー
     price_lists: 価格リスト
     price_rules:
+      channel_rule:
+        description: 販売チャネルに基づいて価格を適用します
       customer_group_rule:
         description: 特定の顧客グループに価格を適用する
     prices: 価格
@@ -2920,6 +2939,7 @@ ja:
       current_password_invalid: 現在のパスワードが無効か、入力されていません
       gateway_error: 決済ゲートウェイで問題が発生しました：%{text}
       invalid_api_key: 指定されたAPIキー（%{key}）が無効です。
+      invalid_position: new_position は整数で指定してください
       invalid_resource: リソースが無効です。エラーを修正してもう一度お試しください。
       invalid_taxonomy_id: タクソノミーIDが無効です。
       must_specify_api_key: APIキーを指定する必要があります。

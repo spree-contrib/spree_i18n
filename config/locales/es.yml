@@ -1764,6 +1764,8 @@ es:
         missing_product: Este cupón no se puede aplicar porque no tiene todos los productos necesarios en su carrito.
         missing_taxon: Es necesario añadir un producto de todas las clasificaciónes aplicables antes de utilizar un cupón.
         no_applicable_products: Usted necesita agregar un producto antes de usar un cupón.
+        no_matching_channel: Este código de cupón no es válido para este canal de venta.
+        no_matching_market: Este código de cupón no es válido en tu mercado.
         no_matching_taxons: Usted necesita agregar un producto a partir de una clasificaciónes aplicable antes de la utilización de este cupón.
         no_user_or_email_specified: Tienes que iniciar sesión o proporcionar su correo electrónico antes de usar este cupón.
         no_user_specified: Usted tiene que iniciar sesión antes de usar un cupón.
@@ -1868,24 +1870,7 @@ es:
     hide_from_subcategories_nav: Esconder de la navegación de categorías
     home: Inicio
     home_page: página principal
-    homepage:
-      bestsellers: BESTSELLERS
-      fashion_trends: FASHION TRENDS
-      fashion_trends_note: "¿Quieres fulminar con las tendencias más calientes de esta temporada? Estas son principales de la Fashion Week 2020 que están llegando."
-      men: HOMBRES
-      new: NUEVOS
-      new_collection: NUEVA COLECCIÓN
-      read_more: LEER MÁS
-      shoes: ZAPATOS
-      shop_now: COMPRA AHORA
-      sportswear: DEPORTES
-      streetstyle: URBANO
-      summer_2020: Verano 2020
-      summer_collection: Colección de verano
-      summer_sale: OFERTAS DE VERANO
-      trending: TENDENCIAS
-      up_to_60: HASTA 60%
-      women: MUJERES
+    homepage: Página de inicio
     help_center: Centro de ayuda
     i18n:
       available_locales: Locales Disponibles
@@ -2322,6 +2307,9 @@ es:
     promotion_label: Promoción (%{name})
     promotion_rule: Regla de promoción
     promotion_rule_types:
+      channel:
+        description: Limitar a los pedidos realizados a través de los canales especificados
+        name: Canal(es)
       country:
         description: El pedido se envía a un país adecuado (o por defecto)
         name: País
@@ -2331,6 +2319,9 @@ es:
       item_total:
         description: Total del pedido cumple con estos criterios
         name: Total del articulo
+      market:
+        description: Limitar a los pedidos realizados en los mercados especificados
+        name: Mercado(s)
       one_use_per_user:
         description: Un único uso por usuario
         name: Un solo uso
@@ -2841,6 +2832,13 @@ es:
     customers_removed_from_group:
       one: "%{count} cliente eliminado del grupo"
       other: "%{count} clientes eliminados del grupo"
+    date_range_presets:
+      last_30_days: Últimos 30 días
+      last_7_days: Últimos 7 días
+      last_month: Mes pasado
+      this_month: Este mes
+      today: Hoy
+      yesterday: Ayer
     days_ago: Hace días
     delete_selected: Eliminar seleccionados
     digital_assets_help: Los contenidos digitales son archivos que los clientes pueden descargar tras la compra.
@@ -3013,9 +3011,11 @@ es:
     cannot_empty: No se puede vaciar el pedido.
     cart_already_updated: El carrito ya se ha actualizado.
     cart_line_item:
+      delivery_unavailable: "%{li_name} no se puede enviar a la dirección seleccionada"
       discontinued: "%{li_name} se eliminó porque se descatalogó"
       out_of_stock: "%{li_name} se eliminó porque se agotó"
     change: Cambiar
+    channel_ids: Canales de venta
     channels: Canales de venta
     checkout_requirements:
       email_required: La dirección de correo electrónico es obligatoria
@@ -3180,6 +3180,8 @@ es:
     preview: Vista previa
     price_lists: Listas de precios
     price_rules:
+      channel_rule:
+        description: Aplicar precios según el canal de venta
       customer_group_rule:
         description: Aplicar precios a grupos de clientes específicos
     pricing: Precios
@@ -3267,6 +3269,7 @@ es:
       current_password_invalid: La contraseña actual no es válida o falta
       gateway_error: 'Hubo un problema con la pasarela de pago: %{text}'
       invalid_api_key: La clave API especificada (%{key}) no es válida.
+      invalid_position: new_position debe ser un número entero
       invalid_resource: Recurso no válido. Corrige los errores e inténtalo de nuevo.
       invalid_taxonomy_id: Id. de taxonomía no válido.
       must_specify_api_key: Debes especificar una clave API.

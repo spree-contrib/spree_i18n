@@ -1443,6 +1443,7 @@ sv:
       current_password_invalid: Nuvarande lösenord är ogiltigt eller saknas
       gateway_error: 'Det uppstod ett problem med betalningsgatewayen: %{text}'
       invalid_api_key: Ogiltig API-nyckel (%{key}) angiven.
+      invalid_position: new_position måste vara ett heltal
       invalid_resource: Ogiltig resurs. Åtgärda felen och försök igen.
       invalid_taxonomy_id: Ogiltigt taxonomi-id.
       must_specify_api_key: Du måste ange en API-nyckel.
@@ -1718,6 +1719,8 @@ sv:
         missing_product: Denna kupongkod kan inte tillämpas eftersom du inte har alla nödvändiga produkter i din varukorg.
         missing_taxon: Du måste lägga till en produkt från alla nödvändiga klass innan du använder denna kupongkod.
         no_applicable_products: Du måste lägga till en gällande produkt innan tillämpa denna kupongkod.
+        no_matching_channel: Den här rabattkoden är inte giltig för den här försäljningskanalen.
+        no_matching_market: Den här rabattkoden är inte giltig på din marknad.
         no_matching_taxons: Du måste lägga till en produkt från en gällande klass innan du applicerar denna kupongkod.
         no_user_or_email_specified: Du måste logga in eller lämna din e-post innan tillämpa denna kupongkod.
         no_user_specified: Du måste logga in innan du applicerar denna kupongkod.
@@ -1820,24 +1823,7 @@ sv:
     help_center: Hjälp
     hide_cents: Dölj ören
     home: Hem
-    homepage:
-      bestsellers: bestsellers
-      fashion_trends: modetrender
-      fashion_trends_note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-      men: Män
-      new: Nytt
-      new_collection: Ny kollektion
-      read_more: Läs mer
-      shoes: Skor
-      shop_now: Handla nu
-      sportswear: Sportkläder
-      streetstyle: Street
-      summer_2019: Sommar 2019
-      summer_collection: Sommarkollektion
-      summer_sale: Sommarrea
-      trending: Populärt
-      up_to_60: Upp till 60%
-      women: Kvinnor
+    homepage: Startsida
     i18n:
       available_locales: Tillgängliga språk
       language: Språk
@@ -2260,6 +2246,9 @@ sv:
     promotion_cloned: Kampanjen har klonats
     promotion_not_cloned: 'Kampanjen har inte klonats. Orsak: %{error}'
     promotion_rule_types:
+      channel:
+        description: Begränsa till beställningar som görs via angivna kanal(er)
+        name: Kanal(er)
       country:
         description: Order skickas till rätt (eller standard) land
         name: land
@@ -2272,6 +2261,9 @@ sv:
       landing_page:
         description: Kunden måste ha besökt den angivna sidan
         name: Landing Page
+      market:
+        description: Begränsa till beställningar som görs på angivna marknad(er)
+        name: Marknad(er)
       one_use_per_user:
         description: Endast ett bruk per användare
         name: Endast ett bruk per användare
@@ -2769,6 +2761,13 @@ sv:
     customers_removed_from_group:
       one: "%{count} kund borttagen från gruppen"
       other: "%{count} kunder borttagna från gruppen"
+    date_range_presets:
+      last_30_days: Senaste 30 dagarna
+      last_7_days: Senaste 7 dagarna
+      last_month: Förra månaden
+      this_month: Denna månad
+      today: Idag
+      yesterday: Igår
     days_ago: Dagar sedan
     delete_selected: Ta bort markerade
     digital_assets_help: Digitala tillgångar är filer som kunder kan ladda ner efter köp.
@@ -2943,9 +2942,11 @@ sv:
     cannot_empty: Det går inte att tömma ordern.
     cart_already_updated: Varukorgen har redan uppdaterats.
     cart_line_item:
+      delivery_unavailable: "%{li_name} kan inte levereras till den valda adressen"
       discontinued: "%{li_name} togs bort eftersom den har utgått"
       out_of_stock: "%{li_name} togs bort eftersom den var slutsåld"
     change: Ändra
+    channel_ids: Försäljningskanaler
     channels: Försäljningskanaler
     checkout_requirements:
       email_required: E-postadress krävs
@@ -3114,6 +3115,8 @@ sv:
     preview: Förhandsgranska
     price_lists: Prislistor
     price_rules:
+      channel_rule:
+        description: Tillämpa prissättning baserat på försäljningskanalen
       customer_group_rule:
         description: Tillämpa prissättning på specifika kundgrupper
     prices: Priser

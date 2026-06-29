@@ -1361,6 +1361,7 @@ it:
       current_password_invalid: La password attuale non è valida o è mancante
       gateway_error: 'Si è verificato un problema con il gateway di pagamento: %{text}'
       invalid_api_key: Chiave API non valida (%{key}) specificata.
+      invalid_position: new_position deve essere un numero intero
       invalid_resource: Risorsa non valida. Correggi gli errori e riprova.
       invalid_taxonomy_id: ID tassonomia non valido.
       must_specify_api_key: Devi specificare una chiave API.
@@ -1584,6 +1585,8 @@ it:
         missing_product: Questo codice coupon non può essere applicato poiché non hai nel carrello tutti i prodotti necessari.
         missing_taxon: Devi aggiungere un prodotto da tutte le categorie appropriate prima di applicare questo codice coupon.
         no_applicable_products: Devi aggiungere un prodotto appropriato prima di applicare questo codice coupon.
+        no_matching_channel: Questo codice coupon non è valido per questo canale di vendita.
+        no_matching_market: Questo codice coupon non è valido nel tuo mercato.
         no_matching_taxons: Devi aggiungere un prodotto da una categorie appropriata prima di applicare questo codice coupon.
         no_user_or_email_specified: Devi fare il login o fornire una email prima di applicare questo codice coupon.
         no_user_specified: Devi fare il login prima di applicare questo codice coupon.
@@ -2020,6 +2023,9 @@ it:
       landing_page:
         description: Il cliente deve aver visitato la pagina specificata
         name: Landing Page
+      market:
+        description: Limita agli ordini effettuati nei mercati specificati
+        name: Mercato/i
       one_use_per_user:
         description: Descrizione
         name: Nome
@@ -2041,6 +2047,9 @@ it:
       category:
         description: L'ordine include prodotti in categorie specificate
         name: Categorie
+      channel:
+        description: Limita agli ordini effettuati tramite i canali specificati
+        name: Canale/i
       country:
         description: Limita agli ordini con indirizzo di spedizione in un Paese specifico
         name: Paese
@@ -2438,6 +2447,13 @@ it:
     customers_removed_from_group:
       one: "%{count} cliente rimosso dal gruppo"
       other: "%{count} clienti rimossi dal gruppo"
+    date_range_presets:
+      last_30_days: Ultimi 30 giorni
+      last_7_days: Ultimi 7 giorni
+      last_month: Mese scorso
+      this_month: Questo mese
+      today: Oggi
+      yesterday: Ieri
     days_ago: Giorni fa
     delete_selected: Elimina selezionati
     digital_assets_help: Le risorse digitali sono file che i clienti possono scaricare dopo l'acquisto.
@@ -2664,10 +2680,12 @@ it:
     cannot_return_more_than_bought_quantity: Impossibile restituire più della quantità acquistata.
     cart_already_updated: Il carrello è già stato aggiornato.
     cart_line_item:
+      delivery_unavailable: "%{li_name} non può essere spedito all'indirizzo selezionato"
       discontinued: "%{li_name} è stato rimosso perché non più disponibile"
       out_of_stock: "%{li_name} è stato rimosso perché esaurito"
     change: Modifica
     channel: Canale di vendita
+    channel_ids: Canali di vendita
     channels: Canali di vendita
     checkout_requirements:
       email_required: L'indirizzo email è obbligatorio
@@ -2867,6 +2885,8 @@ it:
     preview: Anteprima
     price_lists: Listini prezzi
     price_rules:
+      channel_rule:
+        description: Applica i prezzi in base al canale di vendita
       customer_group_rule:
         description: Applica i prezzi a specifici gruppi di clienti
     prices: Prezzi

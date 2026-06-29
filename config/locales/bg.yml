@@ -1550,6 +1550,8 @@ bg:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Този купон код не е валиден за този канал за продажби.
+        no_matching_market: Този купон код не е валиден във вашия пазар.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1999,6 +2001,9 @@ bg:
       landing_page:
         description: Потребителят трябва да е посетил определена страница
         name: Целева страница
+      market:
+        description: Ограничаване до поръчки, направени на посочения(те) пазар(и)
+        name: Пазар(и)
       one_use_per_user:
         description:
         name:
@@ -2020,6 +2025,9 @@ bg:
       category:
         description: Поръчката включва продукти от посочените категории
         name: Категории
+      channel:
+        description: Ограничаване до поръчки, направени през посочения(те) канал(и)
+        name: Канал(и)
       country:
         description: Ограничаване до поръчки с адрес за доставка в конкретна държава
         name: Държава
@@ -2413,6 +2421,13 @@ bg:
     customers_removed_from_group:
       one: "%{count} клиент е премахнат от групата"
       other: "%{count} клиенти са премахнати от групата"
+    date_range_presets:
+      last_30_days: Последните 30 дни
+      last_7_days: Последните 7 дни
+      last_month: Миналия месец
+      this_month: Този месец
+      today: Днес
+      yesterday: Вчера
     days_ago: Дни преди това
     delete_selected: Изтрий избраните
     digital_assets_help: Цифровите ресурси са файлове, които клиентите могат да изтеглят след покупка.
@@ -2634,10 +2649,12 @@ bg:
     cannot_return_more_than_bought_quantity: Не може да се върне повече от закупеното количество.
     cart_already_updated: Количката вече беше обновена.
     cart_line_item:
+      delivery_unavailable: "%{li_name} не може да бъде доставен до избрания адрес"
       discontinued: "%{li_name} беше премахнат, защото беше прекратен"
       out_of_stock: "%{li_name} беше премахнат, защото беше изчерпан"
     change: Промяна
     channel: Канал за продажби
+    channel_ids: Канали за продажби
     channels: Канали за продажби
     checkout_requirements:
       email_required: Имейл адресът е задължителен
@@ -2837,6 +2854,8 @@ bg:
     preview: Преглед
     price_lists: Ценоразписи
     price_rules:
+      channel_rule:
+        description: Прилагане на цени според канала за продажби
       customer_group_rule:
         description: Прилагане на ценообразуване за конкретни клиентски групи
     prices: Цени
@@ -2964,6 +2983,7 @@ bg:
       current_password_invalid: Текущата парола е невалидна или липсва
       gateway_error: 'Възникна проблем с платежния шлюз: %{text}'
       invalid_api_key: Посочен е невалиден API ключ (%{key}).
+      invalid_position: new_position трябва да е цяло число
       invalid_resource: Невалиден ресурс. Моля, коригирайте грешките и опитайте отново.
       invalid_taxonomy_id: Невалиден ID на таксономия.
       must_specify_api_key: Трябва да посочите API ключ.

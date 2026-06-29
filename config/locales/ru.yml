@@ -1404,6 +1404,7 @@ ru:
       current_password_invalid: Текущий пароль неверен или отсутствует
       gateway_error: 'Возникла проблема с платёжным шлюзом: %{text}'
       invalid_api_key: Указан недействительный API-ключ (%{key}).
+      invalid_position: new_position должно быть целым числом
       invalid_resource: Недопустимый ресурс. Исправьте ошибки и попробуйте снова.
       invalid_taxonomy_id: Недопустимый идентификатор таксономии.
       must_specify_api_key: Необходимо указать API-ключ.
@@ -1639,6 +1640,8 @@ ru:
         not_first_order: Этот купон может быть применён только к первому заказу.
         missing_taxon: Перед применением этого промокода необходимо добавить товар из всех применимых категорий.
         no_applicable_products: Перед применением этого промокода необходимо добавить подходящий товар.
+        no_matching_channel: Этот промокод недействителен для данного канала продаж.
+        no_matching_market: Этот промокод недействителен на вашем рынке.
         no_matching_taxons: Перед применением этого промокода необходимо добавить товар из подходящей категории.
         no_user_or_email_specified: Перед применением этого промокода необходимо войти в систему или указать свой email.
         wrong_country: Этот промокод недействителен в вашей стране
@@ -1729,9 +1732,7 @@ ru:
     help_center: Центр поддержки
     hide_cents: Скрыть центы
     home: Домой
-    homepage:
-      read_more: Чиать далее
-      shop_now: Купить
+    homepage: Главная страница
     i18n:
       available_locales: Доступные переводы
       language: Язык
@@ -2099,6 +2100,9 @@ ru:
       landing_page:
         description: Покупатель должен был попасть на указанную страницу
         name: Страница
+      market:
+        description: Ограничить заказами, оформленными на указанных рынках
+        name: Рынки
       one_use_per_user:
         description: Каждый пользователь может использовать только 1 раз
         name: 1 в 1 руки
@@ -2120,6 +2124,9 @@ ru:
       category:
         description: Заказ включает товары из указанных категорий
         name: Категории
+      channel:
+        description: Ограничить заказами, оформленными через указанные каналы продаж
+        name: Каналы продаж
       country:
         description: Ограничить заказами с адресом доставки в определённой стране
         name: Страна
@@ -2379,8 +2386,7 @@ ru:
     store_credit_category: Программа лояльности
     store_credit_categories: Программы лояльности
     store_credit_name: Баланс
-    store_credits:
-      credit_balance: Ваш баланс
+    store_credits: Бонусы магазина
     street_address: Адрес
     street_address_2: Адрес (строка 2)
     subtitle: Подзаголовок
@@ -2540,6 +2546,13 @@ ru:
     customers_removed_from_group:
       one: "%{count} клиент удалён из группы"
       other: "%{count} клиентов удалено из группы"
+    date_range_presets:
+      last_30_days: Последние 30 дней
+      last_7_days: Последние 7 дней
+      last_month: Прошлый месяц
+      this_month: Текущий месяц
+      today: Сегодня
+      yesterday: Вчера
     days_ago: Дней назад
     delete_selected: Удалить выбранное
     digital_assets_help: Цифровые файлы — это файлы, которые клиенты могут скачать после покупки.
@@ -2753,10 +2766,12 @@ ru:
     cannot_return_more_than_bought_quantity: Невозможно вернуть больше, чем было куплено.
     cart_already_updated: Корзина уже обновлена.
     cart_line_item:
+      delivery_unavailable: "%{li_name} не может быть доставлен по выбранному адресу"
       discontinued: "%{li_name} удалён, так как снят с продажи"
       out_of_stock: "%{li_name} удалён, так как распродан"
     change: Изменить
     channel: Канал продаж
+    channel_ids: Каналы продаж
     channels: Каналы продаж
     checkout_requirements:
       email_required: Требуется адрес электронной почты
@@ -2953,6 +2968,8 @@ ru:
     preview: Предпросмотр
     price_lists: Прайс-листы
     price_rules:
+      channel_rule:
+        description: Применять цены в зависимости от канала продаж
       customer_group_rule:
         description: Применять ценообразование к определённым группам клиентов
     prices: Цены

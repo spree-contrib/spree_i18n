@@ -1525,6 +1525,8 @@ sl-SI:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Ta kupon ni veljaven za ta prodajni kanal.
+        no_matching_market: Ta kupon ni veljaven na vašem trgu.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ sl-SI:
       landing_page:
         description: Customer must have visited the specified page
         name: Landing Page
+      market:
+        description: Omeji na naročila, oddana na določenih trgih
+        name: Trg(i)
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ sl-SI:
       category:
         description: Naročilo vključuje izdelke v določenih kategorijah
         name: Kategorije
+      channel:
+        description: Omeji na naročila, oddana prek določenih kanalov
+        name: Kanal(i)
       country:
         description: Omeji na naročila z naslovom za dostavo v določeni državi
         name: Država
@@ -2358,6 +2366,13 @@ sl-SI:
     customers_removed_from_group:
       one: "%{count} stranka odstranjena iz skupine"
       other: "%{count} strank odstranjenih iz skupine"
+    date_range_presets:
+      last_30_days: Zadnjih 30 dni
+      last_7_days: Zadnjih 7 dni
+      last_month: Prejšnji mesec
+      this_month: Ta mesec
+      today: Danes
+      yesterday: Včeraj
     days_ago: Pred dnevi
     delete_selected: Izbriši izbrano
     digital_assets_help: Digitalna sredstva so datoteke, ki jih lahko stranke po nakupu prenesejo.
@@ -2584,10 +2599,12 @@ sl-SI:
     cannot_return_more_than_bought_quantity: Ni mogoče vrniti več od kupljene količine.
     cart_already_updated: Košarica je bila že posodobljena.
     cart_line_item:
+      delivery_unavailable: "%{li_name} ni mogoče dostaviti na izbrani naslov"
       discontinued: "%{li_name} je bilo odstranjeno, ker je bilo ukinjeno"
       out_of_stock: "%{li_name} je bilo odstranjeno, ker je bilo razprodano"
     change: Spremeni
     channel: Prodajni kanal
+    channel_ids: Prodajni kanali
     channels: Prodajni kanali
     checkout_requirements:
       email_required: E-poštni naslov je obvezen
@@ -2788,6 +2805,8 @@ sl-SI:
     preview: Predogled
     price_lists: Ceniki
     price_rules:
+      channel_rule:
+        description: Uporabi cene glede na prodajni kanal
       customer_group_rule:
         description: Uporabi cene za določene skupine strank
     prices: Cene
@@ -2919,6 +2938,7 @@ sl-SI:
       current_password_invalid: Trenutno geslo je neveljavno ali manjka
       gateway_error: 'Prišlo je do težave s plačilnim prehodom: %{text}'
       invalid_api_key: Naveden je neveljaven API ključ (%{key}).
+      invalid_position: new_position mora biti celo število
       invalid_resource: Neveljaven vir. Popravite napake in poskusite znova.
       invalid_taxonomy_id: Neveljaven ID taksonomije.
       must_specify_api_key: Navesti morate API ključ.

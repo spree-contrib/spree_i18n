@@ -1525,6 +1525,8 @@ fi:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Tämä kuponkikoodi ei ole voimassa tässä myyntikanavassa.
+        no_matching_market: Tämä kuponkikoodi ei ole voimassa markkina-alueellasi.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1960,6 +1962,9 @@ fi:
       landing_page:
         description: Asiakkaan on täytynyt vierailla tietyllä sivulla
         name: Landing Page
+      market:
+        description: Rajaa määritetyillä markkina-alueilla tehtyihin tilauksiin
+        name: Markkina-alueet
       one_use_per_user:
         description: Käyttäjäkohtainen kerta-alennus
         name: Käyttäjäkohtainen kerta-alennus
@@ -1981,6 +1986,9 @@ fi:
       category:
         description: Tilaus sisältää tuotteita määritetyistä luokista
         name: Luokat
+      channel:
+        description: Rajaa määritettyjen myyntikanavien kautta tehtyihin tilauksiin
+        name: Myyntikanavat
       country:
         description: Rajoita tilauksiin, joiden toimitusosoite on tietyssä maassa
         name: Maa
@@ -2374,6 +2382,13 @@ fi:
     customers_removed_from_group:
       one: "%{count} asiakas poistettiin ryhmästä"
       other: "%{count} asiakasta poistettiin ryhmästä"
+    date_range_presets:
+      last_30_days: Viimeiset 30 päivää
+      last_7_days: Viimeiset 7 päivää
+      last_month: Viime kuukausi
+      this_month: Tämä kuukausi
+      today: Tänään
+      yesterday: Eilen
     days_ago: Päivää sitten
     delete_selected: Poista valitut
     digital_assets_help: Digitaaliset resurssit ovat tiedostoja, jotka asiakkaat voivat ladata oston jälkeen.
@@ -2600,10 +2615,12 @@ fi:
     cannot_return_more_than_bought_quantity: Ei voi palauttaa enempää kuin ostettu määrä.
     cart_already_updated: Ostoskori on jo päivitetty.
     cart_line_item:
+      delivery_unavailable: Tuotetta %{li_name} ei voi toimittaa valittuun osoitteeseen
       discontinued: "%{li_name} poistettiin, koska se poistettiin käytöstä"
       out_of_stock: "%{li_name} poistettiin, koska se on loppuunmyyty"
     change: Muuta
     channel: Myyntikanava
+    channel_ids: Myyntikanavat
     channels: Myyntikanavat
     checkout_requirements:
       email_required: Sähköpostiosoite vaaditaan
@@ -2804,6 +2821,8 @@ fi:
     preview: Esikatselu
     price_lists: Hinnastot
     price_rules:
+      channel_rule:
+        description: Käytä hinnoittelua myyntikanavan perusteella
       customer_group_rule:
         description: Sovella hinnoittelua tiettyihin asiakasryhmiin
     prices: Hinnat
@@ -2934,6 +2953,7 @@ fi:
       current_password_invalid: Nykyinen salasana on virheellinen tai puuttuu
       gateway_error: 'Maksupalveluun liittyi ongelma: %{text}'
       invalid_api_key: Virheellinen API-avain (%{key}) määritetty.
+      invalid_position: new_position-arvon on oltava kokonaisluku
       invalid_resource: Virheellinen resurssi. Korjaa virheet ja yritä uudelleen.
       invalid_taxonomy_id: Virheellinen taksonomian tunnus.
       must_specify_api_key: Sinun on määritettävä API-avain.

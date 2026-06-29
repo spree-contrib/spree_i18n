@@ -1528,6 +1528,8 @@ hu:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: Ez a kuponkód nem érvényes ehhez az értékesítési csatornához.
+        no_matching_market: Ez a kuponkód nem érvényes az Ön piacán.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1949,6 +1951,9 @@ hu:
       landing_page:
         description: Customer must have visited the specified page
         name: Landing Page
+      market:
+        description: Korlátozás a megadott piac(ok)on leadott rendelésekre
+        name: Piac(ok)
       one_use_per_user:
         description:
         name:
@@ -1970,6 +1975,9 @@ hu:
       category:
         description: A rendelés meghatározott kategóriákba tartozó termékeket tartalmaz
         name: Kategóriák
+      channel:
+        description: Korlátozás a megadott csatorná(ko)n keresztül leadott rendelésekre
+        name: Csatorná(k)
       country:
         description: Korlátozás az adott országba történő szállítási címmel rendelkező rendelésekre
         name: Ország
@@ -2360,6 +2368,13 @@ hu:
     customers_removed_from_group:
       one: "%{count} vásárló eltávolítva a csoportból"
       other: "%{count} vásárló eltávolítva a csoportból"
+    date_range_presets:
+      last_30_days: Elmúlt 30 nap
+      last_7_days: Elmúlt 7 nap
+      last_month: Előző hónap
+      this_month: Aktuális hónap
+      today: Ma
+      yesterday: Tegnap
     days_ago: Napja
     delete_selected: Kijelöltek törlése
     digital_assets_help: A digitális tartalmak olyan fájlok, amelyeket a vásárlók a vásárlás után letölthetnek.
@@ -2586,10 +2601,12 @@ hu:
     cannot_return_more_than_bought_quantity: Nem küldhető vissza több a megvásárolt mennyiségnél.
     cart_already_updated: A kosár már frissítve lett.
     cart_line_item:
+      delivery_unavailable: A(z) %{li_name} nem szállítható ki a kiválasztott címre
       discontinued: "%{li_name} eltávolításra került, mert kivonták a forgalomból"
       out_of_stock: "%{li_name} eltávolításra került, mert elfogyott"
     change: Módosítás
     channel: Értékesítési csatorna
+    channel_ids: Értékesítési csatornák
     channels: Értékesítési csatornák
     checkout_requirements:
       email_required: Az e-mail-cím megadása kötelező
@@ -2789,6 +2806,8 @@ hu:
     preview: Előnézet
     price_lists: Árlisták
     price_rules:
+      channel_rule:
+        description: Árazás alkalmazása az értékesítési csatorna alapján
       customer_group_rule:
         description: Árazás alkalmazása meghatározott ügyfélcsoportokra
     prices: Árak
@@ -2920,6 +2939,7 @@ hu:
       current_password_invalid: A jelenlegi jelszó érvénytelen vagy hiányzik
       gateway_error: 'Probléma történt a fizetési átjáróval: %{text}'
       invalid_api_key: Érvénytelen API-kulcs (%{key}) lett megadva.
+      invalid_position: A new_position értékének egész számnak kell lennie
       invalid_resource: Érvénytelen erőforrás. Kérjük, javítsa a hibákat, és próbálja újra.
       invalid_taxonomy_id: Érvénytelen taxonómia azonosító.
       must_specify_api_key: Meg kell adnia egy API-kulcsot.

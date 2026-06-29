@@ -1525,6 +1525,8 @@ et:
         missing_product:
         missing_taxon:
         no_applicable_products:
+        no_matching_channel: See sooduskood ei kehti selle müügikanali jaoks.
+        no_matching_market: See sooduskood ei kehti teie turul.
         no_matching_taxons:
         no_user_or_email_specified:
         no_user_specified:
@@ -1946,6 +1948,9 @@ et:
       landing_page:
         description:
         name:
+      market:
+        description: Piira tellimustega, mis on esitatud kindlatel turgudel
+        name: Turg(turud)
       one_use_per_user:
         description:
         name:
@@ -1967,6 +1972,9 @@ et:
       category:
         description: Tellimus sisaldab tooteid määratud kategooriatest
         name: Kategooriad
+      channel:
+        description: Piira tellimustega, mis on esitatud kindlate kanalite kaudu
+        name: Kanal(id)
       country:
         description: Piira tellimustele, mille tarneaadress on kindlas riigis
         name: Riik
@@ -2358,6 +2366,13 @@ et:
     customers_removed_from_group:
       one: "%{count} klient eemaldati grupist"
       other: "%{count} klienti eemaldati grupist"
+    date_range_presets:
+      last_30_days: Viimased 30 päeva
+      last_7_days: Viimased 7 päeva
+      last_month: Eelmine kuu
+      this_month: Käesolev kuu
+      today: Täna
+      yesterday: Eile
     days_ago: Päeva tagasi
     delete_selected: Kustuta valitud
     digital_assets_help: Digitaalsed failid on failid, mida kliendid saavad pärast ostu alla laadida.
@@ -2584,10 +2599,12 @@ et:
     cannot_return_more_than_bought_quantity: Ei saa tagastada rohkem kui ostetud kogus.
     cart_already_updated: Ostukorv on juba uuendatud.
     cart_line_item:
+      delivery_unavailable: Toodet %{li_name} ei saa valitud aadressile tarnida
       discontinued: "%{li_name} eemaldati, kuna selle müük lõpetati"
       out_of_stock: "%{li_name} eemaldati, kuna see oli välja müüdud"
     change: Muuda
     channel: Müügikanal
+    channel_ids: Müügikanalid
     channels: Müügikanalid
     checkout_requirements:
       email_required: E-posti aadress on nõutav
@@ -2788,6 +2805,8 @@ et:
     preview: Eelvaade
     price_lists: Hinnakirjad
     price_rules:
+      channel_rule:
+        description: Rakenda hinnastamine müügikanali alusel
       customer_group_rule:
         description: Rakenda hinnastamist kindlatele kliendigruppidele
     prices: Hinnad
@@ -2919,6 +2938,7 @@ et:
       current_password_invalid: Praegune parool on vale või puudub
       gateway_error: 'Makselüüsiga tekkis probleem: %{text}'
       invalid_api_key: Määratud on vigane API võti (%{key}).
+      invalid_position: new_position peab olema täisarv
       invalid_resource: Vigane ressurss. Palun parandage vead ja proovige uuesti.
       invalid_taxonomy_id: Vigane taksonoomia ID.
       must_specify_api_key: Peate määrama API võtme.
