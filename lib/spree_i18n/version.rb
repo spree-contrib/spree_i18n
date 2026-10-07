@@ -1,5 +1,5 @@
 module SpreeI18n
-  VERSION = '5.3.3'.freeze
+  VERSION = '6.0.0'.freeze
 
   module_function
 
