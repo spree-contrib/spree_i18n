@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_i18n'
   s.version     = SpreeI18n::VERSION
-  s.summary     = 'Provides locale information and translations for Spree Commerce.'
-  s.description = 'Adds locale files, country/language names and translation tooling for internationalizing Spree Commerce stores.'
+  s.summary     = 'Retired: Spree 6.0 ships its translations in spree_core.'
+  s.description = 'This gem is retired. Spree 6.0 ships its translations in spree_core, so remove spree_i18n from your Gemfile.'
   s.required_ruby_version = '>= 3.2'
 
   s.author    = 'Vendo Connect Inc.'
@@ -24,18 +24,10 @@ Gem::Specification.new do |s|
     'source_code_uri' => "https://github.com/spree/spree_i18n/tree/v#{s.version}"
   }
 
-  s.files        = Dir["{app,config,db,lib,vendor}/**/*", "LICENSE.md", "Rakefile", "README.md"].reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
+  s.files        = Dir['lib/**/*', 'LICENSE.md', 'README.md']
   s.require_path = 'lib'
-  s.requirements << 'none'
 
-  spree_version = '>= 5.4.0.alpha'
-  s.add_dependency 'spree_core', spree_version
-  s.add_dependency 'spree_extension'
+  s.post_install_message = 'spree_i18n is no longer needed: Spree 6.0 ships its translations in spree_core. Remove it from your Gemfile.'
 
-  s.add_dependency 'i18n_data'
-  s.add_dependency 'rails-i18n'
-  s.add_dependency 'kaminari-i18n'
-
-  s.add_development_dependency 'spree_dev_tools'
-  s.add_development_dependency 'i18n-tasks'
+  s.add_dependency 'spree_core', '>= 6.0.0.beta', '< 7'
 end
