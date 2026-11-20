@@ -1,7 +1,3 @@
-require 'rails-i18n'
-require 'rails/generators'
-require 'spree_core'
-require 'spree_i18n/engine'
 require 'spree_i18n/version'
-require 'spree/i18n_utils'
-require 'spree_extension'
+
+warn '[spree_i18n] Spree 6.0 ships its translations in spree_core. Remove spree_i18n from your Gemfile; this gem no longer does anything.'
